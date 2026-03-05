@@ -8,7 +8,7 @@ const LuxurySection = () => {
   };
 
   return (
-    <section className="relative py-24 md:py-32 bg-transparent overflow-hidden flex flex-col items-center justify-center text-center z-10">
+    <section className="relative py-16 md:py-20 bg-transparent overflow-hidden flex flex-col items-center justify-center text-center z-10">
       <div className="container px-4 flex flex-col items-center">
         {/* Icona Corona Premium */}
         <motion.div

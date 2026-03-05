@@ -14,7 +14,7 @@ const TrustMarquee = () => {
   return (
     // 1. WRAPPER DRITTO: -mt-12 tira la sezione su per "mangiare" il buco bianco
     // py-20 dà spazio interno affinché la barra non venga tagliata sopra o sotto
-    <section className="relative w-full overflow-hidden flex items-center justify-center py-20 bg-transparent z-20 -mt-12">
+    <section className="relative w-full overflow-hidden flex items-center justify-center py-14 bg-transparent z-20 -mt-16">
       {/* 2. BARRA BLU GIGANTE: Larghezza 150%, centrata e ruotata */}
       <div className="absolute w-[150%] left-1/2 -translate-x-1/2 bg-blue-600 transform -rotate-2 py-5 shadow-[0_10px_40px_rgba(0,0,255,0.3)] border-y border-blue-400/30">
         {/* 3. ANIMAZIONE FLUIDA */}
