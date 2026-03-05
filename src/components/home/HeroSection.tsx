@@ -31,7 +31,7 @@ const HeroSection = () => {
           <motion.img
             src={gdisLogo}
             alt="GDIS"
-            className="h-20 md:h-28 w-auto mb-10 brightness-0 invert"
+            className="h-20 md:h-28 w-auto mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}

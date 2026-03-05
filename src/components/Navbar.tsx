@@ -34,7 +34,7 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between h-18 py-4">
         <Link to="/" className="flex items-center gap-2 relative z-10">
-          <img src={gdisLogo} alt="GDIS Rent e Service" className="h-10 w-auto brightness-0 invert" />
+          <img src={gdisLogo} alt="GDIS Rent e Service" className="h-10 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
