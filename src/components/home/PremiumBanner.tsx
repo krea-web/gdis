@@ -84,15 +84,23 @@ const PremiumBanner = () => {
       {/* =========================================
           PARTE 2: FAST BOOKING ACTION (Blu Elettrico)
           ========================================= */}
-      <section className="relative bg-blue-600 py-16 md:py-24 overflow-hidden">
-        {/* Decorazione di sfondo */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: "radial-gradient(circle at center, #ffffff 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
+      <section className="relative bg-background py-16 md:py-24 overflow-hidden">
+        {/* Griglia 3D di sfondo */}
+        <div className="absolute inset-0 overflow-hidden" style={{ perspective: "1000px" }}>
+          <div
+            className="absolute w-[200%] h-[200%] -left-1/2 top-0 animate-grid-flow"
+            style={{
+              transformOrigin: "center top",
+              backgroundImage: `
+                linear-gradient(to right, hsl(var(--primary) / 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, hsl(var(--primary) / 0.08) 1px, transparent 1px)
+              `,
+              backgroundSize: "80px 80px",
+              maskImage: "linear-gradient(to bottom, transparent 5%, black 40%, black 70%, transparent 95%)",
+              WebkitMaskImage: "linear-gradient(to bottom, transparent 5%, black 40%, black 70%, transparent 95%)",
+            }}
+          />
+        </div>
 
         <div className="relative z-10 container px-4 flex flex-col md:flex-row items-center justify-between gap-10">
           <motion.div
@@ -103,15 +111,15 @@ const PremiumBanner = () => {
             className="text-left max-w-xl"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm">
-                <Zap className="w-5 h-5 text-white" />
+              <div className="bg-primary/10 p-2 rounded-full">
+                <Zap className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-white/90 font-semibold uppercase tracking-widest text-sm">Noleggio Istantaneo</span>
+              <span className="text-primary font-semibold uppercase tracking-widest text-sm">Noleggio Istantaneo</span>
             </div>
-            <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
               Pronto a <span className="italic font-light">Partire?</span>
             </h3>
-            <p className="text-blue-100 text-lg md:text-xl font-light">
+            <p className="text-muted-foreground text-lg md:text-xl font-light">
               Noleggia Citycar, Scooter e Quad in meno di 2 minuti. Nessuna fila, tutto digitale.
             </p>
           </motion.div>
@@ -127,7 +135,7 @@ const PremiumBanner = () => {
             <Link to="/prenotaora" className="block w-full">
               <Button
                 size="xl"
-                className="w-full md:w-auto bg-white hover:bg-slate-50 text-blue-600 rounded-full px-12 py-8 text-xl font-bold transition-all duration-300 shadow-[0_10px_40px_rgba(255,255,255,0.3)] hover:shadow-[0_15px_50px_rgba(255,255,255,0.5)] group flex items-center justify-center gap-4"
+                className="w-full md:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-12 py-8 text-xl font-bold transition-all duration-300 blue-glow hover:shadow-[0_15px_50px_rgba(0,0,255,0.3)] group flex items-center justify-center gap-4"
               >
                 Prenota Ora
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
