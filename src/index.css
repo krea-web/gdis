@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,42 +15,48 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 25% 10%;
 
-    --primary: 225 100% 50%;
+    --primary: 240 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 60% 96%;
-    --secondary-foreground: 225 100% 40%;
+    --secondary: 230 60% 96%;
+    --secondary-foreground: 240 100% 40%;
 
     --muted: 220 20% 96%;
-    --muted-foreground: 220 10% 50%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 225 100% 95%;
-    --accent-foreground: 225 100% 40%;
+    --accent: 240 100% 96%;
+    --accent-foreground: 240 100% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 90%;
-    --input: 220 20% 90%;
-    --ring: 225 100% 50%;
+    --border: 220 20% 92%;
+    --input: 220 20% 92%;
+    --ring: 240 100% 50%;
 
-    --radius: 0.625rem;
+    --radius: 0.75rem;
+
+    /* Brand tokens */
+    --brand-blue: 240 100% 50%;
+    --brand-blue-deep: 240 100% 30%;
+    --brand-blue-light: 225 100% 65%;
+    --brand-blue-glow: 225 100% 70%;
+    --brand-dark: 220 25% 8%;
+    --brand-surface: 220 40% 98%;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.2;
+    --glass-blur: 20px;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 225 100% 50%;
+    --sidebar-primary: 240 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 225 100% 95%;
-    --sidebar-accent-foreground: 225 100% 40%;
+    --sidebar-accent: 240 100% 95%;
+    --sidebar-accent-foreground: 240 100% 40%;
     --sidebar-border: 220 20% 90%;
-    --sidebar-ring: 225 100% 50%;
-
-    /* Custom tokens */
-    --brand-blue: 225 100% 50%;
-    --brand-blue-dark: 225 100% 35%;
-    --brand-blue-light: 225 100% 65%;
-    --brand-surface: 220 60% 98%;
-    --hero-overlay: 225 80% 15%;
+    --sidebar-ring: 240 100% 50%;
 
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -92,9 +98,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
   }
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
   }
 }
@@ -106,22 +113,65 @@
   .font-body {
     font-family: var(--font-body);
   }
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(240 100% 50%), hsl(225 100% 65%));
+  }
+  .glass {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsla(var(--glass-border));
+  }
+  .glass-dark {
+    background: hsla(220 25% 8% / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(0 0% 100% / 0.08);
+  }
+  .blue-glow {
+    box-shadow: 0 0 40px -10px hsl(240 100% 50% / 0.4);
+  }
+  .blue-glow-sm {
+    box-shadow: 0 0 20px -5px hsl(240 100% 50% / 0.3);
+  }
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
 }
 
-/* Trust marquee animation */
+/* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
 .animate-marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
-/* Skew banner */
-.skew-banner {
-  transform: skewY(-2deg);
+/* Floating animation for WhatsApp */
+@keyframes float-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 hsla(142 70% 45% / 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 12px hsla(142 70% 45% / 0); }
 }
-.skew-banner > * {
-  transform: skewY(2deg);
+.animate-float-pulse {
+  animation: float-pulse 2.5s ease-in-out infinite;
+}
+
+/* Luminous line glow */
+.luminous-line {
+  box-shadow: 0 0 15px 3px hsl(240 100% 50% / 0.5), 0 0 40px 8px hsl(240 100% 50% / 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
 }

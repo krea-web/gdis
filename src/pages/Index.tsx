@@ -1,15 +1,19 @@
 import HeroSection from "@/components/home/HeroSection";
 import TrustMarquee from "@/components/home/TrustMarquee";
-import CategoryShowcase from "@/components/home/CategoryShowcase";
-import LuxuryBanner from "@/components/home/LuxuryBanner";
+import MinimalIntro from "@/components/home/MinimalIntro";
+import FleetShowcase from "@/components/home/FleetShowcase";
+import PremiumBanner from "@/components/home/PremiumBanner";
+import LuxurySection from "@/components/home/LuxurySection";
 
 const Index = () => {
   return (
     <>
       <HeroSection />
       <TrustMarquee />
-      <CategoryShowcase />
-      <LuxuryBanner />
+      <MinimalIntro />
+      <FleetShowcase />
+      <PremiumBanner />
+      <LuxurySection />
     </>
   );
 };
