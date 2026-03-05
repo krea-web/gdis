@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import gdisLogo from "@/assets/gdis-logo.png";
 
 const Footer = () => {
   return (
@@ -7,9 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="font-display font-bold text-2xl mb-3">
-              GDIS <span className="opacity-80">Rent e Service</span>
-            </h3>
+            <img src={gdisLogo} alt="GDIS Rent e Service" className="h-12 w-auto mb-3 brightness-0 invert" />
             <p className="text-sm opacity-70 leading-relaxed">
               Noleggio auto, scooter, quad, veicoli di lusso e trasporto merci in Sardegna.
             </p>
