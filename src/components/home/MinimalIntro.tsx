@@ -1,27 +1,84 @@
 import { motion } from "framer-motion";
 
+// Variabili per l'animazione a cascata (Stagger)
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Ritardo tra l'apparizione di ogni elemento
+      delayChildren: 0.2,
+    },
+  },
+};
+
+// Variabili per il singolo elemento che "sorge" dal basso
+const itemVariants = {
+  hidden: { y: "100%", opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] }, // Curva di accelerazione super fluida (stile Apple)
+  },
+};
+
 const MinimalIntro = () => {
   return (
-    <section className="section-padding bg-transparent">
-      <div className="container">
+    <section className="relative py-32 md:py-48 flex items-center justify-center bg-transparent z-10">
+      <div className="container px-4">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto text-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="max-w-5xl mx-auto text-center flex flex-col items-center"
         >
-          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-light text-foreground leading-tight tracking-tight">
-            Il tuo noleggio
-            <br />
-            <span className="font-bold text-gradient-blue">parte da qui.</span>
+          {/* 1. EYEBROW TEXT (Piccolo, elegante, ultra-spaziato) */}
+          <div className="overflow-hidden mb-6">
+            <motion.span
+              variants={itemVariants}
+              className="block uppercase tracking-[0.3em] text-blue-600 text-xs md:text-sm font-semibold"
+            >
+              L'Eccellenza in Movimento
+            </motion.span>
+          </div>
+
+          {/* 2. TITOLO PRINCIPALE CON MASCHERA (Text Reveal) */}
+          <h2 className="font-display text-5xl sm:text-7xl md:text-[6rem] leading-[1.1] tracking-tighter text-slate-900 mb-8">
+            <div className="overflow-hidden pb-2">
+              <motion.span variants={itemVariants} className="block font-light">
+                Il tuo noleggio
+              </motion.span>
+            </div>
+            <div className="overflow-hidden pb-2">
+              <motion.span variants={itemVariants} className="block font-bold text-blue-600 drop-shadow-sm">
+                parte da qui.
+              </motion.span>
+            </div>
           </h2>
+
+          {/* 3. SOTTOTITOLO EDITORIALE */}
+          <div className="overflow-hidden mb-12">
+            <motion.p
+              variants={itemVariants}
+              className="max-w-2xl mx-auto text-slate-500 text-lg md:text-xl font-light leading-relaxed"
+            >
+              Dimentica le code e la burocrazia. Un'esperienza digitale fluida per portarti sulla strada in pochi
+              istanti.
+            </motion.p>
+          </div>
+
+          {/* 4. LINEA DIVISORIA ELEGANTE (Sottile e sfumata) */}
           <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="w-20 h-0.5 bg-primary mx-auto mt-10"
+            variants={{
+              hidden: { width: 0, opacity: 0 },
+              visible: {
+                width: "120px",
+                opacity: 1,
+                transition: { duration: 1.2, delay: 0.8, ease: "circOut" },
+              },
+            }}
+            className="h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"
           />
         </motion.div>
       </div>
