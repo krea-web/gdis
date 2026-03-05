@@ -12,8 +12,8 @@ const Index = () => {
       <TrustMarquee />
       <MinimalIntro />
       <FleetShowcase />
-      <PremiumBanner />
       <LuxurySection />
+      <PremiumBanner />
     </>
   );
 };
