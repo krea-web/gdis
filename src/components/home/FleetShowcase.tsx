@@ -97,7 +97,7 @@ const FleetShowcase = () => {
                       <div className="flex items-end justify-between mt-1">
                         <div>
                           <h3 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground">
-                            {cat}
+                            {cat.replace("_", " ").toUpperCase()}
                           </h3>
                           <p className="text-primary-foreground/70 text-sm mt-1">
                             A partire da €{lowestPrice}/giorno
