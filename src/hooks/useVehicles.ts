@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
 
 export type Vehicle = {
   id: string;
@@ -24,7 +24,7 @@ async function fetchVehicles(): Promise<Vehicle[]> {
     .eq("status", "available");
 
   if (error) throw error;
-  return data ?? [];
+  return (data ?? []) as Vehicle[];
 }
 
 export function useVehicles() {

@@ -16,7 +16,7 @@ function toSelected(v: Vehicle): SelectedVehicle {
     id: v.id,
     name: `${v.brand} ${v.model}`,
     image: v.image_url ?? "",
-    pricePerDay: v.price_low_season,
+    pricePerDay: v.price_mid_season,
   };
 }
 
@@ -69,7 +69,7 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                   <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{v.type}</span>
                   <h3 className="font-display font-semibold text-foreground text-lg">{v.brand} {v.model}</h3>
                   <p className="text-primary font-bold mt-1">
-                    A partire da €{v.price_low_season}
+                    A partire da €{v.price_mid_season}
                     <span className="text-muted-foreground font-normal text-sm">/giorno</span>
                   </p>
                 </div>
