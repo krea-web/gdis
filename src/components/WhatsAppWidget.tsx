@@ -1,16 +1,16 @@
-import { MessageCircle } from "lucide-react";
-
 const WhatsAppWidget = () => {
   return (
     <a
       href="https://wa.me/393520459150"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-15 h-15 rounded-full bg-[#25D366] text-primary-foreground shadow-xl animate-float-pulse"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-15 h-15 rounded-full bg-[#25D366] shadow-xl animate-float-pulse"
       style={{ width: 60, height: 60 }}
       aria-label="Contattaci su WhatsApp"
     >
-      <MessageCircle size={30} fill="currentColor" />
+      <svg viewBox="0 0 32 32" width="32" height="32" fill="white">
+        <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.907 15.907 0 0 0 16.004 32C24.826 32 32 24.826 32 16.004 32 7.176 24.826 0 16.004 0zm9.302 22.602c-.388 1.092-1.938 1.998-3.146 2.264-.826.178-1.904.32-5.534-1.19-4.646-1.932-7.634-6.634-7.866-6.942-.222-.308-1.87-2.494-1.87-4.756 0-2.264 1.184-3.378 1.604-3.838.388-.424.916-.616 1.222-.616.152 0 .286.008.41.014.42.018.63.042.906.7.346.824 1.19 2.908 1.296 3.12.106.214.214.504.066.796-.138.3-.258.486-.472.744-.214.258-.44.458-.654.74-.196.244-.416.504-.178.924.238.42 1.058 1.746 2.272 2.83 1.562 1.394 2.876 1.826 3.286 2.03.308.152.674.128.922-.132.31-.336.694-.892 1.084-1.442.278-.392.628-.44.966-.306.342.128 2.164 1.02 2.534 1.208.37.186.616.278.708.434.09.156.09.892-.298 1.984z"/>
+      </svg>
     </a>
   );
 };
