@@ -16,7 +16,7 @@ const TrustMarquee = () => {
         <span className="text-primary-foreground font-display font-bold text-sm md:text-base uppercase tracking-[0.2em]">
           {item}
         </span>
-        <img src={gdisLogo} alt="" className="h-5 w-auto brightness-0 invert opacity-40" />
+        <img src={gdisLogo} alt="" className="h-5 w-auto brightness-0 invert opacity-60" />
       </span>
     ));
 
