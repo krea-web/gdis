@@ -1,24 +1,22 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-// Variabili per l'animazione a cascata (Stagger)
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Ritardo tra l'apparizione di ogni elemento
+      staggerChildren: 0.15,
       delayChildren: 0.2,
     },
   },
 };
 
-// Variabili per il singolo elemento che "sorge" dal basso
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: "100%", opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] }, // Curva di accelerazione super fluida (stile Apple)
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
   },
 };
 
