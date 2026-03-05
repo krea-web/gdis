@@ -11,7 +11,10 @@ const HeroSection = () => {
       {/* 1. VIDEO BACKGROUND */}
       <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
         {/* Sostituisci questo src con il link o il file locale del tuo video premium */}
-        <source src="https://cdn.pixabay.com/video/2023/10/12/184735-873923030_large.mp4" type="video/mp4" />
+        <source
+          src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/HERO.mp4"
+          type="video/mp4"
+        />
       </video>
 
       {/* 2. OVERLAY CINEMATOGRAFICO (Scurisce il video e aggiunge un leggero blur) */}
