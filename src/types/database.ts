@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+// Types are now derived from Supabase generated types in src/integrations/supabase/types.ts
 
 export type Vehicle = {
   id: string;
