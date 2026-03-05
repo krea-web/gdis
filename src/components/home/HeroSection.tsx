@@ -12,7 +12,7 @@ const HeroSection = () => {
       <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
         {/* Sostituisci questo src con il link o il file locale del tuo video premium */}
         <source
-          src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/HERO.mp4"
+          src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/HERO%20VERA.mp4"
           type="video/mp4"
         />
       </video>
