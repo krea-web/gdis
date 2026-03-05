@@ -37,7 +37,7 @@ const Footer = () => {
 
         {/* Info Legali */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xs md:text-sm text-blue-200/60 uppercase tracking-widest font-semibold">
-          <p>© {new Date().getFullYear()} GDIS Rent e Service.</p>
+          <p>© {new Date().getFullYear()} GDIS RENT E SERVICE BY @KREA.</p>
           <span className="hidden md:block">•</span>
           <p>P.IVA: 03047140904</p>
         </div>
