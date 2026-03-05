@@ -22,7 +22,7 @@ const itemVariants: Variants = {
 
 const MinimalIntro = () => {
   return (
-    <section className="relative py-32 md:py-48 flex items-center justify-center bg-transparent z-10">
+    <section className="relative py-20 md:py-28 flex items-center justify-center bg-transparent z-10">
       <div className="container px-4">
         <motion.div
           variants={containerVariants}
