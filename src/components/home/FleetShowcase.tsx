@@ -12,14 +12,11 @@ import { Link } from "react-router-dom";
 import { useVehicles, groupByType } from "@/hooks/useVehicles";
 import { Skeleton } from "@/components/ui/skeleton";
 import VehicleFallbackCard from "@/components/VehicleFallbackCard";
-import fleetCitycar from "@/assets/fleet-citycar.jpg";
-import fleetScooter from "@/assets/fleet-scooter.jpg";
-import fleetQuad from "@/assets/fleet-quad.jpg";
 
-const categoryMeta: Record<string, { subtitle: string; description: string; fallbackImage: string }> = {
-  Citycar: { subtitle: "Utilitarie e berline", description: "Perfette per muoverti in città e lungo la costa.", fallbackImage: fleetCitycar },
-  Scooter: { subtitle: "Due ruote", description: "Libertà su due ruote nella brezza mediterranea.", fallbackImage: fleetScooter },
-  Quad: { subtitle: "Avventura off-road", description: "Esplora sentieri e spiagge nascoste.", fallbackImage: fleetQuad },
+const categoryMeta: Record<string, { subtitle: string; description: string }> = {
+  Citycar: { subtitle: "Utilitarie e berline", description: "Perfette per muoverti in città e lungo la costa." },
+  Scooter: { subtitle: "Due ruote", description: "Libertà su due ruote nella brezza mediterranea." },
+  Quad: { subtitle: "Avventura off-road", description: "Esplora sentieri e spiagge nascoste." },
 };
 
 const spanMap: Record<number, string> = {
@@ -66,9 +63,9 @@ const FleetShowcase = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[220px]">
             {categories.map((cat, i) => {
-              const meta = categoryMeta[cat] ?? { subtitle: cat, description: "", fallbackImage: "" };
+              const meta = categoryMeta[cat] ?? { subtitle: cat, description: "" };
               const firstVehicle = grouped[cat]?.[0];
-              const image = firstVehicle?.image_url ?? meta.fallbackImage;
+              const image = vehicleImageMap[firstVehicle?.model ?? ""] || firstVehicle?.image_url || "/placeholder.svg";
               const lowestPrice = Math.min(...grouped[cat].map((v) => v.price_low_season));
 
               return (

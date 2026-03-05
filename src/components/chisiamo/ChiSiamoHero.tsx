@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import chisiamoHero from "@/assets/chisiamo-hero.jpg";
 
 const ChiSiamoHero = () => {
   return (
     <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={chisiamoHero} alt="Sardegna" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-foreground/80" />
         <div className="absolute inset-0 bg-brand-dark/50" />
       </div>
       <motion.div
