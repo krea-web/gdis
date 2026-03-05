@@ -1,3 +1,11 @@
+const vehicleImageMap: Record<string, string> = {
+  "500": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/FIAT%20500%20BIANCA.jpg",
+  "Panda Hybrid": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/FIAT%20PANDA.jpeg",
+  "SH 125i": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH125.jpg",
+  "SH 350i": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH350.webp",
+  "Raptor 700R": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/YAMAHA%20RAPTOR%20QUAD%20BLU.jpg",
+};
+
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -78,7 +86,7 @@ const FleetShowcase = () => {
                   >
                     <div className="absolute inset-0">
                       <img
-                        src="INSERISCI_QUI_URL_FOTO"
+                        src={vehicleImageMap[firstVehicle?.model ?? ""] || image || "/placeholder.svg"}
                         alt={cat}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />

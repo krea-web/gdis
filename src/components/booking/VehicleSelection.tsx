@@ -1,3 +1,11 @@
+const vehicleImageMap: Record<string, string> = {
+  "500": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/FIAT%20500%20BIANCA.jpg",
+  "Panda Hybrid": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/FIAT%20PANDA.jpeg",
+  "SH 125i": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH125.jpg",
+  "SH 350i": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH350.webp",
+  "Raptor 700R": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/YAMAHA%20RAPTOR%20QUAD%20BLU.jpg",
+};
+
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useVehicles, type Vehicle } from "@/hooks/useVehicles";
@@ -56,7 +64,7 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                 )}
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img
-                    src="INSERISCI_QUI_URL_FOTO"
+                    src={vehicleImageMap[v.model] || v.image_url || "/placeholder.svg"}
                     alt={`${v.brand} ${v.model}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
