@@ -34,7 +34,7 @@ const categories = [
 
 const FleetShowcase = () => {
   return (
-    <section className="section-padding bg-brand-surface">
+    <section className="section-padding bg-transparent">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
