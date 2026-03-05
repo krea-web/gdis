@@ -77,15 +77,11 @@ const FleetShowcase = () => {
                     className="group relative rounded-2xl overflow-hidden h-full flex flex-col justify-end p-6 md:p-8 cursor-pointer"
                   >
                     <div className="absolute inset-0">
-                      {image ? (
-                        <img
-                          src={image}
-                          alt={cat}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                      ) : (
-                        <VehicleFallbackCard brand={cat} />
-                      )}
+                      <img
+                        src="INSERISCI_QUI_URL_FOTO"
+                        alt={cat}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
                     </div>
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-primary/10 mix-blend-overlay" />
