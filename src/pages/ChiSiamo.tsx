@@ -1,9 +1,22 @@
+import ChiSiamoHero from "@/components/chisiamo/ChiSiamoHero";
+import SplitTimeline from "@/components/chisiamo/SplitTimeline";
+import TrustMarquee2 from "@/components/chisiamo/TrustMarquee2";
+import FaqSection from "@/components/chisiamo/FaqSection";
+import SocialProof from "@/components/chisiamo/SocialProof";
+import LuxuryCta from "@/components/chisiamo/LuxuryCta";
+import FinalCta from "@/components/chisiamo/FinalCta";
+
 const ChiSiamo = () => {
   return (
-    <div className="container py-20">
-      <h1 className="font-display text-4xl font-bold text-foreground mb-4">Chi Siamo</h1>
-      <p className="text-muted-foreground">Pagina in costruzione.</p>
-    </div>
+    <>
+      <ChiSiamoHero />
+      <SplitTimeline />
+      <TrustMarquee2 />
+      <FaqSection />
+      <SocialProof />
+      <LuxuryCta />
+      <FinalCta />
+    </>
   );
 };
 
