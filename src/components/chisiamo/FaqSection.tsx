@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const faqs = [
+// Dati base (verranno mescolati dinamicamente)
+const initialFaqs = [
   {
     q: "Quali documenti servono per noleggiare?",
     a: "Patente di guida valida, carta d'identità o passaporto, e carta di credito intestata al conducente. Per i cittadini extra-UE serve anche il permesso internazionale di guida.",
@@ -47,6 +49,20 @@ const faqs = [
 ];
 
 const FaqSection = () => {
+  const [faqs, setFaqs] = useState(initialFaqs);
+
+  // Algoritmo per mescolare le domande in ordine casuale al caricamento
+  useEffect(() => {
+    const highlighted = initialFaqs.filter((f) => f.highlighted);
+    const normal = initialFaqs.filter((f) => !f.highlighted);
+
+    // Mescola solo le 3 domande principali
+    const shuffledHighlighted = [...highlighted].sort(() => Math.random() - 0.5);
+
+    // Unisce le domande mescolate con quelle normali
+    setFaqs([...shuffledHighlighted, ...normal]);
+  }, []);
+
   return (
     <section className="py-24 md:py-32 bg-slate-50 relative overflow-hidden">
       <div className="container px-4">
@@ -93,7 +109,8 @@ const FaqSection = () => {
             <Accordion type="single" collapsible className="space-y-6 w-full">
               {faqs.map((faq, i) => (
                 <motion.div
-                  key={`faq-${i}`}
+                  // Usiamo la domanda come chiave per evitare glitch grafici durante lo shuffle
+                  key={`faq-${faq.q}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -103,20 +120,24 @@ const FaqSection = () => {
                     value={`faq-${i}`}
                     className={`transition-all duration-300 ${
                       faq.highlighted
-                        ? "bg-white border border-blue-100 shadow-[0_4px_20px_rgba(0,0,255,0.05)] rounded-2xl px-6 data-[state=open]:shadow-[0_8px_30px_rgba(0,0,255,0.1)] data-[state=open]:border-blue-200"
-                        : "bg-transparent border-b border-slate-200 px-2 rounded-none hover:bg-white/50"
+                        ? // DESIGN CARD BLU
+                          "bg-blue-600 border border-blue-500 shadow-[0_10px_30px_rgba(0,0,255,0.2)] rounded-2xl px-6 data-[state=open]:shadow-[0_15px_40px_rgba(0,0,255,0.35)] data-[state=open]:scale-[1.02]"
+                        : // DESIGN CARD STANDARD
+                          "bg-transparent border-b border-slate-200 px-2 rounded-none hover:bg-white/50"
                     }`}
                   >
                     <AccordionTrigger
                       className={`text-left font-display text-lg hover:no-underline py-6 ${
-                        faq.highlighted ? "font-semibold text-blue-900" : "font-medium text-slate-800"
+                        faq.highlighted ? "font-semibold text-white [&>svg]:text-white" : "font-medium text-slate-800"
                       }`}
                     >
                       {faq.q}
                     </AccordionTrigger>
                     <AccordionContent
-                      className={`text-slate-500 font-light leading-relaxed pb-8 ${
-                        faq.highlighted ? "text-base pt-2 border-t border-slate-100" : "text-sm"
+                      className={`font-light leading-relaxed pb-8 ${
+                        faq.highlighted
+                          ? "text-blue-50 text-base pt-4 border-t border-blue-400/50"
+                          : "text-slate-500 text-sm"
                       }`}
                     >
                       {faq.a}
