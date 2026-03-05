@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container relative z-10 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-5">
-            <img src={gdisLogo} alt="GDIS" className="h-14 w-auto mb-6 brightness-0 invert" />
+            <img src={gdisLogo} alt="GDIS" className="h-14 w-auto mb-6" />
             <p className="text-primary-foreground/60 text-lg leading-relaxed max-w-sm">
               Noleggio auto, scooter, quad, veicoli di lusso e trasporto merci in Sardegna.
             </p>
