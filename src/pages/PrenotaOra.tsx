@@ -5,8 +5,11 @@ import DateSelection from "@/components/booking/DateSelection";
 import DriverForm from "@/components/booking/DriverForm";
 import SecondDriverStep from "@/components/booking/SecondDriverStep";
 import StickyQuote from "@/components/booking/StickyQuote";
+import BookingSuccess from "@/components/booking/BookingSuccess";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export type BookingState = {
   vehicle: { id: string; name: string; image: string; pricePerDay: number } | null;
@@ -33,8 +36,22 @@ const initialDriver = {
 
 const steps = ["Veicolo", "Date", "Dati Conducente", "Secondo Guidatore"];
 
+async function uploadLicense(file: File, prefix: string): Promise<string | null> {
+  const ext = file.name.split(".").pop();
+  const path = `${prefix}/${Date.now()}.${ext}`;
+  const { error } = await supabase.storage.from("documents").upload(path, file);
+  if (error) {
+    console.error("Upload error:", error);
+    return null;
+  }
+  const { data } = supabase.storage.from("documents").getPublicUrl(path);
+  return data.publicUrl;
+}
+
 const PrenotaOra = () => {
   const [step, setStep] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [booking, setBooking] = useState<BookingState>({
     vehicle: null,
     startDate: null,
@@ -47,24 +64,90 @@ const PrenotaOra = () => {
     setBooking((prev) => ({ ...prev, ...partial }));
   }, []);
 
+  const handleVehicleSelect = useCallback((v: BookingState["vehicle"]) => {
+    updateBooking({ vehicle: v });
+    // Auto-advance to step 2
+    setTimeout(() => setStep(1), 350);
+  }, [updateBooking]);
+
   const canNext = () => {
     switch (step) {
       case 0: return !!booking.vehicle;
       case 1: return !!booking.startDate && !!booking.endDate;
       case 2: {
         const d = booking.driver;
-        return d.nome && d.cognome && d.dataNascita && d.luogoNascita &&
-          d.viaResidenza && d.cittaResidenza && d.email && d.telefono && d.codiceFiscale;
+        return !!(d.nome && d.cognome && d.dataNascita && d.luogoNascita &&
+          d.viaResidenza && d.cittaResidenza && d.email && d.telefono && d.codiceFiscale);
       }
       case 3: return true;
       default: return false;
     }
   };
 
-  const handleSubmit = () => {
-    // Future: submit to Supabase
-    alert("Prenotazione inviata! Ti contatteremo presto.");
+  const handleSubmit = async () => {
+    if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
+    setSubmitting(true);
+
+    try {
+      // Upload license photos
+      let frontUrl: string | null = null;
+      let backUrl: string | null = null;
+
+      if (booking.driver.patenteFronte) {
+        frontUrl = await uploadLicense(booking.driver.patenteFronte, "license-front");
+      }
+      if (booking.driver.patenteRetro) {
+        backUrl = await uploadLicense(booking.driver.patenteRetro, "license-back");
+      }
+
+      // Calculate total
+      const days = Math.ceil(
+        (booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24)
+      );
+      const totalPrice = booking.vehicle.pricePerDay * days;
+
+      // Get current user (optional)
+      const { data: { user } } = await supabase.auth.getUser();
+
+      // Build second driver JSON
+      const driver2Info = booking.secondDriver.enabled
+        ? JSON.stringify({
+            nome: booking.secondDriver.nome,
+            cognome: booking.secondDriver.cognome,
+            dataNascita: booking.secondDriver.dataNascita,
+            luogoNascita: booking.secondDriver.luogoNascita,
+            viaResidenza: booking.secondDriver.viaResidenza,
+            cittaResidenza: booking.secondDriver.cittaResidenza,
+            email: booking.secondDriver.email,
+            telefono: booking.secondDriver.telefono,
+            codiceFiscale: booking.secondDriver.codiceFiscale,
+          })
+        : null;
+
+      const { error } = await supabase.from("bookings").insert({
+        user_id: user?.id ?? null,
+        vehicle_id: booking.vehicle.id,
+        start_date: booking.startDate.toISOString().split("T")[0],
+        end_date: booking.endDate.toISOString().split("T")[0],
+        total_price: totalPrice,
+        driver_license_front_url: frontUrl,
+        driver_license_back_url: backUrl,
+        driver_2_info: driver2Info,
+      });
+
+      if (error) throw error;
+      setSuccess(true);
+    } catch (err: any) {
+      console.error("Booking error:", err);
+      toast.error("Errore durante la prenotazione. Riprova.");
+    } finally {
+      setSubmitting(false);
+    }
   };
+
+  if (success) {
+    return <BookingSuccess booking={booking} />;
+  }
 
   return (
     <div className="min-h-screen bg-transparent pt-20">
@@ -108,7 +191,7 @@ const PrenotaOra = () => {
                 {step === 0 && (
                   <VehicleSelection
                     selected={booking.vehicle}
-                    onSelect={(v) => updateBooking({ vehicle: v })}
+                    onSelect={handleVehicleSelect}
                   />
                 )}
                 {step === 1 && (
@@ -161,10 +244,20 @@ const PrenotaOra = () => {
                   variant="hero"
                   size="lg"
                   onClick={handleSubmit}
+                  disabled={submitting}
                   className="gap-2"
                 >
-                  Conferma Prenotazione
-                  <Check size={16} />
+                  {submitting ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      Invio in corso...
+                    </>
+                  ) : (
+                    <>
+                      Conferma Prenotazione
+                      <Check size={16} />
+                    </>
+                  )}
                 </Button>
               )}
             </div>
