@@ -55,15 +55,11 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                   </div>
                 )}
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  {v.image_url ? (
-                    <img
-                      src={v.image_url}
-                      alt={`${v.brand} ${v.model}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <VehicleFallbackCard brand={v.brand} />
-                  )}
+                  <img
+                    src="INSERISCI_QUI_URL_FOTO"
+                    alt={`${v.brand} ${v.model}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-4">
                   <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{v.type}</span>
