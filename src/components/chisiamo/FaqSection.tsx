@@ -19,7 +19,7 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-transparent">
       <div className="container max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

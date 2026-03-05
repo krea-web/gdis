@@ -67,7 +67,7 @@ const PrenotaOra = () => {
   };
 
   return (
-    <div className="min-h-screen bg-brand-surface pt-20">
+    <div className="min-h-screen bg-transparent pt-20">
       {/* Step indicator */}
       <div className="container py-8">
         <div className="flex items-center justify-center gap-2 mb-4">
