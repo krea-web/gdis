@@ -21,8 +21,8 @@ const TrustMarquee2 = () => {
     ));
 
   return (
-    <section className="bg-primary py-4 rotate-1 scale-[1.02] z-10 relative">
-      <div className="flex animate-marquee whitespace-nowrap">
+    <section className="bg-primary py-4 rotate-1 z-10 relative overflow-hidden">
+      <div className="flex animate-marquee whitespace-nowrap w-[200%]">
         {renderItems()}
         {renderItems()}
         {renderItems()}
