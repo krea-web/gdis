@@ -38,7 +38,7 @@ const FaqSection = () => {
         <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((faq, i) => (
             <motion.div
-              key={i}
+              key={`faq-${faq.q.slice(0, 20)}`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

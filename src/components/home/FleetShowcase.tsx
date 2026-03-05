@@ -61,9 +61,9 @@ const FleetShowcase = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`${cat.span}`}
             >
-              <Link
-                to="/prenotaora"
-                className="group relative rounded-2xl overflow-hidden h-full flex flex-col justify-end p-6 md:p-8 cursor-pointer block"
+                <Link
+                  to="/prenotaora"
+                  className="group relative rounded-2xl overflow-hidden h-full flex flex-col justify-end p-6 md:p-8 cursor-pointer"
               >
                 {/* Background image */}
                 <div className="absolute inset-0">
