@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import gdisLogo from "@/assets/gdis-logo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,8 +18,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container flex items-center justify-between h-16">
         {/* Logo */}
-        <Link to="/" className="font-display font-bold text-xl tracking-tight text-foreground">
-          GDIS<span className="text-primary"> Rent</span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={gdisLogo} alt="GDIS Rent e Service" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
