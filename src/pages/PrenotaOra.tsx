@@ -70,6 +70,11 @@ const PrenotaOra = () => {
     secondDriver: { enabled: false, ...initialDriver },
   });
 
+  // Scroll to top on every step change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [step]);
+
   const updateBooking = useCallback((partial: Partial<BookingState>) => {
     setBooking((prev) => ({ ...prev, ...partial }));
   }, []);
