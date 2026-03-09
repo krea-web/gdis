@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useVehicles, type Vehicle } from "@/hooks/useVehicles";
 import VehicleCardSkeleton from "@/components/VehicleCardSkeleton";
-import VehicleFallbackCard from "@/components/VehicleFallbackCard";
 
 type SelectedVehicle = { id: string; name: string; image: string; pricePerDay: number };
 
@@ -22,9 +21,9 @@ type Props = {
 function toSelected(v: Vehicle): SelectedVehicle {
   return {
     id: v.id,
-    name: `${v.brand} ${v.model}`,
-    image: v.image_url ?? "",
-    pricePerDay: v.price_mid_season,
+    name: `${v.make} ${v.model}`,
+    image: vehicleImageMap[v.model] || v.image_url || "",
+    pricePerDay: v.daily_rate ?? 0,
   };
 }
 
@@ -65,15 +64,17 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img
                     src={vehicleImageMap[v.model] || v.image_url || "/placeholder.svg"}
-                    alt={`${v.brand} ${v.model}`}
+                    alt={`${v.make} ${v.model}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-4">
-                  <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{v.type}</span>
-                  <h3 className="font-display font-semibold text-foreground text-lg">{v.brand} {v.model}</h3>
+                  <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
+                    {v.category.replace(/_/g, " ").toUpperCase()}
+                  </span>
+                  <h3 className="font-display font-semibold text-foreground text-lg">{v.make} {v.model}</h3>
                   <p className="text-primary font-bold mt-1">
-                    A partire da €{v.price_mid_season}
+                    A partire da €{v.daily_rate ?? 0}
                     <span className="text-muted-foreground font-normal text-sm">/giorno</span>
                   </p>
                 </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Calendar, Car } from "lucide-react";
+import { CheckCircle2, Calendar, Car, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import type { BookingState } from "@/pages/PrenotaOra";
@@ -39,11 +39,12 @@ const BookingSuccess = ({ booking }: Props) => {
           className="space-y-3"
         >
           <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            Prenotazione Confermata!
+            Prenotazione completata!
           </h1>
-          <p className="text-muted-foreground text-lg">
-            Ti contatteremo presto per finalizzare il noleggio.
-          </p>
+          <div className="flex items-center justify-center gap-2 text-muted-foreground text-lg">
+            <Mail size={18} />
+            <p>Controlla la tua email per il contratto firmato.</p>
+          </div>
         </motion.div>
 
         <motion.div
