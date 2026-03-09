@@ -1,4 +1,4 @@
-import gdisLogo from "@/assets/gdis-logo.png";
+const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 import { motion } from "framer-motion";
 
 const items = [

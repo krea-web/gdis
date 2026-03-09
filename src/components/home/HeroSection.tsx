@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronDown, ArrowRight } from "lucide-react";
-// Assicurati che il percorso del logo sia corretto nel tuo progetto
-import gdisLogo from "@/assets/gdis-logo.png";
+const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 
 const HeroSection = () => {
   return (
