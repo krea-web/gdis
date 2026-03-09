@@ -46,7 +46,7 @@ const Footer = () => {
       {/* 2. LOGO GIGANTE INFERIORE (Effetto "Watermark" massiccio tagliato alla base) */}
       <div className="w-full flex justify-center translate-y-[15%] md:translate-y-[20%] pointer-events-none">
         <img
-          src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.png"
+          src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp"
           alt="GDIS Logo"
           className="w-[90%] md:w-[70%] max-w-[1200px] h-auto object-contain opacity-20 mix-blend-overlay drop-shadow-2xl"
         />
