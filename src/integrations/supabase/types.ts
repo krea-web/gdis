@@ -16,43 +16,109 @@ export type Database = {
     Tables: {
       bookings: {
         Row: {
-          contract_pdf_url: string | null
+          birth_date: string | null
+          birth_place: string | null
+          city: string | null
+          contract_url: string | null
           created_at: string
-          driver_2_info: string | null
-          driver_license_back_url: string | null
-          driver_license_front_url: string | null
+          customer_name: string | null
+          customer_surname: string | null
+          email: string | null
           end_date: string
+          has_second_driver: boolean | null
           id: string
+          license_back_url: string | null
+          license_front_url: string | null
+          phone: string | null
+          residence_address: string | null
+          second_driver_birth_date: string | null
+          second_driver_birth_place: string | null
+          second_driver_cf: string | null
+          second_driver_city: string | null
+          second_driver_email: string | null
+          second_driver_license_back_url: string | null
+          second_driver_license_front_url: string | null
+          second_driver_name: string | null
+          second_driver_phone: string | null
+          second_driver_residence_address: string | null
+          second_driver_surname: string | null
+          signed_at: string | null
+          signed_pdf_url: string | null
           start_date: string
           status: string | null
+          tax_code: string | null
           total_price: number
           user_id: string | null
           vehicle_id: string | null
         }
         Insert: {
-          contract_pdf_url?: string | null
+          birth_date?: string | null
+          birth_place?: string | null
+          city?: string | null
+          contract_url?: string | null
           created_at?: string
-          driver_2_info?: string | null
-          driver_license_back_url?: string | null
-          driver_license_front_url?: string | null
+          customer_name?: string | null
+          customer_surname?: string | null
+          email?: string | null
           end_date: string
+          has_second_driver?: boolean | null
           id?: string
+          license_back_url?: string | null
+          license_front_url?: string | null
+          phone?: string | null
+          residence_address?: string | null
+          second_driver_birth_date?: string | null
+          second_driver_birth_place?: string | null
+          second_driver_cf?: string | null
+          second_driver_city?: string | null
+          second_driver_email?: string | null
+          second_driver_license_back_url?: string | null
+          second_driver_license_front_url?: string | null
+          second_driver_name?: string | null
+          second_driver_phone?: string | null
+          second_driver_residence_address?: string | null
+          second_driver_surname?: string | null
+          signed_at?: string | null
+          signed_pdf_url?: string | null
           start_date: string
           status?: string | null
+          tax_code?: string | null
           total_price: number
           user_id?: string | null
           vehicle_id?: string | null
         }
         Update: {
-          contract_pdf_url?: string | null
+          birth_date?: string | null
+          birth_place?: string | null
+          city?: string | null
+          contract_url?: string | null
           created_at?: string
-          driver_2_info?: string | null
-          driver_license_back_url?: string | null
-          driver_license_front_url?: string | null
+          customer_name?: string | null
+          customer_surname?: string | null
+          email?: string | null
           end_date?: string
+          has_second_driver?: boolean | null
           id?: string
+          license_back_url?: string | null
+          license_front_url?: string | null
+          phone?: string | null
+          residence_address?: string | null
+          second_driver_birth_date?: string | null
+          second_driver_birth_place?: string | null
+          second_driver_cf?: string | null
+          second_driver_city?: string | null
+          second_driver_email?: string | null
+          second_driver_license_back_url?: string | null
+          second_driver_license_front_url?: string | null
+          second_driver_name?: string | null
+          second_driver_phone?: string | null
+          second_driver_residence_address?: string | null
+          second_driver_surname?: string | null
+          signed_at?: string | null
+          signed_pdf_url?: string | null
           start_date?: string
           status?: string | null
+          tax_code?: string | null
           total_price?: number
           user_id?: string | null
           vehicle_id?: string | null
@@ -74,81 +140,132 @@ export type Database = {
           },
         ]
       }
+      leads: {
+        Row: {
+          created_at: string | null
+          email: string | null
+          id: string
+        }
+        Insert: {
+          created_at?: string | null
+          email?: string | null
+          id?: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
+      pricing_periods: {
+        Row: {
+          end_date: string | null
+          id: string
+          price_multiplier: number | null
+          season: Database["public"]["Enums"]["season_type"] | null
+          start_date: string | null
+        }
+        Insert: {
+          end_date?: string | null
+          id?: string
+          price_multiplier?: number | null
+          season?: Database["public"]["Enums"]["season_type"] | null
+          start_date?: string | null
+        }
+        Update: {
+          end_date?: string | null
+          id?: string
+          price_multiplier?: number | null
+          season?: Database["public"]["Enums"]["season_type"] | null
+          start_date?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
           email: string | null
-          full_name: string | null
           id: string
-          role: string | null
+          is_admin: boolean | null
           verification_status: string | null
         }
         Insert: {
           created_at?: string
           email?: string | null
-          full_name?: string | null
           id: string
-          role?: string | null
+          is_admin?: boolean | null
           verification_status?: string | null
         }
         Update: {
           created_at?: string
           email?: string | null
-          full_name?: string | null
           id?: string
-          role?: string | null
+          is_admin?: boolean | null
           verification_status?: string | null
         }
         Relationships: []
       }
       vehicles: {
         Row: {
-          brand: string
+          available: boolean | null
+          category: string
+          characteristics: string | null
           color: string | null
           created_at: string
+          daily_rate: number | null
+          damage_policy: string | null
+          franchise_amount: number | null
+          fuel_type: string | null
           id: string
           image_url: string | null
-          km: number | null
-          maintenance_due: string | null
+          km_current: number | null
+          license_plate: string
+          logo_url: string | null
+          make: string
           model: string
-          plate: string
-          price_high_season: number
-          price_low_season: number
-          price_mid_season: number
-          status: string | null
-          type: string
+          next_revision_date: string | null
+          year: number | null
         }
         Insert: {
-          brand: string
+          available?: boolean | null
+          category: string
+          characteristics?: string | null
           color?: string | null
           created_at?: string
+          daily_rate?: number | null
+          damage_policy?: string | null
+          franchise_amount?: number | null
+          fuel_type?: string | null
           id?: string
           image_url?: string | null
-          km?: number | null
-          maintenance_due?: string | null
+          km_current?: number | null
+          license_plate: string
+          logo_url?: string | null
+          make: string
           model: string
-          plate: string
-          price_high_season: number
-          price_low_season: number
-          price_mid_season: number
-          status?: string | null
-          type: string
+          next_revision_date?: string | null
+          year?: number | null
         }
         Update: {
-          brand?: string
+          available?: boolean | null
+          category?: string
+          characteristics?: string | null
           color?: string | null
           created_at?: string
+          daily_rate?: number | null
+          damage_policy?: string | null
+          franchise_amount?: number | null
+          fuel_type?: string | null
           id?: string
           image_url?: string | null
-          km?: number | null
-          maintenance_due?: string | null
+          km_current?: number | null
+          license_plate?: string
+          logo_url?: string | null
+          make?: string
           model?: string
-          plate?: string
-          price_high_season?: number
-          price_low_season?: number
-          price_mid_season?: number
-          status?: string | null
-          type?: string
+          next_revision_date?: string | null
+          year?: number | null
         }
         Relationships: []
       }
@@ -160,7 +277,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      season_type: "low" | "mid" | "high"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -287,6 +404,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      season_type: ["low", "mid", "high"],
+    },
   },
 } as const
