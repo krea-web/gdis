@@ -66,7 +66,7 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
               className: "w-full",
               style: { width: "100%", height: 200 },
             }}
-            onEnd={() => setHasSigned(true)}
+            {...({ onEnd: () => setHasSigned(true), penColor: "black", backgroundColor: "white" } as any)}
           />
         </div>
 
