@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import VehicleSelection from "@/components/booking/VehicleSelection";
 import DateSelection from "@/components/booking/DateSelection";
@@ -69,6 +69,11 @@ const PrenotaOra = () => {
     driver: { ...initialDriver },
     secondDriver: { enabled: false, ...initialDriver },
   });
+
+  // Scroll to top on every step change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [step]);
 
   const updateBooking = useCallback((partial: Partial<BookingState>) => {
     setBooking((prev) => ({ ...prev, ...partial }));
