@@ -4,6 +4,7 @@ import VehicleSelection from "@/components/booking/VehicleSelection";
 import DateSelection from "@/components/booking/DateSelection";
 import DriverForm from "@/components/booking/DriverForm";
 import SecondDriverStep from "@/components/booking/SecondDriverStep";
+import SignatureStep from "@/components/booking/SignatureStep";
 import StickyQuote from "@/components/booking/StickyQuote";
 import BookingSuccess from "@/components/booking/BookingSuccess";
 import { Button } from "@/components/ui/button";
@@ -11,47 +12,56 @@ import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
+/* ── Types ─────────────────────────────────── */
+
+export type DriverData = {
+  nome: string; cognome: string; dataNascita: string; luogoNascita: string;
+  viaResidenza: string; cittaResidenza: string; email: string; telefono: string;
+  codiceFiscale: string; patenteFronte: File | null; patenteRetro: File | null;
+};
+
+export type SecondDriverData = DriverData & { enabled: boolean };
+
 export type BookingState = {
   vehicle: { id: string; name: string; image: string; pricePerDay: number } | null;
   startDate: Date | null;
   endDate: Date | null;
-  driver: {
-    nome: string; cognome: string; dataNascita: string; luogoNascita: string;
-    viaResidenza: string; cittaResidenza: string; email: string; telefono: string;
-    codiceFiscale: string; patenteFronte: File | null; patenteRetro: File | null;
-  };
-  secondDriver: {
-    enabled: boolean;
-    nome: string; cognome: string; dataNascita: string; luogoNascita: string;
-    viaResidenza: string; cittaResidenza: string; email: string; telefono: string;
-    codiceFiscale: string; patenteFronte: File | null; patenteRetro: File | null;
-  };
+  driver: DriverData;
+  secondDriver: SecondDriverData;
 };
 
-const initialDriver = {
+const initialDriver: DriverData = {
   nome: "", cognome: "", dataNascita: "", luogoNascita: "",
   viaResidenza: "", cittaResidenza: "", email: "", telefono: "",
-  codiceFiscale: "", patenteFronte: null as File | null, patenteRetro: null as File | null,
+  codiceFiscale: "", patenteFronte: null, patenteRetro: null,
 };
 
-const steps = ["Veicolo", "Date", "Dati Conducente", "Secondo Guidatore"];
+const steps = ["Veicolo", "Date", "Dati Conducente", "Secondo Guidatore", "Firma"];
+
+/* ── Webhook URLs ──────────────────────────── */
+
+const CHECK_AVAILABILITY_URL = "https://n8n.kreareweb.com/webhook/gdisrent/check-availability";
+const CREATE_BOOKING_URL = "https://n8n.kreareweb.com/webhook/gdisrent/create-booking";
+
+/* ── Helpers ───────────────────────────────── */
 
 async function uploadLicense(file: File, prefix: string): Promise<string | null> {
   const ext = file.name.split(".").pop();
   const path = `${prefix}/${Date.now()}.${ext}`;
   const { error } = await supabase.storage.from("documents").upload(path, file);
-  if (error) {
-    console.error("Upload error:", error);
-    return null;
-  }
+  if (error) { console.error("Upload error:", error); return null; }
   const { data } = supabase.storage.from("documents").getPublicUrl(path);
   return data.publicUrl;
 }
 
+/* ── Component ─────────────────────────────── */
+
 const PrenotaOra = () => {
   const [step, setStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
+  const [checkingAvailability, setCheckingAvailability] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [bookingId, setBookingId] = useState<string | null>(null);
   const [booking, setBooking] = useState<BookingState>({
     vehicle: null,
     startDate: null,
@@ -66,7 +76,6 @@ const PrenotaOra = () => {
 
   const handleVehicleSelect = useCallback((v: BookingState["vehicle"]) => {
     updateBooking({ vehicle: v });
-    // Auto-advance to step 2
     setTimeout(() => setStep(1), 350);
   }, [updateBooking]);
 
@@ -84,6 +93,35 @@ const PrenotaOra = () => {
     }
   };
 
+  /* Webhook 1: Check availability before leaving Step 2 (dates) */
+  const handleNextFromDates = async () => {
+    if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
+    setCheckingAvailability(true);
+    try {
+      const res = await fetch(CHECK_AVAILABILITY_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          vehicle_id: booking.vehicle.id,
+          start_date: booking.startDate.toISOString().split("T")[0],
+          end_date: booking.endDate.toISOString().split("T")[0],
+        }),
+      });
+      if (!res.ok) throw new Error("unavailable");
+      const data = await res.json();
+      if (data?.available === false) {
+        toast.error("Veicolo non disponibile per le date selezionate. Scegli un altro periodo.");
+        return;
+      }
+      setStep(2);
+    } catch {
+      toast.error("Impossibile verificare la disponibilità. Riprova.");
+    } finally {
+      setCheckingAvailability(false);
+    }
+  };
+
+  /* Webhook 2: Create booking + send to n8n */
   const handleSubmit = async () => {
     if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
     setSubmitting(true);
@@ -92,13 +130,17 @@ const PrenotaOra = () => {
       // Upload license photos
       let frontUrl: string | null = null;
       let backUrl: string | null = null;
+      let secondFrontUrl: string | null = null;
+      let secondBackUrl: string | null = null;
 
-      if (booking.driver.patenteFronte) {
+      if (booking.driver.patenteFronte)
         frontUrl = await uploadLicense(booking.driver.patenteFronte, "license-front");
-      }
-      if (booking.driver.patenteRetro) {
+      if (booking.driver.patenteRetro)
         backUrl = await uploadLicense(booking.driver.patenteRetro, "license-back");
-      }
+      if (booking.secondDriver.enabled && booking.secondDriver.patenteFronte)
+        secondFrontUrl = await uploadLicense(booking.secondDriver.patenteFronte, "second-license-front");
+      if (booking.secondDriver.enabled && booking.secondDriver.patenteRetro)
+        secondBackUrl = await uploadLicense(booking.secondDriver.patenteRetro, "second-license-back");
 
       // Calculate total
       const days = Math.ceil(
@@ -109,39 +151,77 @@ const PrenotaOra = () => {
       // Get current user (optional)
       const { data: { user } } = await supabase.auth.getUser();
 
-      // Build second driver JSON
-      const driver2Info = booking.secondDriver.enabled
-        ? JSON.stringify({
-            nome: booking.secondDriver.nome,
-            cognome: booking.secondDriver.cognome,
-            dataNascita: booking.secondDriver.dataNascita,
-            luogoNascita: booking.secondDriver.luogoNascita,
-            viaResidenza: booking.secondDriver.viaResidenza,
-            cittaResidenza: booking.secondDriver.cittaResidenza,
-            email: booking.secondDriver.email,
-            telefono: booking.secondDriver.telefono,
-            codiceFiscale: booking.secondDriver.codiceFiscale,
-          })
-        : null;
-
-      const { error } = await supabase.from("bookings").insert({
+      // Build insert payload matching new schema
+      const insertPayload = {
         user_id: user?.id ?? null,
         vehicle_id: booking.vehicle.id,
         start_date: booking.startDate.toISOString().split("T")[0],
         end_date: booking.endDate.toISOString().split("T")[0],
         total_price: totalPrice,
-        driver_license_front_url: frontUrl,
-        driver_license_back_url: backUrl,
-        driver_2_info: driver2Info,
-      });
+        customer_name: booking.driver.nome,
+        customer_surname: booking.driver.cognome,
+        email: booking.driver.email,
+        phone: booking.driver.telefono,
+        tax_code: booking.driver.codiceFiscale,
+        birth_date: booking.driver.dataNascita,
+        birth_place: booking.driver.luogoNascita,
+        residence_address: booking.driver.viaResidenza,
+        city: booking.driver.cittaResidenza,
+        license_front_url: frontUrl,
+        license_back_url: backUrl,
+        has_second_driver: booking.secondDriver.enabled,
+        ...(booking.secondDriver.enabled ? {
+          second_driver_name: booking.secondDriver.nome,
+          second_driver_surname: booking.secondDriver.cognome,
+          second_driver_email: booking.secondDriver.email,
+          second_driver_phone: booking.secondDriver.telefono,
+          second_driver_cf: booking.secondDriver.codiceFiscale,
+          second_driver_birth_date: booking.secondDriver.dataNascita,
+          second_driver_birth_place: booking.secondDriver.luogoNascita,
+          second_driver_residence_address: booking.secondDriver.viaResidenza,
+          second_driver_city: booking.secondDriver.cittaResidenza,
+          second_driver_license_front_url: secondFrontUrl,
+          second_driver_license_back_url: secondBackUrl,
+        } : {}),
+      };
+
+      // Step 1: Insert into Supabase
+      const { data: insertedBooking, error } = await supabase
+        .from("bookings")
+        .insert(insertPayload)
+        .select("id")
+        .single();
 
       if (error) throw error;
-      setSuccess(true);
+
+      const newBookingId = insertedBooking.id;
+      setBookingId(newBookingId);
+
+      // Step 2: POST to n8n webhook
+      await fetch(CREATE_BOOKING_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...insertPayload, id: newBookingId }),
+      });
+
+      // Move to signature step
+      setStep(4);
     } catch (err: any) {
       console.error("Booking error:", err);
       toast.error("Errore durante la prenotazione. Riprova.");
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  /* Handle next button */
+  const handleNext = () => {
+    if (step === 1) {
+      handleNextFromDates();
+    } else if (step === 3) {
+      handleSubmit();
+    } else {
+      setStep(step + 1);
     }
   };
 
@@ -189,10 +269,7 @@ const PrenotaOra = () => {
                 transition={{ duration: 0.3 }}
               >
                 {step === 0 && (
-                  <VehicleSelection
-                    selected={booking.vehicle}
-                    onSelect={handleVehicleSelect}
-                  />
+                  <VehicleSelection selected={booking.vehicle} onSelect={handleVehicleSelect} />
                 )}
                 {step === 1 && (
                   <DateSelection
@@ -213,54 +290,72 @@ const PrenotaOra = () => {
                     onChange={(secondDriver) => updateBooking({ secondDriver })}
                   />
                 )}
+                {step === 4 && bookingId && (
+                  <SignatureStep
+                    bookingId={bookingId}
+                    onComplete={() => setSuccess(true)}
+                  />
+                )}
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation */}
-            <div className="flex items-center justify-between mt-10">
-              <Button
-                variant="ghost"
-                size="lg"
-                onClick={() => setStep(Math.max(0, step - 1))}
-                disabled={step === 0}
-                className="gap-2"
-              >
-                <ArrowLeft size={16} />
-                Indietro
-              </Button>
-              {step < 3 ? (
+            {/* Navigation (hidden on step 4 — signature has its own buttons) */}
+            {step < 4 && (
+              <div className="flex items-center justify-between mt-10">
                 <Button
-                  variant="hero"
+                  variant="ghost"
                   size="lg"
-                  onClick={() => setStep(step + 1)}
-                  disabled={!canNext()}
+                  onClick={() => setStep(Math.max(0, step - 1))}
+                  disabled={step === 0}
                   className="gap-2"
                 >
-                  Avanti
-                  <ArrowRight size={16} />
+                  <ArrowLeft size={16} />
+                  Indietro
                 </Button>
-              ) : (
-                <Button
-                  variant="hero"
-                  size="lg"
-                  onClick={handleSubmit}
-                  disabled={submitting}
-                  className="gap-2"
-                >
-                  {submitting ? (
-                    <>
-                      <Loader2 size={16} className="animate-spin" />
-                      Invio in corso...
-                    </>
-                  ) : (
-                    <>
-                      Conferma Prenotazione
-                      <Check size={16} />
-                    </>
-                  )}
-                </Button>
-              )}
-            </div>
+
+                {step < 3 ? (
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    onClick={handleNext}
+                    disabled={!canNext() || checkingAvailability}
+                    className="gap-2"
+                  >
+                    {checkingAvailability ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" />
+                        Verifica disponibilità...
+                      </>
+                    ) : (
+                      <>
+                        Avanti
+                        <ArrowRight size={16} />
+                      </>
+                    )}
+                  </Button>
+                ) : (
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    onClick={handleSubmit}
+                    disabled={submitting}
+                    className="gap-2"
+                  >
+                    {submitting ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" />
+                        Generazione contratto in corso...
+                      </>
+                    ) : (
+                      <>
+                        Conferma Prenotazione
+                        <Check size={16} />
+                      </>
+                    )}
+                  </Button>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Sticky quote sidebar */}

@@ -9,14 +9,13 @@ const vehicleImageMap: Record<string, string> = {
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useVehicles, groupByType } from "@/hooks/useVehicles";
+import { useVehicles, groupByCategory } from "@/hooks/useVehicles";
 import { Skeleton } from "@/components/ui/skeleton";
-import VehicleFallbackCard from "@/components/VehicleFallbackCard";
 
 const categoryMeta: Record<string, { subtitle: string; description: string }> = {
-  Citycar: { subtitle: "Utilitarie e berline", description: "Perfette per muoverti in città e lungo la costa." },
-  Scooter: { subtitle: "Due ruote", description: "Libertà su due ruote nella brezza mediterranea." },
-  Quad: { subtitle: "Avventura off-road", description: "Esplora sentieri e spiagge nascoste." },
+  city_car: { subtitle: "Utilitarie e berline", description: "Perfette per muoverti in città e lungo la costa." },
+  scooter: { subtitle: "Due ruote", description: "Libertà su due ruote nella brezza mediterranea." },
+  quad: { subtitle: "Avventura off-road", description: "Esplora sentieri e spiagge nascoste." },
 };
 
 const spanMap: Record<number, string> = {
@@ -25,7 +24,7 @@ const spanMap: Record<number, string> = {
 
 const FleetShowcase = () => {
   const { data: vehicles, isLoading } = useVehicles();
-  const grouped = vehicles ? groupByType(vehicles) : {};
+  const grouped = vehicles ? groupByCategory(vehicles) : {};
   const categories = Object.keys(grouped).length > 0 ? Object.keys(grouped) : [];
 
   return (
@@ -66,7 +65,7 @@ const FleetShowcase = () => {
               const meta = categoryMeta[cat] ?? { subtitle: cat, description: "" };
               const firstVehicle = grouped[cat]?.[0];
               const image = vehicleImageMap[firstVehicle?.model ?? ""] || firstVehicle?.image_url || "/placeholder.svg";
-              const lowestPrice = Math.min(...grouped[cat].map((v) => v.price_low_season));
+              const lowestPrice = Math.min(...grouped[cat].map((v) => v.daily_rate ?? 0));
 
               return (
                 <motion.div
@@ -83,7 +82,7 @@ const FleetShowcase = () => {
                   >
                     <div className="absolute inset-0">
                       <img
-                        src={vehicleImageMap[firstVehicle?.model ?? ""] || image || "/placeholder.svg"}
+                        src={image}
                         alt={cat}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
@@ -97,7 +96,7 @@ const FleetShowcase = () => {
                       <div className="flex items-end justify-between mt-1">
                         <div>
                           <h3 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground">
-                            {cat.replace("_", " ").toUpperCase()}
+                            {cat.replace(/_/g, " ").toUpperCase()}
                           </h3>
                           <p className="text-primary-foreground/70 text-sm mt-1">
                             A partire da €{lowestPrice}/giorno

@@ -3,28 +3,32 @@ import { supabase } from "@/integrations/supabase/client";
 
 export type Vehicle = {
   id: string;
-  type: string;
-  brand: string;
+  category: string;
+  make: string;
   model: string;
-  plate?: string;
-  color?: string;
-  km?: number;
-  maintenance_due?: string | null;
-  price_low_season: number;
-  price_mid_season: number;
-  price_high_season: number;
+  license_plate: string;
+  color?: string | null;
+  km_current?: number | null;
+  next_revision_date?: string | null;
+  daily_rate: number | null;
   image_url: string | null;
-  status: string;
+  logo_url: string | null;
+  available: boolean | null;
+  fuel_type: string | null;
+  year: number | null;
+  characteristics: string | null;
+  damage_policy: string | null;
+  franchise_amount: number | null;
 };
 
 async function fetchVehicles(): Promise<Vehicle[]> {
   const { data, error } = await supabase
     .from("vehicles")
     .select("*")
-    .eq("status", "available");
+    .eq("available", true);
 
   if (error) throw error;
-  return (data ?? []) as Vehicle[];
+  return (data ?? []) as unknown as Vehicle[];
 }
 
 export function useVehicles() {
@@ -35,10 +39,10 @@ export function useVehicles() {
   });
 }
 
-/** Group vehicles by their `type` field */
-export function groupByType(vehicles: Vehicle[]): Record<string, Vehicle[]> {
+/** Group vehicles by their `category` field */
+export function groupByCategory(vehicles: Vehicle[]): Record<string, Vehicle[]> {
   return vehicles.reduce((acc, v) => {
-    const key = v.type ?? "Altro";
+    const key = v.category ?? "Altro";
     if (!acc[key]) acc[key] = [];
     acc[key].push(v);
     return acc;

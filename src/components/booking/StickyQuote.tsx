@@ -1,4 +1,4 @@
-import { Car, Calendar, User, Users, Check } from "lucide-react";
+import { Car, Calendar, User, Users, PenTool, Check } from "lucide-react";
 import type { BookingState } from "@/pages/PrenotaOra";
 
 type Props = {
@@ -19,6 +19,7 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
     { icon: Calendar, label: "Date", done: !!booking.startDate && !!booking.endDate },
     { icon: User, label: "Conducente", done: !!booking.driver.nome },
     { icon: Users, label: "2° Guidatore", done: booking.secondDriver.enabled && !!booking.secondDriver.nome },
+    { icon: PenTool, label: "Firma", done: currentStep > 4 },
   ];
 
   return (
