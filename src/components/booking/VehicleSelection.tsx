@@ -11,7 +11,7 @@ import { Check } from "lucide-react";
 import { useVehicles, type Vehicle } from "@/hooks/useVehicles";
 import VehicleCardSkeleton from "@/components/VehicleCardSkeleton";
 
-type SelectedVehicle = { id: string; name: string; image: string; pricePerDay: number };
+type SelectedVehicle = { id: string; name: string; image: string; pricePerDay: number; vehicleData?: Vehicle };
 
 type Props = {
   selected: SelectedVehicle | null;
