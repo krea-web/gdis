@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import SEOHead from "@/components/SEOHead";
 import VehicleSelection from "@/components/booking/VehicleSelection";
 import DateSelection from "@/components/booking/DateSelection";
 import DriverForm from "@/components/booking/DriverForm";
@@ -70,7 +71,6 @@ const PrenotaOra = () => {
     secondDriver: { enabled: false, ...initialDriver },
   });
 
-  // Scroll to top on every step change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [step]);
@@ -98,7 +98,6 @@ const PrenotaOra = () => {
     }
   };
 
-  /* Webhook 1: Check availability before leaving Step 2 (dates) */
   const handleNextFromDates = async () => {
     if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
     setCheckingAvailability(true);
@@ -126,13 +125,11 @@ const PrenotaOra = () => {
     }
   };
 
-  /* Webhook 2: Create booking + send to n8n */
   const handleSubmit = async () => {
     if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
     setSubmitting(true);
 
     try {
-      // Upload license photos
       let frontUrl: string | null = null;
       let backUrl: string | null = null;
       let secondFrontUrl: string | null = null;
@@ -147,16 +144,13 @@ const PrenotaOra = () => {
       if (booking.secondDriver.enabled && booking.secondDriver.patenteRetro)
         secondBackUrl = await uploadLicense(booking.secondDriver.patenteRetro, "second-license-back");
 
-      // Calculate total
       const days = Math.ceil(
         (booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24)
       );
       const totalPrice = booking.vehicle.pricePerDay * days;
 
-      // Get current user (optional)
       const { data: { user } } = await supabase.auth.getUser();
 
-      // Build insert payload matching new schema
       const insertPayload = {
         user_id: user?.id ?? null,
         vehicle_id: booking.vehicle.id,
@@ -190,7 +184,6 @@ const PrenotaOra = () => {
         } : {}),
       };
 
-      // Step 1: Insert into Supabase
       const { data: insertedBooking, error } = await supabase
         .from("bookings")
         .insert(insertPayload)
@@ -202,14 +195,12 @@ const PrenotaOra = () => {
       const newBookingId = insertedBooking.id;
       setBookingId(newBookingId);
 
-      // Step 2: POST to n8n webhook
       await fetch(CREATE_BOOKING_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...insertPayload, id: newBookingId }),
       });
 
-      // Move to signature step
       setStep(4);
     } catch (err: any) {
       console.error("Booking error:", err);
@@ -219,7 +210,6 @@ const PrenotaOra = () => {
     }
   };
 
-  /* Handle next button */
   const handleNext = () => {
     if (step === 1) {
       handleNextFromDates();
@@ -236,6 +226,12 @@ const PrenotaOra = () => {
 
   return (
     <div className="min-h-screen bg-transparent pt-20">
+      <SEOHead
+        title="Prenota Ora — GDIS Rent | Noleggio Online in Sardegna"
+        description="Prenota online il tuo veicolo in Sardegna: auto, scooter, quad e luxury. Procedura rapida in 5 step, firma digitale e consegna VIP inclusa."
+        canonical="/prenotaora"
+      />
+
       {/* Step indicator */}
       <div className="container py-8">
         <div className="flex items-center justify-center gap-2 mb-4">
@@ -263,7 +259,6 @@ const PrenotaOra = () => {
 
       <div className="container pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Main content */}
           <div className="lg:col-span-8">
             <AnimatePresence mode="wait">
               <motion.div
@@ -304,7 +299,6 @@ const PrenotaOra = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation (hidden on step 4 — signature has its own buttons) */}
             {step < 4 && (
               <div className="flex items-center justify-between mt-10">
                 <Button
@@ -363,7 +357,6 @@ const PrenotaOra = () => {
             )}
           </div>
 
-          {/* Sticky quote sidebar */}
           <div className="lg:col-span-4">
             <StickyQuote booking={booking} currentStep={step} />
           </div>
