@@ -19,7 +19,7 @@ const DateSelection = ({ startDate, endDate, onSelect }: Props) => {
       </h2>
       <p className="text-muted-foreground mb-8">Scegli il periodo del noleggio.</p>
 
-      <div className="bg-card rounded-2xl border border-border p-6 inline-block">
+      <div className="bg-card rounded-2xl border border-border p-4 md:p-6 inline-block">
         <Calendar
           mode="range"
           selected={dateRange}

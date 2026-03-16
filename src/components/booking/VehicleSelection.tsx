@@ -50,10 +50,10 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => onSelect(sel)}
-                className={`relative group rounded-2xl border-2 overflow-hidden cursor-pointer transition-all duration-300 ${
+                className={`relative group rounded-2xl border-2 overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 ${
                   selected?.id === v.id
                     ? "border-primary blue-glow-sm"
-                    : "border-border hover:border-primary/30"
+                    : "border-border hover:border-primary/30 hover:shadow-[0_10px_30px_hsl(var(--primary)/0.15)]"
                 }`}
               >
                 {selected?.id === v.id && (
@@ -65,6 +65,7 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                   <img
                     src={vehicleImageMap[v.model] || v.image_url || "/placeholder.svg"}
                     alt={`${v.make} ${v.model}`}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

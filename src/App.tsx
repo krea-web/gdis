@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import ChiSiamo from "./pages/ChiSiamo";
 import PrenotaOra from "./pages/PrenotaOra";
+import NoleggioCostaSmearalda from "./pages/NoleggioCostaSmearalda";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/chisiamo" element={<ChiSiamo />} />
             <Route path="/prenotaora" element={<PrenotaOra />} />
+            <Route path="/noleggio-in-costa-smeralda" element={<NoleggioCostaSmearalda />} />
             <Route path="/admin" element={<Admin />} />
           </Route>
           <Route path="*" element={<NotFound />} />
