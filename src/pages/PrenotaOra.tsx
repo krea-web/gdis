@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { getMonthlyRate, type Vehicle } from "@/hooks/useVehicles";
 
 /* ── Types ─────────────────────────────────── */
 
@@ -24,7 +25,7 @@ export type DriverData = {
 export type SecondDriverData = DriverData & { enabled: boolean };
 
 export type BookingState = {
-  vehicle: { id: string; name: string; image: string; pricePerDay: number } | null;
+  vehicle: { id: string; name: string; image: string; pricePerDay: number; vehicleData?: Vehicle } | null;
   startDate: Date | null;
   endDate: Date | null;
   driver: DriverData;
@@ -49,9 +50,9 @@ const CREATE_BOOKING_URL = "https://n8n.kreareweb.com/webhook/gdisrent/create-bo
 async function uploadLicense(file: File, prefix: string): Promise<string | null> {
   const ext = file.name.split(".").pop();
   const path = `${prefix}/${Date.now()}.${ext}`;
-  const { error } = await supabase.storage.from("documents").upload(path, file);
+  const { error } = await supabase.storage.from("licenses").upload(path, file);
   if (error) { console.error("Upload error:", error); return null; }
-  const { data } = supabase.storage.from("documents").getPublicUrl(path);
+  const { data } = supabase.storage.from("licenses").getPublicUrl(path);
   return data.publicUrl;
 }
 
@@ -147,7 +148,10 @@ const PrenotaOra = () => {
       const days = Math.ceil(
         (booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24)
       );
-      const totalPrice = booking.vehicle.pricePerDay * days;
+      const ratePerDay = booking.vehicle.vehicleData
+        ? getMonthlyRate(booking.vehicle.vehicleData, booking.startDate.getMonth())
+        : booking.vehicle.pricePerDay;
+      const totalPrice = ratePerDay * days;
 
       const { data: { user } } = await supabase.auth.getUser();
 

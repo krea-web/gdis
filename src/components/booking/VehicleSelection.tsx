@@ -11,7 +11,7 @@ import { Check } from "lucide-react";
 import { useVehicles, type Vehicle } from "@/hooks/useVehicles";
 import VehicleCardSkeleton from "@/components/VehicleCardSkeleton";
 
-type SelectedVehicle = { id: string; name: string; image: string; pricePerDay: number };
+type SelectedVehicle = { id: string; name: string; image: string; pricePerDay: number; vehicleData?: Vehicle };
 
 type Props = {
   selected: SelectedVehicle | null;
@@ -24,6 +24,7 @@ function toSelected(v: Vehicle): SelectedVehicle {
     name: `${v.make} ${v.model}`,
     image: vehicleImageMap[v.model] || v.image_url || "",
     pricePerDay: v.daily_rate ?? 0,
+    vehicleData: v,
   };
 }
 
