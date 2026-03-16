@@ -10,31 +10,44 @@ const vehicleImageMap: Record<string, string> = {
   "Panda Hybrid": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/FIAT%20PANDA.jpeg",
   "SH 125i": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH125.jpg",
   "SH 350i": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH350.webp",
-  "Raptor 700R": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/YAMAHA%20RAPTOR%20QUAD%20BLU.jpg",
+  "Raptor 700R":
+    "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/YAMAHA%20RAPTOR%20QUAD%20BLU.jpg",
 };
 
 // Meta Info per ogni categoria
 const categoryMeta: Record<string, { title: string; subtitle: string; description: string }> = {
-  city_car: { title: "City Car", subtitle: "Utilitarie e berline", description: "Design compatto ed eleganza per muoverti in città e scoprire la costa con il massimo comfort." },
-  quad: { title: "Quad", subtitle: "Avventura off-road", description: "Potenza e adrenalina pura. Esplora sentieri sterrati e spiagge nascoste che le auto non possono raggiungere." },
-  scooter: { title: "Scooter", subtitle: "Due ruote", description: "Evita il traffico e goditi la libertà assoluta. La brezza mediterranea sulla pelle in ogni tuo spostamento." },
+  city_car: {
+    title: "City Car",
+    subtitle: "Utilitarie e berline",
+    description: "Design compatto ed eleganza per muoverti in città e scoprire la costa con il massimo comfort.",
+  },
+  quad: {
+    title: "Quad",
+    subtitle: "Avventura off-road",
+    description:
+      "Potenza e adrenalina pura. Esplora sentieri sterrati e spiagge nascoste che le auto non possono raggiungere.",
+  },
+  scooter: {
+    title: "Scooter",
+    subtitle: "Due ruote",
+    description:
+      "Evita il traffico e goditi la libertà assoluta. La brezza mediterranea sulla pelle in ogni tuo spostamento.",
+  },
 };
 
-// L'ORDINE ESATTO RICHIESTO DAL CLIENTE
+// L'ORDINE ESATTO RICHIESTO
 const DESIRED_ORDER = ["city_car", "quad", "scooter"];
 
 const FleetShowcase = () => {
   const { data: vehicles, isLoading } = useVehicles();
   const grouped = vehicles ? groupByCategory(vehicles) : {};
-  
+
   // Filtriamo le categorie disponibili rispettando rigorosamente l'ordine desiderato
-  const availableCategories = DESIRED_ORDER.filter(cat => grouped[cat] && grouped[cat].length > 0);
+  const availableCategories = DESIRED_ORDER.filter((cat) => grouped[cat] && grouped[cat].length > 0);
 
   return (
     <section className="py-24 md:py-32 bg-slate-50 overflow-hidden">
       <div className="container px-4">
-        
-        {/* HEADER SEZIONE */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +64,6 @@ const FleetShowcase = () => {
           </h2>
         </motion.div>
 
-        {/* LOADING STATE (Skeleton grandi come i nuovi blocchi) */}
         {isLoading ? (
           <div className="flex flex-col gap-16 md:gap-24">
             {[1, 2, 3].map((i) => (
@@ -59,12 +71,9 @@ const FleetShowcase = () => {
             ))}
           </div>
         ) : (
-          
-          {/* VETRINA VEICOLI (Grandi blocchi impilati) */}
           <div className="flex flex-col gap-16 md:gap-24">
             {availableCategories.map((cat, i) => {
               const meta = categoryMeta[cat];
-              // Prendiamo il primo veicolo disponibile per quella categoria per l'immagine
               const firstVehicle = grouped[cat][0];
               const image = vehicleImageMap[firstVehicle?.model ?? ""] || firstVehicle?.image_url || "/placeholder.jpg";
               const lowestPrice = Math.min(...grouped[cat].map((v) => v.daily_rate ?? 0));
@@ -81,7 +90,6 @@ const FleetShowcase = () => {
                     to="/prenotaora"
                     className="group relative block w-full h-[500px] md:h-[600px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,255,0.2)] hover:-translate-y-2 cursor-pointer"
                   >
-                    {/* Immagine di Sfondo con Effetto Zoom al passaggio del mouse */}
                     <div className="absolute inset-0 bg-slate-200">
                       <img
                         src={image}
@@ -90,12 +98,9 @@ const FleetShowcase = () => {
                       />
                     </div>
 
-                    {/* Overlay Sfumato per leggibilità del testo (Sempre nero per stile premium) */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
 
-                    {/* Contenuto Testuale (Posizionato in basso) */}
                     <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
-                      
                       <div className="max-w-2xl">
                         <span className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-3 block drop-shadow-md">
                           {meta.subtitle}
@@ -113,14 +118,12 @@ const FleetShowcase = () => {
                         </div>
                       </div>
 
-                      {/* Bottone Interattivo */}
                       <div className="shrink-0">
                         <div className="flex items-center gap-4 bg-white text-slate-900 rounded-full px-8 py-4 font-bold shadow-lg transition-transform duration-300 group-hover:bg-blue-600 group-hover:text-white">
                           <span>Prenota Ora</span>
                           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
-
                     </div>
                   </Link>
                 </motion.div>
