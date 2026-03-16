@@ -18,6 +18,7 @@ const Layout = () => {
       </main>
       <Footer />
       <WhatsAppWidget />
+      <MobileStickyCTA />
     </div>
   );
 };
