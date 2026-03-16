@@ -1,5 +1,6 @@
 import { Car, Calendar, User, Users, PenTool, Check } from "lucide-react";
 import type { BookingState } from "@/pages/PrenotaOra";
+import { getMonthlyRate } from "@/hooks/useVehicles";
 
 type Props = {
   booking: BookingState;
@@ -12,7 +13,12 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
       ? Math.ceil((booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24))
       : 0;
 
-  const totalPrice = booking.vehicle ? booking.vehicle.pricePerDay * days : 0;
+  const ratePerDay =
+    booking.vehicle?.vehicleData && booking.startDate
+      ? getMonthlyRate(booking.vehicle.vehicleData, booking.startDate.getMonth())
+      : booking.vehicle?.pricePerDay ?? 0;
+
+  const totalPrice = ratePerDay * days;
 
   const stepsInfo = [
     { icon: Car, label: "Veicolo", done: !!booking.vehicle },
