@@ -90,7 +90,7 @@ const FleetShowcase = () => {
             {availableCategories.map((cat, i) => {
               const meta = categoryMeta[cat];
               const image = transparentImageMap[cat];
-              const lowestPrice = Math.min(...grouped[cat].map((v) => v.daily_rate ?? 0));
+              const lowestPrice = Math.min(...grouped[cat].map((v) => getLowestRate(v)));
 
               // Logica Alternata: I pari hanno immagine a destra, i dispari a sinistra
               const isEven = i % 2 === 0;

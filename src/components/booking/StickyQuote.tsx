@@ -57,7 +57,7 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
             {booking.vehicle && (
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">{booking.vehicle.name}</span>
-                <span className="text-foreground font-medium">€{booking.vehicle.pricePerDay}/g</span>
+                <span className="text-foreground font-medium">€{ratePerDay}/g</span>
               </div>
             )}
             {days > 0 && (

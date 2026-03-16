@@ -24,6 +24,7 @@ function toSelected(v: Vehicle): SelectedVehicle {
     name: `${v.make} ${v.model}`,
     image: vehicleImageMap[v.model] || v.image_url || "",
     pricePerDay: v.daily_rate ?? 0,
+    vehicleData: v,
   };
 }
 
