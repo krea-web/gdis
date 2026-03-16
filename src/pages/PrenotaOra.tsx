@@ -25,7 +25,7 @@ export type DriverData = {
 export type SecondDriverData = DriverData & { enabled: boolean };
 
 export type BookingState = {
-  vehicle: { id: string; name: string; image: string; pricePerDay: number } | null;
+  vehicle: { id: string; name: string; image: string; pricePerDay: number; vehicleData?: Vehicle } | null;
   startDate: Date | null;
   endDate: Date | null;
   driver: DriverData;
