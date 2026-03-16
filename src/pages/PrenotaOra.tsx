@@ -50,9 +50,9 @@ const CREATE_BOOKING_URL = "https://n8n.kreareweb.com/webhook/gdisrent/create-bo
 async function uploadLicense(file: File, prefix: string): Promise<string | null> {
   const ext = file.name.split(".").pop();
   const path = `${prefix}/${Date.now()}.${ext}`;
-  const { error } = await supabase.storage.from("documents").upload(path, file);
+  const { error } = await supabase.storage.from("licenses").upload(path, file);
   if (error) { console.error("Upload error:", error); return null; }
-  const { data } = supabase.storage.from("documents").getPublicUrl(path);
+  const { data } = supabase.storage.from("licenses").getPublicUrl(path);
   return data.publicUrl;
 }
 
