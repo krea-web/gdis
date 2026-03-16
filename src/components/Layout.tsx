@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import MobileStickyCTA from "@/components/MobileStickyCTA";
 import BackgroundGrid from "@/components/BackgroundGrid";
 import { Outlet, useLocation } from "react-router-dom";
 
