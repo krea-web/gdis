@@ -4,7 +4,7 @@ const WhatsAppWidget = () => {
       href="https://wa.me/393520459150"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-15 h-15 rounded-full bg-[#25D366] shadow-xl animate-float-pulse"
+      className="fixed bottom-20 md:bottom-6 right-6 z-50 flex items-center justify-center w-15 h-15 rounded-full bg-[#25D366] shadow-xl animate-float-pulse"
       style={{ width: 60, height: 60 }}
       aria-label="Contattaci su WhatsApp"
     >
