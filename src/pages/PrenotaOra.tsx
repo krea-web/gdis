@@ -148,7 +148,10 @@ const PrenotaOra = () => {
       const days = Math.ceil(
         (booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24)
       );
-      const totalPrice = booking.vehicle.pricePerDay * days;
+      const ratePerDay = booking.vehicle.vehicleData
+        ? getMonthlyRate(booking.vehicle.vehicleData, booking.startDate.getMonth())
+        : booking.vehicle.pricePerDay;
+      const totalPrice = ratePerDay * days;
 
       const { data: { user } } = await supabase.auth.getUser();
 
