@@ -42,8 +42,8 @@ const steps = ["Veicolo", "Date", "Dati Conducente", "Secondo Guidatore", "Firma
 
 /* ── Webhook URLs ──────────────────────────── */
 
-const CHECK_AVAILABILITY_URL = "https://n8n.kreareweb.com/webhook/gdisrent/check-availability";
-const CREATE_BOOKING_URL = "https://n8n.kreareweb.com/webhook/gdisrent/create-booking";
+const CHECK_AVAILABILITY_URL = "https://n8n.kreareweb.com/webhook/gdis/check-availability";
+const CREATE_BOOKING_URL = "https://n8n.kreareweb.com/webhook/gdis/create-booking";
 
 /* ── Helpers ───────────────────────────────── */
 

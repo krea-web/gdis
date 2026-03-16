@@ -8,7 +8,7 @@ type Props = {
   onComplete: () => void;
 };
 
-const SIGN_WEBHOOK = "https://n8n.kreareweb.com/webhook/gdisrent/sign";
+const SIGN_WEBHOOK = "https://n8n.kreareweb.com/webhook/gdis/sign";
 
 const SignatureStep = ({ bookingId, onComplete }: Props) => {
   const sigRef = useRef<SignatureCanvas>(null);
