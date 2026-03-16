@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useVehicles, groupByCategory } from "@/hooks/useVehicles";
+import { useVehicles, groupByCategory, getLowestRate } from "@/hooks/useVehicles";
 import { Skeleton } from "@/components/ui/skeleton";
 
 // Mappatura dei nuovi PNG trasparenti per categoria
