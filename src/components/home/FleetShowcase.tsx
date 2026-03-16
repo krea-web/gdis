@@ -1,3 +1,10 @@
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useVehicles, groupByCategory } from "@/hooks/useVehicles";
+import { Skeleton } from "@/components/ui/skeleton";
+
+// Mappatura Immagini (assicurati che i nomi corrispondano al DB)
 const vehicleImageMap: Record<string, string> = {
   "500": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/FIAT%20500%20BIANCA.jpg",
   "Panda Hybrid": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/FIAT%20PANDA.jpeg",
@@ -6,107 +13,114 @@ const vehicleImageMap: Record<string, string> = {
   "Raptor 700R": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/YAMAHA%20RAPTOR%20QUAD%20BLU.jpg",
 };
 
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useVehicles, groupByCategory } from "@/hooks/useVehicles";
-import { Skeleton } from "@/components/ui/skeleton";
-
-const categoryMeta: Record<string, { subtitle: string; description: string }> = {
-  city_car: { subtitle: "Utilitarie e berline", description: "Perfette per muoverti in città e lungo la costa." },
-  scooter: { subtitle: "Due ruote", description: "Libertà su due ruote nella brezza mediterranea." },
-  quad: { subtitle: "Avventura off-road", description: "Esplora sentieri e spiagge nascoste." },
+// Meta Info per ogni categoria
+const categoryMeta: Record<string, { title: string; subtitle: string; description: string }> = {
+  city_car: { title: "City Car", subtitle: "Utilitarie e berline", description: "Design compatto ed eleganza per muoverti in città e scoprire la costa con il massimo comfort." },
+  quad: { title: "Quad", subtitle: "Avventura off-road", description: "Potenza e adrenalina pura. Esplora sentieri sterrati e spiagge nascoste che le auto non possono raggiungere." },
+  scooter: { title: "Scooter", subtitle: "Due ruote", description: "Evita il traffico e goditi la libertà assoluta. La brezza mediterranea sulla pelle in ogni tuo spostamento." },
 };
 
-const spanMap: Record<number, string> = {
-  0: "md:col-span-2 md:row-span-2",
-};
+// L'ORDINE ESATTO RICHIESTO DAL CLIENTE
+const DESIRED_ORDER = ["city_car", "quad", "scooter"];
 
 const FleetShowcase = () => {
   const { data: vehicles, isLoading } = useVehicles();
   const grouped = vehicles ? groupByCategory(vehicles) : {};
-  const categories = Object.keys(grouped).length > 0 ? Object.keys(grouped) : [];
+  
+  // Filtriamo le categorie disponibili rispettando rigorosamente l'ordine desiderato
+  const availableCategories = DESIRED_ORDER.filter(cat => grouped[cat] && grouped[cat].length > 0);
 
   return (
-    <section className="py-16 md:py-20 bg-transparent">
-      <div className="container">
+    <section className="py-24 md:py-32 bg-slate-50 overflow-hidden">
+      <div className="container px-4">
+        
+        {/* HEADER SEZIONE */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-14"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-16 md:mb-24 text-center max-w-3xl mx-auto"
         >
-          <span className="text-primary font-display text-sm font-semibold uppercase tracking-[0.2em] mb-3 block">
-            La Flotta
+          <span className="text-blue-600 font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
+            La Nostra Flotta
           </span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
-            Scegli il tuo mezzo
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
+            Scegli la tua <br className="hidden md:block" />
+            <span className="italic font-light text-blue-600">Prossima Avventura.</span>
           </h2>
         </motion.div>
 
+        {/* LOADING STATE (Skeleton grandi come i nuovi blocchi) */}
         {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[220px]">
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: [0.4, 1, 0.4] }}
-                transition={{ duration: 1.8, repeat: Infinity, delay: i * 0.15 }}
-                className={`${i === 0 ? "md:col-span-2 md:row-span-2" : ""} rounded-2xl overflow-hidden`}
-              >
-                <Skeleton className="w-full h-full rounded-2xl" />
-              </motion.div>
+          <div className="flex flex-col gap-16 md:gap-24">
+            {[1, 2, 3].map((i) => (
+              <Skeleton key={i} className="w-full h-[500px] md:h-[600px] rounded-[2.5rem]" />
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[220px]">
-            {categories.map((cat, i) => {
-              const meta = categoryMeta[cat] ?? { subtitle: cat, description: "" };
-              const firstVehicle = grouped[cat]?.[0];
-              const image = vehicleImageMap[firstVehicle?.model ?? ""] || firstVehicle?.image_url || "/placeholder.svg";
+          
+          {/* VETRINA VEICOLI (Grandi blocchi impilati) */}
+          <div className="flex flex-col gap-16 md:gap-24">
+            {availableCategories.map((cat, i) => {
+              const meta = categoryMeta[cat];
+              // Prendiamo il primo veicolo disponibile per quella categoria per l'immagine
+              const firstVehicle = grouped[cat][0];
+              const image = vehicleImageMap[firstVehicle?.model ?? ""] || firstVehicle?.image_url || "/placeholder.jpg";
               const lowestPrice = Math.min(...grouped[cat].map((v) => v.daily_rate ?? 0));
 
               return (
                 <motion.div
                   key={cat}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className={spanMap[i] ?? "md:col-span-1"}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                 >
                   <Link
                     to="/prenotaora"
-                    className="group relative rounded-2xl overflow-hidden h-full flex flex-col justify-end p-6 md:p-8 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_hsl(var(--primary)/0.2)]"
+                    className="group relative block w-full h-[500px] md:h-[600px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,255,0.2)] hover:-translate-y-2 cursor-pointer"
                   >
-                    <div className="absolute inset-0">
+                    {/* Immagine di Sfondo con Effetto Zoom al passaggio del mouse */}
+                    <div className="absolute inset-0 bg-slate-200">
                       <img
                         src={image}
-                        alt={`Noleggio ${cat.replace(/_/g, " ")} in Sardegna`}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        alt={`Noleggio ${meta.title} in Costa Smeralda`}
+                        className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
                     </div>
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-primary/10 mix-blend-overlay" />
-                    <div className="relative z-10">
-                      <span className="text-primary-foreground/60 text-xs font-medium uppercase tracking-widest">
-                        {meta.subtitle}
-                      </span>
-                      <div className="flex items-end justify-between mt-1">
-                        <div>
-                          <h3 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground">
-                            {cat.replace(/_/g, " ").toUpperCase()}
-                          </h3>
-                          <p className="text-primary-foreground/70 text-sm mt-1">
-                            A partire da €{lowestPrice}/giorno
-                          </p>
-                        </div>
-                        <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                          <ArrowUpRight size={18} className="text-primary-foreground" />
+
+                    {/* Overlay Sfumato per leggibilità del testo (Sempre nero per stile premium) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+
+                    {/* Contenuto Testuale (Posizionato in basso) */}
+                    <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                      
+                      <div className="max-w-2xl">
+                        <span className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-3 block drop-shadow-md">
+                          {meta.subtitle}
+                        </span>
+                        <h3 className="font-display text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-xl">
+                          {meta.title}
+                        </h3>
+                        <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed mb-6">
+                          {meta.description}
+                        </p>
+                        <div className="inline-block bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2">
+                          <span className="text-white font-medium">
+                            A partire da <strong className="text-xl">€{lowestPrice}</strong>/giorno
+                          </span>
                         </div>
                       </div>
+
+                      {/* Bottone Interattivo */}
+                      <div className="shrink-0">
+                        <div className="flex items-center gap-4 bg-white text-slate-900 rounded-full px-8 py-4 font-bold shadow-lg transition-transform duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                          <span>Prenota Ora</span>
+                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+
                     </div>
                   </Link>
                 </motion.div>
