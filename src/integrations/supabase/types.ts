@@ -23,6 +23,8 @@ export type Database = {
           created_at: string
           customer_name: string | null
           customer_surname: string | null
+          dropoff_location: string | null
+          dropoff_time: string | null
           email: string | null
           end_date: string
           has_second_driver: boolean | null
@@ -30,6 +32,8 @@ export type Database = {
           license_back_url: string | null
           license_front_url: string | null
           phone: string | null
+          pickup_location: string | null
+          pickup_time: string | null
           residence_address: string | null
           second_driver_birth_date: string | null
           second_driver_birth_place: string | null
@@ -59,6 +63,8 @@ export type Database = {
           created_at?: string
           customer_name?: string | null
           customer_surname?: string | null
+          dropoff_location?: string | null
+          dropoff_time?: string | null
           email?: string | null
           end_date: string
           has_second_driver?: boolean | null
@@ -66,6 +72,8 @@ export type Database = {
           license_back_url?: string | null
           license_front_url?: string | null
           phone?: string | null
+          pickup_location?: string | null
+          pickup_time?: string | null
           residence_address?: string | null
           second_driver_birth_date?: string | null
           second_driver_birth_place?: string | null
@@ -95,6 +103,8 @@ export type Database = {
           created_at?: string
           customer_name?: string | null
           customer_surname?: string | null
+          dropoff_location?: string | null
+          dropoff_time?: string | null
           email?: string | null
           end_date?: string
           has_second_driver?: boolean | null
@@ -102,6 +112,8 @@ export type Database = {
           license_back_url?: string | null
           license_front_url?: string | null
           phone?: string | null
+          pickup_location?: string | null
+          pickup_time?: string | null
           residence_address?: string | null
           second_driver_birth_date?: string | null
           second_driver_birth_place?: string | null
@@ -225,6 +237,13 @@ export type Database = {
           make: string
           model: string
           next_revision_date: string | null
+          rate_april: number | null
+          rate_august: number | null
+          rate_july: number | null
+          rate_june: number | null
+          rate_may: number | null
+          rate_october: number | null
+          rate_september: number | null
           year: number | null
         }
         Insert: {
@@ -245,6 +264,13 @@ export type Database = {
           make: string
           model: string
           next_revision_date?: string | null
+          rate_april?: number | null
+          rate_august?: number | null
+          rate_july?: number | null
+          rate_june?: number | null
+          rate_may?: number | null
+          rate_october?: number | null
+          rate_september?: number | null
           year?: number | null
         }
         Update: {
@@ -265,6 +291,13 @@ export type Database = {
           make?: string
           model?: string
           next_revision_date?: string | null
+          rate_april?: number | null
+          rate_august?: number | null
+          rate_july?: number | null
+          rate_june?: number | null
+          rate_may?: number | null
+          rate_october?: number | null
+          rate_september?: number | null
           year?: number | null
         }
         Relationships: []
