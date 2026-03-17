@@ -99,17 +99,11 @@ const PrenotaOra = () => {
     if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
     setCheckingAvailability(true);
     try {
-      const res = await fetch(CHECK_AVAILABILITY_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          vehicle_id: booking.vehicle.id,
-          start_date: booking.startDate.toISOString().split("T")[0],
-          end_date: booking.endDate.toISOString().split("T")[0],
-        }),
+      const data = await invokeN8nProxy<{ available?: boolean }>("check-availability", {
+        vehicle_id: booking.vehicle.id,
+        start_date: booking.startDate.toISOString().split("T")[0],
+        end_date: booking.endDate.toISOString().split("T")[0],
       });
-      if (!res.ok) throw new Error("unavailable");
-      const data = await res.json();
       if (data?.available === false) {
         toast.error("Veicolo non disponibile per le date selezionate. Scegli un altro periodo.");
         return;
