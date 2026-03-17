@@ -189,11 +189,7 @@ const PrenotaOra = () => {
       const newBookingId = insertedBooking.id;
       setBookingId(newBookingId);
 
-      await fetch(CREATE_BOOKING_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...insertPayload, id: newBookingId }),
-      });
+      await invokeN8nProxy("create-booking", { ...insertPayload, id: newBookingId });
 
       setStep(4);
     } catch (err: any) {

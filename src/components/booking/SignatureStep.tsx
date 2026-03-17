@@ -26,13 +26,7 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
     try {
       const base64 = sigRef.current.getTrimmedCanvas().toDataURL("image/png");
 
-      const res = await fetch(SIGN_WEBHOOK, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ booking_id: bookingId, signature: base64 }),
-      });
-
-      if (!res.ok) throw new Error("Signature webhook failed");
+      await invokeN8nProxy("sign", { booking_id: bookingId, signature: base64 });
       onComplete();
     } catch (err) {
       console.error("Signature error:", err);
