@@ -99,17 +99,26 @@ const PrenotaOra = () => {
     if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
     setCheckingAvailability(true);
     try {
-      const data = await invokeN8nProxy<{ available?: boolean }>("check-availability", {
-        vehicle_id: booking.vehicle.id,
-        start_date: booking.startDate.toISOString().split("T")[0],
-        end_date: booking.endDate.toISOString().split("T")[0],
+      const { data, error } = await supabase.functions.invoke("n8n-proxy", {
+        body: {
+          endpoint: "check-availability",
+          data: {
+            vehicle_id: booking.vehicle.id,
+            start_date: booking.startDate.toISOString().split("T")[0],
+            end_date: booking.endDate.toISOString().split("T")[0],
+          },
+        },
       });
-      if (data?.available === false) {
-        toast.error("Veicolo non disponibile per le date selezionate. Scegli un altro periodo.");
+
+      if (error || data?.success === false || data?.available === false) {
+        const msg = data?.error || "Il veicolo è già stato prenotato per queste date. Scegli un altro periodo.";
+        toast.error(msg);
         return;
       }
+
       setStep(2);
-    } catch {
+    } catch (err) {
+      console.error("Availability check failed:", err);
       toast.error("Impossibile verificare la disponibilità. Riprova.");
     } finally {
       setCheckingAvailability(false);
