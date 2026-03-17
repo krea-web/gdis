@@ -2,13 +2,12 @@ import { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import { Button } from "@/components/ui/button";
 import { Eraser, Loader2, PenTool } from "lucide-react";
+import { invokeN8nProxy } from "@/lib/n8nProxy";
 
 type Props = {
   bookingId: string;
   onComplete: () => void;
 };
-
-const SIGN_WEBHOOK = "https://n8n.kreareweb.com/webhook/gdis/sign";
 
 const SignatureStep = ({ bookingId, onComplete }: Props) => {
   const sigRef = useRef<SignatureCanvas>(null);
@@ -27,13 +26,7 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
     try {
       const base64 = sigRef.current.getTrimmedCanvas().toDataURL("image/png");
 
-      const res = await fetch(SIGN_WEBHOOK, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ booking_id: bookingId, signature: base64 }),
-      });
-
-      if (!res.ok) throw new Error("Signature webhook failed");
+      await invokeN8nProxy("sign", { booking_id: bookingId, signature: base64 });
       onComplete();
     } catch (err) {
       console.error("Signature error:", err);

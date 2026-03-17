@@ -13,6 +13,7 @@ import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { getMonthlyRate, type Vehicle } from "@/hooks/useVehicles";
+import { invokeN8nProxy } from "@/lib/n8nProxy";
 
 /* ── Types ─────────────────────────────────── */
 
@@ -39,11 +40,6 @@ const initialDriver: DriverData = {
 };
 
 const steps = ["Veicolo", "Date", "Dati Conducente", "Secondo Guidatore", "Firma"];
-
-/* ── Webhook URLs ──────────────────────────── */
-
-const CHECK_AVAILABILITY_URL = "https://n8n.kreareweb.com/webhook/gdis/check-availability";
-const CREATE_BOOKING_URL = "https://n8n.kreareweb.com/webhook/gdis/create-booking";
 
 /* ── Helpers ───────────────────────────────── */
 
@@ -103,17 +99,11 @@ const PrenotaOra = () => {
     if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
     setCheckingAvailability(true);
     try {
-      const res = await fetch(CHECK_AVAILABILITY_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          vehicle_id: booking.vehicle.id,
-          start_date: booking.startDate.toISOString().split("T")[0],
-          end_date: booking.endDate.toISOString().split("T")[0],
-        }),
+      const data = await invokeN8nProxy<{ available?: boolean }>("check-availability", {
+        vehicle_id: booking.vehicle.id,
+        start_date: booking.startDate.toISOString().split("T")[0],
+        end_date: booking.endDate.toISOString().split("T")[0],
       });
-      if (!res.ok) throw new Error("unavailable");
-      const data = await res.json();
       if (data?.available === false) {
         toast.error("Veicolo non disponibile per le date selezionate. Scegli un altro periodo.");
         return;
@@ -199,11 +189,7 @@ const PrenotaOra = () => {
       const newBookingId = insertedBooking.id;
       setBookingId(newBookingId);
 
-      await fetch(CREATE_BOOKING_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...insertPayload, id: newBookingId }),
-      });
+      await invokeN8nProxy("create-booking", { ...insertPayload, id: newBookingId });
 
       setStep(4);
     } catch (err: any) {
