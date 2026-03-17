@@ -2,13 +2,12 @@ import { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import { Button } from "@/components/ui/button";
 import { Eraser, Loader2, PenTool } from "lucide-react";
+import { invokeN8nProxy } from "@/lib/n8nProxy";
 
 type Props = {
   bookingId: string;
   onComplete: () => void;
 };
-
-const SIGN_WEBHOOK = "https://n8n.kreareweb.com/webhook/gdis/sign";
 
 const SignatureStep = ({ bookingId, onComplete }: Props) => {
   const sigRef = useRef<SignatureCanvas>(null);

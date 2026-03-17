@@ -13,6 +13,7 @@ import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { getMonthlyRate, type Vehicle } from "@/hooks/useVehicles";
+import { invokeN8nProxy } from "@/lib/n8nProxy";
 
 /* ── Types ─────────────────────────────────── */
 
@@ -39,11 +40,6 @@ const initialDriver: DriverData = {
 };
 
 const steps = ["Veicolo", "Date", "Dati Conducente", "Secondo Guidatore", "Firma"];
-
-/* ── Webhook URLs ──────────────────────────── */
-
-const CHECK_AVAILABILITY_URL = "https://n8n.kreareweb.com/webhook/gdis/check-availability";
-const CREATE_BOOKING_URL = "https://n8n.kreareweb.com/webhook/gdis/create-booking";
 
 /* ── Helpers ───────────────────────────────── */
 
