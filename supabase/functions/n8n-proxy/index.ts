@@ -40,9 +40,13 @@ Deno.serve(async (req) => {
     });
 
     const responseText = await n8nResponse.text();
-    const contentType = n8nResponse.headers.get("content-type") ?? "application/json";
 
-    return new Response(responseText, {
+    // If n8n returns an empty body, wrap it as valid JSON so the Supabase
+    // client doesn't choke trying to parse an empty string.
+    const body = responseText.trim() === "" ? JSON.stringify({ ok: true }) : responseText;
+    const contentType = responseText.trim() === "" ? "application/json" : (n8nResponse.headers.get("content-type") ?? "application/json");
+
+    return new Response(body, {
       status: n8nResponse.status,
       headers: {
         ...corsHeaders,
