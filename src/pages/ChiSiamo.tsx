@@ -298,7 +298,7 @@ const ChiSiamo = () => {
       </section>
 
       {/* ═══════════════ TRUST MARQUEE DIVIDER ═══════════════ */}
-      <section className="relative w-full overflow-hidden py-14 bg-[hsl(var(--brand-dark))] z-20">
+      <section className="relative w-full overflow-hidden flex items-center justify-center py-14 bg-[hsl(var(--brand-dark))] z-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.08),transparent_70%)]" />
         <div className="absolute w-[200%] left-1/2 -translate-x-1/2 bg-primary transform -rotate-2 py-5 shadow-[0_10px_40px_hsl(var(--primary)/0.3)] border-y border-primary/30 overflow-hidden">
           <div className="flex w-max overflow-hidden">
@@ -310,6 +310,10 @@ const ChiSiamo = () => {
               <MarqueeContent />
             </motion.div>
           </div>
+        </div>
+        {/* Invisible spacer to give the section height */}
+        <div className="invisible py-5">
+          <span className="font-display font-black text-xl uppercase tracking-[0.2em]">SPACER</span>
         </div>
       </section>
 
