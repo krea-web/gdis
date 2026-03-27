@@ -25,8 +25,8 @@ const MarqueeContent = () => (
 
 const TrustMarquee = () => {
   return (
-    <section className="relative w-full overflow-hidden flex items-center justify-center py-14 bg-transparent z-20 -mt-16">
-      <div className="absolute w-[200%] left-1/2 -translate-x-1/2 bg-blue-600 transform -rotate-2 py-5 shadow-[0_10px_40px_rgba(0,0,255,0.3)] border-y border-blue-400/30 overflow-hidden">
+    <section className="relative w-full flex items-center justify-center py-14 bg-transparent z-20 -mt-16 pointer-events-none">
+      <div className="absolute w-[200%] left-1/2 -translate-x-1/2 bg-primary transform -rotate-2 py-5 shadow-[0_10px_40px_hsl(var(--primary)/0.3)] border-y border-primary/30 overflow-hidden pointer-events-auto">
         <div className="flex w-max overflow-hidden">
           <motion.div
             className="flex items-center flex-shrink-0"

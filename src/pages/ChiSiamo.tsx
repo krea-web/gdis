@@ -298,7 +298,7 @@ const ChiSiamo = () => {
       </section>
 
       {/* ═══════════════ TRUST MARQUEE DIVIDER ═══════════════ */}
-      <section className="relative w-full overflow-hidden flex items-center justify-center -my-8 z-20">
+      <section className="relative w-full flex items-center justify-center -my-8 z-20 pointer-events-none">
         <div className="absolute w-[200%] left-1/2 -translate-x-1/2 bg-primary transform -rotate-2 py-4 shadow-[0_10px_40px_hsl(var(--primary)/0.3)] border-y border-primary/30 overflow-hidden">
           <div className="flex w-max overflow-hidden">
             <motion.div
