@@ -18,7 +18,7 @@ const initialFaqs = [
   {
     q: "Qual è la politica di cancellazione?",
     a: "La cancellazione è gratuita fino a 48 ore prima del ritiro. Per cancellazioni tardive viene applicata una penale pari al 50% del costo totale del noleggio.",
-    highlighted: true,
+    highlighted: false,
   },
   {
     q: "Quali sono i metodi di pagamento accettati?",
@@ -36,8 +36,8 @@ const initialFaqs = [
     highlighted: false,
   },
   {
-    q: "Offrite servizio di trasporto merci?",
-    a: "Sì, GDIS offre servizi di trasporto merci con furgoni e camion in tutta la Sardegna. Contattaci per un preventivo personalizzato.",
+    q: "Offrite consegna VIP a yacht e hotel?",
+    a: "Assolutamente sì! Il nostro servizio Consegna VIP porta il veicolo direttamente al tuo yacht, hotel o villa privata in tutta la Costa Smeralda e Gallura.",
     highlighted: false,
   },
   {
@@ -53,16 +53,11 @@ const FaqSection = () => {
   useEffect(() => {
     const highlighted = initialFaqs.filter((f) => f.highlighted);
     const normal = initialFaqs.filter((f) => !f.highlighted);
-    const shuffledHighlighted = [...highlighted].sort(() => Math.random() - 0.5);
-    setFaqs([...shuffledHighlighted, ...normal]);
+    setFaqs([...highlighted, ...normal]);
   }, []);
 
   return (
-    <section className="py-24 md:py-32 bg-primary relative overflow-hidden">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,hsl(0_0%_100%/0.02)_20px,hsl(0_0%_100%/0.02)_40px)]" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-foreground/5 blur-[120px] rounded-full pointer-events-none" />
-
+    <section className="py-24 md:py-32 bg-background relative overflow-hidden">
       <div className="container px-4 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           {/* LEFT COLUMN */}
@@ -74,24 +69,24 @@ const FaqSection = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="sticky top-32"
             >
-              <span className="text-primary-foreground/60 font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
+              <span className="text-primary font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
                 Supporto
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Domande <br />
-                <span className="italic font-light text-primary-foreground/80">Frequenti.</span>
+                <span className="italic font-light text-muted-foreground">Frequenti.</span>
               </h2>
-              <p className="text-primary-foreground/60 text-lg font-light mb-10 leading-relaxed">
+              <p className="text-muted-foreground text-lg font-light mb-10 leading-relaxed">
                 Tutto quello che devi sapere prima di metterti alla guida. Trasparenza totale, zero sorprese.
               </p>
 
-              <div className="bg-primary-foreground/10 backdrop-blur-md p-8 rounded-3xl border border-primary-foreground/20">
-                <h4 className="font-display font-semibold text-primary-foreground mb-2">Hai altre domande?</h4>
-                <p className="text-sm text-primary-foreground/60 mb-6 font-light">
+              <div className="bg-primary/5 p-8 rounded-3xl border border-primary/10">
+                <h4 className="font-display font-semibold text-foreground mb-2">Hai altre domande?</h4>
+                <p className="text-sm text-muted-foreground mb-6 font-light">
                   Il nostro team è a tua disposizione su WhatsApp per chiarire ogni dubbio.
                 </p>
                 <Button
-                  className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-primary-foreground rounded-full py-6 group shadow-md hover:shadow-lg transition-all"
+                  className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full py-6 group shadow-md hover:shadow-lg transition-all"
                   onClick={() => window.open("https://wa.me/393520459150", "_blank")}
                 >
                   <MessageCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -114,12 +109,28 @@ const FaqSection = () => {
                 >
                   <AccordionItem
                     value={`faq-${i}`}
-                    className="bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-2xl px-6 hover:bg-primary-foreground/15 transition-all duration-300 data-[state=open]:shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                    className={
+                      faq.highlighted
+                        ? "bg-primary backdrop-blur-md border border-primary rounded-2xl px-6 transition-all duration-300 data-[state=open]:shadow-[0_10px_30px_hsl(var(--primary)/0.3)]"
+                        : "bg-muted backdrop-blur-md border border-border rounded-2xl px-6 hover:bg-muted/80 transition-all duration-300 data-[state=open]:shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+                    }
                   >
-                    <AccordionTrigger className="text-left font-display text-lg font-semibold text-primary-foreground hover:no-underline py-6 [&>svg]:text-primary-foreground">
+                    <AccordionTrigger
+                      className={
+                        faq.highlighted
+                          ? "text-left font-display text-lg font-semibold text-primary-foreground hover:no-underline py-6 [&>svg]:text-primary-foreground"
+                          : "text-left font-display text-lg font-semibold text-foreground hover:no-underline py-6 [&>svg]:text-foreground"
+                      }
+                    >
                       {faq.q}
                     </AccordionTrigger>
-                    <AccordionContent className="text-primary-foreground/70 font-light leading-relaxed pb-6 text-base">
+                    <AccordionContent
+                      className={
+                        faq.highlighted
+                          ? "text-primary-foreground/80 font-light leading-relaxed pb-6 text-base"
+                          : "text-muted-foreground font-light leading-relaxed pb-6 text-base"
+                      }
+                    >
                       {faq.a}
                     </AccordionContent>
                   </AccordionItem>
