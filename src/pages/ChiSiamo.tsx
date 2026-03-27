@@ -57,7 +57,7 @@ const ChiSiamo = () => {
           className="relative z-10 text-center px-4 max-w-4xl"
         >
           <span className="text-primary font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
-            Dal 2010 in Sardegna
+            DAL 2025 IN SARDEGNA
           </span>
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground tracking-tight mb-6">
             GDIS Service <span className="text-primary italic font-light">Srl</span>
