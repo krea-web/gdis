@@ -1,45 +1,38 @@
 import SEOHead from "@/components/SEOHead";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Smartphone, Clock, Truck, Car, Bike, Shield, Star, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import FaqSection from "@/components/chisiamo/FaqSection";
 
-/* ── Animated Counter ── */
-const Counter = ({ target, suffix = "", label }: { target: number; suffix?: string; label: string }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [count, setCount] = useState(0);
+/* ── Hero Split Images ── */
+const heroLeftUrl = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80";
+const heroRightUrl = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80";
+const touristUrl = "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80";
+const transportUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80";
 
-  useEffect(() => {
-    if (!isInView) return;
-    let start = 0;
-    const duration = 2000;
-    const step = Math.ceil(target / (duration / 16));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { setCount(target); clearInterval(timer); }
-      else setCount(start);
-    }, 16);
-    return () => clearInterval(timer);
-  }, [isInView, target]);
+/* ── Animated Stat Block ── */
+const StatBlock = ({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <div ref={ref} className="text-center">
-      <span className="font-display text-6xl md:text-8xl font-black text-primary-foreground tabular-nums">
-        {count}{suffix}
-      </span>
-      <p className="text-primary-foreground/70 text-lg md:text-xl font-light mt-3 tracking-wide">{label}</p>
-    </div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      className="text-center"
+    >
+      <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
+        <Icon className="w-8 h-8 text-primary-foreground" />
+      </div>
+      <p className="font-display text-3xl md:text-4xl font-black text-primary-foreground">{title}</p>
+      <p className="text-primary-foreground/60 text-sm md:text-base font-light mt-2">{subtitle}</p>
+    </motion.div>
   );
 };
-
-/* ── Hero Split Images ── */
-const heroLeftUrl = "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=80";
-const heroRightUrl = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80";
-const logisticsUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80";
-const luxuryUrl = "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80";
 
 const ChiSiamo = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -48,41 +41,38 @@ const ChiSiamo = () => {
   const heroScale = useTransform(heroScroll, [0, 1], [1, 1.15]);
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0]);
 
-  const logisticsRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: logScroll } = useScroll({ target: logisticsRef, offset: ["start end", "end start"] });
-  const logImgY = useTransform(logScroll, [0, 1], [80, -80]);
+  const touristRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: tourScroll } = useScroll({ target: touristRef, offset: ["start end", "end start"] });
+  const tourImgY = useTransform(tourScroll, [0, 1], [80, -80]);
 
-  const luxuryRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: luxScroll } = useScroll({ target: luxuryRef, offset: ["start end", "end start"] });
-  const luxImgY = useTransform(luxScroll, [0, 1], [80, -80]);
+  const transportRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: transScroll } = useScroll({ target: transportRef, offset: ["start end", "end start"] });
+  const transImgY = useTransform(transScroll, [0, 1], [60, -60]);
 
   return (
     <>
       <SEOHead
-        title="Chi Siamo — GDIS Service Srl | Trasporti, Logistica e Noleggio in Sardegna"
-        description="GDIS Service Srl: l'infrastruttura invisibile del tuo movimento in Sardegna. Dalla logistica industriale al lusso senza compromessi."
+        title="Chi Siamo — GDIS Service Srl | Noleggio Veicoli in Costa Smeralda"
+        description="GDIS Service Srl: la nuova era della mobilità in Sardegna. Noleggio 100% digitale di city car, scooter, quad e auto VIP in Costa Smeralda dal 2025."
         canonical="/chisiamo"
       />
 
-      {/* ═══════════════ HERO: SPLIT SCREEN ═══════════════ */}
+      {/* ═══════════════ HERO ═══════════════ */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Split background */}
         <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0 z-0">
           <div className="absolute inset-0 grid grid-cols-2">
             <div className="relative overflow-hidden">
-              <img src={heroLeftUrl} alt="GDIS Logistica Industriale" className="w-full h-full object-cover object-center scale-110" />
+              <img src={heroLeftUrl} alt="GDIS Veicoli Premium" className="w-full h-full object-cover scale-110" />
               <div className="absolute inset-0 bg-[hsl(var(--brand-dark))/0.7]" />
             </div>
             <div className="relative overflow-hidden">
-              <img src={heroRightUrl} alt="GDIS Esperienze di Lusso" className="w-full h-full object-cover object-center scale-110" />
+              <img src={heroRightUrl} alt="Costa Smeralda" className="w-full h-full object-cover scale-110" />
               <div className="absolute inset-0 bg-[hsl(var(--brand-dark))/0.5]" />
             </div>
           </div>
-          {/* Center gradient blend */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[hsl(var(--brand-dark))/0.9] to-transparent" />
         </motion.div>
 
-        {/* Vertical accent line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-primary/30 z-10 hidden md:block" />
 
         <motion.div style={{ opacity: heroOpacity }} className="relative z-20 text-center px-4 max-w-5xl">
@@ -101,10 +91,10 @@ const ChiSiamo = () => {
             transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
             className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-primary-foreground leading-[0.95] tracking-tight drop-shadow-2xl"
           >
-            L'Infrastruttura{" "}
-            <span className="italic font-light text-primary">Invisibile</span>
+            La Nuova Era della{" "}
+            <span className="italic font-light text-primary">Mobilità</span>
             <br />
-            del tuo Movimento
+            in Costa Smeralda
           </motion.h1>
 
           <motion.p
@@ -113,7 +103,8 @@ const ChiSiamo = () => {
             transition={{ delay: 1, duration: 0.8 }}
             className="text-primary-foreground/50 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto"
           >
-            Dalla logistica industriale… al lusso senza compromessi.
+            Nati nel 2025 per offrirti veicoli di ultima generazione, un processo 100% digitale
+            e consegne VIP direttamente al tuo yacht o hotel.
           </motion.p>
 
           <motion.div
@@ -124,7 +115,6 @@ const ChiSiamo = () => {
           />
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -141,90 +131,29 @@ const ChiSiamo = () => {
         </motion.div>
       </section>
 
-      {/* ═══════════════ SEZIONE 1: MOVIMENTO MERCI ═══════════════ */}
-      <section ref={logisticsRef} className="relative py-32 md:py-48 bg-[hsl(var(--brand-dark))] overflow-hidden">
-        {/* Background radial glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--primary)/0.12),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_50%)]" />
-
+      {/* ═══════════════ STATS ═══════════════ */}
+      <section className="relative py-24 md:py-32 bg-primary overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06]">
+          <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_30px,hsl(0_0%_100%)_30px,hsl(0_0%_100%)_31px)]" />
+        </div>
         <div className="container px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
-            {/* Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
-                Core Business
-              </span>
-              <h2 className="font-display text-4xl md:text-6xl font-black text-primary-foreground leading-[1.05] mb-8">
-                Movimento{" "}
-                <span className="italic font-light text-primary">Merci</span>
-              </h2>
-              <div className="space-y-6 text-primary-foreground/60 text-lg font-light leading-relaxed">
-                <p>
-                  Ogni giorno, le nostre flotte industriali attraversano la Sardegna — dal porto di Olbia
-                  alle zone industriali del Campidano. <strong className="text-primary-foreground font-medium">Trasporto conto terzi</strong> con
-                  precisione militare, gestione <strong className="text-primary-foreground font-medium">intermodale terra-mare e rotaia</strong> per
-                  connettere l'isola al continente.
-                </p>
-                <p>
-                  Merci pericolose ADR, catena del freddo per deperibili, <strong className="text-primary-foreground font-medium">logistica
-                  e gestione magazzini</strong>. Non siamo solo trasportatori — siamo l'infrastruttura
-                  che tiene in moto l'economia sarda.
-                </p>
-                <p>
-                  Le nostre <strong className="text-primary-foreground font-medium">aree attrezzate per parcheggio e rimessaggio</strong> ospitano
-                  veicoli industriali, rimorchi e furgoni commerciali con servizio di lavaggio professionale integrato.
-                </p>
-              </div>
-              <div className="mt-10 w-20 h-[2px] bg-primary/50" />
-            </motion.div>
-
-            {/* Image with parallax */}
-            <motion.div
-              style={{ y: logImgY }}
-              className="relative"
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl"
-              >
-                <img src={logisticsUrl} alt="Logistica GDIS Sardegna" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-dark))] via-transparent to-transparent" />
-              </motion.div>
-              {/* Floating accent block */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="absolute -bottom-6 -left-6 md:-left-12 bg-primary rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_hsl(var(--primary)/0.4)] max-w-[240px]"
-              >
-                <p className="text-primary-foreground font-display font-bold text-2xl md:text-3xl">Copertura</p>
-                <p className="text-primary-foreground/70 font-light text-sm mt-1">100% Sardegna e collegamenti nazionali</p>
-              </motion.div>
-            </motion.div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 max-w-5xl mx-auto">
+            <StatBlock icon={Car} title="Flotta 2025" subtitle="Veicoli nuovi e sicuri" />
+            <StatBlock icon={Smartphone} title="100% Digitale" subtitle="Prenota e firma in 2 minuti" />
+            <StatBlock icon={Star} title="Zero Fila" subtitle="Consegna VIP dedicata" />
+            <StatBlock icon={Shield} title="24/7" subtitle="Assistenza sempre al tuo fianco" />
           </div>
         </div>
       </section>
 
-      {/* ═══════════════ SEZIONE 2: ESPERIENZE VIP ═══════════════ */}
-      <section ref={luxuryRef} className="relative py-32 md:py-48 bg-background overflow-hidden">
+      {/* ═══════════════ TOURIST RENTAL (Primary) ═══════════════ */}
+      <section ref={touristRef} className="relative py-32 md:py-48 bg-background overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
         <div className="container px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
-            {/* Image with parallax — left on desktop */}
-            <motion.div
-              style={{ y: luxImgY }}
-              className="relative order-2 lg:order-1"
-            >
+            {/* Image */}
+            <motion.div style={{ y: tourImgY }} className="relative order-2 lg:order-1">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -232,10 +161,9 @@ const ChiSiamo = () => {
                 transition={{ duration: 0.8 }}
                 className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl"
               >
-                <img src={luxuryUrl} alt="Noleggio Lusso Costa Smeralda" className="w-full h-full object-cover" />
+                <img src={touristUrl} alt="Noleggio turistico Costa Smeralda" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               </motion.div>
-              {/* Floating accent */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -248,7 +176,7 @@ const ChiSiamo = () => {
               </motion.div>
             </motion.div>
 
-            {/* Text — right on desktop */}
+            {/* Text */}
             <motion.div
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -257,57 +185,45 @@ const ChiSiamo = () => {
               className="order-1 lg:order-2"
             >
               <span className="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
-                Noleggio Premium
+                Il Nostro Core
               </span>
               <h2 className="font-display text-4xl md:text-6xl font-black text-foreground leading-[1.05] mb-8">
-                Esperienze{" "}
-                <span className="italic font-light text-primary">VIP</span>
+                Esplora la Sardegna{" "}
+                <span className="italic font-light text-primary">con stile</span>
               </h2>
               <div className="space-y-6 text-muted-foreground text-lg font-light leading-relaxed">
                 <p>
-                  La stessa precisione logistica che muove tonnellate di merci attraverso la Sardegna
-                  è al servizio della tua vacanza. <strong className="text-foreground font-medium">Auto, scooter, quad e furgoni commerciali</strong> —
-                  la nostra flotta turistica è sempre pronta.
+                  <strong className="text-foreground font-medium">City Car, Scooter e Quad</strong> di ultima generazione
+                  per vivere ogni angolo della Costa Smeralda in totale libertà. Prenoti online in 2 minuti,
+                  firmi digitalmente e ritiri — oppure te lo portiamo noi.
                 </p>
                 <p>
-                  Ma è il nostro <strong className="text-foreground font-medium">Servizio Consegna VIP</strong> a fare la differenza.
-                  Ti portiamo il veicolo direttamente al tuo yacht a Palau, alla tua villa a Porto Cervo,
-                  al tuo hotel a San Teodoro. <strong className="text-foreground font-medium">Zero stress. Zero code. Solo il mare.</strong>
-                </p>
-                <p>
-                  <strong className="text-foreground font-medium">Noleggio e permuta di veicoli industriali, rimorchi e imbarcazioni da diporto</strong> completano
-                  un ecosistema di mobilità unico in Sardegna.
+                  Il nostro <strong className="text-foreground font-medium">Servizio Consegna VIP</strong> è ciò che ci
+                  rende unici: il veicolo arriva direttamente al tuo yacht a Palau, alla tua villa a Porto Cervo
+                  o al tuo hotel a San Teodoro. <strong className="text-foreground font-medium">Zero stress. Zero code. Solo il mare.</strong>
                 </p>
               </div>
-              <div className="mt-10 w-20 h-[2px] bg-primary/50" />
+
+              <div className="mt-10 pt-8 border-t border-border">
+                <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                  🏎️ Auto di Lusso & Supercar
+                </h3>
+                <p className="text-muted-foreground font-light mb-6">
+                  Disponibili <strong className="text-foreground font-medium">esclusivamente su richiesta</strong>.
+                  Contattaci per configurare la tua esperienza VIP su misura.
+                </p>
+                <Button
+                  asChild
+                  variant="whatsapp"
+                  size="lg"
+                  className="rounded-full"
+                >
+                  <a href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20info%20su%20noleggio%20VIP%20Car" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 h-5 w-5" /> Richiedi VIP Car su WhatsApp
+                  </a>
+                </Button>
+              </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════ SEZIONE 3: GDIS AUTHORITY (Counters) ═══════════════ */}
-      <section className="relative py-32 md:py-44 bg-primary overflow-hidden">
-        {/* Animated pattern */}
-        <div className="absolute inset-0 opacity-[0.06]">
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_30px,hsl(0_0%_100%)_30px,hsl(0_0%_100%)_31px)]" />
-        </div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,hsl(var(--primary)/0.3)_100%)]" />
-
-        <div className="container px-4 relative z-10">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center text-primary-foreground/50 font-display text-xs font-bold uppercase tracking-[0.5em] mb-16"
-          >
-            I Numeri Parlano
-          </motion.p>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 max-w-6xl mx-auto">
-            <Counter target={50} suffix="+" label="Veicoli in Flotta" />
-            <Counter target={15} suffix="+" label="Anni di Esperienza" />
-            <Counter target={1000} suffix="+" label="Prenotazioni Completate" />
-            <Counter target={100} suffix="%" label="Copertura Gallura" />
           </div>
         </div>
       </section>
@@ -315,11 +231,76 @@ const ChiSiamo = () => {
       {/* ═══════════════ FAQ ═══════════════ */}
       <FaqSection />
 
-      {/* ═══════════════ SEZIONE 4: GRAND CTA ═══════════════ */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[hsl(var(--brand-dark))]">
-        {/* Dual glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(var(--primary)/0.2),transparent_60%)]" />
+      {/* ═══════════════ HEAVY TRANSPORT (B2B Secondary) ═══════════════ */}
+      <section ref={transportRef} className="relative py-24 md:py-32 bg-[hsl(var(--brand-dark))] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--primary)/0.1),transparent_60%)]" />
 
+        <div className="container px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
+            {/* Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+                Servizi B2B
+              </span>
+              <h2 className="font-display text-3xl md:text-5xl font-black text-primary-foreground leading-[1.05] mb-6">
+                Trasporti Speciali{" "}
+                <span className="italic font-light text-primary">& Merci</span>
+              </h2>
+              <p className="text-primary-foreground/60 text-lg font-light leading-relaxed mb-8">
+                Oltre alla mobilità turistica, GDIS opera nel settore dei trasporti pesanti.
+                Effettuiamo <strong className="text-primary-foreground font-medium">trasporto merci, trasporti eccezionali
+                e trasporto di imbarcazioni</strong>. Operiamo esclusivamente con nostro personale qualificato
+                (servizi con conducente), utilizzando la nostra flotta di TIR, Camion, Furgoni,
+                Rimorchi e Semi-rimorchi.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold"
+                >
+                  <a href="mailto:info@gdisservice.it">
+                    Richiedi Preventivo Trasporti <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="whatsapp"
+                  size="lg"
+                  className="rounded-full"
+                >
+                  <a href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20trasporto%20merci" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Image */}
+            <motion.div style={{ y: transImgY }}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl"
+              >
+                <img src={transportUrl} alt="Trasporti pesanti GDIS" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-dark))] via-transparent to-transparent" />
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ GRAND CTA ═══════════════ */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[hsl(var(--brand-dark))]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(var(--primary)/0.2),transparent_60%)]" />
         <div className="container px-4 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -328,13 +309,13 @@ const ChiSiamo = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] mb-6">
-              Un'unica realtà per{" "}
-              <span className="italic font-light text-primary">ogni</span>
+              Pronto a{" "}
+              <span className="italic font-light text-primary">esplorare</span>
               <br />
-              tipo di movimento
+              la Sardegna?
             </h2>
             <p className="text-primary-foreground/50 text-lg md:text-xl max-w-2xl mx-auto font-light mb-12">
-              Trasporti industriali, noleggio turistico, logistica — contattaci per una soluzione su misura.
+              Scegli il tuo veicolo, prenota in 2 minuti e parti. Nessuna burocrazia.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <Button
@@ -343,7 +324,7 @@ const ChiSiamo = () => {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg rounded-full px-14 h-16 shadow-[0_0_50px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_70px_hsl(var(--primary)/0.7)] transition-all duration-500"
               >
                 <Link to="/prenotaora">
-                  Prenota un Veicolo <ArrowRight className="ml-2 h-5 w-5" />
+                  Prenota Ora <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button
