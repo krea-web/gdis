@@ -11,6 +11,9 @@ import PrenotaOra from "./pages/PrenotaOra";
 import NoleggioCostaSmearalda from "./pages/NoleggioCostaSmearalda";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
+import FiatPandaPage from "./pages/flotta/FiatPandaPage";
+import HondaScooterPage from "./pages/flotta/HondaScooterPage";
+import YamahaQuadPage from "./pages/flotta/YamahaQuadPage";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +30,9 @@ const App = () => (
             <Route path="/chisiamo" element={<ChiSiamo />} />
             <Route path="/prenotaora" element={<PrenotaOra />} />
             <Route path="/noleggio-in-costa-smeralda" element={<NoleggioCostaSmearalda />} />
+            <Route path="/flotta/fiat-panda" element={<FiatPandaPage />} />
+            <Route path="/flotta/honda-sh" element={<HondaScooterPage />} />
+            <Route path="/flotta/yamaha-raptor" element={<YamahaQuadPage />} />
             <Route path="/admin" element={<Admin />} />
           </Route>
           <Route path="*" element={<NotFound />} />
