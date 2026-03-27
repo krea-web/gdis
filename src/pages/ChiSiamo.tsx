@@ -1,44 +1,91 @@
 import SEOHead from "@/components/SEOHead";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import { ArrowRight, Smartphone, Clock, Truck, Car, Bike, Shield, Star, MessageCircle } from "lucide-react";
+import { useRef } from "react";
+import { ArrowRight, Smartphone, Clock, Truck, Car, Bike, Shield, Star, MessageCircle, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import FaqSection from "@/components/chisiamo/FaqSection";
 
-/* ── Hero Split Images ── */
-const heroLeftUrl = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80";
-const heroRightUrl = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80";
+const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
+const heroUrl = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80";
 const touristUrl = "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80";
 const transportUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80";
 
-/* ── Animated Stat Block ── */
-const StatBlock = ({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle: string }) => {
+/* ── Vertical Timeline Node ── */
+const TimelineNode = ({ index, title, subtitle, icon: Icon, isLast }: { index: number; title: string; subtitle: string; icon: React.ElementType; isLast?: boolean }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6 }}
-      className="text-center"
-    >
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
-        <Icon className="w-8 h-8 text-primary-foreground" />
+    <div ref={ref} className="relative flex gap-6 md:gap-10">
+      {/* Vertical line + node */}
+      <div className="flex flex-col items-center flex-shrink-0">
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="relative z-10 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary flex items-center justify-center shadow-[0_0_30px_hsl(var(--primary)/0.4)]"
+        >
+          <Icon className="w-7 h-7 text-primary-foreground" />
+        </motion.div>
+        {!isLast && (
+          <motion.div
+            initial={{ scaleY: 0 }}
+            animate={isInView ? { scaleY: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-px flex-1 bg-gradient-to-b from-primary/50 to-primary/10 origin-top min-h-[60px]"
+          />
+        )}
       </div>
-      <p className="font-display text-3xl md:text-4xl font-black text-primary-foreground">{title}</p>
-      <p className="text-primary-foreground/60 text-sm md:text-base font-light mt-2">{subtitle}</p>
-    </motion.div>
+
+      {/* Content */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={isInView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="pb-14 md:pb-20"
+      >
+        <span className="text-primary font-display text-xs font-bold uppercase tracking-[0.3em]">
+          0{index + 1}
+        </span>
+        <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mt-1 mb-3">
+          {title}
+        </h3>
+        <p className="text-muted-foreground text-base md:text-lg font-light leading-relaxed max-w-lg">
+          {subtitle}
+        </p>
+      </motion.div>
+    </div>
   );
 };
+
+/* ── Marquee Content ── */
+const marqueeItems = [
+  "Noleggio Auto",
+  "Consegne VIP",
+  "Scooter & Quad",
+  "Trasporti Speciali",
+  "Assistenza 24/7",
+  "Costa Smeralda",
+];
+
+const MarqueeContent = () => (
+  <>
+    {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
+      <div key={i} className="flex items-center px-6 md:px-10 flex-shrink-0">
+        <span className="text-primary-foreground font-display font-black text-sm md:text-xl uppercase tracking-[0.2em] whitespace-nowrap">
+          {item}
+        </span>
+        <img src={gdisLogo} alt="GDIS" className="h-6 md:h-8 w-auto opacity-90 drop-shadow-md ml-6 md:ml-10 flex-shrink-0" />
+      </div>
+    ))}
+  </>
+);
 
 const ChiSiamo = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroY = useTransform(heroScroll, [0, 1], [0, 150]);
-  const heroScale = useTransform(heroScroll, [0, 1], [1, 1.15]);
+  const heroScale = useTransform(heroScroll, [0, 1], [1, 1.2]);
   const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0]);
 
   const touristRef = useRef<HTMLDivElement>(null);
@@ -57,25 +104,15 @@ const ChiSiamo = () => {
         canonical="/chisiamo"
       />
 
-      {/* ═══════════════ HERO ═══════════════ */}
+      {/* ═══════════════ HERO — Single Cinematic Image ═══════════════ */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0 z-0">
-          <div className="absolute inset-0 grid grid-cols-2">
-            <div className="relative overflow-hidden">
-              <img src={heroLeftUrl} alt="GDIS Veicoli Premium" className="w-full h-full object-cover scale-110" />
-              <div className="absolute inset-0 bg-[hsl(var(--brand-dark))/0.7]" />
-            </div>
-            <div className="relative overflow-hidden">
-              <img src={heroRightUrl} alt="Costa Smeralda" className="w-full h-full object-cover scale-110" />
-              <div className="absolute inset-0 bg-[hsl(var(--brand-dark))/0.5]" />
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[hsl(var(--brand-dark))/0.9] to-transparent" />
+        <motion.div style={{ scale: heroScale }} className="absolute inset-0 z-0">
+          <img src={heroUrl} alt="GDIS Mobilità Costa Smeralda" className="w-full h-full object-cover" />
         </motion.div>
+        {/* Deep gradient overlay for smooth transition */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--brand-dark))/0.5] via-[hsl(var(--brand-dark))/0.3] to-[hsl(var(--brand-dark))] z-[1]" />
 
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-primary/30 z-10 hidden md:block" />
-
-        <motion.div style={{ opacity: heroOpacity }} className="relative z-20 text-center px-4 max-w-5xl">
+        <motion.div style={{ opacity: heroOpacity }} className="relative z-10 text-center px-4 max-w-5xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,7 +156,7 @@ const ChiSiamo = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
@@ -131,25 +168,57 @@ const ChiSiamo = () => {
         </motion.div>
       </section>
 
-      {/* ═══════════════ STATS ═══════════════ */}
-      <section className="relative py-24 md:py-32 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]">
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_30px,hsl(0_0%_100%)_30px,hsl(0_0%_100%)_31px)]" />
-        </div>
-        <div className="container px-4 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 max-w-5xl mx-auto">
-            <StatBlock icon={Car} title="Flotta 2025" subtitle="Veicoli nuovi e sicuri" />
-            <StatBlock icon={Smartphone} title="100% Digitale" subtitle="Prenota e firma in 2 minuti" />
-            <StatBlock icon={Star} title="Zero Fila" subtitle="Consegna VIP dedicata" />
-            <StatBlock icon={Shield} title="24/7" subtitle="Assistenza sempre al tuo fianco" />
-          </div>
+      {/* ═══════════════ GUIDED PATH (Vertical Timeline) ═══════════════ */}
+      <section className="relative py-24 md:py-36 bg-background overflow-hidden">
+        {/* Subtle top transition from dark hero */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[hsl(var(--brand-dark))] to-transparent pointer-events-none" />
+
+        <div className="container px-4 relative z-10 max-w-3xl mx-auto pt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 md:mb-20"
+          >
+            <span className="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+              Il Nostro DNA
+            </span>
+            <h2 className="font-display text-3xl md:text-5xl font-black text-foreground leading-tight">
+              Perché scegliere <span className="italic font-light text-primary">GDIS</span>
+            </h2>
+          </motion.div>
+
+          <TimelineNode
+            index={0}
+            icon={Star}
+            title="Nati per il Turismo"
+            subtitle="Non siamo un vecchio autonoleggio. Siamo una startup digitale nata nel 2025, costruita da zero per offrire la miglior esperienza di mobilità turistica in Costa Smeralda."
+          />
+          <TimelineNode
+            index={1}
+            icon={Car}
+            title="Flotta 2025"
+            subtitle="Ogni veicolo della nostra flotta è nuovo, revisionato e assicurato. City Car, Scooter, Quad e Auto di Lusso su richiesta — solo il meglio per le tue vacanze."
+          />
+          <TimelineNode
+            index={2}
+            icon={Smartphone}
+            title="100% Digitale"
+            subtitle="Prenota online in 2 minuti, firma digitalmente il contratto e sei pronto a partire. Nessuna coda, nessun modulo cartaceo, nessuno stress."
+          />
+          <TimelineNode
+            index={3}
+            icon={Zap}
+            title="Consegna VIP"
+            subtitle="Il veicolo arriva direttamente a te: al tuo yacht, al tuo hotel, alla tua villa. Da Palau a San Teodoro, copriamo tutta la Gallura e la Costa Smeralda."
+            isLast
+          />
         </div>
       </section>
 
-      {/* ═══════════════ TOURIST RENTAL (Primary) ═══════════════ */}
-      <section ref={touristRef} className="relative py-32 md:py-48 bg-background overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
+      {/* ═══════════════ TOURIST RENTAL (Primary — Light Gray bg) ═══════════════ */}
+      <section ref={touristRef} className="relative py-32 md:py-48 bg-muted overflow-hidden">
         <div className="container px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
             {/* Image */}
@@ -162,7 +231,7 @@ const ChiSiamo = () => {
                 className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl"
               >
                 <img src={touristUrl} alt="Noleggio turistico Costa Smeralda" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-muted via-transparent to-transparent" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -228,13 +297,24 @@ const ChiSiamo = () => {
         </div>
       </section>
 
-      {/* ═══════════════ FAQ ═══════════════ */}
-      <FaqSection />
+      {/* ═══════════════ TRUST MARQUEE DIVIDER ═══════════════ */}
+      <section className="relative w-full overflow-hidden py-14 bg-[hsl(var(--brand-dark))] z-20">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.08),transparent_70%)]" />
+        <div className="absolute w-[200%] left-1/2 -translate-x-1/2 bg-primary transform -rotate-2 py-5 shadow-[0_10px_40px_hsl(var(--primary)/0.3)] border-y border-primary/30 overflow-hidden">
+          <div className="flex w-max overflow-hidden">
+            <motion.div
+              className="flex items-center flex-shrink-0"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+            >
+              <MarqueeContent />
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* ═══════════════ HEAVY TRANSPORT (B2B Secondary) ═══════════════ */}
-      <section ref={transportRef} className="relative py-24 md:py-32 bg-[hsl(var(--brand-dark))] overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--primary)/0.1),transparent_60%)]" />
-
+      <section ref={transportRef} className="relative py-24 md:py-32 bg-muted overflow-hidden">
         <div className="container px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
             {/* Text */}
@@ -247,13 +327,13 @@ const ChiSiamo = () => {
               <span className="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
                 Servizi B2B
               </span>
-              <h2 className="font-display text-3xl md:text-5xl font-black text-primary-foreground leading-[1.05] mb-6">
+              <h2 className="font-display text-3xl md:text-5xl font-black text-foreground leading-[1.05] mb-6">
                 Trasporti Speciali{" "}
                 <span className="italic font-light text-primary">& Merci</span>
               </h2>
-              <p className="text-primary-foreground/60 text-lg font-light leading-relaxed mb-8">
+              <p className="text-muted-foreground text-lg font-light leading-relaxed mb-8">
                 Oltre alla mobilità turistica, GDIS opera nel settore dei trasporti pesanti.
-                Effettuiamo <strong className="text-primary-foreground font-medium">trasporto merci, trasporti eccezionali
+                Effettuiamo <strong className="text-foreground font-medium">trasporto merci, trasporti eccezionali
                 e trasporto di imbarcazioni</strong>. Operiamo esclusivamente con nostro personale qualificato
                 (servizi con conducente), utilizzando la nostra flotta di TIR, Camion, Furgoni,
                 Rimorchi e Semi-rimorchi.
@@ -291,16 +371,22 @@ const ChiSiamo = () => {
                 className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl"
               >
                 <img src={transportUrl} alt="Trasporti pesanti GDIS" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-dark))] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-muted via-transparent to-transparent" />
               </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════ GRAND CTA ═══════════════ */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[hsl(var(--brand-dark))]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(var(--primary)/0.2),transparent_60%)]" />
+      {/* ═══════════════ FAQ (White bg, before CTA) ═══════════════ */}
+      <FaqSection />
+
+      {/* ═══════════════ GRAND CTA — Dark Radial Premium ═══════════════ */}
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[hsl(var(--brand-dark))]">
+        {/* Radial glow behind */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,hsl(var(--primary)/0.15),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,hsl(var(--primary)/0.25),transparent_50%)]" />
+
         <div className="container px-4 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -317,24 +403,40 @@ const ChiSiamo = () => {
             <p className="text-primary-foreground/50 text-lg md:text-xl max-w-2xl mx-auto font-light mb-12">
               Scegli il tuo veicolo, prenota in 2 minuti e parti. Nessuna burocrazia.
             </p>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Button
-                asChild
-                size="xl"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg rounded-full px-14 h-16 shadow-[0_0_50px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_70px_hsl(var(--primary)/0.7)] transition-all duration-500"
+
+            {/* Glowing button container */}
+            <div className="relative inline-block">
+              {/* Glow effect behind button */}
+              <motion.div
+                animate={{ opacity: [0.5, 1, 0.5], scale: [0.95, 1.05, 0.95] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                className="absolute inset-0 rounded-full bg-primary/30 blur-2xl -z-10 scale-150"
+              />
+              <motion.div
+                animate={{ y: [0, -4, 0] }}
+                transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
               >
-                <Link to="/prenotaora">
-                  Prenota Ora <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+                <Button
+                  asChild
+                  size="xl"
+                  className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-black text-lg rounded-full px-14 h-16 shadow-[0_0_50px_hsl(var(--primary)/0.4),0_20px_60px_rgba(0,0,0,0.3)] hover:shadow-[0_0_70px_hsl(var(--primary)/0.6)] transition-all duration-500"
+                >
+                  <Link to="/prenotaora">
+                    Prenota Ora <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </motion.div>
+            </div>
+
+            <div className="mt-8">
               <Button
                 asChild
-                size="xl"
-                variant="outline"
-                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 font-bold text-lg rounded-full px-14 h-16 transition-all duration-300"
+                size="lg"
+                variant="ghost"
+                className="text-primary-foreground/50 hover:text-primary-foreground hover:bg-primary-foreground/5 rounded-full"
               >
                 <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
-                  Contattaci su WhatsApp
+                  <MessageCircle className="mr-2 h-4 w-4" /> Oppure contattaci su WhatsApp
                 </a>
               </Button>
             </div>
