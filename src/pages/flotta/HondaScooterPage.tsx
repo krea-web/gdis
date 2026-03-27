@@ -219,16 +219,17 @@ const HondaScooterPage = () => (
     </section>
 
     {/* FAQ */}
-    <section className="py-24 bg-muted/30">
-      <div className="container max-w-3xl">
+    <section className="py-24 bg-primary relative overflow-hidden">
+      <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,hsl(0_0%_100%/0.02)_20px,hsl(0_0%_100%/0.02)_40px)]" />
+      <div className="container max-w-3xl relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">Domande Frequenti</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground">Domande Frequenti</h2>
         </motion.div>
-        <Accordion type="single" collapsible className="space-y-3">
+        <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl border border-border/50 bg-background px-6 shadow-sm">
-              <AccordionTrigger className="text-left font-semibold">{faq.q}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+            <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-6 hover:bg-primary-foreground/15 transition-all duration-300">
+              <AccordionTrigger className="text-left font-semibold text-primary-foreground hover:no-underline [&>svg]:text-primary-foreground">{faq.q}</AccordionTrigger>
+              <AccordionContent className="text-primary-foreground/70 font-light">{faq.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
