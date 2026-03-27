@@ -3,7 +3,6 @@ import HeroSection from "@/components/home/HeroSection";
 import TrustMarquee from "@/components/home/TrustMarquee";
 import MinimalIntro from "@/components/home/MinimalIntro";
 import ComeFunziona from "@/components/home/ComeFunziona";
-import VipDeliveryBanner from "@/components/home/VipDeliveryBanner";
 import FleetShowcase from "@/components/home/FleetShowcase";
 import EsploraSardegna from "@/components/home/EsploraSardegna";
 import Recensioni from "@/components/home/Recensioni";
@@ -30,7 +29,6 @@ const Index = () => {
       <TrustMarquee />
       <MinimalIntro />
       <ComeFunziona />
-      <VipDeliveryBanner />
       <FleetShowcase />
       <EsploraSardegna />
       <Recensioni />
