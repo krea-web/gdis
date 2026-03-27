@@ -49,7 +49,7 @@ const faqs = [
 
 const floatAnimation = {
   y: [-8, 8, -8],
-  transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+  transition: { duration: 6, repeat: Infinity, ease: "easeInOut" as const },
 };
 
 const YamahaQuadPage = () => (
