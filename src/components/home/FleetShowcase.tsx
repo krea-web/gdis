@@ -4,14 +4,12 @@ import { Link } from "react-router-dom";
 import { useVehicles, groupByCategory, getLowestRate } from "@/hooks/useVehicles";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Mappatura dei nuovi PNG trasparenti per categoria
 const transparentImageMap: Record<string, string> = {
   city_car: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png",
   quad: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamahaquadraptor.png",
   scooter: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-hondascooter350.png",
 };
 
-// Meta Info per ogni categoria
 const categoryMeta: Record<string, { title: string; subtitle: string; description: string }> = {
   city_car: {
     title: "City Car",
@@ -33,19 +31,21 @@ const categoryMeta: Record<string, { title: string; subtitle: string; descriptio
   },
 };
 
-// Ordine esatto richiesto
 const DESIRED_ORDER = ["city_car", "quad", "scooter"];
+
+// Fallback prices when no DB data exists for a category
+const FALLBACK_PRICES: Record<string, number> = {
+  city_car: 50,
+  quad: 80,
+  scooter: 40,
+};
 
 const FleetShowcase = () => {
   const { data: vehicles, isLoading } = useVehicles();
   const grouped = vehicles ? groupByCategory(vehicles) : {};
 
-  // Filtriamo le categorie disponibili
-  const availableCategories = DESIRED_ORDER.filter((cat) => grouped[cat] && grouped[cat].length > 0);
-
   return (
     <section className="py-24 md:py-32 bg-slate-50 overflow-hidden relative">
-      {/* Texture di sfondo invisibile per dare profondità */}
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
@@ -55,7 +55,6 @@ const FleetShowcase = () => {
       />
 
       <div className="container px-4 relative z-10">
-        {/* HEADER SEZIONE */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,12 +86,14 @@ const FleetShowcase = () => {
           </div>
         ) : (
           <div className="flex flex-col gap-24 md:gap-40">
-            {availableCategories.map((cat, i) => {
+            {DESIRED_ORDER.map((cat, i) => {
               const meta = categoryMeta[cat];
               const image = transparentImageMap[cat];
-              const lowestPrice = Math.min(...grouped[cat].map((v) => getLowestRate(v)));
+              const hasDbData = grouped[cat] && grouped[cat].length > 0;
+              const lowestPrice = hasDbData
+                ? Math.min(...grouped[cat].map((v) => getLowestRate(v)))
+                : FALLBACK_PRICES[cat];
 
-              // Logica Alternata: I pari hanno immagine a destra, i dispari a sinistra
               const isEven = i % 2 === 0;
 
               return (
@@ -100,7 +101,7 @@ const FleetShowcase = () => {
                   key={cat}
                   className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center justify-between gap-12 md:gap-20 group`}
                 >
-                  {/* COLONNA TESTO */}
+                  {/* TEXT */}
                   <motion.div
                     initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -132,7 +133,7 @@ const FleetShowcase = () => {
                     </div>
                   </motion.div>
 
-                  {/* COLONNA IMMAGINE (PNG TRASPARENTE) */}
+                  {/* IMAGE */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8, rotate: isEven ? 5 : -5 }}
                     whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -140,13 +141,10 @@ const FleetShowcase = () => {
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="w-full md:w-1/2 relative flex justify-center items-center perspective-[1000px]"
                   >
-                    {/* Bagliore "Studio Lighting" dietro al veicolo */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-400/20 blur-[80px] rounded-full pointer-events-none transition-transform duration-700 group-hover:scale-110" />
-
-                    {/* Immagine del veicolo con effetto Float e Ombra realistica */}
                     <motion.img
                       animate={{ y: [-10, 10, -10] }}
-                      transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: i * 0.5 }}
+                      transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" as const, delay: i * 0.5 }}
                       src={image}
                       alt={meta.title}
                       className="relative z-10 w-[90%] md:w-full max-w-[600px] h-auto object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-105"
