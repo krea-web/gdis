@@ -14,6 +14,12 @@ import NotFound from "./pages/NotFound";
 import FiatPandaPage from "./pages/flotta/FiatPandaPage";
 import HondaScooterPage from "./pages/flotta/HondaScooterPage";
 import YamahaQuadPage from "./pages/flotta/YamahaQuadPage";
+import PortoCervoPage from "./pages/localita/PortoCervo";
+import SanTeodoroPage from "./pages/localita/SanTeodoro";
+import SanPantaleoPage from "./pages/localita/SanPantaleo";
+import PortoRotondoPage from "./pages/localita/PortoRotondo";
+import GolfoAranciPage from "./pages/localita/GolfoAranci";
+import BajaSardiniaPage from "./pages/localita/BajaSardinia";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +39,12 @@ const App = () => (
             <Route path="/flotta/fiat-panda" element={<FiatPandaPage />} />
             <Route path="/flotta/honda-sh" element={<HondaScooterPage />} />
             <Route path="/flotta/yamaha-raptor" element={<YamahaQuadPage />} />
+            <Route path="/localita/porto-cervo" element={<PortoCervoPage />} />
+            <Route path="/localita/san-teodoro" element={<SanTeodoroPage />} />
+            <Route path="/localita/san-pantaleo" element={<SanPantaleoPage />} />
+            <Route path="/localita/porto-rotondo" element={<PortoRotondoPage />} />
+            <Route path="/localita/golfo-aranci" element={<GolfoAranciPage />} />
+            <Route path="/localita/baja-sardinia" element={<BajaSardiniaPage />} />
             <Route path="/admin" element={<Admin />} />
           </Route>
           <Route path="*" element={<NotFound />} />
