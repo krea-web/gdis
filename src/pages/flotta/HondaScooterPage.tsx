@@ -9,7 +9,8 @@ const heroImg =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash-125-350-costasmeralda.webp";
 const featureImg =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp";
-const featureImg2 = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80";
+const featureImg2 =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash-125-350-noleggiocostasmeralda.webp";
 
 const specs = [
   { icon: Gauge, label: "Cilindrata", value: "125cc / 350cc" },
