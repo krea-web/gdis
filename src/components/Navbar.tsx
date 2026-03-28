@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Car, Bike, Mountain } from "lucide-react";
+import { Menu, X, ChevronDown, Car, Bike, Mountain, MapPin } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -10,6 +10,15 @@ const flottaItems = [
   { label: "City Car", to: "/flotta/fiat-panda", icon: Car, desc: "Fiat Panda Hybrid" },
   { label: "Scooter", to: "/flotta/honda-sh", icon: Bike, desc: "Honda SH 125 / 350" },
   { label: "Quad", to: "/flotta/yamaha-raptor", icon: Mountain, desc: "Yamaha Raptor 700" },
+];
+
+const destinazioniItems = [
+  { label: "Porto Cervo", to: "/localita/porto-cervo", desc: "Lusso & Marina" },
+  { label: "San Teodoro", to: "/localita/san-teodoro", desc: "Spiagge & Movida" },
+  { label: "San Pantaleo", to: "/localita/san-pantaleo", desc: "Borgo Bohémien" },
+  { label: "Porto Rotondo", to: "/localita/porto-rotondo", desc: "Eleganza Discreta" },
+  { label: "Golfo Aranci", to: "/localita/golfo-aranci", desc: "Terminal Traghetti" },
+  { label: "Baja Sardinia", to: "/localita/baja-sardinia", desc: "Phi Beach & Party" },
 ];
 
 const Navbar = () => {
