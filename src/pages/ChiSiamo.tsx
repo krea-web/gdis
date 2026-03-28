@@ -9,7 +9,8 @@ import FaqSection from "@/components/chisiamo/FaqSection";
 const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 const heroUrl =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/gdisrentservice-noleggio-auto-scooter-quad-olbia.webp";
-const touristUrl = "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80";
+const touristUrl =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp";
 const transportUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80";
 
 /* ── Vertical Timeline Node ── */
