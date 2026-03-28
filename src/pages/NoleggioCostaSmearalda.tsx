@@ -154,7 +154,7 @@ const CostaFaq = () => {
     },
     {
       q: "Quali veicoli consigliate per la Costa Smeralda?",
-      a: "Per la costa consigliamo scooter per gli spostamenti brevi e le spiagge nascoste, citycar per comfort e parcheggio facile, e quad per le avventure off-road nell'entroterra galluresano.",
+      a: "Per la costa consigliamo scooter per gli spostamenti brevi e le spiagge nascoste, citycar per comfort e parcheggio facile, e quad per le avventure off-road nell'entroterra gallurese.",
     },
     {
       q: "Posso noleggiare un veicolo all'aeroporto di Olbia?",
