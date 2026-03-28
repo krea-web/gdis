@@ -10,7 +10,7 @@ const heroImg =
 const featureImg =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-costasmeraldaoffroad.webp";
 const featureImg2 =
-  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamahaquadraptor.png";
+  "hhttps://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-offroadsardegna.webp";
 
 const specs = [
   { icon: Gauge, label: "Cilindrata", value: "686cc monocilindro" },
