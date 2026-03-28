@@ -4,8 +4,7 @@ import { Upload, X } from "lucide-react";
 import { useCallback, useRef } from "react";
 
 type DriverData = {
-  nome: string; cognome: string; dataNascita: string; luogoNascita: string;
-  viaResidenza: string; cittaResidenza: string; email: string; telefono: string;
+  email: string; telefono: string;
   codiceFiscale: string; patenteFronte: File | null; patenteRetro: File | null;
 };
 
@@ -84,40 +83,52 @@ const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) =>
     onChange({ ...data, [field]: value });
   };
 
-  const fields: { key: keyof DriverData; label: string; type: string; placeholder: string }[] = [
-    { key: "nome", label: "Nome", type: "text", placeholder: "Mario" },
-    { key: "cognome", label: "Cognome", type: "text", placeholder: "Rossi" },
-    { key: "dataNascita", label: "Data di nascita", type: "date", placeholder: "" },
-    { key: "luogoNascita", label: "Luogo di nascita", type: "text", placeholder: "Olbia" },
-    { key: "viaResidenza", label: "Via di residenza", type: "text", placeholder: "Via Roma 1" },
-    { key: "cittaResidenza", label: "Città di residenza", type: "text", placeholder: "Olbia" },
-    { key: "email", label: "E-mail", type: "email", placeholder: "mario@email.com" },
-    { key: "telefono", label: "Telefono", type: "tel", placeholder: "+39 333 1234567" },
-    { key: "codiceFiscale", label: "Codice Fiscale", type: "text", placeholder: "RSSMRA85M01F979X" },
-  ];
-
   return (
     <div>
       <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">{title}</h2>
-      <p className="text-muted-foreground mb-8">Compila tutti i campi obbligatori.</p>
+      <p className="text-muted-foreground mb-8">Inserisci i dati di contatto.</p>
 
       <div className="bg-card rounded-2xl border border-border p-6 md:p-8 space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {fields.map((f) => (
-            <div key={f.key} className="space-y-2">
-              <Label htmlFor={f.key} className="text-sm font-medium text-foreground">
-                {f.label} <span className="text-destructive">*</span>
-              </Label>
-              <Input
-                id={f.key}
-                type={f.type}
-                placeholder={f.placeholder}
-                value={data[f.key] as string}
-                onChange={(e) => update(f.key, e.target.value)}
-                className="bg-background"
-              />
-            </div>
-          ))}
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-sm font-medium text-foreground">
+              E-mail <span className="text-destructive">*</span>
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="mario@email.com"
+              value={data.email}
+              onChange={(e) => update("email", e.target.value)}
+              className="bg-background"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="telefono" className="text-sm font-medium text-foreground">
+              Telefono <span className="text-destructive">*</span>
+            </Label>
+            <Input
+              id="telefono"
+              type="tel"
+              placeholder="+39 333 1234567"
+              value={data.telefono}
+              onChange={(e) => update("telefono", e.target.value)}
+              className="bg-background"
+            />
+          </div>
+          <div className="space-y-2 sm:col-span-2">
+            <Label htmlFor="codiceFiscale" className="text-sm font-medium text-foreground">
+              Codice Fiscale <span className="text-muted-foreground text-xs">(opzionale)</span>
+            </Label>
+            <Input
+              id="codiceFiscale"
+              type="text"
+              placeholder="RSSMRA85M01F979X"
+              value={data.codiceFiscale}
+              onChange={(e) => update("codiceFiscale", e.target.value)}
+              className="bg-background"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4 border-t border-border">

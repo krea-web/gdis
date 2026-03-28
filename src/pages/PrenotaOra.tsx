@@ -18,8 +18,7 @@ import { invokeN8nProxy } from "@/lib/n8nProxy";
 /* ── Types ─────────────────────────────────── */
 
 export type DriverData = {
-  nome: string; cognome: string; dataNascita: string; luogoNascita: string;
-  viaResidenza: string; cittaResidenza: string; email: string; telefono: string;
+  email: string; telefono: string;
   codiceFiscale: string; patenteFronte: File | null; patenteRetro: File | null;
 };
 
@@ -34,8 +33,7 @@ export type BookingState = {
 };
 
 const initialDriver: DriverData = {
-  nome: "", cognome: "", dataNascita: "", luogoNascita: "",
-  viaResidenza: "", cittaResidenza: "", email: "", telefono: "",
+  email: "", telefono: "",
   codiceFiscale: "", patenteFronte: null, patenteRetro: null,
 };
 
@@ -87,8 +85,7 @@ const PrenotaOra = () => {
       case 1: return !!booking.startDate && !!booking.endDate;
       case 2: {
         const d = booking.driver;
-        return !!(d.nome && d.cognome && d.dataNascita && d.luogoNascita &&
-          d.viaResidenza && d.cittaResidenza && d.email && d.telefono && d.codiceFiscale);
+        return !!(d.email && d.telefono);
       }
       case 3: return true;
       default: return false;
@@ -160,28 +157,16 @@ const PrenotaOra = () => {
         start_date: booking.startDate.toISOString().split("T")[0],
         end_date: booking.endDate.toISOString().split("T")[0],
         total_price: totalPrice,
-        customer_name: booking.driver.nome,
-        customer_surname: booking.driver.cognome,
         email: booking.driver.email,
         phone: booking.driver.telefono,
-        tax_code: booking.driver.codiceFiscale,
-        birth_date: booking.driver.dataNascita,
-        birth_place: booking.driver.luogoNascita,
-        residence_address: booking.driver.viaResidenza,
-        city: booking.driver.cittaResidenza,
+        tax_code: booking.driver.codiceFiscale || null,
         license_front_url: frontUrl,
         license_back_url: backUrl,
         has_second_driver: booking.secondDriver.enabled,
         ...(booking.secondDriver.enabled ? {
-          second_driver_name: booking.secondDriver.nome,
-          second_driver_surname: booking.secondDriver.cognome,
           second_driver_email: booking.secondDriver.email,
           second_driver_phone: booking.secondDriver.telefono,
-          second_driver_cf: booking.secondDriver.codiceFiscale,
-          second_driver_birth_date: booking.secondDriver.dataNascita,
-          second_driver_birth_place: booking.secondDriver.luogoNascita,
-          second_driver_residence_address: booking.secondDriver.viaResidenza,
-          second_driver_city: booking.secondDriver.cittaResidenza,
+          second_driver_cf: booking.secondDriver.codiceFiscale || null,
           second_driver_license_front_url: secondFrontUrl,
           second_driver_license_back_url: secondBackUrl,
         } : {}),
