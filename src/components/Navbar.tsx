@@ -142,12 +142,46 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
 
-          <Link to="/noleggio-in-costa-smeralda" className={textClass(location.pathname === "/noleggio-in-costa-smeralda")}>
-            Costa Smeralda
-            {location.pathname === "/noleggio-in-costa-smeralda" && (
-              <motion.div layoutId="navbar-indicator" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
-            )}
-          </Link>
+          {/* Destinazioni Dropdown */}
+          <div ref={destDropdownRef} className="relative">
+            <button
+              onClick={() => setDestinazioniOpen(!destinazioniOpen)}
+              className={`${textClass(isDestinazioniActive)} flex items-center gap-1`}
+            >
+              Destinazioni
+              <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${destinazioniOpen ? "rotate-180" : ""}`} />
+              {isDestinazioniActive && (
+                <motion.div layoutId="navbar-indicator" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+              )}
+            </button>
+            <AnimatePresence>
+              {destinazioniOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full mt-3 -left-4 w-64 glass rounded-xl shadow-xl shadow-foreground/10 border border-border/50 overflow-hidden"
+                >
+                  {destinazioniItems.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-accent/60 transition-colors group"
+                    >
+                      <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <MapPin className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">{item.label}</p>
+                        <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         <div className="hidden md:block">
