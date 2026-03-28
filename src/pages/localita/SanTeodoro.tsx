@@ -30,7 +30,7 @@ const SanTeodoroPage = () => (
       name="San Teodoro"
       subtitle="La Cinta, movida e spiagge infinite. Il tuo Honda SH ti aspetta per un'estate senza traffico."
       bgImage="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80"
-      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH125.jpg"
+      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
       vehicleAlt="Honda SH 125 San Teodoro"
     />
 
@@ -42,8 +42,12 @@ const SanTeodoroPage = () => (
       imageAlt="Spiagge di San Teodoro"
     >
       <div className="flex flex-wrap gap-3">
-        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Parcheggio gratis alle spiagge</span>
-        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Consumi ridottissimi</span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+          Parcheggio gratis alle spiagge
+        </span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+          Consumi ridottissimi
+        </span>
         <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Patente B o AM</span>
       </div>
     </VehicleSpotlight>
@@ -51,11 +55,31 @@ const SanTeodoroPage = () => (
     <MasonrySpots
       name="San Teodoro"
       spots={[
-        { name: "Spiaggia La Cinta", desc: "5 km di sabbia dorata con vista su Tavolara e colonie di fenicotteri rosa.", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" },
-        { name: "Cala Brandinchi", desc: "Chiamata 'Tahiti' per le acque trasparenti. Raggiungila in scooter prima della folla.", image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80" },
-        { name: "Lu Impostu", desc: "Laguna poco profonda per famiglie, con chiosco sulla spiaggia.", image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80" },
-        { name: "Monte Nieddu", desc: "Cascate e piscine naturali nell'entroterra. Perfette per il quad.", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80" },
-        { name: "Mercatino Serale", desc: "Ogni sera in estate: artigianato, street food e musica nel centro del paese.", image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" },
+        {
+          name: "Spiaggia La Cinta",
+          desc: "5 km di sabbia dorata con vista su Tavolara e colonie di fenicotteri rosa.",
+          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          name: "Cala Brandinchi",
+          desc: "Chiamata 'Tahiti' per le acque trasparenti. Raggiungila in scooter prima della folla.",
+          image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          name: "Lu Impostu",
+          desc: "Laguna poco profonda per famiglie, con chiosco sulla spiaggia.",
+          image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          name: "Monte Nieddu",
+          desc: "Cascate e piscine naturali nell'entroterra. Perfette per il quad.",
+          image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          name: "Mercatino Serale",
+          desc: "Ogni sera in estate: artigianato, street food e musica nel centro del paese.",
+          image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
+        },
       ]}
     />
 
@@ -72,21 +96,57 @@ const SanTeodoroPage = () => (
     <LocalitaTrafficTips
       name="San Teodoro"
       tips={[
-        { icon: "parking", title: "La Cinta Parking", text: "Parcheggio a pagamento (€3-5/giorno). In scooter parcheggi gratis nelle aree moto dedicate all'ingresso." },
-        { icon: "traffic", title: "SS131 Weekend", text: "La statale è trafficata sabato e domenica. Parti presto per le spiagge o usa lo scooter." },
-        { icon: "ztl", title: "Centro Pedonale", text: "Il centro di San Teodoro è pedonale la sera. Perfetto per la passeggiata dopo aver parcheggiato lo scooter." },
-        { icon: "tip", title: "Verso Golfo Aranci", text: "Con lo scooter o la Panda raggiungi Golfo Aranci in 40 minuti lungo una strada panoramica mozzafiato." },
+        {
+          icon: "parking",
+          title: "La Cinta Parking",
+          text: "Parcheggio a pagamento (€3-5/giorno). In scooter parcheggi gratis nelle aree moto dedicate all'ingresso.",
+        },
+        {
+          icon: "traffic",
+          title: "SS131 Weekend",
+          text: "La statale è trafficata sabato e domenica. Parti presto per le spiagge o usa lo scooter.",
+        },
+        {
+          icon: "ztl",
+          title: "Centro Pedonale",
+          text: "Il centro di San Teodoro è pedonale la sera. Perfetto per la passeggiata dopo aver parcheggiato lo scooter.",
+        },
+        {
+          icon: "tip",
+          title: "Verso Golfo Aranci",
+          text: "Con lo scooter o la Panda raggiungi Golfo Aranci in 40 minuti lungo una strada panoramica mozzafiato.",
+        },
       ]}
     />
 
     <LocalitaNightlife
       name="San Teodoro"
       locali={[
-        { name: "Ambra Night", type: "club", desc: "Il club di riferimento. Dj set e atmosfera elettrica fino alle prime luci dell'alba." },
-        { name: "Luna Glam Club", type: "club", desc: "Eleganza e musica house. Il punto d'incontro della movida giovane." },
-        { name: "La Tartaruga", type: "ristorante", desc: "Cucina sarda autentica nel cuore del paese. I culurgiones sono leggendari." },
-        { name: "Bar Centrale", type: "aperitivo", desc: "Aperitivo in piazza, osservando il passeggio serale. Spritz perfetti." },
-        { name: "Da Nino al Porto", type: "ristorante", desc: "Pesce fresco e vista sul porticciolo. Atmosfera marinara autentica." },
+        {
+          name: "Ambra Night",
+          type: "club",
+          desc: "Il club di riferimento. Dj set e atmosfera elettrica fino alle prime luci dell'alba.",
+        },
+        {
+          name: "Luna Glam Club",
+          type: "club",
+          desc: "Eleganza e musica house. Il punto d'incontro della movida giovane.",
+        },
+        {
+          name: "La Tartaruga",
+          type: "ristorante",
+          desc: "Cucina sarda autentica nel cuore del paese. I culurgiones sono leggendari.",
+        },
+        {
+          name: "Bar Centrale",
+          type: "aperitivo",
+          desc: "Aperitivo in piazza, osservando il passeggio serale. Spritz perfetti.",
+        },
+        {
+          name: "Da Nino al Porto",
+          type: "ristorante",
+          desc: "Pesce fresco e vista sul porticciolo. Atmosfera marinara autentica.",
+        },
       ]}
     />
 
@@ -95,10 +155,22 @@ const SanTeodoroPage = () => (
     <LocalitaFAQ
       name="San Teodoro"
       faqs={[
-        { q: "Posso parcheggiare lo scooter gratis alla Cinta?", a: "Sì! Alla Cinta e Brandinchi ci sono aree moto gratuite. Risparmierai rispetto al parcheggio auto e troverai posto anche in piena estate." },
-        { q: "Consegnate il veicolo al mio hotel a San Teodoro?", a: "Assolutamente. Consegna VIP al tuo hotel, B&B o residence. Comunicaci l'indirizzo e pensiamo a tutto noi." },
-        { q: "Serve la patente per lo scooter Honda SH 125?", a: "Basta la patente B o AM (per gli SH 125). Per l'SH 350 serve la patente A2 o A. Per il quad serve la patente B." },
-        { q: "Quanto dista l'aeroporto di Olbia da San Teodoro?", a: "Solo 25 minuti. Consegniamo all'aeroporto Olbia Costa Smeralda o al tuo alloggio." },
+        {
+          q: "Posso parcheggiare lo scooter gratis alla Cinta?",
+          a: "Sì! Alla Cinta e Brandinchi ci sono aree moto gratuite. Risparmierai rispetto al parcheggio auto e troverai posto anche in piena estate.",
+        },
+        {
+          q: "Consegnate il veicolo al mio hotel a San Teodoro?",
+          a: "Assolutamente. Consegna VIP al tuo hotel, B&B o residence. Comunicaci l'indirizzo e pensiamo a tutto noi.",
+        },
+        {
+          q: "Serve la patente per lo scooter Honda SH 125?",
+          a: "Basta la patente B o AM (per gli SH 125). Per l'SH 350 serve la patente A2 o A. Per il quad serve la patente B.",
+        },
+        {
+          q: "Quanto dista l'aeroporto di Olbia da San Teodoro?",
+          a: "Solo 25 minuti. Consegniamo all'aeroporto Olbia Costa Smeralda o al tuo alloggio.",
+        },
       ]}
     />
 
@@ -106,8 +178,10 @@ const SanTeodoroPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Teodoro parti verso nord per scoprire le calette segrete di{" "}
-          <Link to="/localita/golfo-aranci" className="text-primary font-semibold hover:underline">Golfo Aranci</Link>
-          {" "}— perfette con la Fiat Panda.
+          <Link to="/localita/golfo-aranci" className="text-primary font-semibold hover:underline">
+            Golfo Aranci
+          </Link>{" "}
+          — perfette con la Fiat Panda.
         </p>
       </div>
     </section>
