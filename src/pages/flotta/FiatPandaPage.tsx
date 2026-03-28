@@ -5,9 +5,12 @@ import { motion } from "framer-motion";
 import { Users, Wind, Fuel, Gauge, Settings, Luggage, Check, MapPin, ShoppingBag, Palmtree, Star } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const heroImg = "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&q=80";
-const featureImg = "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80";
-const featureImg2 = "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80";
+const heroImg =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp";
+const featureImg =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp";
+const featureImg2 =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp";
 
 const specs = [
   { icon: Gauge, label: "Motore", value: "1.0 Hybrid 70cv" },
@@ -22,29 +25,44 @@ const scenarios = [
   {
     icon: MapPin,
     title: "Spiagge Nascoste a San Teodoro",
-    description: "Raggiungi Lu Impostu, Cala Brandinchi e La Cinta senza stress. Parcheggia ovunque grazie alle dimensioni compatte.",
+    description:
+      "Raggiungi Lu Impostu, Cala Brandinchi e La Cinta senza stress. Parcheggia ovunque grazie alle dimensioni compatte.",
     highlight: false,
   },
   {
     icon: ShoppingBag,
     title: "Shopping Serale a Porto Cervo",
-    description: "Passeggia tra le boutique della Promenade du Port e torna comodamente con tutti i tuoi acquisti nel bagagliaio.",
+    description:
+      "Passeggia tra le boutique della Promenade du Port e torna comodamente con tutti i tuoi acquisti nel bagagliaio.",
     highlight: true,
   },
   {
     icon: Users,
     title: "Avventure in Gruppo fino a 5",
-    description: "Spazio per tutta la famiglia o gli amici. Climatizzatore per le giornate calde, consumi ridotti per il portafoglio.",
+    description:
+      "Spazio per tutta la famiglia o gli amici. Climatizzatore per le giornate calde, consumi ridotti per il portafoglio.",
     highlight: false,
   },
 ];
 
 const faqs = [
-  { q: "Posso andare fuoristrada con la Panda?", a: "No. La Fiat Panda Hybrid è progettata per strade asfaltate. Per percorsi off-road consigliamo il nostro Yamaha Raptor Quad." },
-  { q: "Ha l'aria condizionata?", a: "Sì, tutte le nostre Panda sono dotate di aria condizionata perfettamente funzionante — essenziale per l'estate sarda." },
+  {
+    q: "Posso andare fuoristrada con la Panda?",
+    a: "No. La Fiat Panda Hybrid è progettata per strade asfaltate. Per percorsi off-road consigliamo il nostro Yamaha Raptor Quad.",
+  },
+  {
+    q: "Ha l'aria condizionata?",
+    a: "Sì, tutte le nostre Panda sono dotate di aria condizionata perfettamente funzionante — essenziale per l'estate sarda.",
+  },
   { q: "Che patente serve?", a: "È sufficiente la Patente B, valida anche per i neopatentati." },
-  { q: "Il carburante è incluso?", a: "Il veicolo viene consegnato con il pieno e va restituito con il pieno. In alternativa è possibile acquistare l'opzione 'pieno anticipato'." },
-  { q: "La consegna VIP è disponibile?", a: "Sì! Consegniamo direttamente in aeroporto, porto, hotel o villa in tutta la Costa Smeralda." },
+  {
+    q: "Il carburante è incluso?",
+    a: "Il veicolo viene consegnato con il pieno e va restituito con il pieno. In alternativa è possibile acquistare l'opzione 'pieno anticipato'.",
+  },
+  {
+    q: "La consegna VIP è disponibile?",
+    a: "Sì! Consegniamo direttamente in aeroporto, porto, hotel o villa in tutta la Costa Smeralda.",
+  },
 ];
 
 const floatAnimation = {
@@ -70,7 +88,11 @@ const FiatPandaPage = () => (
     {/* HERO */}
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.15),hsl(var(--brand-dark))_70%)]">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Fiat Panda Hybrid Costa Smeralda Sardegna" className="w-full h-full object-cover opacity-20" />
+        <img
+          src={heroImg}
+          alt="Fiat Panda Hybrid Costa Smeralda Sardegna"
+          className="w-full h-full object-cover opacity-20"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-dark))] via-transparent to-[hsl(var(--brand-dark)/0.6)]" />
       </div>
       <div className="container relative z-10 py-32">
@@ -82,11 +104,15 @@ const FiatPandaPage = () => (
               <span className="block text-primary">Hybrid</span>
             </h1>
             <p className="text-primary-foreground/60 text-lg max-w-lg mb-8">
-              Agilità senza compromessi in Costa Smeralda. Climatizzatore, 5 posti, consumi ridotti — l'auto perfetta per la tua vacanza sarda.
+              Agilità senza compromessi in Costa Smeralda. Climatizzatore, 5 posti, consumi ridotti — l'auto perfetta
+              per la tua vacanza sarda.
             </p>
             <div className="flex flex-wrap gap-3 mb-10">
               {["5 Posti", "Aria Condizionata", "Hybrid"].map((badge) => (
-                <span key={badge} className="px-4 py-2 rounded-full bg-primary/15 text-primary border border-primary/30 text-sm font-medium backdrop-blur-sm">
+                <span
+                  key={badge}
+                  className="px-4 py-2 rounded-full bg-primary/15 text-primary border border-primary/30 text-sm font-medium backdrop-blur-sm"
+                >
                   {badge}
                 </span>
               ))}
@@ -116,21 +142,39 @@ const FiatPandaPage = () => (
     <section className="py-24 bg-background">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="border-l-4 border-primary pl-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="border-l-4 border-primary pl-8"
+          >
             <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Comfort & Praticità</p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">Compatta fuori, spaziosa dentro</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
+              Compatta fuori, spaziosa dentro
+            </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              La Fiat Panda Hybrid è il veicolo ideale per muoversi agilmente tra le strade della Sardegna.
-              Con il suo motore mild-hybrid da 70cv, unisce consumi ridottissimi a una sorprendente vivacità.
-              Facile da parcheggiare nei centri storici e spaziosa abbastanza per 5 passeggeri con bagagli.
+              La Fiat Panda Hybrid è il veicolo ideale per muoversi agilmente tra le strade della Sardegna. Con il suo
+              motore mild-hybrid da 70cv, unisce consumi ridottissimi a una sorprendente vivacità. Facile da
+              parcheggiare nei centri storici e spaziosa abbastanza per 5 passeggeri con bagagli.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Il climatizzatore mantiene l'abitacolo fresco anche nelle giornate più calde di agosto,
-              mentre il bagagliaio da 225 litri ospita comodamente borse da spiaggia, ombrelloni e acquisti.
+              Il climatizzatore mantiene l'abitacolo fresco anche nelle giornate più calde di agosto, mentre il
+              bagagliaio da 225 litri ospita comodamente borse da spiaggia, ombrelloni e acquisti.
             </p>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <img src={featureImg} alt="Sardegna costa panoramica" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <img
+              src={featureImg}
+              alt="Sardegna costa panoramica"
+              className="rounded-2xl shadow-2xl w-full"
+              loading="lazy"
+            />
           </motion.div>
         </div>
       </div>
@@ -140,19 +184,38 @@ const FiatPandaPage = () => (
     <section className="py-24 bg-muted/30">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="order-2 md:order-1">
-            <img src={featureImg2} alt="Spiaggia Costa Smeralda" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="order-2 md:order-1"
+          >
+            <img
+              src={featureImg2}
+              alt="Spiaggia Costa Smeralda"
+              className="rounded-2xl shadow-2xl w-full"
+              loading="lazy"
+            />
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="order-1 md:order-2 border-l-4 border-primary pl-8">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="order-1 md:order-2 border-l-4 border-primary pl-8"
+          >
             <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Spazio per gli Amici</p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">Perfetta per raggiungere le spiagge</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
+              Perfetta per raggiungere le spiagge
+            </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Dalla Spiaggia del Principe a Cala di Volpe, dalla Costa Smeralda a San Teodoro:
-              la Panda ti porta ovunque con agilità e comfort.
+              Dalla Spiaggia del Principe a Cala di Volpe, dalla Costa Smeralda a San Teodoro: la Panda ti porta ovunque
+              con agilità e comfort.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Con la consegna VIP direttamente in aeroporto, porto o hotel,
-              la tua vacanza inizia dal momento in cui atterri.
+              Con la consegna VIP direttamente in aeroporto, porto o hotel, la tua vacanza inizia dal momento in cui
+              atterri.
             </p>
           </motion.div>
         </div>
@@ -163,7 +226,12 @@ const FiatPandaPage = () => (
     <section className="py-24 bg-[hsl(var(--brand-dark))] text-primary-foreground relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.08),transparent_60%)]" />
       <div className="container relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-3">Specifiche</p>
           <h2 className="text-3xl md:text-5xl font-display font-bold">Scheda Tecnica</h2>
         </motion.div>
@@ -189,7 +257,12 @@ const FiatPandaPage = () => (
     {/* SCENARIO CARDS */}
     <section className="py-24 bg-background">
       <div className="container max-w-5xl">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-3">Dove ti porta</p>
           <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground">Perfetto per...</h2>
         </motion.div>
@@ -222,13 +295,24 @@ const FiatPandaPage = () => (
     <section className="py-24 bg-primary relative overflow-hidden">
       <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,hsl(0_0%_100%/0.02)_20px,hsl(0_0%_100%/0.02)_40px)]" />
       <div className="container max-w-3xl relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground">Domande Frequenti</h2>
         </motion.div>
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-6 hover:bg-primary-foreground/15 transition-all duration-300">
-              <AccordionTrigger className="text-left font-semibold text-primary-foreground hover:no-underline [&>svg]:text-primary-foreground">{faq.q}</AccordionTrigger>
+            <AccordionItem
+              key={i}
+              value={`faq-${i}`}
+              className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-6 hover:bg-primary-foreground/15 transition-all duration-300"
+            >
+              <AccordionTrigger className="text-left font-semibold text-primary-foreground hover:no-underline [&>svg]:text-primary-foreground">
+                {faq.q}
+              </AccordionTrigger>
               <AccordionContent className="text-primary-foreground/70 font-light">{faq.a}</AccordionContent>
             </AccordionItem>
           ))}
@@ -247,14 +331,23 @@ const FiatPandaPage = () => (
         />
       </div>
       <div className="container relative z-10 text-center">
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground mb-6">
             Pronto a guidare la tua Panda?
           </h2>
           <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-12">
             Prenota in meno di 2 minuti. Consegna VIP in aeroporto, porto o hotel — in tutta la Costa Smeralda.
           </p>
-          <Button asChild size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg rounded-full px-12 h-16 shadow-[0_10px_40px_hsl(0_0%_0%/0.3)] hover:shadow-[0_15px_50px_hsl(0_0%_0%/0.4)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300">
+          <Button
+            asChild
+            size="xl"
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg rounded-full px-12 h-16 shadow-[0_10px_40px_hsl(0_0%_0%/0.3)] hover:shadow-[0_15px_50px_hsl(0_0%_0%/0.4)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+          >
             <Link to="/prenotaora">Prenota la tua Panda →</Link>
           </Button>
         </motion.div>
