@@ -11,7 +11,8 @@ const heroUrl =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/gdisrentservice-noleggio-auto-scooter-quad-olbia.webp";
 const touristUrl =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp";
-const transportUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80";
+const transportUrl =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/gdisrentservice-trasporto-merci-trasporti-eccezionali-trasporto-di-imbarcazioni.webp";
 
 /* ── Vertical Timeline Node ── */
 const TimelineNode = ({
