@@ -5,9 +5,12 @@ import { motion } from "framer-motion";
 import { Gauge, Fuel, Users, Shield, Mountain, Wrench, Compass, Flame, Camera } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const heroImg = "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&q=80";
-const featureImg = "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80";
-const featureImg2 = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80";
+const heroImg =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-offroadsardegna.webp";
+const featureImg =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-offroadsardegna.webp";
+const featureImg2 =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamahaquadraptor.png";
 
 const specs = [
   { icon: Gauge, label: "Cilindrata", value: "686cc monocilindro" },
@@ -22,29 +25,44 @@ const scenarios = [
   {
     icon: Mountain,
     title: "Sterrati della Gallura",
-    description: "Affronta sentieri e percorsi off-road che le auto non possono raggiungere. Sospensioni da competizione per ogni terreno.",
+    description:
+      "Affronta sentieri e percorsi off-road che le auto non possono raggiungere. Sospensioni da competizione per ogni terreno.",
     highlight: false,
   },
   {
     icon: Flame,
     title: "Adrenalina Pura",
-    description: "686cc di potenza bruta sotto di te. Il Raptor 700 è la macchina definitiva per chi cerca emozioni senza filtri nella natura sarda.",
+    description:
+      "686cc di potenza bruta sotto di te. Il Raptor 700 è la macchina definitiva per chi cerca emozioni senza filtri nella natura sarda.",
     highlight: true,
   },
   {
     icon: Camera,
     title: "Calette Segrete Inaccessibili",
-    description: "Raggiungi spiagge dove nessun'auto può arrivare. Parcheggia ovunque, esplora senza limiti, fotografa paradisi nascosti.",
+    description:
+      "Raggiungi spiagge dove nessun'auto può arrivare. Parcheggia ovunque, esplora senza limiti, fotografa paradisi nascosti.",
     highlight: false,
   },
 ];
 
 const faqs = [
-  { q: "Che patente serve per il Quad?", a: "Serve la Patente B, la stessa dell'automobile. Il Raptor 700 è omologato per strada." },
+  {
+    q: "Che patente serve per il Quad?",
+    a: "Serve la Patente B, la stessa dell'automobile. Il Raptor 700 è omologato per strada.",
+  },
   { q: "I caschi sono inclusi?", a: "Sì, forniamo casco integrale omologato incluso nel prezzo del noleggio." },
-  { q: "Posso circolare su strada normale?", a: "Sì, il Yamaha Raptor 700 è completamente omologato per la circolazione su strade pubbliche oltre che su sterrato." },
-  { q: "È adatto ai principianti?", a: "Il Raptor 700 è un quad potente. Consigliamo esperienza pregressa alla guida di veicoli a motore. Forniamo un briefing completo prima della partenza." },
-  { q: "Quanto dura la batteria/autonomia?", a: "Il serbatoio da 11 litri garantisce un'autonomia di circa 150km a seconda dello stile di guida e del terreno." },
+  {
+    q: "Posso circolare su strada normale?",
+    a: "Sì, il Yamaha Raptor 700 è completamente omologato per la circolazione su strade pubbliche oltre che su sterrato.",
+  },
+  {
+    q: "È adatto ai principianti?",
+    a: "Il Raptor 700 è un quad potente. Consigliamo esperienza pregressa alla guida di veicoli a motore. Forniamo un briefing completo prima della partenza.",
+  },
+  {
+    q: "Quanto dura la batteria/autonomia?",
+    a: "Il serbatoio da 11 litri garantisce un'autonomia di circa 150km a seconda dello stile di guida e del terreno.",
+  },
 ];
 
 const floatAnimation = {
@@ -70,7 +88,11 @@ const YamahaQuadPage = () => (
     {/* HERO */}
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.15),hsl(var(--brand-dark))_70%)]">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Yamaha Raptor 700 Quad Sardegna off-road" className="w-full h-full object-cover opacity-20" />
+        <img
+          src={heroImg}
+          alt="Yamaha Raptor 700 Quad Sardegna off-road"
+          className="w-full h-full object-cover opacity-20"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-dark))] via-transparent to-[hsl(var(--brand-dark)/0.6)]" />
       </div>
       <div className="container relative z-10 py-32">
@@ -82,11 +104,15 @@ const YamahaQuadPage = () => (
               <span className="block text-primary">700</span>
             </h1>
             <p className="text-primary-foreground/60 text-lg max-w-lg mb-8">
-              Adrenalina pura sugli sterrati della Gallura. 686cc di potenza, sospensioni off-road, esplorazione senza limiti.
+              Adrenalina pura sugli sterrati della Gallura. 686cc di potenza, sospensioni off-road, esplorazione senza
+              limiti.
             </p>
             <div className="flex flex-wrap gap-3 mb-10">
               {["686cc", "Patente B", "Off-Road Ready"].map((badge) => (
-                <span key={badge} className="px-4 py-2 rounded-full bg-primary/15 text-primary border border-primary/30 text-sm font-medium backdrop-blur-sm">
+                <span
+                  key={badge}
+                  className="px-4 py-2 rounded-full bg-primary/15 text-primary border border-primary/30 text-sm font-medium backdrop-blur-sm"
+                >
                   {badge}
                 </span>
               ))}
@@ -116,21 +142,37 @@ const YamahaQuadPage = () => (
     <section className="py-24 bg-background">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="border-l-4 border-primary pl-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="border-l-4 border-primary pl-8"
+          >
             <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Potenza & Avventura</p>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">Domina ogni terreno</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Il Yamaha Raptor 700 è la macchina definitiva per esplorare la Sardegna selvaggia.
-              Con il suo monocilindro da 686cc e le sospensioni da competizione, affronta sterrati,
-              sentieri costieri e piste off-road con una facilità disarmante.
+              Il Yamaha Raptor 700 è la macchina definitiva per esplorare la Sardegna selvaggia. Con il suo monocilindro
+              da 686cc e le sospensioni da competizione, affronta sterrati, sentieri costieri e piste off-road con una
+              facilità disarmante.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Raggiungi calette segrete inaccessibili in auto, attraversa la macchia mediterranea
-              e vivi un'esperienza di guida che non dimenticherai. Casco integrale e briefing inclusi.
+              Raggiungi calette segrete inaccessibili in auto, attraversa la macchia mediterranea e vivi un'esperienza
+              di guida che non dimenticherai. Casco integrale e briefing inclusi.
             </p>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <img src={featureImg} alt="Spiaggia nascosta Sardegna" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <img
+              src={featureImg}
+              alt="Spiaggia nascosta Sardegna"
+              className="rounded-2xl shadow-2xl w-full"
+              loading="lazy"
+            />
           </motion.div>
         </div>
       </div>
@@ -140,19 +182,40 @@ const YamahaQuadPage = () => (
     <section className="py-24 bg-muted/30">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="order-2 md:order-1">
-            <img src={featureImg2} alt="Costa sarda off-road" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="order-2 md:order-1"
+          >
+            <img
+              src={featureImg2}
+              alt="Costa sarda off-road"
+              className="rounded-2xl shadow-2xl w-full"
+              loading="lazy"
+            />
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="order-1 md:order-2 border-l-4 border-primary pl-8">
-            <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Esplorazione Senza Limiti</p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">Dove le auto non arrivano</h2>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="order-1 md:order-2 border-l-4 border-primary pl-8"
+          >
+            <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+              Esplorazione Senza Limiti
+            </p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
+              Dove le auto non arrivano
+            </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              La Gallura nasconde sentieri costieri, percorsi tra le rocce di granito e spiagge
-              raggiungibili solo su due (o quattro) ruote.
+              La Gallura nasconde sentieri costieri, percorsi tra le rocce di granito e spiagge raggiungibili solo su
+              due (o quattro) ruote.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Il Raptor 700, omologato anche per strada, ti permette di alternare asfalto e sterrato
-              in totale libertà. Un'esperienza unica per chi cerca l'avventura vera.
+              Il Raptor 700, omologato anche per strada, ti permette di alternare asfalto e sterrato in totale libertà.
+              Un'esperienza unica per chi cerca l'avventura vera.
             </p>
           </motion.div>
         </div>
@@ -163,7 +226,12 @@ const YamahaQuadPage = () => (
     <section className="py-24 bg-[hsl(var(--brand-dark))] text-primary-foreground relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.08),transparent_60%)]" />
       <div className="container relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-3">Specifiche</p>
           <h2 className="text-3xl md:text-5xl font-display font-bold">Scheda Tecnica</h2>
         </motion.div>
@@ -189,7 +257,12 @@ const YamahaQuadPage = () => (
     {/* SCENARIO CARDS */}
     <section className="py-24 bg-background">
       <div className="container max-w-5xl">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-3">Dove ti porta</p>
           <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground">Perfetto per...</h2>
         </motion.div>
@@ -222,13 +295,24 @@ const YamahaQuadPage = () => (
     <section className="py-24 bg-primary relative overflow-hidden">
       <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,hsl(0_0%_100%/0.02)_20px,hsl(0_0%_100%/0.02)_40px)]" />
       <div className="container max-w-3xl relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground">Domande Frequenti</h2>
         </motion.div>
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-6 hover:bg-primary-foreground/15 transition-all duration-300">
-              <AccordionTrigger className="text-left font-semibold text-primary-foreground hover:no-underline [&>svg]:text-primary-foreground">{faq.q}</AccordionTrigger>
+            <AccordionItem
+              key={i}
+              value={`faq-${i}`}
+              className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-6 hover:bg-primary-foreground/15 transition-all duration-300"
+            >
+              <AccordionTrigger className="text-left font-semibold text-primary-foreground hover:no-underline [&>svg]:text-primary-foreground">
+                {faq.q}
+              </AccordionTrigger>
               <AccordionContent className="text-primary-foreground/70 font-light">{faq.a}</AccordionContent>
             </AccordionItem>
           ))}
@@ -247,14 +331,23 @@ const YamahaQuadPage = () => (
         />
       </div>
       <div className="container relative z-10 text-center">
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground mb-6">
             Scatena l'avventura
           </h2>
           <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-12">
             Prenota il tuo Yamaha Raptor 700 in meno di 2 minuti. Casco integrale e briefing inclusi.
           </p>
-          <Button asChild size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg rounded-full px-12 h-16 shadow-[0_10px_40px_hsl(0_0%_0%/0.3)] hover:shadow-[0_15px_50px_hsl(0_0%_0%/0.4)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300">
+          <Button
+            asChild
+            size="xl"
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg rounded-full px-12 h-16 shadow-[0_10px_40px_hsl(0_0%_0%/0.3)] hover:shadow-[0_15px_50px_hsl(0_0%_0%/0.4)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+          >
             <Link to="/prenotaora">Prenota il tuo Quad →</Link>
           </Button>
         </motion.div>
