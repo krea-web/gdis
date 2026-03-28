@@ -1,6 +1,8 @@
 import SEOHead from "@/components/SEOHead";
-import LocalitaHero from "@/components/localita/LocalitaHero";
-import LocalitaScopri from "@/components/localita/LocalitaScopri";
+import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
+import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
+import MasonrySpots from "@/components/localita/MasonrySpots";
+import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
 import TrustMarquee from "@/components/home/TrustMarquee";
@@ -12,53 +14,77 @@ import { Link } from "react-router-dom";
 const SanPantaleoPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto, Scooter e Quad a San Pantaleo | GDIS Rent"
-      description="Noleggia scooter e auto a San Pantaleo, il borgo bohémien della Gallura. Mercato del giovedì, montagne e strade panoramiche. GDIS Rent."
+      title="Noleggio Scooter a San Pantaleo | Borgo Bohémien Gallura | GDIS Rent"
+      description="Noleggia Honda SH a San Pantaleo, il borgo bohémien della Gallura. Mercato del giovedì, strade strette e montagne di granito. GDIS Rent."
       canonical="/localita/san-pantaleo"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: "GDIS Rent - San Pantaleo",
-        description: "Noleggio veicoli a San Pantaleo, Gallura",
+        description: "Noleggio scooter Honda SH a San Pantaleo, Gallura",
         areaServed: "San Pantaleo",
       }}
     />
 
-    <LocalitaHero
+    <LocalitaHeroV2
       name="San Pantaleo"
-      subtitle="Il borgo bohémien della Gallura tra mercati artigianali, montagne di granito e strade panoramiche perfette per lo scooter."
+      subtitle="Strade strette, mercati artigianali e montagne di granito. Lo scooter è l'unico modo per vivere questo borgo."
       bgImage="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80"
+      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH125.jpg"
+      vehicleAlt="Honda SH 125 San Pantaleo"
     />
 
-    <LocalitaScopri
-      name="San Pantaleo"
-      intro="San Pantaleo è un piccolo gioiello incastonato tra le montagne di granito della Gallura. Lontano dal caos della costa, questo borgo conserva un'anima autentica: botteghe artigiane, gallerie d'arte, e il leggendario mercato del giovedì mattina che attira visitatori da tutta la Costa Smeralda. Le strade strette del centro sono il paradiso dello scooter: niente stress, solo bellezza."
-      spots={[
-        { name: "Piazza della Chiesa", desc: "Il cuore pulsante del borgo. Caffè all'ombra dei lecci e atmosfera d'altri tempi." },
-        { name: "Mercato del Giovedì", desc: "Artigianato locale, ceramiche, tessuti sardi e street food. Un'esperienza imperdibile." },
-        { name: "Rocce di Punta Cugnana", desc: "Formazioni granitiche spettacolari raggiungibili in quad per un tramonto indimenticabile." },
-        { name: "Stazzo Gallurese", desc: "Antiche fattorie in pietra trasformate in agriturismi con cucina tradizionale." },
-      ]}
+    <VehicleSpotlight
+      tag="Perfetto per il Borgo"
+      title="Lo Scooter nelle Strade Strette di San Pantaleo"
+      description="San Pantaleo non è fatto per le auto. Le vie del borgo sono strette, tortuose, e il giovedì mattina — giorno del leggendario mercato artigianale — trovare parcheggio è praticamente impossibile. L'Honda SH 125 è il veicolo perfetto: agile tra i vicoli, parcheggi ovunque, e quando hai voglia di lusso scendi a Porto Cervo in 15 minuti lungo una strada panoramica tra rocce di granito."
       image="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80"
+      imageAlt="Strade di San Pantaleo"
+      reverse
+    >
+      <div className="flex flex-wrap gap-3">
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Agile nei vicoli</span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Parcheggio zero stress</span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">15 min da Porto Cervo</span>
+      </div>
+    </VehicleSpotlight>
+
+    <MasonrySpots
+      name="San Pantaleo"
+      spots={[
+        { name: "Piazza della Chiesa", desc: "Il cuore del borgo. Caffè all'ombra dei lecci e atmosfera d'altri tempi.", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80" },
+        { name: "Mercato del Giovedì", desc: "Artigianato locale, ceramiche, tessuti sardi e street food. Imperdibile.", image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" },
+        { name: "Rocce di Punta Cugnana", desc: "Formazioni granitiche spettacolari. Tramonto indimenticabile in quad.", image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&w=600&q=80" },
+        { name: "Stazzo Gallurese", desc: "Antiche fattorie in pietra trasformate in agriturismi con cucina tradizionale.", image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&q=80" },
+      ]}
+    />
+
+    <CockpitSpecs
+      vehicleName="Honda SH 125i"
+      specs={[
+        { label: "Patente", value: "B / AM", icon: "license" },
+        { label: "Posti", value: "2", icon: "seats" },
+        { label: "Ideale per", value: "Borghi & Vicoli", icon: "use" },
+        { label: "Consegna", value: "San Pantaleo", icon: "delivery" },
+      ]}
     />
 
     <LocalitaTrafficTips
       name="San Pantaleo"
       tips={[
-        { icon: "parking", title: "Parcheggio Limitato", text: "Il centro ha pochissimi posti auto, specialmente il giovedì (mercato). Vieni in scooter ed è tutto più facile." },
-        { icon: "ztl", title: "Strade Strette", text: "Le vie del borgo sono strette e tortuose. L'Honda SH 125 è il veicolo perfetto per navigarle." },
-        { icon: "traffic", title: "Strada Panoramica", text: "La SP13 verso Arzachena è bellissima ma con curve: guida con calma e goditi il panorama." },
-        { icon: "tip", title: "Verso Porto Cervo", text: "In 15 minuti di scooter scendi verso Porto Cervo per una cena vista mare." },
+        { icon: "parking", title: "Giovedì = Scooter", text: "Il giorno del mercato è impossibile parcheggiare l'auto. In scooter arrivi, parcheggi e ti godi l'atmosfera." },
+        { icon: "ztl", title: "Strade Strette", text: "Le vie del borgo sono strette e in pendenza. L'Honda SH 125 le naviga senza sforzo." },
+        { icon: "traffic", title: "SP13 Panoramica", text: "La strada verso Arzachena è bella ma con curve. Guida con calma e goditi il panorama." },
+        { icon: "tip", title: "Scendi a Porto Cervo", text: "In 15 minuti di scooter sei sulla Promenade du Port per una cena vista yacht." },
       ]}
     />
 
     <LocalitaNightlife
       name="San Pantaleo"
       locali={[
-        { name: "Ristorante Giagoni", type: "ristorante", desc: "Cucina gallurese contemporanea con ingredienti a km zero. La zuppa gallurese è memorabile." },
-        { name: "Café Nina", type: "aperitivo", desc: "Aperitivi artigianali nella piazzetta. Atmosfera bohémien e musica acustica il venerdì sera." },
-        { name: "Da Roberto", type: "ristorante", desc: "Pizzeria storica del borgo. Impasto a lunga lievitazione e forno a legna." },
-        { name: "Wine Bar L'Artigiano", type: "aperitivo", desc: "Selezione di Cannonau e Vermentino locali. Taglieri di formaggi sardi artigianali." },
+        { name: "Giagoni", type: "ristorante", desc: "Cucina gallurese contemporanea con ingredienti a km zero. Zuppa gallurese memorabile." },
+        { name: "Café Nina", type: "aperitivo", desc: "Aperitivi artigianali nella piazzetta. Atmosfera bohémien e musica acustica il venerdì." },
+        { name: "Wine Bar L'Artigiano", type: "aperitivo", desc: "Cannonau e Vermentino locali. Taglieri di formaggi sardi artigianali." },
         { name: "Agriturismo Li Paràuli", type: "ristorante", desc: "Esperienza rurale autentica a 5 minuti dal centro. Menu fisso con prodotti dell'azienda." },
       ]}
     />
@@ -68,20 +94,19 @@ const SanPantaleoPage = () => (
     <LocalitaFAQ
       name="San Pantaleo"
       faqs={[
-        { q: "Come arrivo a San Pantaleo senza auto?", a: "Consegniamo scooter e auto direttamente a San Pantaleo. Lo scooter Honda SH è la scelta perfetta per il borgo e le sue strade strette." },
-        { q: "Quando si tiene il mercato del giovedì?", a: "Ogni giovedì mattina da giugno a settembre, dalle 8 alle 13. Vieni presto in scooter per trovare posto e goderti l'atmosfera prima della folla." },
-        { q: "Posso raggiungere Porto Cervo da San Pantaleo in scooter?", a: "Certo! Porto Cervo è a soli 15 minuti lungo una strada panoramica tra le rocce di granito. Perfetto per una serata fuori." },
-        { q: "Il quad è adatto per esplorare l'entroterra intorno a San Pantaleo?", a: "Assolutamente sì. L'entroterra gallurese è pieno di sentieri sterrati e paesaggi mozzafiato perfetti per il Yamaha Raptor." },
+        { q: "Come arrivo al mercato del giovedì senza problemi di parcheggio?", a: "In scooter Honda SH! Il giovedì mattina è impossibile trovare posto auto. Lo scooter parcheggia a 2 passi dalla piazza." },
+        { q: "Posso raggiungere Porto Cervo da San Pantaleo in scooter?", a: "Certo! Porto Cervo è a soli 15 minuti lungo una strada panoramica spettacolare tra le rocce di granito della Gallura." },
+        { q: "Consegnate lo scooter direttamente a San Pantaleo?", a: "Sì, consegna VIP al tuo alloggio a San Pantaleo. Contattaci su WhatsApp per organizzare." },
+        { q: "Il quad è adatto per l'entroterra di San Pantaleo?", a: "Assolutamente. L'entroterra gallurese è pieno di sentieri sterrati perfetti per il Yamaha Raptor 700. Serve la patente B." },
       ]}
     />
 
     <section className="py-16 bg-muted/20">
       <div className="container px-4 text-center">
-        <p className="text-muted-foreground">
-          Da San Pantaleo scendi in 15 minuti verso{" "}
+        <p className="text-lg text-muted-foreground">
+          Da San Pantaleo scendi verso{" "}
           <Link to="/localita/porto-cervo" className="text-primary font-semibold hover:underline">Porto Cervo</Link>
-          {" "}per lo shopping di lusso, oppure esplora le cale nascoste di{" "}
-          <Link to="/localita/porto-rotondo" className="text-primary font-semibold hover:underline">Porto Rotondo</Link>.
+          {" "}per lo shopping di lusso e la Marina — 15 minuti di curve panoramiche.
         </p>
       </div>
     </section>
