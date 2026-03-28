@@ -250,13 +250,36 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
 
-              <Link
-                to="/noleggio-in-costa-smeralda"
-                onClick={() => setMobileOpen(false)}
-                className="text-base font-medium text-foreground/70 hover:text-primary py-2 transition-colors"
+              {/* Mobile Destinazioni Accordion */}
+              <button
+                onClick={() => setMobileDestinazioniOpen(!mobileDestinazioniOpen)}
+                className="flex items-center justify-between text-base font-medium text-foreground/70 hover:text-primary py-2 transition-colors w-full"
               >
-                Costa Smeralda
-              </Link>
+                Destinazioni
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileDestinazioniOpen ? "rotate-180" : ""}`} />
+              </button>
+              <AnimatePresence>
+                {mobileDestinazioniOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="pl-4 flex flex-col gap-1 overflow-hidden"
+                  >
+                    {destinazioniItems.map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center gap-3 py-2 text-sm text-foreground/60 hover:text-primary transition-colors"
+                      >
+                        <MapPin className="h-4 w-4" />
+                        {item.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               <Button variant="hero" size="lg" asChild className="mt-2">
                 <Link to="/prenotaora" onClick={() => setMobileOpen(false)}>
