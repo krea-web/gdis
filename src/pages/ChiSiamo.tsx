@@ -7,12 +7,25 @@ import { Link } from "react-router-dom";
 import FaqSection from "@/components/chisiamo/FaqSection";
 
 const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
-const heroUrl = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80";
+const heroUrl =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/gdisrentservice-noleggio-auto-scooter-quad-olbia.webp";
 const touristUrl = "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80";
 const transportUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80";
 
 /* ── Vertical Timeline Node ── */
-const TimelineNode = ({ index, title, subtitle, icon: Icon, isLast }: { index: number; title: string; subtitle: string; icon: React.ElementType; isLast?: boolean }) => {
+const TimelineNode = ({
+  index,
+  title,
+  subtitle,
+  icon: Icon,
+  isLast,
+}: {
+  index: number;
+  title: string;
+  subtitle: string;
+  icon: React.ElementType;
+  isLast?: boolean;
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -45,15 +58,9 @@ const TimelineNode = ({ index, title, subtitle, icon: Icon, isLast }: { index: n
         transition={{ duration: 0.6, delay: 0.3 }}
         className="pb-14 md:pb-20"
       >
-        <span className="text-primary font-display text-xs font-bold uppercase tracking-[0.3em]">
-          0{index + 1}
-        </span>
-        <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mt-1 mb-3">
-          {title}
-        </h3>
-        <p className="text-muted-foreground text-base md:text-lg font-light leading-relaxed max-w-lg">
-          {subtitle}
-        </p>
+        <span className="text-primary font-display text-xs font-bold uppercase tracking-[0.3em]">0{index + 1}</span>
+        <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mt-1 mb-3">{title}</h3>
+        <p className="text-muted-foreground text-base md:text-lg font-light leading-relaxed max-w-lg">{subtitle}</p>
       </motion.div>
     </div>
   );
@@ -71,14 +78,20 @@ const marqueeItems = [
 
 const MarqueeContent = () => (
   <>
-    {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
-      <div key={i} className="flex items-center px-6 md:px-10 flex-shrink-0">
-        <span className="text-primary-foreground font-display font-black text-sm md:text-xl uppercase tracking-[0.2em] whitespace-nowrap">
-          {item}
-        </span>
-        <img src={gdisLogo} alt="GDIS" className="h-6 md:h-8 w-auto opacity-90 drop-shadow-md ml-6 md:ml-10 flex-shrink-0" />
-      </div>
-    ))}
+    {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map(
+      (item, i) => (
+        <div key={i} className="flex items-center px-6 md:px-10 flex-shrink-0">
+          <span className="text-primary-foreground font-display font-black text-sm md:text-xl uppercase tracking-[0.2em] whitespace-nowrap">
+            {item}
+          </span>
+          <img
+            src={gdisLogo}
+            alt="GDIS"
+            className="h-6 md:h-8 w-auto opacity-90 drop-shadow-md ml-6 md:ml-10 flex-shrink-0"
+          />
+        </div>
+      ),
+    )}
   </>
 );
 
@@ -128,8 +141,7 @@ const ChiSiamo = () => {
             transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
             className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-primary-foreground leading-[0.95] tracking-tight drop-shadow-2xl"
           >
-            La Nuova Era della{" "}
-            <span className="italic font-light text-primary">Mobilità</span>
+            La Nuova Era della <span className="italic font-light text-primary">Mobilità</span>
             <br />
             in Costa Smeralda
           </motion.h1>
@@ -140,8 +152,8 @@ const ChiSiamo = () => {
             transition={{ delay: 1, duration: 0.8 }}
             className="text-primary-foreground/50 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto"
           >
-            Nati nel 2025 per offrirti veicoli di ultima generazione, un processo 100% digitale
-            e consegne VIP direttamente al tuo yacht o hotel.
+            Nati nel 2025 per offrirti veicoli di ultima generazione, un processo 100% digitale e consegne VIP
+            direttamente al tuo yacht o hotel.
           </motion.p>
 
           <motion.div
@@ -241,7 +253,9 @@ const ChiSiamo = () => {
                 className="absolute -bottom-6 -right-6 md:-right-12 bg-primary rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_hsl(var(--primary)/0.4)] max-w-[240px]"
               >
                 <p className="text-primary-foreground font-display font-bold text-2xl md:text-3xl">VIP</p>
-                <p className="text-primary-foreground/70 font-light text-sm mt-1">Consegna a yacht, hotel e ville private</p>
+                <p className="text-primary-foreground/70 font-light text-sm mt-1">
+                  Consegna a yacht, hotel e ville private
+                </p>
               </motion.div>
             </motion.div>
 
@@ -257,37 +271,34 @@ const ChiSiamo = () => {
                 Il Nostro Core
               </span>
               <h2 className="font-display text-4xl md:text-6xl font-black text-foreground leading-[1.05] mb-8">
-                Esplora la Sardegna{" "}
-                <span className="italic font-light text-primary">con stile</span>
+                Esplora la Sardegna <span className="italic font-light text-primary">con stile</span>
               </h2>
               <div className="space-y-6 text-muted-foreground text-lg font-light leading-relaxed">
                 <p>
-                  <strong className="text-foreground font-medium">City Car, Scooter e Quad</strong> di ultima generazione
-                  per vivere ogni angolo della Costa Smeralda in totale libertà. Prenoti online in 2 minuti,
+                  <strong className="text-foreground font-medium">City Car, Scooter e Quad</strong> di ultima
+                  generazione per vivere ogni angolo della Costa Smeralda in totale libertà. Prenoti online in 2 minuti,
                   firmi digitalmente e ritiri — oppure te lo portiamo noi.
                 </p>
                 <p>
                   Il nostro <strong className="text-foreground font-medium">Servizio Consegna VIP</strong> è ciò che ci
-                  rende unici: il veicolo arriva direttamente al tuo yacht a Palau, alla tua villa a Porto Cervo
-                  o al tuo hotel a San Teodoro. <strong className="text-foreground font-medium">Zero stress. Zero code. Solo il mare.</strong>
+                  rende unici: il veicolo arriva direttamente al tuo yacht a Palau, alla tua villa a Porto Cervo o al
+                  tuo hotel a San Teodoro.{" "}
+                  <strong className="text-foreground font-medium">Zero stress. Zero code. Solo il mare.</strong>
                 </p>
               </div>
 
               <div className="mt-10 pt-8 border-t border-border">
-                <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                  🏎️ Auto di Lusso & Supercar
-                </h3>
+                <h3 className="font-display text-xl font-bold text-foreground mb-3">🏎️ Auto di Lusso & Supercar</h3>
                 <p className="text-muted-foreground font-light mb-6">
                   Disponibili <strong className="text-foreground font-medium">esclusivamente su richiesta</strong>.
                   Contattaci per configurare la tua esperienza VIP su misura.
                 </p>
-                <Button
-                  asChild
-                  variant="whatsapp"
-                  size="lg"
-                  className="rounded-full"
-                >
-                  <a href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20info%20su%20noleggio%20VIP%20Car" target="_blank" rel="noopener noreferrer">
+                <Button asChild variant="whatsapp" size="lg" className="rounded-full">
+                  <a
+                    href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20info%20su%20noleggio%20VIP%20Car"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <MessageCircle className="mr-2 h-5 w-5" /> Richiedi VIP Car su WhatsApp
                   </a>
                 </Button>
@@ -330,15 +341,15 @@ const ChiSiamo = () => {
                 Servizi B2B
               </span>
               <h2 className="font-display text-3xl md:text-5xl font-black text-foreground leading-[1.05] mb-6">
-                Trasporti Speciali{" "}
-                <span className="italic font-light text-primary">& Merci</span>
+                Trasporti Speciali <span className="italic font-light text-primary">& Merci</span>
               </h2>
               <p className="text-muted-foreground text-lg font-light leading-relaxed mb-8">
-                Oltre alla mobilità turistica, GDIS opera nel settore dei trasporti pesanti.
-                Effettuiamo <strong className="text-foreground font-medium">trasporto merci, trasporti eccezionali
-                e trasporto di imbarcazioni</strong>. Operiamo esclusivamente con nostro personale qualificato
-                (servizi con conducente), utilizzando la nostra flotta di TIR, Camion, Furgoni,
-                Rimorchi e Semi-rimorchi.
+                Oltre alla mobilità turistica, GDIS opera nel settore dei trasporti pesanti. Effettuiamo{" "}
+                <strong className="text-foreground font-medium">
+                  trasporto merci, trasporti eccezionali e trasporto di imbarcazioni
+                </strong>
+                . Operiamo esclusivamente con nostro personale qualificato (servizi con conducente), utilizzando la
+                nostra flotta di TIR, Camion, Furgoni, Rimorchi e Semi-rimorchi.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -350,13 +361,12 @@ const ChiSiamo = () => {
                     Richiedi Preventivo Trasporti <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Button
-                  asChild
-                  variant="whatsapp"
-                  size="lg"
-                  className="rounded-full"
-                >
-                  <a href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20trasporto%20merci" target="_blank" rel="noopener noreferrer">
+                <Button asChild variant="whatsapp" size="lg" className="rounded-full">
+                  <a
+                    href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20trasporto%20merci"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
                   </a>
                 </Button>
@@ -397,8 +407,7 @@ const ChiSiamo = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] mb-6">
-              Pronto a{" "}
-              <span className="italic font-light text-primary">esplorare</span>
+              Pronto a <span className="italic font-light text-primary">esplorare</span>
               <br />
               la Sardegna?
             </h2>
