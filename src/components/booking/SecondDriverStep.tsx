@@ -5,8 +5,7 @@ import DriverForm from "@/components/booking/DriverForm";
 
 type SecondDriverData = {
   enabled: boolean;
-  nome: string; cognome: string; dataNascita: string; luogoNascita: string;
-  viaResidenza: string; cittaResidenza: string; email: string; telefono: string;
+  email: string; telefono: string;
   codiceFiscale: string; patenteFronte: File | null; patenteRetro: File | null;
 };
 
@@ -46,12 +45,6 @@ const SecondDriverStep = ({ data, onChange }: Props) => {
             <DriverForm
               title="Dati secondo guidatore"
               data={{
-                nome: data.nome,
-                cognome: data.cognome,
-                dataNascita: data.dataNascita,
-                luogoNascita: data.luogoNascita,
-                viaResidenza: data.viaResidenza,
-                cittaResidenza: data.cittaResidenza,
                 email: data.email,
                 telefono: data.telefono,
                 codiceFiscale: data.codiceFiscale,

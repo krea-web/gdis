@@ -23,8 +23,8 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
   const stepsInfo = [
     { icon: Car, label: "Veicolo", done: !!booking.vehicle },
     { icon: Calendar, label: "Date", done: !!booking.startDate && !!booking.endDate },
-    { icon: User, label: "Conducente", done: !!booking.driver.nome },
-    { icon: Users, label: "2° Guidatore", done: booking.secondDriver.enabled && !!booking.secondDriver.nome },
+    { icon: User, label: "Conducente", done: !!booking.driver.email },
+    { icon: Users, label: "2° Guidatore", done: booking.secondDriver.enabled && !!booking.secondDriver.email },
     { icon: PenTool, label: "Firma", done: currentStep > 4 },
   ];
 
