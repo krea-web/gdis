@@ -1,6 +1,8 @@
 import SEOHead from "@/components/SEOHead";
-import LocalitaHero from "@/components/localita/LocalitaHero";
-import LocalitaScopri from "@/components/localita/LocalitaScopri";
+import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
+import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
+import MasonrySpots from "@/components/localita/MasonrySpots";
+import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
 import TrustMarquee from "@/components/home/TrustMarquee";
@@ -12,54 +14,78 @@ import { Link } from "react-router-dom";
 const PortoRotondoPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto, Scooter e Quad a Porto Rotondo | GDIS Rent"
-      description="Noleggia auto, scooter e quad a Porto Rotondo. Piazzetta San Marco, Ira Beach e Marina. Consegna VIP diretta con GDIS Rent."
+      title="Noleggio Quad a Porto Rotondo | Cale Nascoste Off-Road | GDIS Rent"
+      description="Noleggia il Yamaha Raptor 700 a Porto Rotondo. Raggiungi cale nascoste, esplora Punta Volpe e vivi l'avventura off-road. GDIS Rent."
       canonical="/localita/porto-rotondo"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: "GDIS Rent - Porto Rotondo",
-        description: "Noleggio veicoli a Porto Rotondo, Costa Smeralda",
+        description: "Noleggio quad Yamaha Raptor a Porto Rotondo",
         areaServed: "Porto Rotondo",
       }}
     />
 
-    <LocalitaHero
+    <LocalitaHeroV2
       name="Porto Rotondo"
-      subtitle="Eleganza discreta, spiagge da sogno e una Marina esclusiva. Consegna VIP direttamente alla tua villa o al tuo ormeggio."
-      bgImage="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80"
+      subtitle="Cale nascoste raggiungibili solo off-road. Il Yamaha Raptor 700 ti porta dove le auto non arrivano."
+      bgImage="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=2000&q=80"
+      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/YAMAHA%20RAPTOR%20QUAD%20BLU.jpg"
+      vehicleAlt="Yamaha Raptor 700 Porto Rotondo"
     />
 
-    <LocalitaScopri
+    <VehicleSpotlight
+      tag="Avventura Off-Road"
+      title="Il Quad Apre le Cale Segrete di Porto Rotondo"
+      description="Porto Rotondo è eleganza sulla superficie, ma la vera magia si nasconde nelle calette di Punta Volpe, nelle spiagge di Marinella raggiungibili solo via sterrato, e nei sentieri che si arrampicano tra la macchia mediterranea. Il Yamaha Raptor 700 è progettato per questo: sospensioni off-road, potenza da vendere, e la capacità di portarti dove nessuna auto potrà mai arrivare. Esplora, scopri, conquista — e al tramonto torna sulla Piazzetta San Marco per l'aperitivo."
+      image="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80"
+      imageAlt="Cale nascoste Porto Rotondo"
+    >
+      <div className="flex flex-wrap gap-3">
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Sospensioni off-road</span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Patente B obbligatoria</span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Cale irraggiungibili</span>
+      </div>
+    </VehicleSpotlight>
+
+    <MasonrySpots
       name="Porto Rotondo"
-      intro="Porto Rotondo incarna l'eleganza discreta della Costa Smeralda. Meno caotica di Porto Cervo ma altrettanto raffinata, questa perla affacciata sul Golfo di Cugnana offre una Piazzetta San Marco che ricorda Venezia, una Marina con yacht da sogno, e alcune delle spiagge più belle della Sardegna nord-orientale. Qui il tempo scorre lento, tra un bagno in acque cristalline e un aperitivo al tramonto."
       spots={[
-        { name: "Spiaggia di Ira", desc: "Due baie gemelle separate da uno sperone roccioso. Acque limpide e fondali perfetti per lo snorkeling." },
-        { name: "Piazzetta San Marco", desc: "L'anfiteatro all'aperto con la chiesa e le sculture di Andrea Cascella." },
-        { name: "Spiaggia dei Sassi", desc: "Caletta intima raggiungibile a piedi. Pochi turisti, massima privacy." },
-        { name: "Punta Volpe", desc: "Litorale selvaggio con calette raggiungibili solo in quad o a piedi." },
+        { name: "Spiaggia di Ira", desc: "Due baie gemelle separate da uno sperone roccioso. Acque limpide e fondali per lo snorkeling.", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" },
+        { name: "Piazzetta San Marco", desc: "Anfiteatro all'aperto con sculture di Andrea Cascella. L'aperitivo perfetto.", image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=80" },
+        { name: "Punta Volpe", desc: "Litorale selvaggio con calette raggiungibili solo in quad o a piedi.", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80" },
+        { name: "Spiaggia dei Sassi", desc: "Caletta intima con pochi turisti. Massima privacy.", image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80" },
+        { name: "Marina di Porto Rotondo", desc: "Yacht e barche a vela. L'eleganza discreta della Costa Smeralda.", image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&q=80" },
       ]}
-      image="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80"
+    />
+
+    <CockpitSpecs
+      vehicleName="Yamaha Raptor 700R"
+      specs={[
+        { label: "Patente", value: "B", icon: "license" },
+        { label: "Posti", value: "1", icon: "seats" },
+        { label: "Ideale per", value: "Off-Road & Cale", icon: "use" },
+        { label: "Consegna", value: "Marina / Hotel", icon: "delivery" },
+      ]}
     />
 
     <LocalitaTrafficTips
       name="Porto Rotondo"
       tips={[
-        { icon: "parking", title: "Parcheggio Piazzetta", text: "Parcheggio limitato vicino alla Piazzetta. In scooter trovi posto ovunque, anche in piena estate." },
-        { icon: "traffic", title: "Traffico Moderato", text: "Meno congestionata di Porto Cervo, ma il tratto Olbia-Porto Rotondo è trafficato nelle ore di punta." },
-        { icon: "ztl", title: "Centro Pedonale", text: "La Piazzetta e il lungomare sono pedonali. Lo scooter è l'ideale per arrivarci e parcheggiare vicino." },
-        { icon: "tip", title: "Cale Nascoste in Quad", text: "Le calette di Punta Volpe e Marinella sono perfette per il quad: strade sterrate e zero folla." },
+        { icon: "parking", title: "Piazzetta Parking", text: "Parcheggio limitato vicino alla Piazzetta. In quad o scooter trovi posto ovunque." },
+        { icon: "traffic", title: "Olbia-Porto Rotondo", text: "Il tratto è trafficato nelle ore di punta estive. Il quad prende le scorciatoie sterrate." },
+        { icon: "ztl", title: "Centro Pedonale", text: "La Piazzetta e il lungomare sono pedonali. Lo scooter parcheggia nelle aree dedicate." },
+        { icon: "tip", title: "Cale in Quad", text: "Le calette di Punta Volpe e Marinella sono perfette per il quad: strade sterrate e zero folla." },
       ]}
     />
 
     <LocalitaNightlife
       name="Porto Rotondo"
       locali={[
-        { name: "Ristorante S'Astore", type: "ristorante", desc: "Alta cucina sarda con vista sulla baia. Degustazione di aragoste e ricci di mare freschi." },
-        { name: "Country Club Porto Rotondo", type: "lounge", desc: "Pool bar esclusivo con dj set al tramonto. Dress code elegante." },
-        { name: "Bar della Piazzetta", type: "aperitivo", desc: "Il punto di ritrovo per l'aperitivo serale. Vino sardo e taglieri di pecorino." },
-        { name: "Ristorante Tartarughino", type: "ristorante", desc: "Pesce alla griglia e pasta fresca sulla terrazza con vista Marina." },
-        { name: "La Terrazza Lounge", type: "lounge", desc: "Cocktail d'autore e musica soft con panorama sul golfo." },
+        { name: "S'Astore", type: "ristorante", desc: "Alta cucina sarda con vista sulla baia. Aragoste e ricci di mare freschi." },
+        { name: "Country Club", type: "lounge", desc: "Pool bar esclusivo con dj set al tramonto. Dress code elegante." },
+        { name: "Bar della Piazzetta", type: "aperitivo", desc: "L'aperitivo serale con vino sardo e taglieri di pecorino. Vista anfiteatro." },
+        { name: "Tartarughino", type: "ristorante", desc: "Pesce alla griglia e pasta fresca sulla terrazza con vista Marina." },
       ]}
     />
 
@@ -68,21 +94,19 @@ const PortoRotondoPage = () => (
     <LocalitaFAQ
       name="Porto Rotondo"
       faqs={[
-        { q: "Consegnate i veicoli alla Marina di Porto Rotondo?", a: "Sì, offriamo consegna VIP alla Marina, al tuo hotel o alla tua villa. Contattaci su WhatsApp per organizzare il ritiro." },
-        { q: "Come raggiungo le spiagge nascoste intorno a Porto Rotondo?", a: "Le calette di Punta Volpe e le spiagge più isolate sono raggiungibili al meglio con il quad Yamaha Raptor. Per Ira Beach, anche lo scooter è perfetto." },
-        { q: "Porto Rotondo è adatta per famiglie?", a: "Assolutamente. Le acque basse di Marinella e Ira Beach sono ideali per i bambini. La Fiat Panda è perfetta per la famiglia." },
-        { q: "Quanto dista Olbia da Porto Rotondo?", a: "Solo 15 minuti in auto. Consegniamo anche all'aeroporto e al porto di Olbia." },
+        { q: "Consegnate il quad alla Marina di Porto Rotondo?", a: "Sì! Consegna VIP alla Marina, al tuo hotel o alla villa. Il Yamaha Raptor 700 ti aspetta pronto per l'avventura." },
+        { q: "Serve la patente per il quad Yamaha Raptor?", a: "Sì, serve la patente B. Il Raptor 700 è un veicolo potente che richiede esperienza di guida." },
+        { q: "Posso raggiungere le cale nascoste senza quad?", a: "Alcune spiagge come Punta Volpe sono raggiungibili a piedi (30+ minuti) ma il quad è infinitamente più comodo e veloce." },
+        { q: "Noleggiate anche scooter e auto a Porto Rotondo?", a: "Certo! Offriamo Honda SH per il centro, Fiat Panda per le famiglie, e auto VIP su richiesta WhatsApp." },
       ]}
     />
 
     <section className="py-16 bg-muted/20">
       <div className="container px-4 text-center">
-        <p className="text-muted-foreground">
-          Da Porto Rotondo sali verso il borgo montano di{" "}
+        <p className="text-lg text-muted-foreground">
+          Dopo l'avventura off-road, sali verso il borgo montano di{" "}
           <Link to="/localita/san-pantaleo" className="text-primary font-semibold hover:underline">San Pantaleo</Link>
-          {" "}per il mercato del giovedì, oppure scendi verso{" "}
-          <Link to="/localita/golfo-aranci" className="text-primary font-semibold hover:underline">Golfo Aranci</Link>
-          {" "}per pesce fresco e tramonti sul mare.
+          {" "}per il mercato del giovedì e la cucina gallurese.
         </p>
       </div>
     </section>

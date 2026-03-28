@@ -1,6 +1,8 @@
 import SEOHead from "@/components/SEOHead";
-import LocalitaHero from "@/components/localita/LocalitaHero";
-import LocalitaScopri from "@/components/localita/LocalitaScopri";
+import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
+import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
+import MasonrySpots from "@/components/localita/MasonrySpots";
+import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
 import TrustMarquee from "@/components/home/TrustMarquee";
@@ -12,55 +14,80 @@ import { Link } from "react-router-dom";
 const BajaSardiniaPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto, Scooter e Quad a Baja Sardinia | GDIS Rent"
-      description="Noleggia scooter e auto a Baja Sardinia. Phi Beach, Ritual Club e spiagge da sogno. Evita il traffico con GDIS Rent."
+      title="Noleggio Scooter a Baja Sardinia | Phi Beach & Ritual | GDIS Rent"
+      description="Noleggia Honda SH a Baja Sardinia. Evita il traffico del Phi Beach, parcheggia gratis e vivi la Costa Smeralda senza stress. GDIS Rent."
       canonical="/localita/baja-sardinia"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: "GDIS Rent - Baja Sardinia",
-        description: "Noleggio veicoli a Baja Sardinia, Costa Smeralda",
+        description: "Noleggio scooter Honda SH a Baja Sardinia per Phi Beach e vita notturna",
         areaServed: "Baja Sardinia",
       }}
     />
 
-    <LocalitaHero
+    <LocalitaHeroV2
       name="Baja Sardinia"
-      subtitle="Tramonti al Phi Beach, party al Ritual e spiagge caraibiche. In scooter è tutto più bello — e senza traffico."
+      subtitle="Phi Beach, Ritual Club e tramonti leggendari. In scooter è tutto più bello — e senza traffico."
       bgImage="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
+      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/HONDA%20SH350.webp"
+      vehicleAlt="Honda SH 350 Baja Sardinia"
     />
 
-    <LocalitaScopri
-      name="Baja Sardinia"
-      intro="Baja Sardinia è il lato energico della Costa Smeralda. A pochi minuti da Porto Cervo ma con un'atmosfera completamente diversa: qui si viene per i tramonti spettacolari al Phi Beach, per i party al Ritual Club, e per le spiagge di sabbia bianca incastonate tra rocce di granito rosa. Il traffico estivo può essere feroce, ed è per questo che lo scooter è il veicolo più intelligente per vivere Baja Sardinia al massimo."
-      spots={[
-        { name: "Phi Beach", desc: "Il sunset bar più iconico della Sardegna. Dj set sulle rocce con vista sulle isole." },
-        { name: "Spiaggia di Baja Sardinia", desc: "Sabbia fine, acqua turchese e tutti i servizi. Il centro della vita balneare." },
-        { name: "Tre Monti", desc: "Sentiero panoramico che offre una vista mozzafiato sull'arcipelago de La Maddalena." },
-        { name: "Battistoni Beach", desc: "Cala esclusiva con beach club chic. L'indirizzo più glamour della baia." },
-      ]}
+    <VehicleSpotlight
+      tag="L'Unica Scelta Intelligente"
+      title="Lo Scooter È l'Unico Modo di Vivere Baja Sardinia"
+      description="Baja Sardinia in estate è un paradiso — ma il traffico è feroce. Al tramonto, quando tutti puntano verso il Phi Beach per il sunset dj set, la strada si paralizza. In auto rischi di perderti il tramonto in coda. Con l'Honda SH arrivi in 5 minuti, parcheggi gratis nell'area moto vicino all'ingresso, e ti godi lo spettacolo. Dopo? In 5 minuti sei a Porto Cervo per cena, e poi torni al Ritual Club per ballare. Zero stress, zero parcheggio, massima libertà."
       image="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80"
+      imageAlt="Tramonto Baja Sardinia Phi Beach"
+      reverse
+    >
+      <div className="flex flex-wrap gap-3">
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Parcheggio gratis Phi Beach</span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">5 min da Porto Cervo</span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Perfetto per la night</span>
+      </div>
+    </VehicleSpotlight>
+
+    <MasonrySpots
+      name="Baja Sardinia"
+      spots={[
+        { name: "Phi Beach", desc: "Il sunset bar più iconico della Sardegna. Dj set sulle rocce con vista sulle isole.", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" },
+        { name: "Spiaggia di Baja", desc: "Sabbia fine, acqua turchese e tutti i servizi. Il cuore della vita balneare.", image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80" },
+        { name: "Battistoni Beach", desc: "Cala esclusiva con beach club chic. L'indirizzo più glamour della baia.", image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=80" },
+        { name: "Tre Monti", desc: "Sentiero panoramico con vista mozzafiato sull'arcipelago de La Maddalena.", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80" },
+        { name: "Ritual Club", desc: "Il tempio della musica elettronica in Costa Smeralda. Guest dj da Ibiza.", image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" },
+      ]}
+    />
+
+    <CockpitSpecs
+      vehicleName="Honda SH 350i"
+      specs={[
+        { label: "Patente", value: "A2 / A", icon: "license" },
+        { label: "Posti", value: "2", icon: "seats" },
+        { label: "Ideale per", value: "Night & Sunset", icon: "use" },
+        { label: "Consegna", value: "Hotel / Residence", icon: "delivery" },
+      ]}
     />
 
     <LocalitaTrafficTips
       name="Baja Sardinia"
       tips={[
-        { icon: "traffic", title: "Traffico Intenso", text: "In luglio-agosto il traffico verso Baja Sardinia è pesante, specialmente al tramonto per il Phi Beach. Lo scooter elimina il problema." },
-        { icon: "parking", title: "Parcheggio Phi Beach", text: "Parcheggio limitatissimo al Phi Beach. In scooter trovi sempre posto, in auto rischi di camminare 20 minuti." },
-        { icon: "ztl", title: "Centro Baja", text: "Il centro è compatto e parzialmente pedonale. Scooter e quad sono perfetti per muoversi." },
-        { icon: "tip", title: "Da Porto Cervo", text: "Baja Sardinia è a 5 minuti da Porto Cervo in scooter. La soluzione ideale per chi vuole cenare a Porto Cervo e ballare qui." },
+        { icon: "traffic", title: "Traffico al Sunset", text: "Luglio-agosto il traffico verso Phi Beach è pesante al tramonto. Lo scooter elimina il problema completamente." },
+        { icon: "parking", title: "Phi Beach Parking", text: "Parcheggio auto limitatissimo. In scooter trovi sempre posto nell'area moto vicino all'ingresso. Gratis." },
+        { icon: "ztl", title: "Centro Compatto", text: "Il centro di Baja è piccolo e parzialmente pedonale. Scooter perfetto per muoversi." },
+        { icon: "tip", title: "Porto Cervo Express", text: "5 minuti in scooter e sei alla Promenade du Port per cena. Poi torni a Baja per il Ritual." },
       ]}
     />
 
     <LocalitaNightlife
       name="Baja Sardinia"
       locali={[
-        { name: "Phi Beach", type: "lounge", desc: "Sunset bar leggendario sulle rocce. Dj set internazionali, cocktail premium e vista infinita sull'arcipelago." },
-        { name: "Ritual Club", type: "club", desc: "Il nuovo tempio della musica elettronica in Costa Smeralda. Serate a tema e guest dj da Ibiza." },
-        { name: "Ristorante L'Ea Bianca", type: "ristorante", desc: "Cucina di mare contemporanea in un resort 5 stelle. Terrazza sulla baia con menu degustazione." },
-        { name: "Bar La Piazzetta", type: "aperitivo", desc: "Pre-serata perfetta nel cuore di Baja. Mojito artigianali e atmosfera festosa." },
-        { name: "Aquadream", type: "lounge", desc: "Parco acquatico e beach club. Perfetto di giorno per famiglie, aperitivi chic la sera." },
-        { name: "La Tartaruga", type: "ristorante", desc: "Pizza gourmet e primi di mare sulla spiaggia. Ideale per una cena informale prima del Phi Beach." },
+        { name: "Phi Beach", type: "lounge", desc: "Sunset bar leggendario sulle rocce. Dj set internazionali, cocktail premium e vista infinita." },
+        { name: "Ritual Club", type: "club", desc: "Il nuovo tempio della musica elettronica. Serate a tema e guest dj da Ibiza e Berlino." },
+        { name: "L'Ea Bianca", type: "ristorante", desc: "Cucina di mare contemporanea in un resort 5 stelle. Menu degustazione vista baia." },
+        { name: "Bar La Piazzetta", type: "aperitivo", desc: "Pre-serata nel cuore di Baja. Mojito artigianali e atmosfera festosa." },
+        { name: "La Tartaruga", type: "ristorante", desc: "Pizza gourmet e primi di mare sulla spiaggia. Cena informale prima del Phi Beach." },
       ]}
     />
 
@@ -69,21 +96,19 @@ const BajaSardiniaPage = () => (
     <LocalitaFAQ
       name="Baja Sardinia"
       faqs={[
-        { q: "Posso parcheggiare lo scooter gratis al Phi Beach?", a: "Sì, al Phi Beach c'è un'area moto/scooter gratuita molto vicina all'ingresso. È decisamente la scelta più intelligente rispetto all'auto, specialmente nelle sere dei dj set." },
-        { q: "Consegnate i veicoli direttamente a Baja Sardinia?", a: "Certo! Consegna VIP al tuo hotel, residence o direttamente sulla spiaggia. Contattaci su WhatsApp per organizzare." },
-        { q: "Quale veicolo consigliate per la vita notturna a Baja Sardinia?", a: "Lo scooter Honda SH, senza dubbio. Niente problemi di parcheggio al Phi Beach o al Ritual, e torni in hotel in totale comodità." },
-        { q: "Quanto dista Porto Cervo da Baja Sardinia?", a: "Solo 5 minuti in scooter! Puoi cenare a Porto Cervo e spostarti a Baja Sardinia per il dopo cena senza stress." },
+        { q: "Posso parcheggiare lo scooter gratis al Phi Beach?", a: "Sì! Al Phi Beach c'è un'area moto/scooter gratuita molto vicina all'ingresso. È la scelta più intelligente, specialmente nelle sere dei sunset dj set quando il parcheggio auto è impossibile." },
+        { q: "Il traffico verso Baja Sardinia è davvero così pesante?", a: "In luglio-agosto, soprattutto al tramonto e nel weekend, la strada verso Baja si paralizza. Lo scooter ti fa arrivare in 5 minuti quando le auto stanno in coda per 30+." },
+        { q: "Consegnate lo scooter direttamente al mio hotel a Baja?", a: "Certo! Consegna VIP al tuo hotel, residence o anche in spiaggia. Contattaci su WhatsApp." },
+        { q: "Quale scooter consigliate per Baja Sardinia?", a: "L'Honda SH 350 per chi ha la patente A2/A e vuole più potenza per la salita verso Phi Beach. L'SH 125 per chi ha solo la patente B." },
       ]}
     />
 
     <section className="py-16 bg-muted/20">
       <div className="container px-4 text-center">
-        <p className="text-muted-foreground">
-          Da Baja Sardinia raggiungi in 5 minuti{" "}
+        <p className="text-lg text-muted-foreground">
+          Da Baja Sardinia in 5 minuti di scooter sei a{" "}
           <Link to="/localita/porto-cervo" className="text-primary font-semibold hover:underline">Porto Cervo</Link>
-          {" "}per lo shopping e la Marina, oppure sali verso{" "}
-          <Link to="/localita/san-pantaleo" className="text-primary font-semibold hover:underline">San Pantaleo</Link>
-          {" "}per il mercato del giovedì.
+          {" "}per lo shopping di lusso e la Marina — il combo perfetto.
         </p>
       </div>
     </section>
