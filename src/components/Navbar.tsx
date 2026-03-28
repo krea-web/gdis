@@ -24,10 +24,13 @@ const destinazioniItems = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [flottaOpen, setFlottaOpen] = useState(false);
+  const [destinazioniOpen, setDestinazioniOpen] = useState(false);
   const [mobileFlottaOpen, setMobileFlottaOpen] = useState(false);
+  const [mobileDestinazioniOpen, setMobileDestinazioniOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const destDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -40,6 +43,9 @@ const Navbar = () => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setFlottaOpen(false);
       }
+      if (destDropdownRef.current && !destDropdownRef.current.contains(e.target as Node)) {
+        setDestinazioniOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -48,8 +54,12 @@ const Navbar = () => {
   useEffect(() => {
     setMobileOpen(false);
     setFlottaOpen(false);
+    setDestinazioniOpen(false);
     setMobileFlottaOpen(false);
+    setMobileDestinazioniOpen(false);
   }, [location.pathname]);
+
+  const isDestinazioniActive = location.pathname.startsWith("/localita");
 
   const links = [
     { label: "Home", to: "/" },
