@@ -38,7 +38,7 @@ const PortoCervoPage = () => (
       tag="VIP Collection"
       title="Il Tuo Veicolo di Lusso, Consegnato Ovunque"
       description="Porto Cervo merita un arrivo in grande stile. Su richiesta via WhatsApp, organizziamo il noleggio di auto VIP e supercar per eventi, serate al Billionaire, o semplicemente per vivere la Promenade du Port come un protagonista. La consegna avviene direttamente alla tua Marina, al tuo hotel 5 stelle, o alla tua villa privata."
-      image="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80"
+      image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp"
       imageAlt="Servizio VIP Porto Cervo"
     >
       <div className="flex flex-wrap gap-3">
