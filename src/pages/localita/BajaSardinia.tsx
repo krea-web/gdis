@@ -38,7 +38,7 @@ const BajaSardiniaPage = () => (
       tag="L'Unica Scelta Intelligente"
       title="Lo Scooter È l'Unico Modo di Vivere Baja Sardinia"
       description="Baja Sardinia in estate è un paradiso — ma il traffico è feroce. Al tramonto, quando tutti puntano verso il Phi Beach per il sunset dj set, la strada si paralizza. In auto rischi di perderti il tramonto in coda. Con l'Honda SH arrivi in 5 minuti, parcheggi gratis nell'area moto vicino all'ingresso, e ti godi lo spettacolo. Dopo? In 5 minuti sei a Porto Cervo per cena, e poi torni al Ritual Club per ballare. Zero stress, zero parcheggio, massima libertà."
-      image="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80"
+      image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp"
       imageAlt="Tramonto Baja Sardinia Phi Beach"
       reverse
     >
