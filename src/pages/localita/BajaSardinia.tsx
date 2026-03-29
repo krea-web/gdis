@@ -30,7 +30,7 @@ const BajaSardiniaPage = () => (
       name="Baja Sardinia"
       subtitle="Phi Beach, Ritual Club e tramonti leggendari. In scooter è tutto più bello — e senza traffico."
       bgImage="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
-      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.pnghttps://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
+      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
       vehicleAlt="Honda SH 350 Baja Sardinia"
     />
 
