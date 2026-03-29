@@ -38,7 +38,7 @@ const GolfoAranciPage = () => (
       tag="Flessibilità Totale"
       title="La Panda Ti Aspetta allo Sbarco del Traghetto"
       description="Golfo Aranci è la porta d'ingresso alla Gallura per chi arriva via mare. Il nostro servizio più richiesto? Ti aspettiamo direttamente allo sbarco con la tua Fiat Panda pronta, climatizzata, e con il pieno fatto. Nessuna coda, nessun transfer — sbarchi, sali, e in 15 minuti sei già a Cala Moresca per il primo bagno. La Panda è agile in città, economica sui consumi, e abbastanza spaziosa per tutta la famiglia e i bagagli."
-      image="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80"
+      image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp"
       imageAlt="Porto di Golfo Aranci"
     >
       <div className="flex flex-wrap gap-3">
