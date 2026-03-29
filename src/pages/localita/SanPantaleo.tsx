@@ -38,7 +38,7 @@ const SanPantaleoPage = () => (
       tag="Perfetto per il Borgo"
       title="Lo Scooter nelle Strade Strette di San Pantaleo"
       description="San Pantaleo non è fatto per le auto. Le vie del borgo sono strette, tortuose, e il giovedì mattina — giorno del leggendario mercato artigianale — trovare parcheggio è praticamente impossibile. L'Honda SH 125 è il veicolo perfetto: agile tra i vicoli, parcheggi ovunque, e quando hai voglia di lusso scendi a Porto Cervo in 15 minuti lungo una strada panoramica tra rocce di granito."
-      image="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80"
+      image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp"
       imageAlt="Strade di San Pantaleo"
       reverse
     >
