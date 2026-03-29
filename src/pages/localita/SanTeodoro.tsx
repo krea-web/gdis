@@ -38,7 +38,7 @@ const SanTeodoroPage = () => (
       tag="Agilità Urbana"
       title="Lo Scooter Batte il Traffico di San Teodoro"
       description="In estate, San Teodoro si riempie. I parcheggi della Cinta si esauriscono presto, la SS131 è un calvario nel weekend. Con l'Honda SH 125 tutto cambia: parcheggi gratis nelle aree moto delle spiagge, sgusci nel traffico in secondi, e raggiungi Cala Brandinchi in un lampo. Il bello della Sardegna è la libertà, e lo scooter te la regala."
-      image="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&w=800&q=80"
+      image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp"
       imageAlt="Spiagge di San Teodoro"
     >
       <div className="flex flex-wrap gap-3">
