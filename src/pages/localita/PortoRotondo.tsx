@@ -38,7 +38,7 @@ const PortoRotondoPage = () => (
       tag="Avventura Off-Road"
       title="Il Quad Apre le Cale Segrete di Porto Rotondo"
       description="Porto Rotondo è eleganza sulla superficie, ma la vera magia si nasconde nelle calette di Punta Volpe, nelle spiagge di Marinella raggiungibili solo via sterrato, e nei sentieri che si arrampicano tra la macchia mediterranea. Il Yamaha Raptor 700 è progettato per questo: sospensioni off-road, potenza da vendere, e la capacità di portarti dove nessuna auto potrà mai arrivare. Esplora, scopri, conquista — e al tramonto torna sulla Piazzetta San Marco per l'aperitivo."
-      image="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80"
+      image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-costasmeraldaoffroad.webp"
       imageAlt="Cale nascoste Porto Rotondo"
     >
       <div className="flex flex-wrap gap-3">
