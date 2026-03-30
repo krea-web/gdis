@@ -47,9 +47,9 @@ const LocalitaFAQ = ({ name, faqs }: Props) => (
                 {faq.q}
               </AccordionTrigger>
               <AccordionContent
-                className={i < 2 ? "text-primary-foreground/80" : "text-muted-foreground"}
+                className={i < 2 ? "text-primary-foreground/80 leading-relaxed" : "text-muted-foreground leading-relaxed"}
               >
-                {faq.a}
+                <p>{faq.a}</p>
               </AccordionContent>
             </AccordionItem>
           ))}

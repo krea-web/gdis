@@ -131,7 +131,7 @@ const FaqSection = () => {
                           : "text-muted-foreground font-light leading-relaxed pb-6 text-base"
                       }
                     >
-                      {faq.a}
+                      <p>{faq.a}</p>
                     </AccordionContent>
                   </AccordionItem>
                 </motion.div>
