@@ -16,7 +16,7 @@ const SanTeodoroPage = () => (
     <SEOHead
       title="Noleggio Scooter e Auto a San Teodoro | GDIS Rent Sardegna"
       description="Noleggia Honda SH, city car e quad a San Teodoro. La Cinta, Ambra Night e spiagge caraibiche. Consegna diretta con GDIS Rent."
-      canonical="/localita/san-teodoro"
+      canonical="/localita/noleggio-san-teodoro"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -178,7 +178,7 @@ const SanTeodoroPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Teodoro parti verso nord per scoprire le calette segrete di{" "}
-          <Link to="/localita/golfo-aranci" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-golfo-aranci" className="text-primary font-semibold hover:underline">
             Golfo Aranci
           </Link>{" "}
           — perfette con la Fiat Panda.

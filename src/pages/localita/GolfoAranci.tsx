@@ -16,7 +16,7 @@ const GolfoAranciPage = () => (
     <SEOHead
       title="Noleggio Auto a Golfo Aranci | Consegna al Traghetto | GDIS Rent"
       description="Noleggia la Fiat Panda a Golfo Aranci con consegna al terminal traghetti. Cala Moresca, delfini e ristoranti di pesce. GDIS Rent."
-      canonical="/localita/golfo-aranci"
+      canonical="/localita/noleggio-golfo-aranci"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -171,7 +171,7 @@ const GolfoAranciPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Golfo Aranci esplora verso sud{" "}
-          <Link to="/localita/porto-rotondo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-porto-rotondo" className="text-primary font-semibold hover:underline">
             Porto Rotondo
           </Link>{" "}
           — la Marina e le cale nascoste ti aspettano a 20 minuti di Panda.

@@ -16,7 +16,7 @@ const PortoRotondoPage = () => (
     <SEOHead
       title="Noleggio Quad a Porto Rotondo | Cale Nascoste Off-Road | GDIS Rent"
       description="Noleggia il Yamaha Raptor 700 a Porto Rotondo. Raggiungi cale nascoste, esplora Punta Volpe e vivi l'avventura off-road. GDIS Rent."
-      canonical="/localita/porto-rotondo"
+      canonical="/localita/noleggio-porto-rotondo"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -175,7 +175,7 @@ const PortoRotondoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Dopo l'avventura off-road, sali verso il borgo montano di{" "}
-          <Link to="/localita/san-pantaleo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-san-pantaleo" className="text-primary font-semibold hover:underline">
             San Pantaleo
           </Link>{" "}
           per il mercato del giovedì e la cucina gallurese.

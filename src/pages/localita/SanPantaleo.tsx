@@ -16,7 +16,7 @@ const SanPantaleoPage = () => (
     <SEOHead
       title="Noleggio Scooter a San Pantaleo | Borgo Bohémien Gallura | GDIS Rent"
       description="Noleggia Honda SH a San Pantaleo, il borgo bohémien della Gallura. Mercato del giovedì, strade strette e montagne di granito. GDIS Rent."
-      canonical="/localita/san-pantaleo"
+      canonical="/localita/noleggio-san-pantaleo"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -171,7 +171,7 @@ const SanPantaleoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Pantaleo scendi verso{" "}
-          <Link to="/localita/porto-cervo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-porto-cervo" className="text-primary font-semibold hover:underline">
             Porto Cervo
           </Link>{" "}
           per lo shopping di lusso e la Marina — 15 minuti di curve panoramiche.

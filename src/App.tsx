@@ -39,12 +39,12 @@ const App = () => (
             <Route path="/flotta/fiat-panda" element={<FiatPandaPage />} />
             <Route path="/flotta/honda-sh" element={<HondaScooterPage />} />
             <Route path="/flotta/yamaha-raptor" element={<YamahaQuadPage />} />
-            <Route path="/localita/porto-cervo" element={<PortoCervoPage />} />
-            <Route path="/localita/san-teodoro" element={<SanTeodoroPage />} />
-            <Route path="/localita/san-pantaleo" element={<SanPantaleoPage />} />
-            <Route path="/localita/porto-rotondo" element={<PortoRotondoPage />} />
-            <Route path="/localita/golfo-aranci" element={<GolfoAranciPage />} />
-            <Route path="/localita/baja-sardinia" element={<BajaSardiniaPage />} />
+            <Route path="/localita/noleggio-porto-cervo" element={<PortoCervoPage />} />
+            <Route path="/localita/noleggio-san-teodoro" element={<SanTeodoroPage />} />
+            <Route path="/localita/noleggio-san-pantaleo" element={<SanPantaleoPage />} />
+            <Route path="/localita/noleggio-porto-rotondo" element={<PortoRotondoPage />} />
+            <Route path="/localita/noleggio-golfo-aranci" element={<GolfoAranciPage />} />
+            <Route path="/localita/noleggio-baja-sardinia" element={<BajaSardiniaPage />} />
             <Route path="/admin" element={<Admin />} />
           </Route>
           <Route path="*" element={<NotFound />} />
