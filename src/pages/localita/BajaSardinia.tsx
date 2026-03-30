@@ -61,27 +61,32 @@ const BajaSardiniaPage = () => (
         {
           name: "Phi Beach",
           desc: "Il sunset bar più iconico della Sardegna. Dj set sulle rocce con vista sulle isole.",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-phi-beach-baja-sardinia.webp",
         },
         {
           name: "Spiaggia di Baja",
           desc: "Sabbia fine, acqua turchese e tutti i servizi. Il cuore della vita balneare.",
-          image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-spiaggia-di-baja-sardinia.webp",
         },
         {
           name: "Battistoni Beach",
           desc: "Cala esclusiva con beach club chic. L'indirizzo più glamour della baia.",
-          image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-battistoni-beach-baja-sardinia.webp",
         },
         {
           name: "Tre Monti",
           desc: "Sentiero panoramico con vista mozzafiato sull'arcipelago de La Maddalena.",
-          image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-spiaggia-dei-tre-monti-baja-sardinia.webp",
         },
         {
           name: "Ritual Club",
           desc: "Il tempio della musica elettronica in Costa Smeralda. Guest dj da Ibiza.",
-          image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-ritual-baja-sardinia.webp",
         },
       ]}
     />
