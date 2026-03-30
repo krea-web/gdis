@@ -16,7 +16,7 @@ const PortoCervoPage = () => (
     <SEOHead
       title="Noleggio Auto di Lusso a Porto Cervo | GDIS Rent Costa Smeralda"
       description="Noleggia auto VIP, scooter e quad a Porto Cervo con consegna alla Marina o alla tua villa. Servizio luxury su richiesta WhatsApp. GDIS Rent."
-      canonical="/localita/porto-cervo"
+      canonical="/localita/noleggio-porto-cervo"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -178,7 +178,7 @@ const PortoCervoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Porto Cervo raggiungi in 5 minuti{" "}
-          <Link to="/localita/baja-sardinia" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-baja-sardinia" className="text-primary font-semibold hover:underline">
             Baja Sardinia
           </Link>{" "}
           per i tramonti al Phi Beach, evitando il traffico in scooter.

@@ -13,12 +13,13 @@ const flottaItems = [
 ];
 
 const destinazioniItems = [
-  { label: "Porto Cervo", to: "/localita/porto-cervo", desc: "Lusso & Marina" },
-  { label: "San Teodoro", to: "/localita/san-teodoro", desc: "Spiagge & Movida" },
-  { label: "San Pantaleo", to: "/localita/san-pantaleo", desc: "Borgo Bohémien" },
-  { label: "Porto Rotondo", to: "/localita/porto-rotondo", desc: "Eleganza Discreta" },
-  { label: "Golfo Aranci", to: "/localita/golfo-aranci", desc: "Terminal Traghetti" },
-  { label: "Baja Sardinia", to: "/localita/baja-sardinia", desc: "Phi Beach & Party" },
+  { label: "Costa Smeralda", to: "/noleggio-in-costa-smeralda", desc: "Panoramica Completa" },
+  { label: "Porto Cervo", to: "/localita/noleggio-porto-cervo", desc: "Lusso & Marina" },
+  { label: "San Teodoro", to: "/localita/noleggio-san-teodoro", desc: "Spiagge & Movida" },
+  { label: "San Pantaleo", to: "/localita/noleggio-san-pantaleo", desc: "Borgo Bohémien" },
+  { label: "Porto Rotondo", to: "/localita/noleggio-porto-rotondo", desc: "Eleganza Discreta" },
+  { label: "Golfo Aranci", to: "/localita/noleggio-golfo-aranci", desc: "Terminal Traghetti" },
+  { label: "Baja Sardinia", to: "/localita/noleggio-baja-sardinia", desc: "Phi Beach & Party" },
 ];
 
 const Navbar = () => {

@@ -16,7 +16,7 @@ const BajaSardiniaPage = () => (
     <SEOHead
       title="Noleggio Scooter a Baja Sardinia | Phi Beach & Ritual | GDIS Rent"
       description="Noleggia Honda SH a Baja Sardinia. Evita il traffico del Phi Beach, parcheggia gratis e vivi la Costa Smeralda senza stress. GDIS Rent."
-      canonical="/localita/baja-sardinia"
+      canonical="/localita/noleggio-baja-sardinia"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -181,7 +181,7 @@ const BajaSardiniaPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Baja Sardinia in 5 minuti di scooter sei a{" "}
-          <Link to="/localita/porto-cervo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-porto-cervo" className="text-primary font-semibold hover:underline">
             Porto Cervo
           </Link>{" "}
           per lo shopping di lusso e la Marina — il combo perfetto.
