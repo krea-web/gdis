@@ -29,7 +29,7 @@ const GolfoAranciPage = () => (
     <LocalitaHeroV2
       name="Golfo Aranci"
       subtitle="Sbarca dal traghetto e il tuo veicolo è già pronto. Fiat Panda: la compagna perfetta per esplorare la Gallura."
-      bgImage="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=2000&q=80"
+      bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-noleggio-golfo-aranci.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
       vehicleAlt="Fiat Panda Golfo Aranci"
     />
@@ -56,22 +56,26 @@ const GolfoAranciPage = () => (
         {
           name: "Cala Moresca",
           desc: "Piccola baia protetta con acque cristalline. Paradiso per lo snorkeling.",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-cala-moresca-golfo-aranci.webp",
         },
         {
           name: "Spiaggia Bianca",
           desc: "La spiaggia principale: sabbia bianchissima e servizi completi.",
-          image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-bianca-golfo-aranci.webp",
         },
         {
           name: "Capo Figari",
           desc: "Riserva naturale con sentieri panoramici e la storica stazione radio di Marconi.",
-          image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-capo-figari-golfo-aranci.webp",
         },
         {
           name: "Delfini nel Golfo",
           desc: "Escursioni in barca per avvistare i delfini. Un'esperienza unica in Sardegna.",
-          image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-delfini-golfo-aranci.webp",
         },
       ]}
     />
