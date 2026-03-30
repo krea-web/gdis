@@ -60,7 +60,7 @@ const Navbar = () => {
     setMobileDestinazioniOpen(false);
   }, [location.pathname]);
 
-  const isDestinazioniActive = location.pathname.startsWith("/localita");
+  const isDestinazioniActive = location.pathname.startsWith("/localita") || location.pathname === "/noleggio-in-costa-smeralda";
 
   const links = [
     { label: "Home", to: "/" },
