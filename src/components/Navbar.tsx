@@ -107,6 +107,8 @@ const Navbar = () => {
             <button
               onClick={() => setFlottaOpen(!flottaOpen)}
               className={`${textClass(isFlottaActive)} flex items-center gap-1`}
+              aria-expanded={flottaOpen}
+              aria-label="Menu flotta veicoli"
             >
               Flotta
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${flottaOpen ? "rotate-180" : ""}`} />
@@ -148,6 +150,8 @@ const Navbar = () => {
             <button
               onClick={() => setDestinazioniOpen(!destinazioniOpen)}
               className={`${textClass(isDestinazioniActive)} flex items-center gap-1`}
+              aria-expanded={destinazioniOpen}
+              aria-label="Menu destinazioni"
             >
               Destinazioni
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${destinazioniOpen ? "rotate-180" : ""}`} />
@@ -194,6 +198,8 @@ const Navbar = () => {
         <button
           className={`md:hidden relative z-10 ${scrolled ? "text-foreground" : "text-background"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? "Chiudi menu" : "Apri menu"}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

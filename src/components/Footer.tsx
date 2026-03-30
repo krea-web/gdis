@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary relative overflow-hidden flex flex-col items-center justify-end min-h-[500px] pt-20">
+    <footer className="bg-primary relative overflow-hidden flex flex-col items-center justify-end min-h-[500px] pt-20" role="contentinfo" aria-label="Footer GDIS Rent">
       <div className="container relative z-10 flex flex-col items-center justify-center text-center px-4 mb-20">
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-12">
           <a
