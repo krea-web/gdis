@@ -33,7 +33,6 @@ const categoryMeta: Record<string, { title: string; subtitle: string; descriptio
 
 const DESIRED_ORDER = ["city_car", "quad", "scooter"];
 
-// Fallback prices when no DB data exists for a category
 const FALLBACK_PRICES: Record<string, number> = {
   city_car: 50,
   quad: 80,
@@ -45,11 +44,11 @@ const FleetShowcase = () => {
   const grouped = vehicles ? groupByCategory(vehicles) : {};
 
   return (
-    <section className="py-24 md:py-32 bg-slate-50 overflow-hidden relative">
+    <section className="py-24 md:py-32 bg-muted/30 overflow-hidden relative" aria-label="La nostra flotta di veicoli">
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
-          backgroundImage: "radial-gradient(circle at 2px 2px, black 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 2px 2px, hsl(var(--foreground)) 1px, transparent 0)",
           backgroundSize: "32px 32px",
         }}
       />
@@ -62,12 +61,12 @@ const FleetShowcase = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-20 md:mb-32 text-center max-w-3xl mx-auto"
         >
-          <span className="text-blue-600 font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
+          <span className="text-primary font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
             La Nostra Flotta
           </span>
-          <h2 className="font-display text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground leading-tight">
             Scegli la tua <br className="hidden md:block" />
-            <span className="italic font-light text-blue-600">Prossima Avventura.</span>
+            <span className="italic font-light text-primary">Prossima Avventura.</span>
           </h2>
         </motion.div>
 
@@ -97,11 +96,10 @@ const FleetShowcase = () => {
               const isEven = i % 2 === 0;
 
               return (
-                <div
+                <article
                   key={cat}
                   className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center justify-between gap-12 md:gap-20 group`}
                 >
-                  {/* TEXT */}
                   <motion.div
                     initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -109,31 +107,30 @@ const FleetShowcase = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left"
                   >
-                    <span className="text-blue-500 font-bold uppercase tracking-widest text-sm mb-3 block">
+                    <span className="text-primary font-bold uppercase tracking-widest text-sm mb-3 block">
                       {meta.subtitle}
                     </span>
-                    <h3 className="font-display text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
+                    <h3 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
                       {meta.title}
                     </h3>
-                    <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed mb-8 max-w-lg">
+                    <p className="text-muted-foreground text-lg md:text-xl font-light leading-relaxed mb-8 max-w-lg">
                       {meta.description}
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-6">
-                      <Link to="/prenotaora">
-                        <div className="flex items-center gap-4 bg-blue-600 text-white rounded-full px-8 py-4 font-bold shadow-[0_10px_30px_rgba(0,0,255,0.2)] hover:shadow-[0_15px_40px_rgba(0,0,255,0.4)] hover:-translate-y-1 transition-all duration-300">
+                      <Link to="/prenotaora" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-full">
+                        <div className="flex items-center gap-4 bg-primary text-primary-foreground rounded-full px-8 py-4 font-bold shadow-[0_10px_30px_hsl(var(--primary)/0.3)] hover:shadow-[0_15px_40px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300">
                           <span>Prenota Ora</span>
                           <ArrowRight className="w-5 h-5" />
                         </div>
                       </Link>
-                      <span className="text-slate-600 font-medium">
-                        Da <strong className="text-2xl text-slate-900">€{lowestPrice}</strong>
+                      <span className="text-muted-foreground font-medium">
+                        Da <strong className="text-2xl text-foreground">€{lowestPrice}</strong>
                         <span className="text-sm">/giorno</span>
                       </span>
                     </div>
                   </motion.div>
 
-                  {/* IMAGE */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8, rotate: isEven ? 5 : -5 }}
                     whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -141,16 +138,16 @@ const FleetShowcase = () => {
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="w-full md:w-1/2 relative flex justify-center items-center perspective-[1000px]"
                   >
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-400/20 blur-[80px] rounded-full pointer-events-none transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-primary/20 blur-[80px] rounded-full pointer-events-none transition-transform duration-700 group-hover:scale-110" />
                     <motion.img
                       animate={{ y: [-10, 10, -10] }}
                       transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" as const, delay: i * 0.5 }}
                       src={image}
-                      alt={meta.title}
+                      alt={`Noleggio ${meta.title} in Sardegna - GDIS Rent`}
                       className="relative z-10 w-[90%] md:w-full max-w-[600px] h-auto object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-105"
                     />
                   </motion.div>
-                </div>
+                </article>
               );
             })}
           </div>
