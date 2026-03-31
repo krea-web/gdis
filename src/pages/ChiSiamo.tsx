@@ -141,7 +141,7 @@ const ChiSiamo = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
-            className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-primary-foreground leading-[0.95] tracking-tight drop-shadow-2xl"
+            className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl"
           >
             La Nuova Era della <span className="italic font-light text-primary">Mobilità</span>
             <br />
