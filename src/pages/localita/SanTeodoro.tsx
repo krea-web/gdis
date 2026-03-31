@@ -29,7 +29,7 @@ const SanTeodoroPage = () => (
     <LocalitaHeroV2
       name="San Teodoro"
       subtitle="La Cinta, movida e spiagge infinite. Il tuo Honda SH ti aspetta per un'estate senza traffico."
-      bgImage="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80"
+      bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-noleggio-san-teodoro.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
       vehicleAlt="Honda SH 125 San Teodoro"
     />
@@ -58,27 +58,32 @@ const SanTeodoroPage = () => (
         {
           name: "Spiaggia La Cinta",
           desc: "5 km di sabbia dorata con vista su Tavolara e colonie di fenicotteri rosa.",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-la-cinta.webp",
         },
         {
           name: "Cala Brandinchi",
           desc: "Chiamata 'Tahiti' per le acque trasparenti. Raggiungila in scooter prima della folla.",
-          image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-cala-brandinchi.webp",
         },
         {
           name: "Lu Impostu",
           desc: "Laguna poco profonda per famiglie, con chiosco sulla spiaggia.",
-          image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-lu-impostu.webp",
         },
         {
           name: "Monte Nieddu",
           desc: "Cascate e piscine naturali nell'entroterra. Perfette per il quad.",
-          image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-monte-nieddu.webp",
         },
         {
           name: "Mercatino Serale",
           desc: "Ogni sera in estate: artigianato, street food e musica nel centro del paese.",
-          image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-mercatino-serale-san-teodoro.webp",
         },
       ]}
     />
