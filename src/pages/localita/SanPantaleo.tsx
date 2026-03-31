@@ -29,7 +29,7 @@ const SanPantaleoPage = () => (
     <LocalitaHeroV2
       name="San Pantaleo"
       subtitle="Strade strette, mercati artigianali e montagne di granito. Lo scooter è l'unico modo per vivere questo borgo."
-      bgImage="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80"
+      bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-noleggio-san-pantaleo.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
       vehicleAlt="Honda SH 125 San Pantaleo"
     />
@@ -61,22 +61,26 @@ const SanPantaleoPage = () => (
         {
           name: "Piazza della Chiesa",
           desc: "Il cuore del borgo. Caffè all'ombra dei lecci e atmosfera d'altri tempi.",
-          image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo-chiesa.webp",
         },
         {
           name: "Mercato del Giovedì",
           desc: "Artigianato locale, ceramiche, tessuti sardi e street food. Imperdibile.",
-          image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-mercatino-san-pantaleo.webp",
         },
         {
           name: "Rocce di Punta Cugnana",
           desc: "Formazioni granitiche spettacolari. Tramonto indimenticabile in quad.",
-          image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-rocce-san-pantaleo.webp",
         },
         {
           name: "Stazzo Gallurese",
           desc: "Antiche fattorie in pietra trasformate in agriturismi con cucina tradizionale.",
-          image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo.webp",
         },
       ]}
     />
