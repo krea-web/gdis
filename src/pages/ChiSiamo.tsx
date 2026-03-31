@@ -132,7 +132,7 @@ const ChiSiamo = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-primary font-display text-xs md:text-sm font-bold uppercase tracking-[0.4em] mb-6"
+            className="text-blue-400 font-display text-sm font-semibold uppercase tracking-[0.3em] mb-4 block"
           >
             DAL 2025 IN SARDEGNA
           </motion.p>
