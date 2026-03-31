@@ -29,7 +29,7 @@ const PortoRotondoPage = () => (
     <LocalitaHeroV2
       name="Porto Rotondo"
       subtitle="Cale nascoste raggiungibili solo off-road. Il Yamaha Raptor 700 ti porta dove le auto non arrivano."
-      bgImage="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=2000&q=80"
+      bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-noleggio-porto-rotondo.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
       vehicleAlt="Yamaha Raptor 700 Porto Rotondo"
     />
@@ -60,27 +60,32 @@ const PortoRotondoPage = () => (
         {
           name: "Spiaggia di Ira",
           desc: "Due baie gemelle separate da uno sperone roccioso. Acque limpide e fondali per lo snorkeling.",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-porto-rotondo-spiaggia-ira.webp",
         },
         {
           name: "Piazzetta San Marco",
           desc: "Anfiteatro all'aperto con sculture di Andrea Cascella. L'aperitivo perfetto.",
-          image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-piazzetta-san-marco-porto-rotondo.webp",
         },
         {
           name: "Punta Volpe",
           desc: "Litorale selvaggio con calette raggiungibili solo in quad o a piedi.",
-          image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-spiaggia-punta-volpe-porto-rotondo.webp",
         },
         {
           name: "Spiaggia dei Sassi",
           desc: "Caletta intima con pochi turisti. Massima privacy.",
-          image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-spiaggia-dei-sassi-porto-rotondo.webp",
         },
         {
           name: "Marina di Porto Rotondo",
           desc: "Yacht e barche a vela. L'eleganza discreta della Costa Smeralda.",
-          image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-marina-porto-rotondo.webp",
         },
       ]}
     />
