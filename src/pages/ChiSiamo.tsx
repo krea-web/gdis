@@ -185,7 +185,7 @@ const ChiSiamo = () => {
       {/* ═══════════════ GUIDED PATH (Vertical Timeline) ═══════════════ */}
       <section className="relative py-24 md:py-36 bg-background overflow-hidden">
         {/* Subtle top transition from dark hero */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[hsl(var(--brand-dark))] to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none" />
 
         <div className="container px-4 relative z-10 max-w-3xl mx-auto pt-16">
           <motion.div
