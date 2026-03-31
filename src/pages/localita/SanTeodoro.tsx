@@ -1,7 +1,7 @@
 import SEOHead from "@/components/SEOHead";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import MasonrySpots from "@/components/localita/MasonrySpots";
+import BentoSpots from "@/components/localita/BentoSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -52,38 +52,37 @@ const SanTeodoroPage = () => (
       </div>
     </VehicleSpotlight>
 
-    <MasonrySpots
+    <BentoSpots
       name="San Teodoro"
       spots={[
         {
           name: "Spiaggia La Cinta",
-          desc: "5 km di sabbia dorata con vista su Tavolara e colonie di fenicotteri rosa.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-la-cinta.webp",
+          subtitle: "5 km di Paradiso",
+          desc: "Sabbia dorata con vista su Tavolara e colonie di fenicotteri rosa.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-la-cinta.webp",
+          span: "md:col-span-2 md:row-span-2",
+        },
+        {
+          name: "Ambra Night",
+          subtitle: "Nightlife",
+          desc: "Il club di riferimento. Dj set e atmosfera elettrica fino all'alba.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-mercatino-serale-san-teodoro.webp",
         },
         {
           name: "Cala Brandinchi",
-          desc: "Chiamata 'Tahiti' per le acque trasparenti. Raggiungila in scooter prima della folla.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-cala-brandinchi.webp",
+          desc: "'Tahiti sarda' — acque trasparenti da raggiungere prima della folla.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-cala-brandinchi.webp",
         },
         {
-          name: "Lu Impostu",
-          desc: "Laguna poco profonda per famiglie, con chiosco sulla spiaggia.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-lu-impostu.webp",
+          name: "Puntaldia",
+          desc: "Resort e campo da golf affacciato sull'isola di Tavolara.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-lu-impostu.webp",
+          span: "md:col-span-2",
         },
         {
           name: "Monte Nieddu",
           desc: "Cascate e piscine naturali nell'entroterra. Perfette per il quad.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-monte-nieddu.webp",
-        },
-        {
-          name: "Mercatino Serale",
-          desc: "Ogni sera in estate: artigianato, street food e musica nel centro del paese.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-mercatino-serale-san-teodoro.webp",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-monte-nieddu.webp",
         },
       ]}
     />

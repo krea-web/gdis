@@ -1,7 +1,7 @@
 import SEOHead from "@/components/SEOHead";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import MasonrySpots from "@/components/localita/MasonrySpots";
+import BentoSpots from "@/components/localita/BentoSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -54,38 +54,31 @@ const PortoRotondoPage = () => (
       </div>
     </VehicleSpotlight>
 
-    <MasonrySpots
+    <BentoSpots
       name="Porto Rotondo"
       spots={[
         {
-          name: "Spiaggia di Ira",
-          desc: "Due baie gemelle separate da uno sperone roccioso. Acque limpide e fondali per lo snorkeling.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-porto-rotondo-spiaggia-ira.webp",
+          name: "Piazzetta San Marco",
+          subtitle: "Cuore del Borgo",
+          desc: "Anfiteatro con sculture di Andrea Cascella. L'aperitivo perfetto.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-piazzetta-san-marco-porto-rotondo.webp",
+          span: "md:col-span-2 md:row-span-2",
         },
         {
-          name: "Piazzetta San Marco",
-          desc: "Anfiteatro all'aperto con sculture di Andrea Cascella. L'aperitivo perfetto.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-piazzetta-san-marco-porto-rotondo.webp",
+          name: "Spiaggia di Ira",
+          desc: "Due baie gemelle con acque limpide e fondali per lo snorkeling.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-porto-rotondo-spiaggia-ira.webp",
+        },
+        {
+          name: "Tartarughino",
+          desc: "Pesce alla griglia e pasta fresca sulla terrazza vista Marina.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-marina-porto-rotondo.webp",
         },
         {
           name: "Punta Volpe",
-          desc: "Litorale selvaggio con calette raggiungibili solo in quad o a piedi.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-spiaggia-punta-volpe-porto-rotondo.webp",
-        },
-        {
-          name: "Spiaggia dei Sassi",
-          desc: "Caletta intima con pochi turisti. Massima privacy.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-spiaggia-dei-sassi-porto-rotondo.webp",
-        },
-        {
-          name: "Marina di Porto Rotondo",
-          desc: "Yacht e barche a vela. L'eleganza discreta della Costa Smeralda.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-marina-porto-rotondo.webp",
+          desc: "Litorale selvaggio con calette raggiungibili solo in quad.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-spiaggia-punta-volpe-porto-rotondo.webp",
+          span: "md:col-span-2",
         },
       ]}
     />

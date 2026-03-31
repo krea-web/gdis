@@ -1,7 +1,7 @@
 import SEOHead from "@/components/SEOHead";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import MasonrySpots from "@/components/localita/MasonrySpots";
+import BentoSpots from "@/components/localita/BentoSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -55,38 +55,38 @@ const BajaSardiniaPage = () => (
       </div>
     </VehicleSpotlight>
 
-    <MasonrySpots
+    <BentoSpots
       name="Baja Sardinia"
       spots={[
         {
           name: "Phi Beach",
+          subtitle: "Tramonti Mozzafiato",
           desc: "Il sunset bar più iconico della Sardegna. Dj set sulle rocce con vista sulle isole.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-phi-beach-baja-sardinia.webp",
-        },
-        {
-          name: "Spiaggia di Baja",
-          desc: "Sabbia fine, acqua turchese e tutti i servizi. Il cuore della vita balneare.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-spiaggia-di-baja-sardinia.webp",
-        },
-        {
-          name: "Battistoni Beach",
-          desc: "Cala esclusiva con beach club chic. L'indirizzo più glamour della baia.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-battistoni-beach-baja-sardinia.webp",
-        },
-        {
-          name: "Tre Monti",
-          desc: "Sentiero panoramico con vista mozzafiato sull'arcipelago de La Maddalena.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-spiaggia-dei-tre-monti-baja-sardinia.webp",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-phi-beach-baja-sardinia.webp",
+          span: "md:col-span-2 md:row-span-2",
         },
         {
           name: "Ritual Club",
+          subtitle: "Il Club nel Castello",
           desc: "Il tempio della musica elettronica in Costa Smeralda. Guest dj da Ibiza.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-ritual-baja-sardinia.webp",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-ritual-baja-sardinia.webp",
+          span: "md:row-span-2",
+        },
+        {
+          name: "Spiaggia Tre Monti",
+          desc: "Sentiero panoramico con vista mozzafiato sull'arcipelago de La Maddalena.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-spiaggia-dei-tre-monti-baja-sardinia.webp",
+        },
+        {
+          name: "Spiaggia di Baja",
+          desc: "Sabbia fine, acqua turchese e tutti i servizi.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-spiaggia-di-baja-sardinia.webp",
+        },
+        {
+          name: "Battistoni Beach",
+          desc: "Cala esclusiva con beach club chic.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-battistoni-beach-baja-sardinia.webp",
+          span: "md:col-span-2",
         },
       ]}
     />

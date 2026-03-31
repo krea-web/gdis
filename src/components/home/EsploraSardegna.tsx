@@ -1,29 +1,48 @@
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const destinations = [
   {
     name: "Porto Cervo",
-    desc: "Il cuore della Costa Smeralda, boutique di lusso e yacht club esclusivi.",
-    img: "https://images.unsplash.com/photo-1600430188203-bbb8dac84547?w=600&q=80",
+    desc: "Lusso, yacht e la Promenade du Port.",
+    img: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-noleggio-porto-cervo.webp",
+    to: "/localita/noleggio-porto-cervo",
     span: "md:col-span-2 md:row-span-2",
   },
   {
     name: "San Teodoro",
-    desc: "Spiagge caraibiche e vita notturna nel nord-est sardo.",
-    img: "https://images.unsplash.com/photo-1523365280197-f1783db9fe62?w=600&q=80",
+    desc: "La Cinta, movida e spiagge infinite.",
+    img: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-noleggio-san-teodoro.webp",
+    to: "/localita/noleggio-san-teodoro",
     span: "",
   },
   {
-    name: "La Maddalena",
-    desc: "Arcipelago cristallino, raggiungibile via ferry da Palau.",
-    img: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=600&q=80",
+    name: "Baja Sardinia",
+    desc: "Phi Beach, Ritual Club e tramonti leggendari.",
+    img: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-noleggio-baja-sardinia.webp",
+    to: "/localita/noleggio-baja-sardinia",
     span: "",
   },
   {
-    name: "Cala Luna",
-    desc: "Una delle spiagge più iconiche del Mediterraneo.",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+    name: "Porto Rotondo",
+    desc: "Cale segrete e avventura off-road.",
+    img: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-noleggio-porto-rotondo.webp",
+    to: "/localita/noleggio-porto-rotondo",
+    span: "",
+  },
+  {
+    name: "San Pantaleo",
+    desc: "Borgo bohémien e mercato del giovedì.",
+    img: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-noleggio-san-pantaleo.webp",
+    to: "/localita/noleggio-san-pantaleo",
+    span: "",
+  },
+  {
+    name: "Golfo Aranci",
+    desc: "Traghetti, delfini e Cala Moresca.",
+    img: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-noleggio-golfo-aranci.webp",
+    to: "/localita/noleggio-golfo-aranci",
     span: "md:col-span-2",
   },
 ];
@@ -45,32 +64,37 @@ const EsploraSardegna = () => (
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 auto-rows-[220px] gap-4 max-w-6xl mx-auto">
         {destinations.map((dest, i) => (
           <motion.div
             key={dest.name}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className={`relative rounded-2xl overflow-hidden group cursor-pointer ${dest.span} ${
-              dest.span.includes("row-span-2") ? "min-h-[400px]" : "min-h-[200px]"
-            }`}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
+            className={dest.span}
           >
-            <img
-              src={dest.img}
-              alt={dest.name}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="flex items-center gap-2 mb-2">
-                <MapPin className="h-4 w-4 text-primary" />
-                <h3 className="text-lg font-display font-semibold text-primary-foreground">{dest.name}</h3>
+            <Link
+              to={dest.to}
+              className="relative rounded-3xl overflow-hidden group cursor-pointer block h-full border border-white/10"
+              aria-label={`Scopri ${dest.name}`}
+            >
+              <img
+                src={dest.img}
+                alt={dest.name}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="flex items-center gap-2 mb-1">
+                  <MapPin className="h-4 w-4 text-primary" />
+                  <h3 className="text-lg font-display font-semibold text-white">{dest.name}</h3>
+                  <ArrowRight className="h-4 w-4 text-white opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+                </div>
+                <p className="text-sm text-white/70">{dest.desc}</p>
               </div>
-              <p className="text-sm text-primary-foreground/80">{dest.desc}</p>
-            </div>
+            </Link>
           </motion.div>
         ))}
       </div>
