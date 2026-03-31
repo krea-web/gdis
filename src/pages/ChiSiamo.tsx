@@ -125,7 +125,7 @@ const ChiSiamo = () => {
           <img src={heroUrl} alt="GDIS Mobilità Costa Smeralda" className="w-full h-full object-cover" />
         </motion.div>
         {/* Deep gradient overlay for smooth transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--brand-dark))/0.5] via-[hsl(var(--brand-dark))/0.3] to-[hsl(var(--brand-dark))] z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900 z-[1]" />
 
         <motion.div style={{ opacity: heroOpacity }} className="relative z-10 text-center px-4 max-w-5xl">
           <motion.p
