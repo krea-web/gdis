@@ -55,32 +55,31 @@ const SanPantaleoPage = () => (
       </div>
     </VehicleSpotlight>
 
-    <MasonrySpots
+    <BentoSpots
       name="San Pantaleo"
       spots={[
         {
-          name: "Piazza della Chiesa",
-          desc: "Il cuore del borgo. Caffè all'ombra dei lecci e atmosfera d'altri tempi.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo-chiesa.webp",
-        },
-        {
           name: "Mercato del Giovedì",
+          subtitle: "Arte e Tradizione",
           desc: "Artigianato locale, ceramiche, tessuti sardi e street food. Imperdibile.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-mercatino-san-pantaleo.webp",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-mercatino-san-pantaleo.webp",
+          span: "md:col-span-2 md:row-span-2",
         },
         {
-          name: "Rocce di Punta Cugnana",
-          desc: "Formazioni granitiche spettacolari. Tramonto indimenticabile in quad.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-rocce-san-pantaleo.webp",
+          name: "Rocce di Granito",
+          desc: "Formazioni granitiche spettacolari. Tramonto indimenticabile.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-rocce-san-pantaleo.webp",
+        },
+        {
+          name: "Boutique Locali",
+          desc: "Gallerie d'arte e botteghe artigiane nel cuore del borgo bohémien.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo-chiesa.webp",
         },
         {
           name: "Stazzo Gallurese",
-          desc: "Antiche fattorie in pietra trasformate in agriturismi con cucina tradizionale.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo.webp",
+          desc: "Antiche fattorie in pietra con cucina tradizionale gallurese.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo.webp",
+          span: "md:col-span-2",
         },
       ]}
     />

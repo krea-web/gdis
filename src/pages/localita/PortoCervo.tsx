@@ -52,38 +52,36 @@ const PortoCervoPage = () => (
       </div>
     </VehicleSpotlight>
 
-    <MasonrySpots
+    <BentoSpots
       name="Porto Cervo"
       spots={[
         {
-          name: "Spiaggia del Principe",
-          desc: "Sabbia bianchissima e acque turchesi, una delle spiagge più belle del Mediterraneo.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-spiaggia-principe-sardegna.webp",
-        },
-        {
-          name: "La Promenade du Port",
+          name: "Promenade du Port",
+          subtitle: "Shopping & Yacht",
           desc: "Shopping di lusso, gallerie d'arte e aperitivi vista mega-yacht.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-promenade-du-port.webp",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-promenade-du-port.webp",
+          span: "md:col-span-2 md:row-span-2",
         },
         {
-          name: "Cala di Volpe",
-          desc: "La baia leggendaria con l'omonimo hotel, perfetta per un giro in scooter.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-cala-di-volpe.webp",
+          name: "Piazzetta Centrale",
+          desc: "Il cuore pulsante della vita sociale di Porto Cervo.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-stella-maris.webp",
         },
         {
-          name: "Stella Maris",
-          desc: "Chiesa iconica con opere di El Greco, incastonata tra le rocce di granito.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-stella-maris.webp",
+          name: "Marina di Porto Cervo",
+          desc: "Super-yacht e barche a vela nel porto più esclusivo del Mediterraneo.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-cala-di-volpe.webp",
+        },
+        {
+          name: "Spiaggia del Principe",
+          desc: "Sabbia bianchissima e acque turchesi, una delle più belle del Mediterraneo.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-spiaggia-principe-sardegna.webp",
+          span: "md:col-span-2",
         },
         {
           name: "Pevero Golf Club",
-          desc: "18 buche tra macchia mediterranea e panorami da togliere il fiato.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-pevero-golf-club.webp",
+          desc: "18 buche tra macchia mediterranea e panorami mozzafiato.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-pevero-golf-club.webp",
         },
       ]}
     />

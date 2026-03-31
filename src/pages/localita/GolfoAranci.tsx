@@ -50,32 +50,31 @@ const GolfoAranciPage = () => (
       </div>
     </VehicleSpotlight>
 
-    <MasonrySpots
+    <BentoSpots
       name="Golfo Aranci"
       spots={[
         {
           name: "Cala Moresca",
-          desc: "Piccola baia protetta con acque cristalline. Paradiso per lo snorkeling.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-cala-moresca-golfo-aranci.webp",
+          subtitle: "Snorkeling Paradise",
+          desc: "Piccola baia protetta con acque cristalline.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-cala-moresca-golfo-aranci.webp",
+          span: "md:col-span-2 md:row-span-2",
         },
         {
-          name: "Spiaggia Bianca",
-          desc: "La spiaggia principale: sabbia bianchissima e servizi completi.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-bianca-golfo-aranci.webp",
+          name: "Lungomare",
+          desc: "Passeggiata panoramica con ristoranti di pesce e vista sul golfo.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-bianca-golfo-aranci.webp",
         },
         {
-          name: "Capo Figari",
-          desc: "Riserva naturale con sentieri panoramici e la storica stazione radio di Marconi.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-capo-figari-golfo-aranci.webp",
+          name: "Terza Spiaggia",
+          desc: "Pesce con i piedi nella sabbia. Frittura leggendaria.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-capo-figari-golfo-aranci.webp",
         },
         {
           name: "Delfini nel Golfo",
-          desc: "Escursioni in barca per avvistare i delfini. Un'esperienza unica in Sardegna.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-delfini-golfo-aranci.webp",
+          desc: "Escursioni per avvistare i delfini. Un'esperienza unica.",
+          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-delfini-golfo-aranci.webp",
+          span: "md:col-span-2",
         },
       ]}
     />
