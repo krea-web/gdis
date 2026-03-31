@@ -125,14 +125,14 @@ const ChiSiamo = () => {
           <img src={heroUrl} alt="GDIS Mobilità Costa Smeralda" className="w-full h-full object-cover" />
         </motion.div>
         {/* Deep gradient overlay for smooth transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--brand-dark))/0.5] via-[hsl(var(--brand-dark))/0.3] to-[hsl(var(--brand-dark))] z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900 z-[1]" />
 
         <motion.div style={{ opacity: heroOpacity }} className="relative z-10 text-center px-4 max-w-5xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-primary font-display text-xs md:text-sm font-bold uppercase tracking-[0.4em] mb-6"
+            className="text-blue-400 font-display text-sm font-semibold uppercase tracking-[0.3em] mb-4 block"
           >
             DAL 2025 IN SARDEGNA
           </motion.p>
@@ -141,7 +141,7 @@ const ChiSiamo = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
-            className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-primary-foreground leading-[0.95] tracking-tight drop-shadow-2xl"
+            className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl"
           >
             La Nuova Era della <span className="italic font-light text-primary">Mobilità</span>
             <br />
@@ -152,7 +152,7 @@ const ChiSiamo = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="text-primary-foreground/50 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto"
+            className="text-slate-200 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto leading-relaxed"
           >
             Nati nel 2025 per offrirti veicoli di ultima generazione, un processo 100% digitale e consegne VIP
             direttamente al tuo yacht o hotel.
@@ -185,7 +185,7 @@ const ChiSiamo = () => {
       {/* ═══════════════ GUIDED PATH (Vertical Timeline) ═══════════════ */}
       <section className="relative py-24 md:py-36 bg-background overflow-hidden">
         {/* Subtle top transition from dark hero */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[hsl(var(--brand-dark))] to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none" />
 
         <div className="container px-4 relative z-10 max-w-3xl mx-auto pt-16">
           <motion.div
