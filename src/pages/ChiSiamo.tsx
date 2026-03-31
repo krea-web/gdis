@@ -152,7 +152,7 @@ const ChiSiamo = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="text-primary-foreground/50 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto"
+            className="text-slate-200 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto leading-relaxed"
           >
             Nati nel 2025 per offrirti veicoli di ultima generazione, un processo 100% digitale e consegne VIP
             direttamente al tuo yacht o hotel.
