@@ -29,7 +29,7 @@ const PortoCervoPage = () => (
     <LocalitaHeroV2
       name="Porto Cervo"
       subtitle="Consegna VIP alla tua Marina, villa o yacht. Il lusso della Costa Smeralda su ruote, su richiesta WhatsApp."
-      bgImage="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
+      bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-noleggio-porto-cervo.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
       vehicleAlt="Auto VIP Porto Cervo"
     />
@@ -58,27 +58,32 @@ const PortoCervoPage = () => (
         {
           name: "Spiaggia del Principe",
           desc: "Sabbia bianchissima e acque turchesi, una delle spiagge più belle del Mediterraneo.",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-spiaggia-principe-sardegna.webp",
         },
         {
           name: "La Promenade du Port",
           desc: "Shopping di lusso, gallerie d'arte e aperitivi vista mega-yacht.",
-          image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-promenade-du-port.webp",
         },
         {
           name: "Cala di Volpe",
           desc: "La baia leggendaria con l'omonimo hotel, perfetta per un giro in scooter.",
-          image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-cala-di-volpe.webp",
         },
         {
           name: "Stella Maris",
           desc: "Chiesa iconica con opere di El Greco, incastonata tra le rocce di granito.",
-          image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-stella-maris.webp",
         },
         {
           name: "Pevero Golf Club",
           desc: "18 buche tra macchia mediterranea e panorami da togliere il fiato.",
-          image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-pevero-golf-club.webp",
         },
       ]}
     />
