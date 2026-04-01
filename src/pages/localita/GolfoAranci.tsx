@@ -110,7 +110,7 @@ const GolfoAranciPage = () => (
         {
           icon: "tip",
           title: "Verso Porto Rotondo",
-          text: "In 20 minuti di panoramica raggiungi Porto Rotondo e le sue spiagge esclusive.",
+          text: (<>In 20 minuti di panoramica raggiungi <Link to="/localita/noleggio-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Rotondo</Link> e le sue spiagge esclusive.</>),
         },
       ]}
     />
