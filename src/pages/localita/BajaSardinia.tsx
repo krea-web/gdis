@@ -177,7 +177,9 @@ const BajaSardiniaPage = () => (
         },
         {
           q: "Quale scooter consigliate per Baja Sardinia?",
-          a: "L'Honda SH 350 per chi ha la patente A2/A e vuole più potenza per la salita verso Phi Beach. L'SH 125 per chi ha solo la patente B.",
+          a: (
+            <>L'<Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Honda SH 350</Link> per chi ha la patente A2/A e vuole più potenza per la salita verso Phi Beach. L'SH 125 per chi ha solo la patente B.</>
+          ),
         },
       ]}
     />
