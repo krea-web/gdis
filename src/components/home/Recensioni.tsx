@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const reviews = [
   {
@@ -8,20 +9,42 @@ const reviews = [
     location: "Milano",
     text: "Servizio impeccabile! La Panda ci aspettava direttamente al porto di Olbia. Tutto perfetto, torneremo sicuramente.",
     rating: 5,
+    linkWord: "Panda",
+    linkTo: "/flotta/fiat-panda",
   },
   {
     name: "Sophie L.",
     location: "Parigi",
     text: "Le scooter Honda SH sono in condizioni perfette. Abbiamo esplorato la Costa Smeralda in totale libertà. Consegna VIP fantastica!",
     rating: 5,
+    linkWord: "Honda SH",
+    linkTo: "/flotta/honda-sh",
   },
   {
     name: "Alessandro D.",
     location: "Roma",
     text: "Il quad Yamaha Raptor è una bestia! Spiagge nascoste raggiungibili solo off-road. Esperienza unica, staff gentilissimo.",
     rating: 5,
+    linkWord: "Yamaha Raptor",
+    linkTo: "/flotta/yamaha-raptor",
   },
 ];
+
+const linkClass = "text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all cursor-pointer";
+
+const renderTextWithLink = (text: string, linkWord: string, linkTo: string) => {
+  const index = text.indexOf(linkWord);
+  if (index === -1) return <>{text}</>;
+  const before = text.slice(0, index);
+  const after = text.slice(index + linkWord.length);
+  return (
+    <>
+      {before}
+      <Link to={linkTo} className={linkClass}>{linkWord}</Link>
+      {after}
+    </>
+  );
+};
 
 const Recensioni = () => (
   <section className="py-24 md:py-32 bg-muted/30 relative overflow-hidden">
@@ -47,7 +70,6 @@ const Recensioni = () => (
             transition={{ duration: 0.5, delay: i * 0.12 }}
             className="relative group rounded-2xl p-8 bg-background/60 backdrop-blur-xl border border-border/50 hover:border-primary/30 hover:shadow-[0_10px_40px_hsl(var(--primary)/0.1)] transition-all duration-300"
           >
-            {/* Glow border on hover */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             
             <div className="relative z-10">
@@ -56,7 +78,9 @@ const Recensioni = () => (
                   <Star key={j} className="h-5 w-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-foreground/80 leading-relaxed mb-6 italic text-base">"{review.text}"</p>
+              <p className="text-foreground/80 leading-relaxed mb-6 italic text-base">
+                "{renderTextWithLink(review.text, review.linkWord, review.linkTo)}"
+              </p>
               <div className="border-t border-border/50 pt-4">
                 <p className="font-semibold text-foreground">{review.name}</p>
                 <p className="text-sm text-muted-foreground">{review.location}</p>

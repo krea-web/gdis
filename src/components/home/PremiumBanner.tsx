@@ -106,7 +106,9 @@ const PremiumBanner = () => {
               </h3>
 
               <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed mb-8">
-                Citycar, Scooter e Quad pronti in meno di 2 minuti. Scegli il veicolo, firma online e ritira le chiavi.
+                <Link to="/flotta/fiat-panda" className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all cursor-pointer">Citycar</Link>,{" "}
+                <Link to="/flotta/honda-sh" className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all cursor-pointer">Scooter</Link> e{" "}
+                <Link to="/flotta/yamaha-raptor" className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all cursor-pointer">Quad</Link> pronti in meno di 2 minuti. Scegli il veicolo, firma online e ritira le chiavi.
                 Il tuo tempo è prezioso.
               </p>
 
