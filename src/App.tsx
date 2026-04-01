@@ -8,7 +8,7 @@ import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import ChiSiamo from "./pages/ChiSiamo";
 import PrenotaOra from "./pages/PrenotaOra";
-import NoleggioCostaSmearalda from "./pages/NoleggioCostaSmearalda";
+import NoleggioCostaSmeralda from "./pages/NoleggioCostaSmeralda";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import FiatPandaPage from "./pages/flotta/FiatPandaPage";
