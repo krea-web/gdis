@@ -305,4 +305,4 @@ const NoleggioCostaSmeralda = () => {
   );
 };
 
-export default NoleggioCostaSmearalda;
+export default NoleggioCostaSmeralda;
