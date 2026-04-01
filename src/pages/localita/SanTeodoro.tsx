@@ -169,7 +169,10 @@ const SanTeodoroPage = () => (
         },
         {
           q: "Serve la patente per lo scooter Honda SH 125?",
-          a: "Basta la patente B o AM (per gli SH 125). Per l'SH 350 serve la patente A2 o A. Per il quad serve la patente B.",
+          a: (
+            <>Basta la patente B o AM (per gli SH 125). Per l'SH 350 serve la patente A2 o A. Per il{" "}
+              <Link to="/flotta/yamaha-raptor" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">quad</Link> serve la patente B.</>
+          ),
         },
         {
           q: "Quanto dista l'aeroporto di Olbia da San Teodoro?",
