@@ -178,7 +178,7 @@ const GolfoAranciPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Golfo Aranci esplora verso sud{" "}
-          <Link to="/localita/noleggio-porto-rotondo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Rotondo
           </Link>{" "}
           — la Marina e le cale nascoste ti aspettano a 20 minuti di Panda.

@@ -179,7 +179,7 @@ const SanPantaleoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Pantaleo scendi verso{" "}
-          <Link to="/localita/noleggio-porto-cervo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Cervo
           </Link>{" "}
           per lo shopping di lusso e la Marina — 15 minuti di curve panoramiche.

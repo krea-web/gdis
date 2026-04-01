@@ -179,7 +179,7 @@ const PortoRotondoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Dopo l'avventura off-road, sali verso il borgo montano di{" "}
-          <Link to="/localita/noleggio-san-pantaleo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-san-pantaleo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             San Pantaleo
           </Link>{" "}
           per il mercato del giovedì e la cucina gallurese.

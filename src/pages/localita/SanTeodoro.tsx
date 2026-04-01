@@ -185,10 +185,10 @@ const SanTeodoroPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Teodoro parti verso nord per scoprire le calette segrete di{" "}
-          <Link to="/localita/noleggio-golfo-aranci" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Golfo Aranci
           </Link>{" "}
-          — perfette con la Fiat Panda.
+          — perfette con la <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Fiat Panda</Link>.
         </p>
       </div>
     </section>

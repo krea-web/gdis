@@ -185,7 +185,7 @@ const PortoCervoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Porto Cervo raggiungi in 5 minuti{" "}
-          <Link to="/localita/noleggio-baja-sardinia" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-baja-sardinia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Baja Sardinia
           </Link>{" "}
           per i tramonti al Phi Beach, evitando il traffico in scooter.
