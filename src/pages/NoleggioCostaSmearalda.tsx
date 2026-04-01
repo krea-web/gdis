@@ -292,7 +292,7 @@ const NoleggioCostaSmearalda = () => {
             { "@type": "Place", name: "San Teodoro" },
             { "@type": "Place", name: "Olbia" },
           ],
-          url: "https://gdisrent.it/noleggio-in-costa-smeralda",
+          url: "https://gdisrentservice.com/noleggio-in-costa-smeralda",
         }}
       />
       <HeroSection />

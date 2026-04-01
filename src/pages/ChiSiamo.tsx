@@ -143,9 +143,8 @@ const ChiSiamo = () => {
             transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
             className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl"
           >
-            La Nuova Era della <span className="italic font-light text-primary">Mobilità</span>
-            <br />
-            in Costa Smeralda
+            Noleggio Auto, Scooter e Quad <br />
+            <span className="italic font-light text-primary">in Costa Smeralda</span> — GDIS Rent
           </motion.h1>
 
           <motion.p
