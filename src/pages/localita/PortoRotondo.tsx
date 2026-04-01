@@ -152,7 +152,10 @@ const PortoRotondoPage = () => (
       faqs={[
         {
           q: "Consegnate il quad alla Marina di Porto Rotondo?",
-          a: "Sì! Consegna VIP alla Marina, al tuo hotel o alla villa. Il Yamaha Raptor 700 ti aspetta pronto per l'avventura.",
+          a: (
+            <>Sì! Consegna VIP alla Marina, al tuo hotel o alla villa. Il{" "}
+              <Link to="/flotta/yamaha-raptor" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Yamaha Raptor 700</Link> ti aspetta pronto per l'avventura.</>
+          ),
         },
         {
           q: "Serve la patente per il quad Yamaha Raptor?",
@@ -164,7 +167,10 @@ const PortoRotondoPage = () => (
         },
         {
           q: "Noleggiate anche scooter e auto a Porto Rotondo?",
-          a: "Certo! Offriamo Honda SH per il centro, Fiat Panda per le famiglie, e auto VIP su richiesta WhatsApp.",
+          a: (
+            <>Certo! Offriamo <Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Honda SH</Link> per il centro,{" "}
+              <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Fiat Panda</Link> per le famiglie, e auto VIP su richiesta WhatsApp.</>
+          ),
         },
       ]}
     />
@@ -173,7 +179,7 @@ const PortoRotondoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Dopo l'avventura off-road, sali verso il borgo montano di{" "}
-          <Link to="/localita/noleggio-san-pantaleo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-san-pantaleo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             San Pantaleo
           </Link>{" "}
           per il mercato del giovedì e la cucina gallurese.

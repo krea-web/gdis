@@ -27,9 +27,9 @@ const steps = [
 
 const vipLocations = [
   { icon: Plane, label: "Aeroporto Olbia" },
-  { icon: Anchor, label: "Porto Cervo" },
+  { icon: Anchor, label: "Porto Cervo", to: "/localita/noleggio-porto-cervo" },
   { icon: Hotel, label: "Hotel & Villa" },
-  { icon: MapPin, label: "San Teodoro" },
+  { icon: MapPin, label: "San Teodoro", to: "/localita/noleggio-san-teodoro" },
 ];
 
 const ComeFunziona = () => (
@@ -96,12 +96,27 @@ const ComeFunziona = () => (
               </p>
 
               <div className="grid grid-cols-2 gap-3 mb-8">
-                {vipLocations.map((loc) => (
-                  <div key={loc.label} className="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm">
-                    <loc.icon className="h-4 w-4 text-primary-foreground/80 flex-shrink-0" />
-                    <span className="text-sm font-medium text-primary-foreground/90">{loc.label}</span>
-                  </div>
-                ))}
+                {vipLocations.map((loc) => {
+                  const content = (
+                    <>
+                      <loc.icon className="h-4 w-4 text-primary-foreground/80 flex-shrink-0" />
+                      <span className="text-sm font-medium text-primary-foreground/90">{loc.label}</span>
+                    </>
+                  );
+                  return loc.to ? (
+                    <Link
+                      key={loc.label}
+                      to={loc.to}
+                      className="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors"
+                    >
+                      {content}
+                    </Link>
+                  ) : (
+                    <div key={loc.label} className="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm">
+                      {content}
+                    </div>
+                  );
+                })}
               </div>
 
               <Button variant="secondary" size="lg" asChild className="w-full rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold gap-2">

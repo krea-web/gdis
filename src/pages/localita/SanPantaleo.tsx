@@ -115,7 +115,7 @@ const SanPantaleoPage = () => (
         {
           icon: "tip",
           title: "Scendi a Porto Cervo",
-          text: "In 15 minuti di scooter sei sulla Promenade du Port per una cena vista yacht.",
+          text: (<>In 15 minuti di scooter sei sulla Promenade du Port di <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> per una cena vista yacht.</>),
         },
       ]}
     />
@@ -153,11 +153,13 @@ const SanPantaleoPage = () => (
       faqs={[
         {
           q: "Come arrivo al mercato del giovedì senza problemi di parcheggio?",
-          a: "In scooter Honda SH! Il giovedì mattina è impossibile trovare posto auto. Lo scooter parcheggia a 2 passi dalla piazza.",
+          a: (<>In <Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">scooter Honda SH</Link>! Il giovedì mattina è impossibile trovare posto auto. Lo scooter parcheggia a 2 passi dalla piazza.</>),
         },
         {
           q: "Posso raggiungere Porto Cervo da San Pantaleo in scooter?",
-          a: "Certo! Porto Cervo è a soli 15 minuti lungo una strada panoramica spettacolare tra le rocce di granito della Gallura.",
+          a: (
+            <>Certo! <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> è a soli 15 minuti lungo una strada panoramica spettacolare tra le rocce di granito della Gallura.</>
+          ),
         },
         {
           q: "Consegnate lo scooter direttamente a San Pantaleo?",
@@ -165,7 +167,10 @@ const SanPantaleoPage = () => (
         },
         {
           q: "Il quad è adatto per l'entroterra di San Pantaleo?",
-          a: "Assolutamente. L'entroterra gallurese è pieno di sentieri sterrati perfetti per il Yamaha Raptor 700. Serve la patente B.",
+          a: (
+            <>Assolutamente. L'entroterra gallurese è pieno di sentieri sterrati perfetti per il{" "}
+              <Link to="/flotta/yamaha-raptor" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Yamaha Raptor 700</Link>. Serve la patente B.</>
+          ),
         },
       ]}
     />
@@ -174,7 +179,7 @@ const SanPantaleoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Pantaleo scendi verso{" "}
-          <Link to="/localita/noleggio-porto-cervo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Cervo
           </Link>{" "}
           per lo shopping di lusso e la Marina — 15 minuti di curve panoramiche.

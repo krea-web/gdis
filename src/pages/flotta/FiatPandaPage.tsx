@@ -28,6 +28,8 @@ const scenarios = [
     description:
       "Raggiungi Lu Impostu, Cala Brandinchi e La Cinta senza stress. Parcheggia ovunque grazie alle dimensioni compatte.",
     highlight: false,
+    locationLink: "/localita/noleggio-san-teodoro",
+    locationName: "San Teodoro",
   },
   {
     icon: ShoppingBag,
@@ -35,6 +37,8 @@ const scenarios = [
     description:
       "Passeggia tra le boutique della Promenade du Port e torna comodamente con tutti i tuoi acquisti nel bagagliaio.",
     highlight: true,
+    locationLink: "/localita/noleggio-porto-cervo",
+    locationName: "Porto Cervo",
   },
   {
     icon: Users,
@@ -49,6 +53,8 @@ const faqs = [
   {
     q: "Posso andare fuoristrada con la Panda?",
     a: "No. La Fiat Panda Hybrid è progettata per strade asfaltate. Per percorsi off-road consigliamo il nostro Yamaha Raptor Quad.",
+    vehicleLink: "/flotta/yamaha-raptor",
+    vehicleName: "Yamaha Raptor",
   },
   {
     q: "Ha l'aria condizionata?",
@@ -154,7 +160,7 @@ const FiatPandaPage = () => (
               Compatta fuori, spaziosa dentro
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              La Fiat Panda Hybrid è il veicolo ideale per muoversi agilmente tra le strade della Sardegna. Con il suo
+              La <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Fiat Panda</Link> Hybrid è il veicolo ideale per muoversi agilmente tra le strade della Sardegna. Con il suo
               motore mild-hybrid da 70cv, unisce consumi ridottissimi a una sorprendente vivacità. Facile da
               parcheggiare nei centri storici e spaziosa abbastanza per 5 passeggeri con bagagli.
             </p>
@@ -210,7 +216,8 @@ const FiatPandaPage = () => (
               Perfetta per raggiungere le spiagge
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Dalla Spiaggia del Principe a Cala di Volpe, dalla Costa Smeralda a San Teodoro: la Panda ti porta ovunque
+              Dalla Spiaggia del Principe a Cala di Volpe, dalla Costa Smeralda a{" "}
+              <Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>: la Panda ti porta ovunque
               con agilità e comfort.
             </p>
             <p className="text-muted-foreground leading-relaxed">

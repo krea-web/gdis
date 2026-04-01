@@ -117,7 +117,7 @@ const PortoCervoPage = () => (
         {
           icon: "tip",
           title: "Bypass Baja Sardinia",
-          text: "Per evitare il traffico serale verso Baja Sardinia, prendi lo scooter: 5 minuti senza code.",
+          text: (<>Per evitare il traffico serale verso <Link to="/localita/noleggio-baja-sardinia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Baja Sardinia</Link>, prendi lo scooter: 5 minuti senza code.</>),
         },
       ]}
     />
@@ -168,7 +168,11 @@ const PortoCervoPage = () => (
         },
         {
           q: "C'è la ZTL a Porto Cervo?",
-          a: "Sì, il centro è pedonale/ZTL in estate. Con lo scooter Honda SH parcheggi nelle aree moto dedicate vicino alla Promenade, evitando completamente il problema.",
+          a: (
+            <>Sì, il centro è pedonale/ZTL in estate. Con lo{" "}
+              <Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">scooter Honda SH</Link>{" "}
+              parcheggi nelle aree moto dedicate vicino alla Promenade, evitando completamente il problema.</>
+          ),
         },
         {
           q: "Quanto dista Porto Cervo dall'aeroporto di Olbia?",
@@ -181,7 +185,7 @@ const PortoCervoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Porto Cervo raggiungi in 5 minuti{" "}
-          <Link to="/localita/noleggio-baja-sardinia" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-baja-sardinia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Baja Sardinia
           </Link>{" "}
           per i tramonti al Phi Beach, evitando il traffico in scooter.

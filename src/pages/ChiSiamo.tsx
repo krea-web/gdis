@@ -213,6 +213,7 @@ const ChiSiamo = () => {
             title="Flotta 2025"
             subtitle="Ogni veicolo della nostra flotta è nuovo, revisionato e assicurato. City Car, Scooter, Quad e Auto di Lusso su richiesta — solo il meglio per le tue vacanze."
           />
+
           <TimelineNode
             index={2}
             icon={Smartphone}
@@ -275,14 +276,18 @@ const ChiSiamo = () => {
               </h2>
               <div className="space-y-6 text-muted-foreground text-lg font-light leading-relaxed">
                 <p>
-                  <strong className="text-foreground font-medium">City Car, Scooter e Quad</strong> di ultima
+                  <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">City Car</Link>,{" "}
+                  <Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Scooter</Link> e{" "}
+                  <Link to="/flotta/yamaha-raptor" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Quad</Link> di ultima
                   generazione per vivere ogni angolo della Costa Smeralda in totale libertà. Prenoti online in 2 minuti,
                   firmi digitalmente e ritiri — oppure te lo portiamo noi.
                 </p>
                 <p>
                   Il nostro <strong className="text-foreground font-medium">Servizio Consegna VIP</strong> è ciò che ci
-                  rende unici: il veicolo arriva direttamente al tuo yacht a Palau, alla tua villa a Porto Cervo o al
-                  tuo hotel a San Teodoro.{" "}
+                  rende unici: il veicolo arriva direttamente al tuo yacht a Palau, alla tua villa a{" "}
+                  <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> o al
+                  tuo hotel a{" "}
+                  <Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>.{" "}
                   <strong className="text-foreground font-medium">Zero stress. Zero code. Solo il mare.</strong>
                 </p>
               </div>

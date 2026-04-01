@@ -122,7 +122,7 @@ const BajaSardiniaPage = () => (
         {
           icon: "tip",
           title: "Porto Cervo Express",
-          text: "5 minuti in scooter e sei alla Promenade du Port per cena. Poi torni a Baja per il Ritual.",
+          text: (<>5 minuti in scooter e sei alla Promenade du Port di <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> per cena. Poi torni a Baja per il Ritual.</>),
         },
       ]}
     />
@@ -177,7 +177,9 @@ const BajaSardiniaPage = () => (
         },
         {
           q: "Quale scooter consigliate per Baja Sardinia?",
-          a: "L'Honda SH 350 per chi ha la patente A2/A e vuole più potenza per la salita verso Phi Beach. L'SH 125 per chi ha solo la patente B.",
+          a: (
+            <>L'<Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Honda SH 350</Link> per chi ha la patente A2/A e vuole più potenza per la salita verso Phi Beach. L'SH 125 per chi ha solo la patente B.</>
+          ),
         },
       ]}
     />
@@ -186,7 +188,7 @@ const BajaSardiniaPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Baja Sardinia in 5 minuti di scooter sei a{" "}
-          <Link to="/localita/noleggio-porto-cervo" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Cervo
           </Link>{" "}
           per lo shopping di lusso e la Marina — il combo perfetto.

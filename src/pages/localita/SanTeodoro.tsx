@@ -118,7 +118,7 @@ const SanTeodoroPage = () => (
         {
           icon: "tip",
           title: "Verso Golfo Aranci",
-          text: "Con lo scooter o la Panda raggiungi Golfo Aranci in 40 minuti lungo una strada panoramica mozzafiato.",
+          text: (<>Con lo scooter o la <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Panda</Link> raggiungi <Link to="/localita/noleggio-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Golfo Aranci</Link> in 40 minuti lungo una strada panoramica mozzafiato.</>),
         },
       ]}
     />
@@ -169,7 +169,10 @@ const SanTeodoroPage = () => (
         },
         {
           q: "Serve la patente per lo scooter Honda SH 125?",
-          a: "Basta la patente B o AM (per gli SH 125). Per l'SH 350 serve la patente A2 o A. Per il quad serve la patente B.",
+          a: (
+            <>Basta la patente B o AM (per gli SH 125). Per l'SH 350 serve la patente A2 o A. Per il{" "}
+              <Link to="/flotta/yamaha-raptor" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">quad</Link> serve la patente B.</>
+          ),
         },
         {
           q: "Quanto dista l'aeroporto di Olbia da San Teodoro?",
@@ -182,10 +185,10 @@ const SanTeodoroPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Teodoro parti verso nord per scoprire le calette segrete di{" "}
-          <Link to="/localita/noleggio-golfo-aranci" className="text-primary font-semibold hover:underline">
+          <Link to="/localita/noleggio-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Golfo Aranci
           </Link>{" "}
-          — perfette con la Fiat Panda.
+          — perfette con la <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Fiat Panda</Link>.
         </p>
       </div>
     </section>
