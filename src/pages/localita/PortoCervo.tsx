@@ -117,7 +117,7 @@ const PortoCervoPage = () => (
         {
           icon: "tip",
           title: "Bypass Baja Sardinia",
-          text: "Per evitare il traffico serale verso Baja Sardinia, prendi lo scooter: 5 minuti senza code.",
+          text: (<>Per evitare il traffico serale verso <Link to="/localita/noleggio-baja-sardinia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Baja Sardinia</Link>, prendi lo scooter: 5 minuti senza code.</>),
         },
       ]}
     />
