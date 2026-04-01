@@ -161,11 +161,15 @@ const GolfoAranciPage = () => (
         },
         {
           q: "Posso esplorare la costa nord con la Fiat Panda?",
-          a: "Assolutamente! Da Golfo Aranci raggiungi Porto Rotondo in 20 minuti e San Teodoro in 40. La Panda è perfetta per le strade costiere.",
+          a: (
+            <>Assolutamente! Da Golfo Aranci raggiungi <Link to="/localita/noleggio-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Rotondo</Link> in 20 minuti e <Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link> in 40. La Panda è perfetta per le strade costiere.</>
+          ),
         },
         {
           q: "Noleggiate anche scooter e quad a Golfo Aranci?",
-          a: "Certo! Honda SH per il centro e le spiagge, Yamaha Raptor per l'entroterra. Consegna VIP inclusa.",
+          a: (
+            <>Certo! <Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Honda SH</Link> per il centro e le spiagge, <Link to="/flotta/yamaha-raptor" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Yamaha Raptor</Link> per l'entroterra. Consegna VIP inclusa.</>
+          ),
         },
       ]}
     />
