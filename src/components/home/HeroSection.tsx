@@ -44,7 +44,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          Il tuo noleggio parte da qui.
+          Noleggio in Costa Smeralda.
         </motion.h1>
 
         <motion.p
@@ -53,10 +53,27 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <Link to="/flotta/fiat-panda" className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">Citycar</Link>,{" "}
-          <Link to="/flotta/honda-sh" className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">Scooter</Link>,{" "}
-          <Link to="/flotta/yamaha-raptor" className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">Quad</Link> e Luxury.{" "}
-          <br className="hidden md:block" /> Esplora la Sardegna senza limiti.
+          <Link
+            to="/flotta/fiat-panda"
+            className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all"
+          >
+            Citycar
+          </Link>
+          ,{" "}
+          <Link
+            to="/flotta/honda-sh"
+            className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all"
+          >
+            Scooter
+          </Link>
+          ,{" "}
+          <Link
+            to="/flotta/yamaha-raptor"
+            className="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all"
+          >
+            Quad
+          </Link>{" "}
+          e Luxury. <br className="hidden md:block" /> Esplora la Sardegna senza limiti.
         </motion.p>
 
         <motion.div
