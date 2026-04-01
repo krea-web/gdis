@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { AlertTriangle, ParkingCircle, Clock, Car } from "lucide-react";
+import { type ReactNode } from "react";
 
-type Tip = { icon: "ztl" | "parking" | "traffic" | "tip"; title: string; text: string };
+type Tip = { icon: "ztl" | "parking" | "traffic" | "tip"; title: string; text: string | ReactNode };
 
 type Props = {
   name: string;

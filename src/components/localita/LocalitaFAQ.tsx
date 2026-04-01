@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { type ReactNode } from "react";
 
-type FaqItem = { q: string; a: string };
+type FaqItem = { q: string; a: string | ReactNode };
 
 type Props = {
   name: string;
