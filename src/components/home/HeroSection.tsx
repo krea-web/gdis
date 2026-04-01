@@ -6,10 +6,13 @@ const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pub
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black" aria-label="Hero principale GDIS Rent">
+    <section
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-black"
+      aria-label="Hero principale GDIS Rent"
+    >
       <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
         <source
-          src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/HERO%20VERA.mp4"
+          src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/hero-gdisrent.mov"
           type="video/mp4"
         />
       </video>
