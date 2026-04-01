@@ -105,22 +105,31 @@ const DeliverySection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {locations.map((loc, i) => (
-            <motion.div
-              key={loc.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-8 text-center hover:-translate-y-2 hover:shadow-[0_15px_40px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300"
-            >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
-                <MapPin className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-display text-xl font-bold text-foreground mb-2">{loc.name}</h3>
-              <p className="text-muted-foreground text-sm font-light">{loc.desc}</p>
-            </motion.div>
-          ))}
+          {locations.map((loc, i) => {
+            const card = (
+              <motion.div
+                key={loc.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-8 text-center hover:-translate-y-2 hover:shadow-[0_15px_40px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
+                  <MapPin className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-foreground mb-2">{loc.name}</h3>
+                <p className="text-muted-foreground text-sm font-light">{loc.desc}</p>
+              </motion.div>
+            );
+            return loc.to ? (
+              <Link key={loc.name} to={loc.to} className="block">
+                {card}
+              </Link>
+            ) : (
+              card
+            );
+          })}
         </div>
 
         <motion.div
