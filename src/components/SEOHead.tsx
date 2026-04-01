@@ -8,7 +8,7 @@ type Props = {
 };
 
 const SEOHead = ({ title, description, canonical, jsonLd }: Props) => {
-  const siteUrl = "https://gdisrent.it";
+  const siteUrl = "https://gdisrentservice.com";
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : undefined;
 
   return (
