@@ -216,7 +216,8 @@ const FiatPandaPage = () => (
               Perfetta per raggiungere le spiagge
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Dalla Spiaggia del Principe a Cala di Volpe, dalla Costa Smeralda a San Teodoro: la Panda ti porta ovunque
+              Dalla Spiaggia del Principe a Cala di Volpe, dalla Costa Smeralda a{" "}
+              <Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>: la Panda ti porta ovunque
               con agilità e comfort.
             </p>
             <p className="text-muted-foreground leading-relaxed">
