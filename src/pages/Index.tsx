@@ -22,7 +22,7 @@ const Index = () => {
           name: "GDIS Rent e Service",
           description: "Noleggio auto, scooter, quad e luxury in Sardegna",
           areaServed: { "@type": "Place", name: "Sardegna, Italia" },
-          url: "https://gdisrent.it",
+          url: "https://gdisrentservice.com",
         }}
       />
       <HeroSection />
