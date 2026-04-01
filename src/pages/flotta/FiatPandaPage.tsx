@@ -28,6 +28,8 @@ const scenarios = [
     description:
       "Raggiungi Lu Impostu, Cala Brandinchi e La Cinta senza stress. Parcheggia ovunque grazie alle dimensioni compatte.",
     highlight: false,
+    locationLink: "/localita/noleggio-san-teodoro",
+    locationName: "San Teodoro",
   },
   {
     icon: ShoppingBag,
@@ -35,6 +37,8 @@ const scenarios = [
     description:
       "Passeggia tra le boutique della Promenade du Port e torna comodamente con tutti i tuoi acquisti nel bagagliaio.",
     highlight: true,
+    locationLink: "/localita/noleggio-porto-cervo",
+    locationName: "Porto Cervo",
   },
   {
     icon: Users,
@@ -49,6 +53,8 @@ const faqs = [
   {
     q: "Posso andare fuoristrada con la Panda?",
     a: "No. La Fiat Panda Hybrid è progettata per strade asfaltate. Per percorsi off-road consigliamo il nostro Yamaha Raptor Quad.",
+    vehicleLink: "/flotta/yamaha-raptor",
+    vehicleName: "Yamaha Raptor",
   },
   {
     q: "Ha l'aria condizionata?",
