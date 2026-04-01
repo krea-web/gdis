@@ -143,8 +143,7 @@ const ChiSiamo = () => {
             transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
             className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl"
           >
-            Noleggio Auto, Scooter e Quad <br />
-            <span className="italic font-light text-primary">in Costa Smeralda</span> — GDIS Rent
+            Noleggio Auto, Scooter e Quad
           </motion.h1>
 
           <motion.p
