@@ -28,6 +28,8 @@ const scenarios = [
     description:
       "Mentre tutti cercano posto auto a Porto Cervo, tu parcheggi ovunque in 3 secondi. Niente code, niente stress estivo.",
     highlight: false,
+    locationLink: "/localita/noleggio-porto-cervo",
+    locationName: "Porto Cervo",
   },
   {
     icon: Bike,
@@ -35,6 +37,8 @@ const scenarios = [
     description:
       "Percorri la strada costiera tra Olbia e San Teodoro sentendo il vento e il profumo del mare. Stile italiano, libertà totale.",
     highlight: true,
+    locationLink: "/localita/noleggio-san-teodoro",
+    locationName: "San Teodoro",
   },
   {
     icon: Zap,
@@ -42,6 +46,8 @@ const scenarios = [
     description:
       "Con meno di 10€ di benzina percorri l'intera Costa Smeralda. Il budget risparmiato? Cena vista mare a Porto Rotondo.",
     highlight: false,
+    locationLink: "/localita/noleggio-porto-rotondo",
+    locationName: "Porto Rotondo",
   },
 ];
 
