@@ -122,7 +122,7 @@ const BajaSardiniaPage = () => (
         {
           icon: "tip",
           title: "Porto Cervo Express",
-          text: "5 minuti in scooter e sei alla Promenade du Port per cena. Poi torni a Baja per il Ritual.",
+          text: (<>5 minuti in scooter e sei alla Promenade du Port di <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> per cena. Poi torni a Baja per il Ritual.</>),
         },
       ]}
     />
