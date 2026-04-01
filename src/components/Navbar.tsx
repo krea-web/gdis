@@ -67,12 +67,15 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const closeMobile = () => setMobileOpen(false);
 
-  const isDestinazioniActive = location.pathname.startsWith("/localita") || location.pathname === "/noleggio-in-costa-smeralda";
+  const isDestinazioniActive =
+    location.pathname.startsWith("/localita") || location.pathname === "/noleggio-in-costa-smeralda";
   const isFlottaActive = location.pathname.startsWith("/flotta");
 
   const links = [
@@ -85,8 +88,8 @@ const Navbar = () => {
       active
         ? "text-primary"
         : scrolled
-        ? "text-foreground/70 hover:text-foreground"
-        : "text-background/80 hover:text-background"
+          ? "text-foreground/70 hover:text-foreground"
+          : "text-background/80 hover:text-background"
     }`;
 
   return (
@@ -110,7 +113,10 @@ const Navbar = () => {
               <Link key={l.to} to={l.to} className={textClass(location.pathname === l.to)}>
                 {l.label}
                 {location.pathname === l.to && (
-                  <motion.div layoutId="navbar-indicator" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  <motion.div
+                    layoutId="navbar-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                  />
                 )}
               </Link>
             ))}
@@ -124,9 +130,14 @@ const Navbar = () => {
                 aria-label="Menu flotta veicoli"
               >
                 Flotta
-                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${flottaOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`h-3.5 w-3.5 transition-transform duration-200 ${flottaOpen ? "rotate-180" : ""}`}
+                />
                 {isFlottaActive && (
-                  <motion.div layoutId="navbar-indicator" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  <motion.div
+                    layoutId="navbar-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                  />
                 )}
               </button>
               <AnimatePresence>
@@ -167,9 +178,14 @@ const Navbar = () => {
                 aria-label="Menu destinazioni"
               >
                 Destinazioni
-                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${destinazioniOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`h-3.5 w-3.5 transition-transform duration-200 ${destinazioniOpen ? "rotate-180" : ""}`}
+                />
                 {isDestinazioniActive && (
-                  <motion.div layoutId="navbar-indicator" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  <motion.div
+                    layoutId="navbar-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                  />
                 )}
               </button>
               <AnimatePresence>
@@ -270,11 +286,7 @@ const Navbar = () => {
               ))}
 
               {/* Flotta Accordion */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-              >
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
                 <button
                   onClick={() => setMobileFlottaOpen(!mobileFlottaOpen)}
                   className={`flex items-center justify-between w-full text-3xl font-semibold py-3 transition-colors ${
@@ -282,7 +294,9 @@ const Navbar = () => {
                   }`}
                 >
                   Flotta
-                  <ChevronDown className={`h-6 w-6 transition-transform duration-300 ${mobileFlottaOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`h-6 w-6 transition-transform duration-300 ${mobileFlottaOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
                 <AnimatePresence>
                   {mobileFlottaOpen && (
@@ -303,7 +317,9 @@ const Navbar = () => {
                           >
                             <item.icon className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" />
                             <div>
-                              <span className="text-xl font-medium text-slate-200 group-hover:text-white transition-colors">{item.label}</span>
+                              <span className="text-xl font-medium text-slate-200 group-hover:text-white transition-colors">
+                                {item.label}
+                              </span>
                               <span className="block text-sm text-slate-500">{item.desc}</span>
                             </div>
                           </Link>
@@ -315,11 +331,7 @@ const Navbar = () => {
               </motion.div>
 
               {/* Destinazioni Accordion */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.25 }}
-              >
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25 }}>
                 <button
                   onClick={() => setMobileDestinazioniOpen(!mobileDestinazioniOpen)}
                   className={`flex items-center justify-between w-full text-3xl font-semibold py-3 transition-colors ${
@@ -327,7 +339,9 @@ const Navbar = () => {
                   }`}
                 >
                   Destinazioni
-                  <ChevronDown className={`h-6 w-6 transition-transform duration-300 ${mobileDestinazioniOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`h-6 w-6 transition-transform duration-300 ${mobileDestinazioniOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
                 <AnimatePresence>
                   {mobileDestinazioniOpen && (
@@ -348,7 +362,9 @@ const Navbar = () => {
                           >
                             <MapPin className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" />
                             <div>
-                              <span className="text-xl font-medium text-slate-200 group-hover:text-white transition-colors">{item.label}</span>
+                              <span className="text-xl font-medium text-slate-200 group-hover:text-white transition-colors">
+                                {item.label}
+                              </span>
                               <span className="block text-sm text-slate-500">{item.desc}</span>
                             </div>
                           </Link>
@@ -391,11 +407,11 @@ const Navbar = () => {
                   <span className="text-base font-medium">WhatsApp</span>
                 </a>
                 <a
-                  href="mailto:info@gdisrentservice.com"
+                  href="mailto:gdis.noleggi@gmail.com"
                   className="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors py-2"
                 >
                   <Mail className="h-5 w-5" />
-                  <span className="text-base font-medium">info@gdisrentservice.com</span>
+                  <span className="text-base font-medium">gdis.noleggi@gmail.com</span>
                 </a>
               </motion.div>
             </div>
