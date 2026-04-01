@@ -232,7 +232,7 @@ const Navbar = () => {
             {/* Header with logo & close */}
             <div className="container flex items-center justify-between py-4 h-18">
               <Link to="/" onClick={closeMobile} className="flex items-center gap-2">
-                <img src={gdisLogo} alt="GDIS Rent e Service" className="h-10 w-auto brightness-0 invert" />
+                <img src={gdisLogo} alt="GDIS Rent e Service" className="h-10 w-auto" />
               </Link>
               <button
                 onClick={closeMobile}
