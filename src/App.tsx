@@ -8,7 +8,7 @@ import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import ChiSiamo from "./pages/ChiSiamo";
 import PrenotaOra from "./pages/PrenotaOra";
-import NoleggioCostaSmeralda from "./pages/NoleggioCostaSmeralda";
+import NoleggioCostaSmearalda from "./pages/NoleggioCostaSmearalda";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import FiatPandaPage from "./pages/flotta/FiatPandaPage";
@@ -35,7 +35,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/chisiamo" element={<ChiSiamo />} />
             <Route path="/prenotaora" element={<PrenotaOra />} />
-            <Route path="/noleggio-in-costa-smeralda" element={<NoleggioCostaSmeralda />} />
+            <Route path="/noleggio-in-costa-smeralda" element={<NoleggioCostaSmearalda />} />
             <Route path="/flotta/fiat-panda" element={<FiatPandaPage />} />
             <Route path="/flotta/honda-sh" element={<HondaScooterPage />} />
             <Route path="/flotta/yamaha-raptor" element={<YamahaQuadPage />} />
