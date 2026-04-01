@@ -115,7 +115,7 @@ const SanPantaleoPage = () => (
         {
           icon: "tip",
           title: "Scendi a Porto Cervo",
-          text: "In 15 minuti di scooter sei sulla Promenade du Port per una cena vista yacht.",
+          text: (<>In 15 minuti di scooter sei sulla Promenade du Port di <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> per una cena vista yacht.</>),
         },
       ]}
     />
