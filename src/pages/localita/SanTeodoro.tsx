@@ -118,7 +118,7 @@ const SanTeodoroPage = () => (
         {
           icon: "tip",
           title: "Verso Golfo Aranci",
-          text: "Con lo scooter o la Panda raggiungi Golfo Aranci in 40 minuti lungo una strada panoramica mozzafiato.",
+          text: (<>Con lo scooter o la <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Panda</Link> raggiungi <Link to="/localita/noleggio-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Golfo Aranci</Link> in 40 minuti lungo una strada panoramica mozzafiato.</>),
         },
       ]}
     />
