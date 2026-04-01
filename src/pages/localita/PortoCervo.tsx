@@ -168,7 +168,11 @@ const PortoCervoPage = () => (
         },
         {
           q: "C'è la ZTL a Porto Cervo?",
-          a: "Sì, il centro è pedonale/ZTL in estate. Con lo scooter Honda SH parcheggi nelle aree moto dedicate vicino alla Promenade, evitando completamente il problema.",
+          a: (
+            <>Sì, il centro è pedonale/ZTL in estate. Con lo{" "}
+              <Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">scooter Honda SH</Link>{" "}
+              parcheggi nelle aree moto dedicate vicino alla Promenade, evitando completamente il problema.</>
+          ),
         },
         {
           q: "Quanto dista Porto Cervo dall'aeroporto di Olbia?",
