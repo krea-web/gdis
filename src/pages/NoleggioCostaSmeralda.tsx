@@ -274,7 +274,7 @@ const FinalCta = () => (
 );
 
 /* ── Page Component ────────────────────────── */
-const NoleggioCostaSmearalda = () => {
+const NoleggioCostaSmeralda = () => {
   return (
     <>
       <SEOHead
@@ -305,4 +305,4 @@ const NoleggioCostaSmearalda = () => {
   );
 };
 
-export default NoleggioCostaSmearalda;
+export default NoleggioCostaSmeralda;
