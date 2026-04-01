@@ -160,7 +160,7 @@ const FiatPandaPage = () => (
               Compatta fuori, spaziosa dentro
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              La Fiat Panda Hybrid è il veicolo ideale per muoversi agilmente tra le strade della Sardegna. Con il suo
+              La <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Fiat Panda</Link> Hybrid è il veicolo ideale per muoversi agilmente tra le strade della Sardegna. Con il suo
               motore mild-hybrid da 70cv, unisce consumi ridottissimi a una sorprendente vivacità. Facile da
               parcheggiare nei centri storici e spaziosa abbastanza per 5 passeggeri con bagagli.
             </p>
