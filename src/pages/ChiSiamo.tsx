@@ -213,6 +213,7 @@ const ChiSiamo = () => {
             title="Flotta 2025"
             subtitle="Ogni veicolo della nostra flotta è nuovo, revisionato e assicurato. City Car, Scooter, Quad e Auto di Lusso su richiesta — solo il meglio per le tue vacanze."
           />
+
           <TimelineNode
             index={2}
             icon={Smartphone}
