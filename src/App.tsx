@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import FiatPandaPage from "./pages/flotta/FiatPandaPage";
 import HondaScooterPage from "./pages/flotta/HondaScooterPage";
 import YamahaQuadPage from "./pages/flotta/YamahaQuadPage";
+import MercedesA180dPage from "./pages/flotta/MercedesA180dPage";
 import PortoCervoPage from "./pages/localita/PortoCervo";
 import SanTeodoroPage from "./pages/localita/SanTeodoro";
 import SanPantaleoPage from "./pages/localita/SanPantaleo";
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/flotta/fiat-panda" element={<FiatPandaPage />} />
             <Route path="/flotta/honda-sh" element={<HondaScooterPage />} />
             <Route path="/flotta/yamaha-raptor" element={<YamahaQuadPage />} />
+            <Route path="/flotta/mercedes-classe-a180d" element={<MercedesA180dPage />} />
             <Route path="/localita/noleggio-porto-cervo" element={<PortoCervoPage />} />
             <Route path="/localita/noleggio-san-teodoro" element={<SanTeodoroPage />} />
             <Route path="/localita/noleggio-san-pantaleo" element={<SanPantaleoPage />} />
