@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Car, Bike, Mountain, MapPin, Phone, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, Car, Bike, Mountain, MapPin, Phone, Mail, Star } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
