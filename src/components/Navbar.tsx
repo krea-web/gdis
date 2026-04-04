@@ -8,6 +8,7 @@ const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pub
 
 const flottaItems = [
   { label: "City Car", to: "/flotta/fiat-panda", icon: Car, desc: "Fiat Panda Hybrid" },
+  { label: "Premium", to: "/flotta/mercedes-classe-a180d", icon: Star, desc: "Mercedes Classe A 180d" },
   { label: "Scooter", to: "/flotta/honda-sh", icon: Bike, desc: "Honda SH 125 / 350" },
   { label: "Quad", to: "/flotta/yamaha-raptor", icon: Mountain, desc: "Yamaha Raptor 700" },
 ];
