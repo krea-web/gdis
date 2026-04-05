@@ -48,6 +48,7 @@ const App = () => (
             <Route path="/localita/noleggio-porto-rotondo" element={<PortoRotondoPage />} />
             <Route path="/localita/noleggio-golfo-aranci" element={<GolfoAranciPage />} />
             <Route path="/localita/noleggio-baja-sardinia" element={<BajaSardiniaPage />} />
+            <Route path="/localita/noleggio-olbia" element={<OlbiaPage />} />
             <Route path="/admin" element={<Admin />} />
           </Route>
           <Route path="*" element={<NotFound />} />
