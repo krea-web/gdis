@@ -223,7 +223,7 @@ const OlbiaPage = () => (
       specs={[
         { label: "Patente", value: "B", icon: "license" },
         { label: "Posti", value: "4-5", icon: "seats" },
-        { label: "Ideale per", value: "Aeroporto & Porto", icon: "use" },
+        { label: "Ideale per", value: "Famiglie & Coppie", icon: "use" },
         { label: "Consegna", value: "Aeroporto / Porto", icon: "delivery" },
       ]}
     />
