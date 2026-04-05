@@ -176,7 +176,7 @@ const PortoCervoPage = () => (
         },
         {
           q: "Quanto dista Porto Cervo dall'aeroporto di Olbia?",
-          a: "Circa 30 minuti. Consegniamo il veicolo direttamente all'aeroporto Olbia Costa Smeralda.",
+          a: (<>Circa 30 minuti. Consegniamo il veicolo direttamente all'<Link to="/localita/noleggio-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda.</>),
         },
       ]}
     />

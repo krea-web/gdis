@@ -71,13 +71,13 @@ const SanPantaleoPage = () => (
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-rocce-san-pantaleo.webp",
         },
         {
-          name: "Boutique Locali",
-          desc: "Gallerie d'arte e botteghe artigiane nel cuore del borgo bohémien.",
+          name: "Chiesa di San Pantaleo",
+          desc: "La piccola chiesa parrocchiale nel cuore del borgo, cornice delle feste patronali d'estate.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo-chiesa.webp",
         },
         {
-          name: "Stazzo Gallurese",
-          desc: "Antiche fattorie in pietra con cucina tradizionale gallurese.",
+          name: "Il Borgo di San Pantaleo",
+          desc: "Vicoli in pietra, piazzette nascoste e panorami sulle montagne di granito della Gallura.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo.webp",
           span: "md:col-span-2",
         },

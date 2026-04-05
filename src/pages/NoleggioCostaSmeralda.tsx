@@ -167,7 +167,7 @@ const CostaFaq = () => {
     },
     {
       q: "Posso noleggiare un veicolo all'aeroporto di Olbia?",
-      a: "Sì, offriamo consegna e ritiro presso l'aeroporto di Olbia Costa Smeralda. Prenota online e troverai il tuo veicolo ad aspettarti all'arrivo.",
+      a: (<>Sì, offriamo consegna e ritiro presso l'<Link to="/localita/noleggio-olbia" className="text-primary font-medium hover:underline transition-all">aeroporto di Olbia</Link> Costa Smeralda. Prenota online e troverai il tuo veicolo ad aspettarti all'arrivo.</>),
     },
     {
       q: "Quali documenti servono per noleggiare?",

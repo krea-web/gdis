@@ -176,7 +176,7 @@ const SanTeodoroPage = () => (
         },
         {
           q: "Quanto dista l'aeroporto di Olbia da San Teodoro?",
-          a: "Solo 25 minuti. Consegniamo all'aeroporto Olbia Costa Smeralda o al tuo alloggio.",
+          a: (<>Solo 25 minuti. Consegniamo all'<Link to="/localita/noleggio-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda o al tuo alloggio.</>),
         },
       ]}
     />

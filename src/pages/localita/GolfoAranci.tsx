@@ -61,13 +61,13 @@ const GolfoAranciPage = () => (
           span: "md:col-span-2 md:row-span-2",
         },
         {
-          name: "Lungomare",
-          desc: "Passeggiata panoramica con ristoranti di pesce e vista sul golfo.",
+          name: "Spiaggia Bianca",
+          desc: "Sabbia candida e acque turchesi, una delle spiagge più belle della costa nord-orientale.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-bianca-golfo-aranci.webp",
         },
         {
-          name: "Terza Spiaggia",
-          desc: "Pesce con i piedi nella sabbia. Frittura leggendaria.",
+          name: "Capo Figari",
+          desc: "Promontorio selvaggio con sentieri panoramici e la storica stazione radio di Marconi.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-capo-figari-golfo-aranci.webp",
         },
         {
