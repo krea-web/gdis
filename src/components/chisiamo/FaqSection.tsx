@@ -89,7 +89,7 @@ const FaqSection = () => {
                   className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full py-6 group shadow-md hover:shadow-lg transition-all"
                   onClick={() => window.open("https://wa.me/393520459150", "_blank")}
                 >
-                  <MessageCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" size={20} />
                   Chatta con noi
                 </Button>
               </div>
