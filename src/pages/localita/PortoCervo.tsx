@@ -63,13 +63,13 @@ const PortoCervoPage = () => (
           span: "md:col-span-2 md:row-span-2",
         },
         {
-          name: "Piazzetta Centrale",
-          desc: "Il cuore pulsante della vita sociale di Porto Cervo.",
+          name: "Chiesa Stella Maris",
+          desc: "Iconica chiesa progettata dall'architetto Michele Busiri Vici, custodisce un dipinto del Mater Dolorosa di El Greco.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-stella-maris.webp",
         },
         {
-          name: "Marina di Porto Cervo",
-          desc: "Super-yacht e barche a vela nel porto più esclusivo del Mediterraneo.",
+          name: "Hotel Cala di Volpe",
+          desc: "L'iconico resort 5 stelle che definisce il lusso della Costa Smeralda dal 1963.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-cala-di-volpe.webp",
         },
         {
