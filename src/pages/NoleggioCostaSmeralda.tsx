@@ -79,7 +79,7 @@ const DeliverySection = () => {
     { name: "Porto Cervo", desc: "Hotel, marina e boutique del lusso", to: "/localita/noleggio-porto-cervo" },
     { name: "Palau", desc: "Porto e collegamenti per La Maddalena" },
     { name: "San Teodoro", desc: "Spiagge cristalline e vita notturna", to: "/localita/noleggio-san-teodoro" },
-    { name: "Olbia", desc: "Aeroporto, porto e centro città" },
+    { name: "Olbia", desc: "Aeroporto, porto e centro città", to: "/localita/noleggio-olbia" },
   ];
 
   return (
