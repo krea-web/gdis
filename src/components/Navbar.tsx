@@ -406,7 +406,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-slate-300 hover:text-green-400 transition-colors py-2"
                 >
-                  <Phone className="h-5 w-5" />
+                  <WhatsAppIcon className="h-5 w-5" size={20} />
                   <span className="text-base font-medium">WhatsApp</span>
                 </a>
                 <a
