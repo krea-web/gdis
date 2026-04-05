@@ -57,8 +57,8 @@ const OlbiaPage = () => (
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Il nostro servizio di noleggio auto all'Aeroporto di Olbia è pensato per chi odia le code ai desk.
-              Dimentica le attese estenuanti: con la nostra Consegna VIP, un nostro operatore ti attende
-              direttamente agli arrivi. Che tu abbia scelto una{" "}
+              Dimentica le attese estenuanti: con la nostra Consegna VIP, un nostro operatore ti attende direttamente
+              agli arrivi. Che tu abbia scelto una{" "}
               <Link to="/flotta/fiat-panda" className="text-primary font-medium hover:underline transition-all">
                 Fiat Panda
               </Link>{" "}
@@ -89,7 +89,7 @@ const OlbiaPage = () => (
             className="relative aspect-[4/3] rounded-2xl overflow-hidden"
           >
             <img
-              src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?q=80&w=1200&auto=format&fit=crop"
+              src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp"
               alt="Aeroporto Olbia Costa Smeralda"
               className="w-full h-full object-cover"
               loading="lazy"
@@ -112,7 +112,7 @@ const OlbiaPage = () => (
             className="relative aspect-[4/3] rounded-2xl overflow-hidden order-2 lg:order-1"
           >
             <img
-              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop"
+              src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp"
               alt="Porto Isola Bianca Olbia"
               className="w-full h-full object-cover"
               loading="lazy"
@@ -140,11 +140,17 @@ const OlbiaPage = () => (
               Arrivi in Sardegna con il traghetto? Il nostro servizio di noleggio auto al Porto di Olbia Isola Bianca
               copre tutti i principali moli di sbarco. Ti consegniamo il veicolo (auto, scooter o quad) direttamente
               sotto la nave o al terminal crociere. Ideale per chi vuole raggiungere rapidamente{" "}
-              <Link to="/localita/noleggio-porto-cervo" className="text-primary font-medium hover:underline transition-all">
+              <Link
+                to="/localita/noleggio-porto-cervo"
+                className="text-primary font-medium hover:underline transition-all"
+              >
                 Porto Cervo
               </Link>{" "}
               o{" "}
-              <Link to="/localita/noleggio-san-teodoro" className="text-primary font-medium hover:underline transition-all">
+              <Link
+                to="/localita/noleggio-san-teodoro"
+                className="text-primary font-medium hover:underline transition-all"
+              >
                 San Teodoro
               </Link>{" "}
               senza dipendere dai mezzi pubblici o taxi costosi.
@@ -175,9 +181,7 @@ const OlbiaPage = () => (
         <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
           Consegna al Porto
         </span>
-        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-          Assistenza H24
-        </span>
+        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Assistenza H24</span>
       </div>
     </VehicleSpotlight>
 
@@ -188,23 +192,27 @@ const OlbiaPage = () => (
           name: "Spiaggia Pittulongu",
           subtitle: "La spiaggia di Olbia",
           desc: "A soli 10 minuti dal centro, sabbia bianca e acque turchesi.",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-spiaggia-pittulongu-olbia.webp",
           span: "md:col-span-2 md:row-span-2",
         },
         {
           name: "Corso Umberto",
           desc: "Il cuore dello shopping e della movida serale olbiese.",
-          image: "https://images.unsplash.com/photo-1534430480872-3498386e7856?q=80&w=800&auto=format&fit=crop",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-corso-umberto-olbia.webp",
         },
         {
           name: "Basilica di San Simplicio",
           desc: "Gioiello romanico, simbolo storico della città.",
-          image: "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?q=80&w=800&auto=format&fit=crop",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-chiesa-san-simplicio-olbia.webp",
         },
         {
           name: "Porto Istana",
           desc: "Spiaggia caraibica con vista sull'isola di Tavolara.",
-          image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=800&auto=format&fit=crop",
+          image:
+            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-porto-istana-olbia.webp",
           span: "md:col-span-2",
         },
       ]}
@@ -244,13 +252,20 @@ const OlbiaPage = () => (
           text: (
             <>
               In 30 minuti raggiungi{" "}
-              <Link to="/localita/noleggio-porto-cervo" className="text-primary font-medium hover:underline transition-all">
+              <Link
+                to="/localita/noleggio-porto-cervo"
+                className="text-primary font-medium hover:underline transition-all"
+              >
                 Porto Cervo
               </Link>{" "}
               e in 20 minuti{" "}
-              <Link to="/localita/noleggio-golfo-aranci" className="text-primary font-medium hover:underline transition-all">
+              <Link
+                to="/localita/noleggio-golfo-aranci"
+                className="text-primary font-medium hover:underline transition-all"
+              >
                 Golfo Aranci
-              </Link>.
+              </Link>
+              .
             </>
           ),
         },
@@ -306,10 +321,25 @@ const OlbiaPage = () => (
           a: (
             <>
               Tutta la nostra flotta:{" "}
-              <Link to="/flotta/fiat-panda" className="text-primary font-medium hover:underline transition-all">Fiat Panda</Link>,{" "}
-              <Link to="/flotta/honda-sh" className="text-primary font-medium hover:underline transition-all">Honda SH</Link>,{" "}
-              <Link to="/flotta/yamaha-raptor" className="text-primary font-medium hover:underline transition-all">Yamaha Raptor</Link> e{" "}
-              <Link to="/flotta/mercedes-classe-a180d" className="text-primary font-medium hover:underline transition-all">Mercedes Classe A</Link>.
+              <Link to="/flotta/fiat-panda" className="text-primary font-medium hover:underline transition-all">
+                Fiat Panda
+              </Link>
+              ,{" "}
+              <Link to="/flotta/honda-sh" className="text-primary font-medium hover:underline transition-all">
+                Honda SH
+              </Link>
+              ,{" "}
+              <Link to="/flotta/yamaha-raptor" className="text-primary font-medium hover:underline transition-all">
+                Yamaha Raptor
+              </Link>{" "}
+              e{" "}
+              <Link
+                to="/flotta/mercedes-classe-a180d"
+                className="text-primary font-medium hover:underline transition-all"
+              >
+                Mercedes Classe A
+              </Link>
+              .
             </>
           ),
         },
@@ -318,9 +348,16 @@ const OlbiaPage = () => (
           a: (
             <>
               Circa 30 minuti via SS125. Con la{" "}
-              <Link to="/flotta/fiat-panda" className="text-primary font-medium hover:underline transition-all">Fiat Panda</Link>{" "}
+              <Link to="/flotta/fiat-panda" className="text-primary font-medium hover:underline transition-all">
+                Fiat Panda
+              </Link>{" "}
               o la{" "}
-              <Link to="/flotta/mercedes-classe-a180d" className="text-primary font-medium hover:underline transition-all">Mercedes</Link>{" "}
+              <Link
+                to="/flotta/mercedes-classe-a180d"
+                className="text-primary font-medium hover:underline transition-all"
+              >
+                Mercedes
+              </Link>{" "}
               il viaggio è comodo e panoramico.
             </>
           ),
