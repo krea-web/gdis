@@ -100,8 +100,8 @@ const Recensioni = () => (
       >
         <Button
           asChild
-          size="lg"
-          className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold gap-3 px-10 h-14 shadow-[0_10px_30px_hsl(var(--primary)/0.3)] hover:shadow-[0_15px_40px_hsl(var(--primary)/0.4)] transition-all duration-300"
+          size="default"
+          className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold gap-2 px-6 h-11 md:h-12 md:px-8 text-sm md:text-base shadow-[0_8px_24px_hsl(var(--primary)/0.25)] hover:shadow-[0_12px_32px_hsl(var(--primary)/0.35)] transition-all duration-300"
         >
           <a href="#" target="_blank" rel="noopener noreferrer">
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
