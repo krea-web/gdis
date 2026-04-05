@@ -31,7 +31,7 @@ const OlbiaPage = () => (
     <LocalitaHeroV2
       name="Olbia"
       subtitle="Gateway della Costa Smeralda. Consegna VIP in Aeroporto e al Porto Isola Bianca — il tuo viaggio inizia senza attese."
-      bgImage="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000&auto=format&fit=crop"
+      bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-olbia.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
       vehicleAlt="Noleggio auto Olbia aeroporto"
     />
