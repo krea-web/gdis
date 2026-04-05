@@ -373,7 +373,7 @@ const ChiSiamo = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+                    <WhatsAppIcon className="mr-2 h-4 w-4" size={16} /> WhatsApp
                   </a>
                 </Button>
               </div>
