@@ -6,7 +6,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const transparentImageMap: Record<string, string> = {
   city_car: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png",
-  premium: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-mercedesa180d.png",
+  premium:
+    "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-mercedessupercarclassea180d.png",
   quad: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamahaquadraptor.png",
   scooter: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-hondascooter350.png",
 };
@@ -127,7 +128,10 @@ const FleetShowcase = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-6">
-                      <Link to={meta.link || "/prenotaora"} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-full">
+                      <Link
+                        to={meta.link || "/prenotaora"}
+                        className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-full"
+                      >
                         <div className="flex items-center gap-4 bg-primary text-primary-foreground rounded-full px-8 py-4 font-bold shadow-[0_10px_30px_hsl(var(--primary)/0.3)] hover:shadow-[0_15px_40px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300">
                           <span>{meta.link ? "Scopri di più" : "Prenota Ora"}</span>
                           <ArrowRight className="w-5 h-5" />
