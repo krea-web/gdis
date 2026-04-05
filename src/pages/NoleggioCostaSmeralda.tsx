@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MapPin, ArrowRight, MessageCircle, Shield, Clock, Star } from "lucide-react";
+import { MapPin, ArrowRight, Shield, Clock, Star } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
@@ -63,7 +64,7 @@ const HeroSection = () => (
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button variant="whatsapp" size="xl" asChild className="gap-3">
             <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
-              <MessageCircle size={20} />
+              <WhatsAppIcon size={20} />
               Contattaci su WhatsApp
             </a>
           </Button>
@@ -198,7 +199,7 @@ const CostaFaq = () => {
               </p>
               <Button variant="whatsapp" size="lg" className="w-full gap-2" asChild>
                 <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle size={20} />
+                   <WhatsAppIcon size={20} />
                   Chatta con noi
                 </a>
               </Button>
@@ -271,7 +272,7 @@ const FinalCta = () => (
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button variant="whatsapp" size="xl" asChild className="gap-3">
               <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20} />
+                <WhatsAppIcon size={20} />
                 WhatsApp
               </a>
             </Button>

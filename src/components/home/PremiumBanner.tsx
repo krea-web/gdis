@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ArrowRight, Zap, ShieldCheck } from "lucide-react";
+import { ArrowRight, Zap, ShieldCheck } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
 import luxuryCar from "@/assets/luxury-car.jpg";
 
@@ -67,7 +68,7 @@ const PremiumBanner = () => {
                 onClick={() => window.open("https://wa.me/393520459150", "_blank")}
                 aria-label="Contattaci su WhatsApp per veicoli luxury"
               >
-                <MessageCircle className="mr-3 h-6 w-6 md:h-7 md:w-7 group-hover:scale-110 transition-transform" />
+                <WhatsAppIcon className="mr-3 h-6 w-6 md:h-7 md:w-7 group-hover:scale-110 transition-transform" size={24} />
                 Richiedi Disponibilità VIP
               </Button>
             </motion.div>

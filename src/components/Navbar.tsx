@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Car, Bike, Mountain, MapPin, Phone, Mail, Star } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { motion, AnimatePresence } from "framer-motion";
 
 const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
@@ -405,7 +406,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-slate-300 hover:text-green-400 transition-colors py-2"
                 >
-                  <Phone className="h-5 w-5" />
+                  <WhatsAppIcon className="h-5 w-5" size={20} />
                   <span className="text-base font-medium">WhatsApp</span>
                 </a>
                 <a

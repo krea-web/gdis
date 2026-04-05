@@ -1,7 +1,8 @@
 import SEOHead from "@/components/SEOHead";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Smartphone, Clock, Truck, Car, Bike, Shield, Star, MessageCircle, Zap } from "lucide-react";
+import { ArrowRight, Smartphone, Clock, Truck, Car, Bike, Shield, Star, Zap } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import FaqSection from "@/components/chisiamo/FaqSection";
@@ -304,7 +305,7 @@ const ChiSiamo = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <MessageCircle className="mr-2 h-5 w-5" /> Richiedi VIP Car su WhatsApp
+                    <WhatsAppIcon className="mr-2 h-5 w-5" size={20} /> Richiedi VIP Car su WhatsApp
                   </a>
                 </Button>
               </div>
@@ -372,7 +373,7 @@ const ChiSiamo = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+                    <WhatsAppIcon className="mr-2 h-4 w-4" size={16} /> WhatsApp
                   </a>
                 </Button>
               </div>
@@ -452,7 +453,7 @@ const ChiSiamo = () => {
                 className="text-primary-foreground/50 hover:text-primary-foreground hover:bg-primary-foreground/5 rounded-full"
               >
                 <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-4 w-4" /> Oppure contattaci su WhatsApp
+                  <WhatsAppIcon className="mr-2 h-4 w-4" size={16} /> Oppure contattaci su WhatsApp
                 </a>
               </Button>
             </div>
