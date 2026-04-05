@@ -35,7 +35,7 @@ const scenarios = [
     icon: Bike,
     title: "Litoranea da Sogno",
     description:
-      "Percorri la strada costiera tra Olbia e San Teodoro sentendo il vento e il profumo del mare. Stile italiano, libertà totale.",
+      "Percorri la litoranea costiera sentendo il vento e il profumo del mare. Stile italiano, libertà totale.",
     highlight: true,
     locationLink: "/localita/noleggio-san-teodoro",
     locationName: "San Teodoro",
