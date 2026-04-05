@@ -39,11 +39,18 @@ const destinations = [
     span: "",
   },
   {
+    name: "Olbia",
+    desc: "Aeroporto, porto e gateway della Costa Smeralda.",
+    img: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-olbia.webp",
+    to: "/localita/noleggio-olbia",
+    span: "",
+  },
+  {
     name: "Golfo Aranci",
     desc: "Traghetti, delfini e Cala Moresca.",
     img: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-noleggio-golfo-aranci.webp",
     to: "/localita/noleggio-golfo-aranci",
-    span: "md:col-span-2",
+    span: "",
   },
 ];
 
