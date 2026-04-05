@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ArrowRight, Zap, ShieldCheck } from "lucide-react";
+import { ArrowRight, Zap, ShieldCheck } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
 import luxuryCar from "@/assets/luxury-car.jpg";
 
