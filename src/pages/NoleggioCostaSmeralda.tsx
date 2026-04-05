@@ -79,7 +79,7 @@ const DeliverySection = () => {
     { name: "Porto Cervo", desc: "Hotel, marina e boutique del lusso", to: "/localita/noleggio-porto-cervo" },
     { name: "Palau", desc: "Porto e collegamenti per La Maddalena" },
     { name: "San Teodoro", desc: "Spiagge cristalline e vita notturna", to: "/localita/noleggio-san-teodoro" },
-    { name: "Olbia", desc: "Aeroporto, porto e centro città" },
+    { name: "Olbia", desc: "Aeroporto, porto e centro città", to: "/localita/noleggio-olbia" },
   ];
 
   return (
@@ -167,7 +167,7 @@ const CostaFaq = () => {
     },
     {
       q: "Posso noleggiare un veicolo all'aeroporto di Olbia?",
-      a: "Sì, offriamo consegna e ritiro presso l'aeroporto di Olbia Costa Smeralda. Prenota online e troverai il tuo veicolo ad aspettarti all'arrivo.",
+      a: (<>Sì, offriamo consegna e ritiro presso l'<Link to="/localita/noleggio-olbia" className="text-primary font-medium hover:underline transition-all">aeroporto di Olbia</Link> Costa Smeralda. Prenota online e troverai il tuo veicolo ad aspettarti all'arrivo.</>),
     },
     {
       q: "Quali documenti servono per noleggiare?",

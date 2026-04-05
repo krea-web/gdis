@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     q: "Posso avere la consegna presso la mia Villa o in Aeroporto?",
-    a: "Certamente. Offriamo il servizio di consegna VIP direttamente all'Aeroporto di Olbia, ai porti principali o direttamente presso la tua villa/hotel in tutta la Costa Smeralda.",
+    a: "Certamente. Offriamo il servizio di consegna VIP direttamente all'Aeroporto di Olbia Costa Smeralda, ai porti principali o direttamente presso la tua villa/hotel in tutta la Costa Smeralda.",
   },
   {
     q: "Il carburante è incluso?",

@@ -63,9 +63,9 @@ const SanTeodoroPage = () => (
           span: "md:col-span-2 md:row-span-2",
         },
         {
-          name: "Ambra Night",
-          subtitle: "Nightlife",
-          desc: "Il club di riferimento. Dj set e atmosfera elettrica fino all'alba.",
+          name: "Mercatino Serale",
+          subtitle: "Shopping & Tradizione",
+          desc: "Bancarelle artigianali, street food sardo e atmosfera vivace ogni sera d'estate.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-mercatino-serale-san-teodoro.webp",
         },
         {
@@ -74,8 +74,8 @@ const SanTeodoroPage = () => (
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-cala-brandinchi.webp",
         },
         {
-          name: "Puntaldia",
-          desc: "Resort e campo da golf affacciato sull'isola di Tavolara.",
+          name: "Spiaggia Lu Impostu",
+          desc: "Laguna poco profonda perfetta per famiglie, con sabbia finissima e acque calme.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-lu-impostu.webp",
           span: "md:col-span-2",
         },
@@ -176,7 +176,7 @@ const SanTeodoroPage = () => (
         },
         {
           q: "Quanto dista l'aeroporto di Olbia da San Teodoro?",
-          a: "Solo 25 minuti. Consegniamo all'aeroporto Olbia Costa Smeralda o al tuo alloggio.",
+          a: (<>Solo 25 minuti. Consegniamo all'<Link to="/localita/noleggio-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda o al tuo alloggio.</>),
         },
       ]}
     />

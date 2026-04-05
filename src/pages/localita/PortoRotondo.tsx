@@ -70,8 +70,8 @@ const PortoRotondoPage = () => (
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-porto-rotondo-spiaggia-ira.webp",
         },
         {
-          name: "Tartarughino",
-          desc: "Pesce alla griglia e pasta fresca sulla terrazza vista Marina.",
+          name: "Marina di Porto Rotondo",
+          desc: "Porto turistico elegante con barche a vela e ristoranti sulla banchina.",
           image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-marina-porto-rotondo.webp",
         },
         {

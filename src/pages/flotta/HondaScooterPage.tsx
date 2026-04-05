@@ -35,7 +35,7 @@ const scenarios = [
     icon: Bike,
     title: "Litoranea da Sogno",
     description:
-      "Percorri la strada costiera tra Olbia e San Teodoro sentendo il vento e il profumo del mare. Stile italiano, libertà totale.",
+      "Percorri la litoranea costiera sentendo il vento e il profumo del mare. Stile italiano, libertà totale.",
     highlight: true,
     locationLink: "/localita/noleggio-san-teodoro",
     locationName: "San Teodoro",
@@ -206,7 +206,7 @@ const HondaScooterPage = () => (
             </p>
             <p className="text-muted-foreground leading-relaxed">
               <strong className="text-foreground">SH 350:</strong> Per chi vuole anche percorrere le superstrade sarde e
-              coprire distanze maggiori con comfort superiore. Perfetto per la litoranea Olbia-<Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>.
+              coprire distanze maggiori con comfort superiore. Perfetto per la litoranea <Link to="/localita/noleggio-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Olbia</Link>-<Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>.
             </p>
           </motion.div>
           <motion.div
