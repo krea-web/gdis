@@ -6,16 +6,24 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const transparentImageMap: Record<string, string> = {
   city_car: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png",
+  premium: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-mercedesa180d.png",
   quad: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamahaquadraptor.png",
   scooter: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-hondascooter350.png",
 };
 
-const categoryMeta: Record<string, { title: string; subtitle: string; description: string }> = {
+const categoryMeta: Record<string, { title: string; subtitle: string; description: string; link?: string }> = {
   city_car: {
     title: "City Car",
     subtitle: "Praticità & Stile",
     description:
       "Design compatto ed eleganza per muoverti in città e scoprire la costa con il massimo comfort. L'opzione perfetta per la Costa Smeralda.",
+  },
+  premium: {
+    title: "Mercedes Classe A",
+    subtitle: "Premium & Comfort",
+    description:
+      "Eleganza tedesca e tecnologia MBUX per vivere la Costa Smeralda con il massimo del comfort. Cambio automatico, diesel efficiente, 5 posti.",
+    link: "/flotta/mercedes-classe-a180d",
   },
   quad: {
     title: "Quad Raptor",
@@ -31,10 +39,11 @@ const categoryMeta: Record<string, { title: string; subtitle: string; descriptio
   },
 };
 
-const DESIRED_ORDER = ["city_car", "quad", "scooter"];
+const DESIRED_ORDER = ["city_car", "premium", "quad", "scooter"];
 
 const FALLBACK_PRICES: Record<string, number> = {
   city_car: 50,
+  premium: 75,
   quad: 80,
   scooter: 40,
 };
