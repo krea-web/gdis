@@ -199,7 +199,7 @@ const CostaFaq = () => {
               </p>
               <Button variant="whatsapp" size="lg" className="w-full gap-2" asChild>
                 <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle size={20} />
+                   <WhatsAppIcon size={20} />
                   Chatta con noi
                 </a>
               </Button>
