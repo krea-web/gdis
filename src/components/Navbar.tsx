@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Car, Bike, Mountain, MapPin, Phone, Mail, Star } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { motion, AnimatePresence } from "framer-motion";
 
 const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
