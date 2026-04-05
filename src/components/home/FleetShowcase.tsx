@@ -81,7 +81,7 @@ const FleetShowcase = () => {
 
         {isLoading ? (
           <div className="flex flex-col gap-24">
-            {[1, 2, 3].map((i) => (
+            {[1, 2, 3, 4].map((i) => (
               <div key={i} className="flex flex-col md:flex-row gap-8 items-center">
                 <Skeleton className="w-full md:w-1/2 h-[300px] rounded-3xl" />
                 <div className="w-full md:w-1/2 space-y-4">
