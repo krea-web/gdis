@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, ShieldCheck } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
-import luxuryCar from "@/assets/luxury-car.jpg";
+const luxuryCar = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-exclusive-car-for-rent.webp";
 
 const PremiumBanner = () => {
   return (
