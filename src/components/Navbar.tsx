@@ -21,6 +21,7 @@ const destinazioniItems = [
   { label: "Porto Rotondo", to: "/localita/noleggio-porto-rotondo", desc: "Eleganza Discreta" },
   { label: "Golfo Aranci", to: "/localita/noleggio-golfo-aranci", desc: "Terminal Traghetti" },
   { label: "Baja Sardinia", to: "/localita/noleggio-baja-sardinia", desc: "Phi Beach & Party" },
+  { label: "Olbia", to: "/localita/noleggio-olbia", desc: "Aeroporto & Porto" },
 ];
 
 const Navbar = () => {

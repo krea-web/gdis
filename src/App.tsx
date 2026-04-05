@@ -21,6 +21,7 @@ import SanPantaleoPage from "./pages/localita/SanPantaleo";
 import PortoRotondoPage from "./pages/localita/PortoRotondo";
 import GolfoAranciPage from "./pages/localita/GolfoAranci";
 import BajaSardiniaPage from "./pages/localita/BajaSardinia";
+import OlbiaPage from "./pages/localita/Olbia";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="/localita/noleggio-porto-rotondo" element={<PortoRotondoPage />} />
             <Route path="/localita/noleggio-golfo-aranci" element={<GolfoAranciPage />} />
             <Route path="/localita/noleggio-baja-sardinia" element={<BajaSardiniaPage />} />
+            <Route path="/localita/noleggio-olbia" element={<OlbiaPage />} />
             <Route path="/admin" element={<Admin />} />
           </Route>
           <Route path="*" element={<NotFound />} />
