@@ -21,6 +21,7 @@ import SanPantaleoPage from "./pages/localita/SanPantaleo";
 import PortoRotondoPage from "./pages/localita/PortoRotondo";
 import GolfoAranciPage from "./pages/localita/GolfoAranci";
 import BajaSardiniaPage from "./pages/localita/BajaSardinia";
+import OlbiaPage from "./pages/localita/Olbia";
 
 const queryClient = new QueryClient();
 
