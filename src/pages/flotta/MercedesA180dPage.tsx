@@ -5,9 +5,12 @@ import { motion } from "framer-motion";
 import { Users, Wind, Fuel, Gauge, Settings, Luggage, MapPin, ShoppingBag, Star } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const heroImg = "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2000&auto=format&fit=crop";
-const featureImg = "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=1200&auto=format&fit=crop";
-const featureImg2 = "https://images.unsplash.com/photo-1549317661-bd32c8ce0be2?q=80&w=1200&auto=format&fit=crop";
+const heroImg =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-mercedes-classe-a180d-costasmeralda.webp";
+const featureImg =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-mercedes-classe-a180d.webp";
+const featureImg2 =
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-mercedes-classe-a180d-consegna-a-domicilio.webp";
 
 const specs = [
   { icon: Gauge, label: "Motore", value: "2.0 Diesel 116cv" },
@@ -67,10 +70,15 @@ const faqs = [
     q: "È adatta per raggiungere spiagge non asfaltate?",
     a: (
       <>
-        No, la Mercedes Classe A è un veicolo di lusso pensato per le strade asfaltate. Per esplorare percorsi off-road o sterrati impegnativi, ti consigliamo il nostro{" "}
-        <Link to="/flotta/yamaha-raptor" className="text-primary-foreground underline hover:text-primary-foreground/80 transition-all">
+        No, la Mercedes Classe A è un veicolo di lusso pensato per le strade asfaltate. Per esplorare percorsi off-road
+        o sterrati impegnativi, ti consigliamo il nostro{" "}
+        <Link
+          to="/flotta/yamaha-raptor"
+          className="text-primary-foreground underline hover:text-primary-foreground/80 transition-all"
+        >
           Yamaha Raptor
-        </Link>.
+        </Link>
+        .
       </>
     ),
   },
@@ -115,7 +123,8 @@ const MercedesA180dPage = () => (
               <span className="block text-primary">Classe A 180d</span>
             </h1>
             <p className="text-primary-foreground/60 text-lg max-w-lg mb-8">
-              Eleganza, tecnologia e comfort senza compromessi. Goditi la Costa Smeralda a bordo di un'icona di stile, dotata di cambio automatico e interni di lusso.
+              Eleganza, tecnologia e comfort senza compromessi. Goditi la Costa Smeralda a bordo di un'icona di stile,
+              dotata di cambio automatico e interni di lusso.
             </p>
             <div className="flex flex-wrap gap-3 mb-10">
               {["Cambio Automatico", "Diesel", "Premium Interior"].map((badge) => (
@@ -164,10 +173,13 @@ const MercedesA180dPage = () => (
               Standard elevati per le tue vacanze
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              La Mercedes Classe A 180d eleva l'esperienza del noleggio auto. Gli interni sono curati in ogni minimo dettaglio, offrendo un'atmosfera premium grazie ai materiali di alta qualità e al celebre sistema di infotainment MBUX.
+              La Mercedes Classe A 180d eleva l'esperienza del noleggio auto. Gli interni sono curati in ogni minimo
+              dettaglio, offrendo un'atmosfera premium grazie ai materiali di alta qualità e al celebre sistema di
+              infotainment MBUX.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Il motore diesel da 116cv abbinato all'avanzato cambio automatico garantisce una guida incredibilmente fluida, silenziosa e dai consumi ridotti. La scelta perfetta per chi non si accontenta.
+              Il motore diesel da 116cv abbinato all'avanzato cambio automatico garantisce una guida incredibilmente
+              fluida, silenziosa e dai consumi ridotti. La scelta perfetta per chi non si accontenta.
             </p>
           </motion.div>
           <motion.div
@@ -218,13 +230,24 @@ const MercedesA180dPage = () => (
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Dalle cene eleganti a{" "}
-              <Link to="/localita/noleggio-porto-cervo" className="text-primary font-medium hover:underline transition-all">Porto Cervo</Link>
-              {" "}agli aperitivi al tramonto a{" "}
-              <Link to="/localita/noleggio-porto-rotondo" className="text-primary font-medium hover:underline transition-all">Porto Rotondo</Link>
+              <Link
+                to="/localita/noleggio-porto-cervo"
+                className="text-primary font-medium hover:underline transition-all"
+              >
+                Porto Cervo
+              </Link>{" "}
+              agli aperitivi al tramonto a{" "}
+              <Link
+                to="/localita/noleggio-porto-rotondo"
+                className="text-primary font-medium hover:underline transition-all"
+              >
+                Porto Rotondo
+              </Link>
               , questa vettura è il tuo biglietto da visita. Un design affusolato, moderno e dal carattere sportivo.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              La tua esperienza Premium inizia subito: scegli la nostra Consegna VIP e ti faremo trovare l'auto pronta al tuo arrivo in aeroporto, al porto o direttamente presso la tua struttura.
+              La tua esperienza Premium inizia subito: scegli la nostra Consegna VIP e ti faremo trovare l'auto pronta
+              al tuo arrivo in aeroporto, al porto o direttamente presso la tua struttura.
             </p>
           </motion.div>
         </div>
@@ -350,7 +373,8 @@ const MercedesA180dPage = () => (
             Goditi il vero comfort.
           </h2>
           <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-12">
-            Prenota la tua Mercedes Classe A in meno di 2 minuti. Consegna VIP in aeroporto, porto o hotel — in tutta la Costa Smeralda.
+            Prenota la tua Mercedes Classe A in meno di 2 minuti. Consegna VIP in aeroporto, porto o hotel — in tutta la
+            Costa Smeralda.
           </p>
           <Button
             asChild
