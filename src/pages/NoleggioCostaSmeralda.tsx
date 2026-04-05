@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MapPin, ArrowRight, MessageCircle, Shield, Clock, Star } from "lucide-react";
+import { MapPin, ArrowRight, Shield, Clock, Star } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
