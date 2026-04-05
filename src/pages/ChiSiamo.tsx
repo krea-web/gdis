@@ -453,7 +453,7 @@ const ChiSiamo = () => {
                 className="text-primary-foreground/50 hover:text-primary-foreground hover:bg-primary-foreground/5 rounded-full"
               >
                 <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-4 w-4" /> Oppure contattaci su WhatsApp
+                  <WhatsAppIcon className="mr-2 h-4 w-4" size={16} /> Oppure contattaci su WhatsApp
                 </a>
               </Button>
             </div>

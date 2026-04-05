@@ -272,7 +272,7 @@ const FinalCta = () => (
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button variant="whatsapp" size="xl" asChild className="gap-3">
               <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20} />
+                <WhatsAppIcon size={20} />
                 WhatsApp
               </a>
             </Button>
