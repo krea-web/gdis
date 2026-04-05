@@ -6,16 +6,24 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const transparentImageMap: Record<string, string> = {
   city_car: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png",
+  premium: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-mercedesa180d.png",
   quad: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamahaquadraptor.png",
   scooter: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-hondascooter350.png",
 };
 
-const categoryMeta: Record<string, { title: string; subtitle: string; description: string }> = {
+const categoryMeta: Record<string, { title: string; subtitle: string; description: string; link?: string }> = {
   city_car: {
     title: "City Car",
     subtitle: "Praticità & Stile",
     description:
       "Design compatto ed eleganza per muoverti in città e scoprire la costa con il massimo comfort. L'opzione perfetta per la Costa Smeralda.",
+  },
+  premium: {
+    title: "Mercedes Classe A",
+    subtitle: "Premium & Comfort",
+    description:
+      "Eleganza tedesca e tecnologia MBUX per vivere la Costa Smeralda con il massimo del comfort. Cambio automatico, diesel efficiente, 5 posti.",
+    link: "/flotta/mercedes-classe-a180d",
   },
   quad: {
     title: "Quad Raptor",
@@ -31,10 +39,11 @@ const categoryMeta: Record<string, { title: string; subtitle: string; descriptio
   },
 };
 
-const DESIRED_ORDER = ["city_car", "quad", "scooter"];
+const DESIRED_ORDER = ["city_car", "premium", "quad", "scooter"];
 
 const FALLBACK_PRICES: Record<string, number> = {
   city_car: 50,
+  premium: 75,
   quad: 80,
   scooter: 40,
 };
@@ -72,7 +81,7 @@ const FleetShowcase = () => {
 
         {isLoading ? (
           <div className="flex flex-col gap-24">
-            {[1, 2, 3].map((i) => (
+            {[1, 2, 3, 4].map((i) => (
               <div key={i} className="flex flex-col md:flex-row gap-8 items-center">
                 <Skeleton className="w-full md:w-1/2 h-[300px] rounded-3xl" />
                 <div className="w-full md:w-1/2 space-y-4">
@@ -118,9 +127,9 @@ const FleetShowcase = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-6">
-                      <Link to="/prenotaora" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-full">
+                      <Link to={meta.link || "/prenotaora"} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-full">
                         <div className="flex items-center gap-4 bg-primary text-primary-foreground rounded-full px-8 py-4 font-bold shadow-[0_10px_30px_hsl(var(--primary)/0.3)] hover:shadow-[0_15px_40px_hsl(var(--primary)/0.4)] hover:-translate-y-1 transition-all duration-300">
-                          <span>Prenota Ora</span>
+                          <span>{meta.link ? "Scopri di più" : "Prenota Ora"}</span>
                           <ArrowRight className="w-5 h-5" />
                         </div>
                       </Link>
