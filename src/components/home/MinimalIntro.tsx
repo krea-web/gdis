@@ -99,7 +99,7 @@ const MinimalIntro = () => {
                 variants={floatVariants}
                 animate="animate"
                 whileHover={{ scale: 1.3, y: 0 }}
-                className="h-8 md:h-10 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-pointer grayscale hover:grayscale-0"
+                className={`h-8 md:h-10 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-pointer grayscale hover:grayscale-0${logo.alt === "BMW" ? " invert" : ""}`}
               />
             ))}
           </motion.div>
