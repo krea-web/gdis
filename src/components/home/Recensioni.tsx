@@ -96,7 +96,7 @@ const Recensioni = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center"
+        className="flex justify-center"
       >
         <Button
           asChild
