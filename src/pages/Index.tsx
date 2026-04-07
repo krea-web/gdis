@@ -30,10 +30,10 @@ const Index = () => {
       <MinimalIntro />
       <ComeFunziona />
       <FleetShowcase />
-      <EsploraSardegna />
       <Recensioni />
       <LuxurySection />
       <PremiumBanner />
+      <EsploraSardegna />
     </>
   );
 };
