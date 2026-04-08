@@ -5,15 +5,24 @@ import VehicleSelection from "@/components/booking/VehicleSelection";
 import DateSelection from "@/components/booking/DateSelection";
 import DriverForm from "@/components/booking/DriverForm";
 import SecondDriverStep from "@/components/booking/SecondDriverStep";
+import PickupDropoffStep from "@/components/booking/PickupDropoffStep";
+import type { PickupDropoffData } from "@/components/booking/PickupDropoffStep";
 import SignatureStep from "@/components/booking/SignatureStep";
 import StickyQuote from "@/components/booking/StickyQuote";
-import BookingSuccess from "@/components/booking/BookingSuccess";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { ArrowLeft, ArrowRight, Check, CheckCircle2, Loader2, Star } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { getMonthlyRate, type Vehicle } from "@/hooks/useVehicles";
 import { invokeN8nProxy } from "@/lib/n8nProxy";
+import { useNavigate } from "react-router-dom";
 
 /* ── Types ─────────────────────────────────── */
 
@@ -30,6 +39,7 @@ export type BookingState = {
   endDate: Date | null;
   driver: DriverData;
   secondDriver: SecondDriverData;
+  pickupDropoff: PickupDropoffData;
 };
 
 const initialDriver: DriverData = {
@@ -37,7 +47,14 @@ const initialDriver: DriverData = {
   codiceFiscale: "", patenteFronte: null, patenteRetro: null,
 };
 
-const steps = ["Veicolo", "Date", "Dati Conducente", "Secondo Guidatore", "Firma"];
+const initialPickupDropoff: PickupDropoffData = {
+  pickupLocation: "sede",
+  pickupCustomAddress: "",
+  pickupTime: "",
+  dropoffTime: "",
+};
+
+const steps = ["Veicolo", "Date", "Conducente", "2° Guidatore", "Ritiro/Consegna", "Firma"];
 
 /* ── Helpers ───────────────────────────────── */
 
@@ -53,17 +70,19 @@ async function uploadLicense(file: File, prefix: string): Promise<string | null>
 /* ── Component ─────────────────────────────── */
 
 const PrenotaOra = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [checkingAvailability, setCheckingAvailability] = useState(false);
-  const [success, setSuccess] = useState(false);
   const [bookingId, setBookingId] = useState<string | null>(null);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [booking, setBooking] = useState<BookingState>({
     vehicle: null,
     startDate: null,
     endDate: null,
     driver: { ...initialDriver },
     secondDriver: { enabled: false, ...initialDriver },
+    pickupDropoff: { ...initialPickupDropoff },
   });
 
   useEffect(() => {
@@ -88,6 +107,11 @@ const PrenotaOra = () => {
         return !!(d.email && d.telefono);
       }
       case 3: return true;
+      case 4: {
+        const pd = booking.pickupDropoff;
+        const hasPickup = pd.pickupLocation === "sede" || pd.pickupCustomAddress.trim() !== "";
+        return hasPickup && !!pd.pickupTime && !!pd.dropoffTime;
+      }
       default: return false;
     }
   };
@@ -151,6 +175,10 @@ const PrenotaOra = () => {
 
       const { data: { user } } = await supabase.auth.getUser();
 
+      const pickupLoc = booking.pickupDropoff.pickupLocation === "sede"
+        ? "Sede GDIS Rent — Olbia"
+        : booking.pickupDropoff.pickupCustomAddress;
+
       const insertPayload = {
         user_id: user?.id ?? null,
         vehicle_id: booking.vehicle.id,
@@ -163,6 +191,10 @@ const PrenotaOra = () => {
         license_front_url: frontUrl,
         license_back_url: backUrl,
         has_second_driver: booking.secondDriver.enabled,
+        pickup_location: pickupLoc,
+        pickup_time: booking.pickupDropoff.pickupTime,
+        dropoff_location: "Sede GDIS Rent — Olbia",
+        dropoff_time: booking.pickupDropoff.dropoffTime,
         ...(booking.secondDriver.enabled ? {
           second_driver_email: booking.secondDriver.email,
           second_driver_phone: booking.secondDriver.telefono,
@@ -185,7 +217,8 @@ const PrenotaOra = () => {
 
       await invokeN8nProxy("create-booking", { ...insertPayload, id: newBookingId });
 
-      setStep(4);
+      // Move to signature step
+      setStep(5);
     } catch (err: any) {
       console.error("Booking error:", err);
       toast.error("Errore durante la prenotazione. Riprova.");
@@ -194,35 +227,35 @@ const PrenotaOra = () => {
     }
   };
 
+  const handleSignatureComplete = () => {
+    setShowSuccess(true);
+  };
+
   const handleNext = () => {
     if (step === 1) {
       handleNextFromDates();
-    } else if (step === 3) {
+    } else if (step === 4) {
       handleSubmit();
     } else {
       setStep(step + 1);
     }
   };
 
-  if (success) {
-    return <BookingSuccess booking={booking} />;
-  }
-
   return (
     <div className="min-h-screen bg-transparent pt-20">
       <SEOHead
         title="Prenota Ora — GDIS Rent | Noleggio Online in Sardegna"
-        description="Prenota online il tuo veicolo in Sardegna: auto, scooter, quad e luxury. Procedura rapida in 5 step, firma digitale e consegna VIP inclusa."
+        description="Prenota online il tuo veicolo in Sardegna: auto, scooter, quad e luxury. Procedura rapida in 6 step, firma digitale e consegna VIP inclusa."
         canonical="/prenotaora"
       />
 
       {/* Step indicator */}
       <div className="container py-8">
-        <div className="flex items-center justify-center gap-2 mb-4">
+        <div className="flex items-center justify-center gap-1 md:gap-2 mb-4">
           {steps.map((s, i) => (
-            <div key={s} className="flex items-center gap-2">
+            <div key={s} className="flex items-center gap-1 md:gap-2">
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all ${
+                className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs md:text-sm font-semibold transition-all ${
                   i < step ? "bg-primary text-primary-foreground" :
                   i === step ? "bg-primary text-primary-foreground blue-glow-sm" :
                   "bg-muted text-muted-foreground"
@@ -231,7 +264,7 @@ const PrenotaOra = () => {
                 {i < step ? <Check size={14} /> : i + 1}
               </div>
               {i < steps.length - 1 && (
-                <div className={`w-8 md:w-16 h-0.5 ${i < step ? "bg-primary" : "bg-border"}`} />
+                <div className={`w-4 md:w-12 h-0.5 ${i < step ? "bg-primary" : "bg-border"}`} />
               )}
             </div>
           ))}
@@ -274,16 +307,22 @@ const PrenotaOra = () => {
                     onChange={(secondDriver) => updateBooking({ secondDriver })}
                   />
                 )}
-                {step === 4 && bookingId && (
+                {step === 4 && (
+                  <PickupDropoffStep
+                    data={booking.pickupDropoff}
+                    onChange={(pickupDropoff) => updateBooking({ pickupDropoff })}
+                  />
+                )}
+                {step === 5 && bookingId && (
                   <SignatureStep
                     bookingId={bookingId}
-                    onComplete={() => setSuccess(true)}
+                    onComplete={handleSignatureComplete}
                   />
                 )}
               </motion.div>
             </AnimatePresence>
 
-            {step < 4 && (
+            {step < 5 && (
               <div className="flex items-center justify-between mt-10">
                 <Button
                   variant="ghost"
@@ -296,7 +335,7 @@ const PrenotaOra = () => {
                   Indietro
                 </Button>
 
-                {step < 3 ? (
+                {step < 4 ? (
                   <Button
                     variant="hero"
                     size="lg"
@@ -321,7 +360,7 @@ const PrenotaOra = () => {
                     variant="hero"
                     size="lg"
                     onClick={handleSubmit}
-                    disabled={submitting}
+                    disabled={!canNext() || submitting}
                     className="gap-2"
                   >
                     {submitting ? (
@@ -346,6 +385,44 @@ const PrenotaOra = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccess} onOpenChange={setShowSuccess}>
+        <DialogContent className="sm:max-w-md text-center">
+          <DialogHeader className="items-center">
+            <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <CheckCircle2 size={32} className="text-primary" />
+            </div>
+            <DialogTitle className="font-display text-2xl">
+              Prenotazione Confermata!
+            </DialogTitle>
+            <DialogDescription className="text-base">
+              La tua prenotazione è stata completata con successo. Riceverai una email di conferma con tutti i dettagli.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-3 mt-4">
+            <Button
+              variant="outline"
+              className="gap-2"
+              onClick={() => {
+                // TODO: add Google review link
+              }}
+            >
+              <Star size={16} className="text-yellow-500" />
+              Lascia una recensione su Google
+            </Button>
+            <Button
+              variant="hero"
+              onClick={() => {
+                setShowSuccess(false);
+                navigate("/");
+              }}
+            >
+              Torna alla Home
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
