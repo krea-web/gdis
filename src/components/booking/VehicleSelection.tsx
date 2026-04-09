@@ -53,46 +53,43 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
               const imageUrl = sanitizeImageUrl(v.image_url);
 
               return (
-                <CarouselItem key={v.id} className="pl-0 md:basis-1/2 xl:basis-1/3">
-                  <motion.button
+                <CarouselItem key={v.id} className="pl-0 basis-full">
+                  <button
                     type="button"
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.05 }}
                     onClick={() => onSelect(sel)}
                     aria-pressed={selected?.id === v.id}
-                    className={`relative flex h-full w-full flex-col overflow-hidden rounded-2xl border-2 bg-card text-left transition-all duration-300 hover:-translate-y-2 ${
-                      selected?.id === v.id
-                        ? "border-primary blue-glow-sm"
-                        : "border-border hover:border-primary/30 hover:shadow-[0_10px_30px_hsl(var(--primary)/0.15)]"
-                    }`}
+                    className="relative flex w-full flex-col items-center text-center py-4 group cursor-pointer"
                   >
                     {selected?.id === v.id && (
-                      <div className="absolute right-3 top-3 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-primary">
-                        <Check size={14} className="text-primary-foreground" />
+                      <div className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary">
+                        <Check size={16} className="text-primary-foreground" />
                       </div>
                     )}
 
-                    <div className="aspect-[4/3] overflow-hidden bg-muted">
+                    <div className="w-full max-w-md mx-auto">
                       <img
                         src={imageUrl}
                         alt={`${v.make} ${v.model}`}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                        className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-xl"
                       />
                     </div>
 
-                    <div className="flex flex-1 flex-col p-4">
-                      <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                        {v.category.replace(/_/g, " ").toUpperCase()}
+                    <span className="mt-4 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      {v.category.replace(/_/g, " ").toUpperCase()}
+                    </span>
+                    <h3 className="font-display text-2xl font-bold text-foreground mt-1">{v.make} {v.model}</h3>
+                    <p className="mt-2 text-lg font-bold text-primary">
+                      A partire da €{v.daily_rate ?? 0}
+                      <span className="text-sm font-normal text-muted-foreground">/giorno</span>
+                    </p>
+
+                    {selected?.id === v.id && (
+                      <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+                        <Check size={14} /> Selezionato
                       </span>
-                      <h3 className="font-display text-lg font-semibold text-foreground">{v.make} {v.model}</h3>
-                      <p className="mt-1 font-bold text-primary">
-                        A partire da €{v.daily_rate ?? 0}
-                        <span className="text-sm font-normal text-muted-foreground">/giorno</span>
-                      </p>
-                    </div>
-                  </motion.button>
+                    )}
+                  </button>
                 </CarouselItem>
               );
             })}
