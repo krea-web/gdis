@@ -15,7 +15,7 @@ function toSelected(v: Vehicle): SelectedVehicle {
   return {
     id: v.id,
     name: `${v.make} ${v.model}`,
-    image: vehicleImageMap[v.model] || v.image_url || "",
+    image: v.image_url || "",
     pricePerDay: v.daily_rate ?? 0,
     vehicleData: v,
   };
@@ -57,7 +57,7 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                 )}
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img
-                    src={vehicleImageMap[v.model] || v.image_url || "/placeholder.svg"}
+                    src={v.image_url || "/placeholder.svg"}
                     alt={`${v.make} ${v.model}`}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
