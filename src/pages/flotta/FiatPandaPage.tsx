@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { SITE_URL, BUSINESS_LEGAL_NAME } from "@/lib/siteSchema";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -28,7 +30,7 @@ const scenarios = [
     description:
       "Raggiungi Lu Impostu, Cala Brandinchi e La Cinta senza stress. Parcheggia ovunque grazie alle dimensioni compatte.",
     highlight: false,
-    locationLink: "/localita/noleggio-san-teodoro",
+    locationLink: "/noleggio-auto-a-san-teodoro",
     locationName: "San Teodoro",
   },
   {
@@ -37,7 +39,7 @@ const scenarios = [
     description:
       "Passeggia tra le boutique della Promenade du Port e torna comodamente con tutti i tuoi acquisti nel bagagliaio.",
     highlight: true,
-    locationLink: "/localita/noleggio-porto-cervo",
+    locationLink: "/noleggio-auto-a-porto-cervo",
     locationName: "Porto Cervo",
   },
   {
@@ -76,20 +78,50 @@ const floatAnimation = {
   transition: { duration: 6, repeat: Infinity, ease: "easeInOut" as const },
 };
 
+const breadcrumbs = [
+  { name: "Flotta", url: "/" },
+  { name: "Fiat Panda Hybrid", url: "/flotta/fiat-panda" },
+];
+
+const fiatPandaSchema = {
+  "@context": "https://schema.org",
+  "@type": "Car",
+  name: "Fiat Panda Hybrid — Noleggio Olbia e Costa Smeralda",
+  description:
+    "Fiat Panda Hybrid 1.0 70cv. City car ideale per Olbia e Costa Smeralda: compatta, climatizzata, 5 posti, consumi ridotti.",
+  brand: { "@type": "Brand", name: "Fiat" },
+  manufacturer: { "@type": "Organization", name: "Fiat" },
+  model: "Panda Hybrid",
+  vehicleTransmission: "Manual",
+  fuelType: "Hybrid Benzina",
+  numberOfDoors: 5,
+  seatingCapacity: 5,
+  vehicleEngine: { "@type": "EngineSpecification", engineType: "1.0 Hybrid 70cv" },
+  image: [
+    "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
+    "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpanda-noleggiocostasmeralda.webp",
+  ],
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "39",
+    availability: "https://schema.org/InStock",
+    priceValidUntil: "2026-12-31",
+    url: `${SITE_URL}/flotta/fiat-panda`,
+    seller: { "@type": "Organization", name: BUSINESS_LEGAL_NAME },
+  },
+};
+
 const FiatPandaPage = () => (
   <>
     <SEOHead
-      title="Noleggio Fiat Panda Hybrid in Costa Smeralda — GDIS Rent"
-      description="Noleggia una Fiat Panda Hybrid in Sardegna. 5 posti, aria condizionata, consegna VIP in Costa Smeralda, Porto Cervo, Olbia. Prenota online."
+      title="Noleggio Fiat Panda Hybrid Olbia e Costa Smeralda | GDIS Rent"
+      description="Noleggia Fiat Panda Hybrid a Olbia e Costa Smeralda ✓ 5 posti, aria condizionata, consumi ridotti ✓ Consegna VIP aeroporto, porto, hotel. Prenota online H24."
       canonical="/flotta/fiat-panda"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name: "Noleggio Fiat Panda Hybrid",
-        description: "Noleggio Fiat Panda Hybrid in Costa Smeralda, Sardegna.",
-        brand: { "@type": "Brand", name: "GDIS Rent" },
-      }}
+      breadcrumbs={breadcrumbs}
+      jsonLd={fiatPandaSchema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     {/* HERO */}
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.15),hsl(var(--brand-dark))_70%)]">
@@ -217,7 +249,7 @@ const FiatPandaPage = () => (
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Dalla Spiaggia del Principe a Cala di Volpe, dalla Costa Smeralda a{" "}
-              <Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>: la Panda ti porta ovunque
+              <Link to="/noleggio-auto-a-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>: la Panda ti porta ovunque
               con agilità e comfort.
             </p>
             <p className="text-muted-foreground leading-relaxed">

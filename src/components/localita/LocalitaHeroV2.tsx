@@ -10,9 +10,19 @@ type Props = {
   bgImage: string;
   vehicleImage: string;
   vehicleAlt: string;
+  h1Prefix?: string;
+  h1Accent?: string;
 };
 
-const LocalitaHeroV2 = ({ name, subtitle, bgImage, vehicleImage, vehicleAlt }: Props) => (
+const LocalitaHeroV2 = ({
+  name,
+  subtitle,
+  bgImage,
+  vehicleImage,
+  vehicleAlt,
+  h1Prefix = "Noleggio Auto a",
+  h1Accent,
+}: Props) => (
   <section className="relative min-h-[90vh] flex items-end pb-20 overflow-hidden">
     <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }} />
     <div className="absolute inset-0 bg-gradient-to-t from-background via-black/50 to-black/30" />
@@ -37,8 +47,8 @@ const LocalitaHeroV2 = ({ name, subtitle, bgImage, vehicleImage, vehicleAlt }: P
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-white leading-[0.95] mb-6"
           >
-            Noleggio a<br />
-            <span className="text-primary">{name}</span>
+            {h1Prefix}<br />
+            <span className="text-primary">{h1Accent ?? name}</span>
           </motion.h1>
 
           <motion.p

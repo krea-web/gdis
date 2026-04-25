@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
 import BentoSpots from "@/components/localita/BentoSpots";
@@ -11,20 +13,27 @@ import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
 import { Link } from "react-router-dom";
 
+const breadcrumbs = [{ name: "Porto Rotondo", url: "/noleggio-auto-a-porto-rotondo" }];
+const schema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-a-porto-rotondo#localbusiness",
+  description:
+    "Noleggio quad Yamaha Raptor, auto e scooter a Porto Rotondo. Ideale per raggiungere cale nascoste e Punta Volpe.",
+  areaServed: [
+    { "@type": "City", name: "Porto Rotondo" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
 const PortoRotondoPage = () => (
   <>
     <SEOHead
-      title="Noleggio Quad a Porto Rotondo | Cale Nascoste Off-Road | GDIS Rent"
-      description="Noleggia il Yamaha Raptor 700 a Porto Rotondo. Raggiungi cale nascoste, esplora Punta Volpe e vivi l'avventura off-road. GDIS Rent."
-      canonical="/localita/noleggio-porto-rotondo"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "GDIS Rent - Porto Rotondo",
-        description: "Noleggio quad Yamaha Raptor a Porto Rotondo",
-        areaServed: "Porto Rotondo",
-      }}
+      title="Noleggio Auto Porto Rotondo | Quad Yamaha Off-Road | GDIS Rent"
+      description="Noleggio auto e quad Porto Rotondo ✓ Yamaha Raptor 700 per cale nascoste ✓ Consegna in Marina o villa ✓ Punta Volpe e Costa Smeralda. WhatsApp H24."
+      canonical="/noleggio-auto-a-porto-rotondo"
+      breadcrumbs={breadcrumbs}
+      jsonLd={schema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     <LocalitaHeroV2
       name="Porto Rotondo"
@@ -149,6 +158,7 @@ const PortoRotondoPage = () => (
 
     <LocalitaFAQ
       name="Porto Rotondo"
+      emitSchema
       faqs={[
         {
           q: "Consegnate il quad alla Marina di Porto Rotondo?",
@@ -179,7 +189,7 @@ const PortoRotondoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Dopo l'avventura off-road, sali verso il borgo montano di{" "}
-          <Link to="/localita/noleggio-san-pantaleo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
+          <Link to="/noleggio-auto-a-san-pantaleo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             San Pantaleo
           </Link>{" "}
           per il mercato del giovedì e la cucina gallurese.

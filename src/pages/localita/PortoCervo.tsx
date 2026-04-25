@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
 import BentoSpots from "@/components/localita/BentoSpots";
@@ -11,20 +13,27 @@ import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
 import { Link } from "react-router-dom";
 
+const breadcrumbs = [{ name: "Porto Cervo", url: "/noleggio-auto-a-porto-cervo" }];
+const schema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-a-porto-cervo#localbusiness",
+  description:
+    "Noleggio auto VIP, scooter e quad a Porto Cervo con consegna alla Marina, hotel o villa privata.",
+  areaServed: [
+    { "@type": "City", name: "Porto Cervo" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
 const PortoCervoPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto di Lusso a Porto Cervo | GDIS Rent Costa Smeralda"
-      description="Noleggia auto VIP, scooter e quad a Porto Cervo con consegna alla Marina o alla tua villa. Servizio luxury su richiesta WhatsApp. GDIS Rent."
-      canonical="/localita/noleggio-porto-cervo"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "GDIS Rent - Porto Cervo",
-        description: "Noleggio veicoli premium e VIP a Porto Cervo, Costa Smeralda",
-        areaServed: "Porto Cervo",
-      }}
+      title="Noleggio Auto Porto Cervo | Consegna VIP Marina e Ville | GDIS Rent"
+      description="Noleggio auto Porto Cervo ✓ Consegna VIP alla Marina, hotel o villa ✓ Flotta premium, scooter, quad ✓ Servizio luxury Costa Smeralda. Prenota WhatsApp H24."
+      canonical="/noleggio-auto-a-porto-cervo"
+      breadcrumbs={breadcrumbs}
+      jsonLd={schema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     <LocalitaHeroV2
       name="Porto Cervo"
@@ -117,7 +126,7 @@ const PortoCervoPage = () => (
         {
           icon: "tip",
           title: "Bypass Baja Sardinia",
-          text: (<>Per evitare il traffico serale verso <Link to="/localita/noleggio-baja-sardinia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Baja Sardinia</Link>, prendi lo scooter: 5 minuti senza code.</>),
+          text: (<>Per evitare il traffico serale verso <Link to="/noleggio-auto-a-baja-sardinia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Baja Sardinia</Link>, prendi lo scooter: 5 minuti senza code.</>),
         },
       ]}
     />
@@ -157,6 +166,7 @@ const PortoCervoPage = () => (
 
     <LocalitaFAQ
       name="Porto Cervo"
+      emitSchema
       faqs={[
         {
           q: "Consegnate auto VIP direttamente alla Marina di Porto Cervo?",
@@ -176,7 +186,7 @@ const PortoCervoPage = () => (
         },
         {
           q: "Quanto dista Porto Cervo dall'aeroporto di Olbia?",
-          a: (<>Circa 30 minuti. Consegniamo il veicolo direttamente all'<Link to="/localita/noleggio-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda.</>),
+          a: (<>Circa 30 minuti. Consegniamo il veicolo direttamente all'<Link to="/noleggio-auto-a-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda.</>),
         },
       ]}
     />
@@ -185,7 +195,7 @@ const PortoCervoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Porto Cervo raggiungi in 5 minuti{" "}
-          <Link to="/localita/noleggio-baja-sardinia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
+          <Link to="/noleggio-auto-a-baja-sardinia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Baja Sardinia
           </Link>{" "}
           per i tramonti al Phi Beach, evitando il traffico in scooter.

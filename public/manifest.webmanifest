@@ -1,0 +1,26 @@
+{
+  "name": "GDIS Rent & Service",
+  "short_name": "GDIS Rent",
+  "description": "Noleggio auto, scooter e quad a Olbia e in Costa Smeralda. Consegna VIP H24.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "lang": "it-IT",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/gdis-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { SITE_URL, BUSINESS_LEGAL_NAME } from "@/lib/siteSchema";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -28,7 +30,7 @@ const scenarios = [
     description:
       "Arriva con stile nei locali più rinomati della Promenade du Port e della Piazze. Il design inconfondibile Mercedes non passa inosservato.",
     highlight: true,
-    locationLink: "/localita/noleggio-porto-cervo",
+    locationLink: "/noleggio-auto-a-porto-cervo",
     locationName: "Porto Cervo",
   },
   {
@@ -37,7 +39,7 @@ const scenarios = [
     description:
       "Goditi il comfort dei sedili premium e la fluidità del cambio automatico 8G-DCT per i tuoi spostamenti lungo tutta la costa sarda.",
     highlight: false,
-    locationLink: "/localita/noleggio-baja-sardinia",
+    locationLink: "/noleggio-auto-a-baja-sardinia",
     locationName: "Baja Sardinia",
   },
   {
@@ -89,20 +91,47 @@ const floatAnimation = {
   transition: { duration: 6, repeat: Infinity, ease: "easeInOut" as const },
 };
 
+const breadcrumbs = [
+  { name: "Flotta", url: "/" },
+  { name: "Mercedes Classe A 180d", url: "/flotta/mercedes-classe-a180d" },
+];
+
+const mercedesSchema = {
+  "@context": "https://schema.org",
+  "@type": "Car",
+  name: "Mercedes Classe A 180d — Noleggio Premium Olbia e Costa Smeralda",
+  description:
+    "Mercedes Classe A 180d: comfort premium, cambio automatico, diesel efficiente. Il viaggio in Costa Smeralda che meriti.",
+  brand: { "@type": "Brand", name: "Mercedes-Benz" },
+  manufacturer: { "@type": "Organization", name: "Mercedes-Benz" },
+  model: "Classe A 180d",
+  vehicleTransmission: "Automatic",
+  fuelType: "Diesel",
+  numberOfDoors: 5,
+  seatingCapacity: 5,
+  image:
+    "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-mercedesa180d.webp",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "79",
+    availability: "https://schema.org/InStock",
+    priceValidUntil: "2026-12-31",
+    url: `${SITE_URL}/flotta/mercedes-classe-a180d`,
+    seller: { "@type": "Organization", name: BUSINESS_LEGAL_NAME },
+  },
+};
+
 const MercedesA180dPage = () => (
   <>
     <SEOHead
-      title="Noleggio Mercedes Classe A 180d in Costa Smeralda — GDIS Rent"
-      description="Noleggia l'eleganza della Mercedes Classe A 180d in Sardegna. Cambio automatico, comfort premium, consegna VIP a Porto Cervo e Olbia. Prenota ora."
+      title="Noleggio Mercedes Classe A 180d Olbia | Premium | GDIS Rent"
+      description="Noleggio Mercedes Classe A 180d a Olbia e Costa Smeralda ✓ Cambio automatico ✓ Comfort premium ✓ Consegna VIP Porto Cervo, villa, hotel. WhatsApp H24."
       canonical="/flotta/mercedes-classe-a180d"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name: "Noleggio Mercedes Classe A 180d",
-        description: "Noleggio auto premium Mercedes Classe A 180d in Costa Smeralda, Sardegna.",
-        brand: { "@type": "Brand", name: "GDIS Rent" },
-      }}
+      breadcrumbs={breadcrumbs}
+      jsonLd={mercedesSchema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     {/* HERO */}
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.15),hsl(var(--brand-dark))_70%)]">
@@ -231,14 +260,14 @@ const MercedesA180dPage = () => (
             <p className="text-muted-foreground leading-relaxed mb-4">
               Dalle cene eleganti a{" "}
               <Link
-                to="/localita/noleggio-porto-cervo"
+                to="/noleggio-auto-a-porto-cervo"
                 className="text-primary font-medium hover:underline transition-all"
               >
                 Porto Cervo
               </Link>{" "}
               agli aperitivi al tramonto a{" "}
               <Link
-                to="/localita/noleggio-porto-rotondo"
+                to="/noleggio-auto-a-porto-rotondo"
                 className="text-primary font-medium hover:underline transition-all"
               >
                 Porto Rotondo

@@ -1,9 +1,12 @@
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { MapPin, ArrowRight, Shield, Clock, Star } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import TrustMarquee from "@/components/home/TrustMarquee";
 import FleetShowcase from "@/components/home/FleetShowcase";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -77,10 +80,10 @@ const HeroSection = () => (
 /* ── Section 3: VIP Delivery ───────────────── */
 const DeliverySection = () => {
   const locations = [
-    { name: "Porto Cervo", desc: "Hotel, marina e boutique del lusso", to: "/localita/noleggio-porto-cervo" },
+    { name: "Porto Cervo", desc: "Hotel, marina e boutique del lusso", to: "/noleggio-auto-a-porto-cervo" },
     { name: "Palau", desc: "Porto e collegamenti per La Maddalena" },
-    { name: "San Teodoro", desc: "Spiagge cristalline e vita notturna", to: "/localita/noleggio-san-teodoro" },
-    { name: "Olbia", desc: "Aeroporto, porto e centro città", to: "/localita/noleggio-olbia" },
+    { name: "San Teodoro", desc: "Spiagge cristalline e vita notturna", to: "/noleggio-auto-a-san-teodoro" },
+    { name: "Olbia", desc: "Aeroporto, porto e centro città", to: "/noleggio-auto-a-olbia" },
   ];
 
   return (
@@ -152,29 +155,41 @@ const DeliverySection = () => {
 };
 
 /* ── Section 5: Costa Smeralda FAQ ─────────── */
+const costaFaqs = [
+  {
+    q: "Posso ricevere il veicolo direttamente in hotel o villa?",
+    a: "Assolutamente sì! Con il nostro Servizio Consegna VIP, portiamo il veicolo direttamente dove ti trovi: hotel, villa, yacht o aeroporto. Il servizio copre tutta la Costa Smeralda da Palau a San Teodoro.",
+  },
+  {
+    q: "Come funziona il parcheggio a Porto Cervo e nelle zone ZTL?",
+    a: "Porto Cervo ha zone ZTL attive in estate. Ti forniamo una mappa aggiornata delle zone a traffico limitato e dei parcheggi disponibili. Gli scooter e le citycar sono la scelta ideale per muoversi agilmente.",
+  },
+  {
+    q: "Quali veicoli consigliate per la Costa Smeralda?",
+    a: "Per la costa consigliamo scooter per gli spostamenti brevi e le spiagge nascoste, citycar per comfort e parcheggio facile, e quad per le avventure off-road nell'entroterra gallurese.",
+  },
+  {
+    q: "Posso noleggiare un veicolo all'aeroporto di Olbia?",
+    aText:
+      "Sì, offriamo consegna e ritiro presso l'aeroporto di Olbia Costa Smeralda. Prenota online e troverai il tuo veicolo ad aspettarti all'arrivo.",
+    a: (
+      <>
+        Sì, offriamo consegna e ritiro presso l'
+        <Link to="/noleggio-auto-a-olbia" className="text-primary font-medium hover:underline transition-all">
+          aeroporto di Olbia
+        </Link>{" "}
+        Costa Smeralda. Prenota online e troverai il tuo veicolo ad aspettarti all'arrivo.
+      </>
+    ),
+  },
+  {
+    q: "Quali documenti servono per noleggiare?",
+    a: "Patente di guida valida, carta d'identità o passaporto, e carta di credito intestata al conducente. Per i cittadini extra-UE serve anche il permesso internazionale di guida.",
+  },
+] as Array<{ q: string; a: ReactNode; aText?: string }>;
+
 const CostaFaq = () => {
-  const faqs = [
-    {
-      q: "Posso ricevere il veicolo direttamente in hotel o villa?",
-      a: "Assolutamente sì! Con il nostro Servizio Consegna VIP, portiamo il veicolo direttamente dove ti trovi: hotel, villa, yacht o aeroporto. Il servizio copre tutta la Costa Smeralda da Palau a San Teodoro.",
-    },
-    {
-      q: "Come funziona il parcheggio a Porto Cervo e nelle zone ZTL?",
-      a: "Porto Cervo ha zone ZTL attive in estate. Ti forniamo una mappa aggiornata delle zone a traffico limitato e dei parcheggi disponibili. Gli scooter e le citycar sono la scelta ideale per muoversi agilmente.",
-    },
-    {
-      q: "Quali veicoli consigliate per la Costa Smeralda?",
-      a: "Per la costa consigliamo scooter per gli spostamenti brevi e le spiagge nascoste, citycar per comfort e parcheggio facile, e quad per le avventure off-road nell'entroterra gallurese.",
-    },
-    {
-      q: "Posso noleggiare un veicolo all'aeroporto di Olbia?",
-      a: (<>Sì, offriamo consegna e ritiro presso l'<Link to="/localita/noleggio-olbia" className="text-primary font-medium hover:underline transition-all">aeroporto di Olbia</Link> Costa Smeralda. Prenota online e troverai il tuo veicolo ad aspettarti all'arrivo.</>),
-    },
-    {
-      q: "Quali documenti servono per noleggiare?",
-      a: "Patente di guida valida, carta d'identità o passaporto, e carta di credito intestata al conducente. Per i cittadini extra-UE serve anche il permesso internazionale di guida.",
-    },
-  ];
+  const faqs = costaFaqs;
 
   return (
     <section className="py-20 md:py-28 bg-muted/30 relative">
@@ -284,27 +299,49 @@ const FinalCta = () => (
 );
 
 /* ── Page Component ────────────────────────── */
+const costaBreadcrumbs = [
+  { name: "Costa Smeralda", url: "/noleggio-auto-in-costa-smeralda" },
+];
+
+const costaLocalBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-in-costa-smeralda#localbusiness",
+  description:
+    "Noleggio auto, scooter e quad in Costa Smeralda con consegna VIP a Porto Cervo, Porto Rotondo, San Teodoro, Baja Sardinia e Olbia.",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+    { "@type": "City", name: "Porto Cervo" },
+    { "@type": "City", name: "Porto Rotondo" },
+    { "@type": "City", name: "Baja Sardinia" },
+    { "@type": "City", name: "San Pantaleo" },
+    { "@type": "City", name: "San Teodoro" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const costaFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: costaFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.aText ?? (typeof f.a === "string" ? f.a : ""),
+    },
+  })),
+};
+
 const NoleggioCostaSmeralda = () => {
   return (
     <>
       <SEOHead
-        title="Noleggio Auto e Scooter in Costa Smeralda | GDIS Rent"
-        description="Noleggio auto, scooter e quad in Costa Smeralda. Consegna VIP a Porto Cervo, Palau, San Teodoro e Olbia. Prenota online, firma digitale e ritiro immediato."
-        canonical="/noleggio-in-costa-smeralda"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "AutoRental",
-          name: "GDIS Rent — Noleggio Costa Smeralda",
-          description: "Noleggio auto, scooter, quad in Costa Smeralda con consegna VIP",
-          areaServed: [
-            { "@type": "Place", name: "Porto Cervo" },
-            { "@type": "Place", name: "Palau" },
-            { "@type": "Place", name: "San Teodoro" },
-            { "@type": "Place", name: "Olbia" },
-          ],
-          url: "https://gdisrentservice.com/noleggio-in-costa-smeralda",
-        }}
+        title="Noleggio Auto Costa Smeralda | Consegna VIP Porto Cervo | GDIS Rent"
+        description="Noleggio auto Costa Smeralda ✓ Consegna VIP Porto Cervo, Baja Sardinia, San Teodoro, Olbia ✓ Auto, scooter, quad ✓ Prenota WhatsApp H24 firma digitale."
+        canonical="/noleggio-auto-in-costa-smeralda"
+        breadcrumbs={costaBreadcrumbs}
+        jsonLd={[costaLocalBusinessSchema, costaFaqSchema]}
       />
+      <Breadcrumbs items={costaBreadcrumbs} />
       <HeroSection />
       <TrustMarquee />
       <DeliverySection />

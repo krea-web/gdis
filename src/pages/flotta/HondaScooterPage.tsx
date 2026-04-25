@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { SITE_URL, BUSINESS_LEGAL_NAME } from "@/lib/siteSchema";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -28,7 +30,7 @@ const scenarios = [
     description:
       "Mentre tutti cercano posto auto a Porto Cervo, tu parcheggi ovunque in 3 secondi. Niente code, niente stress estivo.",
     highlight: false,
-    locationLink: "/localita/noleggio-porto-cervo",
+    locationLink: "/noleggio-auto-a-porto-cervo",
     locationName: "Porto Cervo",
   },
   {
@@ -37,7 +39,7 @@ const scenarios = [
     description:
       "Percorri la litoranea costiera sentendo il vento e il profumo del mare. Stile italiano, libertà totale.",
     highlight: true,
-    locationLink: "/localita/noleggio-san-teodoro",
+    locationLink: "/noleggio-auto-a-san-teodoro",
     locationName: "San Teodoro",
   },
   {
@@ -46,7 +48,7 @@ const scenarios = [
     description:
       "Con meno di 10€ di benzina percorri l'intera Costa Smeralda. Il budget risparmiato? Cena vista mare a Porto Rotondo.",
     highlight: false,
-    locationLink: "/localita/noleggio-porto-rotondo",
+    locationLink: "/noleggio-auto-a-porto-rotondo",
     locationName: "Porto Rotondo",
   },
 ];
@@ -79,20 +81,45 @@ const floatAnimation = {
   transition: { duration: 6, repeat: Infinity, ease: "easeInOut" as const },
 };
 
+const breadcrumbs = [
+  { name: "Flotta", url: "/" },
+  { name: "Honda SH Scooter", url: "/flotta/honda-sh" },
+];
+
+const hondaSchema = {
+  "@context": "https://schema.org",
+  "@type": "Motorcycle",
+  name: "Honda SH 125 / 350 — Noleggio Scooter Olbia e Costa Smeralda",
+  description:
+    "Honda SH 125 e 350. Scooter premium ideale per Olbia, Porto Cervo e Costa Smeralda: agile, comodo, 2 caschi inclusi.",
+  brand: { "@type": "Brand", name: "Honda" },
+  manufacturer: { "@type": "Organization", name: "Honda" },
+  model: "SH 125/350",
+  vehicleTransmission: "Automatic",
+  fuelType: "Benzina",
+  image:
+    "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-hondash-scooter.webp",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "35",
+    availability: "https://schema.org/InStock",
+    priceValidUntil: "2026-12-31",
+    url: `${SITE_URL}/flotta/honda-sh`,
+    seller: { "@type": "Organization", name: BUSINESS_LEGAL_NAME },
+  },
+};
+
 const HondaScooterPage = () => (
   <>
     <SEOHead
-      title="Noleggio Honda SH 125 e 350 in Costa Smeralda — GDIS Rent"
-      description="Noleggia uno scooter Honda SH in Sardegna. Cambio automatico, 2 caschi inclusi, consegna VIP in Costa Smeralda. Prenota online."
+      title="Noleggio Scooter Honda SH 125 e 350 Olbia | GDIS Rent"
+      description="Noleggio Honda SH a Olbia e Costa Smeralda ✓ 125cc e 350cc ✓ 2 caschi inclusi ✓ Consegna VIP aeroporto, porto, hotel ✓ Ideale ZTL. Prenota online H24."
       canonical="/flotta/honda-sh"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name: "Noleggio Honda SH Scooter",
-        description: "Noleggio scooter Honda SH 125 e 350 in Costa Smeralda, Sardegna.",
-        brand: { "@type": "Brand", name: "GDIS Rent" },
-      }}
+      breadcrumbs={breadcrumbs}
+      jsonLd={hondaSchema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     {/* HERO */}
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.15),hsl(var(--brand-dark))_70%)]">
@@ -206,7 +233,7 @@ const HondaScooterPage = () => (
             </p>
             <p className="text-muted-foreground leading-relaxed">
               <strong className="text-foreground">SH 350:</strong> Per chi vuole anche percorrere le superstrade sarde e
-              coprire distanze maggiori con comfort superiore. Perfetto per la litoranea <Link to="/localita/noleggio-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Olbia</Link>-<Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>.
+              coprire distanze maggiori con comfort superiore. Perfetto per la litoranea <Link to="/noleggio-auto-a-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Olbia</Link>-<Link to="/noleggio-auto-a-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>.
             </p>
           </motion.div>
           <motion.div

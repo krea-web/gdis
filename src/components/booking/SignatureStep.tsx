@@ -28,8 +28,7 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
 
       await invokeN8nProxy("sign", { booking_id: bookingId, signature: base64 });
       onComplete();
-    } catch (err) {
-      console.error("Signature error:", err);
+    } catch {
       const { toast } = await import("sonner");
       toast.error("Errore nell'invio della firma. Riprova.");
     } finally {

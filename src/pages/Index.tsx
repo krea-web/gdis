@@ -8,22 +8,60 @@ import EsploraSardegna from "@/components/home/EsploraSardegna";
 import Recensioni from "@/components/home/Recensioni";
 import LuxurySection from "@/components/home/LuxurySection";
 import PremiumBanner from "@/components/home/PremiumBanner";
+import {
+  buildLocalBusinessSchema,
+  SITE_URL,
+  BUSINESS_PHONE,
+  BUSINESS_LEGAL_NAME,
+} from "@/lib/siteSchema";
+
+const homeLocalBusinessSchema = buildLocalBusinessSchema({
+  id: `${SITE_URL}/#localbusiness`,
+  description:
+    "GDIS Rent & Service — Noleggio auto, scooter e quad a Olbia e in Costa Smeralda. Consegna VIP in aeroporto, porto, hotel o villa.",
+});
+
+const serviceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Noleggio auto",
+    provider: { "@type": "Organization", name: BUSINESS_LEGAL_NAME, telephone: BUSINESS_PHONE },
+    areaServed: [
+      { "@type": "City", name: "Olbia" },
+      { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+    ],
+    url: `${SITE_URL}/noleggio-auto-a-olbia`,
+    name: "Noleggio auto a Olbia e Costa Smeralda",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Noleggio scooter",
+    provider: { "@type": "Organization", name: BUSINESS_LEGAL_NAME, telephone: BUSINESS_PHONE },
+    areaServed: [{ "@type": "City", name: "Olbia" }],
+    url: `${SITE_URL}/flotta/honda-sh`,
+    name: "Noleggio scooter Honda SH a Olbia",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Noleggio quad",
+    provider: { "@type": "Organization", name: BUSINESS_LEGAL_NAME, telephone: BUSINESS_PHONE },
+    areaServed: [{ "@type": "AdministrativeArea", name: "Gallura" }],
+    url: `${SITE_URL}/flotta/yamaha-raptor`,
+    name: "Noleggio quad Yamaha Raptor in Sardegna",
+  },
+];
 
 const Index = () => {
   return (
     <>
       <SEOHead
-        title="GDIS Rent — Noleggio Auto, Scooter e Quad in Sardegna"
-        description="Noleggio auto, scooter, quad e veicoli luxury in Sardegna. Consegna VIP in Costa Smeralda, Porto Cervo, Palau e San Teodoro. Prenota online in 2 minuti."
+        title="Noleggio Auto Olbia e Costa Smeralda | Consegna VIP H24 | GDIS Rent"
+        description="Noleggio auto a Olbia e Costa Smeralda ✓ Consegna VIP in Aeroporto e Porto Isola Bianca ✓ Fiat Panda, Mercedes, scooter, quad ✓ Zero code. WhatsApp H24."
         canonical="/"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "AutoRental",
-          name: "GDIS Rent e Service",
-          description: "Noleggio auto, scooter, quad e luxury in Sardegna",
-          areaServed: { "@type": "Place", name: "Sardegna, Italia" },
-          url: "https://gdisrentservice.com",
-        }}
+        jsonLd={[homeLocalBusinessSchema, ...serviceSchemas]}
       />
       <HeroSection />
       <TrustMarquee />

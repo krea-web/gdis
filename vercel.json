@@ -1,0 +1,66 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://zgazhrzjgefvjxknyffy.supabase.co wss://zgazhrzjgefvjxknyffy.supabase.co https://n8n.kreareweb.com https://www.google-analytics.com https://challenges.cloudflare.com; img-src 'self' data: blob: https://zgazhrzjgefvjxknyffy.supabase.co https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' https://zgazhrzjgefvjxknyffy.supabase.co blob:; frame-src https://challenges.cloudflare.com https://www.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(webp|avif|png|jpg|jpeg|svg|woff2?)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    { "source": "/localita/noleggio-olbia", "destination": "/noleggio-auto-a-olbia", "permanent": true },
+    { "source": "/localita/noleggio-porto-cervo", "destination": "/noleggio-auto-a-porto-cervo", "permanent": true },
+    { "source": "/localita/noleggio-san-teodoro", "destination": "/noleggio-auto-a-san-teodoro", "permanent": true },
+    { "source": "/localita/noleggio-san-pantaleo", "destination": "/noleggio-auto-a-san-pantaleo", "permanent": true },
+    { "source": "/localita/noleggio-porto-rotondo", "destination": "/noleggio-auto-a-porto-rotondo", "permanent": true },
+    { "source": "/localita/noleggio-golfo-aranci", "destination": "/noleggio-auto-a-golfo-aranci", "permanent": true },
+    { "source": "/localita/noleggio-baja-sardinia", "destination": "/noleggio-auto-a-baja-sardinia", "permanent": true },
+    { "source": "/noleggio-in-costa-smeralda", "destination": "/noleggio-auto-in-costa-smeralda", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/((?!api/|assets/|.*\\.(?:xml|txt|webmanifest|ico|png|jpg|jpeg|webp|avif|svg|mp4|webm|mov|woff2?)).*)", "destination": "/index.html" }
+  ]
+}

@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
 import BentoSpots from "@/components/localita/BentoSpots";
@@ -11,20 +13,27 @@ import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
 import { Link } from "react-router-dom";
 
+const breadcrumbs = [{ name: "Golfo Aranci", url: "/noleggio-auto-a-golfo-aranci" }];
+const schema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-a-golfo-aranci#localbusiness",
+  description:
+    "Noleggio auto e scooter a Golfo Aranci con consegna al terminal traghetti. Cala Moresca, delfini e ristoranti di pesce a pochi minuti.",
+  areaServed: [
+    { "@type": "City", name: "Golfo Aranci" },
+    { "@type": "Place", name: "Porto di Golfo Aranci" },
+  ],
+});
+
 const GolfoAranciPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto a Golfo Aranci | Consegna al Traghetto | GDIS Rent"
-      description="Noleggia la Fiat Panda a Golfo Aranci con consegna al terminal traghetti. Cala Moresca, delfini e ristoranti di pesce. GDIS Rent."
-      canonical="/localita/noleggio-golfo-aranci"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "GDIS Rent - Golfo Aranci",
-        description: "Noleggio Fiat Panda con consegna al terminal traghetti di Golfo Aranci",
-        areaServed: "Golfo Aranci",
-      }}
+      title="Noleggio Auto Golfo Aranci | Consegna al Traghetto | GDIS Rent"
+      description="Noleggio auto Golfo Aranci ✓ Consegna al terminal traghetti ✓ Fiat Panda, scooter, quad ✓ Cala Moresca e ristoranti di pesce. Prenota WhatsApp H24."
+      canonical="/noleggio-auto-a-golfo-aranci"
+      breadcrumbs={breadcrumbs}
+      jsonLd={schema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     <LocalitaHeroV2
       name="Golfo Aranci"
@@ -110,7 +119,7 @@ const GolfoAranciPage = () => (
         {
           icon: "tip",
           title: "Verso Porto Rotondo",
-          text: (<>In 20 minuti di panoramica raggiungi <Link to="/localita/noleggio-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Rotondo</Link> e le sue spiagge esclusive.</>),
+          text: (<>In 20 minuti di panoramica raggiungi <Link to="/noleggio-auto-a-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Rotondo</Link> e le sue spiagge esclusive.</>),
         },
       ]}
     />
@@ -150,6 +159,7 @@ const GolfoAranciPage = () => (
 
     <LocalitaFAQ
       name="Golfo Aranci"
+      emitSchema
       faqs={[
         {
           q: "Consegnate la Panda direttamente al terminal traghetti?",
@@ -162,7 +172,7 @@ const GolfoAranciPage = () => (
         {
           q: "Posso esplorare la costa nord con la Fiat Panda?",
           a: (
-            <>Assolutamente! Da Golfo Aranci raggiungi <Link to="/localita/noleggio-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Rotondo</Link> in 20 minuti e <Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link> in 40. La Panda è perfetta per le strade costiere.</>
+            <>Assolutamente! Da Golfo Aranci raggiungi <Link to="/noleggio-auto-a-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Rotondo</Link> in 20 minuti e <Link to="/noleggio-auto-a-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link> in 40. La Panda è perfetta per le strade costiere.</>
           ),
         },
         {
@@ -178,7 +188,7 @@ const GolfoAranciPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Golfo Aranci esplora verso sud{" "}
-          <Link to="/localita/noleggio-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
+          <Link to="/noleggio-auto-a-porto-rotondo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Rotondo
           </Link>{" "}
           — la Marina e le cale nascoste ti aspettano a 20 minuti di Panda.

@@ -2,6 +2,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Upload, X } from "lucide-react";
 import { useCallback, useRef } from "react";
+import { toast } from "sonner";
+import { validateFile } from "@/lib/validators";
 
 type DriverData = {
   email: string; telefono: string;
@@ -27,13 +29,25 @@ const FileDropZone = ({
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const handleFile = useCallback(
+    (f: File) => {
+      const result = validateFile(f);
+      if (!result.ok) {
+        toast.error(result.error);
+        return;
+      }
+      onFile(f);
+    },
+    [onFile],
+  );
+
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
       e.preventDefault();
       const f = e.dataTransfer.files?.[0];
-      if (f) onFile(f);
+      if (f) handleFile(f);
     },
-    [onFile]
+    [handleFile]
   );
 
   return (
@@ -50,11 +64,11 @@ const FileDropZone = ({
         <input
           ref={inputRef}
           type="file"
-          accept="image/*"
+          accept="image/jpeg,image/png,image/webp,application/pdf"
           className="hidden"
           onChange={(e) => {
             const f = e.target.files?.[0];
-            if (f) onFile(f);
+            if (f) handleFile(f);
           }}
         />
         {file ? (

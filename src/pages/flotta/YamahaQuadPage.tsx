@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { SITE_URL, BUSINESS_LEGAL_NAME } from "@/lib/siteSchema";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -70,20 +72,44 @@ const floatAnimation = {
   transition: { duration: 6, repeat: Infinity, ease: "easeInOut" as const },
 };
 
+const breadcrumbs = [
+  { name: "Flotta", url: "/" },
+  { name: "Yamaha Raptor 700", url: "/flotta/yamaha-raptor" },
+];
+
+const yamahaSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  category: "Quad",
+  name: "Yamaha Raptor 700 — Noleggio Quad Olbia e Costa Smeralda",
+  description:
+    "Quad Yamaha Raptor 700cc omologato strada. Avventure off-road in Gallura, cale nascoste in Costa Smeralda.",
+  brand: { "@type": "Brand", name: "Yamaha" },
+  manufacturer: { "@type": "Organization", name: "Yamaha" },
+  model: "Raptor 700",
+  image:
+    "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamaharaptor-quad.webp",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    price: "89",
+    availability: "https://schema.org/InStock",
+    priceValidUntil: "2026-12-31",
+    url: `${SITE_URL}/flotta/yamaha-raptor`,
+    seller: { "@type": "Organization", name: BUSINESS_LEGAL_NAME },
+  },
+};
+
 const YamahaQuadPage = () => (
   <>
     <SEOHead
-      title="Noleggio Yamaha Raptor 700 Quad in Sardegna — GDIS Rent"
-      description="Noleggia un Quad Yamaha Raptor 700 in Sardegna. 686cc, omologato strada, avventure off-road in Costa Smeralda. Prenota online."
+      title="Noleggio Quad Yamaha Raptor 700 Sardegna | Off-Road | GDIS Rent"
+      description="Noleggio quad Yamaha Raptor 700 a Olbia ✓ 686cc omologato strada ✓ Cale nascoste Costa Smeralda, off-road in Gallura ✓ Consegna diretta. WhatsApp H24."
       canonical="/flotta/yamaha-raptor"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name: "Noleggio Yamaha Raptor 700 Quad",
-        description: "Noleggio Quad Yamaha Raptor 700 per avventure off-road in Sardegna.",
-        brand: { "@type": "Brand", name: "GDIS Rent" },
-      }}
+      breadcrumbs={breadcrumbs}
+      jsonLd={yamahaSchema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     {/* HERO */}
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.15),hsl(var(--brand-dark))_70%)]">

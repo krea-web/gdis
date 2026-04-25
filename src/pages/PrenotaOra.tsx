@@ -9,6 +9,7 @@ import PickupDropoffStep from "@/components/booking/PickupDropoffStep";
 import type { PickupDropoffData } from "@/components/booking/PickupDropoffStep";
 import SignatureStep from "@/components/booking/SignatureStep";
 import StickyQuote from "@/components/booking/StickyQuote";
+import TurnstileWidget from "@/components/booking/TurnstileWidget";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -20,8 +21,9 @@ import {
 import { ArrowLeft, ArrowRight, Check, CheckCircle2, Loader2, Star } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { getMonthlyRate, type Vehicle } from "@/hooks/useVehicles";
-import { invokeN8nProxy } from "@/lib/n8nProxy";
+import { type Vehicle } from "@/hooks/useVehicles";
+import { invokeN8nProxy, type CreateBookingResponse } from "@/lib/n8nProxy";
+import { driverSchema, pickupDropoffSchema } from "@/lib/validators";
 import { useNavigate } from "react-router-dom";
 
 /* ── Types ─────────────────────────────────── */
@@ -62,9 +64,8 @@ async function uploadLicense(file: File, prefix: string): Promise<string | null>
   const ext = file.name.split(".").pop();
   const path = `${prefix}/${Date.now()}.${ext}`;
   const { error } = await supabase.storage.from("licenses").upload(path, file);
-  if (error) { console.error("Upload error:", error); return null; }
-  const { data } = supabase.storage.from("licenses").getPublicUrl(path);
-  return data.publicUrl;
+  if (error) return null;
+  return path;
 }
 
 /* ── Component ─────────────────────────────── */
@@ -76,6 +77,8 @@ const PrenotaOra = () => {
   const [checkingAvailability, setCheckingAvailability] = useState(false);
   const [bookingId, setBookingId] = useState<string | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRequired = !!import.meta.env.VITE_TURNSTILE_SITE_KEY;
   const [booking, setBooking] = useState<BookingState>({
     vehicle: null,
     startDate: null,
@@ -101,17 +104,13 @@ const PrenotaOra = () => {
   const canNext = () => {
     switch (step) {
       case 0: return !!booking.vehicle;
-      case 1: return !!booking.startDate && !!booking.endDate;
-      case 2: {
-        const d = booking.driver;
-        return !!(d.email && d.telefono);
+      case 1: return !!booking.startDate && !!booking.endDate && booking.endDate > booking.startDate;
+      case 2: return driverSchema.safeParse(booking.driver).success;
+      case 3: {
+        if (!booking.secondDriver.enabled) return true;
+        return driverSchema.safeParse(booking.secondDriver).success;
       }
-      case 3: return true;
-      case 4: {
-        const pd = booking.pickupDropoff;
-        const hasPickup = pd.pickupLocation === "sede" || pd.pickupCustomAddress.trim() !== "";
-        return hasPickup && !!pd.pickupTime && !!pd.dropoffTime;
-      }
+      case 4: return pickupDropoffSchema.safeParse(booking.pickupDropoff).success;
       default: return false;
     }
   };
@@ -138,8 +137,7 @@ const PrenotaOra = () => {
       }
 
       setStep(2);
-    } catch (err) {
-      console.error("Availability check failed:", err);
+    } catch {
       toast.error("Impossibile verificare la disponibilità. Riprova.");
     } finally {
       setCheckingAvailability(false);
@@ -151,45 +149,33 @@ const PrenotaOra = () => {
     setSubmitting(true);
 
     try {
-      let frontUrl: string | null = null;
-      let backUrl: string | null = null;
-      let secondFrontUrl: string | null = null;
-      let secondBackUrl: string | null = null;
+      let frontPath: string | null = null;
+      let backPath: string | null = null;
+      let secondFrontPath: string | null = null;
+      let secondBackPath: string | null = null;
 
       if (booking.driver.patenteFronte)
-        frontUrl = await uploadLicense(booking.driver.patenteFronte, "license-front");
+        frontPath = await uploadLicense(booking.driver.patenteFronte, "license-front");
       if (booking.driver.patenteRetro)
-        backUrl = await uploadLicense(booking.driver.patenteRetro, "license-back");
+        backPath = await uploadLicense(booking.driver.patenteRetro, "license-back");
       if (booking.secondDriver.enabled && booking.secondDriver.patenteFronte)
-        secondFrontUrl = await uploadLicense(booking.secondDriver.patenteFronte, "second-license-front");
+        secondFrontPath = await uploadLicense(booking.secondDriver.patenteFronte, "second-license-front");
       if (booking.secondDriver.enabled && booking.secondDriver.patenteRetro)
-        secondBackUrl = await uploadLicense(booking.secondDriver.patenteRetro, "second-license-back");
-
-      const days = Math.ceil(
-        (booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24)
-      );
-      const ratePerDay = booking.vehicle.vehicleData
-        ? getMonthlyRate(booking.vehicle.vehicleData, booking.startDate.getMonth())
-        : booking.vehicle.pricePerDay;
-      const totalPrice = ratePerDay * days;
-
-      const { data: { user } } = await supabase.auth.getUser();
+        secondBackPath = await uploadLicense(booking.secondDriver.patenteRetro, "second-license-back");
 
       const pickupLoc = booking.pickupDropoff.pickupLocation === "sede"
         ? "Sede GDIS Rent — Olbia"
         : booking.pickupDropoff.pickupCustomAddress;
 
-      const insertPayload = {
-        user_id: user?.id ?? null,
+      const bookingPayload = {
         vehicle_id: booking.vehicle.id,
         start_date: booking.startDate.toISOString().split("T")[0],
         end_date: booking.endDate.toISOString().split("T")[0],
-        total_price: totalPrice,
         email: booking.driver.email,
         phone: booking.driver.telefono,
         tax_code: booking.driver.codiceFiscale || null,
-        license_front_url: frontUrl,
-        license_back_url: backUrl,
+        license_front_path: frontPath,
+        license_back_path: backPath,
         has_second_driver: booking.secondDriver.enabled,
         pickup_location: pickupLoc,
         pickup_time: booking.pickupDropoff.pickupTime,
@@ -199,28 +185,24 @@ const PrenotaOra = () => {
           second_driver_email: booking.secondDriver.email,
           second_driver_phone: booking.secondDriver.telefono,
           second_driver_cf: booking.secondDriver.codiceFiscale || null,
-          second_driver_license_front_url: secondFrontUrl,
-          second_driver_license_back_url: secondBackUrl,
+          second_driver_license_front_path: secondFrontPath,
+          second_driver_license_back_path: secondBackPath,
         } : {}),
       };
 
-      const { data: insertedBooking, error } = await supabase
-        .from("bookings")
-        .insert(insertPayload)
-        .select("id")
-        .single();
+      const response = await invokeN8nProxy<CreateBookingResponse>(
+        "create-booking",
+        bookingPayload,
+        { turnstileToken: turnstileToken ?? undefined },
+      );
 
-      if (error) throw error;
+      if (!response?.id) {
+        throw new Error("Risposta del server non valida");
+      }
 
-      const newBookingId = insertedBooking.id;
-      setBookingId(newBookingId);
-
-      await invokeN8nProxy("create-booking", { ...insertPayload, id: newBookingId });
-
-      // Move to signature step
+      setBookingId(response.id);
       setStep(5);
-    } catch (err: any) {
-      console.error("Booking error:", err);
+    } catch {
       toast.error("Errore durante la prenotazione. Riprova.");
     } finally {
       setSubmitting(false);
@@ -308,10 +290,21 @@ const PrenotaOra = () => {
                   />
                 )}
                 {step === 4 && (
-                  <PickupDropoffStep
-                    data={booking.pickupDropoff}
-                    onChange={(pickupDropoff) => updateBooking({ pickupDropoff })}
-                  />
+                  <>
+                    <PickupDropoffStep
+                      data={booking.pickupDropoff}
+                      onChange={(pickupDropoff) => updateBooking({ pickupDropoff })}
+                    />
+                    {turnstileRequired && (
+                      <div className="mt-6">
+                        <TurnstileWidget
+                          onToken={setTurnstileToken}
+                          onExpired={() => setTurnstileToken(null)}
+                          onError={() => setTurnstileToken(null)}
+                        />
+                      </div>
+                    )}
+                  </>
                 )}
                 {step === 5 && bookingId && (
                   <SignatureStep
@@ -360,7 +353,7 @@ const PrenotaOra = () => {
                     variant="hero"
                     size="lg"
                     onClick={handleSubmit}
-                    disabled={!canNext() || submitting}
+                    disabled={!canNext() || submitting || (turnstileRequired && !turnstileToken)}
                     className="gap-2"
                   >
                     {submitting ? (

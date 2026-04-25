@@ -286,9 +286,9 @@ const ChiSiamo = () => {
                 <p>
                   Il nostro <strong className="text-foreground font-medium">Servizio Consegna VIP</strong> è ciò che ci
                   rende unici: il veicolo arriva direttamente al tuo yacht a Palau, alla tua villa a{" "}
-                  <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> o al
+                  <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> o al
                   tuo hotel a{" "}
-                  <Link to="/localita/noleggio-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>.{" "}
+                  <Link to="/noleggio-auto-a-san-teodoro" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</Link>.{" "}
                   <strong className="text-foreground font-medium">Zero stress. Zero code. Solo il mare.</strong>
                 </p>
               </div>

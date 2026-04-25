@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
 import BentoSpots from "@/components/localita/BentoSpots";
@@ -11,20 +13,24 @@ import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
 import { Link } from "react-router-dom";
 
+const breadcrumbs = [{ name: "San Teodoro", url: "/noleggio-auto-a-san-teodoro" }];
+const schema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-a-san-teodoro#localbusiness",
+  description:
+    "Noleggio auto, scooter Honda SH e quad a San Teodoro. Spiaggia La Cinta, Ambra Night e Cala Brandinchi a portata di mano.",
+  areaServed: [{ "@type": "City", name: "San Teodoro" }],
+});
+
 const SanTeodoroPage = () => (
   <>
     <SEOHead
-      title="Noleggio Scooter e Auto a San Teodoro | GDIS Rent Sardegna"
-      description="Noleggia Honda SH, city car e quad a San Teodoro. La Cinta, Ambra Night e spiagge caraibiche. Consegna diretta con GDIS Rent."
-      canonical="/localita/noleggio-san-teodoro"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "GDIS Rent - San Teodoro",
-        description: "Noleggio scooter Honda SH e veicoli a San Teodoro",
-        areaServed: "San Teodoro",
-      }}
+      title="Noleggio Auto San Teodoro | Scooter, Quad, City Car | GDIS Rent"
+      description="Noleggio auto San Teodoro ✓ Honda SH, Fiat Panda, quad Yamaha ✓ Consegna in hotel o villa ✓ La Cinta e Ambra Night vicini. Prenota WhatsApp H24."
+      canonical="/noleggio-auto-a-san-teodoro"
+      breadcrumbs={breadcrumbs}
+      jsonLd={schema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     <LocalitaHeroV2
       name="San Teodoro"
@@ -118,7 +124,7 @@ const SanTeodoroPage = () => (
         {
           icon: "tip",
           title: "Verso Golfo Aranci",
-          text: (<>Con lo scooter o la <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Panda</Link> raggiungi <Link to="/localita/noleggio-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Golfo Aranci</Link> in 40 minuti lungo una strada panoramica mozzafiato.</>),
+          text: (<>Con lo scooter o la <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Panda</Link> raggiungi <Link to="/noleggio-auto-a-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Golfo Aranci</Link> in 40 minuti lungo una strada panoramica mozzafiato.</>),
         },
       ]}
     />
@@ -158,6 +164,7 @@ const SanTeodoroPage = () => (
 
     <LocalitaFAQ
       name="San Teodoro"
+      emitSchema
       faqs={[
         {
           q: "Posso parcheggiare lo scooter gratis alla Cinta?",
@@ -176,7 +183,7 @@ const SanTeodoroPage = () => (
         },
         {
           q: "Quanto dista l'aeroporto di Olbia da San Teodoro?",
-          a: (<>Solo 25 minuti. Consegniamo all'<Link to="/localita/noleggio-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda o al tuo alloggio.</>),
+          a: (<>Solo 25 minuti. Consegniamo all'<Link to="/noleggio-auto-a-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda o al tuo alloggio.</>),
         },
       ]}
     />
@@ -185,7 +192,7 @@ const SanTeodoroPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Teodoro parti verso nord per scoprire le calette segrete di{" "}
-          <Link to="/localita/noleggio-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
+          <Link to="/noleggio-auto-a-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Golfo Aranci
           </Link>{" "}
           — perfette con la <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Fiat Panda</Link>.

@@ -15,14 +15,14 @@ const flottaItems = [
 ];
 
 const destinazioniItems = [
-  { label: "Costa Smeralda", to: "/noleggio-in-costa-smeralda", desc: "Panoramica Completa" },
-  { label: "Porto Cervo", to: "/localita/noleggio-porto-cervo", desc: "Lusso & Marina" },
-  { label: "San Teodoro", to: "/localita/noleggio-san-teodoro", desc: "Spiagge & Movida" },
-  { label: "San Pantaleo", to: "/localita/noleggio-san-pantaleo", desc: "Borgo Bohémien" },
-  { label: "Porto Rotondo", to: "/localita/noleggio-porto-rotondo", desc: "Eleganza Discreta" },
-  { label: "Golfo Aranci", to: "/localita/noleggio-golfo-aranci", desc: "Terminal Traghetti" },
-  { label: "Baja Sardinia", to: "/localita/noleggio-baja-sardinia", desc: "Phi Beach & Party" },
-  { label: "Olbia", to: "/localita/noleggio-olbia", desc: "Famiglie & Coppie" },
+  { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", desc: "Panoramica Completa" },
+  { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo", desc: "Lusso & Marina" },
+  { label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro", desc: "Spiagge & Movida" },
+  { label: "San Pantaleo", to: "/noleggio-auto-a-san-pantaleo", desc: "Borgo Bohémien" },
+  { label: "Porto Rotondo", to: "/noleggio-auto-a-porto-rotondo", desc: "Eleganza Discreta" },
+  { label: "Golfo Aranci", to: "/noleggio-auto-a-golfo-aranci", desc: "Terminal Traghetti" },
+  { label: "Baja Sardinia", to: "/noleggio-auto-a-baja-sardinia", desc: "Phi Beach & Party" },
+  { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: "Famiglie & Coppie" },
 ];
 
 const Navbar = () => {
@@ -79,12 +79,13 @@ const Navbar = () => {
   const closeMobile = () => setMobileOpen(false);
 
   const isDestinazioniActive =
-    location.pathname.startsWith("/localita") || location.pathname === "/noleggio-in-costa-smeralda";
+    location.pathname.startsWith("/noleggio-auto-");
   const isFlottaActive = location.pathname.startsWith("/flotta");
 
   const links = [
     { label: "Home", to: "/" },
     { label: "Chi Siamo", to: "/chisiamo" },
+    { label: "Contatti", to: "/contatti" },
   ];
 
   const textClass = (active: boolean) =>

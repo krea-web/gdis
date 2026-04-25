@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
 import BentoSpots from "@/components/localita/BentoSpots";
@@ -13,20 +15,29 @@ import { Link } from "react-router-dom";
 import { Plane, Ship } from "lucide-react";
 import { motion } from "framer-motion";
 
+const breadcrumbs = [{ name: "Olbia", url: "/noleggio-auto-a-olbia" }];
+
+const olbiaSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-a-olbia#localbusiness",
+  description:
+    "Noleggio auto a Olbia con consegna in Aeroporto Costa Smeralda e Porto Isola Bianca. Flotta Fiat Panda, Mercedes, scooter Honda SH e quad Yamaha.",
+  areaServed: [
+    { "@type": "City", name: "Olbia" },
+    { "@type": "Airport", name: "Aeroporto Olbia Costa Smeralda" },
+    { "@type": "Place", name: "Porto Isola Bianca" },
+  ],
+});
+
 const OlbiaPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto Olbia Aeroporto e Porto | Consegna VIP | GDIS Rent"
-      description="Noleggio auto e scooter a Olbia. Consegna immediata all'Aeroporto Olbia Costa Smeralda e al Porto Isola Bianca. Prenota online la tua auto a Olbia con GDIS Rent."
-      canonical="/localita/noleggio-olbia"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "GDIS Rent - Olbia Aeroporto e Porto",
-        description: "Servizio di noleggio veicoli con consegna all'aeroporto e porto di Olbia",
-        areaServed: "Olbia",
-      }}
+      title="Noleggio Auto Olbia | Consegna VIP Aeroporto e Porto | GDIS Rent"
+      description="Noleggio auto Olbia ✓ Consegna VIP in Aeroporto Costa Smeralda e Porto Isola Bianca ✓ Fiat Panda, Mercedes, scooter, quad ✓ Prezzi dal mercato. Prenota WhatsApp H24."
+      canonical="/noleggio-auto-a-olbia"
+      breadcrumbs={breadcrumbs}
+      jsonLd={olbiaSchema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     <LocalitaHeroV2
       name="Olbia"
@@ -141,14 +152,14 @@ const OlbiaPage = () => (
               copre tutti i principali moli di sbarco. Ti consegniamo il veicolo (auto, scooter o quad) direttamente
               sotto la nave o al terminal crociere. Ideale per chi vuole raggiungere rapidamente{" "}
               <Link
-                to="/localita/noleggio-porto-cervo"
+                to="/noleggio-auto-a-porto-cervo"
                 className="text-primary font-medium hover:underline transition-all"
               >
                 Porto Cervo
               </Link>{" "}
               o{" "}
               <Link
-                to="/localita/noleggio-san-teodoro"
+                to="/noleggio-auto-a-san-teodoro"
                 className="text-primary font-medium hover:underline transition-all"
               >
                 San Teodoro
@@ -253,14 +264,14 @@ const OlbiaPage = () => (
             <>
               In 30 minuti raggiungi{" "}
               <Link
-                to="/localita/noleggio-porto-cervo"
+                to="/noleggio-auto-a-porto-cervo"
                 className="text-primary font-medium hover:underline transition-all"
               >
                 Porto Cervo
               </Link>{" "}
               e in 20 minuti{" "}
               <Link
-                to="/localita/noleggio-golfo-aranci"
+                to="/noleggio-auto-a-golfo-aranci"
                 className="text-primary font-medium hover:underline transition-all"
               >
                 Golfo Aranci
@@ -307,6 +318,7 @@ const OlbiaPage = () => (
 
     <LocalitaFAQ
       name="Olbia"
+      emitSchema
       faqs={[
         {
           q: "Consegnate l'auto direttamente all'Aeroporto di Olbia?",
@@ -373,11 +385,11 @@ const OlbiaPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Olbia è solo l'inizio. Esplora le spiagge di{" "}
-          <Link to="/localita/noleggio-porto-cervo" className="text-primary font-medium hover:underline transition-all">
+          <Link to="/noleggio-auto-a-porto-cervo" className="text-primary font-medium hover:underline transition-all">
             Porto Cervo
           </Link>{" "}
           o il relax di{" "}
-          <Link to="/localita/noleggio-san-teodoro" className="text-primary font-medium hover:underline transition-all">
+          <Link to="/noleggio-auto-a-san-teodoro" className="text-primary font-medium hover:underline transition-all">
             San Teodoro
           </Link>{" "}
           con i nostri mezzi.

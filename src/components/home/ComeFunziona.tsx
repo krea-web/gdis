@@ -26,10 +26,10 @@ const steps = [
 ];
 
 const vipLocations = [
-  { icon: Plane, label: "Aeroporto Olbia", to: "/localita/noleggio-olbia" },
-  { icon: Anchor, label: "Porto Cervo", to: "/localita/noleggio-porto-cervo" },
+  { icon: Plane, label: "Aeroporto Olbia", to: "/noleggio-auto-a-olbia" },
+  { icon: Anchor, label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo" },
   { icon: Hotel, label: "Hotel & Villa" },
-  { icon: MapPin, label: "San Teodoro", to: "/localita/noleggio-san-teodoro" },
+  { icon: MapPin, label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro" },
 ];
 
 const ComeFunziona = () => (

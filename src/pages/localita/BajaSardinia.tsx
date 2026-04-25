@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
 import BentoSpots from "@/components/localita/BentoSpots";
@@ -11,20 +13,27 @@ import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
 import { Link } from "react-router-dom";
 
+const breadcrumbs = [{ name: "Baja Sardinia", url: "/noleggio-auto-a-baja-sardinia" }];
+const schema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-a-baja-sardinia#localbusiness",
+  description:
+    "Noleggio scooter Honda SH e auto a Baja Sardinia: Phi Beach, Ritual e la vita notturna della Costa Smeralda senza problemi di parcheggio.",
+  areaServed: [
+    { "@type": "City", name: "Baja Sardinia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
 const BajaSardiniaPage = () => (
   <>
     <SEOHead
-      title="Noleggio Scooter a Baja Sardinia | Phi Beach & Ritual | GDIS Rent"
-      description="Noleggia Honda SH a Baja Sardinia. Evita il traffico del Phi Beach, parcheggia gratis e vivi la Costa Smeralda senza stress. GDIS Rent."
-      canonical="/localita/noleggio-baja-sardinia"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "GDIS Rent - Baja Sardinia",
-        description: "Noleggio scooter Honda SH a Baja Sardinia per Phi Beach e vita notturna",
-        areaServed: "Baja Sardinia",
-      }}
+      title="Noleggio Auto Baja Sardinia | Scooter Phi Beach Ritual | GDIS Rent"
+      description="Noleggio auto e scooter Baja Sardinia ✓ Honda SH per Phi Beach e Ritual ✓ Zero problemi parcheggio ✓ Consegna in hotel. Prenota WhatsApp H24."
+      canonical="/noleggio-auto-a-baja-sardinia"
+      breadcrumbs={breadcrumbs}
+      jsonLd={schema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     <LocalitaHeroV2
       name="Baja Sardinia"
@@ -122,7 +131,7 @@ const BajaSardiniaPage = () => (
         {
           icon: "tip",
           title: "Porto Cervo Express",
-          text: (<>5 minuti in scooter e sei alla Promenade du Port di <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> per cena. Poi torni a Baja per il Ritual.</>),
+          text: (<>5 minuti in scooter e sei alla Promenade du Port di <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> per cena. Poi torni a Baja per il Ritual.</>),
         },
       ]}
     />
@@ -162,6 +171,7 @@ const BajaSardiniaPage = () => (
 
     <LocalitaFAQ
       name="Baja Sardinia"
+      emitSchema
       faqs={[
         {
           q: "Posso parcheggiare lo scooter gratis al Phi Beach?",
@@ -188,7 +198,7 @@ const BajaSardiniaPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da Baja Sardinia in 5 minuti di scooter sei a{" "}
-          <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
+          <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Cervo
           </Link>{" "}
           per lo shopping di lusso e la Marina — il combo perfetto.

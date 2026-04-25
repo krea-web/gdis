@@ -1,4 +1,6 @@
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
 import BentoSpots from "@/components/localita/BentoSpots";
@@ -11,20 +13,27 @@ import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
 import { Link } from "react-router-dom";
 
+const breadcrumbs = [{ name: "San Pantaleo", url: "/noleggio-auto-a-san-pantaleo" }];
+const schema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-a-san-pantaleo#localbusiness",
+  description:
+    "Noleggio scooter Honda SH e auto a San Pantaleo: borgo bohémien della Gallura, mercato del giovedì e trekking in granito.",
+  areaServed: [
+    { "@type": "City", name: "San Pantaleo" },
+    { "@type": "AdministrativeArea", name: "Gallura" },
+  ],
+});
+
 const SanPantaleoPage = () => (
   <>
     <SEOHead
-      title="Noleggio Scooter a San Pantaleo | Borgo Bohémien Gallura | GDIS Rent"
-      description="Noleggia Honda SH a San Pantaleo, il borgo bohémien della Gallura. Mercato del giovedì, strade strette e montagne di granito. GDIS Rent."
-      canonical="/localita/noleggio-san-pantaleo"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "GDIS Rent - San Pantaleo",
-        description: "Noleggio scooter Honda SH a San Pantaleo, Gallura",
-        areaServed: "San Pantaleo",
-      }}
+      title="Noleggio Auto San Pantaleo | Scooter Honda SH | GDIS Rent"
+      description="Noleggio auto e scooter a San Pantaleo ✓ Honda SH ideale per le strade strette del borgo ✓ Consegna diretta ✓ Mercato del giovedì. Prenota WhatsApp H24."
+      canonical="/noleggio-auto-a-san-pantaleo"
+      breadcrumbs={breadcrumbs}
+      jsonLd={schema}
     />
+    <Breadcrumbs items={breadcrumbs} />
 
     <LocalitaHeroV2
       name="San Pantaleo"
@@ -115,7 +124,7 @@ const SanPantaleoPage = () => (
         {
           icon: "tip",
           title: "Scendi a Porto Cervo",
-          text: (<>In 15 minuti di scooter sei sulla Promenade du Port di <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> per una cena vista yacht.</>),
+          text: (<>In 15 minuti di scooter sei sulla Promenade du Port di <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> per una cena vista yacht.</>),
         },
       ]}
     />
@@ -150,6 +159,7 @@ const SanPantaleoPage = () => (
 
     <LocalitaFAQ
       name="San Pantaleo"
+      emitSchema
       faqs={[
         {
           q: "Come arrivo al mercato del giovedì senza problemi di parcheggio?",
@@ -158,7 +168,7 @@ const SanPantaleoPage = () => (
         {
           q: "Posso raggiungere Porto Cervo da San Pantaleo in scooter?",
           a: (
-            <>Certo! <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> è a soli 15 minuti lungo una strada panoramica spettacolare tra le rocce di granito della Gallura.</>
+            <>Certo! <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</Link> è a soli 15 minuti lungo una strada panoramica spettacolare tra le rocce di granito della Gallura.</>
           ),
         },
         {
@@ -179,7 +189,7 @@ const SanPantaleoPage = () => (
       <div className="container px-4 text-center">
         <p className="text-lg text-muted-foreground">
           Da San Pantaleo scendi verso{" "}
-          <Link to="/localita/noleggio-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
+          <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Cervo
           </Link>{" "}
           per lo shopping di lusso e la Marina — 15 minuti di curve panoramiche.
