@@ -27,7 +27,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://zgazhrzjgefvjxknyffy.supabase.co wss://zgazhrzjgefvjxknyffy.supabase.co https://n8n.kreareweb.com https://www.google-analytics.com https://challenges.cloudflare.com; img-src 'self' data: blob: https://zgazhrzjgefvjxknyffy.supabase.co https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; media-src 'self' https://zgazhrzjgefvjxknyffy.supabase.co blob:; frame-src https://challenges.cloudflare.com https://www.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://zgazhrzjgefvjxknyffy.supabase.co wss://zgazhrzjgefvjxknyffy.supabase.co https://n8n.kreareweb.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://challenges.cloudflare.com; img-src 'self' data: blob: https://zgazhrzjgefvjxknyffy.supabase.co https://*.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; media-src 'self' https://zgazhrzjgefvjxknyffy.supabase.co blob:; frame-src https://challenges.cloudflare.com https://www.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
         }
       ]
     },
