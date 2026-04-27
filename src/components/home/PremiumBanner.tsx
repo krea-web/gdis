@@ -4,7 +4,8 @@ import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
 import { supabaseImg } from "@/lib/img";
 
-const luxuryCar = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.webp", { width: 1400, quality: 70 });
+const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.webp", { width: 600, quality: 70 });
+const luxuryCarDesktop = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.webp", { width: 1400, quality: 70 });
 
 const PremiumBanner = () => {
   return (
@@ -12,15 +13,19 @@ const PremiumBanner = () => {
       {/* PARTE 1: THE LUXURY EXPERIENCE */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden" aria-label="Collezione esclusiva GDIS">
         <div className="absolute inset-0 z-0">
-          <img
-            src={luxuryCar}
-            alt="GDIS Luxury Fleet - Collezione esclusiva in Costa Smeralda"
-            width={1400}
-            height={800}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover"
-          />
+          <picture>
+            <source media="(max-width: 768px)" srcSet={luxuryCarMobile} />
+            <source media="(min-width: 769px)" srcSet={luxuryCarDesktop} />
+            <img
+              src={luxuryCarDesktop}
+              alt="GDIS Luxury Fleet - Collezione esclusiva in Costa Smeralda"
+              width={1400}
+              height={800}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+          </picture>
         </div>
 
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-transparent" />

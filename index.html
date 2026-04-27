@@ -47,7 +47,7 @@
       rel="preload"
       as="image"
       fetchpriority="high"
-      href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp?width=450&quality=75"
+      href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/asset/GDISlogo.webp?width=450&quality=75"
       type="image/webp"
     />
 
@@ -72,11 +72,10 @@
     <!-- Bing Webmaster verification — decommentare dopo aver creato la property -->
     <!-- <meta name="msvalidate.01" content="REPLACE_ME" /> -->
 
-    <!-- Google Analytics 4 + Consent Mode v2 — default denied, granted dopo consenso CookieBanner -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SH3YF3Y65"></script>
+    <!-- Google Analytics 4 + Consent Mode v2 — default denied. GTM caricato dopo idle per non bloccare LCP/FCP. -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       window.gtag = gtag;
       gtag('consent', 'default', {
         ad_storage: 'denied',
@@ -85,8 +84,21 @@
         ad_personalization: 'denied',
         wait_for_update: 500
       });
-      gtag('js', new Date());
-      gtag('config', 'G-0SH3YF3Y65', { anonymize_ip: true });
+      function loadGTM(){
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0SH3YF3Y65';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-0SH3YF3Y65', { anonymize_ip: true });
+      }
+      window.addEventListener('load', function(){
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGTM, { timeout: 3000 });
+        } else {
+          setTimeout(loadGTM, 2000);
+        }
+      });
     </script>
   </head>
 

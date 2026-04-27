@@ -142,7 +142,7 @@ const FleetShowcase = () => {
                       height={400}
                       loading="lazy"
                       decoding="async"
-                      className="relative z-10 w-[90%] md:w-full max-w-[600px] h-auto object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-105"
+                      className="relative z-10 w-3/5 sm:w-1/2 md:w-full mx-auto max-w-[260px] sm:max-w-[340px] md:max-w-[600px] h-auto object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </article>
