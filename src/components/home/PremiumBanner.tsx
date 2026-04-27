@@ -1,78 +1,57 @@
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, ShieldCheck } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
-const luxuryCar = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-exclusive-car-for-rent.webp";
+import { supabaseImg } from "@/lib/img";
+
+const luxuryCar = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.webp", { width: 1400, quality: 70 });
 
 const PremiumBanner = () => {
   return (
     <div className="flex flex-col w-full">
       {/* PARTE 1: THE LUXURY EXPERIENCE */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden" aria-label="Collezione esclusiva GDIS">
-        <motion.div
-          className="absolute inset-0 z-0"
-          initial={{ scale: 1.15 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 1.8, ease: "easeOut" }}
-        >
-          <img src={luxuryCar} alt="GDIS Luxury Fleet - Collezione esclusiva in Costa Smeralda" className="w-full h-full object-cover" />
-        </motion.div>
+        <div className="absolute inset-0 z-0">
+          <img
+            src={luxuryCar}
+            alt="GDIS Luxury Fleet - Collezione esclusiva in Costa Smeralda"
+            width={1400}
+            height={800}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-transparent" />
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-black/40" />
 
         <div className="relative z-10 container px-4 sm:px-6 py-20">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              visible: { transition: { staggerChildren: 0.2 } },
-              hidden: {},
-            }}
-            className="max-w-2xl border-l-[3px] border-primary pl-6 md:pl-10"
-          >
-            <motion.span
-              variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-              }}
-              className="text-primary font-display text-sm md:text-base font-bold uppercase tracking-[0.4em] mb-4 block drop-shadow-md"
-            >
+          <div className="max-w-2xl border-l-[3px] border-primary pl-6 md:pl-10">
+            <span className="text-primary font-display text-sm md:text-base font-bold uppercase tracking-[0.4em] mb-4 block drop-shadow-md">
               GDIS Exclusive Collection
-            </motion.span>
+            </span>
 
-            <motion.h2
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8 } } }}
-              className="font-display text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 drop-shadow-2xl"
-            >
+            <h2 className="font-display text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 drop-shadow-2xl">
               Lusso, <br />
               <span className="font-light italic text-white/80">Senza Compromessi.</span>
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8 } } }}
-              className="text-white/60 text-lg md:text-xl mb-12 max-w-lg leading-relaxed font-light"
-            >
+            <p className="text-white/60 text-lg md:text-xl mb-12 max-w-lg leading-relaxed font-light">
               Accedi alla nostra flotta di veicoli di altissima gamma. Supercar, SUV premium e berline di rappresentanza
               per vivere la Sardegna al livello che meriti.
-            </motion.p>
+            </p>
 
-            <motion.div
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8 } } }}
+            <Button
+              size="lg"
+              className="bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full px-8 py-7 md:px-10 md:py-8 text-lg md:text-xl font-bold transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_40px_rgba(37,211,102,0.6)] group hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              onClick={() => window.open("https://wa.me/393520459150", "_blank")}
+              aria-label="Contattaci su WhatsApp per veicoli luxury"
             >
-              <Button
-                size="lg"
-                className="bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full px-8 py-7 md:px-10 md:py-8 text-lg md:text-xl font-bold transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_40px_rgba(37,211,102,0.6)] group hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                onClick={() => window.open("https://wa.me/393520459150", "_blank")}
-                aria-label="Contattaci su WhatsApp per veicoli luxury"
-              >
-                <WhatsAppIcon className="mr-3 h-6 w-6 md:h-7 md:w-7 group-hover:scale-110 transition-transform" size={24} />
-                Richiedi Disponibilità VIP
-              </Button>
-            </motion.div>
-          </motion.div>
+              <WhatsAppIcon className="mr-3 h-6 w-6 md:h-7 md:w-7 group-hover:scale-110 transition-transform" size={24} />
+              Richiedi Disponibilità VIP
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -84,13 +63,7 @@ const PremiumBanner = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] opacity-20" />
 
         <div className="relative z-10 container px-4 flex justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full max-w-5xl rounded-[3rem] border border-white/10 bg-white/[0.02] backdrop-blur-2xl p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden relative group"
-          >
+          <div className="w-full max-w-5xl rounded-[3rem] border border-white/10 bg-white/[0.02] backdrop-blur-2xl p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden relative group">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
 
             <div className="text-left max-w-xl relative z-10">
@@ -136,7 +109,7 @@ const PremiumBanner = () => {
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

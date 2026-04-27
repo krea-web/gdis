@@ -1,15 +1,16 @@
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useVehicles, groupByCategory, getLowestRate } from "@/hooks/useVehicles";
 import { Skeleton } from "@/components/ui/skeleton";
 
+const SUPABASE_RENDER = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles";
+const IMG_PARAMS = "?width=600&quality=75";
+
 const transparentImageMap: Record<string, string> = {
-  city_car: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png",
-  premium:
-    "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-mercedessupercarclassea180d.png",
-  quad: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamahaquadraptor.png",
-  scooter: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-hondascooter350.png",
+  city_car: `${SUPABASE_RENDER}/gdis-fiatpandacitycar.png${IMG_PARAMS}`,
+  premium: `${SUPABASE_RENDER}/gdis-mercedessupercarclassea180d.png${IMG_PARAMS}`,
+  quad: `${SUPABASE_RENDER}/gdis-yamahaquadraptor.png${IMG_PARAMS}`,
+  scooter: `${SUPABASE_RENDER}/gdis-hondascooter350.png${IMG_PARAMS}`,
 };
 
 const categoryMeta: Record<string, { title: string; subtitle: string; description: string; link?: string }> = {
@@ -64,13 +65,7 @@ const FleetShowcase = () => {
       />
 
       <div className="container px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-20 md:mb-32 text-center max-w-3xl mx-auto"
-        >
+        <div className="mb-20 md:mb-32 text-center max-w-3xl mx-auto">
           <span className="text-primary font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
             La Nostra Flotta
           </span>
@@ -78,7 +73,7 @@ const FleetShowcase = () => {
             Scegli la tua <br className="hidden md:block" />
             <span className="italic font-light text-primary">Prossima Avventura.</span>
           </h2>
-        </motion.div>
+        </div>
 
         {isLoading ? (
           <div className="flex flex-col gap-24">
@@ -110,13 +105,7 @@ const FleetShowcase = () => {
                   key={cat}
                   className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center justify-between gap-12 md:gap-20 group`}
                 >
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left"
-                  >
+                  <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
                     <span className="text-primary font-bold uppercase tracking-widest text-sm mb-3 block">
                       {meta.subtitle}
                     </span>
@@ -142,24 +131,20 @@ const FleetShowcase = () => {
                         <span className="text-sm">/giorno</span>
                       </span>
                     </div>
-                  </motion.div>
+                  </div>
 
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8, rotate: isEven ? 5 : -5 }}
-                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="w-full md:w-1/2 relative flex justify-center items-center perspective-[1000px]"
-                  >
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-primary/20 blur-[80px] rounded-full pointer-events-none transition-transform duration-700 group-hover:scale-110" />
-                    <motion.img
-                      animate={{ y: [-10, 10, -10] }}
-                      transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" as const, delay: i * 0.5 }}
+                  <div className="w-full md:w-1/2 relative flex justify-center items-center">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-primary/20 blur-[80px] rounded-full pointer-events-none" />
+                    <img
                       src={image}
                       alt={`Noleggio ${meta.title} in Sardegna - GDIS Rent`}
+                      width={600}
+                      height={400}
+                      loading="lazy"
+                      decoding="async"
                       className="relative z-10 w-[90%] md:w-full max-w-[600px] h-auto object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-105"
                     />
-                  </motion.div>
+                  </div>
                 </article>
               );
             })}

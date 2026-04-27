@@ -115,7 +115,7 @@ const NoleggioPortoOlbia = () => {
         h1Accent="Porto Olbia"
         subtitle="Sbarchi da Civitavecchia, Livorno, Genova, Piombino o Nizza? Ti aspettiamo al terminal Isola Bianca con il veicolo pronto."
         bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp"
-        vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
+        vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles/gdis-fiatpandacitycar.png?width=600&quality=75"
         vehicleAlt="Noleggio auto porto Isola Bianca Olbia"
       />
 

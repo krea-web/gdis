@@ -116,7 +116,7 @@ const NoleggioStazioneOlbia = () => {
         h1Accent="Stazione Olbia"
         subtitle="Arrivi in treno da Sassari, Cagliari o coincidenze interne? Trovi l'auto pronta nel piazzale antistante la stazione Trenitalia."
         bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-olbia.webp"
-        vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
+        vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles/gdis-fiatpandacitycar.png?width=600&quality=75"
         vehicleAlt="Noleggio auto stazione Trenitalia Olbia"
       />
 

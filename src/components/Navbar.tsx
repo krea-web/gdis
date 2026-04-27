@@ -5,7 +5,9 @@ import { useState, useEffect, useRef } from "react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { motion, AnimatePresence } from "framer-motion";
 
-const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
+import { supabaseImg } from "@/lib/img";
+
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { width: 200, quality: 80 });
 
 const flottaItems = [
   { label: "City Car", to: "/flotta/fiat-panda", icon: Car, desc: "Fiat Panda Hybrid" },
@@ -109,7 +111,7 @@ const Navbar = () => {
       >
         <div className="container flex items-center justify-between h-18 py-4">
           <Link to="/" className="flex items-center gap-2 relative z-10">
-            <img src={gdisLogo} alt="GDIS Rent e Service" className="h-10 w-auto" />
+            <img src={gdisLogo} alt="GDIS Rent e Service" width={100} height={40} fetchPriority="high" decoding="async" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -253,7 +255,7 @@ const Navbar = () => {
             {/* Header with logo & close */}
             <div className="container flex items-center justify-between py-4 h-18">
               <Link to="/" onClick={closeMobile} className="flex items-center gap-2">
-                <img src={gdisLogo} alt="GDIS Rent e Service" className="h-10 w-auto" />
+                <img src={gdisLogo} alt="GDIS Rent e Service" width={100} height={40} fetchPriority="high" decoding="async" className="h-10 w-auto" />
               </Link>
               <button
                 onClick={closeMobile}

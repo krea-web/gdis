@@ -1,19 +1,21 @@
+import { lazy, Suspense } from "react";
 import SEOHead from "@/components/SEOHead";
 import HeroSection from "@/components/home/HeroSection";
-import TrustMarquee from "@/components/home/TrustMarquee";
-import MinimalIntro from "@/components/home/MinimalIntro";
-import ComeFunziona from "@/components/home/ComeFunziona";
-import FleetShowcase from "@/components/home/FleetShowcase";
-import EsploraSardegna from "@/components/home/EsploraSardegna";
-import Recensioni from "@/components/home/Recensioni";
-import LuxurySection from "@/components/home/LuxurySection";
-import PremiumBanner from "@/components/home/PremiumBanner";
 import {
   buildLocalBusinessSchema,
   SITE_URL,
   BUSINESS_PHONE,
   BUSINESS_LEGAL_NAME,
 } from "@/lib/siteSchema";
+
+const TrustMarquee = lazy(() => import("@/components/home/TrustMarquee"));
+const MinimalIntro = lazy(() => import("@/components/home/MinimalIntro"));
+const ComeFunziona = lazy(() => import("@/components/home/ComeFunziona"));
+const FleetShowcase = lazy(() => import("@/components/home/FleetShowcase"));
+const LuxurySection = lazy(() => import("@/components/home/LuxurySection"));
+const PremiumBanner = lazy(() => import("@/components/home/PremiumBanner"));
+const EsploraSardegna = lazy(() => import("@/components/home/EsploraSardegna"));
+const Recensioni = lazy(() => import("@/components/home/Recensioni"));
 
 const homeLocalBusinessSchema = buildLocalBusinessSchema({
   id: `${SITE_URL}/#localbusiness`,
@@ -64,14 +66,16 @@ const Index = () => {
         jsonLd={[homeLocalBusinessSchema, ...serviceSchemas]}
       />
       <HeroSection />
-      <TrustMarquee />
-      <MinimalIntro />
-      <ComeFunziona />
-      <FleetShowcase />
-      <LuxurySection />
-      <PremiumBanner />
-      <EsploraSardegna />
-      <Recensioni />
+      <Suspense fallback={<div className="h-32" aria-hidden="true" />}>
+        <TrustMarquee />
+        <MinimalIntro />
+        <ComeFunziona />
+        <FleetShowcase />
+        <LuxurySection />
+        <PremiumBanner />
+        <EsploraSardegna />
+        <Recensioni />
+      </Suspense>
     </>
   );
 };

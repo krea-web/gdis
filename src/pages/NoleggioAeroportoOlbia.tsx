@@ -120,7 +120,7 @@ const NoleggioAeroportoOlbia = () => {
         h1Accent="Aeroporto Olbia"
         subtitle="Codice IATA OLB. Consegna VIP nel piazzale arrivi del Costa Smeralda Airport — atterri, ti consegniamo l'auto, parti."
         bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp"
-        vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
+        vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles/gdis-fiatpandacitycar.png?width=600&quality=75"
         vehicleAlt="Noleggio auto aeroporto Olbia OLB"
       />
 

@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { supabaseImg } from "@/lib/img";
 
 const Footer = () => {
   return (
@@ -42,8 +43,12 @@ const Footer = () => {
 
       <div className="w-full flex justify-center translate-y-[15%] md:translate-y-[20%] pointer-events-none">
         <img
-          src="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp"
+          src={supabaseImg("asset/GDISlogo.webp", { width: 1200, quality: 70 })}
           alt="GDIS Logo"
+          width={1200}
+          height={517}
+          loading="lazy"
+          decoding="async"
           className="w-[90%] md:w-[70%] max-w-[1200px] h-auto object-contain opacity-15 mix-blend-overlay drop-shadow-2xl"
         />
       </div>

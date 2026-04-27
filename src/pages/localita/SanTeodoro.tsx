@@ -36,7 +36,7 @@ const SanTeodoroPage = () => (
       name="San Teodoro"
       subtitle="La Cinta, movida e spiagge infinite. Il tuo Honda SH ti aspetta per un'estate senza traffico."
       bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-noleggio-san-teodoro.webp"
-      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
+      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles/gdis-fiatpandacitycar.png?width=600&quality=75"
       vehicleAlt="Honda SH 125 San Teodoro"
     />
 

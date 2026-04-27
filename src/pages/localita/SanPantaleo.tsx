@@ -39,7 +39,7 @@ const SanPantaleoPage = () => (
       name="San Pantaleo"
       subtitle="Strade strette, mercati artigianali e montagne di granito. Lo scooter è l'unico modo per vivere questo borgo."
       bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-noleggio-san-pantaleo.webp"
-      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png"
+      vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles/gdis-fiatpandacitycar.png?width=600&quality=75"
       vehicleAlt="Honda SH 125 San Pantaleo"
     />
 
