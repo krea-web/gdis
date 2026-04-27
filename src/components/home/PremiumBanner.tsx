@@ -11,7 +11,7 @@ const PremiumBanner = () => {
   return (
     <div className="flex flex-col w-full">
       {/* PARTE 1: THE LUXURY EXPERIENCE */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden" aria-label="Collezione esclusiva GDIS">
+      <section className="relative min-h-[55vh] md:min-h-[70vh] flex items-center overflow-hidden" aria-label="Collezione esclusiva GDIS">
         <div className="absolute inset-0 z-0">
           <picture>
             <source media="(max-width: 768px)" srcSet={luxuryCarMobile} />
@@ -23,7 +23,7 @@ const PremiumBanner = () => {
               height={800}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[70%_center]"
             />
           </picture>
         </div>

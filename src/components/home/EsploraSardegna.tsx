@@ -79,7 +79,7 @@ const EsploraSardegna = () => (
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 lg:grid-cols-4 auto-rows-[220px] gap-4 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] gap-4 max-w-6xl mx-auto">
         {destinations.map((dest, i) => {
           const w = dest.large ? 800 : 400;
           const h = dest.large ? 600 : 300;
@@ -104,7 +104,7 @@ const EsploraSardegna = () => (
                   height={h}
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">

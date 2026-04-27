@@ -134,7 +134,6 @@ const FleetShowcase = () => {
                   </div>
 
                   <div className="w-full md:w-1/2 relative flex justify-center items-center">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-primary/20 blur-[80px] rounded-full pointer-events-none" />
                     <img
                       src={image}
                       alt={`Noleggio ${meta.title} in Sardegna - GDIS Rent`}
@@ -142,7 +141,7 @@ const FleetShowcase = () => {
                       height={400}
                       loading="lazy"
                       decoding="async"
-                      className="relative z-10 w-3/5 sm:w-1/2 md:w-full mx-auto max-w-[260px] sm:max-w-[340px] md:max-w-[600px] h-auto object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-105"
+                      className="relative z-10 w-3/5 sm:w-1/2 md:w-full mx-auto max-w-[260px] sm:max-w-[340px] md:max-w-[600px] h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </article>
