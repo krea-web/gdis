@@ -26,7 +26,7 @@ const BentoSpots = ({ name, spots }: Props) => (
         <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">I Luoghi di {name}</h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[240px] md:auto-rows-[220px] gap-4 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
         {spots.map((spot, i) => (
           <motion.div
             key={spot.name}
@@ -34,7 +34,7 @@ const BentoSpots = ({ name, spots }: Props) => (
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className={`relative rounded-3xl overflow-hidden group border border-white/10 ${spot.span || ""}`}
+            className="relative aspect-[4/3] rounded-3xl overflow-hidden group border border-white/10"
           >
             <img
               src={spot.image}

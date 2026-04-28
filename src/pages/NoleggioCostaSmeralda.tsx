@@ -87,7 +87,7 @@ const HeroSection = () => (
 const DeliverySection = () => {
   const locations = [
     { name: "Porto Cervo", desc: "Hotel, marina e boutique del lusso", to: "/noleggio-auto-a-porto-cervo" },
-    { name: "Palau", desc: "Porto e collegamenti per La Maddalena" },
+    { name: "Porto Rotondo", desc: "Marina elegante e cale segrete", to: "/noleggio-auto-a-porto-rotondo" },
     { name: "San Teodoro", desc: "Spiagge cristalline e vita notturna", to: "/noleggio-auto-a-san-teodoro" },
     { name: "Olbia", desc: "Aeroporto, porto e centro città", to: "/noleggio-auto-a-olbia" },
   ];

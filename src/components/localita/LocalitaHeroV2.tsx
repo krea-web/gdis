@@ -29,7 +29,7 @@ const LocalitaHeroV2 = ({
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--primary)/0.2),transparent_60%)]" />
 
     <div className="container relative z-10 px-4">
-      <div className="grid lg:grid-cols-2 gap-8 items-end">
+      <div className="grid lg:grid-cols-2 gap-8 items-end overflow-hidden">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -85,9 +85,9 @@ const LocalitaHeroV2 = ({
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3 }}
-          className="hidden lg:block"
+          className="hidden lg:flex lg:justify-end lg:pr-4 xl:pr-8"
         >
-          <FloatingVehicle image={vehicleImage} alt={vehicleAlt} className="max-w-md ml-auto" />
+          <FloatingVehicle image={vehicleImage} alt={vehicleAlt} className="w-full max-w-sm xl:max-w-md" />
         </motion.div>
       </div>
     </div>

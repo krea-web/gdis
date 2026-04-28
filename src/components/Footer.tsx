@@ -165,6 +165,14 @@ const Footer = () => (
             <dt className="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">Codice Fiscale</dt>
             <dd className="text-primary-foreground font-medium">{BUSINESS_TAX_ID}</dd>
           </div>
+          <div>
+            <dt className="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">REA</dt>
+            <dd className="text-primary-foreground font-medium">SS-225492</dd>
+          </div>
+          <div>
+            <dt className="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">Capitale Sociale</dt>
+            <dd className="text-primary-foreground font-medium">€ 10.000 i.v.</dd>
+          </div>
         </dl>
       </div>
 

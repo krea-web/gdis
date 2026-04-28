@@ -37,7 +37,7 @@ const Navbar = () => {
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const destDropdownRef = useRef<HTMLDivElement>(null);
-  const useSolidDesktopNav = scrolled || location.pathname === "/prenotaora";
+  const useSolidDesktopNav = scrolled || location.pathname !== "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -246,15 +246,10 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Full-Screen Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 md:hidden bg-slate-950/95 backdrop-blur-xl overflow-y-auto h-[100dvh] w-full"
+      {/* Full-Screen Mobile Menu Overlay (no AnimatePresence on outer: instant close on link click) */}
+      {mobileOpen && (
+          <div
+            className="fixed inset-0 z-50 md:hidden bg-slate-950/95 backdrop-blur-xl overflow-y-auto h-[100dvh] w-full animate-fade-in"
           >
             {/* Header with logo & close */}
             <div className="container flex items-center justify-between py-4 h-18">
@@ -426,9 +421,8 @@ const Navbar = () => {
                 </a>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </>
   );
 };
