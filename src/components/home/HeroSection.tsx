@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { supabaseImg } from "@/lib/img";
 
-const gdisLogo = supabaseImg("asset/GDISlogo.webp", { width: 450, quality: 75 });
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
 
 const HeroSection = () => {
   return (

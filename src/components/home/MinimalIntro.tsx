@@ -33,7 +33,7 @@ const MinimalIntro = () => {
             {logos.map((logo) => (
               <img
                 key={logo.alt}
-                src={supabaseImg(logo.path, { width: 120, quality: 80 })}
+                src={supabaseImg(logo.path, { raw: true })}
                 alt={logo.alt}
                 width={84}
                 height={56}

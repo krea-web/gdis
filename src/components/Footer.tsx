@@ -43,7 +43,7 @@ const Footer = () => {
 
       <div className="w-full flex justify-center translate-y-[15%] md:translate-y-[20%] pointer-events-none">
         <img
-          src={supabaseImg("asset/GDISlogo.webp", { width: 1200, quality: 70 })}
+          src={supabaseImg("asset/GDISlogo.webp", { raw: true })}
           alt="GDIS Logo"
           width={1200}
           height={517}

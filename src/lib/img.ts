@@ -8,9 +8,10 @@ const stripBase = (url: string): string => {
 
 export const supabaseImg = (
   pathOrUrl: string,
-  opts: { width?: number; height?: number; quality?: number; resize?: "cover" | "contain" | "fill" } = {},
+  opts: { width?: number; height?: number; quality?: number; resize?: "cover" | "contain" | "fill"; raw?: boolean } = {},
 ): string => {
   const path = pathOrUrl.startsWith("http") ? stripBase(pathOrUrl) : pathOrUrl.replace(/^\//, "");
+  if (opts.raw) return `${SUPABASE_BASE}/object/public/${path}`;
   const params = new URLSearchParams();
   if (opts.width) params.set("width", String(opts.width));
   if (opts.height) params.set("height", String(opts.height));

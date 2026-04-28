@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { supabaseImg } from "@/lib/img";
 
-const gdisLogo = supabaseImg("asset/GDISlogo.webp", { width: 200, quality: 80 });
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
 
 const flottaItems = [
   { label: "City Car", to: "/flotta/fiat-panda", icon: Car, desc: "Fiat Panda Hybrid" },
@@ -64,6 +64,7 @@ const Navbar = () => {
     setDestinazioniOpen(false);
     setMobileFlottaOpen(false);
     setMobileDestinazioniOpen(false);
+    document.body.style.overflow = "";
   }, [location.pathname]);
 
   // Lock body scroll when mobile menu is open
@@ -78,7 +79,10 @@ const Navbar = () => {
     };
   }, [mobileOpen]);
 
-  const closeMobile = () => setMobileOpen(false);
+  const closeMobile = () => {
+    setMobileOpen(false);
+    document.body.style.overflow = "";
+  };
 
   const isDestinazioniActive =
     location.pathname.startsWith("/noleggio-auto-");

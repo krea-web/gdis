@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import { useVehicles, groupByCategory, getLowestRate } from "@/hooks/useVehicles";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const SUPABASE_RENDER = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles";
-const IMG_PARAMS = "?width=600&quality=75";
+const SUPABASE_OBJECT = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles";
 
 const transparentImageMap: Record<string, string> = {
-  city_car: `${SUPABASE_RENDER}/gdis-fiatpandacitycar.png${IMG_PARAMS}`,
-  premium: `${SUPABASE_RENDER}/gdis-mercedessupercarclassea180d.png${IMG_PARAMS}`,
-  quad: `${SUPABASE_RENDER}/gdis-yamahaquadraptor.png${IMG_PARAMS}`,
-  scooter: `${SUPABASE_RENDER}/gdis-hondascooter350.png${IMG_PARAMS}`,
+  city_car: `${SUPABASE_OBJECT}/gdis-fiatpandacitycar.png`,
+  premium: `${SUPABASE_OBJECT}/gdis-mercedessupercarclassea180d.png`,
+  quad: `${SUPABASE_OBJECT}/gdis-yamahaquadraptor.png`,
+  scooter: `${SUPABASE_OBJECT}/gdis-hondascooter350.png`,
 };
 
 const categoryMeta: Record<string, { title: string; subtitle: string; description: string; link?: string }> = {

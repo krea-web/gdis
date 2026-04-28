@@ -1,6 +1,6 @@
 import { supabaseImg } from "@/lib/img";
 
-const gdisLogo = supabaseImg("asset/GDISlogo.webp", { width: 120, quality: 80 });
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
 
 const items = [
   "Affidabilità",
