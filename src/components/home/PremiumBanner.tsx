@@ -3,6 +3,7 @@ import { ArrowRight, Zap, ShieldCheck } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
 import { supabaseImg } from "@/lib/img";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.webp", { width: 600, quality: 70 });
 const luxuryCarDesktop = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.webp", { width: 1400, quality: 70 });
@@ -50,7 +51,10 @@ const PremiumBanner = () => {
             <Button
               size="lg"
               className="bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full px-8 py-7 md:px-10 md:py-8 text-lg md:text-xl font-bold transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_40px_rgba(37,211,102,0.6)] group hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-              onClick={() => window.open("https://wa.me/393520459150", "_blank")}
+              onClick={() => {
+                trackWhatsAppClick("home_premium_banner");
+                window.open("https://wa.me/393520459150", "_blank");
+              }}
               aria-label="Contattaci su WhatsApp per veicoli luxury"
             >
               <WhatsAppIcon className="mr-3 h-6 w-6 md:h-7 md:w-7 group-hover:scale-110 transition-transform" size={24} />

@@ -44,6 +44,7 @@ const LocalitaCTA = ({ name }: Props) => (
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
+        className="flex flex-col items-center gap-5"
       >
         <Button
           size="lg"
@@ -55,6 +56,17 @@ const LocalitaCTA = ({ name }: Props) => (
             <ArrowRight className="h-5 w-5" />
           </Link>
         </Button>
+        <p className="text-sm text-white/70">
+          Hai dubbi?{" "}
+          <Link to="/contatti" className="text-white font-semibold underline-offset-4 hover:underline">
+            Scrivici
+          </Link>{" "}
+          o torna alla{" "}
+          <Link to="/" className="text-white font-semibold underline-offset-4 hover:underline">
+            home
+          </Link>{" "}
+          per esplorare la flotta.
+        </p>
       </motion.div>
     </div>
   </section>

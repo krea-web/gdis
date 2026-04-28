@@ -17,9 +17,15 @@
       "purpose": "any"
     },
     {
-      "src": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp",
+      "src": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/webp",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]

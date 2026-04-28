@@ -32,3 +32,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Brand asset generation (locally generated, uploaded to Supabase)
+generated-assets/
+scripts/.cache/

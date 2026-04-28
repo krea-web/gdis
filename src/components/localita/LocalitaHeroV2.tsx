@@ -3,6 +3,7 @@ import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import FloatingVehicle from "./FloatingVehicle";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 type Props = {
   name: string;
@@ -29,7 +30,7 @@ const LocalitaHeroV2 = ({
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--primary)/0.2),transparent_60%)]" />
 
     <div className="container relative z-10 px-4">
-      <div className="grid lg:grid-cols-2 gap-8 items-end overflow-hidden">
+      <div className="grid lg:grid-cols-2 gap-8 items-end">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -74,7 +75,12 @@ const LocalitaHeroV2 = ({
               asChild
               className="rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-md text-white hover:bg-white/20"
             >
-              <a href="https://wa.me/393200625543" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://wa.me/393200625543"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick(`localita_hero_${name.toLowerCase().replace(/\s+/g, "_")}`)}
+              >
                 Consegna VIP
               </a>
             </Button>

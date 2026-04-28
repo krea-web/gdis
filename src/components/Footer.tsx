@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { supabaseImg } from "@/lib/img";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import {
   BUSINESS_LEGAL_NAME,
   BUSINESS_VAT,
@@ -104,6 +105,7 @@ const Footer = () => (
               href="https://wa.me/393520459150"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("footer")}
               aria-label="Contattaci su WhatsApp"
               className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
             >

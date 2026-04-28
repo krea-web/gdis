@@ -6,6 +6,7 @@ import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { supabaseImg } from "@/lib/img";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
 
@@ -407,6 +408,7 @@ const Navbar = () => {
                   href="https://wa.me/393520459150"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("navbar_mobile")}
                   className="flex items-center gap-3 text-slate-300 hover:text-green-400 transition-colors py-2"
                 >
                   <WhatsAppIcon className="h-5 w-5" size={20} />

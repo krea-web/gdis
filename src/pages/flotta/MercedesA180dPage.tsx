@@ -412,6 +412,16 @@ const MercedesA180dPage = () => (
           >
             <Link to="/prenotaora">Prenota la Classe A →</Link>
           </Button>
+          <p className="mt-6 text-primary-foreground/70 text-sm">
+            Domande?{" "}
+            <Link to="/contatti" className="text-primary-foreground font-semibold underline-offset-4 hover:underline">
+              Contattaci
+            </Link>{" "}
+            ·{" "}
+            <Link to="/" className="text-primary-foreground font-semibold underline-offset-4 hover:underline">
+              Torna alla home
+            </Link>
+          </p>
         </motion.div>
       </div>
     </section>

@@ -25,6 +25,7 @@ import { type Vehicle } from "@/hooks/useVehicles";
 import { invokeN8nProxy, type CreateBookingResponse } from "@/lib/n8nProxy";
 import { driverSchema, pickupDropoffSchema } from "@/lib/validators";
 import { useNavigate } from "react-router-dom";
+import { trackBookingStarted, trackBookingCompleted } from "@/lib/analytics";
 
 /* ── Types ─────────────────────────────────── */
 
@@ -91,6 +92,10 @@ const PrenotaOra = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [step]);
+
+  useEffect(() => {
+    trackBookingStarted();
+  }, []);
 
   const updateBooking = useCallback((partial: Partial<BookingState>) => {
     setBooking((prev) => ({ ...prev, ...partial }));
@@ -210,6 +215,18 @@ const PrenotaOra = () => {
   };
 
   const handleSignatureComplete = () => {
+    if (bookingId && booking.vehicle && booking.startDate && booking.endDate) {
+      const days = Math.ceil(
+        (booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24),
+      );
+      trackBookingCompleted({
+        bookingId,
+        vehicleId: booking.vehicle.id,
+        vehicleName: booking.vehicle.name,
+        days,
+        totalEur: booking.vehicle.pricePerDay * days,
+      });
+    }
     setShowSuccess(true);
   };
 
