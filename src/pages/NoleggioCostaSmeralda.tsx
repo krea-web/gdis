@@ -15,15 +15,21 @@ const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pub
 
 /* ── Section 1: Hero ───────────────────────── */
 const HeroSection = () => (
-  <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-background">
+  <section
+    className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-dark via-brand-blue-deep to-brand-dark"
+    aria-label="Hero Noleggio Costa Smeralda"
+  >
     {/* Ambient glow */}
-    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
+    <div
+      aria-hidden="true"
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/20 blur-[150px] z-0 pointer-events-none"
+    />
 
     <div className="relative z-10 container px-4 text-center py-32">
       <motion.img
         src={gdisLogo}
         alt="GDIS Rent e Service"
-        className="w-32 md:w-40 h-auto mx-auto mb-8 drop-shadow-xl"
+        className="w-32 md:w-40 h-auto mx-auto mb-8 drop-shadow-2xl"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
@@ -33,7 +39,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
-        className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-foreground leading-[1.1] mb-6"
+        className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 drop-shadow-lg"
       >
         Noleggio Auto e Scooter
         <br />
@@ -44,7 +50,7 @@ const HeroSection = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+        className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed"
       >
         Vivi la libertà della Sardegna con la nostra flotta premium. Citycar, scooter, quad e veicoli luxury
         consegnati direttamente al tuo hotel, villa o yacht.
