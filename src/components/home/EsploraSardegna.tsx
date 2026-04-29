@@ -116,19 +116,24 @@ const EsploraSardegna = () => (
           >
             <Link
               to={dest.to}
-              className={`relative w-full rounded-3xl overflow-hidden group cursor-pointer block border border-white/10 bg-slate-900 ${
+              className={`relative w-full rounded-3xl overflow-hidden group cursor-pointer block border border-white/10 ${
                 dest.size === "md" ? "aspect-[2/1]" : "aspect-square"
               }`}
               aria-label={`Scopri il noleggio auto a ${dest.name}`}
             >
               <img
-                src={supabaseImg(dest.path, { width: dest.imgWidth, quality: 75 })}
+                src={supabaseImg(dest.path, {
+                  width: dest.imgWidth,
+                  height: dest.imgHeight,
+                  resize: "cover",
+                  quality: 75,
+                })}
                 alt={`Noleggio auto ${dest.name}`}
                 width={dest.imgWidth}
                 height={dest.imgHeight}
                 loading="lazy"
                 decoding="async"
-                className="absolute inset-0 w-full h-full object-contain object-center transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
