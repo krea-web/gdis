@@ -104,7 +104,7 @@ const EsploraSardegna = () => (
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-[180px] gap-4 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-[240px] gap-4 max-w-6xl mx-auto">
         {destinations.map((dest, i) => (
           <motion.div
             key={dest.name}
