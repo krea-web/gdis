@@ -104,7 +104,7 @@ const EsploraSardegna = () => (
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-[240px] gap-4 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
         {destinations.map((dest, i) => (
           <motion.div
             key={dest.name}
@@ -116,7 +116,9 @@ const EsploraSardegna = () => (
           >
             <Link
               to={dest.to}
-              className="relative w-full h-full min-h-[200px] rounded-3xl overflow-hidden group cursor-pointer block border border-white/10"
+              className={`relative w-full rounded-3xl overflow-hidden group cursor-pointer block border border-white/10 ${
+                dest.size === "md" ? "aspect-[2/1]" : "aspect-square"
+              }`}
               aria-label={`Scopri il noleggio auto a ${dest.name}`}
             >
               <img
