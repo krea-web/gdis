@@ -230,7 +230,19 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="tel:+393520459150"
+              className={`hidden lg:inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
+                useSolidDesktopNav
+                  ? "text-foreground/70 hover:text-foreground"
+                  : "text-background/80 hover:text-background"
+              }`}
+              aria-label="Chiama il numero +39 352 045 9150"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              +39 352 045 9150
+            </a>
             <Button variant="hero" size="default" asChild>
               <Link to="/prenotaora">Prenota Ora</Link>
             </Button>
@@ -271,8 +283,23 @@ const Navbar = () => {
               <div className="h-px bg-white/10" />
             </div>
 
+            {/* Top CTA — visibile subito appena si apre il menu */}
+            <div className="container pt-6">
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.05 }}
+              >
+                <Button variant="hero" size="lg" asChild className="w-full text-base py-5">
+                  <Link to="/prenotaora" onClick={closeMobile}>
+                    Prenota Ora
+                  </Link>
+                </Button>
+              </motion.div>
+            </div>
+
             {/* Navigation Links */}
-            <div className="container flex flex-col gap-1 pt-8 pb-32">
+            <div className="container flex flex-col gap-1 pt-6 pb-32">
               {links.map((l, i) => (
                 <motion.div
                   key={l.to}

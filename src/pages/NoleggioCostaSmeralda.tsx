@@ -10,6 +10,7 @@ import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import TrustMarquee from "@/components/home/TrustMarquee";
 import FleetShowcase from "@/components/home/FleetShowcase";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 
@@ -72,7 +73,12 @@ const HeroSection = () => (
         </motion.div>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button variant="whatsapp" size="xl" asChild className="gap-3">
-            <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://wa.me/393520459150"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("costasmeralda_hero")}
+            >
               <WhatsAppIcon size={20} />
               Contattaci su WhatsApp
             </a>
@@ -219,7 +225,12 @@ const CostaFaq = () => {
                 Le risposte alle domande più frequenti sul noleggio in Costa Smeralda.
               </p>
               <Button variant="whatsapp" size="lg" className="w-full gap-2" asChild>
-                <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/393520459150"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("costasmeralda_faq")}
+                >
                    <WhatsAppIcon size={20} />
                   Chatta con noi
                 </a>
@@ -292,7 +303,12 @@ const FinalCta = () => (
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button variant="whatsapp" size="xl" asChild className="gap-3">
-              <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://wa.me/393520459150"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("costasmeralda_final_cta")}
+              >
                 <WhatsAppIcon size={20} />
                 WhatsApp
               </a>

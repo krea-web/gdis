@@ -11,6 +11,8 @@ import TrustMarquee from "@/components/home/TrustMarquee";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ";
 import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
+import LocalitaInlineCTA from "@/components/localita/LocalitaInlineCTA";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable";
 import { Link } from "react-router-dom";
 import { Plane, Ship } from "lucide-react";
 import { motion } from "framer-motion";
@@ -181,7 +183,7 @@ const OlbiaPage = () => (
     <VehicleSpotlight
       tag="Il Veicolo Giusto per Olbia"
       title="Dalla Fiat Panda alla Mercedes: scegli il tuo stile"
-      description="Olbia è il punto di partenza perfetto per esplorare tutta la Costa Smeralda. Scegli la Fiat Panda per la praticità urbana e i consumi ridotti, l'Honda SH per muoverti agile nel traffico estivo, oppure la Mercedes Classe A per un'esperienza premium. Tutti i veicoli vengono consegnati con il pieno e climatizzatore acceso."
+      description="Olbia non è solo il principale hub di arrivo della Sardegna nord-orientale: è anche il punto di partenza più strategico per esplorare la Costa Smeralda, l'entroterra gallurese e le spiagge che vanno da Pittulongu a Porto Istana. Per chi resta in città — passeggiate su Corso Umberto, cena al porto, gita alla Basilica di San Simplicio — la Fiat Panda Hybrid è la scelta naturale: entra ovunque, parcheggia in fessure impossibili, e i consumi ridotti la rendono perfetta anche per l'uso quotidiano. Per chi pensa già alle escursioni quotidiane verso Porto Cervo, San Teodoro o Golfo Aranci, la Mercedes Classe A 180d offre un comfort autostradale superiore e un cambio automatico che azzera la fatica nel traffico estivo della SS125. Lo scooter Honda SH è la jolly: a luglio e agosto, quando il centro di Olbia si paralizza intorno al porto, è l'unico veicolo che continua a muoversi davvero. E per gli amanti dell'avventura, il quad Yamaha Raptor apre la porta agli sterrati dell'entroterra di Telti e Berchidda. Qualunque sia la tua scelta, ti consegniamo il veicolo direttamente all'aeroporto, al porto o al tuo hotel — climatizzatore già acceso e pieno fatto, pronto a partire nel momento in cui arrivi."
       image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp"
       imageAlt="Flotta veicoli noleggio Olbia"
     >
@@ -195,6 +197,8 @@ const OlbiaPage = () => (
         <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Assistenza H24</span>
       </div>
     </VehicleSpotlight>
+
+    <LocalitaInlineCTA name="Olbia" />
 
     <BentoSpots
       name="Olbia"
@@ -237,6 +241,11 @@ const OlbiaPage = () => (
         { label: "Ideale per", value: "Famiglie & Coppie", icon: "use" },
         { label: "Consegna", value: "Aeroporto / Porto", icon: "delivery" },
       ]}
+    />
+
+    <VehicleComparisonTable
+      title="Quale veicolo per Olbia?"
+      subtitle="Confronto rapido per scegliere in base al tuo viaggio."
     />
 
     <LocalitaTrafficTips
@@ -382,17 +391,26 @@ const OlbiaPage = () => (
     />
 
     <section className="py-16 bg-muted/20">
-      <div className="container px-4 text-center">
-        <p className="text-lg text-muted-foreground">
-          Olbia è solo l'inizio. Esplora le spiagge di{" "}
+      <div className="container px-4 max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          Olbia è il chilometro zero del tuo viaggio in Sardegna nord-orientale. In meno di mezz'ora di guida da
+          Aeroporto Costa Smeralda raggiungi le calette di Capo Coda Cavallo, in 30 minuti sei nello shopping di lusso
+          di{" "}
           <Link to="/noleggio-auto-a-porto-cervo" className="text-primary font-medium hover:underline transition-all">
             Porto Cervo
-          </Link>{" "}
-          o il relax di{" "}
+          </Link>
+          , in 25 minuti tocchi le spiagge giovani di{" "}
           <Link to="/noleggio-auto-a-san-teodoro" className="text-primary font-medium hover:underline transition-all">
             San Teodoro
           </Link>{" "}
-          con i nostri mezzi.
+          e in 20 sei al porto traghetti di{" "}
+          <Link to="/noleggio-auto-a-golfo-aranci" className="text-primary font-medium hover:underline transition-all">
+            Golfo Aranci
+          </Link>
+          . Chi sceglie Olbia come base ha il vantaggio di rientrare ogni sera in città per la movida di Corso Umberto e
+          la cucina di porto, con la flessibilità di non legarsi a una sola località. Per pianificare il ritiro al
+          terminal traghetti o all'aeroporto basta un messaggio WhatsApp: organizziamo tutto noi sull'orario reale di
+          atterraggio o sbarco.
         </p>
       </div>
     </section>

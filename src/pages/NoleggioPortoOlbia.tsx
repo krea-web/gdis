@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
+import ConsegnaVipExplainer from "@/components/home/ConsegnaVipExplainer";
 import { Link } from "react-router-dom";
 import { Ship, Anchor, Compass } from "lucide-react";
 import { motion } from "framer-motion";
@@ -244,6 +245,8 @@ const NoleggioPortoOlbia = () => {
           </p>
         </div>
       </section>
+
+      <ConsegnaVipExplainer />
 
       <LocalitaFAQ name="Porto Isola Bianca" faqs={faqs} emitSchema />
 

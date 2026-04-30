@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://gdisrentservice.com/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -15,147 +15,179 @@
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-a-olbia</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-in-costa-smeralda</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-aeroporto-olbia</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-porto-olbia</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-stazione-olbia</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-a-porto-cervo</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-a-san-teodoro</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-a-san-pantaleo</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-a-porto-rotondo</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-a-golfo-aranci</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/noleggio-auto-a-baja-sardinia</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/flotta/fiat-panda</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp</image:loc>
+      <image:title>Fiat Panda — Noleggio economico Olbia e Costa Smeralda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpanda-noleggiocostasmeralda.webp</image:loc>
+      <image:title>Fiat Panda GDIS Rent — auto compatta per le strade della Sardegna</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/flotta/mercedes-classe-a180d</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-mercedes-classe-a180d-costasmeralda.webp</image:loc>
+      <image:title>Mercedes Classe A 180d — Noleggio premium Costa Smeralda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-mercedes-classe-a180d-consegna-a-domicilio.webp</image:loc>
+      <image:title>Mercedes A 180d con consegna VIP a domicilio — GDIS Rent</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/flotta/honda-sh</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash-125-350-costasmeralda.webp</image:loc>
+      <image:title>Honda SH 125 / 350 — Noleggio scooter Costa Smeralda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp</image:loc>
+      <image:title>Honda SH 350 GDIS Rent — scooter premium Olbia</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/flotta/yamaha-raptor</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-offroadsardegna.webp</image:loc>
+      <image:title>Yamaha Raptor — Noleggio quad off-road Sardegna</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-costasmeraldaoffroad.webp</image:loc>
+      <image:title>Quad Yamaha Raptor — escursioni off-road Costa Smeralda</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/prenotaora</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/chisiamo</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/contatti</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/privacy</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/cookie</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
     <loc>https://gdisrentservice.com/termini</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -11,6 +11,8 @@ import TrustMarquee from "@/components/home/TrustMarquee";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ";
 import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
+import LocalitaInlineCTA from "@/components/localita/LocalitaInlineCTA";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable";
 import { Link } from "react-router-dom";
 
 const breadcrumbs = [{ name: "San Pantaleo", url: "/noleggio-auto-a-san-pantaleo" }];
@@ -27,8 +29,8 @@ const schema = buildLocalBusinessSchema({
 const SanPantaleoPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto San Pantaleo | Scooter Honda SH | GDIS Rent"
-      description="Noleggio auto e scooter a San Pantaleo ✓ Honda SH ideale per le strade strette del borgo ✓ Consegna diretta ✓ Mercato del giovedì. Prenota WhatsApp H24."
+      title="Noleggio Auto San Pantaleo | Borgo Gallurese e Mercato Giovedì | GDIS Rent"
+      description="Noleggio scooter Honda SH e Fiat Panda a San Pantaleo ✓ Vicoli stretti, mercato del giovedì, rocce di granito ✓ A 15 minuti da Porto Cervo ✓ Consegna nel borgo. WhatsApp H24."
       canonical="/noleggio-auto-a-san-pantaleo"
       breadcrumbs={breadcrumbs}
       jsonLd={schema}
@@ -37,7 +39,7 @@ const SanPantaleoPage = () => (
 
     <LocalitaHeroV2
       name="San Pantaleo"
-      subtitle="Strade strette, mercati artigianali e montagne di granito. Lo scooter è l'unico modo per vivere questo borgo."
+      subtitle="Il borgo bohémien della Gallura: vicoli in pietra, mercatino artigianale del giovedì, rocce di granito che catturano la luce al tramonto. A 15 minuti dalle Marina di Porto Cervo, ma in un altro mondo."
       bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-noleggio-san-pantaleo.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles/gdis-fiatpandacitycar.png?width=600&quality=75"
       vehicleAlt="Honda SH 125 San Pantaleo"
@@ -46,7 +48,7 @@ const SanPantaleoPage = () => (
     <VehicleSpotlight
       tag="Perfetto per il Borgo"
       title="Lo Scooter nelle Strade Strette di San Pantaleo"
-      description="San Pantaleo non è fatto per le auto. Le vie del borgo sono strette, tortuose, e il giovedì mattina — giorno del leggendario mercato artigianale — trovare parcheggio è praticamente impossibile. L'Honda SH 125 è il veicolo perfetto: agile tra i vicoli, parcheggi ovunque, e quando hai voglia di lusso scendi a Porto Cervo in 15 minuti lungo una strada panoramica tra rocce di granito."
+      description="Chi sceglie San Pantaleo come base estiva di solito sa cosa cerca: l'autenticità della Gallura senza rinunciare alla vicinanza con la Costa Smeralda. Ma c'è un dettaglio pratico che molti scoprono solo arrivando: il borgo non è pensato per le auto. Le vie sono strette, in pendenza, lastricate in pietra; il parcheggio nella piazzetta è limitato a poche decine di posti, e il giovedì mattina — giorno del leggendario mercato artigianale che attira centinaia di visitatori da tutta la costa — trovare un posto auto entro le 11:00 è un'impresa. L'Honda SH 125 risolve tutto: si infila nei vicoli senza graffiare gli specchietti, parcheggi a 30 metri da Café Nina senza pagare, e quando vuoi scendere a Porto Cervo per cena al Gianni Pedrinelli o al Sottovento, ci arrivi in 15 minuti di strada panoramica tra le rocce di granito che danno il nome a Capo Ferro. Per chi viaggia in coppia o con bambini, la Fiat Panda Hybrid è il compromesso ideale: stretta abbastanza per le strade del borgo, comoda per le escursioni di un'intera giornata verso Cala Liscia Ruja o l'arcipelago di La Maddalena. Per gli avventurosi, il quad Yamaha Raptor 700 apre l'entroterra gallurese: sentieri sterrati, vecchi nuraghi, panorami che le auto non vedono mai. Consegniamo direttamente al tuo agriturismo o alla casa in affitto a San Pantaleo."
       image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp"
       imageAlt="Strade di San Pantaleo"
       reverse
@@ -63,6 +65,8 @@ const SanPantaleoPage = () => (
         </span>
       </div>
     </VehicleSpotlight>
+
+    <LocalitaInlineCTA name="San Pantaleo" />
 
     <BentoSpots
       name="San Pantaleo"
@@ -101,6 +105,11 @@ const SanPantaleoPage = () => (
         { label: "Ideale per", value: "Borghi & Vicoli", icon: "use" },
         { label: "Consegna", value: "San Pantaleo", icon: "delivery" },
       ]}
+    />
+
+    <VehicleComparisonTable
+      title="Quale veicolo per San Pantaleo?"
+      subtitle="Scooter per i vicoli del borgo, Panda per le escursioni in coppia."
     />
 
     <LocalitaTrafficTips
@@ -182,17 +191,29 @@ const SanPantaleoPage = () => (
               <Link to="/flotta/yamaha-raptor" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Yamaha Raptor 700</Link>. Serve la patente B.</>
           ),
         },
+        {
+          q: "Conviene una Panda o uno scooter per chi soggiorna in agriturismo fuori dal centro?",
+          a: "Dipende dalla strada di accesso. Se l'agriturismo è in salita su sterrato o in zona Capannoni-Capo Ferro, la Panda è più pratica: i bagagli, la spesa, le giornate di pioggia (sì, capitano anche d'estate) sono più gestibili. Se sei a 5 minuti dal centro su strada asfaltata, lo scooter ti dà più libertà e zero stress di parcheggio in piazzetta. Per soggiorni oltre la settimana valutiamo combo a tariffa scontata.",
+        },
+        {
+          q: "Si può guidare a San Pantaleo dopo gli aperitivi serali in piazzetta?",
+          a: "Sconsigliato come ovunque in Italia: limite alcolemico 0.5 g/l, controlli frequenti specie nei weekend estivi. Soluzione pratica: l'agriturismo Li Paràuli è a 5 minuti, molti B&B sono dentro il borgo, e per Porto Cervo conviene il taxi (numero unico Olbia-Costa Smeralda) oppure rientrare presto.",
+        },
       ]}
     />
 
     <section className="py-16 bg-muted/20">
-      <div className="container px-4 text-center">
-        <p className="text-lg text-muted-foreground">
-          Da San Pantaleo scendi verso{" "}
+      <div className="container px-4 max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          San Pantaleo è la base perfetta per chi vuole il meglio di entrambi i mondi: il giorno tra le calette
+          esclusive di{" "}
           <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Cervo
           </Link>{" "}
-          per lo shopping di lusso e la Marina — 15 minuti di curve panoramiche.
+          (15 minuti di curve panoramiche) e la sera nel borgo, dove il rumore dei locali alla moda non arriva. In 25
+          minuti scendi anche a Porto Rotondo e in 35 raggiungi i pini di San Teodoro. Il giovedì mattina, però, dedicalo
+          al mercato: prendi lo scooter, parti presto, gira tra i banchi di tessuti, ceramiche e culurgiones, e fermati
+          per pranzo al Giagoni. È l'esperienza che racconterai quando torni a casa.
         </p>
       </div>
     </section>

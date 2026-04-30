@@ -1,9 +1,9 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Upload, X } from "lucide-react";
-import { useCallback, useRef } from "react";
+import { Upload, X, AlertCircle } from "lucide-react";
+import { useCallback, useRef, useState } from "react";
 import { toast } from "sonner";
-import { validateFile } from "@/lib/validators";
+import { emailSchema, phoneSchema, codiceFiscaleSchema, validateFile } from "@/lib/validators";
 
 type DriverData = {
   email: string; telefono: string;
@@ -32,7 +32,7 @@ const FileDropZone = ({
   const handleFile = useCallback(
     (f: File) => {
       const result = validateFile(f);
-      if (!result.ok) {
+      if ("error" in result) {
         toast.error(result.error);
         return;
       }
@@ -92,10 +92,47 @@ const FileDropZone = ({
   );
 };
 
+type FieldErrors = {
+  email?: string;
+  telefono?: string;
+  codiceFiscale?: string;
+};
+
+const InlineError = ({ message }: { message?: string }) =>
+  message ? (
+    <p className="flex items-center gap-1.5 text-xs text-destructive mt-1">
+      <AlertCircle size={12} />
+      {message}
+    </p>
+  ) : null;
+
 const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) => {
+  const [touched, setTouched] = useState<Record<keyof FieldErrors, boolean>>({
+    email: false,
+    telefono: false,
+    codiceFiscale: false,
+  });
+
   const update = (field: keyof DriverData, value: string | File | null) => {
     onChange({ ...data, [field]: value });
   };
+
+  const errors: FieldErrors = {};
+  if (touched.email && data.email.length > 0) {
+    const r = emailSchema.safeParse(data.email);
+    if (!r.success) errors.email = r.error.issues[0]?.message;
+  }
+  if (touched.telefono && data.telefono.length > 0) {
+    const r = phoneSchema.safeParse(data.telefono);
+    if (!r.success) errors.telefono = r.error.issues[0]?.message;
+  }
+  if (touched.codiceFiscale && data.codiceFiscale.length > 0) {
+    const r = codiceFiscaleSchema.safeParse(data.codiceFiscale);
+    if (!r.success) errors.codiceFiscale = r.error.issues[0]?.message;
+  }
+
+  const inputClass = (hasError?: string) =>
+    `bg-background ${hasError ? "border-destructive focus-visible:ring-destructive" : ""}`;
 
   return (
     <div>
@@ -114,8 +151,12 @@ const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) =>
               placeholder="mario@email.com"
               value={data.email}
               onChange={(e) => update("email", e.target.value)}
-              className="bg-background"
+              onBlur={() => setTouched((t) => ({ ...t, email: true }))}
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? "email-error" : undefined}
+              className={inputClass(errors.email)}
             />
+            <InlineError message={errors.email} />
           </div>
           <div className="space-y-2">
             <Label htmlFor="telefono" className="text-sm font-medium text-foreground">
@@ -127,8 +168,12 @@ const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) =>
               placeholder="+39 333 1234567"
               value={data.telefono}
               onChange={(e) => update("telefono", e.target.value)}
-              className="bg-background"
+              onBlur={() => setTouched((t) => ({ ...t, telefono: true }))}
+              aria-invalid={!!errors.telefono}
+              aria-describedby={errors.telefono ? "telefono-error" : undefined}
+              className={inputClass(errors.telefono)}
             />
+            <InlineError message={errors.telefono} />
           </div>
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="codiceFiscale" className="text-sm font-medium text-foreground">
@@ -140,8 +185,12 @@ const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) =>
               placeholder="RSSMRA85M01F979X"
               value={data.codiceFiscale}
               onChange={(e) => update("codiceFiscale", e.target.value)}
-              className="bg-background"
+              onBlur={() => setTouched((t) => ({ ...t, codiceFiscale: true }))}
+              aria-invalid={!!errors.codiceFiscale}
+              aria-describedby={errors.codiceFiscale ? "cf-error" : undefined}
+              className={inputClass(errors.codiceFiscale)}
             />
+            <InlineError message={errors.codiceFiscale} />
           </div>
         </div>
 

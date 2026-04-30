@@ -8,6 +8,7 @@ import {
   BUSINESS_PHONE,
   BUSINESS_PHONE_WHATSAPP,
 } from "@/lib/siteSchema";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const Contatti = () => {
   const breadcrumbs = [{ name: "Contatti", url: "/contatti" }];
@@ -70,6 +71,7 @@ const Contatti = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-primary hover:underline"
+                  onClick={() => trackWhatsAppClick("contatti_card")}
                 >
                   +39 352 045 9150
                 </a>
@@ -123,6 +125,7 @@ const Contatti = () => {
                   )}`}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => trackWhatsAppClick("contatti_cta")}
                 >
                   Scrivici su WhatsApp
                 </a>

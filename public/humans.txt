@@ -1,0 +1,11 @@
+/* TEAM */
+Owner: GDIS Service S.R.L.
+Site: https://gdisrentservice.com
+Location: Olbia, Sardegna, Italia
+Contact: info@gdisrentservice.com
+
+/* SITE */
+Language: Italian
+Standards: HTML5, CSS3, JSON-LD
+Components: React, Vite, TailwindCSS, Supabase
+Hosting: Vercel

@@ -6,6 +6,7 @@ import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import FaqSection from "@/components/chisiamo/FaqSection";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const gdisLogo = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 const heroUrl =
@@ -304,6 +305,7 @@ const ChiSiamo = () => {
                     href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20info%20su%20noleggio%20VIP%20Car"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick("chisiamo_vip_car")}
                   >
                     <WhatsAppIcon className="mr-2 h-5 w-5" size={20} /> Richiedi VIP Car su WhatsApp
                   </a>
@@ -372,6 +374,7 @@ const ChiSiamo = () => {
                     href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20trasporto%20merci"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick("chisiamo_trasporto_merci")}
                   >
                     <WhatsAppIcon className="mr-2 h-4 w-4" size={16} /> WhatsApp
                   </a>
@@ -452,7 +455,12 @@ const ChiSiamo = () => {
                 variant="ghost"
                 className="text-primary-foreground/50 hover:text-primary-foreground hover:bg-primary-foreground/5 rounded-full"
               >
-                <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/393520459150"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("chisiamo_footer_cta")}
+                >
                   <WhatsAppIcon className="mr-2 h-4 w-4" size={16} /> Oppure contattaci su WhatsApp
                 </a>
               </Button>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, AlertCircle } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -18,9 +18,32 @@ type Props = {
 
 const SEDE_LABEL = "Sede GDIS Rent — Olbia";
 
+const InlineError = ({ message }: { message?: string }) =>
+  message ? (
+    <p className="flex items-center gap-1.5 text-xs text-destructive mt-1">
+      <AlertCircle size={12} />
+      {message}
+    </p>
+  ) : null;
+
 const PickupDropoffStep = ({ data, onChange }: Props) => {
+  const [touched, setTouched] = useState({
+    address: false,
+    pickupTime: false,
+    dropoffTime: false,
+  });
+
   const update = (partial: Partial<PickupDropoffData>) =>
     onChange({ ...data, ...partial });
+
+  const addressError =
+    touched.address && data.pickupLocation === "custom" && data.pickupCustomAddress.trim().length === 0
+      ? "Inserisci l'indirizzo di ritiro"
+      : undefined;
+  const pickupTimeError =
+    touched.pickupTime && data.pickupTime.length === 0 ? "Seleziona un orario di ritiro" : undefined;
+  const dropoffTimeError =
+    touched.dropoffTime && data.dropoffTime.length === 0 ? "Seleziona un orario di riconsegna" : undefined;
 
   return (
     <div>
@@ -61,12 +84,17 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
           </RadioGroup>
 
           {data.pickupLocation === "custom" && (
-            <Input
-              placeholder="Inserisci indirizzo di ritiro (es. Aeroporto di Olbia)"
-              value={data.pickupCustomAddress}
-              onChange={(e) => update({ pickupCustomAddress: e.target.value })}
-              className="mt-2"
-            />
+            <div>
+              <Input
+                placeholder="Inserisci indirizzo di ritiro (es. Aeroporto di Olbia)"
+                value={data.pickupCustomAddress}
+                onChange={(e) => update({ pickupCustomAddress: e.target.value })}
+                onBlur={() => setTouched((t) => ({ ...t, address: true }))}
+                aria-invalid={!!addressError}
+                className={`mt-2 ${addressError ? "border-destructive focus-visible:ring-destructive" : ""}`}
+              />
+              <InlineError message={addressError} />
+            </div>
           )}
 
           <div className="space-y-2">
@@ -78,7 +106,11 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
               type="time"
               value={data.pickupTime}
               onChange={(e) => update({ pickupTime: e.target.value })}
+              onBlur={() => setTouched((t) => ({ ...t, pickupTime: true }))}
+              aria-invalid={!!pickupTimeError}
+              className={pickupTimeError ? "border-destructive focus-visible:ring-destructive" : ""}
             />
+            <InlineError message={pickupTimeError} />
           </div>
         </div>
 
@@ -105,7 +137,11 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
               type="time"
               value={data.dropoffTime}
               onChange={(e) => update({ dropoffTime: e.target.value })}
+              onBlur={() => setTouched((t) => ({ ...t, dropoffTime: true }))}
+              aria-invalid={!!dropoffTimeError}
+              className={dropoffTimeError ? "border-destructive focus-visible:ring-destructive" : ""}
             />
+            <InlineError message={dropoffTimeError} />
           </div>
         </div>
       </div>

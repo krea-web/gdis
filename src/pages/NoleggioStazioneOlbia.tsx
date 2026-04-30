@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
+import ConsegnaVipExplainer from "@/components/home/ConsegnaVipExplainer";
 import { Link } from "react-router-dom";
 import { TrainFront, Route, Bus } from "lucide-react";
 import { motion } from "framer-motion";
@@ -272,6 +273,8 @@ const NoleggioStazioneOlbia = () => {
           </p>
         </div>
       </section>
+
+      <ConsegnaVipExplainer />
 
       <LocalitaFAQ name="Stazione Olbia" faqs={faqs} emitSchema />
 

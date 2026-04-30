@@ -7,21 +7,14 @@ const STORAGE_KEY = "gdis-cookie-consent";
 
 type ConsentChoice = "accepted" | "rejected";
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-    dataLayer?: unknown[];
-  }
-}
-
 function updateConsent(choice: ConsentChoice) {
   const granted = choice === "accepted";
   if (typeof window === "undefined") return;
   window.dataLayer = window.dataLayer || [];
   if (!window.gtag) {
-    window.gtag = function gtag() {
-      window.dataLayer!.push(arguments);
-    } as typeof window.gtag;
+    window.gtag = function (...args: unknown[]) {
+      window.dataLayer!.push(args);
+    } as Window["gtag"];
   }
   window.gtag("consent", "update", {
     ad_storage: granted ? "granted" : "denied",

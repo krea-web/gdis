@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const initialFaqs = [
   {
@@ -87,7 +88,10 @@ const FaqSection = () => {
                 </p>
                 <Button
                   className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full py-6 group shadow-md hover:shadow-lg transition-all"
-                  onClick={() => window.open("https://wa.me/393520459150", "_blank")}
+                  onClick={() => {
+                    trackWhatsAppClick("faq_chisiamo");
+                    window.open("https://wa.me/393520459150", "_blank");
+                  }}
                 >
                   <WhatsAppIcon className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" size={20} />
                   Chatta con noi

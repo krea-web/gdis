@@ -82,18 +82,27 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
 
       {/* Mobile bottom bar */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 glass border-t border-border px-4 py-3">
-        <div className="flex items-center justify-between">
-          <div>
-            {booking.vehicle && (
-              <p className="text-sm font-medium text-foreground">{booking.vehicle.name}</p>
-            )}
-            {totalPrice > 0 ? (
-              <p className="font-display text-xl font-bold text-primary">€{totalPrice}</p>
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            {booking.vehicle ? (
+              <>
+                <p className="text-sm font-medium text-foreground truncate">{booking.vehicle.name}</p>
+                {totalPrice > 0 ? (
+                  <>
+                    <p className="font-display text-xl font-bold text-primary leading-tight">€{totalPrice}</p>
+                    <p className="text-[11px] text-muted-foreground leading-snug">
+                      €{ratePerDay}/g × {days} {days === 1 ? "giorno" : "giorni"} · assicurazione inclusa
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-xs text-muted-foreground">Scegli le date per vedere il preventivo</p>
+                )}
+              </>
             ) : (
               <p className="text-sm text-muted-foreground">Seleziona un veicolo</p>
             )}
           </div>
-          <div className="flex gap-1">
+          <div className="flex gap-1 shrink-0">
             {stepsInfo.map((s, i) => (
               <div
                 key={i}

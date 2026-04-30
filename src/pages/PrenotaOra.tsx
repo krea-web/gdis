@@ -10,6 +10,7 @@ import type { PickupDropoffData } from "@/components/booking/PickupDropoffStep";
 import SignatureStep from "@/components/booking/SignatureStep";
 import StickyQuote from "@/components/booking/StickyQuote";
 import TurnstileWidget from "@/components/booking/TurnstileWidget";
+import ExitIntentDialog from "@/components/booking/ExitIntentDialog";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,14 +19,15 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ArrowLeft, ArrowRight, Check, CheckCircle2, Loader2, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, CheckCircle2, Loader2, Phone, Star } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { type Vehicle } from "@/hooks/useVehicles";
 import { invokeN8nProxy, type CreateBookingResponse } from "@/lib/n8nProxy";
 import { driverSchema, pickupDropoffSchema } from "@/lib/validators";
 import { useNavigate } from "react-router-dom";
-import { trackBookingStarted, trackBookingCompleted } from "@/lib/analytics";
+import { trackBookingStarted, trackBookingCompleted, trackWhatsAppClick } from "@/lib/analytics";
 
 /* ── Types ─────────────────────────────────── */
 
@@ -396,6 +398,8 @@ const PrenotaOra = () => {
         </div>
       </div>
 
+      <ExitIntentDialog disabled={showSuccess || step >= 5} />
+
       {/* Success Dialog */}
       <Dialog open={showSuccess} onOpenChange={setShowSuccess}>
         <DialogContent className="sm:max-w-md text-center">
@@ -430,6 +434,32 @@ const PrenotaOra = () => {
             >
               Torna alla Home
             </Button>
+          </div>
+
+          <div className="mt-6 pt-5 border-t border-border">
+            <p className="text-xs text-muted-foreground mb-3">
+              Domande sulla prenotazione? Siamo disponibili H24:
+            </p>
+            <div className="flex flex-col sm:flex-row gap-2 justify-center">
+              <a
+                href="tel:+393520459150"
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-primary hover:underline"
+              >
+                <Phone size={14} />
+                +39 352 045 9150
+              </a>
+              <span className="hidden sm:inline text-muted-foreground">·</span>
+              <a
+                href="https://wa.me/393520459150?text=Ciao%2C%20ho%20appena%20prenotato%20e%20vorrei%20info"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("booking_success_dialog")}
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-[#25D366] hover:underline"
+              >
+                <WhatsAppIcon size={14} />
+                WhatsApp
+              </a>
+            </div>
           </div>
         </DialogContent>
       </Dialog>

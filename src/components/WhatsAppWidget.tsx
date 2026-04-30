@@ -7,7 +7,7 @@ const WhatsAppWidget = () => {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackWhatsAppClick("floating_widget")}
-      className="fixed bottom-20 md:bottom-6 right-6 z-50 flex items-center justify-center w-15 h-15 rounded-full bg-[#25D366] shadow-xl animate-float-pulse"
+      className="fixed bottom-20 md:bottom-6 right-6 z-50 flex items-center justify-center w-15 h-15 rounded-full bg-[#25D366] shadow-xl animate-float-pulse drop-shadow-[0_3px_8px_rgba(0,0,0,0.25)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#25D366]"
       style={{ width: 60, height: 60 }}
       aria-label="Contattaci su WhatsApp"
     >

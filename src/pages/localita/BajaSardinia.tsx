@@ -11,6 +11,8 @@ import TrustMarquee from "@/components/home/TrustMarquee";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ";
 import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
+import LocalitaInlineCTA from "@/components/localita/LocalitaInlineCTA";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable";
 import { Link } from "react-router-dom";
 
 const breadcrumbs = [{ name: "Baja Sardinia", url: "/noleggio-auto-a-baja-sardinia" }];
@@ -27,8 +29,8 @@ const schema = buildLocalBusinessSchema({
 const BajaSardiniaPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto Baja Sardinia | Scooter Phi Beach Ritual | GDIS Rent"
-      description="Noleggio auto e scooter Baja Sardinia ✓ Honda SH per Phi Beach e Ritual ✓ Zero problemi parcheggio ✓ Consegna in hotel. Prenota WhatsApp H24."
+      title="Noleggio Quad e Scooter Baja Sardinia | Phi Beach e Capo Ferro | GDIS Rent"
+      description="Noleggio Honda SH e quad Yamaha a Baja Sardinia ✓ Phi Beach, Ritual Club e sterrati di Capo Ferro ✓ Parcheggio gratis nelle aree moto ✓ Consegna VIP in hotel. WhatsApp H24."
       canonical="/noleggio-auto-a-baja-sardinia"
       breadcrumbs={breadcrumbs}
       jsonLd={schema}
@@ -37,7 +39,7 @@ const BajaSardiniaPage = () => (
 
     <LocalitaHeroV2
       name="Baja Sardinia"
-      subtitle="Phi Beach, Ritual Club e tramonti leggendari. In scooter è tutto più bello — e senza traffico."
+      subtitle="Tramonti dorati al Phi Beach, notti elettroniche al Ritual nel castello, sterrati di Capo Ferro al mattino. Lo scooter è il filo che tiene insieme la giornata perfetta — l'auto, in alta stagione, ti farebbe perdere tutto."
       bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-noleggio-baja-sardinia.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles/gdis-fiatpandacitycar.png?width=600&quality=75"
       vehicleAlt="Honda SH 350 Baja Sardinia"
@@ -46,7 +48,7 @@ const BajaSardiniaPage = () => (
     <VehicleSpotlight
       tag="L'Unica Scelta Intelligente"
       title="Lo Scooter È l'Unico Modo di Vivere Baja Sardinia"
-      description="Baja Sardinia in estate è un paradiso — ma il traffico è feroce. Al tramonto, quando tutti puntano verso il Phi Beach per il sunset dj set, la strada si paralizza. In auto rischi di perderti il tramonto in coda. Con l'Honda SH arrivi in 5 minuti, parcheggi gratis nell'area moto vicino all'ingresso, e ti godi lo spettacolo. Dopo? In 5 minuti sei a Porto Cervo per cena, e poi torni al Ritual Club per ballare. Zero stress, zero parcheggio, massima libertà."
+      description="Baja Sardinia ha una geografia perfida per le auto. La strada principale è una sola, stretta e tortuosa; la conca naturale del paese funziona come un imbuto; il Phi Beach è in cima a un promontorio raggiungibile da una stradina che non perdona errori di calcolo sull'orario. Risultato: in alta stagione, da metà luglio a fine agosto, chi sceglie l'auto rischia di passare due ore al giorno in coda — e di perdersi proprio le cose per cui è venuto qui. Lo scooter Honda SH 350 cambia totalmente l'equazione. La salita verso il Phi Beach con i suoi 28 cavalli la fai senza sforzo anche in due, parcheggi gratis nell'area moto a 80 metri dall'ingresso (gli automobilisti pagano 15-20 euro nel parcheggio satellite e camminano 800 metri), e quando comincia il dj set sei già seduto al cocktail bar invece che ancora al volante. Dopo il tramonto, in 5 minuti scendi alla Promenade du Port di Porto Cervo per cena al Sottovento o al Pepero, e a mezzanotte risali al Ritual Club nel castello senza il dramma del parcheggio. Per chi non ha la patente A2 o A, l'Honda SH 125 (guidabile con patente B) fa esattamente lo stesso lavoro con un po' meno potenza in salita. Per chi vuole esplorare gli sterrati di Capo Ferro al mattino — vista a 360° sull'arcipelago di La Maddalena — il quad Yamaha Raptor 700 è l'arma giusta. Consegniamo direttamente all'hotel, al residence, o al beach club di tua scelta."
       image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp"
       imageAlt="Tramonto Baja Sardinia Phi Beach"
       reverse
@@ -63,6 +65,8 @@ const BajaSardiniaPage = () => (
         </span>
       </div>
     </VehicleSpotlight>
+
+    <LocalitaInlineCTA name="Baja Sardinia" />
 
     <BentoSpots
       name="Baja Sardinia"
@@ -108,6 +112,11 @@ const BajaSardiniaPage = () => (
         { label: "Ideale per", value: "Night & Sunset", icon: "use" },
         { label: "Consegna", value: "Hotel / Residence", icon: "delivery" },
       ]}
+    />
+
+    <VehicleComparisonTable
+      title="Quale veicolo per Baja Sardinia?"
+      subtitle="Scooter per il Phi Beach senza coda, quad per gli sterrati di Capo Ferro."
     />
 
     <LocalitaTrafficTips
@@ -188,20 +197,37 @@ const BajaSardiniaPage = () => (
         {
           q: "Quale scooter consigliate per Baja Sardinia?",
           a: (
-            <>L'<Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Honda SH 350</Link> per chi ha la patente A2/A e vuole più potenza per la salita verso Phi Beach. L'SH 125 per chi ha solo la patente B.</>
+            <>L'<Link to="/flotta/honda-sh" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Honda SH 350</Link> per chi ha la patente A2/A e vuole più potenza per la salita verso Phi Beach (specie in due). L'SH 125 per chi ha solo la patente B: più che sufficiente in solitaria, un po' affaticato in due con bagagli.</>
           ),
+        },
+        {
+          q: "Conviene cenare a Porto Cervo o a Baja Sardinia?",
+          a: "Dipende dal budget e dall'occasione. Baja ha un'offerta più informale e a prezzi mediamente inferiori (ottimi La Tartaruga per la pizza, Bar La Piazzetta per l'aperitivo). Porto Cervo è la scelta per le serate evento (Gianni Pedrinelli, Sottovento). Il vantaggio dello scooter: in 5 minuti spostare la decisione. Molti dei nostri clienti aperitivano a Baja, scendono per cena a Porto Cervo, risalgono al Ritual per la notte.",
+        },
+        {
+          q: "C'è un'alternativa al Phi Beach per il tramonto?",
+          a: "Sì, e meno affollata: la Spiaggia dei Tre Monti, raggiungibile in 10 minuti di scooter dal centro di Baja. Il punto panoramico in alto sul sentiero offre una vista spettacolare sull'arcipelago di La Maddalena con luce dorata simile al Phi, ma senza la folla. È il consiglio che diamo ai clienti che vogliono il tramonto perfetto senza ressa.",
         },
       ]}
     />
 
     <section className="py-16 bg-muted/20">
-      <div className="container px-4 text-center">
-        <p className="text-lg text-muted-foreground">
-          Da Baja Sardinia in 5 minuti di scooter sei a{" "}
+      <div className="container px-4 max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          Baja Sardinia funziona meglio se la pensi come parte di un sistema. In 5 minuti di scooter sei a{" "}
           <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Porto Cervo
           </Link>{" "}
-          per lo shopping di lusso e la Marina — il combo perfetto.
+          per lo shopping della Promenade e i ristoranti della Marina; in 15 minuti sali a{" "}
+          <Link to="/noleggio-auto-a-san-pantaleo" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
+            San Pantaleo
+          </Link>{" "}
+          per il mercato del giovedì e la cucina autentica del borgo gallurese; in 30 minuti raggiungi le calette
+          dell'arcipelago di La Maddalena partendo da Palau. Per chi sceglie Baja come base, il segreto è non
+          trattarla come un'isola: muoversi è facile e veloce, e ogni località vicina aggiunge un tassello diverso
+          alla vacanza. Lo scooter è la chiave che apre tutto questo senza spese extra di parcheggio o stress da
+          coda. Per soggiorni lunghi (settimanali o quindicinali) consigliamo formula combo: scooter sempre + auto a
+          chiamata per le giornate di pioggia o le escursioni a lungo raggio.
         </p>
       </div>
     </section>

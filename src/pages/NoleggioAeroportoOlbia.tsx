@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
+import ConsegnaVipExplainer from "@/components/home/ConsegnaVipExplainer";
 import { Link } from "react-router-dom";
 import { Plane, Clock, Car, AlertTriangle } from "lucide-react";
 import { motion } from "framer-motion";
@@ -277,6 +278,8 @@ const NoleggioAeroportoOlbia = () => {
           </div>
         </div>
       </section>
+
+      <ConsegnaVipExplainer />
 
       <LocalitaFAQ name="Aeroporto Olbia (OLB)" faqs={faqs} emitSchema />
 

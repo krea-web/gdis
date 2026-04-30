@@ -11,6 +11,8 @@ import TrustMarquee from "@/components/home/TrustMarquee";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ";
 import Recensioni from "@/components/home/Recensioni";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
+import LocalitaInlineCTA from "@/components/localita/LocalitaInlineCTA";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable";
 import { Link } from "react-router-dom";
 
 const breadcrumbs = [{ name: "San Teodoro", url: "/noleggio-auto-a-san-teodoro" }];
@@ -24,8 +26,8 @@ const schema = buildLocalBusinessSchema({
 const SanTeodoroPage = () => (
   <>
     <SEOHead
-      title="Noleggio Auto San Teodoro | Scooter, Quad, City Car | GDIS Rent"
-      description="Noleggio auto San Teodoro ✓ Honda SH, Fiat Panda, quad Yamaha ✓ Consegna in hotel o villa ✓ La Cinta e Ambra Night vicini. Prenota WhatsApp H24."
+      title="Noleggio Scooter e Auto San Teodoro | La Cinta e Brandinchi | GDIS Rent"
+      description="Noleggio scooter Honda SH, Fiat Panda e quad a San Teodoro ✓ La Cinta a 5 km, Cala Brandinchi a 8 km ✓ Consegna in hotel, B&B o residence ✓ Parcheggio gratis nelle aree moto. WhatsApp H24."
       canonical="/noleggio-auto-a-san-teodoro"
       breadcrumbs={breadcrumbs}
       jsonLd={schema}
@@ -34,7 +36,7 @@ const SanTeodoroPage = () => (
 
     <LocalitaHeroV2
       name="San Teodoro"
-      subtitle="La Cinta, movida e spiagge infinite. Il tuo Honda SH ti aspetta per un'estate senza traffico."
+      subtitle="5 km di sabbia bianca alla Cinta, fenicotteri rosa nello stagno, e la movida di Ambra Night a 200 metri. Lo scooter è la chiave per goderti tutto senza perdere ore in coda."
       bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-noleggio-san-teodoro.webp"
       vehicleImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/render/image/public/vehicles/gdis-fiatpandacitycar.png?width=600&quality=75"
       vehicleAlt="Honda SH 125 San Teodoro"
@@ -43,7 +45,7 @@ const SanTeodoroPage = () => (
     <VehicleSpotlight
       tag="Agilità Urbana"
       title="Lo Scooter Batte il Traffico di San Teodoro"
-      description="In estate, San Teodoro si riempie. I parcheggi della Cinta si esauriscono presto, la SS131 è un calvario nel weekend. Con l'Honda SH 125 tutto cambia: parcheggi gratis nelle aree moto delle spiagge, sgusci nel traffico in secondi, e raggiungi Cala Brandinchi in un lampo. Il bello della Sardegna è la libertà, e lo scooter te la regala."
+      description="Da fine giugno alla seconda settimana di settembre, San Teodoro cambia faccia. Le auto si moltiplicano per dieci, il parcheggio della Cinta si esaurisce entro le 9:30, la SS131 verso Olbia diventa un serpente di lamiera nel weekend. Per chi viene qui in vacanza, scegliere lo scooter Honda SH 125 non è una preferenza: è il modo più intelligente per non rovinarsi le giornate. Con l'SH parcheggi gratis nelle aree moto dedicate all'ingresso della Cinta, di Lu Impostu e di Cala Brandinchi (la cosiddetta 'Tahiti sarda'), salti la coda al casello di accesso, e in 10 minuti scendi al mercatino serale del centro per una passeggiata. Per chi viaggia in famiglia o cerca più protezione, la Fiat Panda Hybrid è una valida alternativa: entra nei vicoli del centro storico, beve poco, e nel weekend ti porta in 25 minuti all'aeroporto di Olbia o in 40 minuti a Cala Coda Cavallo per le calette più nascoste. Per gli amanti dell'avventura, il quad Yamaha Raptor 700 è il biglietto d'ingresso ai sentieri sterrati del Monte Nieddu, dove cascate e piscine naturali aspettano chi sa raggiungerle. Tutti i veicoli vengono consegnati direttamente al tuo hotel, B&B o residence — basta indicarci l'indirizzo su WhatsApp."
       image="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp"
       imageAlt="Spiagge di San Teodoro"
     >
@@ -57,6 +59,8 @@ const SanTeodoroPage = () => (
         <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">Patente B o AM</span>
       </div>
     </VehicleSpotlight>
+
+    <LocalitaInlineCTA name="San Teodoro" />
 
     <BentoSpots
       name="San Teodoro"
@@ -101,6 +105,11 @@ const SanTeodoroPage = () => (
         { label: "Ideale per", value: "Spiagge & Centro", icon: "use" },
         { label: "Consegna", value: "Hotel / B&B", icon: "delivery" },
       ]}
+    />
+
+    <VehicleComparisonTable
+      title="Quale veicolo per San Teodoro?"
+      subtitle="Scooter per le spiagge, Panda per le famiglie, quad per l'entroterra."
     />
 
     <LocalitaTrafficTips
@@ -183,19 +192,36 @@ const SanTeodoroPage = () => (
         },
         {
           q: "Quanto dista l'aeroporto di Olbia da San Teodoro?",
-          a: (<>Solo 25 minuti. Consegniamo all'<Link to="/noleggio-auto-a-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda o al tuo alloggio.</>),
+          a: (<>Solo 25 minuti via SS125. Consegniamo all'<Link to="/noleggio-auto-a-olbia" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">aeroporto di Olbia</Link> Costa Smeralda o direttamente al tuo alloggio a San Teodoro, in base a cosa preferisci.</>),
+        },
+        {
+          q: "Quale strada conviene prendere per Cala Brandinchi?",
+          a: "Da San Teodoro centro, prendi la SP24 in direzione nord per circa 6 km, poi la deviazione per Brandinchi è ben segnalata. In auto sono 12 minuti, in scooter 8. In alta stagione il parcheggio si esaurisce entro le 9:00 per le auto, mentre l'area moto/scooter ha posti tutto il giorno. Va benissimo anche partire la sera per il bagno al tramonto, quando la spiaggia si svuota.",
+        },
+        {
+          q: "Posso andare in spiaggia direttamente in costume con lo scooter?",
+          a: "Per legge no — bisogna indossare casco, scarpe chiuse e maglietta durante la guida. Tieni costume e parei nello scooter (sotto la sella entra un casco e una piccola sacca) o usa un baule. Una volta arrivato in spiaggia, ti cambi tranquillamente lì.",
         },
       ]}
     />
 
     <section className="py-16 bg-muted/20">
-      <div className="container px-4 text-center">
-        <p className="text-lg text-muted-foreground">
-          Da San Teodoro parti verso nord per scoprire le calette segrete di{" "}
+      <div className="container px-4 max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          San Teodoro è il punto perfetto da cui esplorare la costa nord-orientale. Verso nord, in 40 minuti di
+          panoramica costiera raggiungi{" "}
           <Link to="/noleggio-auto-a-golfo-aranci" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
             Golfo Aranci
           </Link>{" "}
-          — perfette con la <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Fiat Panda</Link>.
+          e le sue calette nascoste, comode con la{" "}
+          <Link to="/flotta/fiat-panda" className="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">
+            Fiat Panda
+          </Link>
+          . Verso ovest, l'entroterra di Monte Nieddu nasconde cascate e piscine naturali raggiungibili solo con il
+          quad. Verso sud, in 25 minuti tocchi Budoni e in un'ora la riserva del Capo Comino. Il consiglio
+          dell'esperto: se la tua vacanza è oltre i 5 giorni, alterna due veicoli (es. scooter per i giri brevi e
+          Panda per le escursioni di un'intera giornata) — costa meno di un'auto sola tenuta tutto il tempo, e ti
+          regala libertà reale.
         </p>
       </div>
     </section>
