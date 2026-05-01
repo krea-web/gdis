@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import BentoSpots from "@/components/localita/BentoSpots";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -200,35 +200,44 @@ const OlbiaPage = () => (
 
     <LocalitaInlineCTA name="Olbia" />
 
-    <BentoSpots
+    <LocalitaTopSpots
       name="Olbia"
       spots={[
         {
-          name: "Spiaggia Pittulongu",
-          subtitle: "La spiaggia di Olbia",
-          desc: "A soli 10 minuti dal centro, sabbia bianca e acque turchesi.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-spiaggia-pittulongu-olbia.webp",
-          span: "md:col-span-2 md:row-span-2",
+          name: "Spiaggia di Pittulongu",
+          category: "spiaggia",
+          description:
+            "La spiaggia urbana di Olbia: sabbia bianca, acque turchesi e fondali bassi adatti ai bambini. Comoda perché a soli 10 minuti dal centro città — ideale per un bagno serale dopo il lavoro o per chi ha solo mezza giornata libera.",
+          distance: "10 min dal centro",
+          cost: "Gratis · parking €5/g",
+          bestTime: "Mattina o tardo pomeriggio",
         },
         {
           name: "Corso Umberto",
-          desc: "Il cuore dello shopping e della movida serale olbiese.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-corso-umberto-olbia.webp",
+          category: "centro",
+          description:
+            "L'arteria pedonale del centro di Olbia. Negozi, gelaterie storiche, bar e dehors per l'aperitivo serale. In estate è ZTL dalle 19:00, perfetto per la passeggiata pre-cena con vista sui palazzi liberty.",
+          distance: "Centro città",
+          cost: "Gratis",
+          bestTime: "Sera (ZTL attiva)",
         },
         {
           name: "Basilica di San Simplicio",
-          desc: "Gioiello romanico, simbolo storico della città.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-chiesa-san-simplicio-olbia.webp",
+          category: "monumento",
+          description:
+            "Gioiello del romanico-pisano dell'XI secolo, costruita in granito locale. Custodisce reperti paleocristiani e l'iconografia di San Simplicio, patrono della città. Ingresso libero, ideale per una visita di 30-45 minuti.",
+          distance: "Centro città",
+          cost: "Gratis",
+          bestTime: "Mattina (luce migliore)",
         },
         {
           name: "Porto Istana",
-          desc: "Spiaggia caraibica con vista sull'isola di Tavolara.",
-          image:
-            "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-porto-istana-olbia.webp",
-          span: "md:col-span-2",
+          category: "spiaggia",
+          description:
+            "Spiaggia con sabbia chiarissima e acque turchesi affacciate sull'isola di Tavolara, da cui prende il nome la zona protetta marina. In bassa stagione è quasi deserta; in luglio-agosto arriva presto perché il parcheggio si esaurisce entro le 10:00.",
+          distance: "20 min dal centro",
+          cost: "Gratis · parking €3-5/g",
+          bestTime: "Mattina presto",
         },
       ]}
     />

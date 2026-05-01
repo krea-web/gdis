@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import BentoSpots from "@/components/localita/BentoSpots";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -68,31 +68,44 @@ const SanPantaleoPage = () => (
 
     <LocalitaInlineCTA name="San Pantaleo" />
 
-    <BentoSpots
+    <LocalitaTopSpots
       name="San Pantaleo"
       spots={[
         {
           name: "Mercato del Giovedì",
-          subtitle: "Arte e Tradizione",
-          desc: "Artigianato locale, ceramiche, tessuti sardi e street food. Imperdibile.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-mercatino-san-pantaleo.webp",
-          span: "md:col-span-2 md:row-span-2",
+          category: "evento",
+          description:
+            "Il celebre mercato artigianale che ogni giovedì mattina anima la piazzetta del borgo da metà giugno a metà settembre. Bancarelle di ceramiche galluresi, tessuti tradizionali, gioielli in filigrana, piccolo antiquariato e prodotti gastronomici locali. Il giorno con più affluenza di tutta la Costa Smeralda.",
+          distance: "Piazzetta centrale",
+          cost: "Gratis",
+          bestTime: "Giovedì 9:00-13:00",
         },
         {
           name: "Rocce di Granito",
-          desc: "Formazioni granitiche spettacolari. Tramonto indimenticabile.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-rocce-san-pantaleo.webp",
+          category: "panorama",
+          description:
+            "Le formazioni granitiche che circondano il borgo sono uno dei panorami più caratteristici della Gallura. Imponenti, levigate dal vento e dalla pioggia in milioni di anni. Si raggiungono con sentieri di trekking dolci che partono dal centro. Vista mozzafiato al tramonto, quando il granito diventa rosato.",
+          distance: "5-15 min a piedi",
+          cost: "Gratis",
+          bestTime: "Tramonto",
         },
         {
           name: "Chiesa di San Pantaleo",
-          desc: "La piccola chiesa parrocchiale nel cuore del borgo, cornice delle feste patronali d'estate.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo-chiesa.webp",
+          category: "monumento",
+          description:
+            "Piccola chiesa parrocchiale di origini ottocentesche nel cuore del borgo, dedicata al santo che dà il nome al paese. Cornice delle feste patronali estive (luglio) con processioni in costume gallurese tradizionale. Visita rapida di 15-20 minuti.",
+          distance: "Centro borgo",
+          cost: "Gratis",
+          bestTime: "Mattina o pre-tramonto",
         },
         {
           name: "Il Borgo di San Pantaleo",
-          desc: "Vicoli in pietra, piazzette nascoste e panorami sulle montagne di granito della Gallura.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-san-pantaleo.webp",
-          span: "md:col-span-2",
+          category: "centro",
+          description:
+            "Bohémien e fuori dal tempo, il borgo è composto da vicoli in pietra, piazzette ombreggiate, piccole gallerie d'arte (eredità dei pittori che vi si stabilirono negli anni '70-'80) e botteghe artigianali. Camminata circolare di 30-40 minuti per assaporarlo tutto. Pedonale.",
+          distance: "Centro borgo",
+          cost: "Gratis",
+          bestTime: "Tardo pomeriggio",
         },
       ]}
     />

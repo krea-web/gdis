@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import BentoSpots from "@/components/localita/BentoSpots";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -67,31 +67,44 @@ const PortoRotondoPage = () => (
 
     <LocalitaInlineCTA name="Porto Rotondo" />
 
-    <BentoSpots
+    <LocalitaTopSpots
       name="Porto Rotondo"
       spots={[
         {
           name: "Piazzetta San Marco",
-          subtitle: "Cuore del Borgo",
-          desc: "Anfiteatro con sculture di Andrea Cascella. L'aperitivo perfetto.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-piazzetta-san-marco-porto-rotondo.webp",
-          span: "md:col-span-2 md:row-span-2",
+          category: "centro",
+          description:
+            "Cuore pulsante del borgo: piazza-anfiteatro all'aperto progettata negli anni '60 con sculture in granito di Andrea Cascella. Pedonale, circondata da bar, gallerie e boutique. Il rito dell'aperitivo serale qui è una piccola tradizione locale, con vista sulla Marina.",
+          distance: "Centro Porto Rotondo",
+          cost: "Gratis",
+          bestTime: "Aperitivo (18:00-20:00)",
         },
         {
           name: "Spiaggia di Ira",
-          desc: "Due baie gemelle con acque limpide e fondali per lo snorkeling.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-porto-rotondo-spiaggia-ira.webp",
+          category: "spiaggia",
+          description:
+            "Due baie gemelle separate da una piccola lingua di scogli, acque limpide e fondali rocciosi ideali per snorkeling. Più tranquilla rispetto alle spiagge di Porto Cervo, accessibile anche a piedi dalla Marina con una camminata di 15 minuti. Servizi minimi: meglio portarsi acqua e ombrellone.",
+          distance: "10 min in auto",
+          cost: "Gratis",
+          bestTime: "Mattina (acqua calma)",
         },
         {
           name: "Marina di Porto Rotondo",
-          desc: "Porto turistico elegante con barche a vela e ristoranti sulla banchina.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-marina-porto-rotondo.webp",
+          category: "porto",
+          description:
+            "Tra i porti turistici più grandi del Mediterraneo, con oltre 750 posti barca. Banchina pedonale con yacht, barche a vela, ristoranti sull'acqua e caffè. Passeggiata di un paio di chilometri lungo i pontili, perfetta per la pre-cena. Ingresso libero al pubblico.",
+          distance: "Centro Porto Rotondo",
+          cost: "Gratis",
+          bestTime: "Tardo pomeriggio",
         },
         {
           name: "Punta Volpe",
-          desc: "Litorale selvaggio con calette raggiungibili solo in quad.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-spiaggia-punta-volpe-porto-rotondo.webp",
-          span: "md:col-span-2",
+          category: "natura",
+          description:
+            "Promontorio selvaggio con calette nascoste tra rocce di granito e macchia mediterranea. Le insenature più belle (Marinella, Cala Volpe nord) si raggiungono per piste sterrate non percorribili da auto a noleggio standard — il quad è il mezzo ideale. Per chi è a piedi, sentiero costiero di 30-40 minuti.",
+          distance: "15 min + sterrato",
+          cost: "Gratis",
+          bestTime: "Mattina (luce migliore)",
         },
       ]}
     />

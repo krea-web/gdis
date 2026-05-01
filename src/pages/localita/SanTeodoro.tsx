@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import BentoSpots from "@/components/localita/BentoSpots";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -62,37 +62,53 @@ const SanTeodoroPage = () => (
 
     <LocalitaInlineCTA name="San Teodoro" />
 
-    <BentoSpots
+    <LocalitaTopSpots
       name="San Teodoro"
       spots={[
         {
           name: "Spiaggia La Cinta",
-          subtitle: "5 km di Paradiso",
-          desc: "Sabbia dorata con vista su Tavolara e colonie di fenicotteri rosa.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-la-cinta.webp",
-          span: "md:col-span-2 md:row-span-2",
-        },
-        {
-          name: "Mercatino Serale",
-          subtitle: "Shopping & Tradizione",
-          desc: "Bancarelle artigianali, street food sardo e atmosfera vivace ogni sera d'estate.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-mercatino-serale-san-teodoro.webp",
+          category: "spiaggia",
+          description:
+            "Cinque chilometri di sabbia dorata con vista sull'isola di Tavolara, separata dallo stagno omonimo dove vivono colonie di fenicotteri rosa. La spiaggia simbolo di San Teodoro, perfetta per famiglie grazie ai fondali bassi. In bassa stagione totalmente libera, in agosto i parcheggi si esauriscono entro le 9:30.",
+          distance: "5 min dal centro",
+          cost: "Gratis · parking €5/g",
+          bestTime: "Mattina presto o tramonto",
         },
         {
           name: "Cala Brandinchi",
-          desc: "'Tahiti sarda' — acque trasparenti da raggiungere prima della folla.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-cala-brandinchi.webp",
+          category: "spiaggia",
+          description:
+            "Soprannominata la \"Tahiti sarda\" per le acque trasparentissime su fondali bassissimi. Sabbia bianca finissima, pini marittimi che fanno ombra naturale, vista isole. È un'area protetta con accessi contingentati in alta stagione (giugno-settembre): prenotazione consigliata online.",
+          distance: "12 min in auto",
+          cost: "Accesso €1-3 + parking",
+          bestTime: "Pomeriggio (sole pieno)",
         },
         {
           name: "Spiaggia Lu Impostu",
-          desc: "Laguna poco profonda perfetta per famiglie, con sabbia finissima e acque calme.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-spiaggia-lu-impostu.webp",
-          span: "md:col-span-2",
+          category: "spiaggia",
+          description:
+            "Lunga lingua di sabbia finissima divisa in due da una piccola laguna poco profonda — il posto migliore della costa per famiglie con bambini piccoli. A pochi passi da Cala Brandinchi, condividono lo stesso parcheggio. Fondali sicuri, acque calme tutto il giorno.",
+          distance: "12 min in auto",
+          cost: "Accesso €1-3 + parking",
+          bestTime: "Tutto il giorno",
+        },
+        {
+          name: "Mercatino Serale",
+          category: "evento",
+          description:
+            "Da fine giugno a settembre, ogni sera dalle 19:00 il centro si anima con bancarelle di artigianato sardo, ceramiche, tessuti, piccoli gioielli e street food locale (seadas, panadas, salumi). Atmosfera vivace e adatta anche alle famiglie. Pedonale, accessibile a piedi.",
+          distance: "Centro paese",
+          cost: "Gratis",
+          bestTime: "Sera (19:00 - 24:00)",
         },
         {
           name: "Monte Nieddu",
-          desc: "Cascate e piscine naturali nell'entroterra. Perfette per il quad.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-monte-nieddu.webp",
+          category: "natura",
+          description:
+            "Area di entroterra montano con cascate, piscine naturali in granito scolpito dall'acqua, sentieri ombrosi. Perfetta per chi cerca refrigerio dal mare in pieno agosto. La pista d'accesso è in parte sterrata: ideale per quad o auto a trazione integrale; con la Panda meglio fermarsi al primo parcheggio.",
+          distance: "30 min in auto",
+          cost: "Gratis",
+          bestTime: "Mattina (acqua più fresca)",
         },
       ]}
     />

@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import BentoSpots from "@/components/localita/BentoSpots";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -68,38 +68,53 @@ const BajaSardiniaPage = () => (
 
     <LocalitaInlineCTA name="Baja Sardinia" />
 
-    <BentoSpots
+    <LocalitaTopSpots
       name="Baja Sardinia"
       spots={[
         {
-          name: "Phi Beach",
-          subtitle: "Tramonti Mozzafiato",
-          desc: "Il sunset bar più iconico della Sardegna. Dj set sulle rocce con vista sulle isole.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-phi-beach-baja-sardinia.webp",
-          span: "md:col-span-2 md:row-span-2",
+          name: "Capo Ferro",
+          category: "panorama",
+          description:
+            "Il promontorio simbolo della Gallura nord-est: faro storico in attività dal 1858, scogliere di granito modellate dal vento, panorami che abbracciano l'arcipelago di La Maddalena. Posto perfetto per il tramonto, raggiungibile in auto o scooter fino al piccolo parcheggio, poi 5 minuti a piedi.",
+          distance: "10 min in auto",
+          cost: "Gratis",
+          bestTime: "Tramonto",
         },
         {
-          name: "Ritual Club",
-          subtitle: "Il Club nel Castello",
-          desc: "Il tempio della musica elettronica in Costa Smeralda. Guest dj da Ibiza.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-ritual-baja-sardinia.webp",
-          span: "md:row-span-2",
+          name: "Cala Lunga",
+          category: "spiaggia",
+          description:
+            "Spiaggia naturale incastonata nella macchia mediterranea, raggiungibile via sentiero pedonale di circa 15 minuti dal parcheggio. Acque cristalline, sabbia chiara, scogli su entrambi i lati che la riparano dal vento. Zero folla anche in agosto perché poco segnalata: vero gioiello per chi cerca tranquillità.",
+          distance: "15 min + 15 min sentiero",
+          cost: "Gratis",
+          bestTime: "Mattina/pomeriggio",
         },
         {
           name: "Spiaggia Tre Monti",
-          desc: "Sentiero panoramico con vista mozzafiato sull'arcipelago de La Maddalena.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-spiaggia-dei-tre-monti-baja-sardinia.webp",
+          category: "spiaggia",
+          description:
+            "Spiaggia caratterizzata da tre rilievi granitici sullo sfondo che le danno il nome. Sentiero panoramico in cima ai monti con vista mozzafiato sull'arcipelago de La Maddalena — un'alternativa al Phi Beach per il tramonto, senza folla. Sabbia chiara, acque limpide, fondali rocciosi.",
+          distance: "8 min in auto",
+          cost: "Gratis",
+          bestTime: "Tutto il giorno",
         },
         {
-          name: "Spiaggia di Baja",
-          desc: "Sabbia fine, acqua turchese e tutti i servizi.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-spiaggia-di-baja-sardinia.webp",
+          name: "Spiaggia di Baja Sardinia",
+          category: "spiaggia",
+          description:
+            "La spiaggia centrale del paese, ben attrezzata: sabbia fine, acqua turchese, noleggio ombrelloni e lettini, bar sulla spiaggia, docce. Adatta alle famiglie per la vicinanza ai servizi e i fondali bassi. In alta stagione molto frequentata, ma sempre accessibile a piedi dagli alberghi del centro.",
+          distance: "Centro paese",
+          cost: "Gratis · lettini €15-25",
+          bestTime: "Tutto il giorno",
         },
         {
-          name: "Battistoni Beach",
-          desc: "Cala esclusiva con beach club chic.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/baja-sardinia/gdisrent-battistoni-beach-baja-sardinia.webp",
-          span: "md:col-span-2",
+          name: "Cala Petra Ruja",
+          category: "spiaggia",
+          description:
+            "Una delle cale più affascinanti della Costa Smeralda settentrionale, famosa per la caratteristica sabbia rosata e i fondali bassissimi. Adatta alle famiglie con bambini piccoli. Il nome significa \"pietra rossa\" in gallurese, dalle rocce granitiche che la circondano.",
+          distance: "10 min in auto",
+          cost: "Gratis · parking limitato",
+          bestTime: "Mattina presto",
         },
       ]}
     />

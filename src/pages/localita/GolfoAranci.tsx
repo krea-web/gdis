@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import BentoSpots from "@/components/localita/BentoSpots";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -63,31 +63,44 @@ const GolfoAranciPage = () => (
 
     <LocalitaInlineCTA name="Golfo Aranci" />
 
-    <BentoSpots
+    <LocalitaTopSpots
       name="Golfo Aranci"
       spots={[
         {
           name: "Cala Moresca",
-          subtitle: "Snorkeling Paradise",
-          desc: "Piccola baia protetta con acque cristalline.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-cala-moresca-golfo-aranci.webp",
-          span: "md:col-span-2 md:row-span-2",
+          category: "spiaggia",
+          description:
+            "Piccola baia protetta ai piedi di Capo Figari, raggiungibile a piedi (15 min) o in macchina dal centro. Acque cristalline su fondali rocciosi: una delle migliori zone per lo snorkeling della costa nord-orientale. Servizi minimi, atmosfera selvaggia. Parcheggio limitato, arriva entro le 9:30 in alta stagione.",
+          distance: "10 min in auto",
+          cost: "Gratis · parking limitato",
+          bestTime: "Mattina (mare calmo)",
         },
         {
           name: "Spiaggia Bianca",
-          desc: "Sabbia candida e acque turchesi, una delle spiagge più belle della costa nord-orientale.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-spiaggia-bianca-golfo-aranci.webp",
+          category: "spiaggia",
+          description:
+            "Una delle spiagge più belle della costa nord-orientale: sabbia candida, acque turchesi e fondali bassi adatti alle famiglie. Lunga circa 800 metri, attrezzata con noleggio ombrelloni e bar. Tramonti spettacolari per chi rimane fino a sera. Accesso a piedi dal parcheggio principale.",
+          distance: "12 min in auto",
+          cost: "Gratis · parking €5/g",
+          bestTime: "Tutto il giorno",
         },
         {
           name: "Capo Figari",
-          desc: "Promontorio selvaggio con sentieri panoramici e la storica stazione radio di Marconi.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-capo-figari-golfo-aranci.webp",
+          category: "panorama",
+          description:
+            "Promontorio selvaggio dell'Area Marina Protetta di Tavolara. Sentiero di trekking di 1h30 che porta alla storica stazione radio di Guglielmo Marconi (1932), da cui partirono i primi esperimenti di ponte radio a corte distanze. Vista a 360° sull'arcipelago. Adatto a tutti, ma serve buone scarpe.",
+          distance: "15 min + 1h30 trek",
+          cost: "Gratis",
+          bestTime: "Mattina (caldo gestibile)",
         },
         {
-          name: "Delfini nel Golfo",
-          desc: "Escursioni per avvistare i delfini. Un'esperienza unica.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-delfini-golfo-aranci.webp",
-          span: "md:col-span-2",
+          name: "Avvistamento Delfini",
+          category: "escursione",
+          description:
+            "Il Golfo di Olbia e l'area di Tavolara ospitano una popolazione stabile di tursiopi (delfini comuni). Escursioni in barca dalla Marina di Golfo Aranci durano 2-3 ore con avvistamenti garantiti nella maggior parte dei casi. Includono spesso una sosta bagno in calette accessibili solo via mare.",
+          distance: "Marina centro",
+          cost: "€40-60 a persona",
+          bestTime: "Mattina (8:00-11:00)",
         },
       ]}
     />

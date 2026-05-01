@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import LocalitaHeroV2 from "@/components/localita/LocalitaHeroV2";
 import VehicleSpotlight from "@/components/localita/VehicleSpotlight";
-import BentoSpots from "@/components/localita/BentoSpots";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots";
 import CockpitSpecs from "@/components/localita/CockpitSpecs";
 import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
@@ -65,36 +65,53 @@ const PortoCervoPage = () => (
 
     <LocalitaInlineCTA name="Porto Cervo" />
 
-    <BentoSpots
+    <LocalitaTopSpots
       name="Porto Cervo"
       spots={[
         {
-          name: "Promenade du Port",
-          subtitle: "Shopping & Yacht",
-          desc: "Shopping di lusso, gallerie d'arte e aperitivi vista mega-yacht.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-promenade-du-port.webp",
-          span: "md:col-span-2 md:row-span-2",
+          name: "Marina di Porto Cervo",
+          category: "porto",
+          description:
+            "Una delle marine più esclusive del Mediterraneo, capolavoro di architettura mediterranea progettato negli anni '60 da Luigi Vietti su impulso dell'Aga Khan. Yacht da sogno ormeggiati, gallerie d'arte, boutique e ristoranti vista mare. Ingresso libero, parcheggio satellite.",
+          distance: "Centro Porto Cervo",
+          cost: "Gratis · parking €5-15/g",
+          bestTime: "Tardo pomeriggio (rientro yacht)",
         },
         {
           name: "Chiesa Stella Maris",
-          desc: "Iconica chiesa progettata dall'architetto Michele Busiri Vici, custodisce un dipinto del Mater Dolorosa di El Greco.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-stella-maris.webp",
+          category: "monumento",
+          description:
+            "Iconica chiesa bianca progettata da Michele Busiri Vici nel 1968, riconoscibile per le forme organiche e il campanile asimmetrico. Custodisce un dipinto del Mater Dolorosa attribuito alla scuola di El Greco. Visitabile gratuitamente fuori dagli orari di celebrazione.",
+          distance: "Centro Porto Cervo",
+          cost: "Gratis",
+          bestTime: "Mattina (luce naturale)",
         },
         {
-          name: "Hotel Cala di Volpe",
-          desc: "L'iconico resort 5 stelle che definisce il lusso della Costa Smeralda dal 1963.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-cala-di-volpe.webp",
+          name: "Baia di Cala di Volpe",
+          category: "spiaggia",
+          description:
+            "Una delle baie più iconiche della Costa Smeralda: sabbia chiara, acque turchesi e quel verde della macchia mediterranea che la rende inconfondibile. Accesso pubblico alla spiaggia anche se l'ambiente attorno è esclusivo. Da non perdere il colpo d'occhio dal promontorio.",
+          distance: "15 min in auto",
+          cost: "Gratis · parking limitato",
+          bestTime: "Mattina (mare calmo)",
         },
         {
           name: "Spiaggia del Principe",
-          desc: "Sabbia bianchissima e acque turchesi, una delle più belle del Mediterraneo.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-spiaggia-principe-sardegna.webp",
-          span: "md:col-span-2",
+          category: "spiaggia",
+          description:
+            "Considerata una delle spiagge più belle del Mediterraneo: sabbia bianchissima a granuli fini, acque turchesi e una baia chiusa da scogli granitici. Si arriva con un breve sentiero pedonale dal parcheggio. In agosto arriva entro le 9:00 per trovare posto.",
+          distance: "10 min + 5 min a piedi",
+          cost: "Gratis · parking €10/g",
+          bestTime: "Mattina presto",
         },
         {
-          name: "Pevero Golf Club",
-          desc: "18 buche tra macchia mediterranea e panorami mozzafiato.",
-          image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-porto-cervo-pevero-golf-club.webp",
+          name: "Spiaggia del Pevero",
+          category: "spiaggia",
+          description:
+            "Ampia spiaggia di sabbia chiara incorniciata dalla macchia mediterranea, fondali bassi adatti alle famiglie. Diversa dalla vicina spiaggia del Principe, è più estesa e attrezzata, con bar e noleggio ombrelloni. Perfetta per una giornata intera.",
+          distance: "8 min in auto",
+          cost: "Gratis · parking €10/g",
+          bestTime: "Tutto il giorno",
         },
       ]}
     />
