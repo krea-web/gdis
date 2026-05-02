@@ -9,7 +9,7 @@ import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips";
 import LocalitaNightlife from "@/components/localita/LocalitaNightlife";
 import TrustMarquee from "@/components/home/TrustMarquee";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ";
-import Recensioni from "@/components/home/Recensioni";
+import LocalitaTrustBlock from "@/components/localita/LocalitaTrustBlock";
 import LocalitaCTA from "@/components/localita/LocalitaCTA";
 import LocalitaInlineCTA from "@/components/localita/LocalitaInlineCTA";
 import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable";
@@ -235,7 +235,7 @@ const GolfoAranciPage = () => (
       </div>
     </section>
 
-    <Recensioni />
+    <LocalitaTrustBlock name="Golfo Aranci" />
     <LocalitaCTA name="Golfo Aranci" />
   </>
 );
