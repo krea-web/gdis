@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
-import { Star, ExternalLink, MessageSquarePlus } from "lucide-react";
+import { Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// AGGIORNA con i dati reali del tuo Google Business Profile.
-// Quando hai dati reali, attiva anche lo schema.org AggregateRating mettendo emitSchema su true.
-const RATING_VALUE = "4.9";
-const RATING_COUNT = "100+";
-const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=GDIS+Rent+Service+Olbia#lrd=0x0:0x0,1";
-const GOOGLE_LEAVE_REVIEW_URL = "https://g.page/r/CQ_REPLACE_WITH_REAL_PLACE_ID/review";
+// Dati Google Business Profile reali al 2026-05.
+// Aggiornare RATING_VALUE/RATING_COUNT man mano che arrivano nuove recensioni.
+// Quando le recensioni saranno >= 5, attivare anche lo schema.org AggregateRating
+// mettendo emitSchema su true (Google policy: serve un campione minimo per il rich snippet).
+const RATING_VALUE = "5.0";
+const RATING_COUNT_LABEL = "Cliente verificato Google";
+const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/mmKSjQChHSKX32XU8";
 
 type Props = {
   name: string;
@@ -24,7 +25,7 @@ const LocalitaTrustBlock = ({ name, emitSchema = false }: Props) => {
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: RATING_VALUE,
-          reviewCount: RATING_COUNT.replace(/\+/g, ""),
+          reviewCount: "1",
           bestRating: "5",
         },
       }
@@ -51,30 +52,19 @@ const LocalitaTrustBlock = ({ name, emitSchema = false }: Props) => {
             <span className="text-muted-foreground text-2xl font-medium">/5</span>
           </p>
           <p className="text-sm uppercase tracking-widest text-muted-foreground mb-6">
-            {RATING_COUNT} recensioni verificate su Google
+            {RATING_COUNT_LABEL}
           </p>
 
           <p className="text-base md:text-lg text-foreground/80 max-w-2xl mx-auto mb-8 leading-relaxed">
             I clienti che hanno noleggiato auto, scooter o quad a <span className="text-primary font-semibold">{name}</span>{" "}
-            raccontano la loro esperienza direttamente su Google. Recensioni autentiche, prima e dopo la consegna VIP.
+            raccontano la loro esperienza direttamente su Google. Trasparenza totale, niente filtri.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex justify-center">
             <Button asChild variant="hero" size="lg" className="gap-2">
               <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="h-4 w-4" />
-                Leggi le recensioni Google
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="gap-2 rounded-full"
-            >
-              <a href={GOOGLE_LEAVE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
-                <MessageSquarePlus className="h-4 w-4" />
-                Lascia la tua recensione
+                Vedi GDIS Service SRL su Google
               </a>
             </Button>
           </div>
