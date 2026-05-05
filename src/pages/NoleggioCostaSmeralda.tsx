@@ -8,7 +8,7 @@ import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildLocalBusinessSchema } from "@/lib/siteSchema";
 import TrustMarquee from "@/components/home/TrustMarquee";
-import FleetShowcase from "@/components/home/FleetShowcase";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
@@ -365,9 +365,86 @@ const NoleggioCostaSmeralda = () => {
       />
       <Breadcrumbs items={costaBreadcrumbs} />
       <HeroSection />
-      <TrustMarquee />
+      <TrustMarquee
+        items={[
+          "Costa Smeralda",
+          "Consegna VIP",
+          "Marina & Ville",
+          "Yacht & Hotel",
+          "Servizio 5 stelle",
+          "WhatsApp H24",
+        ]}
+      />
       <DeliverySection />
-      <FleetShowcase />
+      <VehicleComparisonTable
+        title="Quale veicolo scegliere in Costa Smeralda?"
+        subtitle="Dalla city car per le famiglie al quad off-road. Confronto rapido per decidere in base al tuo soggiorno."
+        recommendation={
+          <>
+            <strong className="text-foreground">Scegli in base alla località in cui soggiorni.</strong> Mercedes A
+            180d se la base è Porto Cervo o Porto Rotondo (cambio automatico, comfort autostrada). Honda SH se sei a
+            Baja Sardinia (Phi Beach in 5 min senza coda) o San Pantaleo (vicoli stretti). Yamaha Raptor solo per chi
+            vuole esplorare gli sterrati di Capo Ferro o Punta Volpe. Fiat Panda è il jolly per famiglie che si
+            spostano spesso tra località diverse.
+          </>
+        }
+      />
+      <section className="py-16 md:py-20 bg-muted/20">
+        <div className="container px-4 max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+            Costa Smeralda: 7 località coperte
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            La nostra Consegna VIP raggiunge tutte le località principali della Costa Smeralda e della Gallura
+            costiera nord-orientale. Ogni paese ha la sua identità, la sua flotta consigliata e i suoi consigli
+            pratici di accesso e parcheggio:
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-base text-foreground/85">
+            <li>
+              <Link to="/noleggio-auto-a-porto-cervo" className="text-primary font-medium hover:underline">
+                Porto Cervo
+              </Link>{" "}
+              — Marina, lusso, Pevero
+            </li>
+            <li>
+              <Link to="/noleggio-auto-a-baja-sardinia" className="text-primary font-medium hover:underline">
+                Baja Sardinia
+              </Link>{" "}
+              — Capo Ferro, tramonti
+            </li>
+            <li>
+              <Link to="/noleggio-auto-a-porto-rotondo" className="text-primary font-medium hover:underline">
+                Porto Rotondo
+              </Link>{" "}
+              — Piazzetta, Punta Volpe
+            </li>
+            <li>
+              <Link to="/noleggio-auto-a-san-pantaleo" className="text-primary font-medium hover:underline">
+                San Pantaleo
+              </Link>{" "}
+              — Borgo gallurese
+            </li>
+            <li>
+              <Link to="/noleggio-auto-a-san-teodoro" className="text-primary font-medium hover:underline">
+                San Teodoro
+              </Link>{" "}
+              — La Cinta, movida
+            </li>
+            <li>
+              <Link to="/noleggio-auto-a-golfo-aranci" className="text-primary font-medium hover:underline">
+                Golfo Aranci
+              </Link>{" "}
+              — Porto traghetti
+            </li>
+            <li className="sm:col-span-2">
+              <Link to="/noleggio-auto-a-olbia" className="text-primary font-medium hover:underline">
+                Olbia
+              </Link>{" "}
+              — Hub aeroporto OLB e porto Isola Bianca
+            </li>
+          </ul>
+        </div>
+      </section>
       <CostaFaq />
       <FinalCta />
     </>

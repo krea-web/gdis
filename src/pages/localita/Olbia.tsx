@@ -255,6 +255,16 @@ const OlbiaPage = () => (
     <VehicleComparisonTable
       title="Quale veicolo per Olbia?"
       subtitle="Confronto rapido per scegliere in base al tuo viaggio."
+      show={["panda", "mercedes", "honda", "yamaha"]}
+      recommendation={
+        <>
+          <strong className="text-foreground">Hub strategico della Sardegna nord-orientale.</strong> La Fiat Panda
+          copre l'80% delle esigenze di chi atterra o sbarca a Olbia (famiglie, coppie, bagagli). La Mercedes Classe A
+          è la scelta giusta se hai escursioni quotidiane verso Porto Cervo o San Teodoro: cambio automatico, comfort
+          autostradale. Lo scooter Honda SH è il jolly per chi resta in città: a luglio-agosto, quando il centro si
+          paralizza, è l'unico mezzo che continua a muoversi davvero.
+        </>
+      }
     />
 
     <LocalitaTrafficTips
@@ -332,7 +342,16 @@ const OlbiaPage = () => (
       ]}
     />
 
-    <TrustMarquee />
+    <TrustMarquee
+      items={[
+        "Aeroporto OLB",
+        "Porto Isola Bianca",
+        "Centro Olbia",
+        "Pittulongu",
+        "Tavolara",
+        "Consegna H24",
+      ]}
+    />
 
     <LocalitaFAQ
       name="Olbia"

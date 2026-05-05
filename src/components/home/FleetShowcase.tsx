@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useVehicles, groupByCategory, getLowestRate } from "@/hooks/useVehicles";
 import { Skeleton } from "@/components/ui/skeleton";
+import { VEHICLE_PRICE_FROM } from "@/lib/vehiclePricing";
 
 const SUPABASE_OBJECT = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles";
 
@@ -42,12 +43,7 @@ const categoryMeta: Record<string, { title: string; subtitle: string; descriptio
 
 const DESIRED_ORDER = ["city_car", "premium", "quad", "scooter"];
 
-const FALLBACK_PRICES: Record<string, number> = {
-  city_car: 50,
-  premium: 75,
-  quad: 80,
-  scooter: 40,
-};
+const FALLBACK_PRICES: Record<string, number> = VEHICLE_PRICE_FROM;
 
 const FleetShowcase = () => {
   const { data: vehicles, isLoading } = useVehicles();

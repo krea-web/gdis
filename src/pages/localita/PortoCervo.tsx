@@ -129,6 +129,16 @@ const PortoCervoPage = () => (
     <VehicleComparisonTable
       title="Quale veicolo per Porto Cervo?"
       subtitle="Auto VIP per le serate, scooter per la Promenade. Ecco come scegliere."
+      show={["mercedes", "honda", "panda"]}
+      recommendation={
+        <>
+          <strong className="text-foreground">Tre veicoli per tre momenti diversi.</strong> La Mercedes A 180d con
+          cambio automatico è la scelta naturale per le serate al Sottovento o le cene a Cala di Volpe. Lo scooter
+          Honda SH è la chiave per la Promenade in alta stagione (ZTL pedonale, parcheggio Marina sempre pieno). La
+          Fiat Panda funziona da jolly per chi gestisce bagagli o famiglia. Su richiesta WhatsApp, organizziamo
+          supercar VIP per eventi privati.
+        </>
+      }
     />
 
     <LocalitaTrafficTips
@@ -188,7 +198,16 @@ const PortoCervoPage = () => (
       ]}
     />
 
-    <TrustMarquee />
+    <TrustMarquee
+      items={[
+        "Marina Porto Cervo",
+        "Auto VIP",
+        "Promenade",
+        "Pevero",
+        "Cala di Volpe",
+        "Concierge H24",
+      ]}
+    />
 
     <LocalitaFAQ
       name="Porto Cervo"

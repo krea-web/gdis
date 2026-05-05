@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { Check, X } from "lucide-react";
+import { VEHICLE_PRICE_FROM, type VehicleCategory } from "@/lib/vehiclePricing";
+
+export type ComparisonVehicleKey = "panda" | "mercedes" | "honda" | "yamaha";
 
 type Vehicle = {
+  key: ComparisonVehicleKey;
   name: string;
   to: string;
   patente: string;
@@ -12,8 +16,9 @@ type Vehicle = {
   pricePerDayFrom: number;
 };
 
-const DEFAULT_VEHICLES: Vehicle[] = [
-  {
+const VEHICLE_CATALOG: Record<ComparisonVehicleKey, Vehicle> = {
+  panda: {
+    key: "panda",
     name: "Fiat Panda",
     to: "/flotta/fiat-panda",
     patente: "B",
@@ -21,9 +26,10 @@ const DEFAULT_VEHICLES: Vehicle[] = [
     ztlReady: false,
     bagagliFamiglia: true,
     offRoad: false,
-    pricePerDayFrom: 39,
+    pricePerDayFrom: VEHICLE_PRICE_FROM.city_car,
   },
-  {
+  mercedes: {
+    key: "mercedes",
     name: "Mercedes A 180d",
     to: "/flotta/mercedes-classe-a180d",
     patente: "B",
@@ -31,9 +37,10 @@ const DEFAULT_VEHICLES: Vehicle[] = [
     ztlReady: false,
     bagagliFamiglia: true,
     offRoad: false,
-    pricePerDayFrom: 89,
+    pricePerDayFrom: VEHICLE_PRICE_FROM.premium,
   },
-  {
+  honda: {
+    key: "honda",
     name: "Honda SH",
     to: "/flotta/honda-sh",
     patente: "B / A2",
@@ -41,9 +48,10 @@ const DEFAULT_VEHICLES: Vehicle[] = [
     ztlReady: true,
     bagagliFamiglia: false,
     offRoad: false,
-    pricePerDayFrom: 35,
+    pricePerDayFrom: VEHICLE_PRICE_FROM.scooter,
   },
-  {
+  yamaha: {
+    key: "yamaha",
     name: "Yamaha Raptor",
     to: "/flotta/yamaha-raptor",
     patente: "B",
@@ -51,9 +59,11 @@ const DEFAULT_VEHICLES: Vehicle[] = [
     ztlReady: true,
     bagagliFamiglia: false,
     offRoad: true,
-    pricePerDayFrom: 90,
+    pricePerDayFrom: VEHICLE_PRICE_FROM.quad,
   },
-];
+};
+
+const DEFAULT_KEYS: ComparisonVehicleKey[] = ["panda", "mercedes", "honda", "yamaha"];
 
 const Cell = ({ on }: { on: boolean }) =>
   on ? (
@@ -63,17 +73,22 @@ const Cell = ({ on }: { on: boolean }) =>
   );
 
 type Props = {
-  /** Override opzionale: passare un sottoinsieme o ordine custom dei veicoli */
-  vehicles?: Vehicle[];
+  /** Sottoinsieme/ordine dei veicoli da mostrare. Default: tutti e 4. */
+  show?: ComparisonVehicleKey[];
   title?: string;
   subtitle?: string;
+  /** Riga di consiglio location-specific sotto la tabella (50-100 parole). */
+  recommendation?: React.ReactNode;
 };
 
 const VehicleComparisonTable = ({
-  vehicles = DEFAULT_VEHICLES,
+  show = DEFAULT_KEYS,
   title = "Quale veicolo scegliere?",
   subtitle = "Confronto rapido per decidere in 30 secondi.",
-}: Props) => (
+  recommendation,
+}: Props) => {
+  const vehicles = show.map((k) => VEHICLE_CATALOG[k]);
+  return (
   <section className="py-16 md:py-24 bg-background">
     <div className="container px-4 max-w-5xl mx-auto">
       <div className="text-center mb-10">
@@ -151,8 +166,15 @@ const VehicleComparisonTable = ({
       <p className="text-center text-xs text-muted-foreground mt-4">
         Tariffe indicative dalla bassa stagione. Prezzo finale calcolato sulle date selezionate al momento della prenotazione.
       </p>
+
+      {recommendation && (
+        <div className="mt-8 max-w-3xl mx-auto bg-primary/5 border border-primary/15 rounded-2xl p-5 md:p-6 text-center">
+          <p className="text-sm md:text-base text-foreground/85 leading-relaxed">{recommendation}</p>
+        </div>
+      )}
     </div>
   </section>
-);
+  );
+};
 
 export default VehicleComparisonTable;

@@ -123,6 +123,16 @@ const SanPantaleoPage = () => (
     <VehicleComparisonTable
       title="Quale veicolo per San Pantaleo?"
       subtitle="Scooter per i vicoli del borgo, Panda per le escursioni in coppia."
+      show={["honda", "panda"]}
+      recommendation={
+        <>
+          <strong className="text-foreground">San Pantaleo non è fatto per le auto grandi.</strong> Lo scooter Honda
+          SH è l'arma giusta: si infila nei vicoli del borgo senza graffi, parcheggia a 30 metri dalla Piazzetta anche
+          il giovedì del mercato, e in 15 minuti ti porta a Porto Cervo per cena. La Fiat Panda è il compromesso per
+          chi viaggia in coppia o famiglia, è soggiornato in agriturismo fuori centro, o vuole flessibilità per le
+          escursioni di una giornata intera (Spiaggia del Principe, La Maddalena).
+        </>
+      }
     />
 
     <LocalitaTrafficTips
@@ -177,7 +187,16 @@ const SanPantaleoPage = () => (
       ]}
     />
 
-    <TrustMarquee />
+    <TrustMarquee
+      items={[
+        "Borgo Gallurese",
+        "Mercato Giovedì",
+        "Granito",
+        "Scooter",
+        "15 min Porto Cervo",
+        "Autenticità",
+      ]}
+    />
 
     <LocalitaFAQ
       name="San Pantaleo"

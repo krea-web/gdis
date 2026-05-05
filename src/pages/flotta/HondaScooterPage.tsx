@@ -55,24 +55,34 @@ const scenarios = [
 
 const faqs = [
   {
-    q: "Posso andare in autostrada con l'Honda SH?",
-    a: "Con l'SH 350 sì, è omologato per autostrada e superstrada. L'SH 125 è limitato a strade urbane e extraurbane.",
+    q: "Honda SH 125 o SH 350: quale scegliere?",
+    a: "L'SH 125 va bene per chi resta in città e fa giri brevi (Olbia, San Teodoro, Pittulongu). L'SH 350 è la scelta giusta se viaggi in due con bagagli, se devi salire al Phi Beach (la salita verso Capo Ferro chiede potenza), se ti sposti su distanze lunghe o vuoi prendere la SS131 (autostrada). Stessa estetica, stesso comfort, +120cc di muscolo per chi serve.",
   },
   {
-    q: "I caschi sono inclusi?",
-    a: "Sì, forniamo 2 caschi omologati (jet) per conducente e passeggero, igienizzati prima di ogni noleggio.",
+    q: "Quale patente serve davvero?",
+    a: "SH 125: Patente A1 (16+) oppure Patente B (per chi ha conseguito la B prima del 1/2/2013, copre fino a 125cc; chi l'ha presa dopo deve fare la prova pratica AM o A1). SH 350: Patente A2 (18+) o A (24+). Se non sei sicuro della tua categoria, mandaci foto della patente su WhatsApp e ti diciamo se puoi guidare quale.",
   },
   {
-    q: "Che patente serve?",
-    a: "Per l'SH 125 serve la Patente A1 (o Patente B con limitazione 125cc). Per l'SH 350 serve la Patente A2 o A.",
+    q: "I caschi e l'antifurto sono inclusi?",
+    a: "Sempre. Forniamo 2 caschi jet omologati ECE 22.06 (taglie M/L/XL disponibili, igienizzati prima di ogni noleggio), antifurto a U bloccaruota e copertura assicurativa furto/incendio nel prezzo. Per chi vuole un casco integrale possiamo organizzarlo su richiesta.",
   },
   {
-    q: "Posso portare un passeggero?",
-    a: "Sì, entrambi i modelli sono omologati per il trasporto passeggero. Forniamo 2 caschi inclusi.",
+    q: "Quanto consuma l'Honda SH e quanto costa il pieno?",
+    a: "SH 125: circa 2.5 L/100km, serbatoio 7.7 L = autonomia 280-300 km. Pieno: ~13 €. SH 350: 3.0-3.2 L/100km, serbatoio 9.1 L = autonomia 280 km. Pieno: ~15 €. Per una settimana di vacanza standard in Costa Smeralda si fanno 1-2 pieni totali. Il costo al km è frazione di quello dell'auto.",
   },
   {
-    q: "La consegna VIP è disponibile?",
-    a: "Assolutamente sì! Consegniamo lo scooter direttamente in aeroporto, porto, hotel o villa.",
+    q: "Posso parcheggiarlo gratis ovunque?",
+    a: (
+      <>
+        Quasi. Le 2 ruote in Sardegna possono usare le aree moto/scooter dedicate, presenti in tutte le spiagge
+        principali (La Cinta, Brandinchi, Phi Beach) e nei centri ZTL come <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 hover:underline">Porto Cervo</Link>.
+        Sui parcheggi blu paghi metà tariffa o gratis a seconda del comune. Risparmio reale per una settimana: 50-100 € rispetto all'auto.
+      </>
+    ),
+  },
+  {
+    q: "Vado all'aeroporto con lo scooter? Dove parcheggio?",
+    a: "Aeroporto di Olbia ha un parcheggio scooter coperto a 50m dal terminal a 3 €/giorno. Comodissimo per chi parcheggia in aeroporto e parte in scooter, ma se preferisci ti consegniamo lo scooter direttamente al ritiro bagagli senza pensarci.",
   },
 ];
 
@@ -102,7 +112,7 @@ const hondaSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "EUR",
-    price: "35",
+    price: "50",
     availability: "https://schema.org/InStock",
     priceValidUntil: "2026-12-31",
     url: `${SITE_URL}/flotta/honda-sh`,
@@ -319,6 +329,103 @@ const HondaScooterPage = () => (
             </motion.div>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* PERCHÉ SCEGLIERE LO SCOOTER */}
+    <section className="py-20 md:py-24 bg-muted/30">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Perché scegliere lo scooter</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            Scooter vs auto: i vantaggi che nessuno ti racconta
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            La maggior parte dei turisti italiani che vengono in Costa Smeralda noleggia un'auto per default,
+            <strong className="text-foreground"> per abitudine, senza valutare alternative</strong>. Sbagliato in
+            molti casi: in alta stagione lo scooter Honda SH non è solo un'opzione, è la scelta più intelligente.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">Vantaggi reali misurati nella nostra esperienza</strong>: il tempo di
+            arrivo al Phi Beach al tramonto da Baja Sardinia in scooter è 5 minuti, in auto 30+ minuti perché la
+            strada si paralizza. Il parcheggio nelle spiagge come La Cinta o Brandinchi è gratuito nelle aree moto,
+            mentre l'auto paga 5 €/giorno (e in agosto si esaurisce entro le 9:30). Nei centri ZTL di Porto Cervo o
+            San Pantaleo lo scooter ti fa parcheggiare a 30 metri dalla Promenade o dalla Piazzetta — l'auto deve
+            stare in parcheggi satellite a 800+ metri. Il consumo settimanale di carburante è 1/4 rispetto a un'auto.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <strong className="text-foreground">Quando NON scegliere lo scooter</strong>: se piove (in Sardegna
+            d'estate raro ma possibile, soprattutto a giugno e settembre), se viaggi in più di 2 persone, se hai
+            valigie grandi (lo scooter porta una giornaliera + 1 zaino sotto la sella), se non sei a tuo agio sulle 2
+            ruote nel traffico estivo. Per famiglie con bambini consigliamo Fiat Panda + scooter combinato.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* HONDA SH IN SARDEGNA */}
+    <section className="py-20 md:py-24 bg-background">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Honda SH in Sardegna</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            Le località dove lo scooter è imbattibile
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            Sulla base delle nostre prenotazioni, queste sono le destinazioni dove l'Honda SH è il veicolo più scelto
+            (spesso in combinazione con altri mezzi):
+          </p>
+          <ul className="space-y-3 text-base md:text-lg text-foreground/85">
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-baja-sardinia" className="text-blue-600 hover:underline">
+                  Baja Sardinia
+                </Link>
+              </strong>
+              {" "}— per il Phi Beach e il Ritual Club. La salita serale verso il sunset bar in scooter dura 5
+              minuti, in auto un'ora di coda. Parcheggio moto a 80 metri dall'ingresso, gratuito.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 hover:underline">
+                  Porto Cervo
+                </Link>
+              </strong>
+              {" "}— centro ZTL pedonale tutta l'estate. In scooter parcheggi nelle aree moto a 10 metri dalla
+              Promenade du Port; l'auto deve fermarsi nei parcheggi satellite a piedi.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-san-pantaleo" className="text-blue-600 hover:underline">
+                  San Pantaleo
+                </Link>
+              </strong>
+              {" "}— vicoli del borgo gallurese e mercato del giovedì. L'unico modo intelligente per arrivare
+              entro le 11:00 senza dover lasciare l'auto a 1 km dalla piazzetta.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-san-teodoro" className="text-blue-600 hover:underline">
+                  San Teodoro
+                </Link>
+              </strong>
+              {" "}— per le spiagge della Cinta, Cala Brandinchi, Lu Impostu. Parcheggio moto gratis vs auto a 5 €/g
+              che si esauriscono entro le 9:30.
+            </li>
+          </ul>
+          <p className="text-sm text-muted-foreground mt-6">
+            Devi portare una famiglia? Vedi la <Link to="/flotta/fiat-panda" className="text-blue-600 hover:underline">Fiat Panda Hybrid</Link>.
+            Cerchi un mezzo per gli sterrati? Considera lo <Link to="/flotta/yamaha-raptor" className="text-blue-600 hover:underline">Yamaha Raptor 700</Link>.
+          </p>
+        </motion.div>
       </div>
     </section>
 

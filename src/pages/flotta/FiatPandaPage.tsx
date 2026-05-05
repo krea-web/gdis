@@ -53,23 +53,39 @@ const scenarios = [
 
 const faqs = [
   {
-    q: "Posso andare fuoristrada con la Panda?",
-    a: "No. La Fiat Panda Hybrid è progettata per strade asfaltate. Per percorsi off-road consigliamo il nostro Yamaha Raptor Quad.",
-    vehicleLink: "/flotta/yamaha-raptor",
-    vehicleName: "Yamaha Raptor",
+    q: "Posso guidare la Fiat Panda Hybrid da neopatentato?",
+    a: "Sì. La Panda Hybrid 1.0 70cv ha un rapporto peso/potenza ben sotto i limiti del Codice della Strada per neopatentati (kW/t < 65). È anzi una delle scelte più consigliate per chi ha preso la patente da meno di un anno: leggera, prevedibile, sicura.",
   },
   {
-    q: "Ha l'aria condizionata?",
-    a: "Sì, tutte le nostre Panda sono dotate di aria condizionata perfettamente funzionante — essenziale per l'estate sarda.",
+    q: "Quanti bagagli entrano con 5 persone a bordo?",
+    a: "Il bagagliaio della Panda è 225 litri standard. Con 5 persone a bordo entrano comodamente 2 trolley medi (50-55 cm) + 1-2 borse da spiaggia. Per famiglie più numerose con valigie grandi consigliamo invece la Mercedes Classe A 180d (370 litri).",
   },
-  { q: "Che patente serve?", a: "È sufficiente la Patente B, valida anche per i neopatentati." },
+  {
+    q: "Quanto consuma davvero la versione Hybrid?",
+    a: "Nella nostra esperienza con la flotta in Sardegna, la Panda Hybrid 70cv consuma 4.5-5.0 L/100km in uso misto urbano-extraurbano (Olbia → San Teodoro → Costa Smeralda). Un pieno da circa 35 litri ti dura facilmente 600-700 km. Costa benzina per una settimana di vacanza media: 40-60 €.",
+  },
+  {
+    q: "Posso andare fuoristrada con la Panda?",
+    a: (
+      <>
+        No. La Panda Hybrid è progettata per asfalto. Per gli sterrati di Punta Volpe, Capo Ferro o Monte Nieddu serve
+        un mezzo dedicato come il nostro <Link to="/flotta/yamaha-raptor" className="text-blue-600 font-medium hover:underline">Yamaha Raptor 700</Link>.
+        Le coperture assicurative escludono i danni su strade non asfaltate.
+      </>
+    ),
+  },
+  {
+    q: "Posso ritirarla all'Aeroporto di Olbia?",
+    a: (
+      <>
+        Sì, è la consegna più richiesta per la Panda. Operatore al terminal arrivi del Costa Smeralda, veicolo
+        climatizzato e con il pieno fatto. <Link to="/noleggio-auto-aeroporto-olbia" className="text-blue-600 font-medium hover:underline">Vedi i dettagli del servizio aeroporto</Link>.
+      </>
+    ),
+  },
   {
     q: "Il carburante è incluso?",
-    a: "Il veicolo viene consegnato con il pieno e va restituito con il pieno. In alternativa è possibile acquistare l'opzione 'pieno anticipato'.",
-  },
-  {
-    q: "La consegna VIP è disponibile?",
-    a: "Sì! Consegniamo direttamente in aeroporto, porto, hotel o villa in tutta la Costa Smeralda.",
+    a: "Il veicolo viene consegnato con il pieno e va restituito con il pieno. In alternativa è possibile acquistare l'opzione 'pieno anticipato' al ritiro: paghi il pieno alla partenza e riconsegni con il serbatoio anche vuoto, senza dover cercare un benzinaio prima del rientro.",
   },
 ];
 
@@ -104,7 +120,7 @@ const fiatPandaSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "EUR",
-    price: "39",
+    price: "50",
     availability: "https://schema.org/InStock",
     priceValidUntil: "2026-12-31",
     url: `${SITE_URL}/flotta/fiat-panda`,
@@ -327,6 +343,102 @@ const FiatPandaPage = () => (
             </motion.div>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* PERCHÉ SCEGLIERE LA PANDA */}
+    <section className="py-20 md:py-24 bg-muted/30">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Perché scegliere la Panda</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            Panda Hybrid vs noleggio tradizionale: quando ha davvero senso
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            Non ti diciamo che la Panda Hybrid è la scelta migliore in assoluto — non lo è. È la scelta più
+            <strong className="text-foreground"> intelligente per la maggior parte dei nostri clienti</strong>: famiglie
+            di 4-5 persone, coppie con bagagli normali, neopatentati, viaggiatori che restano 5-10 giorni e si spostano
+            in più località.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            Dove batte le altre opzioni: <strong className="text-foreground">consumi reali 4.5-5 L/100km</strong> contro
+            i 7-8 di una berlina diesel; ingombro <strong className="text-foreground">365 cm</strong> contro i 430+ di
+            una Classe A — entra in fessure di parcheggio impossibili nei centri storici di San Pantaleo o Porto Cervo;
+            costo giornaliero metà rispetto a un'auto premium. E con cinque vere postazioni a sedere, è l'unica city car
+            in flotta che porta cinque persone con un minimo di comfort.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            Dove non è la scelta giusta: viaggi business in autostrada (meglio Mercedes per il cambio automatico e il
+            comfort), escursioni off-road (meglio Yamaha quad), giri brevi in alta stagione nei centri ZTL (meglio
+            Honda SH per il parcheggio gratis).
+          </p>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* PANDA IN SARDEGNA */}
+    <section className="py-20 md:py-24 bg-background">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Panda in Sardegna</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            Le località dove la Panda è la scelta consigliata
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            Sulla base delle prenotazioni che gestiamo ogni anno, la Panda Hybrid è il veicolo più scelto per queste
+            destinazioni:
+          </p>
+          <ul className="space-y-3 text-base md:text-lg text-foreground/85">
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-olbia" className="text-blue-600 hover:underline">
+                  Olbia centro
+                </Link>
+              </strong>
+              {" "}— per chi atterra al Costa Smeralda o sbarca a Isola Bianca e ha la base in città. Entra in Corso
+              Umberto, parcheggia ovunque, raggiunge in 10 minuti Pittulongu per il bagno serale.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-san-teodoro" className="text-blue-600 hover:underline">
+                  San Teodoro
+                </Link>
+              </strong>
+              {" "}— per famiglie che vogliono spostarsi tra La Cinta, Cala Brandinchi e Lu Impostu. Bagagliaio
+              sufficiente per ombrelloni, lettini gonfiabili e zaini bambini.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-golfo-aranci" className="text-blue-600 hover:underline">
+                  Golfo Aranci
+                </Link>
+              </strong>
+              {" "}— consegnata sotto la nave per chi arriva con Sardinia/Corsica Ferries. In 20 minuti raggiungi Porto
+              Rotondo, in 30 Porto Cervo.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-san-pantaleo" className="text-blue-600 hover:underline">
+                  San Pantaleo
+                </Link>
+              </strong>
+              {" "}— per chi soggiorna in agriturismo fuori centro e vuole flessibilità. Le strade galluresi sono
+              strette, la Panda passa.
+            </li>
+          </ul>
+          <p className="text-sm text-muted-foreground mt-6">
+            Cerchi un'alternativa più premium? Vedi la <Link to="/flotta/mercedes-classe-a180d" className="text-blue-600 hover:underline">Mercedes Classe A 180d</Link>.
+            Hai bisogno di muoverti in ZTL? Considera lo <Link to="/flotta/honda-sh" className="text-blue-600 hover:underline">scooter Honda SH</Link>.
+          </p>
+        </motion.div>
       </div>
     </section>
 

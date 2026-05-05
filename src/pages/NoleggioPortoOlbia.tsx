@@ -246,7 +246,7 @@ const NoleggioPortoOlbia = () => {
         </div>
       </section>
 
-      <ConsegnaVipExplainer />
+      <ConsegnaVipExplainer variant="port" />
 
       <LocalitaFAQ name="Porto Isola Bianca" faqs={faqs} emitSchema />
 

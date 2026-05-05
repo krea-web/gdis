@@ -49,21 +49,28 @@ const scenarios = [
 
 const faqs = [
   {
-    q: "Che patente serve per il Quad?",
-    a: "Serve la Patente B, la stessa dell'automobile. Il Raptor 700 è omologato per strada.",
-  },
-  { q: "I caschi sono inclusi?", a: "Sì, forniamo casco integrale omologato incluso nel prezzo del noleggio." },
-  {
-    q: "Posso circolare su strada normale?",
-    a: "Sì, il Yamaha Raptor 700 è completamente omologato per la circolazione su strade pubbliche oltre che su sterrato.",
+    q: "Mi basta davvero la patente B per guidare il Raptor 700?",
+    a: "Sì, in Italia il Raptor 700 è omologato come quadriciclo a motore L7e e si guida con patente B (la stessa dell'auto). Non serve patente moto. Età minima 18 anni, almeno 2 anni di patente B nel nostro caso. Per i conducenti con meno di 25 anni applichiamo un supplemento giovane.",
   },
   {
-    q: "È adatto ai principianti?",
-    a: "Il Raptor 700 è un quad potente. Consigliamo esperienza pregressa alla guida di veicoli a motore. Forniamo un briefing completo prima della partenza.",
+    q: "È pericoloso? Sono mai stato su un quad.",
+    a: "Il Raptor 700 con i suoi 686cc e 50cv è un mezzo serio, non un giocattolo da spiaggia. Se è la tua prima volta in quad, ti facciamo un briefing pratico di 20 minuti al ritiro: posizione di guida, gestione dell'acceleratore in curva, freno motore, cosa fare in fuoristrada. Va guidato con rispetto, non con paura: a 30-40 km/h sui sentieri sterrati di Capo Ferro è perfettamente sicuro.",
   },
   {
-    q: "Quanto dura la batteria/autonomia?",
-    a: "Il serbatoio da 11 litri garantisce un'autonomia di circa 150km a seconda dello stile di guida e del terreno.",
+    q: "Cosa è incluso oltre al quad?",
+    a: "Casco integrale omologato ECE 22.06 incluso (taglie M/L/XL), assicurazione RCA + furto/incendio, briefing tecnico al ritiro, mappa con i 5 migliori percorsi off-road della Gallura. Su richiesta forniamo anche giacca antivento, occhialini da sterrato e guanti — utili specie a giugno e settembre.",
+  },
+  {
+    q: "Quanta autonomia ha e dove faccio benzina?",
+    a: "Serbatoio 11 litri, consumo 6-8 L/100km in uso misto strada/sterrato = autonomia 150-180 km reali. Per una giornata di esplorazione delle cale di Punta Volpe o degli sterrati di Capo Ferro è più che sufficiente. Stazione di servizio più comoda: la Q8 di Olbiamare sulla SS125, o il distributore IP di Arzachena se sei in zona Costa Smeralda.",
+  },
+  {
+    q: "Posso entrare in spiaggia con il quad?",
+    a: "No, in Sardegna è severamente vietato circolare con qualsiasi mezzo a motore sulle spiagge (multa 500-2000 € + sequestro). Il Raptor è omologato per strade pubbliche e sentieri sterrati ma non per la sabbia. Quello che puoi fare: parcheggiarlo nelle aree sterrate adiacenti (es. Cala Petra Ruja, Punta Volpe) e fare gli ultimi 50-100 metri a piedi.",
+  },
+  {
+    q: "Si può fare il pieno o lavarlo prima di restituirlo?",
+    a: "Pieno: lo riconsegni con il pieno fatto come al ritiro, oppure paghi il saldo carburante a un costo trasparente comunicato in anticipo. Lavaggio: non obbligatorio (sappiamo che usi il quad anche off-road, è normale che sia sporco). Se è coperto di fango spesso ti chiediamo solo di togliere il grosso con una scopa per non rallentare la consegna successiva.",
   },
 ];
 
@@ -92,7 +99,7 @@ const yamahaSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "EUR",
-    price: "89",
+    price: "250",
     availability: "https://schema.org/InStock",
     priceValidUntil: "2026-12-31",
     url: `${SITE_URL}/flotta/yamaha-raptor`,
@@ -314,6 +321,106 @@ const YamahaQuadPage = () => (
             </motion.div>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* PERCHÉ SCEGLIERE IL QUAD */}
+    <section className="py-20 md:py-24 bg-muted/30">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Perché scegliere il quad</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            Quad vs SUV: avventura vera contro comfort superficiale
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            Tanti turisti cercano un SUV per "fare un po' di sterrato in Sardegna". È quasi sempre la scelta sbagliata
+            per due motivi: i SUV a noleggio standard hanno polizze che <strong className="text-foreground">escludono i
+            danni in fuoristrada</strong> (un graffio sotto la coppa olio = €2000 di risarcimento a tuo carico), e le
+            piste vere della Gallura — quelle che portano alle calette nascoste di Punta Volpe o agli sterrati di Capo
+            Ferro — non sono fatte per auto, sono fatte per quad.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">Il Yamaha Raptor 700 risolve esattamente questo</strong>: 686cc, 50cv,
+            sospensioni progettate per il fuoristrada, omologato strada in Italia con patente B. La nostra
+            assicurazione include la copertura su sterrato (è il suo uso naturale, non un'eccezione). Il prezzo è
+            premium perché il mezzo lo è — ma è l'unico modo legale e sicuro di accedere a luoghi che il 99% dei
+            turisti vede solo in cartolina.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <strong className="text-foreground">Quando NON noleggiare il quad</strong>: se viaggi in più di 1 persona
+            (è monoposto), se hai bisogno di trasportare bagagli, se sei a tuo agio solo su asfalto, se piove forte
+            (la guida diventa scivolosa). In quei casi consigliamo Fiat Panda + quad solo per una giornata dedicata
+            all'esplorazione off-road.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* QUAD IN SARDEGNA */}
+    <section className="py-20 md:py-24 bg-background">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Yamaha Raptor in Sardegna</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            I 4 percorsi off-road che valgono il quad
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            Quando consegniamo il Raptor includiamo una mappa con questi 4 percorsi battuti dai nostri clienti
+            avventurosi. Non sono trekking estremi: sono accessibili a chi guida con criterio.
+          </p>
+          <ul className="space-y-3 text-base md:text-lg text-foreground/85">
+            <li>
+              <strong className="text-foreground">
+                Punta Volpe (
+                <Link to="/noleggio-auto-a-porto-rotondo" className="text-blue-600 hover:underline">
+                  Porto Rotondo
+                </Link>
+                )
+              </strong>
+              {" "}— sterrato di 4 km che porta a 3 calette inaccessibili in auto. Mezza giornata di esplorazione,
+              difficoltà media.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                Capo Ferro (
+                <Link to="/noleggio-auto-a-baja-sardinia" className="text-blue-600 hover:underline">
+                  Baja Sardinia
+                </Link>
+                )
+              </strong>
+              {" "}— sentieri costieri verso il faro con vista sull'arcipelago di La Maddalena. Difficoltà bassa,
+              panorami da fotografare assolutamente al tramonto.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                Monte Nieddu (
+                <Link to="/noleggio-auto-a-san-teodoro" className="text-blue-600 hover:underline">
+                  San Teodoro
+                </Link>
+                )
+              </strong>
+              {" "}— entroterra montano con cascate e piscine naturali in granito. La pista finale è dissestata
+              perfetta per il quad. Giornata intera consigliata.
+            </li>
+            <li>
+              <strong className="text-foreground">Entroterra gallurese (San Pantaleo, Arzachena)</strong>
+              {" "}— sentieri tra nuraghi, ulivi secolari e formazioni granitiche tipiche della Gallura. Difficoltà
+              variabile, ottimo per chi vuole vedere la Sardegna autentica oltre il mare.
+            </li>
+          </ul>
+          <p className="text-sm text-muted-foreground mt-6">
+            Cerchi qualcosa per la famiglia? Vedi la <Link to="/flotta/fiat-panda" className="text-blue-600 hover:underline">Fiat Panda Hybrid</Link>.
+            Vuoi un mezzo più semplice da guidare? Considera lo <Link to="/flotta/honda-sh" className="text-blue-600 hover:underline">scooter Honda SH</Link>.
+          </p>
+        </motion.div>
       </div>
     </section>
 

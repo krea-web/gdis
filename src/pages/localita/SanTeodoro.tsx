@@ -126,6 +126,16 @@ const SanTeodoroPage = () => (
     <VehicleComparisonTable
       title="Quale veicolo per San Teodoro?"
       subtitle="Scooter per le spiagge, Panda per le famiglie, quad per l'entroterra."
+      show={["honda", "panda", "yamaha"]}
+      recommendation={
+        <>
+          <strong className="text-foreground">In alta stagione lo scooter vince sempre.</strong> Honda SH ti permette
+          di parcheggiare gratis nelle aree moto della Cinta e di Cala Brandinchi (le auto pagano €5/giorno e si
+          esauriscono entro le 9:30). La Fiat Panda è la scelta giusta per famiglie che cercano la flessibilità delle
+          escursioni più lunghe (Capo Coda Cavallo, Tavolara). Il quad Yamaha è dedicato a chi vuole esplorare le
+          cascate e piscine naturali di Monte Nieddu via sterrato.
+        </>
+      }
     />
 
     <LocalitaTrafficTips
@@ -185,7 +195,16 @@ const SanTeodoroPage = () => (
       ]}
     />
 
-    <TrustMarquee />
+    <TrustMarquee
+      items={[
+        "La Cinta",
+        "Cala Brandinchi",
+        "Lu Impostu",
+        "Scooter",
+        "Mercatino Serale",
+        "Movida Estiva",
+      ]}
+    />
 
     <LocalitaFAQ
       name="San Teodoro"

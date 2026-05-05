@@ -122,6 +122,16 @@ const PortoRotondoPage = () => (
     <VehicleComparisonTable
       title="Quale veicolo per Porto Rotondo?"
       subtitle="Quad per le cale, Panda per la Piazzetta. Ecco la differenza."
+      show={["yamaha", "honda", "panda"]}
+      recommendation={
+        <>
+          <strong className="text-foreground">Porto Rotondo è due posti in uno.</strong> Per il borgo elegante e la
+          Piazzetta basta la Fiat Panda (entra ovunque, parcheggia in via dei Lecci) o lo scooter Honda SH (zero
+          stress in alta stagione). Per le cale segrete di Punta Volpe e Marinella, accessibili solo via sterrato,
+          serve il quad Yamaha Raptor 700: omologato con patente B, sospensioni off-road, l'unico mezzo che apre
+          quelle insenature con 4 turisti in tutto.
+        </>
+      }
     />
 
     <LocalitaTrafficTips
@@ -176,7 +186,16 @@ const PortoRotondoPage = () => (
       ]}
     />
 
-    <TrustMarquee />
+    <TrustMarquee
+      items={[
+        "Marina Porto Rotondo",
+        "Piazzetta San Marco",
+        "Punta Volpe",
+        "Quad Off-Road",
+        "Spiaggia Ira",
+        "Eleganza Discreta",
+      ]}
+    />
 
     <LocalitaFAQ
       name="Porto Rotondo"

@@ -132,6 +132,16 @@ const BajaSardiniaPage = () => (
     <VehicleComparisonTable
       title="Quale veicolo per Baja Sardinia?"
       subtitle="Scooter per il Phi Beach senza coda, quad per gli sterrati di Capo Ferro."
+      show={["honda", "yamaha", "panda"]}
+      recommendation={
+        <>
+          <strong className="text-foreground">Lo scooter è l'unica scelta intelligente in alta stagione.</strong>
+          {" "}Honda SH 350 ti porta al Phi Beach in 5 minuti quando le auto stanno in coda 30+, e parcheggi gratis
+          nell'area moto. Il quad Yamaha Raptor 700 è dedicato agli sterrati di Capo Ferro e alle calette nascoste
+          inaccessibili in auto. La Fiat Panda è il jolly per chi viaggia in famiglia e ha bagagli pesanti, ma a
+          luglio-agosto perde gran parte dei suoi vantaggi rispetto allo scooter.
+        </>
+      }
     />
 
     <LocalitaTrafficTips
@@ -191,7 +201,16 @@ const BajaSardiniaPage = () => (
       ]}
     />
 
-    <TrustMarquee />
+    <TrustMarquee
+      items={[
+        "Capo Ferro",
+        "Cala Lunga",
+        "Petra Ruja",
+        "Tre Monti",
+        "Scooter",
+        "Tramonti Leggendari",
+      ]}
+    />
 
     <LocalitaFAQ
       name="Baja Sardinia"

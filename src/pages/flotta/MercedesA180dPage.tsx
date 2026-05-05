@@ -53,34 +53,37 @@ const scenarios = [
 
 const faqs = [
   {
-    q: "Il veicolo ha il cambio automatico?",
-    a: "Assolutamente sì. La nostra Mercedes Classe A180d è dotata del fluido cambio automatico a doppia frizione 8G-DCT, perfetto per un'esperienza di guida rilassante.",
+    q: "Quale cambio automatico ha la Classe A 180d?",
+    a: "Cambio 8G-DCT a doppia frizione, sviluppato da Mercedes per la gamma compatta. Cambia in 80-150 millisecondi senza interruzione di coppia: in autostrada SS131 da Olbia a Cagliari non senti la differenza con un cambio manuale, in città azzera la fatica nel traffico estivo della Costa Smeralda.",
   },
   {
-    q: "Che patente è necessaria per noleggiarla?",
-    a: "È richiesta la Patente B standard. Tuttavia, trattandosi di un veicolo della categoria Premium, potrebbe essere richiesta una maggiore età minima o anni di patente (consulta le condizioni in fase di prenotazione).",
+    q: "Quanti anni di patente servono?",
+    a: "Età minima 25 anni e almeno 3 anni di patente B. Per i conducenti tra 21-24 anni è applicato un supplemento giovane. Per i neopatentati con meno di 12 mesi di patente la Mercedes 180d non è disponibile (115cv superano la soglia kW/t per neopatentati): consigliamo la Fiat Panda Hybrid in alternativa.",
   },
   {
-    q: "Posso avere la consegna presso la mia Villa o in Aeroporto?",
-    a: "Certamente. Offriamo il servizio di consegna VIP direttamente all'Aeroporto di Olbia Costa Smeralda, ai porti principali o direttamente presso la tua villa/hotel in tutta la Costa Smeralda.",
+    q: "Quanto consuma il diesel 1.5 da 115cv?",
+    a: "Nella nostra esperienza di flotta: 5.0-5.5 L/100km in autostrada SS131, 5.5-6.0 in misto Costa Smeralda. Un pieno da 43 litri ti dura facilmente 800-900 km. Per una vacanza di 7 giorni con escursioni quotidiane (Olbia ↔ Porto Cervo, San Teodoro, Baja) spendi 60-80 € di gasolio.",
   },
   {
-    q: "Il carburante è incluso?",
-    a: "Il veicolo viene consegnato con il pieno di carburante Diesel e va restituito con il pieno (Full-to-Full). Offriamo anche l'opzione 'pieno anticipato' per il massimo del comfort.",
+    q: "C'è MBUX e Apple CarPlay / Android Auto?",
+    a: "Sì. Sistema MBUX di Mercedes con doppio schermo 10.25\", Apple CarPlay e Android Auto wireless inclusi. Comando vocale 'Hey Mercedes' attivo. Navigatore con mappe Sardegna aggiornate. Bluetooth standard, presa USB-C anteriore e posteriore.",
   },
   {
-    q: "È adatta per raggiungere spiagge non asfaltate?",
+    q: "Posso averla consegnata alla villa di Porto Cervo?",
     a: (
       <>
-        No, la Mercedes Classe A è un veicolo di lusso pensato per le strade asfaltate. Per esplorare percorsi off-road
-        o sterrati impegnativi, ti consigliamo il nostro{" "}
-        <Link
-          to="/flotta/yamaha-raptor"
-          className="text-primary-foreground underline hover:text-primary-foreground/80 transition-all"
-        >
-          Yamaha Raptor
-        </Link>
-        .
+        Sì, è la consegna più frequente per la Mercedes 180d. Operatore al cancello/concierge della villa, all'Hotel
+        Cala di Volpe, al Pitrizza o a qualsiasi altro hotel 5 stelle. Consegna anche al pontile yacht in Marina di
+        Porto Cervo o Porto Rotondo. <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 hover:underline">Vedi i dettagli</Link>.
+      </>
+    ),
+  },
+  {
+    q: "Va bene per gli sterrati di Capo Ferro o Punta Volpe?",
+    a: (
+      <>
+        Assolutamente no. La Classe A è un'auto premium su asfalto, sospensioni studiate per il comfort. Su sterrato
+        rischi danni al sottoscocca e alle gomme low profile. Per le cale off-road usa il <Link to="/flotta/yamaha-raptor" className="text-blue-600 hover:underline">Yamaha Raptor 700</Link>.
       </>
     ),
   },
@@ -114,7 +117,7 @@ const mercedesSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "EUR",
-    price: "79",
+    price: "120",
     availability: "https://schema.org/InStock",
     priceValidUntil: "2026-12-31",
     url: `${SITE_URL}/flotta/mercedes-classe-a180d`,
@@ -349,6 +352,102 @@ const MercedesA180dPage = () => (
             </motion.div>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* PERCHÉ SCEGLIERE LA MERCEDES */}
+    <section className="py-20 md:py-24 bg-muted/30">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Perché scegliere la Mercedes</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            Lusso vs economia: quando ha davvero senso la Classe A 180d
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            La Mercedes Classe A 180d non è un'auto da prendere a caso. Costa più del doppio di una Fiat Panda, e su
+            molti casi d'uso questa differenza non si traduce in un'esperienza migliore. Ti aiutiamo a capire
+            <strong className="text-foreground"> quando vale davvero la pena</strong>.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">Sì, la Mercedes ha senso se</strong>: il tuo soggiorno è in Costa
+            Smeralda con escursioni autostradali quotidiane (cambio automatico annulla lo stress nelle code
+            luglio-agosto), arrivi a un hotel 5 stelle o a una villa privata e l'auto fa parte dell'esperienza
+            complessiva, viaggi business e vuoi presentarti con un'auto rappresentativa, sei una coppia o famiglia
+            piccola e dai più valore al comfort che al prezzo.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <strong className="text-foreground">No, scegli un'altra opzione se</strong>: viaggio breve solo dentro
+            Olbia (basta la Panda), famiglia di 5 persone con valigie pesanti (la Panda è meno comoda ma costa la
+            metà), zone con problemi di parcheggio come Porto Cervo centro o San Pantaleo (meglio scooter Honda),
+            escursioni off-road a Capo Ferro o Punta Volpe (serve il quad).
+          </p>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* MERCEDES IN SARDEGNA */}
+    <section className="py-20 md:py-24 bg-background">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Mercedes in Sardegna</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            Le destinazioni dove la 180d è la scelta naturale
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            I clienti che noleggiano la Classe A 180d hanno tutti un profilo simile: vogliono comfort di guida e
+            arrivare alla destinazione con stile. Ecco dove la consegniamo più frequentemente:
+          </p>
+          <ul className="space-y-3 text-base md:text-lg text-foreground/85">
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-porto-cervo" className="text-blue-600 hover:underline">
+                  Porto Cervo
+                </Link>
+              </strong>
+              {" "}— consegna al pontile yacht in Marina, all'Hotel Cala di Volpe, al Pitrizza o alla villa privata.
+              È la destinazione #1 per la Mercedes nella nostra flotta.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-porto-rotondo" className="text-blue-600 hover:underline">
+                  Porto Rotondo
+                </Link>
+              </strong>
+              {" "}— per chi soggiorna nelle ville sopra Cugnana o nei resort 5 stelle. La Marina è la seconda più
+              grande del Mediterraneo, perfetta per arrivi in stile.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-a-olbia" className="text-blue-600 hover:underline">
+                  Aeroporto Olbia Costa Smeralda
+                </Link>
+              </strong>
+              {" "}— consegna agli arrivi del terminal con cartello personalizzato. Il modo più discreto di iniziare
+              una vacanza di lusso.
+            </li>
+            <li>
+              <strong className="text-foreground">
+                <Link to="/noleggio-auto-in-costa-smeralda" className="text-blue-600 hover:underline">
+                  Costa Smeralda nord
+                </Link>
+              </strong>
+              {" "}— per giri quotidiani Porto Cervo → Baja Sardinia → San Pantaleo, il cambio automatico fa la
+              differenza nel traffico estivo.
+            </li>
+          </ul>
+          <p className="text-sm text-muted-foreground mt-6">
+            Cerchi qualcosa di più economico? Vedi la <Link to="/flotta/fiat-panda" className="text-blue-600 hover:underline">Fiat Panda Hybrid</Link>.
+            Vuoi muoverti dove l'auto non passa? Considera lo <Link to="/flotta/honda-sh" className="text-blue-600 hover:underline">scooter Honda SH</Link>.
+          </p>
+        </motion.div>
       </div>
     </section>
 

@@ -118,6 +118,16 @@ const GolfoAranciPage = () => (
     <VehicleComparisonTable
       title="Quale veicolo per Golfo Aranci?"
       subtitle="Panda allo sbarco del traghetto, scooter per le spiagge del lungomare."
+      show={["panda", "honda"]}
+      recommendation={
+        <>
+          <strong className="text-foreground">Sbarchi e parti senza pensieri.</strong> La Fiat Panda Hybrid è la
+          scelta naturale per chi arriva con la Sardinia/Corsica Ferries: bagagli al seguito, climatizzatore già
+          acceso, pronta sotto la nave. Lo scooter Honda SH è perfetto per chi sta più giorni e vuole muoversi
+          agilmente sul lungomare e tra le calette di Cala Moresca e Spiaggia Bianca, parcheggiando ovunque senza
+          pagare i parcheggi del centro.
+        </>
+      }
     />
 
     <LocalitaTrafficTips
@@ -177,7 +187,16 @@ const GolfoAranciPage = () => (
       ]}
     />
 
-    <TrustMarquee />
+    <TrustMarquee
+      items={[
+        "Porto Traghetti",
+        "Cala Moresca",
+        "Spiaggia Bianca",
+        "Capo Figari",
+        "Delfini",
+        "Sardinia Ferries",
+      ]}
+    />
 
     <LocalitaFAQ
       name="Golfo Aranci"

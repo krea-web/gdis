@@ -279,7 +279,7 @@ const NoleggioAeroportoOlbia = () => {
         </div>
       </section>
 
-      <ConsegnaVipExplainer />
+      <ConsegnaVipExplainer variant="airport" />
 
       <LocalitaFAQ name="Aeroporto Olbia (OLB)" faqs={faqs} emitSchema />
 

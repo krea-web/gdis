@@ -274,7 +274,7 @@ const NoleggioStazioneOlbia = () => {
         </div>
       </section>
 
-      <ConsegnaVipExplainer />
+      <ConsegnaVipExplainer variant="station" />
 
       <LocalitaFAQ name="Stazione Olbia" faqs={faqs} emitSchema />
 
