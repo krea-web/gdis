@@ -1,0 +1,160 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Olbia", url: "/noleggio-auto-a-olbia" },
+  { name: "Stazione Olbia", url: "/noleggio-auto-stazione-olbia" },
+];
+
+const trainConnections = [
+  { dest: "Sassari", time: "1h 45m - 2h 10m", freq: "5-6 corse/giorno", note: "Linea storica non elettrificata" },
+  { dest: "Cagliari", time: "3h 50m - 4h 30m", freq: "1-2 corse/giorno", note: "Cambio a Chilivani o Oristano" },
+  { dest: "Macomer", time: "2h 30m", freq: "3-4 corse/giorno", note: "Snodo per linee interne" },
+  { dest: "Oristano", time: "3h 10m", freq: "2 corse/giorno", note: "Coincidenza per Cagliari" },
+];
+
+const combos = [
+  { title: "Atterri a Cagliari, esplori il nord", text: "I voli low-cost su <strong>Cagliari Elmas (CAG)</strong> sono spesso più economici di quelli su Olbia in piena estate. Atterri a Cagliari, prendi l'Intercity diretto fino a Olbia (~4 ore con paesaggio panoramico) e ritiri la tua auto a noleggio direttamente alla stazione. Niente guida lunga dopo il volo, e bagaglio in spalla per pochi metri." },
+  { title: "Sei a Sassari per lavoro o per vacanza", text: "Da Sassari il treno per Olbia impiega 1h45m e attraversa l'Anglona e la Gallura interna. Una volta arrivato, l'auto a noleggio ti apre tutta la Costa Smeralda in 30-40 minuti. Soluzione perfetta per weekend lunghi senza dover dipendere dall'auto privata." },
+  { title: "Treno turistico \"Trenino Verde\" + auto", text: "Per chi vuole vivere la linea storica panoramica del Trenino Verde (gestito da ARST, stazione di partenza diversa) e poi proseguire verso il mare: noleggia l'auto a Olbia per la seconda parte del viaggio, dove i bus diventano più rari e le calette più nascoste." },
+];
+
+const faqs = [
+  { q: "La stazione di Olbia è centrale o periferica?", a: "È molto centrale: si trova a circa <strong>10 minuti a piedi</strong> dal porto di Isola Bianca e a 5 minuti dal Corso Umberto. L'aeroporto dista invece circa 4 km (8 minuti in auto). Geograficamente è una posizione comoda perché ti permette di lasciare bagagli rapidamente e iniziare l'esplorazione senza navette intermedie." },
+  { q: "Perché ci sono così poche corse rispetto a una stazione del continente?", a: "La Sardegna ha una rete ferroviaria storica e <em>non elettrificata</em>: i convogli sono diesel e la velocità media è bassa rispetto agli standard nazionali. Trenitalia opera la rete principale (RFI) con frequenze ridotte, mentre le linee turistiche del <em>Trenino Verde</em> sono gestite da ARST e non passano per Olbia. È normale quindi avere 5-6 corse/giorno verso Sassari e 1-2 verso Cagliari." },
+  { q: "Conviene combinare treno + noleggio auto a Olbia?", a: "Sì, soprattutto se arrivi in Sardegna da Cagliari (volo low-cost spesso più economico su CAG che su OLB) e poi prendi il treno diretto Cagliari-Olbia/Chilivani. Combinazione tipica: <strong>treno fino a Olbia + auto dal nostro punto in stazione</strong> per esplorare la Costa Smeralda. È anche utile per chi parte da Sassari o Alghero senza dover guidare 3 ore." },
+  { q: "C'è un'alternativa al treno per spostarmi in Sardegna senza auto?", a: "Sì: la rete <strong>ARST</strong> (autobus regionali) copre tratte non servite dal treno con frequenze maggiori, soprattutto verso le località costiere (Costa Smeralda, San Teodoro, Palau). Per chi vuole flessibilità totale e accesso alle spiagge fuori percorso, però, il noleggio resta la scelta più pratica." },
+  { q: "Posso ritirare il veicolo se arrivo in tarda serata con un treno in ritardo?", a: "Sì, copriamo la finestra operativa Trenitalia (ultimi treni in arrivo intorno alle 22:00-23:00). I ritardi sono frequenti sulla linea sarda: monitoriamo direttamente il numero del treno e ci presentiamo all'arrivo effettivo. Per arrivi oltre la mezzanotte chiediamo di concordare in prenotazione." },
+  { q: "Devo riconsegnare il veicolo per prendere un treno: quanto margine serve?", a: "Per la riconsegna alla Stazione di Olbia ti chiediamo di arrivare almeno <strong>30 minuti prima</strong> della partenza del tuo treno. Tempo necessario per foto stato veicolo, eventuale rifornimento all'area di servizio adiacente e firma del verbale di riconsegna." },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-stazione-olbia#localbusiness",
+  description: "Noleggio auto alla Stazione di Olbia: collegamenti Trenitalia con Sassari e Cagliari, alternative ARST, combinazione treno + auto per Costa Smeralda.",
+  areaServed: [
+    { "@type": "TrainStation", name: "Stazione di Olbia" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const faqSchema = buildFaqSchema(faqs);
+---
+
+<BaseLayout
+  title="Noleggio Auto Stazione Olbia | Combina Treno + Auto | GDIS Rent"
+  description="Noleggio auto Stazione Olbia ✓ Collegamenti Trenitalia da Sassari e Cagliari ✓ Combo treno + auto per Costa Smeralda ✓ Consegna all'uscita. WhatsApp H24."
+  canonical="/noleggio-auto-stazione-olbia"
+  jsonLd={[localBusinessSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+>
+  <LocalitaHero
+    name="Stazione Olbia"
+    h1Prefix="Noleggio Auto"
+    h1Accent="Stazione Olbia"
+    subtitle="Arrivi in treno da Sassari, Cagliari o coincidenze interne? Trovi l'auto pronta nel piazzale antistante la stazione Trenitalia."
+    bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-olbia.webp"
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Collegamenti ferroviari da/per Olbia</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        La rete Trenitalia in Sardegna
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-8" data-reveal>
+        La <strong>Stazione di Olbia</strong> è uno snodo chiave della rete ferroviaria sarda gestita da RFI con servizio Trenitalia. La linea principale collega Olbia a Sassari attraverso Chilivani, con coincidenze per Cagliari, Oristano e l'entroterra. È una linea storica, suggestiva, su tracciato non elettrificato — i convogli sono diesel — quindi i tempi di percorrenza sono sensibilmente più lunghi di quanto suggerisca la sola distanza.
+      </p>
+
+      <div class="overflow-x-auto rounded-2xl border border-border bg-card">
+        <table class="w-full text-sm">
+          <thead class="bg-muted/40 text-xs uppercase tracking-wider text-muted-foreground">
+            <tr>
+              <th class="text-left py-3 px-4 font-semibold">Destinazione</th>
+              <th class="text-left py-3 px-4 font-semibold">Tempo medio</th>
+              <th class="text-left py-3 px-4 font-semibold">Frequenza</th>
+              <th class="text-left py-3 px-4 font-semibold">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            {trainConnections.map((c) => (
+              <tr class="border-t border-border">
+                <td class="py-3 px-4 font-medium">{c.dest}</td>
+                <td class="py-3 px-4 text-muted-foreground">{c.time}</td>
+                <td class="py-3 px-4 text-muted-foreground text-xs">{c.freq}</td>
+                <td class="py-3 px-4 text-muted-foreground text-xs">{c.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-muted-foreground/80 mt-3">
+        Frequenze indicative. Verifica sempre l'orario aggiornato sul sito ufficiale Trenitalia o sull'app prima del viaggio.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-muted/20">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5l1 1.5"/><path d="m8 19-1 2"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Strategia treno + noleggio</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Quando conviene davvero combinare treno e auto a noleggio
+      </h2>
+
+      <div class="space-y-6">
+        {combos.map((c, i) => (
+          <div class="rounded-2xl border border-border bg-card p-6" data-reveal data-reveal-delay={String(i * 100)}>
+            <h3 class="font-semibold mb-2">{c.title}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed" set:html={c.text} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Alternative al treno: rete ARST</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Bus regionali, e quando preferire l'auto
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-4">
+        <strong>ARST</strong> è il gestore unico del trasporto pubblico extraurbano sardo. La sua rete copre tratte molto più capillari del treno, soprattutto verso le località costiere della Costa Smeralda e verso La Maddalena. Linee come la Olbia–Palau (per imbarco su La Maddalena) o la Olbia–Porto Cervo–Baja Sardinia esistono ma con frequenze ridotte rispetto alla domanda estiva.
+      </p>
+      <p class="text-muted-foreground leading-relaxed mb-4">
+        Se il tuo viaggio è puramente "Olbia città + 1-2 escursioni", il bus ARST può bastare. Se invece vuoi muoverti tra <strong>spiagge meno servite</strong> (es. Cala Brandinchi, La Cinta, Spiaggia del Principe), o nei weekend di alta stagione quando i bus si riempiono, il noleggio diventa l'unica soluzione realistica.
+      </p>
+      <p class="text-muted-foreground leading-relaxed">
+        Vedi anche le pagine dedicate:{" "}
+        <a href="/noleggio-auto-a-olbia" class="text-primary font-medium hover:underline">centro Olbia</a>,{" "}
+        <a href="/noleggio-auto-aeroporto-olbia" class="text-primary font-medium hover:underline">Aeroporto OLB</a> e{" "}
+        <a href="/noleggio-auto-porto-olbia" class="text-primary font-medium hover:underline">Porto Isola Bianca</a>.
+      </p>
+    </div>
+  </section>
+
+  <ConsegnaVipExplainer variant="station" />
+
+  <LocalitaFAQ name="Stazione Olbia" faqs={faqs} />
+
+  <LocalitaCTA name="Stazione Olbia" />
+</BaseLayout>

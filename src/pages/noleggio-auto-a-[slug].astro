@@ -1,0 +1,117 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaCustomSection from "@/components/localita/LocalitaCustomSection.astro";
+import VehicleSpotlight from "@/components/localita/VehicleSpotlight.astro";
+import LocalitaInlineCTA from "@/components/localita/LocalitaInlineCTA.astro";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots.astro";
+import CockpitSpecs from "@/components/localita/CockpitSpecs.astro";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
+import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips.astro";
+import LocalitaNightlife from "@/components/localita/LocalitaNightlife.astro";
+import TrustMarquee from "@/components/TrustMarquee.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaTrustBlock from "@/components/localita/LocalitaTrustBlock.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+
+export async function getStaticPaths() {
+  const locations = await getCollection("locations");
+  return locations.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: data.name, url: data.canonical },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: `https://gdisrentservice.com${data.canonical}#localbusiness`,
+  description: data.description,
+  areaServed: data.areaServed.map((a) => ({ "@type": a.type, name: a.name })),
+});
+
+const faqSchema = buildFaqSchema(data.faq);
+
+const sectionBg = (i: number) => (i % 2 === 0 ? "bg-background" : "bg-muted/20");
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  canonical={data.canonical}
+  jsonLd={[localBusinessSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+  keywords={data.keywords}
+  lcpImage={{ href: data.heroImage, type: "image/webp" }}
+>
+  <LocalitaHero
+    name={data.name}
+    subtitle={data.heroSubtitle}
+    bgImage={data.heroImage}
+    h1Prefix={data.h1Prefix}
+    h1Accent={data.heroAccent}
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  {data.customSections.map((section, i) => (
+    <LocalitaCustomSection {...section} bgClass={sectionBg(i)} />
+  ))}
+
+  {data.spotlight && (
+    <VehicleSpotlight
+      tag={data.spotlight.tag}
+      title={data.spotlight.title}
+      description={data.spotlight.description}
+      image={data.spotlight.image}
+      imageAlt={data.spotlight.imageAlt}
+      badges={data.spotlight.badges}
+    />
+  )}
+
+  <LocalitaInlineCTA name={data.name} />
+
+  <LocalitaTopSpots name={data.name} spots={data.topSpots} />
+
+  {data.cockpit && (
+    <CockpitSpecs vehicleName={data.cockpit.vehicleName} specs={data.cockpit.specs} />
+  )}
+
+  {data.comparison && (
+    <VehicleComparisonTable
+      title={data.comparison.title}
+      subtitle={data.comparison.subtitle}
+      show={data.comparison.show}
+      recommendation={data.comparison.recommendation}
+    />
+  )}
+
+  <LocalitaTrafficTips name={data.name} tips={data.trafficTips} />
+  <LocalitaNightlife name={data.name} locali={data.nightlife} />
+
+  {data.trustMarqueeItems && <TrustMarquee items={data.trustMarqueeItems} />}
+
+  <LocalitaFAQ name={data.name} faqs={data.faq} />
+
+  {data.closingParagraph && (
+    <section class="py-16 bg-muted/20">
+      <div class="container px-4 max-w-3xl mx-auto">
+        <p class="text-lg text-muted-foreground leading-relaxed" set:html={data.closingParagraph} />
+      </div>
+    </section>
+  )}
+
+  <LocalitaTrustBlock name={data.name} />
+  <LocalitaCTA name={data.name} />
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+---
+
+<div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
+  <div class="absolute inset-0" style="perspective: 1000px;">
+    <div
+      class="absolute w-[200%] h-[200%] -left-1/2 top-0 animate-grid-flow bg-grid-overlay"
+    />
+  </div>
+</div>
+
+<style>
+  .bg-grid-overlay {
+    transform-origin: center top;
+    background-image:
+      linear-gradient(to right, hsl(var(--primary) / 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--primary) / 0.08) 1px, transparent 1px);
+    background-size: 80px 80px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 5%, black 40%, black 70%, transparent 95%);
+            mask-image: linear-gradient(to bottom, transparent 5%, black 40%, black 70%, transparent 95%);
+  }
+</style>

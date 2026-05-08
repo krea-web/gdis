@@ -1,0 +1,26 @@
+---
+type FaqItem = { q: string; a: string; highlighted?: boolean };
+
+export interface Props {
+  items: FaqItem[];
+  class?: string;
+}
+
+const { items, class: className = "" } = Astro.props;
+---
+
+<div class:list={["space-y-4 w-full", className]}>
+  {items.map((faq) => (
+    <details class="faq-item group bg-muted backdrop-blur-md border border-border rounded-2xl px-6 hover:bg-muted/80 transition-all duration-300 open:shadow-[0_10px_30px_rgba(0,0,0,0.08)] data-[highlighted='true']:bg-primary data-[highlighted='true']:border-primary data-[highlighted='true']:open:shadow-[0_10px_30px_hsl(var(--primary)/0.3)]" data-highlighted={faq.highlighted ? "true" : undefined}>
+      <summary class="flex items-center justify-between gap-4 text-left font-display text-lg font-semibold py-6 text-foreground group-data-[highlighted='true']:text-primary-foreground">
+        <span>{faq.q}</span>
+        <svg class="faq-chevron h-5 w-5 flex-shrink-0 text-foreground group-data-[highlighted='true']:text-primary-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </summary>
+      <div class="text-muted-foreground font-light leading-relaxed pb-6 text-base group-data-[highlighted='true']:text-primary-foreground/80">
+        <p set:html={faq.a} />
+      </div>
+    </details>
+  ))}
+</div>

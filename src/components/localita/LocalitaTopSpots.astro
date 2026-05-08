@@ -1,0 +1,125 @@
+---
+import { buildBreadcrumbList } from "@/lib/siteSchema";
+
+type SpotCategory =
+  | "spiaggia"
+  | "panorama"
+  | "monumento"
+  | "natura"
+  | "porto"
+  | "centro"
+  | "evento"
+  | "escursione";
+
+type Spot = {
+  name: string;
+  category: SpotCategory;
+  description: string;
+  distance: string;
+  cost: string;
+  bestTime: string;
+};
+
+export interface Props {
+  name: string;
+  spots: Spot[];
+  emitSchema?: boolean;
+}
+
+const { name, spots, emitSchema = true } = Astro.props;
+
+const CATEGORY_META: Record<SpotCategory, { label: string; gradient: string; iconKey: string }> = {
+  spiaggia: { label: "Spiaggia", gradient: "from-sky-400/20 to-cyan-400/10", iconKey: "waves" },
+  panorama: { label: "Panorama", gradient: "from-amber-400/20 to-orange-300/10", iconKey: "mountain" },
+  monumento: { label: "Monumento", gradient: "from-stone-400/20 to-stone-300/10", iconKey: "church" },
+  natura: { label: "Natura", gradient: "from-emerald-400/20 to-green-300/10", iconKey: "tree" },
+  porto: { label: "Marina / Porto", gradient: "from-blue-500/20 to-indigo-300/10", iconKey: "anchor" },
+  centro: { label: "Centro Storico", gradient: "from-rose-400/20 to-pink-300/10", iconKey: "pin" },
+  evento: { label: "Evento", gradient: "from-purple-400/20 to-fuchsia-300/10", iconKey: "bag" },
+  escursione: { label: "Escursione", gradient: "from-teal-400/20 to-cyan-300/10", iconKey: "compass" },
+};
+
+const itemListSchema = emitSchema
+  ? {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `Cosa vedere a ${name}`,
+      itemListElement: spots.map((s, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "TouristAttraction",
+          name: s.name,
+          description: s.description,
+          isAccessibleForFree: /gratis/i.test(s.cost),
+        },
+      })),
+    }
+  : null;
+---
+
+<section class="py-20 md:py-28 bg-background">
+  <div class="container px-4 max-w-6xl mx-auto">
+    <div class="text-center mb-14" data-reveal>
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Cosa vedere</p>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+        I posti migliori a {name}
+      </h2>
+      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+        Selezione curata di spiagge, panorami, monumenti ed esperienze imperdibili — con tempi di percorrenza e consigli pratici.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      {spots.map((s, i) => {
+        const meta = CATEGORY_META[s.category];
+        return (
+          <article
+            class:list={[
+              "group relative bg-card rounded-2xl border border-border p-6 hover:border-primary/40 transition-colors overflow-hidden",
+            ]}
+            data-reveal
+            data-reveal-delay={String((i % 4) * 100)}
+          >
+            <div class:list={["absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl rounded-full blur-3xl -z-10 opacity-60", meta.gradient]} aria-hidden="true"></div>
+
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center">
+                {meta.iconKey === "waves" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>}
+                {meta.iconKey === "mountain" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>}
+                {meta.iconKey === "church" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M10 9h4"/><path d="M12 7v5"/><path d="M14 22v-4a2 2 0 0 0-4 0v4"/><path d="M18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22"/><path d="m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.618a1 1 0 0 1 .553-.894L6 7"/></svg>}
+                {meta.iconKey === "tree" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17 14v8"/><path d="M7 14v8"/><path d="M12 11v11"/><path d="M22 14a4 4 0 0 1-7.5 1.5"/><path d="M9.5 15.5A4 4 0 0 1 2 14"/><path d="M19 11a4 4 0 0 0-3.5-4 4 4 0 0 0-7 0 4 4 0 0 0-3.5 4"/></svg>}
+                {meta.iconKey === "anchor" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>}
+                {meta.iconKey === "pin" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>}
+                {meta.iconKey === "bag" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>}
+                {meta.iconKey === "compass" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>}
+              </div>
+              <span class="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground">{meta.label}</span>
+            </div>
+
+            <h3 class="font-display text-xl md:text-2xl font-bold text-foreground mb-2">{s.name}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed mb-5">{s.description}</p>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs pt-4 border-t border-border/60">
+              <span class="flex items-center gap-1.5 text-foreground/70">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span class="sr-only">Distanza:</span>{s.distance}
+              </span>
+              <span class="flex items-center gap-1.5 text-foreground/70">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+                <span class="sr-only">Costo:</span>{s.cost}
+              </span>
+              <span class="flex items-center gap-1.5 text-foreground/70">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <span class="sr-only">Quando:</span>{s.bestTime}
+              </span>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+  {itemListSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  )}
+</section>

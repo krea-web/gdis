@@ -1,0 +1,14 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import AdminApp from "@/components/admin/AdminApp.tsx";
+---
+
+<BaseLayout
+  title="Admin — GDIS Rent"
+  description="Area amministrativa GDIS Rent."
+  canonical="/admin"
+  robots="noindex,nofollow"
+  hideBackground
+>
+  <AdminApp client:only="react" />
+</BaseLayout>

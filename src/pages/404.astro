@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Pagina non trovata — GDIS Rent"
+  description="La pagina che cerchi non esiste o è stata spostata. Torna alla home o contattaci su WhatsApp."
+  canonical="/404"
+  robots="noindex,follow"
+>
+  <section class="container py-32 text-center min-h-[60vh] flex flex-col items-center justify-center">
+    <p class="text-sm uppercase tracking-widest text-primary mb-4">Errore 404</p>
+    <h1 class="text-5xl md:text-7xl font-display font-bold text-foreground mb-6">
+      Pagina non trovata
+    </h1>
+    <p class="text-lg text-muted-foreground max-w-xl mb-10">
+      L'indirizzo che hai cercato non esiste più o è stato spostato. Puoi tornare alla home o
+      raggiungerci su WhatsApp per qualsiasi richiesta di noleggio.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a
+        href="/"
+        class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all"
+      >
+        Torna alla home
+      </a>
+      <a
+        href="https://wa.me/393520459150"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-wa-track="404_page"
+        class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
+      >
+        Scrivici su WhatsApp
+      </a>
+    </div>
+  </section>
+</BaseLayout>

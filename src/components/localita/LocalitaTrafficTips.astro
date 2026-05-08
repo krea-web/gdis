@@ -1,0 +1,40 @@
+---
+type Tip = { icon: "ztl" | "parking" | "traffic" | "tip"; title: string; text: string };
+
+export interface Props {
+  name: string;
+  tips: Tip[];
+}
+
+const { name, tips } = Astro.props;
+---
+
+<section class="py-24 md:py-32 bg-muted/30 relative">
+  <div class="container px-4">
+    <div class="text-center mb-16" data-reveal>
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Consigli Utili</p>
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-foreground">
+        Traffico & Parcheggi a {name}
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      {tips.map((tip, i) => (
+        <div
+          class="relative group rounded-2xl p-6 bg-background/60 backdrop-blur-xl border border-border/50 hover:border-primary/30 transition-all duration-300"
+          data-reveal
+          data-reveal-delay={String(i * 100)}
+        >
+          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            {tip.icon === "ztl" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>}
+            {tip.icon === "parking" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>}
+            {tip.icon === "traffic" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>}
+            {tip.icon === "tip" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>}
+          </div>
+          <h3 class="font-semibold text-foreground mb-2">{tip.title}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed" set:html={tip.text} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

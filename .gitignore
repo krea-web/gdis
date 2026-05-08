@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Astro / Vercel build artifacts
+.astro/
+.vercel/
+
 # Environment variables — NEVER commit
 .env
 .env.local

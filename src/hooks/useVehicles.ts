@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
 export type Vehicle = {
@@ -57,7 +57,7 @@ export function getLowestRate(vehicle: Vehicle): number {
   return rates.length > 0 ? Math.min(...rates) : 0;
 }
 
-async function fetchVehicles(): Promise<Vehicle[]> {
+export async function fetchVehicles(): Promise<Vehicle[]> {
   const { data, error } = await supabase
     .from("vehicles")
     .select("*")
@@ -67,12 +67,44 @@ async function fetchVehicles(): Promise<Vehicle[]> {
   return (data ?? []) as unknown as Vehicle[];
 }
 
-export function useVehicles() {
-  return useQuery({
-    queryKey: ["vehicles"],
-    queryFn: fetchVehicles,
-    staleTime: 1000 * 60 * 5,
-  });
+type UseVehiclesResult = {
+  data: Vehicle[] | undefined;
+  isLoading: boolean;
+  error: Error | null;
+};
+
+/**
+ * Hook for fetching available vehicles.
+ * Replaces the previous react-query based version with a plain useState/useEffect implementation.
+ * Optionally accepts an initialData snapshot (e.g. from build-time fetch) so the UI is non-empty
+ * on first render and a live refetch happens in the background to keep prices fresh.
+ */
+export function useVehicles(initialData?: Vehicle[]): UseVehiclesResult {
+  const [data, setData] = useState<Vehicle[] | undefined>(initialData);
+  const [isLoading, setIsLoading] = useState<boolean>(!initialData);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchVehicles()
+      .then((vehicles) => {
+        if (cancelled) return;
+        setData(vehicles);
+        setError(null);
+      })
+      .catch((err: unknown) => {
+        if (cancelled) return;
+        setError(err instanceof Error ? err : new Error(String(err)));
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return { data, isLoading, error };
 }
 
 /** Group vehicles by their `category` field */

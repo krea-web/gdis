@@ -32,7 +32,8 @@ type Props = {
 const TurnstileWidget = ({ onToken, onExpired, onError }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
-  const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
+  const siteKey = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
+    import.meta.env.VITE_TURNSTILE_SITE_KEY) as string | undefined;
 
   useEffect(() => {
     if (!siteKey || !containerRef.current) return;

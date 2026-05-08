@@ -1,0 +1,205 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Olbia", url: "/noleggio-auto-a-olbia" },
+  { name: "Aeroporto Olbia (OLB)", url: "/noleggio-auto-aeroporto-olbia" },
+];
+
+const distances = [
+  { dest: "Centro Olbia", km: 4, min: 8, road: "SS125" },
+  { dest: "Porto Isola Bianca", km: 6, min: 12, road: "SS125" },
+  { dest: "San Teodoro", km: 30, min: 30, road: "SS131 dcn" },
+  { dest: "Porto Cervo", km: 32, min: 35, road: "SS125 → SP59" },
+  { dest: "San Pantaleo", km: 25, min: 30, road: "SS125 → SP73" },
+  { dest: "Baja Sardinia", km: 35, min: 40, road: "SS125 → SP59" },
+  { dest: "Golfo Aranci", km: 20, min: 22, road: "SS125 → SP82" },
+  { dest: "La Maddalena (imbarco)", km: 45, min: 55, road: "SS125 fino a Palau" },
+];
+
+const carriers = [
+  { name: "Volotea", segment: "Low-cost", note: "Hub principale OLB con base operativa" },
+  { name: "easyJet", segment: "Low-cost", note: "Voli da Londra, Berlino, Milano e altre rotte EU" },
+  { name: "Ryanair", segment: "Low-cost", note: "Stagionale estiva, principalmente UK e Irlanda" },
+  { name: "ITA Airways", segment: "Full-service", note: "Continuità territoriale per Roma e Milano LIN" },
+  { name: "Lufthansa", segment: "Full-service", note: "Estivi diretti da Monaco e Francoforte" },
+  { name: "Air France", segment: "Full-service", note: "Stagionale Parigi CDG" },
+];
+
+const faqs = [
+  { q: "Qual è il codice IATA dell'Aeroporto di Olbia?", a: "Il codice IATA è <strong>OLB</strong> (codice ICAO <strong>LIEO</strong>). Il nome ufficiale è <em>Aeroporto di Olbia – Costa Smeralda</em>, gestito da Geasar S.p.A. È il secondo aeroporto della Sardegna per traffico passeggeri dopo Cagliari-Elmas." },
+  { q: "L'aeroporto di Olbia è aperto tutto l'anno o solo in estate?", a: "È aperto tutto l'anno, ma ha una stagionalità molto marcata: <strong>oltre il 60% del traffico</strong> si concentra tra giugno e settembre. In bassa stagione molte rotte internazionali si fermano e restano attivi soprattutto i collegamenti di continuità territoriale per Roma Fiumicino e Milano Linate." },
+  { q: "Cosa succede se il volo è dirottato su Alghero o Cagliari?", a: "Capita raramente, soprattutto per maltempo. In caso di dirottamento contattaci subito su WhatsApp: in base all'orario possiamo riposizionare la consegna sull'aeroporto effettivo (con eventuale sovrapprezzo carburante concordato in trasparenza) oppure attenderti al rientro a Olbia se decidi di prendere bus o navetta." },
+  { q: "Posso ritirare il veicolo se viaggio con animale domestico in trasportino?", a: "Sì. Ti chiediamo solo di indicarlo in prenotazione: per le auto stendiamo un telo coprisedile e per gli scooter forniamo info sui regolamenti di trasporto piccoli animali. Per chi viaggia con cane di taglia media/grande consigliamo la <a href='/flotta/fiat-panda' class='text-primary underline'>Fiat Panda</a> (5 posti, baule capiente)." },
+  { q: "Si può noleggiare con voli notturni o all'alba?", a: "Sì, copriamo l'intera fascia oraria operativa dell'aeroporto. La consegna è gratuita per noleggi di 3+ giorni anche in fasce notturne; sotto i 3 giorni applichiamo un piccolo supplemento per il fuori-orario comunicato in prenotazione." },
+  { q: "I seggiolini bambino sono inclusi?", a: "Sì, su richiesta in prenotazione e gratuitamente. Disponibili seggiolini gruppo 0+/1/2/3 omologati ECE R44/04 o i-Size. Avvisaci dell'età del bambino così prepariamo quello giusto prima del tuo arrivo." },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-aeroporto-olbia#localbusiness",
+  description: "Noleggio auto in Aeroporto Olbia Costa Smeralda (OLB) con consegna VIP agli arrivi. Monitoraggio voli in tempo reale, distanze verso Costa Smeralda, info terminal e parcheggi.",
+  areaServed: [
+    { "@type": "Airport", name: "Aeroporto Olbia Costa Smeralda" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const faqSchema = buildFaqSchema(faqs);
+---
+
+<BaseLayout
+  title="Noleggio Auto Aeroporto Olbia OLB | Consegna agli Arrivi | GDIS Rent"
+  description="Noleggio auto Aeroporto Olbia Costa Smeralda OLB ✓ Consegna VIP direttamente agli arrivi ✓ Monitoraggio voli ✓ Distanze e tempi reali per Costa Smeralda. Prenota online H24."
+  canonical="/noleggio-auto-aeroporto-olbia"
+  jsonLd={[localBusinessSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+>
+  <LocalitaHero
+    name="Aeroporto Olbia"
+    h1Prefix="Noleggio Auto"
+    h1Accent="Aeroporto Olbia"
+    subtitle="Codice IATA OLB. Consegna VIP nel piazzale arrivi del Costa Smeralda Airport — atterri, ti consegniamo l'auto, parti."
+    bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp"
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Come funziona la consegna OLB</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Tre passaggi tra l'atterraggio e il tuo viaggio
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="rounded-2xl border border-border bg-card p-6" data-reveal>
+          <div class="text-primary text-3xl font-display font-bold mb-3">01</div>
+          <h3 class="font-semibold mb-2">Atterraggio monitorato</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Tracciamo il volo in tempo reale tramite codice di prenotazione. Anticipi o ritardi sono gestiti senza che tu debba avvisarci: l'operatore si presenta all'arrivo effettivo del volo.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-border bg-card p-6" data-reveal data-reveal-delay="100">
+          <div class="text-primary text-3xl font-display font-bold mb-3">02</div>
+          <h3 class="font-semibold mb-2">Incontro al cartello GDIS</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Il nostro operatore in uniforme ti aspetta nella sala arrivi con un cartello personalizzato. Riconoscibile, niente attese al desk, niente ricerche di banchi affollati.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-border bg-card p-6" data-reveal data-reveal-delay="200">
+          <div class="text-primary text-3xl font-display font-bold mb-3">03</div>
+          <h3 class="font-semibold mb-2">Firma digitale & via</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Contratto firmato sullo smartphone, foto di stato del veicolo, chiavi in mano. In meno di 10 minuti dal ritiro bagagli sei già sulla SS125.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-muted/20">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Distanze reali da OLB</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4" data-reveal>
+        Quanto ci metti a raggiungere la tua destinazione
+      </h2>
+      <p class="text-muted-foreground mb-8" data-reveal>
+        Tempi calcolati senza traffico. In alta stagione (luglio-agosto, weekend) aggiungere 15-30% sulle tratte verso Costa Smeralda.
+      </p>
+
+      <div class="overflow-x-auto rounded-2xl border border-border bg-card">
+        <table class="w-full text-sm">
+          <thead class="bg-muted/40 text-xs uppercase tracking-wider text-muted-foreground">
+            <tr>
+              <th class="text-left py-3 px-4 font-semibold">Destinazione</th>
+              <th class="text-right py-3 px-4 font-semibold">Km</th>
+              <th class="text-right py-3 px-4 font-semibold">Min</th>
+              <th class="text-left py-3 px-4 font-semibold">Strada</th>
+            </tr>
+          </thead>
+          <tbody>
+            {distances.map((d) => (
+              <tr class="border-t border-border">
+                <td class="py-3 px-4 font-medium">{d.dest}</td>
+                <td class="py-3 px-4 text-right text-muted-foreground">{d.km}</td>
+                <td class="py-3 px-4 text-right text-muted-foreground">{d.min}</td>
+                <td class="py-3 px-4 text-muted-foreground text-xs">{d.road}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Compagnie operative su OLB</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Atterri con qualunque compagnia, ti aspettiamo lo stesso
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-8" data-reveal>
+        L'Aeroporto Costa Smeralda movimenta circa <strong>3 milioni di passeggeri</strong> nei mesi estivi, con voli da tutta Europa. Il nostro sistema riconosce qualunque numero di volo IATA: che tu arrivi con un low-cost stagionale o con un volo di continuità territoriale, la procedura di consegna è identica.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        {carriers.map((c) => (
+          <div class="rounded-xl border border-border bg-card p-4 flex items-start gap-3">
+            <div class="shrink-0 px-2 py-1 rounded-md bg-primary/10 text-primary text-[10px] uppercase tracking-wider font-semibold">
+              {c.segment}
+            </div>
+            <div>
+              <div class="font-semibold">{c.name}</div>
+              <div class="text-xs text-muted-foreground mt-0.5">{c.note}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5 flex gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500 shrink-0 mt-0.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        <div class="text-sm">
+          <p class="font-semibold text-foreground mb-1">Note operative aeroporto</p>
+          <p class="text-muted-foreground leading-relaxed">
+            Il terminal di Olbia è unico (no Schengen/non-Schengen separati lato arrivi). I tempi di ritiro bagagli in piena stagione possono superare i 30 minuti — è un dato a tuo favore: ti permette di non sentire la pressione del taxi/desk affollato e di trovarci con calma in sala arrivi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ConsegnaVipExplainer variant="airport" />
+
+  <LocalitaFAQ name="Aeroporto Olbia (OLB)" faqs={faqs} />
+
+  <section class="py-12 bg-muted/20">
+    <div class="container px-4 text-center max-w-2xl">
+      <p class="text-muted-foreground">
+        Atterri al Costa Smeralda? Vedi anche le pagine dedicate alle nostre destinazioni:{" "}
+        <a href="/noleggio-auto-a-olbia" class="text-primary font-medium hover:underline">centro Olbia</a>,{" "}
+        <a href="/noleggio-auto-a-porto-cervo" class="text-primary font-medium hover:underline">Porto Cervo</a> e{" "}
+        <a href="/noleggio-auto-a-san-teodoro" class="text-primary font-medium hover:underline">San Teodoro</a>.
+      </p>
+    </div>
+  </section>
+
+  <LocalitaCTA name="Aeroporto Olbia" />
+</BaseLayout>

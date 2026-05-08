@@ -16,10 +16,11 @@ La vecchia chiave anon è stata esposta in git history. Prima del go-live:
 
 | Variable | Valore |
 | --- | --- |
-| `VITE_SUPABASE_URL` | `https://zgazhrzjgefvjxknyffy.supabase.co` |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | (nuova anon key) |
-| `VITE_SUPABASE_PROJECT_ID` | `zgazhrzjgefvjxknyffy` |
-| `VITE_TURNSTILE_SITE_KEY` | (vedi step 5) |
+| `PUBLIC_SUPABASE_URL` | `https://zgazhrzjgefvjxknyffy.supabase.co` |
+| `PUBLIC_SUPABASE_ANON_KEY` | (nuova anon key) |
+| `PUBLIC_TURNSTILE_SITE_KEY` | (vedi step 5) |
+| `PUBLIC_GA_ID` | `G-0SH3YF3Y65` (default già nel codice) |
+| `SUPABASE_SERVICE_ROLE_KEY` | (build-time, server-only) |
 
 6. Sul tuo computer locale rimuovi `.env` dal tracking git: `git rm --cached .env` + commit.
 7. Ricrea il file `.env` locale copiandolo da `.env.example` con i valori aggiornati.
@@ -82,7 +83,7 @@ Finché non ci sono, il sito userà il logo come fallback (gestito nel component
 3. Widget Mode: **Managed** (invisibile se possibile).
 4. Copia **Site Key** e **Secret Key**.
 5. Aggiungi su Vercel env:
-   - `VITE_TURNSTILE_SITE_KEY` (public, client)
+   - `PUBLIC_TURNSTILE_SITE_KEY` (public, client)
 6. Aggiungi su Supabase Edge Functions Secrets:
    - `TURNSTILE_SECRET_KEY` (server, non esporre al client)
 
@@ -94,8 +95,8 @@ Finché non ci sono, il sito userà il logo come fallback (gestito nel component
 2. Proprietà: "GDIS Rent", timezone Italia, currency EUR.
 3. Crea data stream **Web** per `https://gdisrentservice.com`.
 4. Copia il Measurement ID `G-XXXXXXXXXX`.
-5. In `index.html`, decommenta le righe GA4 e sostituisci `G-XXXXXXXXXX`.
-6. (opzionale) aggiungi env var `VITE_GA4_ID` se preferisci.
+5. Aggiungi su Vercel env var `PUBLIC_GA_ID` (default `G-0SH3YF3Y65`); `src/components/Analytics.astro` lo carica solo in `import.meta.env.PROD` con Consent Mode v2 default `denied`.
+6. Il file `src/components/CookieBannerIsland.tsx` chiama `window.gdisGrantConsent(true|false)` per aggiornare il consenso.
 
 Il **CookieBanner** già blocca GA4 fino al consenso dell'utente (Consent Mode v2).
 
@@ -122,19 +123,17 @@ Il **CookieBanner** già blocca GA4 fino al consenso dell'utente (Consent Mode v
 
 ---
 
-## 9. Prerender.io (rendering SPA per crawlers)
+## 9. ~~Prerender.io~~ — NON PIÙ NECESSARIO
 
-1. https://prerender.io → account + abbonamento (plan free fino a 250 pagine).
-2. **Settings → Your Token**: copia il token.
-3. Aggiungi su Vercel env var: `PRERENDER_TOKEN` (server-only, non prefisso VITE_).
-4. Il file `vercel.json` ha già gli header necessari; verifica che le rewrite rules per gli User-Agent dei crawler siano attive post-deploy.
-5. Dopo il deploy: vai su Prerender dashboard → **Cached Pages → Recache sitemap** con URL `https://gdisrentservice.com/sitemap.xml`.
+Il sito è ora **SSG (Static Site Generation) tramite Astro 5**: ogni pagina è HTML completo al primo byte. I crawler (Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot) ricevono direttamente il markup renderizzato — niente Prerender.io, niente rewrite per User-Agent.
 
-### Test rapido
+Se hai un account Prerender.io legacy, puoi cancellarlo e rimuovere `PRERENDER_TOKEN` da Vercel.
+
+### Test rapido (post-deploy)
 ```bash
 curl -A "Googlebot" https://gdisrentservice.com/noleggio-auto-a-olbia | head -50
 ```
-Deve restituire HTML completo con testo della pagina, non solo `<div id="root"></div>`.
+Deve restituire HTML completo con `<title>`, `<meta description>`, JSON-LD inline, canonical e contenuto testuale.
 
 ---
 

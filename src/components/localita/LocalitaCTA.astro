@@ -1,0 +1,40 @@
+---
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<section class="relative py-32 md:py-40 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-slate-900"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.4),transparent_60%)]"></div>
+
+  <div class="container relative z-10 text-center px-4">
+    <p class="text-sm font-semibold tracking-widest uppercase text-white/60 mb-4" data-reveal>
+      Pronto a esplorare {name}?
+    </p>
+    <h2 class="text-4xl md:text-6xl font-display font-black text-white mb-6" data-reveal data-reveal-delay="100">
+      Il Tuo Veicolo Ti Aspetta
+    </h2>
+    <p class="text-lg text-white/70 max-w-xl mx-auto mb-10" data-reveal data-reveal-delay="200">
+      Consegna VIP direttamente al tuo hotel, villa o porto a {name}. Prenota in 2 minuti.
+    </p>
+    <div class="flex flex-col items-center gap-5" data-reveal data-reveal-delay="300">
+      <a
+        href="/prenotaora"
+        class="inline-flex items-center justify-center gap-3 h-16 px-12 text-lg font-bold rounded-full bg-white text-primary hover:bg-white/90 shadow-[0_10px_40px_rgba(255,255,255,0.2)] hover:shadow-[0_15px_50px_rgba(255,255,255,0.3)] transition-all duration-300"
+      >
+        Prenota Ora
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="text-sm text-white/70">
+        Hai dubbi?{" "}
+        <a href="/contatti" class="text-white font-semibold underline-offset-4 hover:underline">Scrivici</a>{" "}
+        o torna alla{" "}
+        <a href="/" class="text-white font-semibold underline-offset-4 hover:underline">home</a>{" "}
+        per esplorare la flotta.
+      </p>
+    </div>
+  </div>
+</section>

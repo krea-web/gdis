@@ -1,0 +1,46 @@
+---
+const GA_ID = import.meta.env.PUBLIC_GA_ID || "G-0SH3YF3Y65";
+const isProd = import.meta.env.PROD;
+---
+
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    analytics_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    wait_for_update: 500,
+  });
+  window.gdisGrantConsent = function (granted) {
+    var v = granted ? "granted" : "denied";
+    gtag("consent", "update", {
+      ad_storage: v,
+      ad_user_data: v,
+      ad_personalization: v,
+      analytics_storage: v,
+    });
+  };
+</script>
+
+{isProd && (
+  <script is:inline define:vars={{ GA_ID }}>
+    function loadGTM(){
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+      document.head.appendChild(s);
+      gtag("js", new Date());
+      gtag("config", GA_ID, { anonymize_ip: true });
+    }
+    if (document.readyState === "complete") {
+      ("requestIdleCallback" in window) ? requestIdleCallback(loadGTM, { timeout: 3000 }) : setTimeout(loadGTM, 2000);
+    } else {
+      window.addEventListener("load", function(){
+        ("requestIdleCallback" in window) ? requestIdleCallback(loadGTM, { timeout: 3000 }) : setTimeout(loadGTM, 2000);
+      });
+    }
+  </script>
+)}

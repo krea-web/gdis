@@ -1,0 +1,150 @@
+---
+import "@/index.css";
+import SEO from "@/components/SEO.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+import BackgroundGrid from "@/components/BackgroundGrid.astro";
+import WhatsAppWidget from "@/components/WhatsAppWidget.astro";
+import MobileStickyCTA from "@/components/MobileStickyCTA.astro";
+import Analytics from "@/components/Analytics.astro";
+import CookieBannerIsland from "@/components/CookieBannerIsland.tsx";
+import { organizationSchema, websiteSchema } from "@/lib/siteSchema";
+
+type JsonLd = Record<string, unknown>;
+type BreadcrumbItem = { name: string; url: string };
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  jsonLd?: JsonLd | JsonLd[];
+  ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogType?: "website" | "article" | "product";
+  robots?: string;
+  breadcrumbs?: BreadcrumbItem[];
+  keywords?: string;
+  /** When true, hide global background grid (e.g. fullscreen booking) */
+  hideBackground?: boolean;
+  /** Optional preload hints for LCP image (use full URL with srcset) */
+  lcpImage?: { href: string; imagesrcset?: string; imagesizes?: string; type?: string };
+}
+
+const {
+  title,
+  description,
+  canonical,
+  jsonLd,
+  ogImage,
+  ogImageWidth,
+  ogImageHeight,
+  ogType,
+  robots,
+  breadcrumbs,
+  keywords,
+  hideBackground = false,
+  lcpImage,
+} = Astro.props;
+
+const userJsonLd: JsonLd[] = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+const allJsonLd: JsonLd[] = [organizationSchema, websiteSchema, ...userJsonLd];
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <link rel="icon" type="image/svg+xml" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/gdis-favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/favicon-16x16.png" />
+    <link rel="shortcut icon" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="preconnect" href="https://zgazhrzjgefvjxknyffy.supabase.co" crossorigin />
+    <link rel="dns-prefetch" href="https://zgazhrzjgefvjxknyffy.supabase.co" />
+    <link rel="dns-prefetch" href="https://n8n.kreareweb.com" />
+    <link rel="dns-prefetch" href="https://challenges.cloudflare.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    />
+
+    {lcpImage && (
+      <link
+        rel="preload"
+        as="image"
+        href={lcpImage.href}
+        imagesrcset={lcpImage.imagesrcset}
+        imagesizes={lcpImage.imagesizes}
+        type={lcpImage.type ?? "image/webp"}
+        fetchpriority="high"
+      />
+    )}
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      jsonLd={allJsonLd}
+      ogImage={ogImage}
+      ogImageWidth={ogImageWidth}
+      ogImageHeight={ogImageHeight}
+      ogType={ogType}
+      robots={robots}
+      breadcrumbs={breadcrumbs}
+      keywords={keywords}
+    />
+
+    <Analytics />
+  </head>
+  <body class="bg-background text-foreground antialiased">
+    <div class="min-h-screen flex flex-col overflow-x-hidden">
+      {!hideBackground && <BackgroundGrid />}
+      <Navbar />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+      <WhatsAppWidget />
+      <MobileStickyCTA />
+      <CookieBannerIsland client:idle />
+    </div>
+
+    <script is:inline>
+      /* IntersectionObserver-driven reveal — replaces framer-motion whileInView for static sections */
+      (function () {
+        var els = document.querySelectorAll("[data-reveal]");
+        if (!els.length) return;
+        if (!("IntersectionObserver" in window)) {
+          els.forEach((el) => el.classList.add("in-view"));
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("in-view");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
+        );
+        els.forEach((el) => io.observe(el));
+      })();
+    </script>
+  </body>
+</html>

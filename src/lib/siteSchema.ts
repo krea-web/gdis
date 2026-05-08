@@ -117,3 +117,67 @@ export const websiteSchema = {
   inLanguage: "it-IT",
   publisher: { "@id": `${SITE_URL}/#organization` },
 };
+
+/** Build a Product schema for a fleet vehicle. */
+export function buildProductSchema(opts: {
+  slug: string;
+  name: string;
+  description: string;
+  image: string;
+  pricePerDay: number;
+  priceValidUntil: string;
+  category?: string;
+  brand?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${SITE_URL}/flotta/${opts.slug}#product`,
+    name: opts.name,
+    description: opts.description,
+    image: opts.image,
+    brand: opts.brand
+      ? { "@type": "Brand", name: opts.brand }
+      : { "@type": "Brand", name: BUSINESS_NAME },
+    category: opts.category ?? "Vehicle Rental",
+    offers: {
+      "@type": "Offer",
+      url: `${SITE_URL}/flotta/${opts.slug}`,
+      priceCurrency: "EUR",
+      price: opts.pricePerDay,
+      priceValidUntil: opts.priceValidUntil,
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
+    },
+  };
+}
+
+/** Build a FAQPage schema from a list of {q,a} pairs. */
+export function buildFaqSchema(faq: Array<{ q: string; a: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}
+
+/** Build a BreadcrumbList schema from an ordered list of items. */
+export function buildBreadcrumbList(items: Array<{ name: string; url: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((b, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: b.name,
+      item: b.url.startsWith("http") ? b.url : `${SITE_URL}${b.url}`,
+    })),
+  };
+}

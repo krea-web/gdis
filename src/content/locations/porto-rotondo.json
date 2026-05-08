@@ -1,0 +1,64 @@
+{
+  "slug": "porto-rotondo",
+  "name": "Porto Rotondo",
+  "title": "Noleggio Auto Porto Rotondo | Quad per Punta Volpe e Marinella | GDIS Rent",
+  "description": "Noleggio Yamaha Raptor 700, Fiat Panda e scooter a Porto Rotondo ✓ Cale di Punta Volpe e Marinella raggiungibili off-road ✓ Consegna in Marina, villa o Piazzetta. WhatsApp H24.",
+  "canonical": "/noleggio-auto-a-porto-rotondo",
+  "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-rotondo/gdisrent-noleggio-porto-rotondo.webp",
+  "heroSubtitle": "L'eleganza della Piazzetta San Marco di giorno, le cale segrete di Punta Volpe nel pomeriggio. Solo il quad ti permette di vivere entrambi i lati di Porto Rotondo nella stessa giornata.",
+  "areaServed": [
+    { "type": "City", "name": "Porto Rotondo" },
+    { "type": "AdministrativeArea", "name": "Costa Smeralda" }
+  ],
+  "customSections": [],
+  "spotlight": {
+    "tag": "Avventura Off-Road",
+    "title": "Il Quad Apre le Cale Segrete di Porto Rotondo",
+    "description": "Porto Rotondo è due posti diversi nella stessa cartina. C'è il borgo elegante progettato negli anni '60 dai conti Donà delle Rose, con la Piazzetta San Marco e l'anfiteatro di Andrea Cascella, dove si beve l'aperitivo guardando le barche a vela rientrare in Marina. E poi c'è il Porto Rotondo selvaggio: le calette di Punta Volpe, le insenature di Marinella, gli sterrati che salgono verso la macchia mediterranea sopra Cugnana. Per vivere il primo basta una Fiat Panda Hybrid — entra nella zona pedonale, parcheggia in via dei Lecci, ti gusti la Piazzetta. Per vivere il secondo serve un mezzo diverso: il Yamaha Raptor 700, quad omologato con patente B, sospensioni off-road e potenza da 686cc, è il veicolo che apre tutte le porte. Imbocchi la pista di terra battuta che le auto non possono prendere, e in 10 minuti sei su una caletta dove ci sono 4 persone in tutto. Per chi non vuole rinunciare a nulla, il combo perfetto è scooter Honda SH per i giorni in Piazzetta + quad noleggiato per una giornata sola dedicata all'esplorazione delle cale: massima libertà, costo contenuto. La Marina di Porto Rotondo è il secondo porto turistico più grande del Mediterraneo dopo Porto Cervo: per chi arriva in barca, organizziamo la consegna direttamente al pontile.",
+    "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-costasmeraldaoffroad.webp",
+    "imageAlt": "Cale nascoste Porto Rotondo",
+    "badges": ["Sospensioni off-road", "Patente B obbligatoria", "Cale irraggiungibili"]
+  },
+  "topSpots": [
+    { "name": "Piazzetta San Marco", "category": "centro", "description": "Cuore pulsante del borgo: piazza-anfiteatro all'aperto progettata negli anni '60 con sculture in granito di Andrea Cascella. Pedonale, circondata da bar, gallerie e boutique. Il rito dell'aperitivo serale qui è una piccola tradizione locale, con vista sulla Marina.", "distance": "Centro Porto Rotondo", "cost": "Gratis", "bestTime": "Aperitivo (18:00-20:00)" },
+    { "name": "Spiaggia di Ira", "category": "spiaggia", "description": "Due baie gemelle separate da una piccola lingua di scogli, acque limpide e fondali rocciosi ideali per snorkeling. Più tranquilla rispetto alle spiagge di Porto Cervo, accessibile anche a piedi dalla Marina con una camminata di 15 minuti. Servizi minimi: meglio portarsi acqua e ombrellone.", "distance": "10 min in auto", "cost": "Gratis", "bestTime": "Mattina (acqua calma)" },
+    { "name": "Marina di Porto Rotondo", "category": "porto", "description": "Tra i porti turistici più grandi del Mediterraneo, con oltre 750 posti barca. Banchina pedonale con yacht, barche a vela, ristoranti sull'acqua e caffè. Passeggiata di un paio di chilometri lungo i pontili, perfetta per la pre-cena. Ingresso libero al pubblico.", "distance": "Centro Porto Rotondo", "cost": "Gratis", "bestTime": "Tardo pomeriggio" },
+    { "name": "Punta Volpe", "category": "natura", "description": "Promontorio selvaggio con calette nascoste tra rocce di granito e macchia mediterranea. Le insenature più belle (Marinella, Cala Volpe nord) si raggiungono per piste sterrate non percorribili da auto a noleggio standard — il quad è il mezzo ideale. Per chi è a piedi, sentiero costiero di 30-40 minuti.", "distance": "15 min + sterrato", "cost": "Gratis", "bestTime": "Mattina (luce migliore)" }
+  ],
+  "cockpit": {
+    "vehicleName": "Yamaha Raptor 700R",
+    "specs": [
+      { "label": "Patente", "value": "B", "icon": "license" },
+      { "label": "Posti", "value": "1", "icon": "seats" },
+      { "label": "Ideale per", "value": "Off-Road & Cale", "icon": "use" },
+      { "label": "Consegna", "value": "Marina / Hotel", "icon": "delivery" }
+    ]
+  },
+  "comparison": {
+    "title": "Quale veicolo per Porto Rotondo?",
+    "subtitle": "Quad per le cale, Panda per la Piazzetta. Ecco la differenza.",
+    "show": ["yamaha", "honda", "panda"],
+    "recommendation": "<strong class='text-foreground'>Porto Rotondo è due posti in uno.</strong> Per il borgo elegante e la Piazzetta basta la Fiat Panda (entra ovunque, parcheggia in via dei Lecci) o lo scooter Honda SH (zero stress in alta stagione). Per le cale segrete di Punta Volpe e Marinella, accessibili solo via sterrato, serve il quad Yamaha Raptor 700: omologato con patente B, sospensioni off-road, l'unico mezzo che apre quelle insenature con 4 turisti in tutto."
+  },
+  "trafficTips": [
+    { "icon": "parking", "title": "Piazzetta Parking", "text": "Parcheggio limitato vicino alla Piazzetta. In quad o scooter trovi posto ovunque." },
+    { "icon": "traffic", "title": "Olbia-Porto Rotondo", "text": "Il tratto è trafficato nelle ore di punta estive. Il quad prende le scorciatoie sterrate." },
+    { "icon": "ztl", "title": "Centro Pedonale", "text": "La Piazzetta e il lungomare sono pedonali. Lo scooter parcheggia nelle aree dedicate." },
+    { "icon": "tip", "title": "Cale in Quad", "text": "Le calette di Punta Volpe e Marinella sono perfette per il quad: strade sterrate e zero folla." }
+  ],
+  "nightlife": [
+    { "name": "S'Astore", "type": "ristorante", "desc": "Alta cucina sarda con vista sulla baia. Aragoste e ricci di mare freschi." },
+    { "name": "Country Club", "type": "lounge", "desc": "Pool bar esclusivo con dj set al tramonto. Dress code elegante." },
+    { "name": "Bar della Piazzetta", "type": "aperitivo", "desc": "L'aperitivo serale con vino sardo e taglieri di pecorino. Vista anfiteatro." },
+    { "name": "Tartarughino", "type": "ristorante", "desc": "Pesce alla griglia e pasta fresca sulla terrazza con vista Marina." }
+  ],
+  "trustMarqueeItems": ["Marina Porto Rotondo", "Piazzetta San Marco", "Punta Volpe", "Quad Off-Road", "Spiaggia Ira", "Eleganza Discreta"],
+  "faq": [
+    { "q": "Consegnate il quad alla Marina di Porto Rotondo?", "a": "Sì! Consegna VIP alla Marina, al tuo hotel o alla villa. Il <a href='/flotta/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a> ti aspetta pronto per l'avventura." },
+    { "q": "Serve la patente per il quad Yamaha Raptor?", "a": "Sì, serve la patente B. Il Raptor 700 è un veicolo potente che richiede esperienza di guida." },
+    { "q": "Posso raggiungere le cale nascoste senza quad?", "a": "Punta Volpe è raggiungibile a piedi con un sentiero di circa 30 minuti dal parcheggio più vicino, ma in alta stagione il parcheggio si esaurisce alle 9:00. Marinella è invece praticamente off-limits senza un mezzo a 4 ruote motrici o un quad: la pista di accesso è dissestata e le auto a noleggio standard sono escluse dalle assicurazioni se ci si avventura. Il quad risolve entrambi i problemi." },
+    { "q": "Quanto dura la batteria di una giornata di quad off-road?", "a": "Il Yamaha Raptor è benzina (non elettrico), serbatoio da 11 litri = circa 150-180 km di autonomia in uso misto on/off road. Per una giornata standard di esplorazione delle cale di Porto Rotondo basta e avanza. Stazione di servizio più comoda: la Q8 di Olbiamare, sulla SS125." },
+    { "q": "Noleggiate anche scooter e auto a Porto Rotondo?", "a": "Certo! Offriamo <a href='/flotta/honda-sh' class='text-primary font-medium underline'>Honda SH</a> per il centro, <a href='/flotta/fiat-panda' class='text-primary font-medium underline'>Fiat Panda</a> per le famiglie, e auto VIP su richiesta WhatsApp." }
+  ],
+  "closingParagraph": "Porto Rotondo è il punto d'equilibrio della Costa Smeralda: meno mondano di Porto Cervo, più strutturato di Baja Sardinia, vicinissimo a Olbia. Dopo l'avventura off-road tra le cale, sali in 25 minuti al borgo collinare di <a href='/noleggio-auto-a-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> per il mercato del giovedì e la cucina gallurese del Giagoni; oppure scendi in 15 minuti sul porto di Olbia per cenare al <a href='/noleggio-auto-a-olbia' class='text-primary font-medium hover:underline'>Trattoria Il Porto</a> con la fregola di arselle. Per chi viaggia in famiglia o gruppo, suggeriamo Porto Rotondo come base: prezzi più ragionevoli rispetto a Porto Cervo, accessi facili a tutta la zona, e una flotta a noleggio che permette di adattare il mezzo a ogni giornata."
+}

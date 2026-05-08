@@ -1,0 +1,18 @@
+---
+const path = new URL(Astro.request.url).pathname;
+const hidden = path === "/prenotaora";
+---
+
+{!hidden && (
+  <div class="fixed bottom-0 left-0 w-full z-50 block md:hidden bg-background/90 backdrop-blur-md border-t border-border p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+    <a
+      href="/prenotaora"
+      class="inline-flex items-center justify-center gap-2 w-full h-12 px-8 text-base font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 hover:shadow-[0_0_35px_hsl(var(--primary)/0.5),inset_0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] animate-pulse-glow"
+    >
+      Prenota Ora
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+)}

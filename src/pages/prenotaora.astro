@@ -1,0 +1,13 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingFlow from "@/components/booking/BookingFlow.tsx";
+---
+
+<BaseLayout
+  title="Prenota Ora — GDIS Rent | Noleggio Online in Sardegna"
+  description="Prenota online il tuo veicolo in Sardegna: auto, scooter, quad e luxury. Procedura rapida in 6 step, firma digitale e consegna VIP inclusa."
+  canonical="/prenotaora"
+  hideBackground
+>
+  <BookingFlow client:load />
+</BaseLayout>

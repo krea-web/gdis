@@ -1,0 +1,225 @@
+---
+import MobileMenu from "@/components/MobileMenu.tsx";
+import { supabaseImg } from "@/lib/img";
+
+const path = new URL(Astro.request.url).pathname.replace(/\/$/, "") || "/";
+const isHome = path === "/";
+const isFlottaActive = path.startsWith("/flotta");
+const isDestActive = path.startsWith("/noleggio-auto-");
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
+
+const links = [
+  { label: "Home", to: "/" },
+  { label: "Chi Siamo", to: "/chisiamo" },
+  { label: "Contatti", to: "/contatti" },
+];
+
+const flottaItems = [
+  { label: "City Car", to: "/flotta/fiat-panda", icon: "car", desc: "Fiat Panda Hybrid" },
+  { label: "Premium", to: "/flotta/mercedes-classe-a180d", icon: "star", desc: "Mercedes Classe A 180d" },
+  { label: "Scooter", to: "/flotta/honda-sh", icon: "bike", desc: "Honda SH 125 / 350" },
+  { label: "Quad", to: "/flotta/yamaha-raptor", icon: "mountain", desc: "Yamaha Raptor 700" },
+];
+
+const destinazioniItems = [
+  { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", desc: "Panoramica Completa" },
+  { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo", desc: "Lusso & Marina" },
+  { label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro", desc: "Spiagge & Movida" },
+  { label: "San Pantaleo", to: "/noleggio-auto-a-san-pantaleo", desc: "Borgo Bohémien" },
+  { label: "Porto Rotondo", to: "/noleggio-auto-a-porto-rotondo", desc: "Eleganza Discreta" },
+  { label: "Golfo Aranci", to: "/noleggio-auto-a-golfo-aranci", desc: "Terminal Traghetti" },
+  { label: "Baja Sardinia", to: "/noleggio-auto-a-baja-sardinia", desc: "Phi Beach & Party" },
+  { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: "Famiglie & Coppie" },
+];
+---
+
+<nav
+  id="site-navbar"
+  data-home={isHome ? "true" : "false"}
+  class:list={[
+    "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+    isHome ? "bg-transparent" : "glass shadow-lg shadow-foreground/5",
+  ]}
+>
+  <div class="container flex items-center justify-between h-18 py-4">
+    <a href="/" class="flex items-center gap-2 relative z-10">
+      <img
+        src={gdisLogo}
+        alt="GDIS Rent e Service"
+        width="100"
+        height="40"
+        fetchpriority="high"
+        decoding="async"
+        class="h-10 w-auto"
+      />
+    </a>
+
+    {/* Desktop nav */}
+    <div class="hidden md:flex items-center gap-10">
+      {links.map((l) => {
+        const active = path === l.to;
+        return (
+          <a
+            href={l.to}
+            class:list={[
+              "relative text-sm font-medium transition-colors duration-200",
+              active
+                ? "text-primary"
+                : isHome
+                ? "text-background/80 hover:text-background nav-on-dark"
+                : "text-foreground/70 hover:text-foreground",
+            ]}
+          >
+            {l.label}
+            {active && <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />}
+          </a>
+        );
+      })}
+
+      {/* Flotta dropdown */}
+      <details class="relative group nav-dropdown">
+        <summary
+          class:list={[
+            "relative cursor-pointer list-none flex items-center gap-1 text-sm font-medium transition-colors duration-200 select-none",
+            isFlottaActive
+              ? "text-primary"
+              : isHome
+              ? "text-background/80 hover:text-background nav-on-dark"
+              : "text-foreground/70 hover:text-foreground",
+          ]}
+        >
+          Flotta
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 nav-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+          {isFlottaActive && <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />}
+        </summary>
+        <div class="absolute top-full mt-3 -left-4 w-64 glass rounded-xl shadow-xl shadow-foreground/10 border border-border/50 overflow-hidden">
+          {flottaItems.map((item) => (
+            <a
+              href={item.to}
+              class="flex items-center gap-3 px-4 py-3 hover:bg-accent/60 transition-colors group/item"
+            >
+              <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                {item.icon === "car" && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>}
+                {item.icon === "star" && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>}
+                {item.icon === "bike" && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>}
+                {item.icon === "mountain" && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>}
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-foreground">{item.label}</p>
+                <p class="text-xs text-muted-foreground">{item.desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </details>
+
+      {/* Destinazioni dropdown */}
+      <details class="relative group nav-dropdown">
+        <summary
+          class:list={[
+            "relative cursor-pointer list-none flex items-center gap-1 text-sm font-medium transition-colors duration-200 select-none",
+            isDestActive
+              ? "text-primary"
+              : isHome
+              ? "text-background/80 hover:text-background nav-on-dark"
+              : "text-foreground/70 hover:text-foreground",
+          ]}
+        >
+          Destinazioni
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 nav-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+          {isDestActive && <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />}
+        </summary>
+        <div class="absolute top-full mt-3 -left-4 w-64 glass rounded-xl shadow-xl shadow-foreground/10 border border-border/50 overflow-hidden">
+          {destinazioniItems.map((item) => (
+            <a
+              href={item.to}
+              class="flex items-center gap-3 px-4 py-3 hover:bg-accent/60 transition-colors group/item"
+            >
+              <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-foreground">{item.label}</p>
+                <p class="text-xs text-muted-foreground">{item.desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </details>
+    </div>
+
+    <div class="hidden md:flex items-center gap-3">
+      <a
+        href="tel:+393520459150"
+        class:list={[
+          "hidden lg:inline-flex items-center gap-1.5 text-sm font-medium transition-colors",
+          isHome ? "text-background/80 hover:text-background nav-on-dark" : "text-foreground/70 hover:text-foreground",
+        ]}
+        aria-label="Chiama il numero +39 352 045 9150"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +39 352 045 9150
+      </a>
+      <a
+        href="/prenotaora"
+        class="inline-flex items-center justify-center gap-2 h-10 px-4 py-2 text-sm font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
+      >
+        Prenota Ora
+      </a>
+    </div>
+
+    <MobileMenu pathname={path} client:idle />
+  </div>
+</nav>
+
+{/* Spacer to prevent content jumping under fixed nav (only when nav is solid) */}
+{!isHome && <div class="h-[72px]" aria-hidden="true" />}
+
+<style>
+  /* Hide native disclosure marker */
+  details.nav-dropdown > summary {
+    list-style: none;
+  }
+  details.nav-dropdown > summary::-webkit-details-marker {
+    display: none;
+  }
+  /* Rotate chevron when open */
+  details.nav-dropdown[open] .nav-chevron {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const nav = document.getElementById("site-navbar");
+    if (!nav) return;
+    const isHome = nav.getAttribute("data-home") === "true";
+    if (!isHome) return;
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        nav.classList.add("glass", "shadow-lg", "shadow-foreground/5");
+        nav.classList.remove("bg-transparent");
+        nav.querySelectorAll(".nav-on-dark").forEach((el) => {
+          el.classList.remove("text-background/80", "hover:text-background");
+          el.classList.add("text-foreground/70", "hover:text-foreground");
+        });
+      } else {
+        nav.classList.remove("glass", "shadow-lg", "shadow-foreground/5");
+        nav.classList.add("bg-transparent");
+        nav.querySelectorAll(".nav-on-dark").forEach((el) => {
+          el.classList.add("text-background/80", "hover:text-background");
+          el.classList.remove("text-foreground/70", "hover:text-foreground");
+        });
+      }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Click-outside close for nav dropdowns
+    document.addEventListener("click", (e) => {
+      document.querySelectorAll("details.nav-dropdown[open]").forEach((d) => {
+        if (!d.contains(e.target)) d.removeAttribute("open");
+      });
+    });
+  })();
+</script>

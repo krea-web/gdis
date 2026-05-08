@@ -1,0 +1,97 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BUSINESS_LEGAL_NAME, BUSINESS_EMAIL, BUSINESS_VAT } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Termini e Condizioni", url: "/termini" },
+];
+---
+
+<BaseLayout
+  title="Termini e Condizioni di Noleggio — GDIS Rent & Service"
+  description="Condizioni generali del servizio di noleggio auto, scooter e quad offerto da GDIS Service S.R.L. a Olbia e in Costa Smeralda."
+  canonical="/termini"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Termini e Condizioni di Noleggio</h1>
+    <p class="text-sm text-muted-foreground">Ultimo aggiornamento: 24 aprile 2026</p>
+
+    <h2>1. Parti</h2>
+    <p>
+      Il presente contratto è stipulato tra <strong>{BUSINESS_LEGAL_NAME}</strong> — P.IVA{" "}
+      {BUSINESS_VAT}, sede in Via Annibale Caro 52, 07026 Olbia (SS) — in qualità di Locatore, e
+      il Cliente che effettua la prenotazione (il "Conducente").
+    </p>
+
+    <h2>2. Requisiti del conducente</h2>
+    <ul>
+      <li>Età minima 21 anni (25 per veicoli Premium).</li>
+      <li>Patente di guida valida da almeno 2 anni (categoria adeguata al mezzo).</li>
+      <li>Documento d'identità valido.</li>
+      <li>Carta di credito o strumento di pagamento idoneo al deposito cauzionale.</li>
+    </ul>
+
+    <h2>3. Prenotazione e pagamento</h2>
+    <p>
+      La prenotazione è confermata solo dopo la sottoscrizione del contratto digitale e, se
+      richiesto, il versamento dell'acconto. Il saldo è dovuto al momento del ritiro del veicolo,
+      unitamente al deposito cauzionale.
+    </p>
+
+    <h2>4. Ritiro e riconsegna</h2>
+    <p>
+      Il veicolo viene consegnato con il pieno di carburante e in condizioni verificate con foto.
+      La riconsegna deve avvenire nell'orario concordato, con il pieno di carburante e nelle
+      medesime condizioni. In caso di ritardo non concordato, è applicata una penale pari ad un
+      giorno di noleggio.
+    </p>
+
+    <h2>5. Franchigia e responsabilità</h2>
+    <p>
+      Il Conducente è responsabile di eventuali danni causati al veicolo, entro i limiti della
+      franchigia indicata al momento della prenotazione. I danni riconducibili a dolo o colpa
+      grave, guida in stato di ebbrezza o sotto effetto di stupefacenti comportano la decadenza
+      della copertura e l'integrale addebito dei costi.
+    </p>
+
+    <h2>6. Divieti</h2>
+    <ul>
+      <li>Vietato cedere il veicolo a conducenti non autorizzati.</li>
+      <li>Vietato il trasporto di animali non autorizzati o merci pericolose.</li>
+      <li>Vietato fumare all'interno dei veicoli (penale di pulizia € 150).</li>
+      <li>Vietato il trasferimento del veicolo fuori dal territorio nazionale senza autorizzazione scritta.</li>
+    </ul>
+
+    <h2>7. Cancellazione</h2>
+    <ul>
+      <li>Fino a 72h prima del ritiro: rimborso integrale dell'acconto.</li>
+      <li>Tra 72h e 24h: trattenuta del 50% dell'acconto.</li>
+      <li>Meno di 24h o no-show: trattenuta integrale dell'acconto.</li>
+    </ul>
+
+    <h2>8. Sinistri e furto</h2>
+    <p>
+      In caso di sinistro il Conducente deve compilare il modulo CAI e avvisare immediatamente il
+      numero <a href="tel:+393520459150">+39 352 045 9150</a>. In caso di furto è obbligatoria la
+      denuncia alle Autorità e la consegna delle chiavi originali.
+    </p>
+
+    <h2>9. Legge applicabile e foro competente</h2>
+    <p>
+      Il presente contratto è regolato dalla legge italiana. Per ogni controversia è competente
+      in via esclusiva il Foro di Tempio Pausania — fatta salva l'applicazione di norme
+      inderogabili a tutela del consumatore.
+    </p>
+
+    <h2>10. Contatti</h2>
+    <p>
+      Per informazioni contrattuali scrivi a <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>.
+    </p>
+  </article>
+</BaseLayout>

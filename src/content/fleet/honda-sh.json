@@ -1,0 +1,105 @@
+{
+  "slug": "honda-sh",
+  "name": "Honda SH 125 / 350",
+  "category": "scooter",
+  "title": "Noleggio Scooter Honda SH 125 e 350 Olbia | GDIS Rent",
+  "description": "Noleggio Honda SH a Olbia e Costa Smeralda ✓ 125cc e 350cc ✓ 2 caschi inclusi ✓ Consegna VIP aeroporto, porto, hotel ✓ Ideale ZTL. Prenota online H24.",
+  "canonical": "/flotta/honda-sh",
+  "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash-125-350-costasmeralda.webp",
+  "heroLabel": "Scooter",
+  "heroH1Top": "Honda SH",
+  "heroH1Bottom": "125 / 350",
+  "heroSubtitle": "Zero stress da parcheggio, consumi ridicoli, stile italiano. Lo scooter perfetto per vivere la Costa Smeralda in libertà.",
+  "heroBadges": ["Automatico", "2 Caschi Inclusi", "125cc / 350cc"],
+  "featureSections": [
+    {
+      "label": "Libertà su Due Ruote",
+      "title": "Agilità senza compromessi",
+      "body": [
+        "L'Honda SH è il re degli scooter: silenzioso, affidabile e con un vano sottosella capiente. Perfetto per scivolare nel traffico estivo e raggiungere le spiagge più belle della Gallura senza la tortura del parcheggio.",
+        "Con il cambio automatico CVT, guidi senza pensieri. Basta girare la manopola e goderti il panorama — il motore fa tutto il resto."
+      ],
+      "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+      "imageAlt": "Costa sarda scooter",
+      "reverse": true
+    },
+    {
+      "label": "Due Versioni, Una Scelta",
+      "title": "SH 125 o SH 350?",
+      "body": [
+        "<strong class='text-foreground'>SH 125:</strong> Perfetto per le strade costiere, i centri storici e gli spostamenti urbani. Leggero, scattante, ideale per chi ha la Patente B con limitazione 125cc.",
+        "<strong class='text-foreground'>SH 350:</strong> Per chi vuole anche percorrere le superstrade sarde e coprire distanze maggiori con comfort superiore. Perfetto per la litoranea <a href='/noleggio-auto-a-olbia' class='text-blue-600 font-medium hover:underline'>Olbia</a>-<a href='/noleggio-auto-a-san-teodoro' class='text-blue-600 font-medium hover:underline'>San Teodoro</a>."
+      ],
+      "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash-125-350-noleggiocostasmeralda.webp",
+      "imageAlt": "Spiaggia Sardegna scooter"
+    }
+  ],
+  "specs": [
+    { "icon": "gauge", "label": "Cilindrata", "value": "125cc / 350cc" },
+    { "icon": "fuel", "label": "Alimentazione", "value": "Benzina" },
+    { "icon": "users", "label": "Posti", "value": "2 (con passeggero)" },
+    { "icon": "settings", "label": "Cambio", "value": "Automatico CVT" },
+    { "icon": "shield", "label": "Patente", "value": "A1 (125) / A2 (350)" },
+    { "icon": "wind", "label": "Dotazione", "value": "2 caschi inclusi" }
+  ],
+  "scenarios": [
+    {
+      "icon": "parking",
+      "title": "Zero Stress da Parcheggio",
+      "description": "Mentre tutti cercano posto auto a Porto Cervo, tu parcheggi ovunque in 3 secondi. Niente code, niente stress estivo."
+    },
+    {
+      "icon": "bike",
+      "title": "Litoranea da Sogno",
+      "description": "Percorri la litoranea costiera sentendo il vento e il profumo del mare. Stile italiano, libertà totale.",
+      "highlight": true
+    },
+    {
+      "icon": "zap",
+      "title": "Consumi Ridicoli",
+      "description": "Con meno di 10€ di benzina percorri l'intera Costa Smeralda. Il budget risparmiato? Cena vista mare a Porto Rotondo."
+    }
+  ],
+  "whySection": {
+    "label": "Perché scegliere lo scooter",
+    "title": "Scooter vs auto: i vantaggi che nessuno ti racconta",
+    "paragraphs": [
+      "La maggior parte dei turisti italiani che vengono in Costa Smeralda noleggia un'auto per default, <strong class='text-foreground'>per abitudine, senza valutare alternative</strong>. Sbagliato in molti casi: in alta stagione lo scooter Honda SH non è solo un'opzione, è la scelta più intelligente.",
+      "<strong class='text-foreground'>Vantaggi reali misurati nella nostra esperienza</strong>: il tempo di arrivo al Phi Beach al tramonto da Baja Sardinia in scooter è 5 minuti, in auto 30+ minuti perché la strada si paralizza. Il parcheggio nelle spiagge come La Cinta o Brandinchi è gratuito nelle aree moto, mentre l'auto paga 5 €/giorno (e in agosto si esaurisce entro le 9:30). Nei centri ZTL di Porto Cervo o San Pantaleo lo scooter ti fa parcheggiare a 30 metri dalla Promenade o dalla Piazzetta — l'auto deve stare in parcheggi satellite a 800+ metri. Il consumo settimanale di carburante è 1/4 rispetto a un'auto.",
+      "<strong class='text-foreground'>Quando NON scegliere lo scooter</strong>: se piove (in Sardegna d'estate raro ma possibile, soprattutto a giugno e settembre), se viaggi in più di 2 persone, se hai valigie grandi (lo scooter porta una giornaliera + 1 zaino sotto la sella), se non sei a tuo agio sulle 2 ruote nel traffico estivo. Per famiglie con bambini consigliamo Fiat Panda + scooter combinato."
+    ]
+  },
+  "localitaSection": {
+    "label": "Honda SH in Sardegna",
+    "title": "Le località dove lo scooter è imbattibile",
+    "intro": "Sulla base delle nostre prenotazioni, queste sono le destinazioni dove l'Honda SH è il veicolo più scelto (spesso in combinazione con altri mezzi):",
+    "items": [
+      "<strong class='text-foreground'><a href='/noleggio-auto-a-baja-sardinia' class='text-blue-600 hover:underline'>Baja Sardinia</a></strong> — per il Phi Beach e il Ritual Club. La salita serale verso il sunset bar in scooter dura 5 minuti, in auto un'ora di coda. Parcheggio moto a 80 metri dall'ingresso, gratuito.",
+      "<strong class='text-foreground'><a href='/noleggio-auto-a-porto-cervo' class='text-blue-600 hover:underline'>Porto Cervo</a></strong> — centro ZTL pedonale tutta l'estate. In scooter parcheggi nelle aree moto a 10 metri dalla Promenade du Port; l'auto deve fermarsi nei parcheggi satellite a piedi.",
+      "<strong class='text-foreground'><a href='/noleggio-auto-a-san-pantaleo' class='text-blue-600 hover:underline'>San Pantaleo</a></strong> — vicoli del borgo gallurese e mercato del giovedì. L'unico modo intelligente per arrivare entro le 11:00 senza dover lasciare l'auto a 1 km dalla piazzetta.",
+      "<strong class='text-foreground'><a href='/noleggio-auto-a-san-teodoro' class='text-blue-600 hover:underline'>San Teodoro</a></strong> — per le spiagge della Cinta, Cala Brandinchi, Lu Impostu. Parcheggio moto gratis vs auto a 5 €/g che si esauriscono entro le 9:30."
+    ],
+    "outro": "Devi portare una famiglia? Vedi la <a href='/flotta/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Cerchi un mezzo per gli sterrati? Considera lo <a href='/flotta/yamaha-raptor' class='text-blue-600 hover:underline'>Yamaha Raptor 700</a>."
+  },
+  "faq": [
+    { "q": "Honda SH 125 o SH 350: quale scegliere?", "a": "L'SH 125 va bene per chi resta in città e fa giri brevi (Olbia, San Teodoro, Pittulongu). L'SH 350 è la scelta giusta se viaggi in due con bagagli, se devi salire al Phi Beach (la salita verso Capo Ferro chiede potenza), se ti sposti su distanze lunghe o vuoi prendere la SS131 (autostrada). Stessa estetica, stesso comfort, +120cc di muscolo per chi serve." },
+    { "q": "Quale patente serve davvero?", "a": "SH 125: Patente A1 (16+) oppure Patente B (per chi ha conseguito la B prima del 1/2/2013, copre fino a 125cc; chi l'ha presa dopo deve fare la prova pratica AM o A1). SH 350: Patente A2 (18+) o A (24+). Se non sei sicuro della tua categoria, mandaci foto della patente su WhatsApp e ti diciamo se puoi guidare quale." },
+    { "q": "I caschi e l'antifurto sono inclusi?", "a": "Sempre. Forniamo 2 caschi jet omologati ECE 22.06 (taglie M/L/XL disponibili, igienizzati prima di ogni noleggio), antifurto a U bloccaruota e copertura assicurativa furto/incendio nel prezzo. Per chi vuole un casco integrale possiamo organizzarlo su richiesta." },
+    { "q": "Quanto consuma l'Honda SH e quanto costa il pieno?", "a": "SH 125: circa 2.5 L/100km, serbatoio 7.7 L = autonomia 280-300 km. Pieno: ~13 €. SH 350: 3.0-3.2 L/100km, serbatoio 9.1 L = autonomia 280 km. Pieno: ~15 €. Per una settimana di vacanza standard in Costa Smeralda si fanno 1-2 pieni totali. Il costo al km è frazione di quello dell'auto." },
+    { "q": "Posso parcheggiarlo gratis ovunque?", "a": "Quasi. Le 2 ruote in Sardegna possono usare le aree moto/scooter dedicate, presenti in tutte le spiagge principali (La Cinta, Brandinchi, Phi Beach) e nei centri ZTL come <a href='/noleggio-auto-a-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a>. Sui parcheggi blu paghi metà tariffa o gratis a seconda del comune. Risparmio reale per una settimana: 50-100 € rispetto all'auto." },
+    { "q": "Vado all'aeroporto con lo scooter? Dove parcheggio?", "a": "Aeroporto di Olbia ha un parcheggio scooter coperto a 50m dal terminal a 3 €/giorno. Comodissimo per chi parcheggia in aeroporto e parte in scooter, ma se preferisci ti consegniamo lo scooter direttamente al ritiro bagagli senza pensarci." }
+  ],
+  "ctaTitle": "Sali in sella",
+  "ctaSubtitle": "Prenota il tuo Honda SH in meno di 2 minuti. 2 caschi e consegna VIP inclusi.",
+  "ctaButtonLabel": "Prenota il tuo Scooter →",
+  "pricePerDay": 50,
+  "priceValidUntil": "2026-12-31",
+  "jsonLdType": "Motorcycle",
+  "jsonLdBrand": "Honda",
+  "jsonLdManufacturer": "Honda",
+  "jsonLdModel": "SH 125/350",
+  "jsonLdExtras": {
+    "vehicleTransmission": "Automatic",
+    "fuelType": "Benzina"
+  }
+}

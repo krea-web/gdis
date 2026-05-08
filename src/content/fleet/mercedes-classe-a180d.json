@@ -1,0 +1,107 @@
+{
+  "slug": "mercedes-classe-a180d",
+  "name": "Mercedes Classe A 180d",
+  "category": "auto",
+  "title": "Noleggio Mercedes Classe A 180d Olbia | Premium | GDIS Rent",
+  "description": "Noleggio Mercedes Classe A 180d a Olbia e Costa Smeralda ✓ Cambio automatico ✓ Comfort premium ✓ Consegna VIP Porto Cervo, villa, hotel. WhatsApp H24.",
+  "canonical": "/flotta/mercedes-classe-a180d",
+  "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-mercedes-classe-a180d-costasmeralda.webp",
+  "heroLabel": "Premium Fleet",
+  "heroH1Top": "Mercedes-Benz",
+  "heroH1Bottom": "Classe A 180d",
+  "heroSubtitle": "Eleganza, tecnologia e comfort senza compromessi. Goditi la Costa Smeralda a bordo di un'icona di stile, dotata di cambio automatico e interni di lusso.",
+  "heroBadges": ["Cambio Automatico", "Diesel", "Premium Interior"],
+  "featureSections": [
+    {
+      "label": "Lusso & Tecnologia",
+      "title": "Standard elevati per le tue vacanze",
+      "body": [
+        "La Mercedes Classe A 180d eleva l'esperienza del noleggio auto. Gli interni sono curati in ogni minimo dettaglio, offrendo un'atmosfera premium grazie ai materiali di alta qualità e al celebre sistema di infotainment MBUX.",
+        "Il motore diesel da 116cv abbinato all'avanzato cambio automatico garantisce una guida incredibilmente fluida, silenziosa e dai consumi ridotti. La scelta perfetta per chi non si accontenta."
+      ],
+      "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-mercedes-classe-a180d.webp",
+      "imageAlt": "Mercedes Classe A interni premium"
+    },
+    {
+      "label": "Stile & Presenza",
+      "title": "Fatti notare in Costa Smeralda",
+      "body": [
+        "Dalle cene eleganti a <a href='/noleggio-auto-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> agli aperitivi al tramonto a <a href='/noleggio-auto-a-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a>, questa vettura è il tuo biglietto da visita. Un design affusolato, moderno e dal carattere sportivo.",
+        "La tua esperienza Premium inizia subito: scegli la nostra Consegna VIP e ti faremo trovare l'auto pronta al tuo arrivo in aeroporto, al porto o direttamente presso la tua struttura."
+      ],
+      "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-mercedes-classe-a180d-consegna-a-domicilio.webp",
+      "imageAlt": "Mercedes Classe A Costa Smeralda",
+      "reverse": true
+    }
+  ],
+  "specs": [
+    { "icon": "gauge", "label": "Motore", "value": "2.0 Diesel 116cv" },
+    { "icon": "fuel", "label": "Alimentazione", "value": "Diesel" },
+    { "icon": "users", "label": "Posti", "value": "5" },
+    { "icon": "settings", "label": "Cambio", "value": "Automatico" },
+    { "icon": "wind", "label": "Clima", "value": "Climatizzatore Auto" },
+    { "icon": "luggage", "label": "Bagagliaio", "value": "355 litri" }
+  ],
+  "scenarios": [
+    {
+      "icon": "star",
+      "title": "Serate Esclusive a Porto Cervo",
+      "description": "Arriva con stile nei locali più rinomati della Promenade du Port e della Piazze. Il design inconfondibile Mercedes non passa inosservato.",
+      "highlight": true
+    },
+    {
+      "icon": "map-pin",
+      "title": "Esplora da San Teodoro a Baja Sardinia",
+      "description": "Goditi il comfort dei sedili premium e la fluidità del cambio automatico 8G-DCT per i tuoi spostamenti lungo tutta la costa sarda."
+    },
+    {
+      "icon": "shopping-bag",
+      "title": "Viaggi Premium in Pieno Comfort",
+      "description": "Bagagliaio capiente per valigie o shopping di lusso, sistema di infotainment MBUX all'avanguardia e consumi ottimizzati grazie al motore diesel di ultima generazione."
+    }
+  ],
+  "whySection": {
+    "label": "Perché scegliere la Mercedes",
+    "title": "Lusso vs economia: quando ha davvero senso la Classe A 180d",
+    "paragraphs": [
+      "La Mercedes Classe A 180d non è un'auto da prendere a caso. Costa più del doppio di una Fiat Panda, e su molti casi d'uso questa differenza non si traduce in un'esperienza migliore. Ti aiutiamo a capire <strong class='text-foreground'>quando vale davvero la pena</strong>.",
+      "<strong class='text-foreground'>Sì, la Mercedes ha senso se</strong>: il tuo soggiorno è in Costa Smeralda con escursioni autostradali quotidiane (cambio automatico annulla lo stress nelle code luglio-agosto), arrivi a un hotel 5 stelle o a una villa privata e l'auto fa parte dell'esperienza complessiva, viaggi business e vuoi presentarti con un'auto rappresentativa, sei una coppia o famiglia piccola e dai più valore al comfort che al prezzo.",
+      "<strong class='text-foreground'>No, scegli un'altra opzione se</strong>: viaggio breve solo dentro Olbia (basta la Panda), famiglia di 5 persone con valigie pesanti (la Panda è meno comoda ma costa la metà), zone con problemi di parcheggio come Porto Cervo centro o San Pantaleo (meglio scooter Honda), escursioni off-road a Capo Ferro o Punta Volpe (serve il quad)."
+    ]
+  },
+  "localitaSection": {
+    "label": "Mercedes in Sardegna",
+    "title": "Le destinazioni dove la 180d è la scelta naturale",
+    "intro": "I clienti che noleggiano la Classe A 180d hanno tutti un profilo simile: vogliono comfort di guida e arrivare alla destinazione con stile. Ecco dove la consegniamo più frequentemente:",
+    "items": [
+      "<strong class='text-foreground'><a href='/noleggio-auto-a-porto-cervo' class='text-blue-600 hover:underline'>Porto Cervo</a></strong> — consegna al pontile yacht in Marina, all'Hotel Cala di Volpe, al Pitrizza o alla villa privata. È la destinazione #1 per la Mercedes nella nostra flotta.",
+      "<strong class='text-foreground'><a href='/noleggio-auto-a-porto-rotondo' class='text-blue-600 hover:underline'>Porto Rotondo</a></strong> — per chi soggiorna nelle ville sopra Cugnana o nei resort 5 stelle. La Marina è la seconda più grande del Mediterraneo, perfetta per arrivi in stile.",
+      "<strong class='text-foreground'><a href='/noleggio-auto-a-olbia' class='text-blue-600 hover:underline'>Aeroporto Olbia Costa Smeralda</a></strong> — consegna agli arrivi del terminal con cartello personalizzato. Il modo più discreto di iniziare una vacanza di lusso.",
+      "<strong class='text-foreground'><a href='/noleggio-auto-in-costa-smeralda' class='text-blue-600 hover:underline'>Costa Smeralda nord</a></strong> — per giri quotidiani Porto Cervo → Baja Sardinia → San Pantaleo, il cambio automatico fa la differenza nel traffico estivo."
+    ],
+    "outro": "Cerchi qualcosa di più economico? Vedi la <a href='/flotta/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Vuoi muoverti dove l'auto non passa? Considera lo <a href='/flotta/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
+  },
+  "faq": [
+    { "q": "Quale cambio automatico ha la Classe A 180d?", "a": "Cambio 8G-DCT a doppia frizione, sviluppato da Mercedes per la gamma compatta. Cambia in 80-150 millisecondi senza interruzione di coppia: in autostrada SS131 da Olbia a Cagliari non senti la differenza con un cambio manuale, in città azzera la fatica nel traffico estivo della Costa Smeralda." },
+    { "q": "Quanti anni di patente servono?", "a": "Età minima 25 anni e almeno 3 anni di patente B. Per i conducenti tra 21-24 anni è applicato un supplemento giovane. Per i neopatentati con meno di 12 mesi di patente la Mercedes 180d non è disponibile (115cv superano la soglia kW/t per neopatentati): consigliamo la Fiat Panda Hybrid in alternativa." },
+    { "q": "Quanto consuma il diesel 1.5 da 115cv?", "a": "Nella nostra esperienza di flotta: 5.0-5.5 L/100km in autostrada SS131, 5.5-6.0 in misto Costa Smeralda. Un pieno da 43 litri ti dura facilmente 800-900 km. Per una vacanza di 7 giorni con escursioni quotidiane (Olbia ↔ Porto Cervo, San Teodoro, Baja) spendi 60-80 € di gasolio." },
+    { "q": "C'è MBUX e Apple CarPlay / Android Auto?", "a": "Sì. Sistema MBUX di Mercedes con doppio schermo 10.25\", Apple CarPlay e Android Auto wireless inclusi. Comando vocale 'Hey Mercedes' attivo. Navigatore con mappe Sardegna aggiornate. Bluetooth standard, presa USB-C anteriore e posteriore." },
+    { "q": "Posso averla consegnata alla villa di Porto Cervo?", "a": "Sì, è la consegna più frequente per la Mercedes 180d. Operatore al cancello/concierge della villa, all'Hotel Cala di Volpe, al Pitrizza o a qualsiasi altro hotel 5 stelle. Consegna anche al pontile yacht in Marina di Porto Cervo o Porto Rotondo. <a href='/noleggio-auto-a-porto-cervo' class='text-primary-foreground font-medium underline'>Vedi i dettagli</a>." },
+    { "q": "Va bene per gli sterrati di Capo Ferro o Punta Volpe?", "a": "Assolutamente no. La Classe A è un'auto premium su asfalto, sospensioni studiate per il comfort. Su sterrato rischi danni al sottoscocca e alle gomme low profile. Per le cale off-road usa il <a href='/flotta/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>." }
+  ],
+  "ctaTitle": "Goditi il vero comfort.",
+  "ctaSubtitle": "Prenota la tua Mercedes Classe A in meno di 2 minuti. Consegna VIP in aeroporto, porto o hotel — in tutta la Costa Smeralda.",
+  "ctaButtonLabel": "Prenota la Classe A →",
+  "pricePerDay": 120,
+  "priceValidUntil": "2026-12-31",
+  "jsonLdType": "Car",
+  "jsonLdBrand": "Mercedes-Benz",
+  "jsonLdManufacturer": "Mercedes-Benz",
+  "jsonLdModel": "Classe A 180d",
+  "jsonLdExtras": {
+    "vehicleTransmission": "Automatic",
+    "fuelType": "Diesel",
+    "numberOfDoors": 5,
+    "seatingCapacity": 5
+  }
+}

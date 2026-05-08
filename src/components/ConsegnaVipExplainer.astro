@@ -1,0 +1,103 @@
+---
+type Variant = "airport" | "port" | "station" | "generic";
+
+export interface Props {
+  variant?: Variant;
+}
+
+const { variant = "generic" } = Astro.props;
+
+const SUBTITLE: Record<Variant, string> = {
+  airport: "Niente file ai desk del terminal, niente transfer, niente attese. Ti consegniamo il veicolo direttamente all'arrivo all'Aeroporto di Olbia Costa Smeralda.",
+  port: "Niente coda al porto, niente transfer dopo 8 ore di traghetto. Sbarchi e trovi il veicolo che ti aspetta sul pontile della tua compagnia.",
+  station: "Scendi dal treno e trovi il veicolo già pronto. Niente taxi, niente attese, niente coda al desk autonoleggio del centro città.",
+  generic: "Niente file ai desk, niente transfer, niente attese. Ti consegniamo il veicolo dove e quando ti serve — aeroporto, porto, hotel o villa.",
+};
+
+const STEP2_TITLE: Record<Variant, string> = {
+  airport: "2. Atterri al Costa Smeralda",
+  port: "2. Sbarchi a Isola Bianca",
+  station: "2. Arrivi alla stazione di Olbia",
+  generic: "2. Atterri o sbarchi",
+};
+
+const STEP2_TEXT: Record<Variant, string> = {
+  airport: "Monitoriamo il tuo volo in tempo reale via FlightAware: se sei in ritardo, adattiamo la consegna senza costi extra fino a 4 ore.",
+  port: "Tracciamo l'orario reale dello sbarco di Moby, Tirrenia, GNV e Grimaldi: se la nave arriva con ritardo, ti aspettiamo comunque.",
+  station: "Ci comunichi il numero del treno Trenitalia: monitoriamo l'orario di arrivo al binario e ci coordiniamo sull'orario reale.",
+  generic: "Monitoriamo volo o traghetto: se sei in ritardo, adattiamo la consegna senza costi extra.",
+};
+
+const STEP3_TITLE: Record<Variant, string> = {
+  airport: "3. Ti aspettiamo agli arrivi",
+  port: "3. Ti aspettiamo al pontile",
+  station: "3. Ti aspettiamo all'uscita binari",
+  generic: "3. Ritiri il veicolo",
+};
+
+const STEP3_TEXT: Record<Variant, string> = {
+  airport: "Operatore presente al terminal arrivi del Costa Smeralda con cartello con il tuo nome. Veicolo climatizzato e pieno di benzina già fatto.",
+  port: "Operatore al pontile della tua compagnia (anche per traghetti notturni alle 6:00). Veicolo pronto sotto la nave, climatizzato e con il pieno.",
+  station: "Operatore presente all'uscita dei binari della stazione di Olbia. Veicolo parcheggiato vicinissimo, già climatizzato e con il pieno.",
+  generic: "Ti aspettiamo all'uscita arrivi o al porto con il veicolo climatizzato e con il pieno fatto.",
+};
+
+const ICON2: Record<Variant, string> = {
+  airport: "plane",
+  port: "ship",
+  station: "train",
+  generic: "plane",
+};
+---
+
+<section class="py-20 md:py-28 bg-muted/20">
+  <div class="container px-4 max-w-6xl mx-auto">
+    <div class="text-center mb-14" data-reveal>
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Come funziona</p>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+        La Consegna VIP in 4 passi
+      </h2>
+      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">{SUBTITLE[variant]}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-card rounded-2xl border border-border p-6 hover:border-primary/30 transition-colors" data-reveal>
+        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-bold text-foreground mb-2">1. Scrivi su WhatsApp</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Indica data, orario di arrivo e veicolo desiderato. Confermiamo entro 30 minuti, anche in inglese o francese.
+        </p>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 hover:border-primary/30 transition-colors" data-reveal data-reveal-delay="100">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+          {ICON2[variant] === "plane" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>}
+          {ICON2[variant] === "ship" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4"/><path d="M12 2v3"/></svg>}
+          {ICON2[variant] === "train" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5l1 1.5"/><path d="m8 19-1 2"/></svg>}
+        </div>
+        <h3 class="font-display text-lg font-bold text-foreground mb-2">{STEP2_TITLE[variant]}</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">{STEP2_TEXT[variant]}</p>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 hover:border-primary/30 transition-colors" data-reveal data-reveal-delay="200">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-7.5 7.5"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-bold text-foreground mb-2">{STEP3_TITLE[variant]}</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">{STEP3_TEXT[variant]}</p>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 hover:border-primary/30 transition-colors" data-reveal data-reveal-delay="300">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-bold text-foreground mb-2">4. Parti subito</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Firma rapida con tablet, foto patente, chiavi in mano. In 5 minuti sei in viaggio: niente code, niente desk, niente transfer extra.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
