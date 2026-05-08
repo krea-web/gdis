@@ -184,19 +184,4 @@ const fleet = defineCollection({
   }),
 });
 
-const arrivals = defineCollection({
-  type: "data",
-  schema: z.object({
-    slug: z.string(),
-    name: z.string(),
-    kind: z.enum(["airport", "port", "station"]),
-    title: z.string(),
-    description: z.string(),
-    heroImage: z.string().url(),
-    heroSubtitle: z.string(),
-    bodyHtml: z.string(),
-    faq: z.array(faqItem),
-  }),
-});
-
-export const collections = { locations, fleet, arrivals };
+export const collections = { locations, fleet };

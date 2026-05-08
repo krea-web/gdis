@@ -1,5 +1,5 @@
 import { Car, Calendar, User, Users, MapPin, PenTool, Check } from "lucide-react";
-import type { BookingState } from "@/pages/PrenotaOra";
+import type { BookingState } from "@/components/booking/BookingFlow";
 import { getMonthlyRate } from "@/hooks/useVehicles";
 
 type Props = {
