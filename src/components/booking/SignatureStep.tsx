@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import { Button } from "@/components/ui/button";
 import { Eraser, Loader2, PenTool } from "lucide-react";
+import { toast } from "sonner";
 import { invokeN8nProxy } from "@/lib/n8nProxy";
 
 type Props = {
@@ -29,7 +30,6 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
       await invokeN8nProxy("sign", { booking_id: bookingId, signature: base64 });
       onComplete();
     } catch {
-      const { toast } = await import("sonner");
       toast.error("Errore nell'invio della firma. Riprova.");
     } finally {
       setSubmitting(false);

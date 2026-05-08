@@ -1,5 +1,3 @@
-
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useVehicles, type Vehicle } from "@/hooks/useVehicles";
 import VehicleCardSkeleton from "@/components/VehicleCardSkeleton";
@@ -48,7 +46,7 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
           className="w-full px-12 sm:px-14"
         >
           <CarouselContent className="-ml-0">
-            {vehicles?.map((v, i) => {
+            {vehicles?.map((v) => {
               const sel = toSelected(v);
               const imageUrl = sanitizeImageUrl(v.image_url);
 

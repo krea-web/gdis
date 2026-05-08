@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
-import FaqList from "@/components/FaqList.astro";
 import { buildFaqSchema, SITE_URL } from "@/lib/siteSchema";
 
 export async function getStaticPaths() {
@@ -13,8 +12,18 @@ export async function getStaticPaths() {
   }));
 }
 
+/**
+ * Astro 5 content layer infers nested array-element fields as optional even when
+ * the Zod schema requires them. Cast to DeepRequired — runtime is Zod-validated.
+ */
+type DeepRequired<T> = T extends Array<infer U>
+  ? Array<DeepRequired<U>>
+  : T extends object
+    ? { [K in keyof T]-?: DeepRequired<T[K]> }
+    : T;
+
 const { entry } = Astro.props;
-const v = entry.data;
+const v = entry.data as DeepRequired<typeof entry.data>;
 
 const breadcrumbs = [
   { name: "Home", url: "/" },

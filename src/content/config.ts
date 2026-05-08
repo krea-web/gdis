@@ -38,7 +38,7 @@ const nightlifeItem = z.object({
 });
 
 const customSection = z.object({
-  variant: z.enum(["airport", "port", "left-image", "right-image"]).default("right-image"),
+  variant: z.enum(["airport", "port", "left-image", "right-image"]).optional(),
   badge: z.string().optional(),
   title: z.string(),
   body: z.string(),
@@ -79,7 +79,7 @@ const locations = defineCollection({
         name: z.string(),
       }),
     ),
-    customSections: z.array(customSection).default([]),
+    customSections: z.array(customSection),
     spotlight: z
       .object({
         tag: z.string(),
@@ -87,7 +87,7 @@ const locations = defineCollection({
         description: z.string(),
         image: z.string().url(),
         imageAlt: z.string().optional(),
-        badges: z.array(z.string()).default([]),
+        badges: z.array(z.string()).optional(),
       })
       .optional(),
     topSpots: z.array(spot),
@@ -101,7 +101,7 @@ const locations = defineCollection({
       .object({
         title: z.string().optional(),
         subtitle: z.string().optional(),
-        show: z.array(z.enum(["panda", "mercedes", "honda", "yamaha"])).default(["panda", "mercedes", "honda", "yamaha"]),
+        show: z.array(z.enum(["panda", "mercedes", "honda", "yamaha"])),
         recommendation: z.string().optional(),
       })
       .optional(),
@@ -123,7 +123,7 @@ const featureSection = z.object({
   image: z.string().url(),
   imageAlt: z.string(),
   /** When true, image goes left and text goes right (default: image on right) */
-  reverse: z.boolean().default(false),
+  reverse: z.boolean().optional(),
 });
 
 const fleet = defineCollection({
@@ -154,7 +154,7 @@ const fleet = defineCollection({
         icon: scenarioIcon,
         title: z.string(),
         description: z.string(),
-        highlight: z.boolean().default(false),
+        highlight: z.boolean().optional(),
       }),
     ),
     whySection: z.object({
@@ -175,12 +175,12 @@ const fleet = defineCollection({
     ctaButtonLabel: z.string(),
     pricePerDay: z.number(),
     priceValidUntil: z.string(),
-    /** Schema.org type: Car, Motorcycle, or Product. Default: Product */
-    jsonLdType: z.enum(["Car", "Motorcycle", "Product"]).default("Product"),
+    /** Schema.org type: Car, Motorcycle, or Product. */
+    jsonLdType: z.enum(["Car", "Motorcycle", "Product"]),
     jsonLdBrand: z.string(),
     jsonLdManufacturer: z.string(),
     jsonLdModel: z.string(),
-    jsonLdExtras: z.record(z.any()).default({}),
+    jsonLdExtras: z.record(z.any()).optional(),
   }),
 });
 

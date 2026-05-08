@@ -77,5 +77,5 @@ if (breadcrumbs && breadcrumbs.length > 0) {
 <meta name="twitter:image" content={resolvedOgImage} />
 
 {schemas.map((s) => (
-  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(s)} />
 ))}
