@@ -39,7 +39,8 @@ const {
 } = Astro.props;
 
 const rawPath = canonical ?? (new URL(Astro.request.url).pathname.replace(/\/$/, "") || "/");
-const fullCanonical = rawPath.startsWith("http") ? rawPath : `${SITE_URL}${rawPath === "/" ? "" : rawPath}`;
+const isHome = rawPath === "/";
+const fullCanonical = rawPath.startsWith("http") ? rawPath : `${SITE_URL}${isHome ? "/" : rawPath}`;
 const resolvedOgImage = ogImage ?? DEFAULT_OG_IMAGE;
 
 const schemas: JsonLd[] = Array.isArray(jsonLd) ? [...jsonLd] : jsonLd ? [jsonLd] : [];
@@ -55,6 +56,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
 <meta name="robots" content={robots} />
 <meta name="author" content="GDIS Service S.R.L." />
 <link rel="canonical" href={fullCanonical} />
+<link rel="alternate" hreflang="it" href={fullCanonical} />
 <link rel="alternate" hreflang="it-IT" href={fullCanonical} />
 <link rel="alternate" hreflang="x-default" href={fullCanonical} />
 
