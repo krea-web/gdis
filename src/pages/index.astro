@@ -1,12 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import TrustMarquee from "@/components/TrustMarquee.astro";
-import {
-  buildLocalBusinessSchema,
-  SITE_URL,
-  BUSINESS_PHONE,
-  BUSINESS_LEGAL_NAME,
-} from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, SITE_URL } from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
 import { VEHICLE_PRICE_FROM } from "@/lib/vehiclePricing";
 
@@ -21,7 +16,7 @@ const serviceSchemas = [
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: "Noleggio auto",
-    provider: { "@type": "Organization", name: BUSINESS_LEGAL_NAME, telephone: BUSINESS_PHONE },
+    provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: [
       { "@type": "City", name: "Olbia" },
       { "@type": "AdministrativeArea", name: "Costa Smeralda" },
@@ -33,7 +28,7 @@ const serviceSchemas = [
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: "Noleggio scooter",
-    provider: { "@type": "Organization", name: BUSINESS_LEGAL_NAME, telephone: BUSINESS_PHONE },
+    provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: [{ "@type": "City", name: "Olbia" }],
     url: `${SITE_URL}/flotta/honda-sh`,
     name: "Noleggio scooter Honda SH a Olbia",
@@ -42,7 +37,7 @@ const serviceSchemas = [
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: "Noleggio quad",
-    provider: { "@type": "Organization", name: BUSINESS_LEGAL_NAME, telephone: BUSINESS_PHONE },
+    provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: [{ "@type": "AdministrativeArea", name: "Gallura" }],
     url: `${SITE_URL}/flotta/yamaha-raptor`,
     name: "Noleggio quad Yamaha Raptor in Sardegna",

@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import FaqList from "@/components/FaqList.astro";
-import { buildProductSchema, buildFaqSchema, SITE_URL, BUSINESS_LEGAL_NAME } from "@/lib/siteSchema";
+import { buildFaqSchema, SITE_URL } from "@/lib/siteSchema";
 
 export async function getStaticPaths() {
   const fleet = await getCollection("fleet");
@@ -39,7 +39,7 @@ const productSchema: Record<string, unknown> = {
     availability: "https://schema.org/InStock",
     priceValidUntil: v.priceValidUntil,
     url: `${SITE_URL}${v.canonical}`,
-    seller: { "@type": "Organization", name: BUSINESS_LEGAL_NAME },
+    seller: { "@id": `${SITE_URL}/#organization` },
   },
 };
 
