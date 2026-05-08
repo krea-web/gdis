@@ -50,7 +50,7 @@ const localBusinessSchema = buildLocalBusinessSchema({
   areaServed: data.areaServed.map((a) => ({ "@type": a.type, name: a.name })),
 });
 
-const faqSchema = buildFaqSchema(data.faq);
+const faqSchema = buildFaqSchema(data.faq, { speakable: true });
 
 const sectionBg = (i: number) => (i % 2 === 0 ? "bg-background" : "bg-muted/20");
 ---
@@ -62,6 +62,7 @@ const sectionBg = (i: number) => (i % 2 === 0 ? "bg-background" : "bg-muted/20")
   jsonLd={[localBusinessSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
   keywords={data.keywords}
+  ogImage={data.heroImage}
   lcpImage={{ href: data.heroImage, type: "image/webp" }}
 >
   <LocalitaHero

@@ -52,7 +52,7 @@ const productSchema: Record<string, unknown> = {
   },
 };
 
-const faqSchema = buildFaqSchema(v.faq);
+const faqSchema = buildFaqSchema(v.faq, { speakable: true });
 ---
 
 <BaseLayout
@@ -62,6 +62,7 @@ const faqSchema = buildFaqSchema(v.faq);
   jsonLd={[productSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
   ogType="product"
+  ogImage={v.heroImage}
   lcpImage={{ href: v.heroImage, type: "image/webp" }}
 >
   {/* HERO */}

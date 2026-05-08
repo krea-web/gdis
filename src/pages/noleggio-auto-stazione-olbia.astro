@@ -5,7 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
-import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -44,22 +44,38 @@ const localBusinessSchema = buildLocalBusinessSchema({
   ],
 });
 
-const faqSchema = buildFaqSchema(faqs);
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Noleggio Auto Stazione Olbia",
+  description:
+    "Servizio di consegna veicoli a noleggio alla Stazione di Olbia (Trenitalia). Combina treno + auto per esplorare la Costa Smeralda da Sassari, Cagliari o coincidenze interne.",
+  serviceType: "Train Station Car Rental Delivery",
+  url: "/noleggio-auto-stazione-olbia",
+  areaServed: [
+    { "@type": "TrainStation", name: "Stazione di Olbia" },
+    { "@type": "City", name: "Olbia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
+const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-olbia.webp";
 ---
 
 <BaseLayout
   title="Noleggio Auto Stazione Olbia | Combina Treno + Auto | GDIS Rent"
   description="Noleggio auto Stazione Olbia ✓ Collegamenti Trenitalia da Sassari e Cagliari ✓ Combo treno + auto per Costa Smeralda ✓ Consegna all'uscita. WhatsApp H24."
   canonical="/noleggio-auto-stazione-olbia"
-  jsonLd={[localBusinessSchema, faqSchema]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
+  ogImage={heroImage}
 >
   <LocalitaHero
     name="Stazione Olbia"
     h1Prefix="Noleggio Auto"
     h1Accent="Stazione Olbia"
     subtitle="Arrivi in treno da Sassari, Cagliari o coincidenze interne? Trovi l'auto pronta nel piazzale antistante la stazione Trenitalia."
-    bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-olbia.webp"
+    bgImage={heroImage}
   />
 
   <div class="container pt-6">

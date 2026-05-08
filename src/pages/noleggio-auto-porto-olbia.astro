@@ -5,7 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
-import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -47,22 +47,38 @@ const localBusinessSchema = buildLocalBusinessSchema({
   ],
 });
 
-const faqSchema = buildFaqSchema(faqs);
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Noleggio Auto Porto Olbia Isola Bianca",
+  description:
+    "Servizio di consegna veicoli a noleggio direttamente al terminal Isola Bianca del Porto di Olbia. Monitoraggio AIS dei traghetti, attesa allo sbarco passeggeri.",
+  serviceType: "Port Car Rental Delivery",
+  url: "/noleggio-auto-porto-olbia",
+  areaServed: [
+    { "@type": "Place", name: "Porto di Olbia Isola Bianca" },
+    { "@type": "City", name: "Olbia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
+const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp";
 ---
 
 <BaseLayout
   title="Noleggio Auto Porto Olbia Isola Bianca | Tirrenia Moby GNV | GDIS Rent"
   description="Noleggio auto Porto Olbia Isola Bianca ✓ Sbarco da Civitavecchia, Livorno, Genova, Piombino, Nizza ✓ Consegna al terminal traghetti ✓ WhatsApp H24."
   canonical="/noleggio-auto-porto-olbia"
-  jsonLd={[localBusinessSchema, faqSchema]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
+  ogImage={heroImage}
 >
   <LocalitaHero
     name="Porto Isola Bianca"
     h1Prefix="Noleggio Auto"
     h1Accent="Porto Olbia"
     subtitle="Sbarchi da Civitavecchia, Livorno, Genova, Piombino o Nizza? Ti aspettiamo al terminal Isola Bianca con il veicolo pronto."
-    bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp"
+    bgImage={heroImage}
   />
 
   <div class="container pt-6">

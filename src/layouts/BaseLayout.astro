@@ -49,6 +49,9 @@ const {
 
 const userJsonLd: JsonLd[] = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 const allJsonLd: JsonLd[] = [organizationSchema, websiteSchema, ...userJsonLd];
+
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
+const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION;
 ---
 
 <!doctype html>
@@ -57,6 +60,9 @@ const allJsonLd: JsonLd[] = [organizationSchema, websiteSchema, ...userJsonLd];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0f172a" />
+
+    {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+    {bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
 
     <link rel="icon" type="image/svg+xml" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/gdis-favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/favicon-32x32.png" />

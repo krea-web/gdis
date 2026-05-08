@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown, Car, Bike, Mountain, MapPin, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, Car, Bike, Mountain, MapPin, Mail, Plane, Anchor, Train, Sparkles } from "lucide-react";
 
 const flottaItems = [
   { label: "City Car", to: "/flotta/fiat-panda", icon: Car, desc: "Fiat Panda Hybrid" },
@@ -8,15 +8,28 @@ const flottaItems = [
   { label: "Quad", to: "/flotta/yamaha-raptor", icon: Mountain, desc: "Yamaha Raptor 700" },
 ];
 
-const destinazioniItems = [
-  { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", desc: "Panoramica Completa" },
+const hubTrasportiItems = [
+  { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", icon: Sparkles, desc: "Hub Regionale" },
+  { label: "Aeroporto Olbia", to: "/noleggio-auto-aeroporto-olbia", icon: Plane, desc: "OLB · Costa Smeralda" },
+  { label: "Porto Olbia", to: "/noleggio-auto-porto-olbia", icon: Anchor, desc: "Isola Bianca · Traghetti" },
+  { label: "Stazione Olbia", to: "/noleggio-auto-stazione-olbia", icon: Train, desc: "Centro · Treni" },
+];
+
+const localitaItems = [
+  { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: "Famiglie & Coppie" },
   { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo", desc: "Lusso & Marina" },
   { label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro", desc: "Spiagge & Movida" },
   { label: "San Pantaleo", to: "/noleggio-auto-a-san-pantaleo", desc: "Borgo Bohémien" },
   { label: "Porto Rotondo", to: "/noleggio-auto-a-porto-rotondo", desc: "Eleganza Discreta" },
   { label: "Golfo Aranci", to: "/noleggio-auto-a-golfo-aranci", desc: "Terminal Traghetti" },
   { label: "Baja Sardinia", to: "/noleggio-auto-a-baja-sardinia", desc: "Phi Beach & Party" },
-  { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: "Famiglie & Coppie" },
+];
+
+const HUB_PATHS = [
+  "/noleggio-auto-in-costa-smeralda",
+  "/noleggio-auto-aeroporto-olbia",
+  "/noleggio-auto-porto-olbia",
+  "/noleggio-auto-stazione-olbia",
 ];
 
 const links = [
@@ -33,14 +46,18 @@ type Props = { pathname: string; logoSrc?: string };
 const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
   const [open, setOpen] = useState(false);
   const [flottaOpen, setFlottaOpen] = useState(false);
-  const [destOpen, setDestOpen] = useState(false);
-  const isDestActive = pathname.startsWith("/noleggio-auto-");
+  const [hubOpen, setHubOpen] = useState(false);
+  const [localitaOpen, setLocalitaOpen] = useState(false);
+  const isLocalitaActive = pathname.startsWith("/noleggio-auto-a-");
+  const isHubActive = HUB_PATHS.includes(pathname);
   const isFlottaActive = pathname.startsWith("/flotta");
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    document.body.classList.toggle("mobile-menu-open", open);
     return () => {
       document.body.style.overflow = "";
+      document.body.classList.remove("mobile-menu-open");
     };
   }, [open]);
 
@@ -154,19 +171,53 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
 
             <div>
               <button
-                onClick={() => setDestOpen((v) => !v)}
+                onClick={() => setHubOpen((v) => !v)}
                 className={`flex items-center justify-between w-full text-3xl font-semibold py-3 transition-colors ${
-                  isDestActive ? "text-primary" : "text-white hover:text-primary"
+                  isHubActive ? "text-primary" : "text-white hover:text-primary"
                 }`}
               >
-                Destinazioni
+                Hub Trasporti
                 <ChevronDown
-                  className={`h-6 w-6 transition-transform duration-300 ${destOpen ? "rotate-180" : ""}`}
+                  className={`h-6 w-6 transition-transform duration-300 ${hubOpen ? "rotate-180" : ""}`}
                 />
               </button>
-              {destOpen && (
+              {hubOpen && (
                 <div className="pl-4 border-l-2 border-primary/30 ml-2 flex flex-col gap-1 py-2">
-                  {destinazioniItems.map((item) => (
+                  {hubTrasportiItems.map((item) => (
+                    <a
+                      key={item.to}
+                      href={item.to}
+                      onClick={close}
+                      className="flex items-center gap-3 py-2.5 group"
+                    >
+                      <item.icon className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" />
+                      <div>
+                        <span className="text-xl font-medium text-slate-200 group-hover:text-white transition-colors">
+                          {item.label}
+                        </span>
+                        <span className="block text-sm text-slate-500">{item.desc}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <button
+                onClick={() => setLocalitaOpen((v) => !v)}
+                className={`flex items-center justify-between w-full text-3xl font-semibold py-3 transition-colors ${
+                  isLocalitaActive ? "text-primary" : "text-white hover:text-primary"
+                }`}
+              >
+                Località
+                <ChevronDown
+                  className={`h-6 w-6 transition-transform duration-300 ${localitaOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {localitaOpen && (
+                <div className="pl-4 border-l-2 border-primary/30 ml-2 flex flex-col gap-1 py-2">
+                  {localitaItems.map((item) => (
                     <a
                       key={item.to}
                       href={item.to}
@@ -184,16 +235,6 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
                   ))}
                 </div>
               )}
-            </div>
-
-            <div className="mt-6">
-              <a
-                href="/prenotaora"
-                onClick={close}
-                className="inline-flex items-center justify-center gap-2 w-full h-12 px-8 text-lg font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all py-6"
-              >
-                Prenota Ora
-              </a>
             </div>
 
             <div className="mt-10 pt-6 border-t border-white/10 flex flex-col gap-3">

@@ -16,7 +16,7 @@ const navColumns = [
       { label: "Chi Siamo", to: "/chisiamo" },
       { label: "Prenota Ora", to: "/prenotaora" },
       { label: "Contatti", to: "/contatti" },
-      { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda" },
+      { label: "Mappa del Sito", to: "/mappa-sito" },
     ],
   },
   {
@@ -29,7 +29,16 @@ const navColumns = [
     ],
   },
   {
-    title: "Destinazioni",
+    title: "Hub Trasporti",
+    links: [
+      { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda" },
+      { label: "Aeroporto Olbia", to: "/noleggio-auto-aeroporto-olbia" },
+      { label: "Porto Olbia", to: "/noleggio-auto-porto-olbia" },
+      { label: "Stazione Olbia", to: "/noleggio-auto-stazione-olbia" },
+    ],
+  },
+  {
+    title: "Località",
     links: [
       { label: "Olbia", to: "/noleggio-auto-a-olbia" },
       { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo" },
@@ -123,7 +132,7 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
         </div>
       </div>
 
-      <nav class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8" aria-label="Footer navigation">
+      <nav class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8" aria-label="Footer navigation">
         {navColumns.map((col) => (
           <div>
             <h3 class="text-sm font-bold uppercase tracking-widest text-white mb-5">{col.title}</h3>

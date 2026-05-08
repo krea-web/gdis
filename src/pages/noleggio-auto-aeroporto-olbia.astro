@@ -5,7 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
-import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -51,22 +51,38 @@ const localBusinessSchema = buildLocalBusinessSchema({
   ],
 });
 
-const faqSchema = buildFaqSchema(faqs);
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Noleggio Auto Aeroporto Olbia Costa Smeralda",
+  description:
+    "Servizio di consegna VIP veicoli a noleggio direttamente nel piazzale arrivi dell'Aeroporto di Olbia Costa Smeralda (OLB). Monitoraggio voli in tempo reale.",
+  serviceType: "Airport Car Rental Delivery",
+  url: "/noleggio-auto-aeroporto-olbia",
+  areaServed: [
+    { "@type": "Airport", name: "Aeroporto Olbia Costa Smeralda" },
+    { "@type": "City", name: "Olbia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
+const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp";
 ---
 
 <BaseLayout
   title="Noleggio Auto Aeroporto Olbia OLB | Consegna agli Arrivi | GDIS Rent"
   description="Noleggio auto Aeroporto Olbia Costa Smeralda OLB ✓ Consegna VIP direttamente agli arrivi ✓ Monitoraggio voli ✓ Distanze e tempi reali per Costa Smeralda. Prenota online H24."
   canonical="/noleggio-auto-aeroporto-olbia"
-  jsonLd={[localBusinessSchema, faqSchema]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
+  ogImage={heroImage}
 >
   <LocalitaHero
     name="Aeroporto Olbia"
     h1Prefix="Noleggio Auto"
     h1Accent="Aeroporto Olbia"
     subtitle="Codice IATA OLB. Consegna VIP nel piazzale arrivi del Costa Smeralda Airport — atterri, ti consegniamo l'auto, parti."
-    bgImage="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp"
+    bgImage={heroImage}
   />
 
   <div class="container pt-6">

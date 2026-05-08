@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import TrustMarquee from "@/components/TrustMarquee.astro";
 import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
 import FaqList from "@/components/FaqList.astro";
-import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
 
 const breadcrumbs = [
@@ -34,7 +34,24 @@ const faqs = [
   { q: "Quali documenti servono per noleggiare?", a: "Patente di guida valida, carta d'identità o passaporto, e carta di credito intestata al conducente. Per i cittadini extra-UE serve anche il permesso internazionale di guida." },
 ];
 
-const faqSchema = buildFaqSchema(faqs);
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Noleggio Auto Costa Smeralda",
+  description:
+    "Servizio di noleggio auto, scooter e quad in Costa Smeralda con consegna VIP a hotel, ville, yacht e marine da Olbia a Palau, Porto Cervo e San Teodoro.",
+  serviceType: "Regional Car Rental",
+  url: "/noleggio-auto-in-costa-smeralda",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+    { "@type": "City", name: "Porto Cervo" },
+    { "@type": "City", name: "Porto Rotondo" },
+    { "@type": "City", name: "Baja Sardinia" },
+    { "@type": "City", name: "San Teodoro" },
+    { "@type": "City", name: "San Pantaleo" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
 
 const deliveryLocations = [
   { name: "Porto Cervo", desc: "Hotel, marina e boutique del lusso", to: "/noleggio-auto-a-porto-cervo" },
@@ -50,7 +67,7 @@ const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
   title="Noleggio Auto Costa Smeralda | Consegna VIP Porto Cervo | GDIS Rent"
   description="Noleggio auto Costa Smeralda ✓ Consegna VIP Porto Cervo, Baja Sardinia, San Teodoro, Olbia ✓ Auto, scooter, quad ✓ Prenota WhatsApp H24 firma digitale."
   canonical="/noleggio-auto-in-costa-smeralda"
-  jsonLd={[localBusinessSchema, faqSchema]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
 >
   {/* Hero */}

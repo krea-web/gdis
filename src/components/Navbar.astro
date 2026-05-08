@@ -5,7 +5,14 @@ import { supabaseImg } from "@/lib/img";
 const path = new URL(Astro.request.url).pathname.replace(/\/$/, "") || "/";
 const isHome = path === "/";
 const isFlottaActive = path.startsWith("/flotta");
-const isDestActive = path.startsWith("/noleggio-auto-");
+const HUB_PATHS = [
+  "/noleggio-auto-in-costa-smeralda",
+  "/noleggio-auto-aeroporto-olbia",
+  "/noleggio-auto-porto-olbia",
+  "/noleggio-auto-stazione-olbia",
+];
+const isHubActive = HUB_PATHS.includes(path);
+const isLocalitaActive = path.startsWith("/noleggio-auto-a-");
 const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
 
 const links = [
@@ -21,15 +28,21 @@ const flottaItems = [
   { label: "Quad", to: "/flotta/yamaha-raptor", icon: "mountain", desc: "Yamaha Raptor 700" },
 ];
 
-const destinazioniItems = [
-  { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", desc: "Panoramica Completa" },
+const hubTrasportiItems = [
+  { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", icon: "sparkles", desc: "Hub Regionale" },
+  { label: "Aeroporto Olbia", to: "/noleggio-auto-aeroporto-olbia", icon: "plane", desc: "OLB · Costa Smeralda" },
+  { label: "Porto Olbia", to: "/noleggio-auto-porto-olbia", icon: "anchor", desc: "Isola Bianca · Traghetti" },
+  { label: "Stazione Olbia", to: "/noleggio-auto-stazione-olbia", icon: "train", desc: "Centro · Treni" },
+];
+
+const localitaItems = [
+  { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: "Famiglie & Coppie" },
   { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo", desc: "Lusso & Marina" },
   { label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro", desc: "Spiagge & Movida" },
   { label: "San Pantaleo", to: "/noleggio-auto-a-san-pantaleo", desc: "Borgo Bohémien" },
   { label: "Porto Rotondo", to: "/noleggio-auto-a-porto-rotondo", desc: "Eleganza Discreta" },
   { label: "Golfo Aranci", to: "/noleggio-auto-a-golfo-aranci", desc: "Terminal Traghetti" },
   { label: "Baja Sardinia", to: "/noleggio-auto-a-baja-sardinia", desc: "Phi Beach & Party" },
-  { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: "Famiglie & Coppie" },
 ];
 ---
 
@@ -113,24 +126,61 @@ const destinazioniItems = [
         </div>
       </details>
 
-      {/* Destinazioni dropdown */}
+      {/* Hub Trasporti dropdown */}
       <details class="relative group nav-dropdown">
         <summary
           class:list={[
             "relative cursor-pointer list-none flex items-center gap-1 text-sm font-medium transition-colors duration-200 select-none",
-            isDestActive
+            isHubActive
               ? "text-primary"
               : isHome
               ? "text-background/80 hover:text-background nav-on-dark"
               : "text-foreground/70 hover:text-foreground",
           ]}
         >
-          Destinazioni
+          Hub Trasporti
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 nav-chevron"><polyline points="6 9 12 15 18 9"/></svg>
-          {isDestActive && <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />}
+          {isHubActive && <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />}
+        </summary>
+        <div class="absolute top-full mt-3 -left-4 w-72 glass rounded-xl shadow-xl shadow-foreground/10 border border-border/50 overflow-hidden">
+          {hubTrasportiItems.map((item) => (
+            <a
+              href={item.to}
+              class="flex items-center gap-3 px-4 py-3 hover:bg-accent/60 transition-colors group/item"
+            >
+              <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                {item.icon === "sparkles" && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>}
+                {item.icon === "plane" && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>}
+                {item.icon === "anchor" && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg>}
+                {item.icon === "train" && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="m8 19-2 3"/><path d="m18 22-2-3"/><path d="M8 15h0"/><path d="M16 15h0"/></svg>}
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-foreground">{item.label}</p>
+                <p class="text-xs text-muted-foreground">{item.desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </details>
+
+      {/* Località dropdown */}
+      <details class="relative group nav-dropdown">
+        <summary
+          class:list={[
+            "relative cursor-pointer list-none flex items-center gap-1 text-sm font-medium transition-colors duration-200 select-none",
+            isLocalitaActive
+              ? "text-primary"
+              : isHome
+              ? "text-background/80 hover:text-background nav-on-dark"
+              : "text-foreground/70 hover:text-foreground",
+          ]}
+        >
+          Località
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 nav-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+          {isLocalitaActive && <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />}
         </summary>
         <div class="absolute top-full mt-3 -left-4 w-64 glass rounded-xl shadow-xl shadow-foreground/10 border border-border/50 overflow-hidden">
-          {destinazioniItems.map((item) => (
+          {localitaItems.map((item) => (
             <a
               href={item.to}
               class="flex items-center gap-3 px-4 py-3 hover:bg-accent/60 transition-colors group/item"

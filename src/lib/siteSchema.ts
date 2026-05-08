@@ -152,11 +152,20 @@ export function buildProductSchema(opts: {
   };
 }
 
-/** Build a FAQPage schema from a list of {q,a} pairs. */
-export function buildFaqSchema(faq: Array<{ q: string; a: string }>) {
+/** Build a FAQPage schema from a list of {q,a} pairs. Optional speakable hint for AI/voice. */
+export function buildFaqSchema(
+  faq: Array<{ q: string; a: string }>,
+  opts: { speakable?: boolean } = {},
+) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(opts.speakable && {
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: [".faq-item summary", ".faq-item p", ".faq-item .faq-answer"],
+      },
+    }),
     mainEntity: faq.map((item) => ({
       "@type": "Question",
       name: item.q,
@@ -165,6 +174,91 @@ export function buildFaqSchema(faq: Array<{ q: string; a: string }>) {
         text: item.a,
       },
     })),
+  };
+}
+
+/** Build a Service schema for a transport hub (airport/port/station/region). */
+export function buildServiceSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+  serviceType?: string;
+  areaServed: Array<{ "@type": string; name: string }> | string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}${opts.url}#service`,
+    name: opts.name,
+    description: opts.description,
+    serviceType: opts.serviceType ?? "Car Rental",
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: opts.areaServed,
+    url: `${SITE_URL}${opts.url}`,
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `${SITE_URL}/prenotaora`,
+      servicePhone: BUSINESS_PHONE,
+    },
+  };
+}
+
+/** Build a HowTo schema describing the GDIS booking flow (6 steps). */
+export function buildHowToBookingSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${SITE_URL}/prenotaora#howto`,
+    name: "Come prenotare un'auto a Olbia con GDIS Rent",
+    description:
+      "Procedura online in 6 step per prenotare auto, scooter o quad a Olbia e in Costa Smeralda con consegna VIP.",
+    totalTime: "PT3M",
+    inLanguage: "it-IT",
+    image: BUSINESS_LOGO,
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Scegli il veicolo",
+        text: "Seleziona auto, scooter o quad dalla nostra flotta in base al tipo di viaggio (city car, premium, off-road).",
+        url: `${SITE_URL}/prenotaora#step-veicolo`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Imposta date e luogo di consegna",
+        text: "Inserisci data e ora di ritiro/riconsegna e scegli dove vuoi ricevere il veicolo: aeroporto Olbia, porto, stazione, hotel o villa.",
+        url: `${SITE_URL}/prenotaora#step-date`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Aggiungi extra opzionali",
+        text: "Seggiolino bambino, secondo guidatore, copertura kasko, GPS o altri extra inclusi nella prenotazione.",
+        url: `${SITE_URL}/prenotaora#step-extra`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Inserisci i tuoi dati",
+        text: "Compila nome, cognome, contatti e numero della patente. I dati sono protetti e usati solo per il contratto.",
+        url: `${SITE_URL}/prenotaora#step-dati`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 5,
+        name: "Conferma e pagamento",
+        text: "Verifica il riepilogo, accetta termini e condizioni, completa il pagamento sicuro o lascia la cauzione concordata.",
+        url: `${SITE_URL}/prenotaora#step-pagamento`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 6,
+        name: "Ricevi conferma e ritira il veicolo",
+        text: "Riceverai email e messaggio WhatsApp con dettagli del ritiro. Al momento concordato il veicolo è consegnato dove preferisci.",
+        url: `${SITE_URL}/prenotaora#step-conferma`,
+      },
+    ],
   };
 }
 
