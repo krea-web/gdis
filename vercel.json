@@ -64,12 +64,6 @@
     }
   ],
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.gdisrentservice.com" }],
-      "destination": "https://gdisrentservice.com/:path*",
-      "permanent": true
-    },
     { "source": "/localita/noleggio-olbia", "destination": "/noleggio-auto-a-olbia", "permanent": true },
     { "source": "/localita/noleggio-porto-cervo", "destination": "/noleggio-auto-a-porto-cervo", "permanent": true },
     { "source": "/localita/noleggio-san-teodoro", "destination": "/noleggio-auto-a-san-teodoro", "permanent": true },

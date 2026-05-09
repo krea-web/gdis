@@ -1,5 +1,5 @@
 # GDIS Rent & Service — robots.txt
-# https://gdisrentservice.com
+# https://www.gdisrentservice.com
 
 User-agent: *
 Allow: /
@@ -54,4 +54,4 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-Sitemap: https://gdisrentservice.com/sitemap.xml
+Sitemap: https://www.gdisrentservice.com/sitemap-index.xml

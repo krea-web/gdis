@@ -7,7 +7,7 @@ import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: 'https://gdisrentservice.com',
+  site: 'https://www.gdisrentservice.com',
   output: 'static',
   trailingSlash: 'never',
   adapter: vercel({ imageService: true }),
@@ -19,7 +19,7 @@ export default defineConfig({
     sitemap({
       filter: (url) => !url.includes('/admin'),
       serialize(item) {
-        if (item.url === 'https://gdisrentservice.com/') {
+        if (item.url === 'https://www.gdisrentservice.com/') {
           return { ...item, priority: 1.0, changefreq: 'daily' };
         }
         if (item.url.includes('/noleggio-auto-')) {
