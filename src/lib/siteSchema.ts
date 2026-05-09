@@ -1,4 +1,4 @@
-export const SITE_URL = "https://www.gdisrentservice.com";
+export const SITE_URL = "https://gdisrentservice.com";
 export const BUSINESS_LEGAL_NAME = "GDIS SERVICE S.R.L.";
 export const BUSINESS_NAME = "GDIS Rent & Service";
 export const BUSINESS_VAT = "IT03047140904";

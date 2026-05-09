@@ -45,7 +45,7 @@ const breadcrumbs = [
 ];
 
 const localBusinessSchema = buildLocalBusinessSchema({
-  id: `https://www.gdisrentservice.com${data.canonical}#localbusiness`,
+  id: `https://gdisrentservice.com${data.canonical}#localbusiness`,
   description: data.description,
   areaServed: data.areaServed.map((a) => ({ "@type": a.type, name: a.name })),
 });

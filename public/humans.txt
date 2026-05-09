@@ -1,6 +1,6 @@
 /* TEAM */
 Owner: GDIS Service S.R.L.
-Site: https://www.gdisrentservice.com
+Site: https://gdisrentservice.com
 Location: Olbia, Sardegna, Italia
 Contact: info@gdisrentservice.com
 
