@@ -9,6 +9,7 @@ import MobileStickyCTA from "@/components/MobileStickyCTA.astro";
 import Analytics from "@/components/Analytics.astro";
 import CookieBannerIsland from "@/components/CookieBannerIsland.tsx";
 import { organizationSchema, websiteSchema } from "@/lib/siteSchema";
+import { getLangFromUrl, type Locale } from "@/i18n/utils";
 
 type JsonLd = Record<string, unknown>;
 type BreadcrumbItem = { name: string; url: string };
@@ -29,6 +30,8 @@ export interface Props {
   hideBackground?: boolean;
   /** Optional preload hints for LCP image (use full URL with srcset) */
   lcpImage?: { href: string; imagesrcset?: string; imagesizes?: string; type?: string };
+  /** Map of locale → URL of the equivalent page in that locale (forwarded to SEO). */
+  i18nAlternates?: Partial<Record<Locale, string>>;
 }
 
 const {
@@ -45,7 +48,10 @@ const {
   keywords,
   hideBackground = false,
   lcpImage,
+  i18nAlternates,
 } = Astro.props;
+
+const currentLang: Locale = getLangFromUrl(Astro.url);
 
 const userJsonLd: JsonLd[] = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 const allJsonLd: JsonLd[] = [organizationSchema, websiteSchema, ...userJsonLd];
@@ -55,7 +61,7 @@ const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION;
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -112,6 +118,7 @@ const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION;
       robots={robots}
       breadcrumbs={breadcrumbs}
       keywords={keywords}
+      i18nAlternates={i18nAlternates}
     />
 
     <Analytics />
@@ -119,7 +126,7 @@ const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION;
   <body class="bg-background text-foreground antialiased">
     <div class="min-h-screen flex flex-col overflow-x-hidden">
       {!hideBackground && <BackgroundGrid />}
-      <Navbar />
+      <Navbar i18nAlternates={i18nAlternates} />
       <main class="flex-1">
         <slot />
       </main>

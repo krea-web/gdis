@@ -1,5 +1,12 @@
 ---
 import { buildBreadcrumbList } from "@/lib/siteSchema";
+import {
+  DEFAULT_LOCALE,
+  HREFLANG_TAGS,
+  OG_LOCALES,
+  getLangFromUrl,
+  type Locale,
+} from "@/i18n/utils";
 
 type JsonLd = Record<string, unknown>;
 type BreadcrumbItem = { name: string; url: string };
@@ -17,6 +24,12 @@ export interface Props {
   robots?: string;
   breadcrumbs?: BreadcrumbItem[];
   keywords?: string;
+  /**
+   * Map of locale → absolute or path-only URL of the equivalent page in that locale.
+   * Only emit hreflang for locales that have a real translated page — never point Google
+   * at URLs that don't exist. The current page's locale is auto-included.
+   */
+  i18nAlternates?: Partial<Record<Locale, string>>;
 }
 
 const SITE_URL = "https://gdisrentservice.com";
@@ -32,16 +45,41 @@ const {
   ogImageWidth = 1200,
   ogImageHeight = 630,
   ogType = "website",
-  ogLocale = "it_IT",
+  ogLocale,
   robots = "index,follow,max-image-preview:large,max-snippet:-1",
   breadcrumbs,
   keywords,
+  i18nAlternates,
 } = Astro.props;
+
+const currentLang: Locale = getLangFromUrl(Astro.url);
+const resolvedOgLocale = ogLocale ?? OG_LOCALES[currentLang];
 
 const rawPath = canonical ?? (new URL(Astro.request.url).pathname.replace(/\/$/, "") || "/");
 const isHome = rawPath === "/";
 const fullCanonical = rawPath.startsWith("http") ? rawPath : `${SITE_URL}${isHome ? "/" : rawPath}`;
 const resolvedOgImage = ogImage ?? DEFAULT_OG_IMAGE;
+
+const toAbsolute = (href: string) =>
+  href.startsWith("http") ? href : `${SITE_URL}${href.startsWith("/") ? href : `/${href}`}`;
+
+const alternateEntries: Array<{ hreflang: string; href: string; locale: Locale }> = [];
+if (i18nAlternates) {
+  const merged: Partial<Record<Locale, string>> = { ...i18nAlternates, [currentLang]: fullCanonical };
+  for (const [loc, href] of Object.entries(merged) as Array<[Locale, string]>) {
+    if (!href) continue;
+    alternateEntries.push({
+      hreflang: HREFLANG_TAGS[loc],
+      href: toAbsolute(href),
+      locale: loc,
+    });
+  }
+}
+const xDefaultHref = i18nAlternates?.[DEFAULT_LOCALE]
+  ? toAbsolute(i18nAlternates[DEFAULT_LOCALE]!)
+  : currentLang === DEFAULT_LOCALE
+    ? fullCanonical
+    : undefined;
 
 const schemas: JsonLd[] = Array.isArray(jsonLd) ? [...jsonLd] : jsonLd ? [jsonLd] : [];
 
@@ -56,11 +94,23 @@ if (breadcrumbs && breadcrumbs.length > 0) {
 <meta name="robots" content={robots} />
 <meta name="author" content="GDIS Service S.R.L." />
 <link rel="canonical" href={fullCanonical} />
-<link rel="alternate" hreflang="it-IT" href={fullCanonical} />
+{alternateEntries.length > 0 ? (
+  alternateEntries.map((alt) => (
+    <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+  ))
+) : (
+  <link rel="alternate" hreflang={HREFLANG_TAGS[currentLang]} href={fullCanonical} />
+)}
+{xDefaultHref && <link rel="alternate" hreflang="x-default" href={xDefaultHref} />}
 
 {/* Open Graph */}
 <meta property="og:site_name" content="GDIS Rent & Service" />
-<meta property="og:locale" content={ogLocale} />
+<meta property="og:locale" content={resolvedOgLocale} />
+{alternateEntries
+  .filter((alt) => alt.locale !== currentLang)
+  .map((alt) => (
+    <meta property="og:locale:alternate" content={OG_LOCALES[alt.locale]} />
+  ))}
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content={ogType} />

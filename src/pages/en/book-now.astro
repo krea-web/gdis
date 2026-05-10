@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingFlow from "@/components/booking/BookingFlow.tsx";
+import { buildHowToBookingSchema } from "@/lib/siteSchema";
+
+const howToSchema = buildHowToBookingSchema("en");
+---
+
+<BaseLayout
+  title="Book Now — GDIS Rent | Online Car, Scooter & Quad Rental in Sardinia"
+  description="Book your vehicle online in Sardinia: car, scooter, quad and luxury hire. Quick 6-step flow, digital signature and VIP delivery included."
+  canonical="/en/book-now"
+  jsonLd={howToSchema}
+  hideBackground
+  i18nAlternates={{ it: "/prenotaora", de: "/de/jetzt-buchen", fr: "/fr/reserver" }}
+>
+  <BookingFlow client:load lang="en" />
+</BaseLayout>

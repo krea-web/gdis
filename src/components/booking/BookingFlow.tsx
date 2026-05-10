@@ -26,6 +26,8 @@ import { type Vehicle } from "@/hooks/useVehicles";
 import { invokeN8nProxy, type CreateBookingResponse } from "@/lib/n8nProxy";
 import { driverSchema, pickupDropoffSchema } from "@/lib/validators";
 import { trackBookingStarted, trackBookingCompleted, trackWhatsAppClick } from "@/lib/analytics";
+import { useTranslations } from "@/i18n/utils";
+import type { Locale } from "@/i18n/utils";
 
 export type DriverData = {
   email: string; telefono: string;
@@ -55,8 +57,6 @@ const initialPickupDropoff: PickupDropoffData = {
   dropoffTime: "",
 };
 
-const steps = ["Veicolo", "Date", "Conducente", "2° Guidatore", "Ritiro/Consegna", "Firma"];
-
 async function uploadLicense(file: File, prefix: string): Promise<string | null> {
   const ext = file.name.split(".").pop();
   const path = `${prefix}/${Date.now()}.${ext}`;
@@ -65,7 +65,15 @@ async function uploadLicense(file: File, prefix: string): Promise<string | null>
   return path;
 }
 
-const BookingFlow = () => {
+type BookingFlowProps = {
+  lang?: Locale;
+};
+
+const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
+  const t = useTranslations(lang);
+  const stepKeys = ["vehicle", "dates", "driver", "secondDriver", "pickupDropoff", "signature"] as const;
+  const steps = stepKeys.map((k) => t(`booking.steps.${k}`));
+
   const [step, setStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [checkingAvailability, setCheckingAvailability] = useState(false);
@@ -132,14 +140,14 @@ const BookingFlow = () => {
       });
 
       if (error || data?.success === false || data?.available === false) {
-        const msg = data?.error || "Il veicolo è già stato prenotato per queste date. Scegli un altro periodo.";
+        const msg = data?.error || t("booking.errors.vehicleUnavailable");
         toast.error(msg);
         return;
       }
 
       setStep(2);
     } catch {
-      toast.error("Impossibile verificare la disponibilità. Riprova.");
+      toast.error(t("booking.errors.availabilityCheckFailed"));
     } finally {
       setCheckingAvailability(false);
     }
@@ -182,6 +190,7 @@ const BookingFlow = () => {
         pickup_time: booking.pickupDropoff.pickupTime,
         dropoff_location: "Sede GDIS Rent — Olbia",
         dropoff_time: booking.pickupDropoff.dropoffTime,
+        lang,
         ...(booking.secondDriver.enabled ? {
           second_driver_email: booking.secondDriver.email,
           second_driver_phone: booking.secondDriver.telefono,
@@ -198,13 +207,13 @@ const BookingFlow = () => {
       );
 
       if (!response?.id) {
-        throw new Error("Risposta del server non valida");
+        throw new Error(t("booking.errors.invalidServerResponse"));
       }
 
       setBookingId(response.id);
       setStep(5);
     } catch {
-      toast.error("Errore durante la prenotazione. Riprova.");
+      toast.error(t("booking.errors.bookingFailed"));
     } finally {
       setSubmitting(false);
     }
@@ -241,6 +250,8 @@ const BookingFlow = () => {
       window.location.href = "/";
     }
   };
+
+  const successWhatsappHref = `https://wa.me/393520459150?text=${encodeURIComponent(t("booking.success.whatsappMessage"))}`;
 
   return (
     <div className="min-h-screen bg-transparent pt-20">
@@ -281,25 +292,28 @@ const BookingFlow = () => {
                 transition={{ duration: 0.3 }}
               >
                 {step === 0 && (
-                  <VehicleSelection selected={booking.vehicle} onSelect={handleVehicleSelect} />
+                  <VehicleSelection selected={booking.vehicle} onSelect={handleVehicleSelect} lang={lang} />
                 )}
                 {step === 1 && (
                   <DateSelection
                     startDate={booking.startDate}
                     endDate={booking.endDate}
                     onSelect={(start, end) => updateBooking({ startDate: start, endDate: end })}
+                    lang={lang}
                   />
                 )}
                 {step === 2 && (
                   <DriverForm
                     data={booking.driver}
                     onChange={(driver) => updateBooking({ driver })}
+                    lang={lang}
                   />
                 )}
                 {step === 3 && (
                   <SecondDriverStep
                     data={booking.secondDriver}
                     onChange={(secondDriver) => updateBooking({ secondDriver })}
+                    lang={lang}
                   />
                 )}
                 {step === 4 && (
@@ -307,6 +321,7 @@ const BookingFlow = () => {
                     <PickupDropoffStep
                       data={booking.pickupDropoff}
                       onChange={(pickupDropoff) => updateBooking({ pickupDropoff })}
+                      lang={lang}
                     />
                     {turnstileRequired && (
                       <div className="mt-6">
@@ -323,6 +338,7 @@ const BookingFlow = () => {
                   <SignatureStep
                     bookingId={bookingId}
                     onComplete={handleSignatureComplete}
+                    lang={lang}
                   />
                 )}
               </motion.div>
@@ -338,7 +354,7 @@ const BookingFlow = () => {
                   className="gap-2"
                 >
                   <ArrowLeft size={16} />
-                  Indietro
+                  {t("booking.cta.back")}
                 </Button>
 
                 {step < 4 ? (
@@ -352,11 +368,11 @@ const BookingFlow = () => {
                     {checkingAvailability ? (
                       <>
                         <Loader2 size={16} className="animate-spin" />
-                        Verifica disponibilità...
+                        {t("booking.cta.checkingAvailability")}
                       </>
                     ) : (
                       <>
-                        Avanti
+                        {t("booking.cta.next")}
                         <ArrowRight size={16} />
                       </>
                     )}
@@ -372,11 +388,11 @@ const BookingFlow = () => {
                     {submitting ? (
                       <>
                         <Loader2 size={16} className="animate-spin" />
-                        Generazione contratto in corso...
+                        {t("booking.cta.generatingContract")}
                       </>
                     ) : (
                       <>
-                        Conferma Prenotazione
+                        {t("booking.cta.confirmBooking")}
                         <Check size={16} />
                       </>
                     )}
@@ -387,12 +403,12 @@ const BookingFlow = () => {
           </div>
 
           <div className="lg:col-span-4">
-            <StickyQuote booking={booking} currentStep={step} />
+            <StickyQuote booking={booking} currentStep={step} lang={lang} />
           </div>
         </div>
       </div>
 
-      <ExitIntentDialog disabled={showSuccess || step >= 5} />
+      <ExitIntentDialog disabled={showSuccess || step >= 5} lang={lang} />
 
       <Dialog open={showSuccess} onOpenChange={setShowSuccess}>
         <DialogContent className="sm:max-w-md text-center">
@@ -401,25 +417,25 @@ const BookingFlow = () => {
               <CheckCircle2 size={32} className="text-primary" />
             </div>
             <DialogTitle className="font-display text-2xl">
-              Prenotazione Confermata!
+              {t("booking.success.title")}
             </DialogTitle>
             <DialogDescription className="text-base">
-              La tua prenotazione è stata completata con successo. Riceverai una email di conferma con tutti i dettagli.
+              {t("booking.success.description")}
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-3 mt-4">
             <Button variant="outline" className="gap-2">
               <Star size={16} className="text-yellow-500" />
-              Lascia una recensione su Google
+              {t("booking.success.reviewCta")}
             </Button>
             <Button variant="hero" onClick={goHome}>
-              Torna alla Home
+              {t("booking.success.homeCta")}
             </Button>
           </div>
 
           <div className="mt-6 pt-5 border-t border-border">
             <p className="text-xs text-muted-foreground mb-3">
-              Domande sulla prenotazione? Siamo disponibili H24:
+              {t("booking.success.supportLine")}
             </p>
             <div className="flex flex-col sm:flex-row gap-2 justify-center">
               <a
@@ -431,7 +447,7 @@ const BookingFlow = () => {
               </a>
               <span className="hidden sm:inline text-muted-foreground">·</span>
               <a
-                href="https://wa.me/393520459150?text=Ciao%2C%20ho%20appena%20prenotato%20e%20vorrei%20info"
+                href={successWhatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("booking_success_dialog")}

@@ -1,13 +1,17 @@
 import { Car, Calendar, User, Users, MapPin, PenTool, Check } from "lucide-react";
 import type { BookingState } from "@/components/booking/BookingFlow";
 import { getMonthlyRate } from "@/hooks/useVehicles";
+import { useTranslations } from "@/i18n/utils";
+import type { Locale } from "@/i18n/utils";
 
 type Props = {
   booking: BookingState;
   currentStep: number;
+  lang?: Locale;
 };
 
-const StickyQuote = ({ booking, currentStep }: Props) => {
+const StickyQuote = ({ booking, currentStep, lang = "it" }: Props) => {
+  const t = useTranslations(lang);
   const days =
     booking.startDate && booking.endDate
       ? Math.ceil((booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24))
@@ -21,12 +25,12 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
   const totalPrice = ratePerDay * days;
 
   const stepsInfo = [
-    { icon: Car, label: "Veicolo", done: !!booking.vehicle },
-    { icon: Calendar, label: "Date", done: !!booking.startDate && !!booking.endDate },
-    { icon: User, label: "Conducente", done: !!booking.driver.email },
-    { icon: Users, label: "2° Guidatore", done: booking.secondDriver.enabled && !!booking.secondDriver.email },
-    { icon: MapPin, label: "Ritiro/Consegna", done: !!booking.pickupDropoff.pickupTime && !!booking.pickupDropoff.dropoffTime },
-    { icon: PenTool, label: "Firma", done: currentStep > 5 },
+    { icon: Car, label: t("booking.summary.stepLabels.vehicle"), done: !!booking.vehicle },
+    { icon: Calendar, label: t("booking.summary.stepLabels.dates"), done: !!booking.startDate && !!booking.endDate },
+    { icon: User, label: t("booking.summary.stepLabels.driver"), done: !!booking.driver.email },
+    { icon: Users, label: t("booking.summary.stepLabels.secondDriver"), done: booking.secondDriver.enabled && !!booking.secondDriver.email },
+    { icon: MapPin, label: t("booking.summary.stepLabels.pickupDropoff"), done: !!booking.pickupDropoff.pickupTime && !!booking.pickupDropoff.dropoffTime },
+    { icon: PenTool, label: t("booking.summary.stepLabels.signature"), done: currentStep > 5 },
   ];
 
   return (
@@ -34,7 +38,7 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
       {/* Desktop sidebar */}
       <div className="hidden lg:block">
         <div className="bg-card rounded-2xl border border-border p-6 space-y-6">
-          <h3 className="font-display text-lg font-bold text-foreground">Il tuo preventivo</h3>
+          <h3 className="font-display text-lg font-bold text-foreground">{t("booking.summary.title")}</h3>
 
           <div className="space-y-4">
             {stepsInfo.map((s, i) => (
@@ -58,13 +62,13 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
             {booking.vehicle && (
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">{booking.vehicle.name}</span>
-                <span className="text-foreground font-medium">€{ratePerDay}/g</span>
+                <span className="text-foreground font-medium">€{ratePerDay}{t("booking.summary.perDayShort")}</span>
               </div>
             )}
             {days > 0 && (
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Durata</span>
-                <span className="text-foreground font-medium">{days} giorni</span>
+                <span className="text-muted-foreground">{t("booking.summary.duration")}</span>
+                <span className="text-foreground font-medium">{days} {t("booking.summary.daysSuffix")}</span>
               </div>
             )}
           </div>
@@ -72,7 +76,7 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
           {totalPrice > 0 && (
             <div className="border-t border-border pt-4">
               <div className="flex justify-between items-end">
-                <span className="text-muted-foreground text-sm">Totale stimato</span>
+                <span className="text-muted-foreground text-sm">{t("booking.summary.totalEstimate")}</span>
                 <span className="font-display text-3xl font-bold text-primary">€{totalPrice}</span>
               </div>
             </div>
@@ -91,15 +95,15 @@ const StickyQuote = ({ booking, currentStep }: Props) => {
                   <>
                     <p className="font-display text-xl font-bold text-primary leading-tight">€{totalPrice}</p>
                     <p className="text-[11px] text-muted-foreground leading-snug">
-                      €{ratePerDay}/g × {days} {days === 1 ? "giorno" : "giorni"} · assicurazione inclusa
+                      €{ratePerDay}{t("booking.summary.perDayShort")} × {days} {days === 1 ? t("booking.summary.daySingular") : t("booking.summary.dayPlural")} · {t("booking.summary.insuranceIncluded")}
                     </p>
                   </>
                 ) : (
-                  <p className="text-xs text-muted-foreground">Scegli le date per vedere il preventivo</p>
+                  <p className="text-xs text-muted-foreground">{t("booking.summary.selectDates")}</p>
                 )}
               </>
             ) : (
-              <p className="text-sm text-muted-foreground">Seleziona un veicolo</p>
+              <p className="text-sm text-muted-foreground">{t("booking.summary.selectVehicle")}</p>
             )}
           </div>
           <div className="flex gap-1 shrink-0">

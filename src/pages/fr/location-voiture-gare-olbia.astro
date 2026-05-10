@@ -1,0 +1,177 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Accueil", url: "/fr" },
+  { name: "Olbia", url: "/fr/location-voiture-a-olbia" },
+  { name: "Gare d'Olbia", url: "/fr/location-voiture-gare-olbia" },
+];
+
+const trainConnections = [
+  { dest: "Sassari", time: "1h 45m - 2h 10m", freq: "5-6 trains/jour", note: "Ligne historique non électrifiée" },
+  { dest: "Cagliari", time: "3h 50m - 4h 30m", freq: "1-2 trains/jour", note: "Changement à Chilivani ou Oristano" },
+  { dest: "Macomer", time: "2h 30m", freq: "3-4 trains/jour", note: "Nœud pour les lignes intérieures" },
+  { dest: "Oristano", time: "3h 10m", freq: "2 trains/jour", note: "Correspondance pour Cagliari" },
+];
+
+const combos = [
+  { title: "Atterrissage à Cagliari, exploration du nord", text: "Les vols low-cost vers <strong>Cagliari Elmas (CAG)</strong> sont souvent moins chers que ceux vers Olbia en plein été. Vous atterrissez à Cagliari, prenez l'Intercity direct jusqu'à Olbia (~4 heures dans un paysage panoramique) et récupérez votre voiture de location directement à la gare. Pas de longue conduite après le vol, et juste quelques pas avec les bagages." },
+  { title: "Vous êtes à Sassari pour le travail ou les vacances", text: "Depuis Sassari, le train pour Olbia met 1h45m et traverse l'Anglona et la Gallura intérieure. Une fois sur place, la voiture de location vous ouvre toute la Costa Smeralda en 30-40 minutes. Solution parfaite pour de longs week-ends sans dépendre de votre voiture personnelle." },
+  { title: "Train touristique « Trenino Verde » + voiture", text: "Pour qui veut découvrir la ligne historique panoramique du Trenino Verde (gérée par ARST, gare de départ différente) puis poursuivre vers la mer : louez la voiture à Olbia pour la seconde partie du voyage, là où les bus se font plus rares et les criques plus cachées." },
+];
+
+const faqs = [
+  { q: "La gare d'Olbia est-elle centrale ou périphérique ?", a: "Très centrale : à environ <strong>10 minutes à pied</strong> du port d'Isola Bianca et à 5 minutes du Corso Umberto. L'aéroport se trouve à environ 4 km (8 minutes en voiture). Une position pratique géographiquement, qui vous permet de déposer rapidement les bagages et commencer l'exploration sans navette intermédiaire." },
+  { q: "Pourquoi y a-t-il si peu de trains par rapport à une gare du continent ?", a: "La Sardaigne dispose d'un réseau ferroviaire historique et <em>non électrifié</em> : les trains sont diesel et la vitesse moyenne est faible par rapport aux standards nationaux. Trenitalia exploite le réseau principal (RFI) avec des fréquences réduites, tandis que les lignes touristiques du <em>Trenino Verde</em> sont gérées par ARST et ne passent pas par Olbia. Avoir 5-6 trains/jour vers Sassari et 1-2 vers Cagliari est donc normal." },
+  { q: "Vaut-il la peine de combiner train + location de voiture à Olbia ?", a: "Oui, surtout si vous arrivez en Sardaigne via Cagliari (vols low-cost souvent moins chers vers CAG que vers OLB) puis prenez le train direct Cagliari-Olbia/Chilivani. Combinaison typique : <strong>train jusqu'à Olbia + voiture depuis notre point en gare</strong> pour explorer la Costa Smeralda. Utile aussi pour les voyageurs partant de Sassari ou Alghero sans devoir conduire 3 heures." },
+  { q: "Existe-t-il une alternative au train pour se déplacer en Sardaigne sans voiture ?", a: "Oui : le réseau <strong>ARST</strong> (autobus régionaux) couvre des trajets non desservis par le train avec une fréquence plus élevée, surtout vers les stations balnéaires (Costa Smeralda, San Teodoro, Palau). Pour une flexibilité totale et l'accès aux plages hors des sentiers battus, la location reste cependant le choix le plus pratique." },
+  { q: "Puis-je récupérer le véhicule si j'arrive tard le soir avec un train en retard ?", a: "Oui, nous couvrons la fenêtre opérationnelle de Trenitalia (derniers trains arrivant entre 22h00 et 23h00). Les retards sont fréquents sur la ligne sarde : nous suivons directement le numéro du train et nous nous présentons à l'arrivée effective. Pour les arrivées après minuit, nous demandons un accord à la réservation." },
+  { q: "Je dois rendre le véhicule pour prendre un train : combien de marge prévoir ?", a: "Pour la restitution à la gare d'Olbia, nous vous demandons d'arriver au moins <strong>30 minutes avant</strong> le départ de votre train. Ce temps est nécessaire pour les photos d'état du véhicule, un éventuel ravitaillement à la station-service adjacente et la signature du procès-verbal de restitution." },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-stazione-olbia#localbusiness",
+  description: "Location de voiture à la gare d'Olbia : liaisons Trenitalia avec Sassari et Cagliari, alternatives ARST, combinaison train + voiture pour la Costa Smeralda.",
+  areaServed: [
+    { "@type": "TrainStation", name: "Gare d'Olbia" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Location de voiture gare d'Olbia",
+  description:
+    "Service de livraison de véhicules de location à la gare d'Olbia (Trenitalia). Combinez train + voiture pour explorer la Costa Smeralda depuis Sassari, Cagliari ou via les correspondances intérieures.",
+  serviceType: "Train Station Car Rental Delivery",
+  url: "/noleggio-auto-stazione-olbia",
+  areaServed: [
+    { "@type": "TrainStation", name: "Gare d'Olbia" },
+    { "@type": "City", name: "Olbia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
+const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-olbia.webp";
+---
+
+<BaseLayout
+  title="Location Voiture Gare d'Olbia | Combiner Train + Voiture | GDIS Rent"
+  description="Location voiture gare d'Olbia. Liaisons Trenitalia depuis Sassari et Cagliari. Combo train + voiture pour la Costa Smeralda. Livraison à la sortie. WhatsApp 24/7."
+  canonical="/fr/location-voiture-gare-olbia"
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+  ogImage={heroImage}
+  i18nAlternates={{ it: "/noleggio-auto-stazione-olbia", en: "/en/car-rental-olbia-station", de: "/de/autovermietung-bahnhof-olbia" }}
+>
+  <LocalitaHero
+    name="Gare d'Olbia"
+    h1Prefix="Location de voiture"
+    h1Accent="Gare d'Olbia"
+    subtitle="Vous arrivez en train depuis Sassari, Cagliari ou via une correspondance intérieure ? Vous trouvez la voiture prête sur le parvis devant la gare Trenitalia."
+    bgImage={heroImage}
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Liaisons ferroviaires depuis/vers Olbia</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Le réseau Trenitalia en Sardaigne
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-8" data-reveal>
+        La <strong>gare d'Olbia</strong> est un nœud clé du réseau ferroviaire sarde géré par RFI avec des services Trenitalia. La ligne principale relie Olbia à Sassari via Chilivani, avec des correspondances vers Cagliari, Oristano et l'arrière-pays. C'est une ligne historique, pittoresque, sur un tracé non électrifié — les trains sont diesel — et les temps de parcours sont sensiblement plus longs que la seule distance ne le laisserait supposer.
+      </p>
+
+      <div class="overflow-x-auto rounded-2xl border border-border bg-card">
+        <table class="w-full text-sm">
+          <thead class="bg-muted/40 text-xs uppercase tracking-wider text-muted-foreground">
+            <tr>
+              <th class="text-left py-3 px-4 font-semibold">Destination</th>
+              <th class="text-left py-3 px-4 font-semibold">Temps moyen</th>
+              <th class="text-left py-3 px-4 font-semibold">Fréquence</th>
+              <th class="text-left py-3 px-4 font-semibold">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {trainConnections.map((c) => (
+              <tr class="border-t border-border">
+                <td class="py-3 px-4 font-medium">{c.dest}</td>
+                <td class="py-3 px-4 text-muted-foreground">{c.time}</td>
+                <td class="py-3 px-4 text-muted-foreground text-xs">{c.freq}</td>
+                <td class="py-3 px-4 text-muted-foreground text-xs">{c.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-muted-foreground/80 mt-3">
+        Fréquences indicatives. Vérifiez toujours l'horaire actualisé sur le site officiel Trenitalia ou dans l'application avant le voyage.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-muted/20">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5l1 1.5"/><path d="m8 19-1 2"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Stratégie train + location</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Quand combiner train et voiture de location vaut vraiment le coup
+      </h2>
+
+      <div class="space-y-6">
+        {combos.map((c, i) => (
+          <div class="rounded-2xl border border-border bg-card p-6" data-reveal data-reveal-delay={String(i * 100)}>
+            <h3 class="font-semibold mb-2">{c.title}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed" set:html={c.text} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Alternative au train : le réseau ARST</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Bus régionaux, et quand préférer la voiture
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-4">
+        <strong>ARST</strong> est le gestionnaire unique du transport public extra-urbain sarde. Son réseau couvre des trajets bien plus capillaires que le train, surtout vers les stations balnéaires de la Costa Smeralda et vers La Maddalena. Des lignes comme Olbia–Palau (pour l'embarquement vers La Maddalena) ou Olbia–Porto Cervo–Baja Sardinia existent, mais avec des fréquences réduites par rapport à la demande estivale.
+      </p>
+      <p class="text-muted-foreground leading-relaxed mb-4">
+        Si votre séjour est purement « ville d'Olbia + 1-2 excursions », le bus ARST peut suffire. En revanche, si vous voulez vous déplacer entre <strong>plages moins desservies</strong> (ex. Cala Brandinchi, La Cinta, Spiaggia del Principe), ou les week-ends de haute saison lorsque les bus sont pleins, la location devient la seule solution réaliste.
+      </p>
+      <p class="text-muted-foreground leading-relaxed">
+        Voir aussi nos pages dédiées :{" "}
+        <a href="/fr/location-voiture-a-olbia" class="text-primary font-medium hover:underline">centre d'Olbia</a>,{" "}
+        <a href="/fr/location-voiture-aeroport-olbia" class="text-primary font-medium hover:underline">aéroport OLB</a> et{" "}
+        <a href="/fr/location-voiture-port-olbia" class="text-primary font-medium hover:underline">port Isola Bianca</a>.
+      </p>
+    </div>
+  </section>
+
+  <ConsegnaVipExplainer variant="station" />
+
+  <LocalitaFAQ name="Gare d'Olbia" faqs={faqs} />
+
+  <LocalitaCTA name="Gare d'Olbia" />
+</BaseLayout>

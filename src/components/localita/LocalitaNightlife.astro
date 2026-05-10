@@ -1,4 +1,6 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
 type Locale = { name: string; type: "ristorante" | "aperitivo" | "club" | "lounge"; desc: string };
 
 export interface Props {
@@ -6,22 +8,25 @@ export interface Props {
   locali: Locale[];
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const { name, locali } = Astro.props;
 
-const typeMeta: Record<Locale["type"], { label: string; iconKey: string }> = {
-  ristorante: { label: "Ristorante", iconKey: "utensils" },
-  aperitivo: { label: "Aperitivo", iconKey: "wine" },
-  club: { label: "Club", iconKey: "music" },
-  lounge: { label: "Lounge", iconKey: "sunset" },
+const typeMeta: Record<Locale["type"], { iconKey: string }> = {
+  ristorante: { iconKey: "utensils" },
+  aperitivo: { iconKey: "wine" },
+  club: { iconKey: "music" },
+  lounge: { iconKey: "sunset" },
 };
 ---
 
 <section class="py-24 md:py-32 bg-background relative">
   <div class="container px-4">
     <div class="text-center mb-16" data-reveal>
-      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Vita Notturna</p>
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">{t("location.nightlifeEyebrow")}</p>
       <h2 class="text-4xl md:text-5xl font-display font-bold text-foreground">
-        Locali & Ristoranti a {name}
+        {t("location.nightlifeTitle")}
       </h2>
     </div>
 
@@ -43,7 +48,7 @@ const typeMeta: Record<Locale["type"], { label: string; iconKey: string }> = {
               </div>
               <div>
                 <p class="font-semibold text-foreground">{locale.name}</p>
-                <p class="text-xs text-primary font-medium uppercase tracking-wider">{meta.label}</p>
+                <p class="text-xs text-primary font-medium uppercase tracking-wider">{t(`location.nightlifeType.${locale.type}`)}</p>
               </div>
             </div>
             <p class="text-sm text-muted-foreground leading-relaxed">{locale.desc}</p>

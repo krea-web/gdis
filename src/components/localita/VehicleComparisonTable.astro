@@ -1,12 +1,13 @@
 ---
 import { VEHICLE_PRICE_FROM } from "@/lib/vehiclePricing";
+import { getLangFromUrl, useTranslations, getFleetPath } from "@/i18n/utils";
 
 export type ComparisonVehicleKey = "panda" | "mercedes" | "honda" | "yamaha";
 
 type VehicleRow = {
   key: ComparisonVehicleKey;
   name: string;
-  to: string;
+  slug: string;
   patente: string;
   posti: string;
   ztlReady: boolean;
@@ -16,10 +17,10 @@ type VehicleRow = {
 };
 
 const VEHICLE_CATALOG: Record<ComparisonVehicleKey, VehicleRow> = {
-  panda: { key: "panda", name: "Fiat Panda", to: "/flotta/fiat-panda", patente: "B", posti: "4-5", ztlReady: false, bagagliFamiglia: true, offRoad: false, pricePerDayFrom: VEHICLE_PRICE_FROM.city_car },
-  mercedes: { key: "mercedes", name: "Mercedes A 180d", to: "/flotta/mercedes-classe-a180d", patente: "B", posti: "5", ztlReady: false, bagagliFamiglia: true, offRoad: false, pricePerDayFrom: VEHICLE_PRICE_FROM.premium },
-  honda: { key: "honda", name: "Honda SH", to: "/flotta/honda-sh", patente: "B / A2", posti: "2", ztlReady: true, bagagliFamiglia: false, offRoad: false, pricePerDayFrom: VEHICLE_PRICE_FROM.scooter },
-  yamaha: { key: "yamaha", name: "Yamaha Raptor", to: "/flotta/yamaha-raptor", patente: "B", posti: "1", ztlReady: true, bagagliFamiglia: false, offRoad: true, pricePerDayFrom: VEHICLE_PRICE_FROM.quad },
+  panda: { key: "panda", name: "Fiat Panda", slug: "fiat-panda", patente: "B", posti: "4-5", ztlReady: false, bagagliFamiglia: true, offRoad: false, pricePerDayFrom: VEHICLE_PRICE_FROM.city_car },
+  mercedes: { key: "mercedes", name: "Mercedes A 180d", slug: "mercedes-classe-a180d", patente: "B", posti: "5", ztlReady: false, bagagliFamiglia: true, offRoad: false, pricePerDayFrom: VEHICLE_PRICE_FROM.premium },
+  honda: { key: "honda", name: "Honda SH", slug: "honda-sh", patente: "B / A2", posti: "2", ztlReady: true, bagagliFamiglia: false, offRoad: false, pricePerDayFrom: VEHICLE_PRICE_FROM.scooter },
+  yamaha: { key: "yamaha", name: "Yamaha Raptor", slug: "yamaha-raptor", patente: "B", posti: "1", ztlReady: true, bagagliFamiglia: false, offRoad: true, pricePerDayFrom: VEHICLE_PRICE_FROM.quad },
 };
 
 const DEFAULT_KEYS: ComparisonVehicleKey[] = ["panda", "mercedes", "honda", "yamaha"];
@@ -31,10 +32,13 @@ export interface Props {
   recommendation?: string;
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const {
   show = DEFAULT_KEYS,
-  title = "Quale veicolo scegliere?",
-  subtitle = "Confronto rapido per decidere in 30 secondi.",
+  title = t("localita.comparison.title"),
+  subtitle = t("localita.comparison.subtitle"),
   recommendation,
 } = Astro.props;
 
@@ -52,65 +56,65 @@ const vehicles = show.map((k) => VEHICLE_CATALOG[k]);
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-border">
-            <th class="text-left p-4 font-semibold text-foreground">Caratteristica</th>
+            <th class="text-left p-4 font-semibold text-foreground">{t("localita.comparison.feature")}</th>
             {vehicles.map((v) => (
               <th class="p-4 text-center font-semibold text-foreground min-w-[120px]">
-                <a href={v.to} class="hover:text-primary transition-colors">{v.name}</a>
+                <a href={getFleetPath(v.slug, lang)} class="hover:text-primary transition-colors">{v.name}</a>
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
           <tr class="border-b border-border/60">
-            <td class="p-4 text-muted-foreground">Patente</td>
+            <td class="p-4 text-muted-foreground">{t("localita.comparison.license")}</td>
             {vehicles.map((v) => (<td class="p-4 text-center font-medium text-foreground">{v.patente}</td>))}
           </tr>
           <tr class="border-b border-border/60">
-            <td class="p-4 text-muted-foreground">Posti</td>
+            <td class="p-4 text-muted-foreground">{t("localita.comparison.seats")}</td>
             {vehicles.map((v) => (<td class="p-4 text-center font-medium text-foreground">{v.posti}</td>))}
           </tr>
           <tr class="border-b border-border/60">
-            <td class="p-4 text-muted-foreground">ZTL / parcheggi gratis</td>
+            <td class="p-4 text-muted-foreground">{t("localita.comparison.ztl")}</td>
             {vehicles.map((v) => (
               <td class="p-4 text-center">
                 {v.ztlReady ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary mx-auto" aria-label="sì"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary mx-auto" aria-label={t("localita.comparison.yes")}><polyline points="20 6 9 17 4 12"/></svg>
                 ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/40 mx-auto" aria-label="no"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/40 mx-auto" aria-label={t("localita.comparison.no")}><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 )}
               </td>
             ))}
           </tr>
           <tr class="border-b border-border/60">
-            <td class="p-4 text-muted-foreground">Famiglia + bagagli</td>
+            <td class="p-4 text-muted-foreground">{t("localita.comparison.family")}</td>
             {vehicles.map((v) => (
               <td class="p-4 text-center">
                 {v.bagagliFamiglia ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary mx-auto" aria-label="sì"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary mx-auto" aria-label={t("localita.comparison.yes")}><polyline points="20 6 9 17 4 12"/></svg>
                 ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/40 mx-auto" aria-label="no"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/40 mx-auto" aria-label={t("localita.comparison.no")}><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 )}
               </td>
             ))}
           </tr>
           <tr class="border-b border-border/60">
-            <td class="p-4 text-muted-foreground">Off-road / sterrati</td>
+            <td class="p-4 text-muted-foreground">{t("localita.comparison.offRoad")}</td>
             {vehicles.map((v) => (
               <td class="p-4 text-center">
                 {v.offRoad ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary mx-auto" aria-label="sì"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary mx-auto" aria-label={t("localita.comparison.yes")}><polyline points="20 6 9 17 4 12"/></svg>
                 ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/40 mx-auto" aria-label="no"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/40 mx-auto" aria-label={t("localita.comparison.no")}><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 )}
               </td>
             ))}
           </tr>
           <tr>
-            <td class="p-4 text-muted-foreground">Prezzo da</td>
+            <td class="p-4 text-muted-foreground">{t("localita.comparison.priceFrom")}</td>
             {vehicles.map((v) => (
               <td class="p-4 text-center">
                 <span class="font-display text-lg font-bold text-primary">€{v.pricePerDayFrom}</span>
-                <span class="text-xs text-muted-foreground">/g</span>
+                <span class="text-xs text-muted-foreground">{t("localita.comparison.perDay")}</span>
               </td>
             ))}
           </tr>
@@ -118,7 +122,7 @@ const vehicles = show.map((k) => VEHICLE_CATALOG[k]);
       </table>
     </div>
     <p class="text-center text-xs text-muted-foreground mt-4">
-      Tariffe indicative dalla bassa stagione. Prezzo finale calcolato sulle date selezionate al momento della prenotazione.
+      {t("localita.comparison.note")}
     </p>
 
     {recommendation && (

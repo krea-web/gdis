@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingFlow from "@/components/booking/BookingFlow.tsx";
+import { buildHowToBookingSchema } from "@/lib/siteSchema";
+
+const howToSchema = buildHowToBookingSchema("fr");
+---
+
+<BaseLayout
+  title="Réserver — GDIS Rent | Location en ligne en Sardaigne"
+  description="Réservez en ligne votre véhicule en Sardaigne : voiture, scooter, quad et luxe. Procédure rapide en 6 étapes, signature numérique et livraison VIP incluse."
+  canonical="/fr/reserver"
+  jsonLd={howToSchema}
+  hideBackground
+  i18nAlternates={{ it: "/prenotaora", en: "/en/book-now", de: "/de/jetzt-buchen" }}
+>
+  <BookingFlow client:load lang="fr" />
+</BaseLayout>

@@ -1,4 +1,6 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
 type Tip = { icon: "ztl" | "parking" | "traffic" | "tip"; title: string; text: string };
 
 export interface Props {
@@ -6,15 +8,18 @@ export interface Props {
   tips: Tip[];
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const { name, tips } = Astro.props;
 ---
 
 <section class="py-24 md:py-32 bg-muted/30 relative">
   <div class="container px-4">
     <div class="text-center mb-16" data-reveal>
-      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Consigli Utili</p>
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">{t("location.trafficEyebrow")}</p>
       <h2 class="text-4xl md:text-5xl font-display font-bold text-foreground">
-        Traffico & Parcheggi a {name}
+        {t("location.trafficTitle")}
       </h2>
     </div>
 

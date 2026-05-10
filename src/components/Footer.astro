@@ -7,20 +7,24 @@ import {
   BUSINESS_EMAIL,
   BUSINESS_INSTAGRAM,
 } from "@/lib/siteSchema";
+import { getLangFromUrl, useTranslations, type Locale } from "@/i18n/utils";
+
+const currentLang: Locale = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 
 const navColumns = [
   {
-    title: "Esplora",
+    title: t("footer.col.esplora"),
     links: [
-      { label: "Home", to: "/" },
-      { label: "Chi Siamo", to: "/chisiamo" },
-      { label: "Prenota Ora", to: "/prenotaora" },
-      { label: "Contatti", to: "/contatti" },
-      { label: "Mappa del Sito", to: "/mappa-sito" },
+      { label: t("nav.home"), to: "/" },
+      { label: t("nav.chisiamo"), to: "/chisiamo" },
+      { label: t("cta.prenotaOra"), to: "/prenotaora" },
+      { label: t("nav.contatti"), to: "/contatti" },
+      { label: t("footer.links.mappaSito"), to: "/mappa-sito" },
     ],
   },
   {
-    title: "La Flotta",
+    title: t("footer.col.flotta"),
     links: [
       { label: "Fiat Panda Hybrid", to: "/flotta/fiat-panda" },
       { label: "Mercedes Classe A", to: "/flotta/mercedes-classe-a180d" },
@@ -29,7 +33,7 @@ const navColumns = [
     ],
   },
   {
-    title: "Hub Trasporti",
+    title: t("footer.col.hub"),
     links: [
       { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda" },
       { label: "Aeroporto Olbia", to: "/noleggio-auto-aeroporto-olbia" },
@@ -38,7 +42,7 @@ const navColumns = [
     ],
   },
   {
-    title: "Località",
+    title: t("footer.col.localita"),
     links: [
       { label: "Olbia", to: "/noleggio-auto-a-olbia" },
       { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo" },
@@ -50,11 +54,11 @@ const navColumns = [
     ],
   },
   {
-    title: "Legale",
+    title: t("footer.col.legale"),
     links: [
-      { label: "Privacy Policy", to: "/privacy" },
-      { label: "Cookie Policy", to: "/cookie" },
-      { label: "Termini e Condizioni", to: "/termini" },
+      { label: t("footer.links.privacy"), to: "/privacy" },
+      { label: t("footer.links.cookie"), to: "/cookie" },
+      { label: t("footer.links.termini"), to: "/termini" },
     ],
   },
 ];
@@ -66,12 +70,12 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
 <footer
   class="bg-primary text-primary-foreground relative overflow-hidden"
   role="contentinfo"
-  aria-label="Footer GDIS Rent"
+  aria-label={t("footer.ariaFooter")}
 >
   <div class="container relative z-10 px-4 pt-20 pb-10">
     <div class="grid lg:grid-cols-12 gap-12 mb-16">
       <div class="lg:col-span-4">
-        <a href="/" aria-label="Torna alla home GDIS Rent">
+        <a href="/" aria-label={t("footer.ariaTornaHome")}>
           <img
             src={logoSrc}
             alt="GDIS Rent e Service"
@@ -83,7 +87,7 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
           />
         </a>
         <p class="text-primary-foreground/80 text-base leading-relaxed font-light max-w-sm mb-6">
-          Noleggio auto, scooter e quad in Costa Smeralda. Consegna VIP h24 in Aeroporto Olbia, Porto Isola Bianca e in tutta la Sardegna nord-orientale.
+          {t("footer.tagline")}
         </p>
 
         <div class="flex flex-col gap-3">
@@ -103,7 +107,7 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
           </a>
           <div class="inline-flex items-start gap-3 text-primary-foreground/90">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="font-medium">Via Annibale Caro 52, 07026 Olbia (SS)</span>
+            <span class="font-medium">{t("common.address")}</span>
           </div>
         </div>
 
@@ -113,7 +117,7 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
             target="_blank"
             rel="noopener noreferrer"
             data-wa-track="footer"
-            aria-label="Contattaci su WhatsApp"
+            aria-label={t("common.whatsappAria")}
             class="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
           >
             <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true">
@@ -124,7 +128,7 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
             href={BUSINESS_INSTAGRAM}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Seguici su Instagram"
+            aria-label={t("common.instagramAria")}
             class="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -132,7 +136,7 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
         </div>
       </div>
 
-      <nav class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8" aria-label="Footer navigation">
+      <nav class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8" aria-label={t("footer.ariaFooterNav")}>
         {navColumns.map((col) => (
           <div>
             <h3 class="text-sm font-bold uppercase tracking-widest text-white mb-5">{col.title}</h3>
@@ -155,48 +159,58 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
 
     <div class="border-t border-primary-foreground/15 pt-8 mb-6">
       <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground/60 mb-4">
-        Dati Societari
+        {t("footer.data.title")}
       </h4>
       <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-3 text-sm">
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">Ragione Sociale</dt>
+          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.ragSoc")}</dt>
           <dd class="text-primary-foreground font-medium">{BUSINESS_LEGAL_NAME}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">Sede Legale</dt>
-          <dd class="text-primary-foreground font-medium">Via Annibale Caro 52, 07026 Olbia (SS)</dd>
+          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.sedeLegale")}</dt>
+          <dd class="text-primary-foreground font-medium">{t("common.address")}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">Partita IVA</dt>
+          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.partitaIva")}</dt>
           <dd class="text-primary-foreground font-medium">{BUSINESS_VAT}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">Codice Fiscale</dt>
+          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.codFiscale")}</dt>
           <dd class="text-primary-foreground font-medium">{BUSINESS_TAX_ID}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">REA</dt>
+          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.rea")}</dt>
           <dd class="text-primary-foreground font-medium">SS-225492</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">Capitale Sociale</dt>
-          <dd class="text-primary-foreground font-medium">€ 10.000 i.v.</dd>
+          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.capitale")}</dt>
+          <dd class="text-primary-foreground font-medium">{t("footer.data.capitaleValue")}</dd>
         </div>
       </dl>
     </div>
 
     <div class="border-t border-primary-foreground/15 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-primary-foreground/60">
-      <p>© {year} {BUSINESS_LEGAL_NAME} — Tutti i diritti riservati.</p>
-      <p class="md:text-right">
-        Sito realizzato da{" "}
+      <p>{t("footer.copyright", { year, name: BUSINESS_LEGAL_NAME })}</p>
+      <p class="md:text-right flex items-center gap-3 md:justify-end">
         <a
-          href="https://kreareweb.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary-foreground/80 hover:text-white font-medium transition-colors"
+          href="/login"
+          rel="nofollow"
+          class="text-primary-foreground/40 hover:text-primary-foreground/80 transition-colors"
         >
-          Krea
+          {t("footer.admin")}
         </a>
+        <span class="text-primary-foreground/20">·</span>
+        <span>
+          {t("footer.realizzatoDa")}{" "}
+          <a
+            href="https://kreareweb.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-primary-foreground/80 hover:text-white font-medium transition-colors"
+          >
+            Krea
+          </a>
+        </span>
       </p>
     </div>
   </div>

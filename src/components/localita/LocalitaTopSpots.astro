@@ -1,4 +1,6 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
 type SpotCategory =
   | "spiaggia"
   | "panorama"
@@ -24,24 +26,27 @@ export interface Props {
   emitSchema?: boolean;
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const { name, spots, emitSchema = true } = Astro.props;
 
-const CATEGORY_META: Record<SpotCategory, { label: string; gradient: string; iconKey: string }> = {
-  spiaggia: { label: "Spiaggia", gradient: "from-sky-400/20 to-cyan-400/10", iconKey: "waves" },
-  panorama: { label: "Panorama", gradient: "from-amber-400/20 to-orange-300/10", iconKey: "mountain" },
-  monumento: { label: "Monumento", gradient: "from-stone-400/20 to-stone-300/10", iconKey: "church" },
-  natura: { label: "Natura", gradient: "from-emerald-400/20 to-green-300/10", iconKey: "tree" },
-  porto: { label: "Marina / Porto", gradient: "from-blue-500/20 to-indigo-300/10", iconKey: "anchor" },
-  centro: { label: "Centro Storico", gradient: "from-rose-400/20 to-pink-300/10", iconKey: "pin" },
-  evento: { label: "Evento", gradient: "from-purple-400/20 to-fuchsia-300/10", iconKey: "bag" },
-  escursione: { label: "Escursione", gradient: "from-teal-400/20 to-cyan-300/10", iconKey: "compass" },
+const CATEGORY_META: Record<SpotCategory, { gradient: string; iconKey: string }> = {
+  spiaggia: { gradient: "from-sky-400/20 to-cyan-400/10", iconKey: "waves" },
+  panorama: { gradient: "from-amber-400/20 to-orange-300/10", iconKey: "mountain" },
+  monumento: { gradient: "from-stone-400/20 to-stone-300/10", iconKey: "church" },
+  natura: { gradient: "from-emerald-400/20 to-green-300/10", iconKey: "tree" },
+  porto: { gradient: "from-blue-500/20 to-indigo-300/10", iconKey: "anchor" },
+  centro: { gradient: "from-rose-400/20 to-pink-300/10", iconKey: "pin" },
+  evento: { gradient: "from-purple-400/20 to-fuchsia-300/10", iconKey: "bag" },
+  escursione: { gradient: "from-teal-400/20 to-cyan-300/10", iconKey: "compass" },
 };
 
 const itemListSchema = emitSchema
   ? {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: `Cosa vedere a ${name}`,
+      name: `${t("location.topSpotsTitle")} — ${name}`,
       itemListElement: spots.map((s, i) => ({
         "@type": "ListItem",
         position: i + 1,
@@ -59,12 +64,12 @@ const itemListSchema = emitSchema
 <section class="py-20 md:py-28 bg-background">
   <div class="container px-4 max-w-6xl mx-auto">
     <div class="text-center mb-14" data-reveal>
-      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Cosa vedere</p>
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary mb-3">{t("location.topSpotsEyebrow")}</p>
       <h2 class="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-        I posti migliori a {name}
+        {t("location.topSpotsTitle")}
       </h2>
       <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-        Selezione curata di spiagge, panorami, monumenti ed esperienze imperdibili — con tempi di percorrenza e consigli pratici.
+        {t("localita.topSpots.subtitle")}
       </p>
     </div>
 
@@ -92,7 +97,7 @@ const itemListSchema = emitSchema
                 {meta.iconKey === "bag" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>}
                 {meta.iconKey === "compass" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>}
               </div>
-              <span class="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground">{meta.label}</span>
+              <span class="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground">{t(`location.spotCategory.${s.category}`)}</span>
             </div>
 
             <h3 class="font-display text-xl md:text-2xl font-bold text-foreground mb-2">{s.name}</h3>
@@ -101,15 +106,15 @@ const itemListSchema = emitSchema
             <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs pt-4 border-t border-border/60">
               <span class="flex items-center gap-1.5 text-foreground/70">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span class="sr-only">Distanza:</span>{s.distance}
+                <span class="sr-only">{t("location.spotMeta.distance")}:</span>{s.distance}
               </span>
               <span class="flex items-center gap-1.5 text-foreground/70">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
-                <span class="sr-only">Costo:</span>{s.cost}
+                <span class="sr-only">{t("location.spotMeta.cost")}:</span>{s.cost}
               </span>
               <span class="flex items-center gap-1.5 text-foreground/70">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                <span class="sr-only">Quando:</span>{s.bestTime}
+                <span class="sr-only">{t("location.spotMeta.bestTime")}:</span>{s.bestTime}
               </span>
             </div>
           </article>

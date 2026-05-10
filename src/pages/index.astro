@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import TrustMarquee from "@/components/TrustMarquee.astro";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
 import { buildLocalBusinessSchema, SITE_URL } from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
 import { VEHICLE_PRICE_FROM } from "@/lib/vehiclePricing";
@@ -208,6 +209,7 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
   jsonLd={[homeLocalBusinessSchema, ...serviceSchemas]}
   hideBackground
   lcpImage={{ href: gdisLogo, type: "image/webp" }}
+  i18nAlternates={{ en: "/en", de: "/de", fr: "/fr" }}
 >
   {/* HERO */}
   <section class="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-dark via-brand-blue-deep to-brand-dark" aria-label="Hero principale GDIS Rent">
@@ -496,9 +498,7 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
           class="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full px-8 py-7 md:px-10 md:py-8 text-lg md:text-xl font-bold transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_40px_rgba(37,211,102,0.6)] group hover:-translate-y-1"
           aria-label="Contattaci su WhatsApp per veicoli luxury"
         >
-          <svg viewBox="0 0 32 32" width="24" height="24" fill="currentColor" aria-hidden="true">
-            <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.907 15.907 0 0 0 16.004 32C24.826 32 32 24.826 32 16.004 32 7.176 24.826 0 16.004 0z"/>
-          </svg>
+          <WhatsAppIcon size={24} />
           Richiedi Disponibilità VIP
         </a>
       </div>

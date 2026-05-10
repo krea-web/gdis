@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import { buildFaqSchema, SITE_URL } from "@/lib/siteSchema";
+import { getFleetPath } from "@/i18n/utils";
 
 export async function getStaticPaths() {
   const fleet = await getCollection("fleet");
@@ -64,6 +65,11 @@ const faqSchema = buildFaqSchema(v.faq, { speakable: true });
   ogType="product"
   ogImage={v.heroImage}
   lcpImage={{ href: v.heroImage, type: "image/webp" }}
+  i18nAlternates={{
+    en: getFleetPath(v.slug, "en"),
+    de: getFleetPath(v.slug, "de"),
+    fr: getFleetPath(v.slug, "fr"),
+  }}
 >
   {/* HERO */}
   <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.15),hsl(var(--brand-dark))_70%)]">

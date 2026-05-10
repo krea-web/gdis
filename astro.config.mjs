@@ -12,6 +12,14 @@ export default defineConfig({
   trailingSlash: 'never',
   adapter: vercel({ imageService: true }),
   prefetch: { defaultStrategy: 'viewport' },
+  i18n: {
+    defaultLocale: 'it',
+    locales: ['it', 'en', 'de', 'fr'],
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false,
+    },
+  },
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),

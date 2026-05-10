@@ -1,0 +1,93 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import {
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_EMAIL,
+  BUSINESS_PHONE,
+  BUSINESS_VAT,
+} from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/en" },
+  { name: "Privacy", url: "/privacy" },
+];
+---
+
+<BaseLayout
+  title="Privacy Policy — GDIS Rent & Service"
+  description="Privacy notice on the processing of personal data pursuant to EU Regulation 2016/679 (GDPR). Data controller: GDIS Service S.R.L., Olbia."
+  canonical="/en/privacy-policy"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/privacy", de: "/de/datenschutz", fr: "/fr/confidentialite" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Privacy Policy</h1>
+    <p class="text-sm text-muted-foreground">Last updated: 24 April 2026</p>
+
+    <h2>1. Data Controller</h2>
+    <p>
+      The Data Controller for personal data is <strong>{BUSINESS_LEGAL_NAME}</strong>,
+      with registered office at Via Annibale Caro 52, 07026 Olbia (SS), Italy — VAT/Tax Code {BUSINESS_VAT}.<br />
+      Email: <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Phone: {BUSINESS_PHONE}.
+    </p>
+
+    <h2>2. Categories of Data Processed</h2>
+    <ul>
+      <li><strong>Identification and contact data</strong>: first name, surname, email, phone, tax code (where provided).</li>
+      <li><strong>Identity documents</strong>: driving licence (front and back) and, where applicable, the second driver's document.</li>
+      <li><strong>Booking data</strong>: chosen vehicle, pick-up/drop-off dates and locations, electronic signature on the contract.</li>
+      <li><strong>Technical data</strong>: IP address, browser type, pages visited (server logs and technical cookies).</li>
+    </ul>
+
+    <h2>3. Purposes and Lawful Bases</h2>
+    <ul>
+      <li>Performance of the rental contract (Art. 6.1.b GDPR).</li>
+      <li>Compliance with tax and legal obligations (Art. 6.1.c GDPR).</li>
+      <li>Handling enquiries via the contact form (consent, Art. 6.1.a GDPR).</li>
+      <li>Aggregated browsing analytics — only with prior consent (Art. 6.1.a GDPR).</li>
+    </ul>
+
+    <h2>4. Retention</h2>
+    <p>
+      Contractual data are retained for 10 years for tax purposes. Browsing and analytics data are
+      kept for a maximum of 14 months. Uploaded driving licences are automatically deleted 12
+      months after the end of the rental, save for legal obligations.
+    </p>
+
+    <h2>5. Recipients and Transfers</h2>
+    <p>
+      Data are processed by authorised personnel and by external processors:
+      Supabase (database and storage hosting — EU servers), Cloudflare (anti-fraud protection),
+      electronic signature provider and internal management system. No transfers outside the EU
+      take place without appropriate safeguards under Articles 44 et seq. GDPR.
+    </p>
+
+    <h2>6. Data Subject Rights</h2>
+    <p>
+      You have the right of access, rectification, erasure, restriction, portability, objection to
+      processing and to withdraw consent (Articles 15-22 GDPR). You may exercise them by writing
+      to{" "}
+      <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>. You also have the right to lodge a
+      complaint with the Italian Data Protection Authority (
+      <a href="https://www.garanteprivacy.it" target="_blank" rel="noreferrer">www.garanteprivacy.it</a>
+      ).
+    </p>
+
+    <h2>7. Security</h2>
+    <p>
+      We adopt appropriate technical and organisational measures: TLS-encrypted transport, private
+      storage with time-limited signed URLs, access restricted to authorised personnel, password
+      policy and MFA for internal systems.
+    </p>
+
+    <h2>8. Changes</h2>
+    <p>
+      This notice may be updated. Updated versions are published on this page with the revision
+      date.
+    </p>
+  </article>
+</BaseLayout>

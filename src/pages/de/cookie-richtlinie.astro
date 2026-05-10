@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BUSINESS_EMAIL } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/de" },
+  { name: "Cookie-Richtlinie", url: "/de/cookie-richtlinie" },
+];
+---
+
+<BaseLayout
+  title="Cookie-Richtlinie — GDIS Rent & Service"
+  description="Liste der auf gdisrentservice.com verwendeten Cookies, Zwecke, Dauer und Möglichkeiten zur Verwaltung oder zum Widerruf der Einwilligung."
+  canonical="/de/cookie-richtlinie"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/cookie", en: "/en/cookie-policy", fr: "/fr/cookies" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Cookie-Richtlinie</h1>
+    <p class="text-sm text-muted-foreground">Letzte Aktualisierung: 24. April 2026</p>
+
+    <h2>Was Cookies sind</h2>
+    <p>
+      Cookies sind kleine Textdateien, die besuchte Websites an Ihr Gerät senden. Sie werden
+      verwendet, um die Website ordnungsgemäß zu betreiben, ihre Leistung zu verbessern und dem
+      Betreiber anonyme Informationen bereitzustellen.
+    </p>
+
+    <h2>Verwendete Cookies</h2>
+    <h3>Technische Cookies (immer aktiv)</h3>
+    <ul>
+      <li><strong>Supabase-Sitzung</strong> — Authentifizierung registrierter Nutzer (nur Buchungs- und Admin-Bereich). Dauer: Sitzung.</li>
+      <li><strong>gdis-cookie-consent</strong> — speichert Ihre Auswahl im Cookie-Banner. Dauer: 12 Monate.</li>
+      <li><strong>Cloudflare Turnstile</strong> — Anti-Bot-Prüfung im Buchungsformular. Dauer: Sitzung.</li>
+    </ul>
+
+    <h3>Analyse-Cookies (nur mit Einwilligung aktiviert)</h3>
+    <ul>
+      <li><strong>Google Analytics 4</strong> — aggregierte Navigationsstatistiken mit maskierter IP-Adresse. Maximale Dauer: 14 Monate. Zweck: zu verstehen, wie Nutzer die Website verwenden, um sie zu verbessern.</li>
+    </ul>
+
+    <h2>Verwaltung der Einwilligung</h2>
+    <p>
+      Beim ersten Besuch erscheint ein Banner, mit dem Sie nicht notwendige Cookies akzeptieren
+      oder ablehnen können. Sie können Ihre Entscheidung jederzeit ändern, indem Sie die Cookies
+      Ihres Browsers löschen: Beim nächsten Besuch wird das Banner erneut angezeigt.
+    </p>
+
+    <h2>So deaktivieren Sie Cookies in Ihrem Browser</h2>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noreferrer">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie" target="_blank" rel="noreferrer">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noreferrer">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/it-it/microsoft-edge" target="_blank" rel="noreferrer">Microsoft Edge</a></li>
+    </ul>
+
+    <h2>Kontakt</h2>
+    <p>
+      Bei Fragen schreiben Sie an <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>.
+    </p>
+  </article>
+</BaseLayout>

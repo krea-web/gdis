@@ -1,26 +1,23 @@
 ---
 import { supabaseImg } from "@/lib/img";
-
-const DEFAULT_ITEMS = [
-  "Affidabilità",
-  "Flotta Premium",
-  "Assistenza 24/7",
-  "Prezzi Trasparenti",
-  "Sardegna",
-  "Noleggio Facile",
-];
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 export interface Props {
   items?: string[];
 }
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+const DEFAULT_ITEMS = t.array("trust.items");
 
 const { items = DEFAULT_ITEMS } = Astro.props;
 const trackItems = Array.from({ length: 3 }).flatMap(() => items);
 const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
 ---
 
-<section class="relative w-full flex items-center justify-center py-14 bg-transparent z-20 -mt-16 pointer-events-none overflow-hidden">
-  <div class="absolute w-[230%] sm:w-[220%] left-1/2 -translate-x-1/2 bg-primary -rotate-2 py-6 sm:py-5 shadow-[0_10px_40px_hsl(var(--primary)/0.3)] border-y border-primary/30 overflow-hidden pointer-events-auto">
+<section class="relative w-full flex items-center justify-center py-14 z-20 -mt-16 pointer-events-none overflow-hidden bg-primary">
+  <div class="absolute inset-0 bg-primary pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute w-[300%] sm:w-[260%] md:w-[240%] left-1/2 -translate-x-1/2 bg-primary -rotate-2 py-10 sm:py-9 shadow-[0_10px_40px_hsl(var(--primary)/0.3)] border-y border-primary/30 overflow-hidden pointer-events-auto">
     <div class="flex w-max items-center animate-marquee">
       <div class="flex items-center flex-shrink-0">
         {trackItems.map((item) => (

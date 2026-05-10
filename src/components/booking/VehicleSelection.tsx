@@ -8,12 +8,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useTranslations } from "@/i18n/utils";
+import type { Locale } from "@/i18n/utils";
 
 type SelectedVehicle = { id: string; name: string; image: string; pricePerDay: number; vehicleData?: Vehicle };
 
 type Props = {
   selected: SelectedVehicle | null;
   onSelect: (v: SelectedVehicle) => void;
+  lang?: Locale;
 };
 
 const sanitizeImageUrl = (url?: string | null) => url?.replace(/^"|"$/g, "") || "/placeholder.svg";
@@ -28,15 +31,16 @@ function toSelected(v: Vehicle): SelectedVehicle {
   };
 }
 
-const VehicleSelection = ({ selected, onSelect }: Props) => {
+const VehicleSelection = ({ selected, onSelect, lang = "it" }: Props) => {
   const { data: vehicles, isLoading } = useVehicles();
+  const t = useTranslations(lang);
 
   return (
     <div>
       <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-        Scegli il veicolo
+        {t("booking.vehicle.title")}
       </h2>
-      <p className="text-muted-foreground mb-8">Seleziona il mezzo che preferisci per il tuo viaggio.</p>
+      <p className="text-muted-foreground mb-8">{t("booking.vehicle.subtitle")}</p>
 
       {isLoading ? (
         <VehicleCardSkeleton count={4} />
@@ -78,13 +82,13 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                     </span>
                     <h3 className="font-display text-2xl font-bold text-foreground mt-1">{v.make} {v.model}</h3>
                     <p className="mt-2 text-lg font-bold text-primary">
-                      A partire da €{v.daily_rate ?? 0}
-                      <span className="text-sm font-normal text-muted-foreground">/giorno</span>
+                      {t("booking.vehicle.pricePrefix", { price: v.daily_rate ?? 0 })}
+                      <span className="text-sm font-normal text-muted-foreground">{t("booking.vehicle.perDaySuffix")}</span>
                     </p>
 
                     {selected?.id === v.id && (
                       <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
-                        <Check size={14} /> Selezionato
+                        <Check size={14} /> {t("booking.vehicle.selected")}
                       </span>
                     )}
                   </button>

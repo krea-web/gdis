@@ -59,6 +59,48 @@ const cockpitSpec = z.object({
   icon: z.enum(["license", "seats", "use", "delivery"]),
 });
 
+const locationI18nFields = z
+  .object({
+    name: z.string().optional(),
+    title: z.string().optional(),
+    description: z.string().optional(),
+    keywords: z.string().optional(),
+    heroSubtitle: z.string().optional(),
+    heroAccent: z.string().optional(),
+    h1Prefix: z.string().optional(),
+    customSections: z.array(customSection).optional(),
+    spotlight: z
+      .object({
+        tag: z.string(),
+        title: z.string(),
+        description: z.string(),
+        image: z.string().url(),
+        imageAlt: z.string().optional(),
+        badges: z.array(z.string()).optional(),
+      })
+      .optional(),
+    topSpots: z.array(spot).optional(),
+    cockpit: z
+      .object({
+        vehicleName: z.string(),
+        specs: z.array(cockpitSpec),
+      })
+      .optional(),
+    comparison: z
+      .object({
+        title: z.string().optional(),
+        subtitle: z.string().optional(),
+        recommendation: z.string().optional(),
+      })
+      .optional(),
+    trafficTips: z.array(trafficTip).optional(),
+    nightlife: z.array(nightlifeItem).optional(),
+    trustMarqueeItems: z.array(z.string()).optional(),
+    faq: z.array(faqItem).optional(),
+    closingParagraph: z.string().optional(),
+  })
+  .partial();
+
 const locations = defineCollection({
   type: "data",
   schema: z.object({
@@ -110,6 +152,22 @@ const locations = defineCollection({
     trustMarqueeItems: z.array(z.string()).optional(),
     faq: z.array(faqItem),
     closingParagraph: z.string().optional(),
+    /** Localized variants. Per-locale fields override IT defaults; missing fields fall back to IT. */
+    i18n: z
+      .object({
+        en: locationI18nFields.optional(),
+        de: locationI18nFields.optional(),
+        fr: locationI18nFields.optional(),
+      })
+      .optional(),
+    /** Localized URL slug fragment for the path /<lang>/<routePrefix>-<slug>. If absent, slug is used. */
+    localizedSlug: z
+      .object({
+        en: z.string().optional(),
+        de: z.string().optional(),
+        fr: z.string().optional(),
+      })
+      .optional(),
   }),
 });
 
@@ -125,6 +183,59 @@ const featureSection = z.object({
   /** When true, image goes left and text goes right (default: image on right) */
   reverse: z.boolean().optional(),
 });
+
+const fleetI18nFields = z
+  .object({
+    name: z.string().optional(),
+    title: z.string().optional(),
+    description: z.string().optional(),
+    heroLabel: z.string().optional(),
+    heroH1Top: z.string().optional(),
+    heroH1Bottom: z.string().optional(),
+    heroSubtitle: z.string().optional(),
+    heroBadges: z.array(z.string()).optional(),
+    featureSections: z.array(featureSection).optional(),
+    specs: z
+      .array(
+        z.object({
+          icon: specIcon,
+          label: z.string(),
+          value: z.string(),
+        }),
+      )
+      .optional(),
+    scenarios: z
+      .array(
+        z.object({
+          icon: scenarioIcon,
+          title: z.string(),
+          description: z.string(),
+          highlight: z.boolean().optional(),
+        }),
+      )
+      .optional(),
+    whySection: z
+      .object({
+        label: z.string(),
+        title: z.string(),
+        paragraphs: z.array(z.string()),
+      })
+      .optional(),
+    localitaSection: z
+      .object({
+        label: z.string(),
+        title: z.string(),
+        intro: z.string(),
+        items: z.array(z.string()),
+        outro: z.string(),
+      })
+      .optional(),
+    faq: z.array(faqItem).optional(),
+    ctaTitle: z.string().optional(),
+    ctaSubtitle: z.string().optional(),
+    ctaButtonLabel: z.string().optional(),
+  })
+  .partial();
 
 const fleet = defineCollection({
   type: "data",
@@ -181,6 +292,14 @@ const fleet = defineCollection({
     jsonLdManufacturer: z.string(),
     jsonLdModel: z.string(),
     jsonLdExtras: z.record(z.any()).optional(),
+    /** Localized variants. Per-locale fields override IT defaults; missing fields fall back to IT. */
+    i18n: z
+      .object({
+        en: fleetI18nFields.optional(),
+        de: fleetI18nFields.optional(),
+        fr: fleetI18nFields.optional(),
+      })
+      .optional(),
   }),
 });
 

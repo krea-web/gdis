@@ -203,62 +203,103 @@ export function buildServiceSchema(opts: {
   };
 }
 
-/** Build a HowTo schema describing the GDIS booking flow (6 steps). */
-export function buildHowToBookingSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "@id": `${SITE_URL}/prenotaora#howto`,
+type BookingLocale = "it" | "en" | "de" | "fr";
+
+const BOOKING_HOWTO_PATH: Record<BookingLocale, string> = {
+  it: "/prenotaora",
+  en: "/en/book-now",
+  de: "/de/jetzt-buchen",
+  fr: "/fr/reserver",
+};
+
+const BOOKING_HOWTO_LANG: Record<BookingLocale, string> = {
+  it: "it-IT",
+  en: "en-GB",
+  de: "de-DE",
+  fr: "fr-FR",
+};
+
+const BOOKING_HOWTO_COPY: Record<BookingLocale, {
+  name: string;
+  description: string;
+  steps: Array<{ name: string; text: string }>;
+}> = {
+  it: {
     name: "Come prenotare un'auto a Olbia con GDIS Rent",
     description:
       "Procedura online in 6 step per prenotare auto, scooter o quad a Olbia e in Costa Smeralda con consegna VIP.",
-    totalTime: "PT3M",
-    inLanguage: "it-IT",
-    image: BUSINESS_LOGO,
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Scegli il veicolo",
-        text: "Seleziona auto, scooter o quad dalla nostra flotta in base al tipo di viaggio (city car, premium, off-road).",
-        url: `${SITE_URL}/prenotaora#step-veicolo`,
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Imposta date e luogo di consegna",
-        text: "Inserisci data e ora di ritiro/riconsegna e scegli dove vuoi ricevere il veicolo: aeroporto Olbia, porto, stazione, hotel o villa.",
-        url: `${SITE_URL}/prenotaora#step-date`,
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Aggiungi extra opzionali",
-        text: "Seggiolino bambino, secondo guidatore, copertura kasko, GPS o altri extra inclusi nella prenotazione.",
-        url: `${SITE_URL}/prenotaora#step-extra`,
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Inserisci i tuoi dati",
-        text: "Compila nome, cognome, contatti e numero della patente. I dati sono protetti e usati solo per il contratto.",
-        url: `${SITE_URL}/prenotaora#step-dati`,
-      },
-      {
-        "@type": "HowToStep",
-        position: 5,
-        name: "Conferma e pagamento",
-        text: "Verifica il riepilogo, accetta termini e condizioni, completa il pagamento sicuro o lascia la cauzione concordata.",
-        url: `${SITE_URL}/prenotaora#step-pagamento`,
-      },
-      {
-        "@type": "HowToStep",
-        position: 6,
-        name: "Ricevi conferma e ritira il veicolo",
-        text: "Riceverai email e messaggio WhatsApp con dettagli del ritiro. Al momento concordato il veicolo è consegnato dove preferisci.",
-        url: `${SITE_URL}/prenotaora#step-conferma`,
-      },
+    steps: [
+      { name: "Scegli il veicolo", text: "Seleziona auto, scooter o quad dalla nostra flotta in base al tipo di viaggio (city car, premium, off-road)." },
+      { name: "Imposta date e luogo di consegna", text: "Inserisci data e ora di ritiro/riconsegna e scegli dove vuoi ricevere il veicolo: aeroporto Olbia, porto, stazione, hotel o villa." },
+      { name: "Aggiungi extra opzionali", text: "Seggiolino bambino, secondo guidatore, copertura kasko, GPS o altri extra inclusi nella prenotazione." },
+      { name: "Inserisci i tuoi dati", text: "Compila nome, cognome, contatti e numero della patente. I dati sono protetti e usati solo per il contratto." },
+      { name: "Conferma e pagamento", text: "Verifica il riepilogo, accetta termini e condizioni, completa il pagamento sicuro o lascia la cauzione concordata." },
+      { name: "Ricevi conferma e ritira il veicolo", text: "Riceverai email e messaggio WhatsApp con dettagli del ritiro. Al momento concordato il veicolo è consegnato dove preferisci." },
     ],
+  },
+  en: {
+    name: "How to book a car in Olbia with GDIS Rent",
+    description:
+      "6-step online procedure to book a car, scooter or quad in Olbia and Costa Smeralda with VIP delivery.",
+    steps: [
+      { name: "Choose your vehicle", text: "Pick a car, scooter or quad from our fleet based on your trip type (city car, premium, off-road)." },
+      { name: "Set dates and delivery location", text: "Enter pick-up/drop-off date and time and choose where you want the vehicle delivered: Olbia airport, port, station, hotel or villa." },
+      { name: "Add optional extras", text: "Child seat, second driver, full insurance cover, GPS or other extras included in your booking." },
+      { name: "Enter your details", text: "Fill in name, surname, contact info and driving licence number. Data is protected and used only for the rental contract." },
+      { name: "Confirm and pay", text: "Review the summary, accept the terms and conditions, complete the secure payment or leave the agreed deposit." },
+      { name: "Get confirmation and pick up your vehicle", text: "You'll receive an email and WhatsApp message with collection details. At the agreed time we deliver the vehicle wherever you prefer." },
+    ],
+  },
+  de: {
+    name: "So buchen Sie ein Auto in Olbia bei GDIS Rent",
+    description:
+      "6-stufiger Online-Buchungsablauf für Auto-, Roller- oder Quad-Vermietung in Olbia und der Costa Smeralda mit VIP-Lieferung.",
+    steps: [
+      { name: "Fahrzeug auswählen", text: "Wählen Sie aus unserer Flotte Auto, Roller oder Quad — passend zu Ihrer Reise (Stadtauto, Premium, Offroad)." },
+      { name: "Datum und Lieferort festlegen", text: "Geben Sie Abhol- und Rückgabedatum ein und wählen Sie den Lieferort: Flughafen Olbia, Hafen, Bahnhof, Hotel oder Villa." },
+      { name: "Optionale Extras hinzufügen", text: "Kindersitz, Zweitfahrer, Vollkaskoschutz, GPS oder weitere Extras in Ihre Buchung aufnehmen." },
+      { name: "Ihre Daten eingeben", text: "Tragen Sie Vorname, Nachname, Kontakt und Führerscheinnummer ein. Die Daten sind geschützt und werden nur für den Mietvertrag verwendet." },
+      { name: "Bestätigen und bezahlen", text: "Übersicht prüfen, AGB akzeptieren, sichere Zahlung abschließen oder die vereinbarte Kaution hinterlegen." },
+      { name: "Bestätigung erhalten und Fahrzeug abholen", text: "Sie erhalten E-Mail und WhatsApp-Nachricht mit den Abholdetails. Zur vereinbarten Zeit liefern wir das Fahrzeug wohin Sie möchten." },
+    ],
+  },
+  fr: {
+    name: "Comment réserver une voiture à Olbia avec GDIS Rent",
+    description:
+      "Procédure en ligne en 6 étapes pour réserver voiture, scooter ou quad à Olbia et en Costa Smeralda avec livraison VIP.",
+    steps: [
+      { name: "Choisissez votre véhicule", text: "Sélectionnez voiture, scooter ou quad dans notre flotte selon le type de voyage (citadine, premium, tout-terrain)." },
+      { name: "Définissez les dates et le lieu de livraison", text: "Saisissez date et heure de prise en charge/restitution et choisissez le lieu de livraison : aéroport d'Olbia, port, gare, hôtel ou villa." },
+      { name: "Ajoutez des extras optionnels", text: "Siège enfant, deuxième conducteur, assurance tous risques, GPS ou autres extras inclus dans votre réservation." },
+      { name: "Renseignez vos coordonnées", text: "Remplissez nom, prénom, contacts et numéro de permis. Les données sont protégées et servent uniquement au contrat de location." },
+      { name: "Confirmez et payez", text: "Vérifiez le récapitulatif, acceptez les conditions générales, complétez le paiement sécurisé ou laissez la caution convenue." },
+      { name: "Recevez la confirmation et récupérez le véhicule", text: "Vous recevrez un e-mail et un message WhatsApp avec les détails de la prise en charge. À l'heure convenue nous livrons le véhicule où vous le souhaitez." },
+    ],
+  },
+};
+
+const BOOKING_HOWTO_STEP_ANCHOR = ["#step-veicolo", "#step-date", "#step-extra", "#step-dati", "#step-pagamento", "#step-conferma"];
+
+/** Build a HowTo schema describing the GDIS booking flow (6 steps). */
+export function buildHowToBookingSchema(locale: BookingLocale = "it") {
+  const path = BOOKING_HOWTO_PATH[locale];
+  const copy = BOOKING_HOWTO_COPY[locale];
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${SITE_URL}${path}#howto`,
+    name: copy.name,
+    description: copy.description,
+    totalTime: "PT3M",
+    inLanguage: BOOKING_HOWTO_LANG[locale],
+    image: BUSINESS_LOGO,
+    step: copy.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      url: `${SITE_URL}${path}${BOOKING_HOWTO_STEP_ANCHOR[i]}`,
+    })),
   };
 }
 

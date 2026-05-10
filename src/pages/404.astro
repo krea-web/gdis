@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
 ---
 
 <BaseLayout
@@ -7,6 +8,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
   description="La pagina che cerchi non esiste o è stata spostata. Torna alla home o contattaci su WhatsApp."
   canonical="/404"
   robots="noindex,follow"
+  i18nAlternates={{ en: "/en/404", de: "/de/404", fr: "/fr/404" }}
 >
   <section class="container py-32 text-center min-h-[60vh] flex flex-col items-center justify-center">
     <p class="text-sm uppercase tracking-widest text-primary mb-4">Errore 404</p>
@@ -31,6 +33,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         data-wa-track="404_page"
         class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
       >
+        <WhatsAppIcon size={18} />
         Scrivici su WhatsApp
       </a>
     </div>

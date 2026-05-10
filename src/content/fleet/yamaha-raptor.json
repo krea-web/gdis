@@ -100,5 +100,280 @@
   "jsonLdModel": "Raptor 700",
   "jsonLdExtras": {
     "category": "Quad"
+  },
+  "i18n": {
+    "en": {
+      "name": "Yamaha Raptor 700",
+      "title": "Yamaha Raptor 700 Quad Rental Sardinia | Off-Road | GDIS Rent",
+      "description": "Yamaha Raptor 700 quad rental in Olbia - 686cc road-legal - Hidden coves of Costa Smeralda, off-road in Gallura - Direct delivery. WhatsApp 24/7.",
+      "heroLabel": "Quad",
+      "heroH1Top": "Yamaha Raptor",
+      "heroH1Bottom": "700",
+      "heroSubtitle": "Pure adrenaline on the dirt tracks of Gallura. 686cc of power, off-road suspension, exploration without limits.",
+      "heroBadges": ["686cc", "B Licence", "Off-Road Ready"],
+      "featureSections": [
+        {
+          "label": "Power & Adventure",
+          "title": "Master any terrain",
+          "body": [
+            "The Yamaha Raptor 700 is the ultimate machine for exploring wild Sardinia. With its 686cc single-cylinder engine and racing suspension, it tackles dirt tracks, coastal trails and off-road routes with disarming ease.",
+            "Reach hidden coves inaccessible by car, cross the Mediterranean scrub and live a riding experience you won't forget. Full-face helmet and briefing included."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-costasmeraldaoffroad.webp",
+          "imageAlt": "Hidden Sardinia beach"
+        },
+        {
+          "label": "Exploration Without Limits",
+          "title": "Where cars can't reach",
+          "body": [
+            "Gallura hides coastal trails, paths through granite rocks and beaches reachable only on two (or four) wheels.",
+            "The Raptor 700, also road-legal, lets you alternate tarmac and dirt in total freedom. A unique experience for those seeking real adventure."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-offroadsardegna.webp",
+          "imageAlt": "Sardinian coast off-road",
+          "reverse": true
+        }
+      ],
+      "specs": [
+        { "icon": "gauge", "label": "Engine", "value": "686cc single-cylinder" },
+        { "icon": "fuel", "label": "Fuel", "value": "Petrol" },
+        { "icon": "users", "label": "Seats", "value": "1 (single)" },
+        { "icon": "wrench", "label": "Gearbox", "value": "Manual 5-speed" },
+        { "icon": "shield", "label": "Licence", "value": "B Licence" },
+        { "icon": "mountain", "label": "Terrain", "value": "On/Off-Road" }
+      ],
+      "scenarios": [
+        {
+          "icon": "mountain",
+          "title": "Gallura Dirt Tracks",
+          "description": "Tackle paths and off-road routes that cars can't reach. Racing suspension for any terrain."
+        },
+        {
+          "icon": "flame",
+          "title": "Pure Adrenaline",
+          "description": "686cc of raw power beneath you. The Raptor 700 is the ultimate machine for those seeking unfiltered emotions in Sardinian nature.",
+          "highlight": true
+        },
+        {
+          "icon": "camera",
+          "title": "Inaccessible Hidden Coves",
+          "description": "Reach beaches no car can get to. Park anywhere, explore without limits, photograph hidden paradises."
+        }
+      ],
+      "whySection": {
+        "label": "Why choose the quad",
+        "title": "Quad vs SUV: real adventure versus surface-level comfort",
+        "paragraphs": [
+          "Many tourists look for an SUV to \"do a bit of off-road in Sardinia\". It is almost always the wrong choice for two reasons: standard rental SUVs have policies that <strong class='text-foreground'>exclude off-road damage</strong> (a scratch under the sump = €2000 of charges to you), and the real tracks of Gallura — those that lead to the hidden coves of Punta Volpe or the Capo Ferro dirt routes — aren't made for cars, they're made for quads.",
+          "<strong class='text-foreground'>The Yamaha Raptor 700 solves exactly this</strong>: 686cc, 50hp, off-road suspension, road-legal in Italy with a B licence. Our insurance includes off-road cover (it's its natural use, not an exception). The price is premium because the vehicle is — but it's the only legal and safe way to access places that 99% of tourists only see on postcards.",
+          "<strong class='text-foreground'>When NOT to hire the quad</strong>: if you're travelling with more than 1 person (it's single-seat), if you need to carry luggage, if you're only comfortable on tarmac, if it rains hard (riding becomes slippery). In those cases we recommend a Fiat Panda + quad just for one day dedicated to off-road exploration."
+        ]
+      },
+      "localitaSection": {
+        "label": "Yamaha Raptor in Sardinia",
+        "title": "The 4 off-road routes that justify the quad",
+        "intro": "When we deliver the Raptor we include a map with these 4 routes ridden by our adventurous customers. They aren't extreme trekking: they're accessible to anyone who rides sensibly.",
+        "items": [
+          "<strong class='text-foreground'>Punta Volpe (<a href='/en/car-rental-in-porto-rotondo' class='text-blue-600 hover:underline'>Porto Rotondo</a>)</strong> — 4 km dirt track leading to 3 coves inaccessible by car. Half a day of exploration, medium difficulty.",
+          "<strong class='text-foreground'>Capo Ferro (<a href='/en/car-rental-in-baja-sardinia' class='text-blue-600 hover:underline'>Baja Sardinia</a>)</strong> — coastal trails to the lighthouse with views of the La Maddalena archipelago. Low difficulty, panoramas absolutely worth photographing at sunset.",
+          "<strong class='text-foreground'>Monte Nieddu (<a href='/en/car-rental-in-san-teodoro' class='text-blue-600 hover:underline'>San Teodoro</a>)</strong> — mountainous inland with waterfalls and natural granite pools. The final track is rough — perfect for the quad. Full day recommended.",
+          "<strong class='text-foreground'>Gallura inland (San Pantaleo, Arzachena)</strong> — paths between nuraghi, ancient olive trees and granite formations typical of Gallura. Variable difficulty, great for those who want to see authentic Sardinia beyond the sea."
+        ],
+        "outro": "Looking for something for the family? See the <a href='/en/fleet/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Want a vehicle that's easier to ride? Consider the <a href='/en/fleet/honda-sh' class='text-blue-600 hover:underline'>Honda SH scooter</a>."
+      },
+      "faq": [
+        { "q": "Is a B licence really enough to ride the Raptor 700?", "a": "Yes, in Italy the Raptor 700 is approved as an L7e motor quadricycle and is ridden with a B licence (the same as for a car). No motorbike licence is needed. Minimum age 18, at least 2 years on a B licence in our case. For riders under 25 we apply a young driver supplement." },
+        { "q": "Is it dangerous? I've never ridden a quad.", "a": "The Raptor 700 with its 686cc and 50hp is a serious machine, not a beach toy. If it's your first time on a quad, we give a 20-minute practical briefing at pickup: riding position, throttle control in turns, engine braking, what to do off-road. It must be ridden with respect, not fear: at 30-40 km/h on the Capo Ferro dirt tracks it's perfectly safe." },
+        { "q": "What's included besides the quad?", "a": "ECE 22.06 approved full-face helmet included (M/L/XL sizes), third-party + theft/fire insurance, technical briefing at pickup, map with the 5 best off-road routes in Gallura. On request we also supply a windproof jacket, dirt-track goggles and gloves — useful especially in June and September." },
+        { "q": "How much range does it have and where do I refuel?", "a": "11-litre tank, 6-8 L/100km in mixed road/off-road use = 150-180 km real range. For a day exploring the Punta Volpe coves or the Capo Ferro tracks it's more than enough. Most convenient station: the Q8 at Olbiamare on the SS125, or the IP station in Arzachena if you're in the Costa Smeralda area." },
+        { "q": "Can I ride onto the beach with the quad?", "a": "No, in Sardinia it is strictly forbidden to drive any motor vehicle on the beaches (fine 500-2000 € + impounding). The Raptor is approved for public roads and dirt tracks but not for sand. What you can do: park it on the adjacent dirt areas (e.g. Cala Petra Ruja, Punta Volpe) and walk the last 50-100 metres." },
+        { "q": "Can I refuel or wash it before returning?", "a": "Fuel: you return it with a full tank as at pickup, or pay for the remaining fuel at a transparent rate communicated in advance. Washing: not mandatory (we know you also use the quad off-road, it's normal it's dirty). If it's covered in thick mud we just ask you to brush off the worst so we don't slow down the next handover." }
+      ],
+      "ctaTitle": "Unleash the adventure",
+      "ctaSubtitle": "Book your Yamaha Raptor 700 in less than 2 minutes. Full-face helmet and briefing included.",
+      "ctaButtonLabel": "Book your Quad →"
+    },
+    "fr": {
+      "name": "Yamaha Raptor 700",
+      "title": "Location Quad Yamaha Raptor 700 Sardaigne | Tout-terrain | GDIS Rent",
+      "description": "Location quad Yamaha Raptor 700 à Olbia ✓ 686cc homologué route ✓ Criques cachées de la Costa Smeralda, tout-terrain en Gallura ✓ Livraison directe. WhatsApp 24h/24.",
+      "heroLabel": "Quad",
+      "heroH1Top": "Yamaha Raptor",
+      "heroH1Bottom": "700",
+      "heroSubtitle": "Adrénaline pure sur les pistes de la Gallura. 686cc de puissance, suspensions tout-terrain, exploration sans limites.",
+      "heroBadges": ["686cc", "Permis B", "Tout-terrain"],
+      "featureSections": [
+        {
+          "label": "Puissance et aventure",
+          "title": "Domptez tous les terrains",
+          "body": [
+            "Le Yamaha Raptor 700 est la machine ultime pour explorer la Sardaigne sauvage. Avec son monocylindre de 686cc et ses suspensions de compétition, il affronte pistes, sentiers côtiers et chemins tout-terrain avec une facilité déconcertante.",
+            "Rejoignez des criques secrètes inaccessibles en voiture, traversez le maquis méditerranéen et vivez une expérience de conduite inoubliable. Casque intégral et briefing inclus."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-costasmeraldaoffroad.webp",
+          "imageAlt": "Plage cachée Sardaigne"
+        },
+        {
+          "label": "Exploration sans limites",
+          "title": "Là où les voitures n'arrivent pas",
+          "body": [
+            "La Gallura cache des sentiers côtiers, des parcours entre les rochers de granit et des plages accessibles uniquement à deux (ou quatre) roues.",
+            "Le Raptor 700, également homologué pour la route, vous permet d'alterner asphalte et piste en toute liberté. Une expérience unique pour ceux qui cherchent la vraie aventure."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-offroadsardegna.webp",
+          "imageAlt": "Côte sarde tout-terrain",
+          "reverse": true
+        }
+      ],
+      "specs": [
+        { "icon": "gauge", "label": "Cylindrée", "value": "686cc monocylindre" },
+        { "icon": "fuel", "label": "Carburant", "value": "Essence" },
+        { "icon": "users", "label": "Places", "value": "1 (monoplace)" },
+        { "icon": "wrench", "label": "Boîte", "value": "Manuelle 5 vitesses" },
+        { "icon": "shield", "label": "Permis", "value": "Permis B" },
+        { "icon": "mountain", "label": "Terrain", "value": "Route et tout-terrain" }
+      ],
+      "scenarios": [
+        {
+          "icon": "mountain",
+          "title": "Pistes de la Gallura",
+          "description": "Affrontez sentiers et parcours tout-terrain inaccessibles aux voitures. Suspensions de compétition pour tous les terrains."
+        },
+        {
+          "icon": "flame",
+          "title": "Adrénaline pure",
+          "description": "686cc de puissance brute sous vous. Le Raptor 700 est la machine ultime pour qui cherche des émotions sans filtre dans la nature sarde.",
+          "highlight": true
+        },
+        {
+          "icon": "camera",
+          "title": "Criques secrètes inaccessibles",
+          "description": "Atteignez des plages où aucune voiture ne peut arriver. Stationnez partout, explorez sans limites, photographiez des paradis cachés."
+        }
+      ],
+      "whySection": {
+        "label": "Pourquoi choisir le quad",
+        "title": "Quad vs SUV : vraie aventure contre confort superficiel",
+        "paragraphs": [
+          "Beaucoup de touristes cherchent un SUV pour « faire un peu de tout-terrain en Sardaigne ». C'est presque toujours le mauvais choix pour deux raisons : les SUV de location standard ont des polices qui <strong class='text-foreground'>excluent les dommages en tout-terrain</strong> (une éraflure sous le carter d'huile = 2000 € à votre charge), et les vraies pistes de la Gallura — celles qui mènent aux criques cachées de Punta Volpe ou aux pistes de Capo Ferro — ne sont pas faites pour les voitures, elles sont faites pour les quads.",
+          "<strong class='text-foreground'>Le Yamaha Raptor 700 résout exactement cela</strong> : 686cc, 50 ch, suspensions conçues pour le tout-terrain, homologué route en Italie avec permis B. Notre assurance inclut la couverture sur piste (c'est son usage naturel, pas une exception). Le prix est premium parce que le véhicule l'est — mais c'est le seul moyen légal et sûr d'accéder à des lieux que 99 % des touristes ne voient qu'en carte postale.",
+          "<strong class='text-foreground'>Quand NE PAS louer le quad</strong> : si vous voyagez à plus d'1 personne (c'est un monoplace), si vous devez transporter des bagages, si vous n'êtes à l'aise que sur asphalte, s'il pleut fort (la conduite devient glissante). Dans ces cas nous recommandons Fiat Panda + quad uniquement pour une journée dédiée à l'exploration tout-terrain."
+        ]
+      },
+      "localitaSection": {
+        "label": "Yamaha Raptor en Sardaigne",
+        "title": "Les 4 parcours tout-terrain qui justifient le quad",
+        "intro": "Lorsque nous livrons le Raptor, nous incluons une carte avec ces 4 parcours empruntés par nos clients aventureux. Ce ne sont pas des trekkings extrêmes : ils sont accessibles à qui conduit avec discernement.",
+        "items": [
+          "<strong class='text-foreground'>Punta Volpe (<a href='/fr/location-voiture-a-porto-rotondo' class='text-blue-600 hover:underline'>Porto Rotondo</a>)</strong> — piste de 4 km menant à 3 criques inaccessibles en voiture. Demi-journée d'exploration, difficulté moyenne.",
+          "<strong class='text-foreground'>Capo Ferro (<a href='/fr/location-voiture-a-baja-sardinia' class='text-blue-600 hover:underline'>Baja Sardinia</a>)</strong> — sentiers côtiers vers le phare avec vue sur l'archipel de La Maddalena. Difficulté faible, panoramas absolument à photographier au coucher du soleil.",
+          "<strong class='text-foreground'>Monte Nieddu (<a href='/fr/location-voiture-a-san-teodoro' class='text-blue-600 hover:underline'>San Teodoro</a>)</strong> — arrière-pays montagneux avec cascades et piscines naturelles dans le granit. La piste finale est défoncée, parfaite pour le quad. Journée entière conseillée.",
+          "<strong class='text-foreground'>Arrière-pays gallurais (San Pantaleo, Arzachena)</strong> — sentiers entre nuraghi, oliviers séculaires et formations granitiques typiques de la Gallura. Difficulté variable, excellent pour qui veut voir la Sardaigne authentique au-delà de la mer."
+        ],
+        "outro": "Vous cherchez quelque chose pour la famille ? Voir la <a href='/fr/flotte/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Vous voulez un véhicule plus simple à conduire ? Pensez au <a href='/fr/flotte/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
+      },
+      "faq": [
+        { "q": "Le permis B suffit-il vraiment pour conduire le Raptor 700 ?", "a": "Oui, en Italie le Raptor 700 est homologué comme quadricycle à moteur L7e et se conduit avec le permis B (le même que pour la voiture). Pas besoin de permis moto. Âge minimum 18 ans, au moins 2 ans de permis B chez nous. Pour les conducteurs de moins de 25 ans nous appliquons un supplément jeune conducteur." },
+        { "q": "Est-ce dangereux ? Je n'ai jamais conduit de quad.", "a": "Le Raptor 700 avec ses 686cc et 50 ch est une machine sérieuse, pas un jouet de plage. Si c'est votre première fois en quad, nous vous faisons un briefing pratique de 20 minutes au retrait : position de conduite, gestion de l'accélérateur en virage, frein moteur, comportement en tout-terrain. Il se conduit avec respect, pas avec peur : à 30-40 km/h sur les pistes de Capo Ferro, c'est parfaitement sûr." },
+        { "q": "Qu'est-ce qui est inclus en plus du quad ?", "a": "Casque intégral homologué ECE 22.06 inclus (tailles M/L/XL), assurance RC + vol/incendie, briefing technique au retrait, carte avec les 5 meilleurs parcours tout-terrain de la Gallura. Sur demande nous fournissons aussi veste coupe-vent, lunettes de pistes et gants — utiles surtout en juin et septembre." },
+        { "q": "Quelle autonomie a-t-il et où faire le plein ?", "a": "Réservoir de 11 litres, consommation 6-8 L/100 km en usage mixte route/piste = autonomie réelle de 150-180 km. Pour une journée d'exploration des criques de Punta Volpe ou des pistes de Capo Ferro, c'est largement suffisant. Station-service la plus pratique : la Q8 d'Olbiamare sur la SS125, ou le distributeur IP d'Arzachena si vous êtes en zone Costa Smeralda." },
+        { "q": "Puis-je entrer sur la plage avec le quad ?", "a": "Non, en Sardaigne il est strictement interdit de circuler avec n'importe quel véhicule à moteur sur les plages (amende 500-2000 € + saisie). Le Raptor est homologué pour les routes publiques et les sentiers, mais pas pour le sable. Ce que vous pouvez faire : le stationner dans les zones non goudronnées adjacentes (ex. Cala Petra Ruja, Punta Volpe) et faire les derniers 50-100 mètres à pied." },
+        { "q": "Peut-on faire le plein ou le laver avant de le rendre ?", "a": "Plein : vous le rendez avec le plein effectué comme au retrait, ou vous payez le solde du carburant à un coût transparent communiqué à l'avance. Lavage : non obligatoire (nous savons que vous l'utilisez aussi en tout-terrain, c'est normal qu'il soit sale). S'il est couvert de boue épaisse, nous vous demandons seulement d'enlever le plus gros avec un balai pour ne pas ralentir la livraison suivante." }
+      ],
+      "ctaTitle": "Lâchez l'aventure",
+      "ctaSubtitle": "Réservez votre Yamaha Raptor 700 en moins de 2 minutes. Casque intégral et briefing inclus.",
+      "ctaButtonLabel": "Réservez votre quad →"
+    },
+    "de": {
+      "name": "Yamaha Raptor 700",
+      "title": "Yamaha Raptor 700 Quad mieten Sardinien | Off-Road | GDIS Rent",
+      "description": "Yamaha Raptor 700 Quad mieten in Olbia ✓ 686 ccm straßenzugelassen ✓ Versteckte Buchten Costa Smeralda, Off-Road in Gallura ✓ Direktübergabe. WhatsApp rund um die Uhr.",
+      "heroLabel": "Quad",
+      "heroH1Top": "Yamaha Raptor",
+      "heroH1Bottom": "700",
+      "heroSubtitle": "Pures Adrenalin auf den Schotterpisten Galluras. 686 ccm Leistung, Off-Road-Federung, grenzenloses Erkunden.",
+      "heroBadges": ["686 ccm", "Führerschein B", "Off-Road Ready"],
+      "featureSections": [
+        {
+          "label": "Leistung & Abenteuer",
+          "title": "Beherrschen Sie jedes Gelände",
+          "body": [
+            "Der Yamaha Raptor 700 ist die ultimative Maschine, um das wilde Sardinien zu erkunden. Mit seinem 686-ccm-Einzylindermotor und der Wettbewerbsfederung bewältigt er Schotterstraßen, Küstenpfade und Off-Road-Strecken mit entwaffnender Leichtigkeit.",
+            "Erreichen Sie geheime Buchten, die mit dem Auto unzugänglich sind, durchqueren Sie die mediterrane Macchia und erleben Sie ein Fahrerlebnis, das Sie nie vergessen werden. Integralhelm und Einweisung inklusive."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-costasmeraldaoffroad.webp",
+          "imageAlt": "Versteckter Strand Sardinien"
+        },
+        {
+          "label": "Erkunden ohne Grenzen",
+          "title": "Wo Autos nicht hinkommen",
+          "body": [
+            "Gallura verbirgt Küstenpfade, Wege zwischen den Granitfelsen und Strände, die nur auf zwei (oder vier) Rädern erreichbar sind.",
+            "Der Raptor 700, auch für die Straße zugelassen, erlaubt Ihnen, in völliger Freiheit zwischen Asphalt und Schotter zu wechseln. Ein einzigartiges Erlebnis für alle, die echtes Abenteuer suchen."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-quad-yamaharaptor-offroadsardegna.webp",
+          "imageAlt": "Sardische Küste Off-Road",
+          "reverse": true
+        }
+      ],
+      "specs": [
+        { "icon": "gauge", "label": "Hubraum", "value": "686 ccm Einzylinder" },
+        { "icon": "fuel", "label": "Kraftstoff", "value": "Benzin" },
+        { "icon": "users", "label": "Sitzplätze", "value": "1 (Einzelsitz)" },
+        { "icon": "wrench", "label": "Getriebe", "value": "Schaltgetriebe 5 Gänge" },
+        { "icon": "shield", "label": "Führerschein", "value": "Führerschein B" },
+        { "icon": "mountain", "label": "Gelände", "value": "On/Off-Road" }
+      ],
+      "scenarios": [
+        {
+          "icon": "mountain",
+          "title": "Schotterpisten Galluras",
+          "description": "Bewältigen Sie Pfade und Off-Road-Strecken, die Autos nicht erreichen können. Wettbewerbsfederung für jedes Gelände."
+        },
+        {
+          "icon": "flame",
+          "title": "Pures Adrenalin",
+          "description": "686 ccm Rohleistung unter Ihnen. Der Raptor 700 ist die ultimative Maschine für alle, die ungefilterte Emotionen in der sardischen Natur suchen.",
+          "highlight": true
+        },
+        {
+          "icon": "camera",
+          "title": "Unzugängliche geheime Buchten",
+          "description": "Erreichen Sie Strände, an die kein Auto kommt. Parken Sie überall, erkunden Sie ohne Grenzen, fotografieren Sie verborgene Paradiese."
+        }
+      ],
+      "whySection": {
+        "label": "Warum das Quad wählen",
+        "title": "Quad vs. SUV: echtes Abenteuer gegen oberflächlichen Komfort",
+        "paragraphs": [
+          "Viele Touristen suchen einen SUV, um \"ein bisschen Off-Road in Sardinien zu machen\". Das ist fast immer die falsche Wahl, aus zwei Gründen: Standard-Mietwagen-SUVs haben Versicherungspolicen, die <strong class='text-foreground'>Schäden im Gelände ausschließen</strong> (ein Kratzer unter der Ölwanne = 2.000 € Schaden zu Ihren Lasten), und die echten Pisten Galluras — jene, die zu den versteckten Buchten von Punta Volpe oder zu den Schotterpisten von Capo Ferro führen — sind nicht für Autos gemacht, sondern für Quads.",
+          "<strong class='text-foreground'>Der Yamaha Raptor 700 löst genau dieses Problem</strong>: 686 ccm, 50 PS, für Geländefahrten konzipierte Federung, in Italien mit Führerschein B straßenzugelassen. Unsere Versicherung deckt die Nutzung auf Schotter (es ist sein natürlicher Einsatz, keine Ausnahme). Der Preis ist Premium, weil das Fahrzeug es ist — aber es ist die einzige legale und sichere Möglichkeit, an Orte zu gelangen, die 99 % der Touristen nur auf Postkarten sehen.",
+          "<strong class='text-foreground'>Wann das Quad NICHT mieten</strong>: Wenn Sie zu mehr als 1 Person reisen (es ist ein Einsitzer), wenn Sie Gepäck transportieren müssen, wenn Sie sich nur auf Asphalt wohlfühlen, wenn es stark regnet (das Fahren wird rutschig). In diesen Fällen empfehlen wir Fiat Panda + Quad nur für einen einzigen Tag, der dem Off-Road-Erkunden gewidmet ist."
+        ]
+      },
+      "localitaSection": {
+        "label": "Yamaha Raptor auf Sardinien",
+        "title": "Die 4 Off-Road-Strecken, für die sich das Quad lohnt",
+        "intro": "Bei der Übergabe des Raptors fügen wir eine Karte mit diesen 4 von unseren abenteuerlustigen Kunden befahrenen Strecken bei. Es sind keine Extremtrekkings: Sie sind für alle zugänglich, die mit Verstand fahren.",
+        "items": [
+          "<strong class='text-foreground'>Punta Volpe (<a href='/de/autovermietung-porto-rotondo' class='text-blue-600 hover:underline'>Porto Rotondo</a>)</strong> — 4 km Schotterpiste, die zu 3 mit dem Auto unzugänglichen Buchten führt. Halbtägige Erkundung, mittlerer Schwierigkeitsgrad.",
+          "<strong class='text-foreground'>Capo Ferro (<a href='/de/autovermietung-baja-sardinia' class='text-blue-600 hover:underline'>Baja Sardinia</a>)</strong> — Küstenpfade zum Leuchtturm mit Blick auf den Archipel von La Maddalena. Niedriger Schwierigkeitsgrad, fotogene Panoramen unbedingt bei Sonnenuntergang.",
+          "<strong class='text-foreground'>Monte Nieddu (<a href='/de/autovermietung-san-teodoro' class='text-blue-600 hover:underline'>San Teodoro</a>)</strong> — Bergiges Hinterland mit Wasserfällen und natürlichen Granitbecken. Die letzte Piste ist holprig, perfekt für das Quad. Ein ganzer Tag empfohlen.",
+          "<strong class='text-foreground'>Galluresisches Hinterland (San Pantaleo, Arzachena)</strong> — Pfade zwischen Nuraghen, jahrhundertealten Olivenbäumen und für Gallura typischen Granitformationen. Variabler Schwierigkeitsgrad, hervorragend für alle, die das authentische Sardinien jenseits des Meeres sehen möchten."
+        ],
+        "outro": "Suchen Sie etwas für die Familie? Sehen Sie sich den <a href='/de/flotte/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a> an. Möchten Sie ein einfacher zu fahrendes Fahrzeug? Erwägen Sie den <a href='/de/flotte/honda-sh' class='text-blue-600 hover:underline'>Honda SH Roller</a>."
+      },
+      "faq": [
+        { "q": "Reicht der Führerschein B wirklich, um den Raptor 700 zu fahren?", "a": "Ja, in Italien ist der Raptor 700 als Vierradfahrzeug L7e zugelassen und wird mit dem Führerschein B (dem gleichen wie für das Auto) gefahren. Ein Motorradführerschein ist nicht nötig. Mindestalter 18 Jahre, in unserem Fall mindestens 2 Jahre Führerscheinbesitz. Für Fahrer unter 25 Jahren erheben wir einen Jungfahrer-Aufschlag." },
+        { "q": "Ist es gefährlich? Ich war noch nie auf einem Quad.", "a": "Der Raptor 700 mit seinen 686 ccm und 50 PS ist ein ernstzunehmendes Fahrzeug, kein Strandspielzeug. Wenn es Ihre erste Quad-Erfahrung ist, geben wir Ihnen bei der Übergabe eine 20-minütige praktische Einweisung: Fahrhaltung, Gashandling in Kurven, Motorbremse, Verhalten im Gelände. Es muss mit Respekt, nicht mit Angst gefahren werden: bei 30-40 km/h auf den Schotterpfaden von Capo Ferro ist es vollkommen sicher." },
+        { "q": "Was ist außer dem Quad alles inbegriffen?", "a": "ECE-22.06-zugelassener Integralhelm inklusive (Größen M/L/XL), Haftpflicht- + Diebstahl-/Brandversicherung, technische Einweisung bei der Übergabe, Karte mit den 5 besten Off-Road-Strecken Galluras. Auf Anfrage stellen wir auch Windjacke, Geländebrille und Handschuhe zur Verfügung — vor allem im Juni und September nützlich." },
+        { "q": "Wie hoch ist die Reichweite und wo tanke ich?", "a": "Tank 11 Liter, Verbrauch 6-8 L/100 km im gemischten Straßen-/Geländebetrieb = reale Reichweite 150-180 km. Für einen Tag Erkundung der Buchten von Punta Volpe oder der Schotterpisten von Capo Ferro mehr als ausreichend. Bequemste Tankstelle: die Q8 in Olbiamare an der SS125 oder die IP-Tankstelle in Arzachena, wenn Sie in der Costa Smeralda sind." },
+        { "q": "Darf ich mit dem Quad an den Strand fahren?", "a": "Nein, in Sardinien ist es streng verboten, mit jeglichem motorisierten Fahrzeug auf den Stränden zu fahren (Bußgeld 500-2000 € + Beschlagnahme). Der Raptor ist für öffentliche Straßen und Schotterwege zugelassen, aber nicht für Sand. Was Sie tun können: Parken Sie ihn in den angrenzenden Schotterbereichen (z.B. Cala Petra Ruja, Punta Volpe) und legen Sie die letzten 50-100 Meter zu Fuß zurück." },
+        { "q": "Kann man tanken oder ihn vor der Rückgabe waschen?", "a": "Tankfüllung: Sie geben ihn vollgetankt zurück wie bei der Abholung, oder Sie zahlen die Kraftstoffabrechnung zu einem im Voraus transparent kommunizierten Preis. Waschen: nicht obligatorisch (wir wissen, dass Sie das Quad auch im Gelände nutzen, es ist normal, dass es schmutzig ist). Wenn er mit dickem Schlamm bedeckt ist, bitten wir Sie nur, das Gröbste mit einem Besen zu entfernen, um die nächste Übergabe nicht zu verzögern." }
+      ],
+      "ctaTitle": "Entfesseln Sie das Abenteuer",
+      "ctaSubtitle": "Buchen Sie Ihren Yamaha Raptor 700 in weniger als 2 Minuten. Integralhelm und Einweisung inklusive.",
+      "ctaButtonLabel": "Buchen Sie Ihr Quad →"
+    }
   }
 }

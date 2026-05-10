@@ -16,6 +16,7 @@ import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaTrustBlock from "@/components/localita/LocalitaTrustBlock.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+import { getLocationPath } from "@/i18n/utils";
 
 export async function getStaticPaths() {
   const locations = await getCollection("locations");
@@ -64,6 +65,11 @@ const sectionBg = (i: number) => (i % 2 === 0 ? "bg-background" : "bg-muted/20")
   keywords={data.keywords}
   ogImage={data.heroImage}
   lcpImage={{ href: data.heroImage, type: "image/webp" }}
+  i18nAlternates={{
+    en: getLocationPath(data.slug, "en"),
+    de: getLocationPath(data.slug, "de"),
+    fr: getLocationPath(data.slug, "fr"),
+  }}
 >
   <LocalitaHero
     name={data.name}

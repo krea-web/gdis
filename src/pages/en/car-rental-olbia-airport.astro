@@ -1,0 +1,222 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/en" },
+  { name: "Olbia", url: "/en/car-rental-in-olbia" },
+  { name: "Olbia Airport (OLB)", url: "/en/car-rental-olbia-airport" },
+];
+
+const distances = [
+  { dest: "Olbia city centre", km: 4, min: 8, road: "SS125" },
+  { dest: "Isola Bianca port", km: 6, min: 12, road: "SS125" },
+  { dest: "San Teodoro", km: 30, min: 30, road: "SS131 dcn" },
+  { dest: "Porto Cervo", km: 32, min: 35, road: "SS125 → SP59" },
+  { dest: "San Pantaleo", km: 25, min: 30, road: "SS125 → SP73" },
+  { dest: "Baja Sardinia", km: 35, min: 40, road: "SS125 → SP59" },
+  { dest: "Golfo Aranci", km: 20, min: 22, road: "SS125 → SP82" },
+  { dest: "La Maddalena (ferry boarding)", km: 45, min: 55, road: "SS125 to Palau" },
+];
+
+const carriers = [
+  { name: "Volotea", segment: "Low-cost", note: "OLB main hub with operational base" },
+  { name: "easyJet", segment: "Low-cost", note: "Flights from London, Berlin, Milan and other EU routes" },
+  { name: "Ryanair", segment: "Low-cost", note: "Summer seasonal, mainly UK and Ireland" },
+  { name: "ITA Airways", segment: "Full-service", note: "Public service routes to Rome and Milan LIN" },
+  { name: "Lufthansa", segment: "Full-service", note: "Summer direct flights from Munich and Frankfurt" },
+  { name: "Air France", segment: "Full-service", note: "Seasonal Paris CDG" },
+];
+
+const faqs = [
+  { q: "What is the IATA code for Olbia Airport?", a: "The IATA code is <strong>OLB</strong> (ICAO code <strong>LIEO</strong>). The official name is <em>Olbia – Costa Smeralda Airport</em>, operated by Geasar S.p.A. It is Sardinia's second-busiest airport for passenger traffic after Cagliari-Elmas." },
+  { q: "Is Olbia Airport open year-round or only in summer?", a: "It is open all year, but with very marked seasonality: <strong>over 60% of traffic</strong> is concentrated between June and September. In low season many international routes are suspended and the public service flights to Rome Fiumicino and Milan Linate remain the most active." },
+  { q: "What happens if my flight is diverted to Alghero or Cagliari?", a: "It happens rarely, mostly because of bad weather. If diverted, contact us straight away on WhatsApp: depending on the time we can reposition the delivery to the actual airport (with a transparent fuel surcharge agreed in advance) or wait for you back in Olbia if you decide to take a coach or shuttle." },
+  { q: "Can I pick up the vehicle if I'm travelling with a pet in a carrier?", a: "Yes. We just ask you to mention it at booking: for cars we lay a seat cover and for scooters we provide info on small-pet transport rules. If you're travelling with a medium/large dog we recommend the <a href='/en/fleet/fiat-panda' class='text-primary underline'>Fiat Panda</a> (5 seats, generous boot)." },
+  { q: "Can I rent on overnight or early-morning flights?", a: "Yes, we cover the airport's full operating window. Delivery is free for rentals of 3+ days even on overnight slots; under 3 days a small out-of-hours surcharge applies, communicated at booking." },
+  { q: "Are child seats included?", a: "Yes, on request at booking and free of charge. We have group 0+/1/2/3 seats, ECE R44/04 or i-Size approved. Let us know your child's age so we can prepare the right one before your arrival." },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/noleggio-auto-aeroporto-olbia#localbusiness",
+  description: "Car rental at Olbia Costa Smeralda Airport (OLB) with VIP delivery at arrivals. Real-time flight tracking, distances to Costa Smeralda, terminal and parking info.",
+  areaServed: [
+    { "@type": "Airport", name: "Olbia Costa Smeralda Airport" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Car Rental Olbia Costa Smeralda Airport",
+  description:
+    "VIP delivery service for rental vehicles directly at the arrivals forecourt of Olbia Costa Smeralda Airport (OLB). Real-time flight tracking.",
+  serviceType: "Airport Car Rental Delivery",
+  url: "/noleggio-auto-aeroporto-olbia",
+  areaServed: [
+    { "@type": "Airport", name: "Olbia Costa Smeralda Airport" },
+    { "@type": "City", name: "Olbia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
+const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp";
+---
+
+<BaseLayout
+  title="Car Rental Olbia Airport OLB | Arrivals Delivery | GDIS Rent"
+  description="Car rental Olbia Costa Smeralda Airport OLB. VIP delivery directly at arrivals, flight tracking, real distances and times to Costa Smeralda. Book online 24/7."
+  canonical="/en/car-rental-olbia-airport"
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+  ogImage={heroImage}
+  i18nAlternates={{ it: "/noleggio-auto-aeroporto-olbia", de: "/de/autovermietung-flughafen-olbia", fr: "/fr/location-voiture-aeroport-olbia" }}
+>
+  <LocalitaHero
+    name="Olbia Airport"
+    h1Prefix="Car Rental"
+    h1Accent="Olbia Airport"
+    subtitle="IATA code OLB. VIP delivery at the Costa Smeralda Airport arrivals forecourt — you land, we hand over the car, you're off."
+    bgImage={heroImage}
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">How OLB delivery works</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Three steps between landing and the open road
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="rounded-2xl border border-border bg-card p-6" data-reveal>
+          <div class="text-primary text-3xl font-display font-bold mb-3">01</div>
+          <h3 class="font-semibold mb-2">Live flight tracking</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            We track your flight in real time using your booking reference. Early arrivals or delays are handled without you having to let us know: our agent shows up at the actual landing time.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-border bg-card p-6" data-reveal data-reveal-delay="100">
+          <div class="text-primary text-3xl font-display font-bold mb-3">02</div>
+          <h3 class="font-semibold mb-2">Meet at the GDIS sign</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Our uniformed agent waits for you in the arrivals hall with a personalised name sign. Easy to spot, no queueing at desks, no hunt through crowded counters.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-border bg-card p-6" data-reveal data-reveal-delay="200">
+          <div class="text-primary text-3xl font-display font-bold mb-3">03</div>
+          <h3 class="font-semibold mb-2">Digital signature & off you go</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Contract signed on your smartphone, vehicle condition photos, keys in hand. In less than 10 minutes from baggage claim you're already on the SS125.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-muted/20">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Real distances from OLB</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4" data-reveal>
+        How long it really takes to reach your destination
+      </h2>
+      <p class="text-muted-foreground mb-8" data-reveal>
+        Times calculated without traffic. In peak season (July-August, weekends) add 15-30% on routes towards Costa Smeralda.
+      </p>
+
+      <div class="overflow-x-auto rounded-2xl border border-border bg-card">
+        <table class="w-full text-sm">
+          <thead class="bg-muted/40 text-xs uppercase tracking-wider text-muted-foreground">
+            <tr>
+              <th class="text-left py-3 px-4 font-semibold">Destination</th>
+              <th class="text-right py-3 px-4 font-semibold">Km</th>
+              <th class="text-right py-3 px-4 font-semibold">Min</th>
+              <th class="text-left py-3 px-4 font-semibold">Road</th>
+            </tr>
+          </thead>
+          <tbody>
+            {distances.map((d) => (
+              <tr class="border-t border-border">
+                <td class="py-3 px-4 font-medium">{d.dest}</td>
+                <td class="py-3 px-4 text-right text-muted-foreground">{d.km}</td>
+                <td class="py-3 px-4 text-right text-muted-foreground">{d.min}</td>
+                <td class="py-3 px-4 text-muted-foreground text-xs">{d.road}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Airlines operating at OLB</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Land with any carrier — we'll be there all the same
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-8" data-reveal>
+        Costa Smeralda Airport handles around <strong>3 million passengers</strong> in the summer months, with flights from across Europe. Our system recognises any IATA flight number: whether you arrive on a seasonal low-cost or a public service route, the delivery procedure is exactly the same.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        {carriers.map((c) => (
+          <div class="rounded-xl border border-border bg-card p-4 flex items-start gap-3">
+            <div class="shrink-0 px-2 py-1 rounded-md bg-primary/10 text-primary text-[10px] uppercase tracking-wider font-semibold">
+              {c.segment}
+            </div>
+            <div>
+              <div class="font-semibold">{c.name}</div>
+              <div class="text-xs text-muted-foreground mt-0.5">{c.note}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5 flex gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500 shrink-0 mt-0.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        <div class="text-sm">
+          <p class="font-semibold text-foreground mb-1">Operational airport notes</p>
+          <p class="text-muted-foreground leading-relaxed">
+            The Olbia terminal is single (no separate Schengen/non-Schengen on the arrivals side). Baggage reclaim times in peak season can exceed 30 minutes — that's actually in your favour: it means no pressure from the taxi rank or busy desks, and you can find us calmly in the arrivals hall.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ConsegnaVipExplainer variant="airport" />
+
+  <LocalitaFAQ name="Olbia Airport (OLB)" faqs={faqs} />
+
+  <section class="py-12 bg-muted/20">
+    <div class="container px-4 text-center max-w-2xl">
+      <p class="text-muted-foreground">
+        Landing at Costa Smeralda? See also our destination pages:{" "}
+        <a href="/en/car-rental-in-olbia" class="text-primary font-medium hover:underline">Olbia centre</a>,{" "}
+        <a href="/en/car-rental-in-porto-cervo" class="text-primary font-medium hover:underline">Porto Cervo</a> and{" "}
+        <a href="/en/car-rental-in-san-teodoro" class="text-primary font-medium hover:underline">San Teodoro</a>.
+      </p>
+    </div>
+  </section>
+
+  <LocalitaCTA name="Olbia Airport" />
+</BaseLayout>

@@ -1,10 +1,15 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
 type Spec = { label: string; value: string; icon: "license" | "seats" | "use" | "delivery" };
 
 export interface Props {
   vehicleName: string;
   specs: Spec[];
 }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const { vehicleName, specs } = Astro.props;
 ---
@@ -15,7 +20,7 @@ const { vehicleName, specs } = Astro.props;
 
   <div class="container relative z-10 px-4">
     <div class="text-center mb-14" data-reveal>
-      <p class="text-sm font-semibold tracking-widest uppercase text-white/50 mb-3">Specifiche</p>
+      <p class="text-sm font-semibold tracking-widest uppercase text-white/50 mb-3">{t("fleet.specsEyebrow")}</p>
       <h2 class="text-3xl md:text-4xl font-display font-bold text-white">{vehicleName}</h2>
     </div>
 

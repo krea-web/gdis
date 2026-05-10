@@ -104,5 +104,280 @@
     "numberOfDoors": 5,
     "seatingCapacity": 5,
     "vehicleEngine": { "@type": "EngineSpecification", "engineType": "1.0 Hybrid 70cv" }
+  },
+  "i18n": {
+    "en": {
+      "name": "Fiat Panda Hybrid",
+      "title": "Fiat Panda Hybrid Rental Olbia and Costa Smeralda | GDIS Rent",
+      "description": "Rent a Fiat Panda Hybrid in Olbia and Costa Smeralda - 5 seats, air conditioning, low fuel consumption. VIP delivery to airport, port, hotel. Book online 24/7.",
+      "heroLabel": "City Car",
+      "heroH1Top": "Fiat Panda",
+      "heroH1Bottom": "Hybrid",
+      "heroSubtitle": "Effortless agility across Costa Smeralda. Air conditioning, 5 seats, low fuel consumption — the perfect car for your Sardinian holiday.",
+      "heroBadges": ["5 Seats", "Air Conditioning", "Hybrid"],
+      "featureSections": [
+        {
+          "label": "Comfort & Practicality",
+          "title": "Compact outside, spacious inside",
+          "body": [
+            "The <a href='/en/fleet/fiat-panda' class='text-blue-600 font-medium hover:underline'>Fiat Panda</a> Hybrid is the ideal vehicle for moving around Sardinia's roads with ease. Its mild-hybrid 70hp engine combines very low fuel consumption with surprising liveliness. Easy to park in historic centres and roomy enough for 5 passengers with luggage.",
+            "The air conditioning keeps the cabin cool even on the hottest August days, while the 225-litre boot comfortably holds beach bags, parasols and shopping."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpanda-noleggiocostasmeralda.webp",
+          "imageAlt": "Sardinia coastal panorama"
+        },
+        {
+          "label": "Room for Friends",
+          "title": "Perfect for reaching the beaches",
+          "body": [
+            "From Spiaggia del Principe to Cala di Volpe, from Costa Smeralda to <a href='/en/car-rental-in-san-teodoro' class='text-blue-600 font-medium hover:underline'>San Teodoro</a>: the Panda takes you everywhere with agility and comfort.",
+            "With VIP delivery directly to airport, port or hotel, your holiday begins the moment you land."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpanda-spiaggiecostasmeralda.webp",
+          "imageAlt": "Costa Smeralda beach",
+          "reverse": true
+        }
+      ],
+      "specs": [
+        { "icon": "gauge", "label": "Engine", "value": "1.0 Hybrid 70hp" },
+        { "icon": "fuel", "label": "Fuel", "value": "Petrol / Hybrid" },
+        { "icon": "users", "label": "Seats", "value": "5" },
+        { "icon": "settings", "label": "Gearbox", "value": "Manual" },
+        { "icon": "wind", "label": "Climate", "value": "Air Conditioning" },
+        { "icon": "luggage", "label": "Boot", "value": "225 litres" }
+      ],
+      "scenarios": [
+        {
+          "icon": "map-pin",
+          "title": "Hidden Beaches in San Teodoro",
+          "description": "Reach Lu Impostu, Cala Brandinchi and La Cinta stress-free. Park anywhere thanks to its compact size."
+        },
+        {
+          "icon": "shopping-bag",
+          "title": "Evening Shopping in Porto Cervo",
+          "description": "Stroll through the boutiques of the Promenade du Port and return comfortably with all your shopping in the boot.",
+          "highlight": true
+        },
+        {
+          "icon": "users",
+          "title": "Group Adventures up to 5",
+          "description": "Room for the whole family or group of friends. Air conditioning for hot days, low fuel consumption for your wallet."
+        }
+      ],
+      "whySection": {
+        "label": "Why choose the Panda",
+        "title": "Panda Hybrid vs traditional rental: when it really makes sense",
+        "paragraphs": [
+          "We're not telling you the Panda Hybrid is the absolute best choice — it isn't. It is the <strong class='text-foreground'>smartest choice for most of our customers</strong>: families of 4-5, couples with normal luggage, newly licensed drivers, travellers staying 5-10 days and moving between several places.",
+          "Where it beats the alternatives: <strong class='text-foreground'>real-world fuel consumption of 4.5-5 L/100km</strong> against the 7-8 of a diesel saloon; an overall length of <strong class='text-foreground'>365 cm</strong> versus 430+ for an A-Class — it slips into impossible parking spaces in the historic centres of San Pantaleo or Porto Cervo; daily cost half that of a premium car. And with five real seats, it is the only city car in our fleet that carries five people with a minimum of comfort.",
+          "Where it isn't the right choice: motorway business trips (better the Mercedes for automatic gearbox and comfort), off-road excursions (better the Yamaha quad), short trips in peak-season ZTL centres (better the Honda SH for free parking)."
+        ]
+      },
+      "localitaSection": {
+        "label": "Panda in Sardinia",
+        "title": "Where the Panda is the recommended choice",
+        "intro": "Based on the bookings we manage every year, the Panda Hybrid is the most chosen vehicle for these destinations:",
+        "items": [
+          "<strong class='text-foreground'><a href='/en/car-rental-in-olbia' class='text-blue-600 hover:underline'>Olbia town centre</a></strong> — for those landing at Costa Smeralda airport or disembarking at Isola Bianca and based in town. It enters Corso Umberto, parks anywhere, and reaches Pittulongu in 10 minutes for an evening swim.",
+          "<strong class='text-foreground'><a href='/en/car-rental-in-san-teodoro' class='text-blue-600 hover:underline'>San Teodoro</a></strong> — for families wanting to move between La Cinta, Cala Brandinchi and Lu Impostu. The boot is large enough for parasols, inflatable loungers and children's rucksacks.",
+          "<strong class='text-foreground'><a href='/en/car-rental-in-golfo-aranci' class='text-blue-600 hover:underline'>Golfo Aranci</a></strong> — delivered right by the ship for those arriving with Sardinia/Corsica Ferries. In 20 minutes you reach Porto Rotondo, in 30 Porto Cervo.",
+          "<strong class='text-foreground'><a href='/en/car-rental-in-san-pantaleo' class='text-blue-600 hover:underline'>San Pantaleo</a></strong> — for guests staying at agriturismi outside the centre who want flexibility. The Gallura roads are narrow; the Panda gets through."
+        ],
+        "outro": "Looking for a more premium alternative? See the <a href='/en/fleet/mercedes-classe-a180d' class='text-blue-600 hover:underline'>Mercedes A-Class 180d</a>. Need to move around ZTL areas? Consider the <a href='/en/fleet/honda-sh' class='text-blue-600 hover:underline'>Honda SH scooter</a>."
+      },
+      "faq": [
+        { "q": "Can I drive the Fiat Panda Hybrid as a newly licensed driver?", "a": "Yes. The Panda Hybrid 1.0 70hp has a power-to-weight ratio well below the Italian Highway Code limits for new drivers (kW/t < 65). It is in fact one of the most recommended choices for those who got their licence less than a year ago: light, predictable, safe." },
+        { "q": "How much luggage fits with 5 people on board?", "a": "The Panda's boot is 225 litres standard. With 5 people on board you can comfortably fit 2 medium trolleys (50-55 cm) plus 1-2 beach bags. For larger families with big suitcases we recommend the Mercedes A-Class 180d (370 litres) instead." },
+        { "q": "How much does the Hybrid version really consume?", "a": "From our fleet experience in Sardinia, the Panda Hybrid 70hp uses 4.5-5.0 L/100km in mixed urban-suburban use (Olbia → San Teodoro → Costa Smeralda). A full 35-litre tank easily lasts 600-700 km. Fuel cost for an average week's holiday: 40-60 €." },
+        { "q": "Can I go off-road with the Panda?", "a": "No. The Panda Hybrid is designed for tarmac. For the dirt tracks of Punta Volpe, Capo Ferro or Monte Nieddu you need a dedicated vehicle such as our <a href='/en/fleet/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Insurance cover excludes damage on unpaved roads." },
+        { "q": "Can I pick it up at Olbia Airport?", "a": "Yes, this is the most requested delivery for the Panda. An operator at the Costa Smeralda arrivals terminal, vehicle air-conditioned and with a full tank. <a href='/en/car-rental-olbia-airport' class='text-primary-foreground font-medium underline'>See airport service details</a>." },
+        { "q": "Is fuel included?", "a": "The vehicle is delivered with a full tank and must be returned with a full tank. Alternatively you can buy the 'pre-paid fuel' option at pickup: you pay for the tank at the start and return it even empty, without having to look for a petrol station before drop-off." }
+      ],
+      "ctaTitle": "Ready to drive your Panda?",
+      "ctaSubtitle": "Book in less than 2 minutes. VIP delivery to airport, port or hotel — across all Costa Smeralda.",
+      "ctaButtonLabel": "Book your Panda →"
+    },
+    "fr": {
+      "name": "Fiat Panda Hybrid",
+      "title": "Location Fiat Panda Hybrid Olbia et Costa Smeralda | GDIS Rent",
+      "description": "Louez une Fiat Panda Hybrid à Olbia et en Costa Smeralda ✓ 5 places, climatisation, faible consommation ✓ Livraison VIP aéroport, port, hôtel. Réservez en ligne 24h/24.",
+      "heroLabel": "City Car",
+      "heroH1Top": "Fiat Panda",
+      "heroH1Bottom": "Hybrid",
+      "heroSubtitle": "Agilité sans compromis en Costa Smeralda. Climatisation, 5 places, faible consommation — la voiture parfaite pour vos vacances en Sardaigne.",
+      "heroBadges": ["5 places", "Climatisation", "Hybride"],
+      "featureSections": [
+        {
+          "label": "Confort et praticité",
+          "title": "Compacte dehors, spacieuse dedans",
+          "body": [
+            "La <a href='/fr/flotte/fiat-panda' class='text-blue-600 font-medium hover:underline'>Fiat Panda</a> Hybrid est le véhicule idéal pour se déplacer agilement sur les routes de Sardaigne. Avec son moteur mild-hybrid de 70 ch, elle allie une consommation très réduite à une vivacité surprenante. Facile à garer dans les centres historiques et suffisamment spacieuse pour 5 passagers avec leurs bagages.",
+            "La climatisation maintient l'habitacle frais même lors des journées les plus chaudes du mois d'août, tandis que le coffre de 225 litres accueille confortablement sacs de plage, parasols et achats."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpanda-noleggiocostasmeralda.webp",
+          "imageAlt": "Sardaigne côte panoramique"
+        },
+        {
+          "label": "De la place pour les amis",
+          "title": "Parfaite pour rejoindre les plages",
+          "body": [
+            "De la Spiaggia del Principe à Cala di Volpe, de la Costa Smeralda à <a href='/fr/location-voiture-a-san-teodoro' class='text-blue-600 font-medium hover:underline'>San Teodoro</a> : la Panda vous emmène partout avec agilité et confort.",
+            "Avec la livraison VIP directement à l'aéroport, au port ou à l'hôtel, vos vacances commencent dès l'instant où vous atterrissez."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpanda-spiaggiecostasmeralda.webp",
+          "imageAlt": "Plage Costa Smeralda",
+          "reverse": true
+        }
+      ],
+      "specs": [
+        { "icon": "gauge", "label": "Moteur", "value": "1.0 Hybrid 70 ch" },
+        { "icon": "fuel", "label": "Carburant", "value": "Essence / Hybride" },
+        { "icon": "users", "label": "Places", "value": "5" },
+        { "icon": "settings", "label": "Boîte", "value": "Manuelle" },
+        { "icon": "wind", "label": "Climatisation", "value": "Air conditionné" },
+        { "icon": "luggage", "label": "Coffre", "value": "225 litres" }
+      ],
+      "scenarios": [
+        {
+          "icon": "map-pin",
+          "title": "Plages cachées à San Teodoro",
+          "description": "Rejoignez Lu Impostu, Cala Brandinchi et La Cinta sans stress. Stationnez partout grâce à ses dimensions compactes."
+        },
+        {
+          "icon": "shopping-bag",
+          "title": "Shopping en soirée à Porto Cervo",
+          "description": "Promenez-vous entre les boutiques de la Promenade du Port et rentrez confortablement avec tous vos achats dans le coffre.",
+          "highlight": true
+        },
+        {
+          "icon": "users",
+          "title": "Aventures en groupe jusqu'à 5",
+          "description": "De la place pour toute la famille ou les amis. Climatisation pour les journées chaudes, faible consommation pour le portefeuille."
+        }
+      ],
+      "whySection": {
+        "label": "Pourquoi choisir la Panda",
+        "title": "Panda Hybrid vs location traditionnelle : quand cela a vraiment du sens",
+        "paragraphs": [
+          "Nous ne vous dirons pas que la Panda Hybrid est le meilleur choix dans l'absolu — elle ne l'est pas. C'est le choix le plus <strong class='text-foreground'>intelligent pour la majorité de nos clients</strong> : familles de 4 à 5 personnes, couples avec des bagages normaux, jeunes conducteurs, voyageurs qui restent 5 à 10 jours et se déplacent sur plusieurs localités.",
+          "Là où elle bat les autres options : <strong class='text-foreground'>consommation réelle de 4,5 à 5 L/100 km</strong> contre 7-8 pour une berline diesel ; encombrement <strong class='text-foreground'>365 cm</strong> contre 430+ pour une Classe A — elle se faufile dans des places de stationnement impossibles dans les centres historiques de San Pantaleo ou Porto Cervo ; coût journalier moitié moindre par rapport à une voiture premium. Et avec cinq vraies places assises, c'est la seule citadine de la flotte qui transporte cinq personnes avec un minimum de confort.",
+          "Là où ce n'est pas le bon choix : voyages d'affaires sur autoroute (mieux vaut la Mercedes pour la boîte automatique et le confort), excursions tout-terrain (mieux vaut le quad Yamaha), trajets brefs en haute saison dans les centres ZTL (mieux vaut le Honda SH pour le stationnement gratuit)."
+        ]
+      },
+      "localitaSection": {
+        "label": "La Panda en Sardaigne",
+        "title": "Les destinations où la Panda est le choix recommandé",
+        "intro": "Sur la base des réservations que nous gérons chaque année, la Panda Hybrid est le véhicule le plus choisi pour ces destinations :",
+        "items": [
+          "<strong class='text-foreground'><a href='/fr/location-voiture-a-olbia' class='text-blue-600 hover:underline'>Centre d'Olbia</a></strong> — pour ceux qui atterrissent à Costa Smeralda ou débarquent à Isola Bianca et ont leur base en ville. Elle entre dans le Corso Umberto, se gare partout, et rejoint Pittulongu en 10 minutes pour la baignade du soir.",
+          "<strong class='text-foreground'><a href='/fr/location-voiture-a-san-teodoro' class='text-blue-600 hover:underline'>San Teodoro</a></strong> — pour les familles qui veulent se déplacer entre La Cinta, Cala Brandinchi et Lu Impostu. Coffre suffisant pour parasols, matelas gonflables et sacs à dos d'enfants.",
+          "<strong class='text-foreground'><a href='/fr/location-voiture-a-golfo-aranci' class='text-blue-600 hover:underline'>Golfo Aranci</a></strong> — livrée sous le navire pour ceux qui arrivent avec Sardinia/Corsica Ferries. En 20 minutes vous atteignez Porto Rotondo, en 30 Porto Cervo.",
+          "<strong class='text-foreground'><a href='/fr/location-voiture-a-san-pantaleo' class='text-blue-600 hover:underline'>San Pantaleo</a></strong> — pour ceux qui séjournent dans un agritourisme hors centre et veulent de la flexibilité. Les routes galluraises sont étroites, la Panda passe."
+        ],
+        "outro": "Vous cherchez une alternative plus premium ? Voir la <a href='/fr/flotte/mercedes-classe-a180d' class='text-blue-600 hover:underline'>Mercedes Classe A 180d</a>. Vous devez circuler en ZTL ? Pensez au <a href='/fr/flotte/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
+      },
+      "faq": [
+        { "q": "Puis-je conduire la Fiat Panda Hybrid en tant que jeune conducteur ?", "a": "Oui. La Panda Hybrid 1.0 70 ch a un rapport poids/puissance bien en dessous des limites du Code de la route italien pour les jeunes conducteurs (kW/t < 65). C'est même l'un des choix les plus recommandés pour ceux qui ont obtenu leur permis depuis moins d'un an : légère, prévisible, sûre." },
+        { "q": "Combien de bagages tiennent avec 5 personnes à bord ?", "a": "Le coffre de la Panda fait 225 litres en standard. Avec 5 personnes à bord, il y a confortablement la place pour 2 valises moyennes (50-55 cm) + 1-2 sacs de plage. Pour les familles plus nombreuses avec de grandes valises, nous recommandons plutôt la Mercedes Classe A 180d (370 litres)." },
+        { "q": "Quelle est la consommation réelle de la version Hybrid ?", "a": "D'après notre expérience avec la flotte en Sardaigne, la Panda Hybrid 70 ch consomme 4,5 à 5,0 L/100 km en usage mixte urbain-extra-urbain (Olbia → San Teodoro → Costa Smeralda). Un plein d'environ 35 litres vous dure facilement 600 à 700 km. Coût en essence pour une semaine de vacances moyenne : 40 à 60 €." },
+        { "q": "Puis-je faire du tout-terrain avec la Panda ?", "a": "Non. La Panda Hybrid est conçue pour l'asphalte. Pour les pistes de Punta Volpe, Capo Ferro ou Monte Nieddu il faut un engin dédié comme notre <a href='/fr/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Les couvertures d'assurance excluent les dommages sur routes non goudronnées." },
+        { "q": "Puis-je la récupérer à l'aéroport d'Olbia ?", "a": "Oui, c'est la livraison la plus demandée pour la Panda. Notre opérateur au terminal arrivées de Costa Smeralda, véhicule climatisé et plein effectué. <a href='/fr/location-voiture-aeroport-olbia' class='text-primary-foreground font-medium underline'>Voir les détails du service aéroport</a>." },
+        { "q": "Le carburant est-il inclus ?", "a": "Le véhicule est livré avec le plein et doit être restitué avec le plein. Il est également possible d'acheter l'option « plein anticipé » au retrait : vous payez le plein au départ et restituez avec le réservoir même vide, sans avoir à chercher une station-service avant le retour." }
+      ],
+      "ctaTitle": "Prêt à conduire votre Panda ?",
+      "ctaSubtitle": "Réservez en moins de 2 minutes. Livraison VIP à l'aéroport, au port ou à l'hôtel — dans toute la Costa Smeralda.",
+      "ctaButtonLabel": "Réservez votre Panda →"
+    },
+    "de": {
+      "name": "Fiat Panda Hybrid",
+      "title": "Fiat Panda Hybrid mieten in Olbia und Costa Smeralda | GDIS Rent",
+      "description": "Mieten Sie den Fiat Panda Hybrid in Olbia und Costa Smeralda ✓ 5 Sitze, Klimaanlage, niedriger Verbrauch ✓ VIP-Übergabe am Flughafen, Hafen, Hotel. Buchung rund um die Uhr.",
+      "heroLabel": "City Car",
+      "heroH1Top": "Fiat Panda",
+      "heroH1Bottom": "Hybrid",
+      "heroSubtitle": "Wendigkeit ohne Kompromisse an der Costa Smeralda. Klimaanlage, 5 Sitze, niedriger Verbrauch — das perfekte Auto für Ihren Sardinien-Urlaub.",
+      "heroBadges": ["5 Sitze", "Klimaanlage", "Hybrid"],
+      "featureSections": [
+        {
+          "label": "Komfort & Praktikabilität",
+          "title": "Außen kompakt, innen geräumig",
+          "body": [
+            "Der <a href='/de/flotte/fiat-panda' class='text-blue-600 font-medium hover:underline'>Fiat Panda</a> Hybrid ist das ideale Fahrzeug, um sich mühelos auf Sardiniens Straßen zu bewegen. Mit seinem Mild-Hybrid-Motor mit 70 PS verbindet er einen sehr niedrigen Verbrauch mit überraschender Lebendigkeit. Er ist leicht in den historischen Zentren zu parken und groß genug für 5 Passagiere mit Gepäck.",
+            "Die Klimaanlage hält den Innenraum auch an den heißesten Augusttagen kühl, während der 225-Liter-Kofferraum bequem Strandtaschen, Sonnenschirme und Einkäufe aufnimmt."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpanda-noleggiocostasmeralda.webp",
+          "imageAlt": "Panoramische Küste Sardiniens"
+        },
+        {
+          "label": "Platz für Freunde",
+          "title": "Perfekt, um die Strände zu erreichen",
+          "body": [
+            "Vom Spiaggia del Principe bis Cala di Volpe, von der Costa Smeralda bis <a href='/de/autovermietung-san-teodoro' class='text-blue-600 font-medium hover:underline'>San Teodoro</a>: Der Panda bringt Sie überall hin — wendig und komfortabel.",
+            "Mit der VIP-Übergabe direkt am Flughafen, Hafen oder Hotel beginnt Ihr Urlaub in dem Moment, in dem Sie landen."
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpanda-spiaggiecostasmeralda.webp",
+          "imageAlt": "Strand Costa Smeralda",
+          "reverse": true
+        }
+      ],
+      "specs": [
+        { "icon": "gauge", "label": "Motor", "value": "1.0 Hybrid 70 PS" },
+        { "icon": "fuel", "label": "Kraftstoff", "value": "Benzin / Hybrid" },
+        { "icon": "users", "label": "Sitze", "value": "5" },
+        { "icon": "settings", "label": "Getriebe", "value": "Schaltgetriebe" },
+        { "icon": "wind", "label": "Klima", "value": "Klimaanlage" },
+        { "icon": "luggage", "label": "Kofferraum", "value": "225 Liter" }
+      ],
+      "scenarios": [
+        {
+          "icon": "map-pin",
+          "title": "Versteckte Strände in San Teodoro",
+          "description": "Erreichen Sie Lu Impostu, Cala Brandinchi und La Cinta ohne Stress. Parken Sie überall dank der kompakten Maße."
+        },
+        {
+          "icon": "shopping-bag",
+          "title": "Abendliches Shopping in Porto Cervo",
+          "description": "Schlendern Sie durch die Boutiquen der Promenade du Port und kommen Sie bequem mit all Ihren Einkäufen im Kofferraum zurück.",
+          "highlight": true
+        },
+        {
+          "icon": "users",
+          "title": "Gruppenabenteuer für bis zu 5 Personen",
+          "description": "Platz für die ganze Familie oder Freunde. Klimaanlage für heiße Tage, niedriger Verbrauch für den Geldbeutel."
+        }
+      ],
+      "whySection": {
+        "label": "Warum den Panda wählen",
+        "title": "Panda Hybrid vs. klassische Anmietung: wann es wirklich sinnvoll ist",
+        "paragraphs": [
+          "Wir behaupten nicht, dass der Panda Hybrid die absolut beste Wahl ist — das ist er nicht. Er ist die <strong class='text-foreground'>klügste Wahl für die meisten unserer Kunden</strong>: Familien mit 4-5 Personen, Paare mit normalem Gepäck, Fahranfänger, Reisende, die 5-10 Tage bleiben und sich zwischen mehreren Orten bewegen.",
+          "Wo er andere Optionen schlägt: <strong class='text-foreground'>realer Verbrauch 4,5-5 L/100 km</strong> gegenüber 7-8 einer Diesel-Limousine; Außenlänge <strong class='text-foreground'>365 cm</strong> gegenüber 430+ einer A-Klasse — er passt in Parklücken, die in den historischen Zentren von San Pantaleo oder Porto Cervo unmöglich erscheinen; Tagespreis halb so hoch wie bei einem Premium-Auto. Und mit fünf echten Sitzplätzen ist er der einzige Kleinwagen in der Flotte, der fünf Personen mit einem Mindestmaß an Komfort transportiert.",
+          "Wo er nicht die richtige Wahl ist: Geschäftsreisen auf der Autobahn (besser Mercedes wegen Automatikgetriebe und Komfort), Off-Road-Ausflüge (besser Yamaha Quad), kurze Fahrten in der Hochsaison in den ZTL-Zentren (besser Honda SH wegen kostenlosem Parken)."
+        ]
+      },
+      "localitaSection": {
+        "label": "Panda auf Sardinien",
+        "title": "Die Orte, an denen wir den Panda empfehlen",
+        "intro": "Auf Basis der Buchungen, die wir jedes Jahr verwalten, ist der Panda Hybrid das meistgewählte Fahrzeug für diese Reiseziele:",
+        "items": [
+          "<strong class='text-foreground'><a href='/de/autovermietung-olbia' class='text-blue-600 hover:underline'>Olbia Stadt</a></strong> — für alle, die am Flughafen Costa Smeralda landen oder am Hafen Isola Bianca anlegen und ihre Basis in der Stadt haben. Fährt in den Corso Umberto, parkt überall, erreicht in 10 Minuten Pittulongu für das abendliche Bad.",
+          "<strong class='text-foreground'><a href='/de/autovermietung-san-teodoro' class='text-blue-600 hover:underline'>San Teodoro</a></strong> — für Familien, die sich zwischen La Cinta, Cala Brandinchi und Lu Impostu bewegen möchten. Kofferraum reicht für Sonnenschirme, aufblasbare Liegen und Kinderrucksäcke.",
+          "<strong class='text-foreground'><a href='/de/autovermietung-golfo-aranci' class='text-blue-600 hover:underline'>Golfo Aranci</a></strong> — direkt unter dem Schiff übergeben für alle, die mit Sardinia/Corsica Ferries anreisen. In 20 Minuten erreichen Sie Porto Rotondo, in 30 Porto Cervo.",
+          "<strong class='text-foreground'><a href='/de/autovermietung-san-pantaleo' class='text-blue-600 hover:underline'>San Pantaleo</a></strong> — für alle, die in einem Agriturismo außerhalb des Zentrums übernachten und Flexibilität wünschen. Die Straßen Galluras sind eng — der Panda passt durch."
+        ],
+        "outro": "Suchen Sie eine premiumere Alternative? Sehen Sie sich die <a href='/de/flotte/mercedes-classe-a180d' class='text-blue-600 hover:underline'>Mercedes A-Klasse 180d</a> an. Möchten Sie sich in der ZTL bewegen? Erwägen Sie den <a href='/de/flotte/honda-sh' class='text-blue-600 hover:underline'>Honda SH Roller</a>."
+      },
+      "faq": [
+        { "q": "Darf ich den Fiat Panda Hybrid als Fahranfänger fahren?", "a": "Ja. Der Panda Hybrid 1.0 70 PS hat ein Leistungs-/Gewichtsverhältnis weit unterhalb der italienischen Grenzwerte für Fahranfänger (kW/t < 65). Er ist sogar eine der empfohlensten Optionen für alle, die seit weniger als einem Jahr ihren Führerschein haben: leicht, berechenbar, sicher." },
+        { "q": "Wie viel Gepäck passt mit 5 Personen an Bord?", "a": "Der Kofferraum des Panda fasst standardmäßig 225 Liter. Mit 5 Personen an Bord passen bequem 2 mittelgroße Trolleys (50-55 cm) + 1-2 Strandtaschen. Für größere Familien mit großem Gepäck empfehlen wir stattdessen die Mercedes A-Klasse 180d (370 Liter)." },
+        { "q": "Wie viel verbraucht die Hybrid-Version wirklich?", "a": "Nach unserer Erfahrung mit der Flotte auf Sardinien verbraucht der Panda Hybrid 70 PS 4,5-5,0 L/100 km im gemischten Stadt-/Überlandbetrieb (Olbia → San Teodoro → Costa Smeralda). Eine Tankfüllung mit etwa 35 Litern reicht problemlos 600-700 km. Spritkosten für eine durchschnittliche Urlaubswoche: 40-60 €." },
+        { "q": "Kann ich mit dem Panda ins Gelände fahren?", "a": "Nein. Der Panda Hybrid ist für Asphalt ausgelegt. Für die Schotterpisten von Punta Volpe, Capo Ferro oder Monte Nieddu benötigen Sie ein speziell dafür geeignetes Fahrzeug wie unseren <a href='/de/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Die Versicherungsdeckung schließt Schäden auf nicht asphaltierten Straßen aus." },
+        { "q": "Kann ich ihn am Flughafen Olbia abholen?", "a": "Ja, das ist die meistgefragte Übergabeart für den Panda. Mitarbeiter im Ankunftsterminal des Flughafens Costa Smeralda, Fahrzeug klimatisiert und vollgetankt. <a href='/de/autovermietung-flughafen-olbia' class='text-primary-foreground font-medium underline'>Details zum Flughafen-Service ansehen</a>." },
+        { "q": "Ist der Kraftstoff inbegriffen?", "a": "Das Fahrzeug wird vollgetankt übergeben und muss vollgetankt zurückgegeben werden. Alternativ kann bei der Abholung die Option 'Tankfüllung im Voraus' erworben werden: Sie zahlen die Tankfüllung bei Abfahrt und geben das Fahrzeug auch leer zurück, ohne vor der Rückgabe eine Tankstelle suchen zu müssen." }
+      ],
+      "ctaTitle": "Bereit, Ihren Panda zu fahren?",
+      "ctaSubtitle": "Buchen Sie in weniger als 2 Minuten. VIP-Übergabe am Flughafen, Hafen oder Hotel — in der gesamten Costa Smeralda.",
+      "ctaButtonLabel": "Buchen Sie Ihren Panda →"
+    }
   }
 }

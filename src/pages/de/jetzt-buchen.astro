@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingFlow from "@/components/booking/BookingFlow.tsx";
+import { buildHowToBookingSchema } from "@/lib/siteSchema";
+
+const howToSchema = buildHowToBookingSchema("de");
+---
+
+<BaseLayout
+  title="Jetzt buchen — GDIS Rent | Online-Vermietung in Sardinien"
+  description="Buchen Sie online Ihr Fahrzeug in Sardinien: Auto, Roller, Quad und Luxusfahrzeuge. Schnelles Verfahren in 6 Schritten, digitale Unterschrift und VIP-Lieferung inklusive."
+  canonical="/de/jetzt-buchen"
+  jsonLd={howToSchema}
+  hideBackground
+  i18nAlternates={{ it: "/prenotaora", en: "/en/book-now", fr: "/fr/reserver" }}
+>
+  <BookingFlow client:load lang="de" />
+</BaseLayout>

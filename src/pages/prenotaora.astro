@@ -12,6 +12,7 @@ const howToSchema = buildHowToBookingSchema();
   canonical="/prenotaora"
   jsonLd={howToSchema}
   hideBackground
+  i18nAlternates={{ en: "/en/book-now", de: "/de/jetzt-buchen", fr: "/fr/reserver" }}
 >
-  <BookingFlow client:load />
+  <BookingFlow client:load lang="it" />
 </BaseLayout>

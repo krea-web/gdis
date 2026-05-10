@@ -7,9 +7,18 @@
   "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-olbia.webp",
   "heroSubtitle": "Gateway della Costa Smeralda. Consegna VIP in Aeroporto e al Porto Isola Bianca — il tuo viaggio inizia senza attese.",
   "areaServed": [
-    { "type": "City", "name": "Olbia" },
-    { "type": "Airport", "name": "Aeroporto Olbia Costa Smeralda" },
-    { "type": "Place", "name": "Porto Isola Bianca" }
+    {
+      "type": "City",
+      "name": "Olbia"
+    },
+    {
+      "type": "Airport",
+      "name": "Aeroporto Olbia Costa Smeralda"
+    },
+    {
+      "type": "Place",
+      "name": "Porto Isola Bianca"
+    }
   ],
   "customSections": [
     {
@@ -44,7 +53,11 @@
     "description": "Olbia non è solo il principale hub di arrivo della Sardegna nord-orientale: è anche il punto di partenza più strategico per esplorare la Costa Smeralda, l'entroterra gallurese e le spiagge che vanno da Pittulongu a Porto Istana. Per chi resta in città — passeggiate su Corso Umberto, cena al porto, gita alla Basilica di San Simplicio — la Fiat Panda Hybrid è la scelta naturale: entra ovunque, parcheggia in fessure impossibili, e i consumi ridotti la rendono perfetta anche per l'uso quotidiano. Per chi pensa già alle escursioni quotidiane verso Porto Cervo, San Teodoro o Golfo Aranci, la Mercedes Classe A 180d offre un comfort autostradale superiore e un cambio automatico che azzera la fatica nel traffico estivo della SS125. Lo scooter Honda SH è la jolly: a luglio e agosto, quando il centro di Olbia si paralizza intorno al porto, è l'unico veicolo che continua a muoversi davvero. E per gli amanti dell'avventura, il quad Yamaha Raptor apre la porta agli sterrati dell'entroterra di Telti e Berchidda. Qualunque sia la tua scelta, ti consegniamo il veicolo direttamente all'aeroporto, al porto o al tuo hotel — climatizzatore già acceso e pieno fatto, pronto a partire nel momento in cui arrivi.",
     "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
     "imageAlt": "Flotta veicoli noleggio Olbia",
-    "badges": ["Consegna VIP Aeroporto", "Consegna al Porto", "Assistenza H24"]
+    "badges": [
+      "Consegna VIP Aeroporto",
+      "Consegna al Porto",
+      "Assistenza H24"
+    ]
   },
   "topSpots": [
     {
@@ -83,16 +96,37 @@
   "cockpit": {
     "vehicleName": "Fiat Panda Hybrid",
     "specs": [
-      { "label": "Patente", "value": "B", "icon": "license" },
-      { "label": "Posti", "value": "4-5", "icon": "seats" },
-      { "label": "Ideale per", "value": "Famiglie & Coppie", "icon": "use" },
-      { "label": "Consegna", "value": "Aeroporto / Porto", "icon": "delivery" }
+      {
+        "label": "Patente",
+        "value": "B",
+        "icon": "license"
+      },
+      {
+        "label": "Posti",
+        "value": "4-5",
+        "icon": "seats"
+      },
+      {
+        "label": "Ideale per",
+        "value": "Famiglie & Coppie",
+        "icon": "use"
+      },
+      {
+        "label": "Consegna",
+        "value": "Aeroporto / Porto",
+        "icon": "delivery"
+      }
     ]
   },
   "comparison": {
     "title": "Quale veicolo per Olbia?",
     "subtitle": "Confronto rapido per scegliere in base al tuo viaggio.",
-    "show": ["panda", "mercedes", "honda", "yamaha"],
+    "show": [
+      "panda",
+      "mercedes",
+      "honda",
+      "yamaha"
+    ],
     "recommendation": "<strong class='text-foreground'>Hub strategico della Sardegna nord-orientale.</strong> La Fiat Panda copre l'80% delle esigenze di chi atterra o sbarca a Olbia (famiglie, coppie, bagagli). La Mercedes Classe A è la scelta giusta se hai escursioni quotidiane verso Porto Cervo o San Teodoro: cambio automatico, comfort autostradale. Lo scooter Honda SH è il jolly per chi resta in città: a luglio-agosto, quando il centro si paralizza, è l'unico mezzo che continua a muoversi davvero."
   },
   "trafficTips": [
@@ -118,11 +152,31 @@
     }
   ],
   "nightlife": [
-    { "name": "Jazz Hotel Rooftop", "type": "lounge", "desc": "Cocktail con vista panoramica sulla città e sul golfo. Atmosfera raffinata." },
-    { "name": "Corso Umberto", "type": "aperitivo", "desc": "La passeggiata serale con decine di bar e lounge. L'aperitivo olbiese per eccellenza." },
-    { "name": "Officina del Gusto", "type": "ristorante", "desc": "Cucina sarda contemporanea con ingredienti km0. Prenota in anticipo in alta stagione." },
-    { "name": "Trattoria Il Porto", "type": "ristorante", "desc": "Pesce freschissimo direttamente dai pescatori del porto. Fregola con arselle imperdibile." },
-    { "name": "B-Side", "type": "club", "desc": "Il locale notturno di riferimento. Musica live e DJ set nei weekend estivi." }
+    {
+      "name": "Jazz Hotel Rooftop",
+      "type": "lounge",
+      "desc": "Cocktail con vista panoramica sulla città e sul golfo. Atmosfera raffinata."
+    },
+    {
+      "name": "Corso Umberto",
+      "type": "aperitivo",
+      "desc": "La passeggiata serale con decine di bar e lounge. L'aperitivo olbiese per eccellenza."
+    },
+    {
+      "name": "Officina del Gusto",
+      "type": "ristorante",
+      "desc": "Cucina sarda contemporanea con ingredienti km0. Prenota in anticipo in alta stagione."
+    },
+    {
+      "name": "Trattoria Il Porto",
+      "type": "ristorante",
+      "desc": "Pesce freschissimo direttamente dai pescatori del porto. Fregola con arselle imperdibile."
+    },
+    {
+      "name": "B-Side",
+      "type": "club",
+      "desc": "Il locale notturno di riferimento. Musica live e DJ set nei weekend estivi."
+    }
   ],
   "trustMarqueeItems": [
     "Aeroporto OLB",
@@ -154,5 +208,577 @@
       "a": "Contattaci su WhatsApp per soluzioni di noleggio personalizzate anche senza carta di credito tradizionale."
     }
   ],
-  "closingParagraph": "Olbia è il chilometro zero del tuo viaggio in Sardegna nord-orientale. In meno di mezz'ora di guida da Aeroporto Costa Smeralda raggiungi le calette di Capo Coda Cavallo, in 30 minuti sei nello shopping di lusso di <a href='/noleggio-auto-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a>, in 25 minuti tocchi le spiagge giovani di <a href='/noleggio-auto-a-san-teodoro' class='text-primary font-medium hover:underline'>San Teodoro</a> e in 20 sei al porto traghetti di <a href='/noleggio-auto-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>. Chi sceglie Olbia come base ha il vantaggio di rientrare ogni sera in città per la movida di Corso Umberto e la cucina di porto, con la flessibilità di non legarsi a una sola località. Per pianificare il ritiro al terminal traghetti o all'aeroporto basta un messaggio WhatsApp: organizziamo tutto noi sull'orario reale di atterraggio o sbarco."
+  "closingParagraph": "Olbia è il chilometro zero del tuo viaggio in Sardegna nord-orientale. In meno di mezz'ora di guida da Aeroporto Costa Smeralda raggiungi le calette di Capo Coda Cavallo, in 30 minuti sei nello shopping di lusso di <a href='/noleggio-auto-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a>, in 25 minuti tocchi le spiagge giovani di <a href='/noleggio-auto-a-san-teodoro' class='text-primary font-medium hover:underline'>San Teodoro</a> e in 20 sei al porto traghetti di <a href='/noleggio-auto-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>. Chi sceglie Olbia come base ha il vantaggio di rientrare ogni sera in città per la movida di Corso Umberto e la cucina di porto, con la flessibilità di non legarsi a una sola località. Per pianificare il ritiro al terminal traghetti o all'aeroporto basta un messaggio WhatsApp: organizziamo tutto noi sull'orario reale di atterraggio o sbarco.",
+  "i18n": {
+    "en": {
+      "name": "Olbia",
+      "title": "Car Rental Olbia | VIP Airport and Port Delivery | GDIS Rent",
+      "description": "Car rental Olbia - VIP delivery to Costa Smeralda Airport and Isola Bianca Port - Fiat Panda, Mercedes, scooter, quad - Market-leading prices. Book WhatsApp 24/7.",
+      "heroSubtitle": "Gateway to Costa Smeralda. VIP delivery at the Airport and Isola Bianca Port — your journey starts without waiting.",
+      "h1Prefix": "Car Rental in",
+      "customSections": [
+        {
+          "variant": "airport",
+          "badge": "Olbia Costa Smeralda Airport",
+          "title": "Car ready as you land at the Airport",
+          "body": "Our car rental service at Olbia Airport is designed for those who hate queues at the desks. Forget exhausting waits: with our VIP Delivery, an operator will be waiting for you right at arrivals. Whether you've chosen a <a href='/en/fleet/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda</a> for the family or a <a href='/en/fleet/honda-sh' class='text-primary font-medium hover:underline'>scooter</a> to beat the traffic, your journey begins the moment you step out of the terminal.",
+          "bullets": [
+            "Zero queues at car rental desks",
+            "24/7 flight assistance",
+            "Reserved parking for fast pickup"
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp",
+          "imageAlt": "Olbia Costa Smeralda Airport"
+        },
+        {
+          "variant": "port",
+          "badge": "Port of Olbia — Isola Bianca",
+          "title": "Car Rental at the Port: disembark and go",
+          "body": "Arriving in Sardinia by ferry? Our car rental service at the Port of Olbia Isola Bianca covers all the main disembarkation quays. We deliver the vehicle (car, scooter or quad) directly under the ship or at the cruise terminal. Ideal for those who want to reach <a href='/en/car-rental-in-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> or <a href='/en/car-rental-in-san-teodoro' class='text-primary font-medium hover:underline'>San Teodoro</a> quickly without depending on public transport or expensive taxis.",
+          "callout": {
+            "title": "Why choose us at the Port?",
+            "text": "We deliver the vehicle based on the actual disembarkation time of your ship, handling any delays of Moby, Tirrenia and GNV ferries on our own."
+          },
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp",
+          "imageAlt": "Isola Bianca Port Olbia"
+        }
+      ],
+      "spotlight": {
+        "tag": "The Right Vehicle for Olbia",
+        "title": "From the Fiat Panda to the Mercedes: choose your style",
+        "description": "Olbia isn't just the main arrival hub of north-eastern Sardinia: it's also the most strategic starting point to explore Costa Smeralda, the Gallura inland and the beaches that run from Pittulongu to Porto Istana. For those staying in town — strolls along Corso Umberto, dinner at the harbour, a trip to the Basilica of San Simplicio — the Fiat Panda Hybrid is the natural choice: it slips in everywhere, parks in impossible spaces, and its low fuel consumption makes it perfect even for daily use. For those already thinking about daily excursions to Porto Cervo, San Teodoro or Golfo Aranci, the Mercedes A-Class 180d offers superior motorway comfort and an automatic gearbox that eliminates fatigue in summer SS125 traffic. The Honda SH scooter is the joker: in July and August, when central Olbia grinds to a halt around the harbour, it is the only vehicle that keeps moving. And for adventure lovers, the Yamaha Raptor quad opens the door to the dirt tracks of the Telti and Berchidda inland. Whatever your choice, we deliver the vehicle directly to the airport, port or your hotel — air conditioning already on and tank full, ready to go the moment you arrive.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
+        "imageAlt": "Olbia rental fleet",
+        "badges": [
+          "VIP Airport Delivery",
+          "Port Delivery",
+          "24/7 Assistance"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Pittulongu Beach",
+          "category": "spiaggia",
+          "description": "Olbia's town beach: white sand, turquoise waters and shallow seabeds suitable for children. Convenient because just 10 minutes from the town centre — ideal for an evening swim after work or for those with only half a day free.",
+          "distance": "10 min from centre",
+          "cost": "Free · parking €5/day",
+          "bestTime": "Morning or late afternoon"
+        },
+        {
+          "name": "Corso Umberto",
+          "category": "centro",
+          "description": "Olbia's pedestrian artery. Shops, historic ice-cream parlours, bars and outdoor seating for the evening aperitif. In summer it becomes a ZTL from 19:00, perfect for the pre-dinner stroll with views of the Liberty-style buildings.",
+          "distance": "Town centre",
+          "cost": "Free",
+          "bestTime": "Evening (ZTL active)"
+        },
+        {
+          "name": "Basilica of San Simplicio",
+          "category": "monumento",
+          "description": "Romanesque-Pisan gem from the 11th century, built in local granite. It houses early Christian artefacts and the iconography of San Simplicio, patron saint of the city. Free entry, ideal for a 30-45 minute visit.",
+          "distance": "Town centre",
+          "cost": "Free",
+          "bestTime": "Morning (best light)"
+        },
+        {
+          "name": "Porto Istana",
+          "category": "spiaggia",
+          "description": "Beach with very clear sand and turquoise waters facing the island of Tavolara, after which the marine protected area is named. In low season it's almost deserted; in July-August arrive early because parking fills by 10:00.",
+          "distance": "20 min from centre",
+          "cost": "Free · parking €3-5/day",
+          "bestTime": "Early morning"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Fiat Panda Hybrid",
+        "specs": [
+          {
+            "label": "Licence",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Seats",
+            "value": "4-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal for",
+            "value": "Families & Couples",
+            "icon": "use"
+          },
+          {
+            "label": "Delivery",
+            "value": "Airport / Port",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Which vehicle for Olbia?",
+        "subtitle": "Quick comparison to choose based on your trip.",
+        "recommendation": "<strong class='text-foreground'>Strategic hub of north-eastern Sardinia.</strong> The Fiat Panda covers 80% of needs for those landing or disembarking in Olbia (families, couples, luggage). The Mercedes A-Class is the right choice if you have daily excursions to Porto Cervo or San Teodoro: automatic gearbox, motorway comfort. The Honda SH scooter is the joker for those staying in town: in July-August, when the centre paralyses, it's the only vehicle that keeps moving."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Airport Parking",
+          "text": "Paid car parks at the terminal. With our VIP service you don't need them: we deliver the car directly."
+        },
+        {
+          "icon": "traffic",
+          "title": "Summer Traffic",
+          "text": "The SS125 south and the SS131 to Porto Cervo become congested at weekends. Set off early or choose the scooter."
+        },
+        {
+          "icon": "ztl",
+          "title": "Historic Centre",
+          "text": "Corso Umberto is a ZTL on summer evenings. Park in the side streets — the Panda fits anywhere."
+        },
+        {
+          "icon": "tip",
+          "title": "Towards Costa Smeralda",
+          "text": "In 30 minutes you reach <a href='/en/car-rental-in-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> and in 20 minutes <a href='/en/car-rental-in-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Jazz Hotel Rooftop",
+          "type": "lounge",
+          "desc": "Cocktails with panoramic views of the city and the gulf. Refined atmosphere."
+        },
+        {
+          "name": "Corso Umberto",
+          "type": "aperitivo",
+          "desc": "The evening stroll with dozens of bars and lounges. The quintessential Olbia aperitivo."
+        },
+        {
+          "name": "Officina del Gusto",
+          "type": "ristorante",
+          "desc": "Contemporary Sardinian cuisine with zero-mile ingredients. Book in advance in peak season."
+        },
+        {
+          "name": "Trattoria Il Porto",
+          "type": "ristorante",
+          "desc": "Very fresh fish straight from the harbour fishermen. Fregola with clams not to be missed."
+        },
+        {
+          "name": "B-Side",
+          "type": "club",
+          "desc": "The leading nightclub. Live music and DJ sets on summer weekends."
+        }
+      ],
+      "trustMarqueeItems": [
+        "OLB Airport",
+        "Isola Bianca Port",
+        "Olbia Centre",
+        "Pittulongu",
+        "Tavolara",
+        "24/7 Delivery"
+      ],
+      "faq": [
+        {
+          "q": "Do you deliver the car directly to Olbia Airport?",
+          "a": "Yes! With our VIP Delivery service, an operator will wait for you at the terminal arrivals with the vehicle ready, air-conditioned and full of fuel. Zero waiting."
+        },
+        {
+          "q": "Can I pick up the vehicle at Isola Bianca Port?",
+          "a": "Certainly. We deliver to the port based on the actual disembarkation time of your ship (Moby, Tirrenia, GNV). We also handle any ferry delays."
+        },
+        {
+          "q": "Which vehicles are available in Olbia?",
+          "a": "Our entire fleet: <a href='/en/fleet/fiat-panda' class='text-primary-foreground font-medium underline'>Fiat Panda</a>, <a href='/en/fleet/honda-sh' class='text-primary-foreground font-medium underline'>Honda SH</a>, <a href='/en/fleet/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor</a> and <a href='/en/fleet/mercedes-classe-a180d' class='text-primary font-medium underline'>Mercedes A-Class</a>."
+        },
+        {
+          "q": "How long does it take to reach Porto Cervo from Olbia?",
+          "a": "About 30 minutes via the SS125. With the <a href='/en/fleet/fiat-panda' class='text-primary font-medium underline'>Fiat Panda</a> or the <a href='/en/fleet/mercedes-classe-a180d' class='text-primary font-medium underline'>Mercedes</a> the journey is comfortable and scenic."
+        },
+        {
+          "q": "Do you accept payments without a credit card?",
+          "a": "Contact us on WhatsApp for tailored rental solutions even without a traditional credit card."
+        }
+      ],
+      "closingParagraph": "Olbia is kilometre zero of your journey in north-eastern Sardinia. In less than half an hour's drive from Costa Smeralda Airport you reach the coves of Capo Coda Cavallo, in 30 minutes you're in the luxury shopping of <a href='/en/car-rental-in-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a>, in 25 minutes you touch the youthful beaches of <a href='/en/car-rental-in-san-teodoro' class='text-primary font-medium hover:underline'>San Teodoro</a> and in 20 you're at the ferry port of <a href='/en/car-rental-in-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>. Choosing Olbia as a base means returning every evening to town for the Corso Umberto nightlife and harbour cuisine, with the flexibility of not being tied to a single location. To plan pickup at the ferry terminal or airport just send a WhatsApp message: we organise everything based on your actual landing or disembarkation time."
+    },
+    "fr": {
+      "name": "Olbia",
+      "title": "Location de voiture Olbia | Livraison VIP aéroport et port | GDIS Rent",
+      "description": "Location de voiture Olbia ✓ Livraison VIP à l'aéroport Costa Smeralda et au port Isola Bianca ✓ Fiat Panda, Mercedes, scooter, quad ✓ Prix concurrentiels. Réservation WhatsApp 24h/24.",
+      "heroSubtitle": "Porte d'entrée de la Costa Smeralda. Livraison VIP à l'aéroport et au port Isola Bianca — votre voyage commence sans attente.",
+      "h1Prefix": "Location de voiture à",
+      "customSections": [
+        {
+          "variant": "airport",
+          "badge": "Aéroport Olbia Costa Smeralda",
+          "title": "Voiture prête au débarquement à l'aéroport",
+          "body": "Notre service de location de voitures à l'aéroport d'Olbia est pensé pour ceux qui détestent les files aux comptoirs. Oubliez les attentes interminables : avec notre livraison VIP, l'un de nos opérateurs vous attend directement aux arrivées. Que vous ayez choisi une <a href='/fr/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda</a> pour la famille ou un <a href='/fr/flotte/honda-sh' class='text-primary font-medium hover:underline'>scooter</a> pour défier le trafic, votre voyage commence dès que vous mettez le pied hors du terminal.",
+          "bullets": [
+            "Aucune file aux comptoirs de location",
+            "Assistance 24h/24 pour votre vol",
+            "Stationnement réservé pour un retrait rapide"
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp",
+          "imageAlt": "Aéroport Olbia Costa Smeralda"
+        },
+        {
+          "variant": "port",
+          "badge": "Port d'Olbia — Isola Bianca",
+          "title": "Location de voiture au port : débarquez et partez",
+          "body": "Vous arrivez en Sardaigne en ferry ? Notre service de location de voitures au port d'Olbia Isola Bianca couvre tous les principaux quais de débarquement. Nous vous livrons le véhicule (voiture, scooter ou quad) directement sous le navire ou au terminal des croisières. Idéal pour rejoindre rapidement <a href='/fr/location-voiture-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> ou <a href='/fr/location-voiture-a-san-teodoro' class='text-primary font-medium hover:underline'>San Teodoro</a> sans dépendre des transports en commun ou de taxis coûteux.",
+          "callout": {
+            "title": "Pourquoi nous choisir au port ?",
+            "text": "Nous livrons le véhicule en fonction de l'horaire effectif de débarquement de votre navire, gérant en autonomie les éventuels retards des ferries Moby, Tirrenia et GNV."
+          },
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp",
+          "imageAlt": "Port Isola Bianca Olbia"
+        }
+      ],
+      "spotlight": {
+        "tag": "Le bon véhicule pour Olbia",
+        "title": "De la Fiat Panda à la Mercedes : choisissez votre style",
+        "description": "Olbia n'est pas seulement le principal hub d'arrivée du nord-est de la Sardaigne : c'est aussi le point de départ le plus stratégique pour explorer la Costa Smeralda, l'arrière-pays gallurais et les plages qui vont de Pittulongu à Porto Istana. Pour ceux qui restent en ville — promenades sur le Corso Umberto, dîner au port, visite à la Basilique de San Simplicio — la Fiat Panda Hybrid est le choix naturel : elle entre partout, se gare dans des places impossibles, et sa faible consommation la rend parfaite même pour un usage quotidien. Pour ceux qui pensent déjà aux excursions quotidiennes vers Porto Cervo, San Teodoro ou Golfo Aranci, la Mercedes Classe A 180d offre un confort autoroutier supérieur et une boîte automatique qui annule la fatigue dans le trafic estival de la SS125. Le scooter Honda SH est le joker : en juillet et août, quand le centre d'Olbia se paralyse autour du port, c'est le seul véhicule qui continue vraiment à se déplacer. Et pour les amateurs d'aventure, le quad Yamaha Raptor ouvre la porte aux pistes de l'arrière-pays de Telti et Berchidda. Quel que soit votre choix, nous vous livrons le véhicule directement à l'aéroport, au port ou à votre hôtel — climatisation déjà en marche et plein effectué, prêt à partir dès votre arrivée.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
+        "imageAlt": "Flotte de véhicules location Olbia",
+        "badges": [
+          "Livraison VIP aéroport",
+          "Livraison au port",
+          "Assistance 24h/24"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Plage de Pittulongu",
+          "category": "spiaggia",
+          "description": "La plage urbaine d'Olbia : sable blanc, eaux turquoise et fonds peu profonds adaptés aux enfants. Pratique car à seulement 10 minutes du centre-ville — idéale pour une baignade en soirée après le travail ou pour qui n'a qu'une demi-journée libre.",
+          "distance": "10 min du centre",
+          "cost": "Gratuit · parking 5 €/j",
+          "bestTime": "Matin ou fin d'après-midi"
+        },
+        {
+          "name": "Corso Umberto",
+          "category": "centro",
+          "description": "L'artère piétonne du centre d'Olbia. Boutiques, glaciers historiques, bars et terrasses pour l'apéritif du soir. En été, c'est une ZTL à partir de 19h00, parfait pour la promenade pré-dîner avec vue sur les bâtiments Liberty.",
+          "distance": "Centre-ville",
+          "cost": "Gratuit",
+          "bestTime": "Soir (ZTL active)"
+        },
+        {
+          "name": "Basilique de San Simplicio",
+          "category": "monumento",
+          "description": "Joyau du roman pisan du XIe siècle, construit en granit local. Elle abrite des vestiges paléochrétiens et l'iconographie de saint Simplicio, patron de la ville. Entrée libre, idéale pour une visite de 30 à 45 minutes.",
+          "distance": "Centre-ville",
+          "cost": "Gratuit",
+          "bestTime": "Matin (meilleure lumière)"
+        },
+        {
+          "name": "Porto Istana",
+          "category": "spiaggia",
+          "description": "Plage au sable très clair et aux eaux turquoise face à l'île de Tavolara, dont la zone marine protégée tire son nom. En basse saison, presque déserte ; en juillet-août arrivez tôt car le parking se remplit avant 10h00.",
+          "distance": "20 min du centre",
+          "cost": "Gratuit · parking 3-5 €/j",
+          "bestTime": "Tôt le matin"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Fiat Panda Hybrid",
+        "specs": [
+          {
+            "label": "Permis",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Places",
+            "value": "4-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Idéal pour",
+            "value": "Familles et couples",
+            "icon": "use"
+          },
+          {
+            "label": "Livraison",
+            "value": "Aéroport / Port",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Quel véhicule pour Olbia ?",
+        "subtitle": "Comparaison rapide pour choisir selon votre voyage.",
+        "recommendation": "<strong class='text-foreground'>Hub stratégique du nord-est de la Sardaigne.</strong> La Fiat Panda couvre 80 % des besoins de ceux qui atterrissent ou débarquent à Olbia (familles, couples, bagages). La Mercedes Classe A est le bon choix si vous avez des excursions quotidiennes vers Porto Cervo ou San Teodoro : boîte automatique, confort autoroutier. Le scooter Honda SH est le joker pour ceux qui restent en ville : en juillet-août, quand le centre se paralyse, c'est le seul véhicule qui continue vraiment à se déplacer."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Parking aéroport",
+          "text": "Parkings payants au terminal. Avec notre service VIP, inutile : nous vous livrons la voiture directement."
+        },
+        {
+          "icon": "traffic",
+          "title": "Trafic estival",
+          "text": "La SS125 vers le sud et la SS131 vers Porto Cervo se congestionnent les week-ends. Partez tôt ou choisissez le scooter."
+        },
+        {
+          "icon": "ztl",
+          "title": "Centre historique",
+          "text": "Le Corso Umberto est en ZTL les soirs d'été. Stationnez dans les rues latérales — la Panda entre partout."
+        },
+        {
+          "icon": "tip",
+          "title": "Vers la Costa Smeralda",
+          "text": "En 30 minutes vous atteignez <a href='/fr/location-voiture-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> et en 20 minutes <a href='/fr/location-voiture-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Jazz Hotel Rooftop",
+          "type": "lounge",
+          "desc": "Cocktails avec vue panoramique sur la ville et le golfe. Atmosphère raffinée."
+        },
+        {
+          "name": "Corso Umberto",
+          "type": "aperitivo",
+          "desc": "La promenade du soir avec des dizaines de bars et lounges. L'apéritif d'Olbia par excellence."
+        },
+        {
+          "name": "Officina del Gusto",
+          "type": "ristorante",
+          "desc": "Cuisine sarde contemporaine avec ingrédients en circuit court. Réservez à l'avance en haute saison."
+        },
+        {
+          "name": "Trattoria Il Porto",
+          "type": "ristorante",
+          "desc": "Poisson très frais directement des pêcheurs du port. Fregola aux palourdes immanquable."
+        },
+        {
+          "name": "B-Side",
+          "type": "club",
+          "desc": "Le club de référence. Musique live et DJ sets les week-ends d'été."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Aéroport OLB",
+        "Port Isola Bianca",
+        "Centre Olbia",
+        "Pittulongu",
+        "Tavolara",
+        "Livraison 24h/24"
+      ],
+      "faq": [
+        {
+          "q": "Livrez-vous la voiture directement à l'aéroport d'Olbia ?",
+          "a": "Oui ! Avec le service Livraison VIP, l'un de nos opérateurs vous attend aux arrivées du terminal avec le véhicule prêt, climatisé et plein effectué. Aucune attente."
+        },
+        {
+          "q": "Puis-je récupérer le véhicule au port Isola Bianca ?",
+          "a": "Bien sûr. Nous livrons au port en fonction de l'horaire effectif de débarquement de votre navire (Moby, Tirrenia, GNV). Nous gérons aussi les retards éventuels du ferry."
+        },
+        {
+          "q": "Quels véhicules sont disponibles à Olbia ?",
+          "a": "Toute notre flotte : <a href='/fr/flotte/fiat-panda' class='text-primary-foreground font-medium underline'>Fiat Panda</a>, <a href='/fr/flotte/honda-sh' class='text-primary-foreground font-medium underline'>Honda SH</a>, <a href='/fr/flotte/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor</a> et <a href='/fr/flotte/mercedes-classe-a180d' class='text-primary font-medium underline'>Mercedes Classe A</a>."
+        },
+        {
+          "q": "Combien de temps faut-il pour rejoindre Porto Cervo depuis Olbia ?",
+          "a": "Environ 30 minutes via la SS125. Avec la <a href='/fr/flotte/fiat-panda' class='text-primary font-medium underline'>Fiat Panda</a> ou la <a href='/fr/flotte/mercedes-classe-a180d' class='text-primary font-medium underline'>Mercedes</a>, le trajet est confortable et panoramique."
+        },
+        {
+          "q": "Acceptez-vous des paiements sans carte de crédit ?",
+          "a": "Contactez-nous sur WhatsApp pour des solutions de location personnalisées même sans carte de crédit traditionnelle."
+        }
+      ],
+      "closingParagraph": "Olbia est le kilomètre zéro de votre voyage dans le nord-est de la Sardaigne. En moins d'une demi-heure de route depuis l'aéroport Costa Smeralda, vous atteignez les criques de Capo Coda Cavallo, en 30 minutes vous êtes dans le shopping de luxe de <a href='/fr/location-voiture-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a>, en 25 minutes vous touchez les plages jeunes de <a href='/fr/location-voiture-a-san-teodoro' class='text-primary font-medium hover:underline'>San Teodoro</a> et en 20 vous êtes au port de ferries de <a href='/fr/location-voiture-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>. Ceux qui choisissent Olbia comme base ont l'avantage de rentrer chaque soir en ville pour la vie nocturne du Corso Umberto et la cuisine du port, avec la flexibilité de ne pas se lier à une seule destination. Pour planifier le retrait au terminal des ferries ou à l'aéroport, il suffit d'un message WhatsApp : nous organisons tout en fonction de l'horaire réel d'atterrissage ou de débarquement."
+    },
+    "de": {
+      "name": "Olbia",
+      "title": "Autovermietung Olbia | VIP-Übergabe Flughafen und Hafen | GDIS Rent",
+      "description": "Autovermietung Olbia ✓ VIP-Übergabe am Flughafen Costa Smeralda und am Hafen Isola Bianca ✓ Fiat Panda, Mercedes, Roller, Quad ✓ Marktgerechte Preise. WhatsApp rund um die Uhr.",
+      "heroSubtitle": "Tor zur Costa Smeralda. VIP-Übergabe am Flughafen und am Hafen Isola Bianca — Ihre Reise beginnt ohne Wartezeiten.",
+      "h1Prefix": "Autovermietung in",
+      "customSections": [
+        {
+          "variant": "airport",
+          "badge": "Flughafen Olbia Costa Smeralda",
+          "title": "Auto bereit bei der Landung am Flughafen",
+          "body": "Unser Autovermietungsservice am Flughafen Olbia ist für alle gedacht, die Schlangen an den Schaltern hassen. Vergessen Sie endlose Wartezeiten: Mit unserer VIP-Übergabe erwartet Sie einer unserer Mitarbeiter direkt im Ankunftsbereich. Egal, ob Sie einen <a href='/de/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda</a> für die Familie oder einen <a href='/de/flotte/honda-sh' class='text-primary font-medium hover:underline'>Roller</a> gewählt haben, um dem Verkehr zu trotzen — Ihre Reise beginnt in dem Moment, in dem Sie das Terminal verlassen.",
+          "bullets": [
+            "Keine Schlangen an den Mietwagen-Schaltern",
+            "24-Stunden-Assistenz für Ihren Flug",
+            "Reservierter Parkplatz für schnelle Abholung"
+          ],
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-aeroporto-olbia.webp",
+          "imageAlt": "Flughafen Olbia Costa Smeralda"
+        },
+        {
+          "variant": "port",
+          "badge": "Hafen Olbia — Isola Bianca",
+          "title": "Autovermietung am Hafen: anlegen und losfahren",
+          "body": "Sie kommen mit der Fähre nach Sardinien? Unser Autovermietungsservice am Hafen Olbia Isola Bianca deckt alle wichtigen Anlegestellen ab. Wir liefern das Fahrzeug (Auto, Roller oder Quad) direkt unter dem Schiff oder am Kreuzfahrtterminal. Ideal für alle, die schnell <a href='/de/autovermietung-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> oder <a href='/de/autovermietung-san-teodoro' class='text-primary font-medium hover:underline'>San Teodoro</a> erreichen möchten, ohne auf öffentliche Verkehrsmittel oder teure Taxis angewiesen zu sein.",
+          "callout": {
+            "title": "Warum uns am Hafen wählen?",
+            "text": "Wir liefern das Fahrzeug entsprechend der tatsächlichen Anlegezeit Ihres Schiffes und kümmern uns selbstständig um eventuelle Verspätungen der Fähren von Moby, Tirrenia und GNV."
+          },
+          "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp",
+          "imageAlt": "Hafen Isola Bianca Olbia"
+        }
+      ],
+      "spotlight": {
+        "tag": "Das richtige Fahrzeug für Olbia",
+        "title": "Vom Fiat Panda bis zur Mercedes: Wählen Sie Ihren Stil",
+        "description": "Olbia ist nicht nur der wichtigste Ankunftsknotenpunkt im Nordosten Sardiniens: Es ist auch der strategischste Ausgangspunkt, um die Costa Smeralda, das galluresische Hinterland und die Strände von Pittulongu bis Porto Istana zu erkunden. Wer in der Stadt bleibt — Spaziergänge auf dem Corso Umberto, Abendessen am Hafen, Ausflug zur Basilika San Simplicio — für den ist der Fiat Panda Hybrid die natürliche Wahl: Er kommt überall hinein, parkt in unmöglichen Lücken, und der niedrige Verbrauch macht ihn auch für den täglichen Einsatz perfekt. Wer bereits an tägliche Ausflüge nach Porto Cervo, San Teodoro oder Golfo Aranci denkt, für den bietet die Mercedes A-Klasse 180d überlegenen Autobahnkomfort und ein Automatikgetriebe, das die Anstrengung im Sommerverkehr der SS125 aufhebt. Der Honda SH Roller ist der Joker: Im Juli und August, wenn das Zentrum von Olbia rund um den Hafen lahmgelegt wird, ist er das einzige Fahrzeug, das sich wirklich noch bewegt. Und für Abenteuerliebhaber öffnet das Yamaha Raptor Quad die Tür zu den Schotterpisten des Hinterlands von Telti und Berchidda. Was auch immer Ihre Wahl ist, wir liefern das Fahrzeug direkt zum Flughafen, zum Hafen oder zu Ihrem Hotel — Klimaanlage bereits eingeschaltet und vollgetankt, abfahrbereit in dem Moment, in dem Sie ankommen.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
+        "imageAlt": "Fahrzeugflotte Autovermietung Olbia",
+        "badges": [
+          "VIP-Übergabe Flughafen",
+          "Übergabe am Hafen",
+          "24-Stunden-Assistenz"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Strand von Pittulongu",
+          "category": "spiaggia",
+          "description": "Der Stadtstrand von Olbia: weißer Sand, türkisfarbenes Wasser und flaches Wasser, geeignet für Kinder. Praktisch, weil nur 10 Minuten vom Stadtzentrum entfernt — ideal für ein abendliches Bad nach der Arbeit oder für alle, die nur einen halben Tag frei haben.",
+          "distance": "10 Min. vom Zentrum",
+          "cost": "Gratis · Parkplatz 5 €/Tag",
+          "bestTime": "Vormittag oder später Nachmittag"
+        },
+        {
+          "name": "Corso Umberto",
+          "category": "centro",
+          "description": "Die Fußgängerzone im Zentrum von Olbia. Geschäfte, traditionelle Eisdielen, Bars und Außenbereiche für den abendlichen Aperitif. Im Sommer ab 19:00 Uhr ZTL, perfekt für den Spaziergang vor dem Abendessen mit Blick auf die Liberty-Gebäude.",
+          "distance": "Stadtzentrum",
+          "cost": "Gratis",
+          "bestTime": "Abends (ZTL aktiv)"
+        },
+        {
+          "name": "Basilika San Simplicio",
+          "category": "monumento",
+          "description": "Juwel der pisanischen Romanik aus dem 11. Jahrhundert, aus lokalem Granit erbaut. Bewahrt frühchristliche Funde und die Ikonografie des heiligen Simplicio, des Schutzpatrons der Stadt. Freier Eintritt, ideal für einen Besuch von 30-45 Minuten.",
+          "distance": "Stadtzentrum",
+          "cost": "Gratis",
+          "bestTime": "Vormittag (bestes Licht)"
+        },
+        {
+          "name": "Porto Istana",
+          "category": "spiaggia",
+          "description": "Strand mit sehr hellem Sand und türkisfarbenem Wasser mit Blick auf die Insel Tavolara, nach der das Meeresschutzgebiet benannt ist. In der Nebensaison fast menschenleer; im Juli/August früh ankommen, da der Parkplatz bis 10:00 Uhr belegt ist.",
+          "distance": "20 Min. vom Zentrum",
+          "cost": "Gratis · Parkplatz 3-5 €/Tag",
+          "bestTime": "Früher Vormittag"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Fiat Panda Hybrid",
+        "specs": [
+          {
+            "label": "Führerschein",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Sitze",
+            "value": "4-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal für",
+            "value": "Familien & Paare",
+            "icon": "use"
+          },
+          {
+            "label": "Übergabe",
+            "value": "Flughafen / Hafen",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Welches Fahrzeug für Olbia?",
+        "subtitle": "Schneller Vergleich, um anhand Ihrer Reise zu wählen.",
+        "recommendation": "<strong class='text-foreground'>Strategischer Knotenpunkt im Nordosten Sardiniens.</strong> Der Fiat Panda deckt 80 % der Bedürfnisse derjenigen ab, die in Olbia landen oder anlegen (Familien, Paare, Gepäck). Die Mercedes A-Klasse ist die richtige Wahl, wenn Sie tägliche Ausflüge nach Porto Cervo oder San Teodoro unternehmen: Automatikgetriebe, Autobahnkomfort. Der Honda SH Roller ist der Joker für alle, die in der Stadt bleiben: Im Juli/August, wenn das Zentrum lahmgelegt ist, ist er das einzige Fahrzeug, das sich wirklich noch bewegt."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Parken am Flughafen",
+          "text": "Kostenpflichtige Parkplätze am Terminal. Mit unserem VIP-Service brauchen Sie diese nicht: Wir liefern das Auto direkt."
+        },
+        {
+          "icon": "traffic",
+          "title": "Sommerverkehr",
+          "text": "Die SS125 nach Süden und die SS131 nach Porto Cervo sind am Wochenende stark befahren. Fahren Sie früh los oder wählen Sie den Roller."
+        },
+        {
+          "icon": "ztl",
+          "title": "Historisches Zentrum",
+          "text": "Der Corso Umberto ist an Sommerabenden ZTL. Parken Sie in den Seitenstraßen — der Panda passt überall."
+        },
+        {
+          "icon": "tip",
+          "title": "Richtung Costa Smeralda",
+          "text": "In 30 Minuten erreichen Sie <a href='/de/autovermietung-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> und in 20 Minuten <a href='/de/autovermietung-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Jazz Hotel Rooftop",
+          "type": "lounge",
+          "desc": "Cocktails mit Panoramablick auf die Stadt und den Golf. Raffinierte Atmosphäre."
+        },
+        {
+          "name": "Corso Umberto",
+          "type": "aperitivo",
+          "desc": "Der abendliche Spaziergang mit Dutzenden Bars und Lounges. Der Olbia-Aperitif schlechthin."
+        },
+        {
+          "name": "Officina del Gusto",
+          "type": "ristorante",
+          "desc": "Zeitgenössische sardische Küche mit Zutaten aus der Region. Reservieren Sie in der Hochsaison im Voraus."
+        },
+        {
+          "name": "Trattoria Il Porto",
+          "type": "ristorante",
+          "desc": "Frischester Fisch direkt von den Fischern des Hafens. Fregola mit Venusmuscheln unbedingt probieren."
+        },
+        {
+          "name": "B-Side",
+          "type": "club",
+          "desc": "Der angesagteste Nachtclub. Live-Musik und DJ-Sets an den Sommerwochenenden."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Flughafen OLB",
+        "Hafen Isola Bianca",
+        "Zentrum Olbia",
+        "Pittulongu",
+        "Tavolara",
+        "Übergabe rund um die Uhr"
+      ],
+      "faq": [
+        {
+          "q": "Liefern Sie das Auto direkt zum Flughafen Olbia?",
+          "a": "Ja! Mit dem VIP-Übergabe-Service erwartet Sie einer unserer Mitarbeiter im Ankunftsterminal mit dem fahrbereiten Fahrzeug — klimatisiert und vollgetankt. Keine Wartezeiten."
+        },
+        {
+          "q": "Kann ich das Fahrzeug am Hafen Isola Bianca abholen?",
+          "a": "Selbstverständlich. Wir liefern am Hafen entsprechend der tatsächlichen Anlegezeit Ihres Schiffes (Moby, Tirrenia, GNV). Wir kümmern uns auch um eventuelle Verspätungen der Fähre."
+        },
+        {
+          "q": "Welche Fahrzeuge sind in Olbia verfügbar?",
+          "a": "Unsere gesamte Flotte: <a href='/de/flotte/fiat-panda' class='text-primary-foreground font-medium underline'>Fiat Panda</a>, <a href='/de/flotte/honda-sh' class='text-primary-foreground font-medium underline'>Honda SH</a>, <a href='/de/flotte/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor</a> und <a href='/de/flotte/mercedes-classe-a180d' class='text-primary font-medium underline'>Mercedes A-Klasse</a>."
+        },
+        {
+          "q": "Wie lange dauert es, von Olbia nach Porto Cervo zu kommen?",
+          "a": "Etwa 30 Minuten über die SS125. Mit dem <a href='/de/flotte/fiat-panda' class='text-primary font-medium underline'>Fiat Panda</a> oder der <a href='/de/flotte/mercedes-classe-a180d' class='text-primary font-medium underline'>Mercedes</a> ist die Fahrt komfortabel und landschaftlich reizvoll."
+        },
+        {
+          "q": "Akzeptieren Sie Zahlungen ohne Kreditkarte?",
+          "a": "Kontaktieren Sie uns über WhatsApp für maßgeschneiderte Mietlösungen auch ohne herkömmliche Kreditkarte."
+        }
+      ],
+      "closingParagraph": "Olbia ist Kilometer null Ihrer Reise im Nordosten Sardiniens. In weniger als einer halben Stunde Fahrt vom Flughafen Costa Smeralda erreichen Sie die Buchten von Capo Coda Cavallo, in 30 Minuten sind Sie im Luxus-Shopping von <a href='/de/autovermietung-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a>, in 25 Minuten an den jugendlichen Stränden von <a href='/de/autovermietung-san-teodoro' class='text-primary font-medium hover:underline'>San Teodoro</a> und in 20 am Fährhafen von <a href='/de/autovermietung-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>. Wer Olbia als Basis wählt, hat den Vorteil, jeden Abend in die Stadt zur Movida des Corso Umberto und zur Hafenküche zurückzukehren — mit der Flexibilität, sich nicht an einen einzigen Ort zu binden. Um die Abholung am Fährterminal oder am Flughafen zu planen, genügt eine WhatsApp-Nachricht: Wir organisieren alles auf Basis der tatsächlichen Lande- oder Anlegezeit."
+    }
+  }
 }

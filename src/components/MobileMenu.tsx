@@ -1,29 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Menu, X, ChevronDown, Car, Bike, Mountain, MapPin, Mail, Plane, Anchor, Train, Sparkles } from "lucide-react";
-
-const flottaItems = [
-  { label: "City Car", to: "/flotta/fiat-panda", icon: Car, desc: "Fiat Panda Hybrid" },
-  { label: "Premium", to: "/flotta/mercedes-classe-a180d", icon: Car, desc: "Mercedes Classe A 180d" },
-  { label: "Scooter", to: "/flotta/honda-sh", icon: Bike, desc: "Honda SH 125 / 350" },
-  { label: "Quad", to: "/flotta/yamaha-raptor", icon: Mountain, desc: "Yamaha Raptor 700" },
-];
-
-const hubTrasportiItems = [
-  { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", icon: Sparkles, desc: "Hub Regionale" },
-  { label: "Aeroporto Olbia", to: "/noleggio-auto-aeroporto-olbia", icon: Plane, desc: "OLB · Costa Smeralda" },
-  { label: "Porto Olbia", to: "/noleggio-auto-porto-olbia", icon: Anchor, desc: "Isola Bianca · Traghetti" },
-  { label: "Stazione Olbia", to: "/noleggio-auto-stazione-olbia", icon: Train, desc: "Centro · Treni" },
-];
-
-const localitaItems = [
-  { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: "Famiglie & Coppie" },
-  { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo", desc: "Lusso & Marina" },
-  { label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro", desc: "Spiagge & Movida" },
-  { label: "San Pantaleo", to: "/noleggio-auto-a-san-pantaleo", desc: "Borgo Bohémien" },
-  { label: "Porto Rotondo", to: "/noleggio-auto-a-porto-rotondo", desc: "Eleganza Discreta" },
-  { label: "Golfo Aranci", to: "/noleggio-auto-a-golfo-aranci", desc: "Terminal Traghetti" },
-  { label: "Baja Sardinia", to: "/noleggio-auto-a-baja-sardinia", desc: "Phi Beach & Party" },
-];
+import {
+  DEFAULT_LOCALE,
+  LOCALES,
+  LOCALE_FLAGS,
+  useTranslations as makeT,
+  type Locale,
+} from "@/i18n/utils";
 
 const HUB_PATHS = [
   "/noleggio-auto-in-costa-smeralda",
@@ -32,18 +15,72 @@ const HUB_PATHS = [
   "/noleggio-auto-stazione-olbia",
 ];
 
-const links = [
-  { label: "Home", to: "/" },
-  { label: "Chi Siamo", to: "/chisiamo" },
-  { label: "Contatti", to: "/contatti" },
-];
-
 const GDIS_LOGO =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 
-type Props = { pathname: string; logoSrc?: string };
+type Props = {
+  pathname: string;
+  logoSrc?: string;
+  lang?: Locale;
+  /** JSON-stringified Partial<Record<Locale, string>> | null — passed as string because Astro→React props serialize. */
+  alternatesJson?: string;
+};
 
-const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
+const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO, lang = DEFAULT_LOCALE, alternatesJson }: Props) => {
+  const t = useMemo(() => makeT(lang), [lang]);
+
+  const flottaItems = useMemo(
+    () => [
+      { label: t("nav.fleet.cityCar"), to: "/flotta/fiat-panda", icon: Car, desc: "Fiat Panda Hybrid" },
+      { label: t("nav.fleet.premium"), to: "/flotta/mercedes-classe-a180d", icon: Car, desc: "Mercedes Classe A 180d" },
+      { label: t("nav.fleet.scooter"), to: "/flotta/honda-sh", icon: Bike, desc: "Honda SH 125 / 350" },
+      { label: t("nav.fleet.quad"), to: "/flotta/yamaha-raptor", icon: Mountain, desc: "Yamaha Raptor 700" },
+    ],
+    [t],
+  );
+
+  const hubTrasportiItems = useMemo(
+    () => [
+      { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", icon: Sparkles, desc: t("nav.hub.regionale") },
+      { label: "Aeroporto Olbia", to: "/noleggio-auto-aeroporto-olbia", icon: Plane, desc: t("nav.hub.olbCS") },
+      { label: "Porto Olbia", to: "/noleggio-auto-porto-olbia", icon: Anchor, desc: t("nav.hub.isolaBianca") },
+      { label: "Stazione Olbia", to: "/noleggio-auto-stazione-olbia", icon: Train, desc: t("nav.hub.centroTreni") },
+    ],
+    [t],
+  );
+
+  const localitaItems = useMemo(
+    () => [
+      { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: t("nav.places.olbia") },
+      { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo", desc: t("nav.places.portoCervo") },
+      { label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro", desc: t("nav.places.sanTeodoro") },
+      { label: "San Pantaleo", to: "/noleggio-auto-a-san-pantaleo", desc: t("nav.places.sanPantaleo") },
+      { label: "Porto Rotondo", to: "/noleggio-auto-a-porto-rotondo", desc: t("nav.places.portoRotondo") },
+      { label: "Golfo Aranci", to: "/noleggio-auto-a-golfo-aranci", desc: t("nav.places.golfoAranci") },
+      { label: "Baja Sardinia", to: "/noleggio-auto-a-baja-sardinia", desc: t("nav.places.bajaSardinia") },
+    ],
+    [t],
+  );
+
+  const links = useMemo(
+    () => [
+      { label: t("nav.home"), to: "/" },
+      { label: t("nav.chisiamo"), to: "/chisiamo" },
+      { label: t("nav.contatti"), to: "/contatti" },
+    ],
+    [t],
+  );
+
+  const alternates = useMemo<Partial<Record<Locale, string>> | null>(() => {
+    if (!alternatesJson) return null;
+    try {
+      const parsed = JSON.parse(alternatesJson);
+      return parsed && typeof parsed === "object" ? parsed : null;
+    } catch {
+      return null;
+    }
+  }, [alternatesJson]);
+
   const [open, setOpen] = useState(false);
   const [flottaOpen, setFlottaOpen] = useState(false);
   const [hubOpen, setHubOpen] = useState(false);
@@ -84,7 +121,7 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
         className="md:hidden relative z-[60] text-foreground"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-label={open ? "Chiudi menu" : "Apri menu"}
+        aria-label={open ? t("common.closeMenu") : t("common.openMenu")}
       >
         {open ? <X size={28} className="text-white" /> : <Menu size={26} />}
       </button>
@@ -104,7 +141,7 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
             <button
               onClick={close}
               className="text-white p-2 hover:bg-white/10 rounded-xl transition-colors"
-              aria-label="Chiudi menu"
+              aria-label={t("common.closeMenu")}
             >
               <X size={28} />
             </button>
@@ -118,7 +155,7 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
               onClick={close}
               className="inline-flex items-center justify-center gap-2 w-full h-12 px-8 text-base font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all py-5"
             >
-              Prenota Ora
+              {t("cta.prenotaOra")}
             </a>
           </div>
           <div className="container flex flex-col gap-1 pt-6 pb-32">
@@ -142,7 +179,7 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
                   isFlottaActive ? "text-primary" : "text-white hover:text-primary"
                 }`}
               >
-                Flotta
+                {t("nav.flotta")}
                 <ChevronDown
                   className={`h-6 w-6 transition-transform duration-300 ${flottaOpen ? "rotate-180" : ""}`}
                 />
@@ -176,7 +213,7 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
                   isHubActive ? "text-primary" : "text-white hover:text-primary"
                 }`}
               >
-                Hub Trasporti
+                {t("nav.hubTrasporti")}
                 <ChevronDown
                   className={`h-6 w-6 transition-transform duration-300 ${hubOpen ? "rotate-180" : ""}`}
                 />
@@ -210,7 +247,7 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
                   isLocalitaActive ? "text-primary" : "text-white hover:text-primary"
                 }`}
               >
-                Località
+                {t("nav.localita")}
                 <ChevronDown
                   className={`h-6 w-6 transition-transform duration-300 ${localitaOpen ? "rotate-180" : ""}`}
                 />
@@ -239,7 +276,50 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO }: Props) => {
 
             <div className="mt-10 pt-6 border-t border-white/10 flex flex-col gap-3">
               <p className="text-xs uppercase tracking-widest text-slate-500 font-medium">
-                Contattaci
+                {t("nav.switcher.label")}
+              </p>
+              <ul className="flex flex-wrap gap-2 mb-4" aria-label={t("nav.switcher.label")}>
+                {LOCALES.map((loc) => {
+                  const isCurrent = loc === lang;
+                  const declared = alternates?.[loc];
+                  const isAvailable = isCurrent || declared !== undefined;
+                  const href = declared ?? (loc === DEFAULT_LOCALE ? "/" : `/${loc}`);
+                  if (!isAvailable) {
+                    return (
+                      <li key={loc}>
+                        <span
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border border-white/10 text-white/30 cursor-not-allowed"
+                          title={t("nav.switcher.comingSoon")}
+                          aria-disabled
+                        >
+                          <span aria-hidden>{LOCALE_FLAGS[loc]}</span>
+                          <span className="uppercase tracking-wider text-xs">{loc}</span>
+                        </span>
+                      </li>
+                    );
+                  }
+                  return (
+                    <li key={loc}>
+                      <a
+                        href={href}
+                        hrefLang={loc}
+                        aria-current={isCurrent ? "true" : undefined}
+                        onClick={close}
+                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                          isCurrent
+                            ? "bg-primary text-primary-foreground"
+                            : "border border-white/15 text-white hover:bg-white/10"
+                        }`}
+                      >
+                        <span aria-hidden>{LOCALE_FLAGS[loc]}</span>
+                        <span className="uppercase tracking-wider text-xs">{loc}</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="text-xs uppercase tracking-widest text-slate-500 font-medium">
+                {t("nav.contattaci")}
               </p>
               <a
                 href="https://wa.me/393520459150"

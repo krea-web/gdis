@@ -1,0 +1,98 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BUSINESS_LEGAL_NAME, BUSINESS_EMAIL, BUSINESS_VAT } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Accueil", url: "/fr" },
+  { name: "Conditions générales", url: "/fr/conditions-generales" },
+];
+---
+
+<BaseLayout
+  title="Conditions générales de location — GDIS Rent & Service"
+  description="Conditions générales du service de location de voitures, scooters et quads proposé par GDIS Service S.R.L. à Olbia et en Costa Smeralda."
+  canonical="/fr/conditions-generales"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/termini", en: "/en/terms", de: "/de/agb" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Conditions générales de location</h1>
+    <p class="text-sm text-muted-foreground">Dernière mise à jour : 24 avril 2026</p>
+
+    <h2>1. Parties</h2>
+    <p>
+      Le présent contrat est conclu entre <strong>{BUSINESS_LEGAL_NAME}</strong> — n° de TVA{" "}
+      {BUSINESS_VAT}, siège social à Via Annibale Caro 52, 07026 Olbia (SS) — en qualité de
+      Loueur, et le Client qui effectue la réservation (le "Conducteur").
+    </p>
+
+    <h2>2. Conditions à remplir par le conducteur</h2>
+    <ul>
+      <li>Âge minimum 21 ans (25 ans pour les véhicules Premium).</li>
+      <li>Permis de conduire valide depuis au moins 2 ans (catégorie adaptée au véhicule).</li>
+      <li>Pièce d'identité valide.</li>
+      <li>Carte de crédit ou moyen de paiement adapté au dépôt de garantie.</li>
+    </ul>
+
+    <h2>3. Réservation et paiement</h2>
+    <p>
+      La réservation n'est confirmée qu'après la signature du contrat numérique et, si requis, le
+      versement de l'acompte. Le solde est dû au moment de la prise en charge du véhicule, en même
+      temps que le dépôt de garantie.
+    </p>
+
+    <h2>4. Prise en charge et restitution</h2>
+    <p>
+      Le véhicule est livré avec le plein de carburant et dans un état vérifié par photos. La
+      restitution doit avoir lieu à l'heure convenue, avec le plein de carburant et dans le même
+      état. En cas de retard non convenu, une pénalité équivalente à un jour de location est
+      appliquée.
+    </p>
+
+    <h2>5. Franchise et responsabilité</h2>
+    <p>
+      Le Conducteur est responsable des dommages éventuels causés au véhicule, dans la limite de
+      la franchise indiquée au moment de la réservation. Les dommages imputables à un acte
+      intentionnel ou à une faute grave, à la conduite en état d'ivresse ou sous l'emprise de
+      stupéfiants entraînent la déchéance de la couverture et l'imputation intégrale des coûts.
+    </p>
+
+    <h2>6. Interdictions</h2>
+    <ul>
+      <li>Il est interdit de céder le véhicule à des conducteurs non autorisés.</li>
+      <li>Il est interdit de transporter des animaux non autorisés ou des marchandises dangereuses.</li>
+      <li>Il est interdit de fumer à l'intérieur des véhicules (pénalité de nettoyage 150 €).</li>
+      <li>Il est interdit de sortir le véhicule du territoire national sans autorisation écrite.</li>
+    </ul>
+
+    <h2>7. Annulation</h2>
+    <ul>
+      <li>Jusqu'à 72h avant la prise en charge : remboursement intégral de l'acompte.</li>
+      <li>Entre 72h et 24h : retenue de 50 % de l'acompte.</li>
+      <li>Moins de 24h ou non-présentation : retenue intégrale de l'acompte.</li>
+    </ul>
+
+    <h2>8. Sinistres et vol</h2>
+    <p>
+      En cas de sinistre, le Conducteur doit remplir le constat amiable européen (CAI) et avertir
+      immédiatement le numéro <a href="tel:+393520459150">+39 352 045 9150</a>. En cas de vol, le
+      dépôt de plainte auprès des Autorités et la remise des clés d'origine sont obligatoires.
+    </p>
+
+    <h2>9. Loi applicable et juridiction compétente</h2>
+    <p>
+      Le présent contrat est régi par la loi italienne. Pour tout litige, le Tribunal de Tempio
+      Pausania est exclusivement compétent — sous réserve de l'application des règles impératives
+      de protection du consommateur.
+    </p>
+
+    <h2>10. Contact</h2>
+    <p>
+      Pour toute information contractuelle, écrivez à <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>.
+    </p>
+  </article>
+</BaseLayout>
