@@ -4,6 +4,7 @@ import {
   DEFAULT_LOCALE,
   LOCALES,
   LOCALE_FLAGS,
+  HREFLANG_TAGS,
   useTranslations as makeT,
   type Locale,
 } from "@/i18n/utils";
@@ -302,7 +303,7 @@ const MobileMenu = ({ pathname, logoSrc = GDIS_LOGO, lang = DEFAULT_LOCALE, alte
                     <li key={loc}>
                       <a
                         href={href}
-                        hrefLang={loc}
+                        hrefLang={HREFLANG_TAGS[loc]}
                         aria-current={isCurrent ? "true" : undefined}
                         onClick={close}
                         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${

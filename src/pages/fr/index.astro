@@ -24,7 +24,7 @@ const serviceSchemas = [
     ],
     url: `${SITE_URL}/noleggio-auto-a-olbia`,
     name: "Location de voitures à Olbia et en Costa Smeralda",
-    inLanguage: "fr",
+    inLanguage: "fr-FR",
   },
   {
     "@context": "https://schema.org",
@@ -34,7 +34,7 @@ const serviceSchemas = [
     areaServed: [{ "@type": "City", name: "Olbia" }],
     url: `${SITE_URL}/flotta/honda-sh`,
     name: "Location de scooters Honda SH à Olbia",
-    inLanguage: "fr",
+    inLanguage: "fr-FR",
   },
   {
     "@context": "https://schema.org",
@@ -44,7 +44,7 @@ const serviceSchemas = [
     areaServed: [{ "@type": "AdministrativeArea", name: "Gallura" }],
     url: `${SITE_URL}/flotta/yamaha-raptor`,
     name: "Location de quads Yamaha Raptor en Sardaigne",
-    inLanguage: "fr",
+    inLanguage: "fr-FR",
   },
 ];
 
@@ -68,7 +68,7 @@ const fleetCards = [
     description: "Design compact et élégance pour vous déplacer en ville et découvrir la côte avec un maximum de confort. L'option parfaite pour la Costa Smeralda.",
     image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-fiatpandacitycar.png",
     price: VEHICLE_PRICE_FROM.city_car,
-    link: "/flotta/fiat-panda",
+    link: "/fr/flotte/fiat-panda",
     cta: "En savoir plus",
   },
   {
@@ -78,7 +78,7 @@ const fleetCards = [
     description: "Élégance allemande et technologie MBUX pour vivre la Costa Smeralda avec le plus grand confort. Boîte automatique, diesel efficient, 5 places.",
     image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-mercedessupercarclassea180d.png",
     price: VEHICLE_PRICE_FROM.premium,
-    link: "/flotta/mercedes-classe-a180d",
+    link: "/fr/flotte/mercedes-classe-a180d",
     cta: "En savoir plus",
   },
   {
@@ -88,7 +88,7 @@ const fleetCards = [
     description: "Puissance et adrénaline pure. Explorez les sentiers non goudronnés et les plages cachées que les voitures ne peuvent pas atteindre.",
     image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-yamahaquadraptor.png",
     price: VEHICLE_PRICE_FROM.quad,
-    link: "/flotta/yamaha-raptor",
+    link: "/fr/flotte/yamaha-raptor",
     cta: "En savoir plus",
   },
   {
@@ -98,7 +98,7 @@ const fleetCards = [
     description: "Évitez les embouteillages et profitez d'une liberté absolue. Sentez la brise méditerranéenne sur votre peau à chaque déplacement.",
     image: "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdis-hondascooter350.png",
     price: VEHICLE_PRICE_FROM.scooter,
-    link: "/flotta/honda-sh",
+    link: "/fr/flotte/honda-sh",
     cta: "En savoir plus",
   },
 ];
@@ -108,7 +108,7 @@ const destinations = [
     name: "Porto Cervo",
     desc: "Luxe, yachts et la Promenade du Port.",
     path: "locations/porto-cervo/gdisrent-noleggio-porto-cervo.webp",
-    to: "/noleggio-auto-a-porto-cervo",
+    to: "/fr/location-voiture-a-porto-cervo",
     span: "md:col-span-2 md:row-span-2",
     imgWidth: 900,
     imgHeight: 900,
@@ -118,7 +118,7 @@ const destinations = [
     name: "San Teodoro",
     desc: "La Cinta, vie nocturne et plages infinies.",
     path: "locations/san-teodoro/gdisrent-noleggio-san-teodoro.webp",
-    to: "/noleggio-auto-a-san-teodoro",
+    to: "/fr/location-voiture-a-san-teodoro",
     span: "md:col-span-2",
     imgWidth: 900,
     imgHeight: 450,
@@ -128,7 +128,7 @@ const destinations = [
     name: "Baja Sardinia",
     desc: "Phi Beach et couchers de soleil légendaires.",
     path: "locations/baja-sardinia/gdisrent-noleggio-baja-sardinia.webp",
-    to: "/noleggio-auto-a-baja-sardinia",
+    to: "/fr/location-voiture-a-baja-sardinia",
     span: "",
     imgWidth: 450,
     imgHeight: 450,
@@ -138,7 +138,7 @@ const destinations = [
     name: "Olbia",
     desc: "Aéroport et porte d'entrée de la Costa Smeralda.",
     path: "locations/olbia/gdisrent-noleggio-auto-olbia.webp",
-    to: "/noleggio-auto-a-olbia",
+    to: "/fr/location-voiture-a-olbia",
     span: "",
     imgWidth: 450,
     imgHeight: 450,
@@ -148,7 +148,7 @@ const destinations = [
     name: "Porto Rotondo",
     desc: "Criques secrètes et aventure tout-terrain.",
     path: "locations/porto-rotondo/gdisrent-noleggio-porto-rotondo.webp",
-    to: "/noleggio-auto-a-porto-rotondo",
+    to: "/fr/location-voiture-a-porto-rotondo",
     span: "",
     imgWidth: 450,
     imgHeight: 450,
@@ -158,7 +158,7 @@ const destinations = [
     name: "San Pantaleo",
     desc: "Village bohème et marché du jeudi.",
     path: "locations/san-pantaleo/gdisrent-noleggio-san-pantaleo.webp",
-    to: "/noleggio-auto-a-san-pantaleo",
+    to: "/fr/location-voiture-a-san-pantaleo",
     span: "",
     imgWidth: 450,
     imgHeight: 450,
@@ -168,7 +168,7 @@ const destinations = [
     name: "Golfo Aranci",
     desc: "Ferries, dauphins et Cala Moresca.",
     path: "locations/golfo-aranci/gdisrent-noleggio-golfo-aranci.webp",
-    to: "/noleggio-auto-a-golfo-aranci",
+    to: "/fr/location-voiture-a-golfo-aranci",
     span: "",
     imgWidth: 450,
     imgHeight: 450,
@@ -182,21 +182,21 @@ const reviews = [
     location: "Milan",
     text: "Service impeccable ! La Panda nous attendait directement au port d'Olbia. Tout était parfait, nous reviendrons certainement.",
     linkWord: "Panda",
-    linkTo: "/flotta/fiat-panda",
+    linkTo: "/fr/flotte/fiat-panda",
   },
   {
     name: "Sophie L.",
     location: "Paris",
     text: "Les scooters Honda SH sont en parfait état. Nous avons exploré la Costa Smeralda en toute liberté. Livraison VIP fantastique !",
     linkWord: "Honda SH",
-    linkTo: "/flotta/honda-sh",
+    linkTo: "/fr/flotte/honda-sh",
   },
   {
     name: "Alessandro D.",
     location: "Rome",
     text: "Le quad Yamaha Raptor est une bête ! Des plages cachées accessibles uniquement en tout-terrain. Expérience unique, équipe très sympathique.",
     linkWord: "Yamaha Raptor",
-    linkTo: "/flotta/yamaha-raptor",
+    linkTo: "/fr/flotte/yamaha-raptor",
   },
 ];
 
@@ -231,9 +231,9 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
         Location en Costa Smeralda.
       </h1>
       <p class="text-lg md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-        <a href="/flotta/fiat-panda" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">Citadines</a>,{" "}
-        <a href="/flotta/honda-sh" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">scooters</a>,{" "}
-        <a href="/flotta/yamaha-raptor" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">quads</a>{" "}
+        <a href="/fr/flotte/fiat-panda" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">Citadines</a>,{" "}
+        <a href="/fr/flotte/honda-sh" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">scooters</a>,{" "}
+        <a href="/fr/flotte/yamaha-raptor" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">quads</a>{" "}
         et luxe. <br class="hidden md:block" /> Explorez la Sardaigne sans limites.
       </p>
       <div class="flex flex-col sm:flex-row items-center gap-6">
@@ -355,11 +355,11 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
                 Nous apportons votre véhicule partout : villa, yacht, hôtel ou aéroport. Dans toute la Costa Smeralda.
               </p>
               <div class="grid grid-cols-2 gap-3 mb-8">
-                <a href="/noleggio-auto-a-olbia" class="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors">
+                <a href="/fr/location-voiture-a-olbia" class="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground/80 flex-shrink-0"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
                   <span class="text-sm font-medium text-primary-foreground/90">Aéroport d'Olbia</span>
                 </a>
-                <a href="/noleggio-auto-a-porto-cervo" class="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors">
+                <a href="/fr/location-voiture-a-porto-cervo" class="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground/80 flex-shrink-0"><circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
                   <span class="text-sm font-medium text-primary-foreground/90">Porto Cervo</span>
                 </a>
@@ -367,7 +367,7 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground/80 flex-shrink-0"><path d="M12 22V12"/><path d="M2 22V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14"/><path d="M5 11V6"/><path d="M9 11V6"/><path d="M15 11V6"/><path d="M19 11V6"/></svg>
                   <span class="text-sm font-medium text-primary-foreground/90">Hôtel & villa</span>
                 </div>
-                <a href="/noleggio-auto-a-san-teodoro" class="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors">
+                <a href="/fr/location-voiture-a-san-teodoro" class="flex items-center gap-2 bg-primary-foreground/10 rounded-xl px-3 py-3 backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground/80 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   <span class="text-sm font-medium text-primary-foreground/90">San Teodoro</span>
                 </a>
@@ -527,9 +527,9 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
             <span class="italic font-light text-white/70">100 % numérique.</span>
           </h3>
           <p class="text-white/60 text-lg md:text-xl font-light leading-relaxed mb-8">
-            <a href="/flotta/fiat-panda" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">Citadines</a>,{" "}
-            <a href="/flotta/honda-sh" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">scooters</a> et{" "}
-            <a href="/flotta/yamaha-raptor" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">quads</a> prêts en moins de 2 minutes. Choisissez le véhicule, signez en ligne et récupérez les clés. Votre temps est précieux.
+            <a href="/fr/flotte/fiat-panda" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">Citadines</a>,{" "}
+            <a href="/fr/flotte/honda-sh" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">scooters</a> et{" "}
+            <a href="/fr/flotte/yamaha-raptor" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">quads</a> prêts en moins de 2 minutes. Choisissez le véhicule, signez en ligne et récupérez les clés. Votre temps est précieux.
           </p>
           <ul class="flex items-center gap-4 text-sm text-white/50 font-medium list-none">
             <li class="flex items-center gap-2">

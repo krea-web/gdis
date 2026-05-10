@@ -107,16 +107,29 @@ export function buildLocalBusinessSchema(options: {
   };
 }
 
-/** WebSite + potentialAction (sitelinks search box) — useful once on homepage. */
-export const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${SITE_URL}/#website`,
-  url: SITE_URL,
-  name: BUSINESS_NAME,
-  inLanguage: "it-IT",
-  publisher: { "@id": `${SITE_URL}/#organization` },
+type SiteLocale = "it" | "en" | "de" | "fr";
+const LOCALE_IETF: Record<SiteLocale, string> = {
+  it: "it-IT",
+  en: "en-GB",
+  de: "de-DE",
+  fr: "fr-FR",
 };
+
+/** WebSite schema — emit one per page, customised by locale. */
+export function buildWebsiteSchema(locale: SiteLocale = "it") {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: BUSINESS_NAME,
+    inLanguage: LOCALE_IETF[locale],
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
+/** Backwards-compatible IT WebSite schema (used by BaseLayout's default emit). */
+export const websiteSchema = buildWebsiteSchema("it");
 
 /** Build a Product schema for a fleet vehicle. */
 export function buildProductSchema(opts: {
@@ -155,11 +168,12 @@ export function buildProductSchema(opts: {
 /** Build a FAQPage schema from a list of {q,a} pairs. Optional speakable hint for AI/voice. */
 export function buildFaqSchema(
   faq: Array<{ q: string; a: string }>,
-  opts: { speakable?: boolean } = {},
+  opts: { speakable?: boolean; locale?: SiteLocale } = {},
 ) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: LOCALE_IETF[opts.locale ?? "it"],
     ...(opts.speakable && {
       speakable: {
         "@type": "SpeakableSpecification",
@@ -177,6 +191,13 @@ export function buildFaqSchema(
   };
 }
 
+const BOOKING_PATH_BY_LOCALE: Record<SiteLocale, string> = {
+  it: "/prenotaora",
+  en: "/en/book-now",
+  de: "/de/jetzt-buchen",
+  fr: "/fr/reserver",
+};
+
 /** Build a Service schema for a transport hub (airport/port/station/region). */
 export function buildServiceSchema(opts: {
   name: string;
@@ -184,7 +205,9 @@ export function buildServiceSchema(opts: {
   url: string;
   serviceType?: string;
   areaServed: Array<{ "@type": string; name: string }> | string;
+  locale?: SiteLocale;
 }) {
+  const locale = opts.locale ?? "it";
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -195,9 +218,10 @@ export function buildServiceSchema(opts: {
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: opts.areaServed,
     url: `${SITE_URL}${opts.url}`,
+    inLanguage: LOCALE_IETF[locale],
     availableChannel: {
       "@type": "ServiceChannel",
-      serviceUrl: `${SITE_URL}/prenotaora`,
+      serviceUrl: `${SITE_URL}${BOOKING_PATH_BY_LOCALE[locale]}`,
       servicePhone: BUSINESS_PHONE,
     },
   };

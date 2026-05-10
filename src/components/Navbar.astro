@@ -2,7 +2,7 @@
 import MobileMenu from "@/components/MobileMenu.tsx";
 import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
 import { supabaseImg } from "@/lib/img";
-import { getLangFromUrl, useTranslations, type Locale } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations, getRoute, getFleetPath, getLocationPath, type Locale } from "@/i18n/utils";
 
 export interface Props {
   /** Forwarded to LanguageSwitcher so it knows which translations exist for the current page. */
@@ -12,50 +12,56 @@ export interface Props {
 const { i18nAlternates } = Astro.props;
 
 const path = new URL(Astro.request.url).pathname.replace(/\/$/, "") || "/";
-const isHome = path === "/";
-const isFlottaActive = path.startsWith("/flotta");
-const HUB_PATHS = [
-  "/noleggio-auto-in-costa-smeralda",
-  "/noleggio-auto-aeroporto-olbia",
-  "/noleggio-auto-porto-olbia",
-  "/noleggio-auto-stazione-olbia",
-];
-const isHubActive = HUB_PATHS.includes(path);
-const isLocalitaActive = path.startsWith("/noleggio-auto-a-");
-const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
-
 const currentLang: Locale = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
+const homeHref = getRoute("home", currentLang);
+const isHome = path === homeHref || path === "/" + currentLang || (currentLang === "it" && path === "/");
+const fleetPrefix = getFleetPath("", currentLang).replace(/\/$/, "");
+const isFlottaActive = path.startsWith(fleetPrefix + "/");
+const HUB_PATHS = [
+  getRoute("hubCostaSmeralda", currentLang),
+  getRoute("hubAirport", currentLang),
+  getRoute("hubPort", currentLang),
+  getRoute("hubStation", currentLang),
+];
+const isHubActive = HUB_PATHS.includes(path);
+const locationPrefix = getLocationPath("", currentLang).replace(/-$/, "-");
+const isLocalitaActive = path.startsWith(locationPrefix);
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
+const logoAlt = t("common.logoAlt");
 
 const links = [
-  { label: t("nav.home"), to: "/" },
-  { label: t("nav.chisiamo"), to: "/chisiamo" },
-  { label: t("nav.contatti"), to: "/contatti" },
+  { label: t("nav.home"), to: homeHref },
+  { label: t("nav.chisiamo"), to: getRoute("about", currentLang) },
+  { label: t("nav.contatti"), to: getRoute("contact", currentLang) },
 ];
 
 const flottaItems = [
-  { label: t("nav.fleet.cityCar"), to: "/flotta/fiat-panda", icon: "car", desc: "Fiat Panda Hybrid" },
-  { label: t("nav.fleet.premium"), to: "/flotta/mercedes-classe-a180d", icon: "star", desc: "Mercedes Classe A 180d" },
-  { label: t("nav.fleet.scooter"), to: "/flotta/honda-sh", icon: "bike", desc: "Honda SH 125 / 350" },
-  { label: t("nav.fleet.quad"), to: "/flotta/yamaha-raptor", icon: "mountain", desc: "Yamaha Raptor 700" },
+  { label: t("nav.fleet.cityCar"), to: getFleetPath("fiat-panda", currentLang), icon: "car", desc: "Fiat Panda Hybrid" },
+  { label: t("nav.fleet.premium"), to: getFleetPath("mercedes-classe-a180d", currentLang), icon: "star", desc: "Mercedes Classe A 180d" },
+  { label: t("nav.fleet.scooter"), to: getFleetPath("honda-sh", currentLang), icon: "bike", desc: "Honda SH 125 / 350" },
+  { label: t("nav.fleet.quad"), to: getFleetPath("yamaha-raptor", currentLang), icon: "mountain", desc: "Yamaha Raptor 700" },
 ];
 
 const hubTrasportiItems = [
-  { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda", icon: "sparkles", desc: t("nav.hub.regionale") },
-  { label: "Aeroporto Olbia", to: "/noleggio-auto-aeroporto-olbia", icon: "plane", desc: t("nav.hub.olbCS") },
-  { label: "Porto Olbia", to: "/noleggio-auto-porto-olbia", icon: "anchor", desc: t("nav.hub.isolaBianca") },
-  { label: "Stazione Olbia", to: "/noleggio-auto-stazione-olbia", icon: "train", desc: t("nav.hub.centroTreni") },
+  { label: "Costa Smeralda", to: getRoute("hubCostaSmeralda", currentLang), icon: "sparkles", desc: t("nav.hub.regionale") },
+  { label: "Aeroporto Olbia", to: getRoute("hubAirport", currentLang), icon: "plane", desc: t("nav.hub.olbCS") },
+  { label: "Porto Olbia", to: getRoute("hubPort", currentLang), icon: "anchor", desc: t("nav.hub.isolaBianca") },
+  { label: "Stazione Olbia", to: getRoute("hubStation", currentLang), icon: "train", desc: t("nav.hub.centroTreni") },
 ];
 
 const localitaItems = [
-  { label: "Olbia", to: "/noleggio-auto-a-olbia", desc: t("nav.places.olbia") },
-  { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo", desc: t("nav.places.portoCervo") },
-  { label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro", desc: t("nav.places.sanTeodoro") },
-  { label: "San Pantaleo", to: "/noleggio-auto-a-san-pantaleo", desc: t("nav.places.sanPantaleo") },
-  { label: "Porto Rotondo", to: "/noleggio-auto-a-porto-rotondo", desc: t("nav.places.portoRotondo") },
-  { label: "Golfo Aranci", to: "/noleggio-auto-a-golfo-aranci", desc: t("nav.places.golfoAranci") },
-  { label: "Baja Sardinia", to: "/noleggio-auto-a-baja-sardinia", desc: t("nav.places.bajaSardinia") },
+  { label: "Olbia", to: getLocationPath("olbia", currentLang), desc: t("nav.places.olbia") },
+  { label: "Porto Cervo", to: getLocationPath("porto-cervo", currentLang), desc: t("nav.places.portoCervo") },
+  { label: "San Teodoro", to: getLocationPath("san-teodoro", currentLang), desc: t("nav.places.sanTeodoro") },
+  { label: "San Pantaleo", to: getLocationPath("san-pantaleo", currentLang), desc: t("nav.places.sanPantaleo") },
+  { label: "Porto Rotondo", to: getLocationPath("porto-rotondo", currentLang), desc: t("nav.places.portoRotondo") },
+  { label: "Golfo Aranci", to: getLocationPath("golfo-aranci", currentLang), desc: t("nav.places.golfoAranci") },
+  { label: "Baja Sardinia", to: getLocationPath("baja-sardinia", currentLang), desc: t("nav.places.bajaSardinia") },
 ];
+
+const callHref = "tel:+393520459150";
+const bookingHref = getRoute("booking", currentLang);
 ---
 
 <nav
@@ -67,10 +73,10 @@ const localitaItems = [
   ]}
 >
   <div class="container flex items-center justify-between h-18 py-4">
-    <a href="/" class="flex items-center gap-2 relative z-10">
+    <a href={homeHref} class="flex items-center gap-2 relative z-10">
       <img
         src={gdisLogo}
-        alt="GDIS Rent e Service"
+        alt={logoAlt}
         width="100"
         height="40"
         fetchpriority="high"
@@ -223,7 +229,7 @@ const localitaItems = [
         +39 352 045 9150
       </a>
       <a
-        href="/prenotaora"
+        href={bookingHref}
         class="inline-flex items-center justify-center gap-2 h-10 px-4 py-2 text-sm font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
       >
         {t("cta.prenotaOra")}

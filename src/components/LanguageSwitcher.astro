@@ -3,6 +3,7 @@ import {
   LOCALES,
   LOCALE_FLAGS,
   LOCALE_LABELS,
+  HREFLANG_TAGS,
   DEFAULT_LOCALE,
   getLangFromUrl,
   useTranslations,
@@ -81,7 +82,7 @@ const entries: Entry[] = LOCALES.map((loc) => {
           <li>
             <a
               href={entry.href}
-              hreflang={entry.locale}
+              hreflang={HREFLANG_TAGS[entry.locale]}
               aria-current={isCurrent ? "true" : undefined}
               class:list={[
                 "flex items-center gap-2 px-3 py-2 text-sm transition-colors",
@@ -119,7 +120,7 @@ const entries: Entry[] = LOCALES.map((loc) => {
         <li>
           <a
             href={entry.href}
-            hreflang={entry.locale}
+            hreflang={HREFLANG_TAGS[entry.locale]}
             aria-current={isCurrent ? "true" : undefined}
             class:list={[
               baseClasses,

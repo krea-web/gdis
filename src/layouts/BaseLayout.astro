@@ -8,7 +8,7 @@ import WhatsAppWidget from "@/components/WhatsAppWidget.astro";
 import MobileStickyCTA from "@/components/MobileStickyCTA.astro";
 import Analytics from "@/components/Analytics.astro";
 import CookieBannerIsland from "@/components/CookieBannerIsland.tsx";
-import { organizationSchema, websiteSchema } from "@/lib/siteSchema";
+import { organizationSchema, buildWebsiteSchema } from "@/lib/siteSchema";
 import { getLangFromUrl, type Locale } from "@/i18n/utils";
 
 type JsonLd = Record<string, unknown>;
@@ -54,7 +54,7 @@ const {
 const currentLang: Locale = getLangFromUrl(Astro.url);
 
 const userJsonLd: JsonLd[] = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
-const allJsonLd: JsonLd[] = [organizationSchema, websiteSchema, ...userJsonLd];
+const allJsonLd: JsonLd[] = [organizationSchema, buildWebsiteSchema(currentLang), ...userJsonLd];
 
 const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
 const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION;

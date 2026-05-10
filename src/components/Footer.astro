@@ -7,64 +7,67 @@ import {
   BUSINESS_EMAIL,
   BUSINESS_INSTAGRAM,
 } from "@/lib/siteSchema";
-import { getLangFromUrl, useTranslations, type Locale } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations, getRoute, getFleetPath, getLocationPath, type Locale } from "@/i18n/utils";
 
 const currentLang: Locale = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
+const homeHref = getRoute("home", currentLang);
+const adminHref = currentLang === "it" ? "/login" : `/login`;
 
 const navColumns = [
   {
     title: t("footer.col.esplora"),
     links: [
-      { label: t("nav.home"), to: "/" },
-      { label: t("nav.chisiamo"), to: "/chisiamo" },
-      { label: t("cta.prenotaOra"), to: "/prenotaora" },
-      { label: t("nav.contatti"), to: "/contatti" },
-      { label: t("footer.links.mappaSito"), to: "/mappa-sito" },
+      { label: t("nav.home"), to: homeHref },
+      { label: t("nav.chisiamo"), to: getRoute("about", currentLang) },
+      { label: t("cta.prenotaOra"), to: getRoute("booking", currentLang) },
+      { label: t("nav.contatti"), to: getRoute("contact", currentLang) },
+      { label: t("footer.links.mappaSito"), to: getRoute("sitemap", currentLang) },
     ],
   },
   {
     title: t("footer.col.flotta"),
     links: [
-      { label: "Fiat Panda Hybrid", to: "/flotta/fiat-panda" },
-      { label: "Mercedes Classe A", to: "/flotta/mercedes-classe-a180d" },
-      { label: "Honda SH 125 / 350", to: "/flotta/honda-sh" },
-      { label: "Yamaha Raptor 700", to: "/flotta/yamaha-raptor" },
+      { label: "Fiat Panda Hybrid", to: getFleetPath("fiat-panda", currentLang) },
+      { label: "Mercedes Classe A", to: getFleetPath("mercedes-classe-a180d", currentLang) },
+      { label: "Honda SH 125 / 350", to: getFleetPath("honda-sh", currentLang) },
+      { label: "Yamaha Raptor 700", to: getFleetPath("yamaha-raptor", currentLang) },
     ],
   },
   {
     title: t("footer.col.hub"),
     links: [
-      { label: "Costa Smeralda", to: "/noleggio-auto-in-costa-smeralda" },
-      { label: "Aeroporto Olbia", to: "/noleggio-auto-aeroporto-olbia" },
-      { label: "Porto Olbia", to: "/noleggio-auto-porto-olbia" },
-      { label: "Stazione Olbia", to: "/noleggio-auto-stazione-olbia" },
+      { label: "Costa Smeralda", to: getRoute("hubCostaSmeralda", currentLang) },
+      { label: "Aeroporto Olbia", to: getRoute("hubAirport", currentLang) },
+      { label: "Porto Olbia", to: getRoute("hubPort", currentLang) },
+      { label: "Stazione Olbia", to: getRoute("hubStation", currentLang) },
     ],
   },
   {
     title: t("footer.col.localita"),
     links: [
-      { label: "Olbia", to: "/noleggio-auto-a-olbia" },
-      { label: "Porto Cervo", to: "/noleggio-auto-a-porto-cervo" },
-      { label: "San Teodoro", to: "/noleggio-auto-a-san-teodoro" },
-      { label: "Baja Sardinia", to: "/noleggio-auto-a-baja-sardinia" },
-      { label: "Porto Rotondo", to: "/noleggio-auto-a-porto-rotondo" },
-      { label: "San Pantaleo", to: "/noleggio-auto-a-san-pantaleo" },
-      { label: "Golfo Aranci", to: "/noleggio-auto-a-golfo-aranci" },
+      { label: "Olbia", to: getLocationPath("olbia", currentLang) },
+      { label: "Porto Cervo", to: getLocationPath("porto-cervo", currentLang) },
+      { label: "San Teodoro", to: getLocationPath("san-teodoro", currentLang) },
+      { label: "Baja Sardinia", to: getLocationPath("baja-sardinia", currentLang) },
+      { label: "Porto Rotondo", to: getLocationPath("porto-rotondo", currentLang) },
+      { label: "San Pantaleo", to: getLocationPath("san-pantaleo", currentLang) },
+      { label: "Golfo Aranci", to: getLocationPath("golfo-aranci", currentLang) },
     ],
   },
   {
     title: t("footer.col.legale"),
     links: [
-      { label: t("footer.links.privacy"), to: "/privacy" },
-      { label: t("footer.links.cookie"), to: "/cookie" },
-      { label: t("footer.links.termini"), to: "/termini" },
+      { label: t("footer.links.privacy"), to: getRoute("privacy", currentLang) },
+      { label: t("footer.links.cookie"), to: getRoute("cookie", currentLang) },
+      { label: t("footer.links.termini"), to: getRoute("terms", currentLang) },
     ],
   },
 ];
 
 const year = new Date().getFullYear();
 const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
+const logoAlt = t("common.logoAlt");
 ---
 
 <footer
@@ -75,10 +78,10 @@ const logoSrc = supabaseImg("asset/GDISlogo.webp", { raw: true });
   <div class="container relative z-10 px-4 pt-20 pb-10">
     <div class="grid lg:grid-cols-12 gap-12 mb-16">
       <div class="lg:col-span-4">
-        <a href="/" aria-label={t("footer.ariaTornaHome")}>
+        <a href={homeHref} aria-label={t("footer.ariaTornaHome")}>
           <img
             src={logoSrc}
-            alt="GDIS Rent e Service"
+            alt={logoAlt}
             width="220"
             height="95"
             loading="lazy"
