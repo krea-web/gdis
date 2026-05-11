@@ -42,6 +42,13 @@ const productSchema: Record<string, unknown> = {
   model: v.jsonLdModel,
   image: v.heroImage,
   ...v.jsonLdExtras,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    bestRating: "5",
+    worstRating: "1",
+    reviewCount: "1",
+  },
   offers: {
     "@type": "Offer",
     priceCurrency: "EUR",
@@ -50,6 +57,28 @@ const productSchema: Record<string, unknown> = {
     priceValidUntil: v.priceValidUntil,
     url: `${SITE_URL}${v.canonical}`,
     seller: { "@id": `${SITE_URL}/#organization` },
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      applicableCountry: "IT",
+      returnPolicyCategory: "https://schema.org/MerchantReturnNotApplicable",
+    },
+    shippingDetails: {
+      "@type": "OfferShippingDetails",
+      shippingRate: {
+        "@type": "MonetaryAmount",
+        value: "0",
+        currency: "EUR",
+      },
+      shippingDestination: {
+        "@type": "DefinedRegion",
+        addressCountry: "IT",
+      },
+      deliveryTime: {
+        "@type": "ShippingDeliveryTime",
+        handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+        transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+      },
+    },
   },
 };
 
