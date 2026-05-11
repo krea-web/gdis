@@ -54,4 +54,4 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-Sitemap: https://gdisrentservice.com/sitemap.xml
+Sitemap: https://gdisrentservice.com/sitemap-index.xml
