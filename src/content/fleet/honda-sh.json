@@ -10,7 +10,11 @@
   "heroH1Top": "Honda SH",
   "heroH1Bottom": "125 / 350",
   "heroSubtitle": "Zero stress da parcheggio, consumi ridicoli, stile italiano. Lo scooter perfetto per vivere la Costa Smeralda in libertà.",
-  "heroBadges": ["Automatico", "2 Caschi Inclusi", "125cc / 350cc"],
+  "heroBadges": [
+    "Automatico",
+    "2 Caschi Inclusi",
+    "125cc / 350cc"
+  ],
   "featureSections": [
     {
       "label": "Libertà su Due Ruote",
@@ -35,12 +39,36 @@
     }
   ],
   "specs": [
-    { "icon": "gauge", "label": "Cilindrata", "value": "125cc / 350cc" },
-    { "icon": "fuel", "label": "Alimentazione", "value": "Benzina" },
-    { "icon": "users", "label": "Posti", "value": "2 (con passeggero)" },
-    { "icon": "settings", "label": "Cambio", "value": "Automatico CVT" },
-    { "icon": "shield", "label": "Patente", "value": "A1 (125) / A2 (350)" },
-    { "icon": "wind", "label": "Dotazione", "value": "2 caschi inclusi" }
+    {
+      "icon": "gauge",
+      "label": "Cilindrata",
+      "value": "125cc / 350cc"
+    },
+    {
+      "icon": "fuel",
+      "label": "Alimentazione",
+      "value": "Benzina"
+    },
+    {
+      "icon": "users",
+      "label": "Posti",
+      "value": "2 (con passeggero)"
+    },
+    {
+      "icon": "settings",
+      "label": "Cambio",
+      "value": "Automatico CVT"
+    },
+    {
+      "icon": "shield",
+      "label": "Patente",
+      "value": "A1 (125) / A2 (350)"
+    },
+    {
+      "icon": "wind",
+      "label": "Dotazione",
+      "value": "2 caschi inclusi"
+    }
   ],
   "scenarios": [
     {
@@ -82,12 +110,30 @@
     "outro": "Devi portare una famiglia? Vedi la <a href='/flotta/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Cerchi un mezzo per gli sterrati? Considera lo <a href='/flotta/yamaha-raptor' class='text-blue-600 hover:underline'>Yamaha Raptor 700</a>."
   },
   "faq": [
-    { "q": "Honda SH 125 o SH 350: quale scegliere?", "a": "L'SH 125 va bene per chi resta in città e fa giri brevi (Olbia, San Teodoro, Pittulongu). L'SH 350 è la scelta giusta se viaggi in due con bagagli, se devi salire al Phi Beach (la salita verso Capo Ferro chiede potenza), se ti sposti su distanze lunghe o vuoi prendere la SS131 (autostrada). Stessa estetica, stesso comfort, +120cc di muscolo per chi serve." },
-    { "q": "Quale patente serve davvero?", "a": "SH 125: Patente A1 (16+) oppure Patente B (per chi ha conseguito la B prima del 1/2/2013, copre fino a 125cc; chi l'ha presa dopo deve fare la prova pratica AM o A1). SH 350: Patente A2 (18+) o A (24+). Se non sei sicuro della tua categoria, mandaci foto della patente su WhatsApp e ti diciamo se puoi guidare quale." },
-    { "q": "I caschi e l'antifurto sono inclusi?", "a": "Sempre. Forniamo 2 caschi jet omologati ECE 22.06 (taglie M/L/XL disponibili, igienizzati prima di ogni noleggio), antifurto a U bloccaruota e copertura assicurativa furto/incendio nel prezzo. Per chi vuole un casco integrale possiamo organizzarlo su richiesta." },
-    { "q": "Quanto consuma l'Honda SH e quanto costa il pieno?", "a": "SH 125: circa 2.5 L/100km, serbatoio 7.7 L = autonomia 280-300 km. Pieno: ~13 €. SH 350: 3.0-3.2 L/100km, serbatoio 9.1 L = autonomia 280 km. Pieno: ~15 €. Per una settimana di vacanza standard in Costa Smeralda si fanno 1-2 pieni totali. Il costo al km è frazione di quello dell'auto." },
-    { "q": "Posso parcheggiarlo gratis ovunque?", "a": "Quasi. Le 2 ruote in Sardegna possono usare le aree moto/scooter dedicate, presenti in tutte le spiagge principali (La Cinta, Brandinchi, Phi Beach) e nei centri ZTL come <a href='/noleggio-auto-a-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a>. Sui parcheggi blu paghi metà tariffa o gratis a seconda del comune. Risparmio reale per una settimana: 50-100 € rispetto all'auto." },
-    { "q": "Vado all'aeroporto con lo scooter? Dove parcheggio?", "a": "Aeroporto di Olbia ha un parcheggio scooter coperto a 50m dal terminal a 3 €/giorno. Comodissimo per chi parcheggia in aeroporto e parte in scooter, ma se preferisci ti consegniamo lo scooter direttamente al ritiro bagagli senza pensarci." }
+    {
+      "q": "Honda SH 125 o SH 350: quale scegliere?",
+      "a": "L'SH 125 va bene per chi resta in città e fa giri brevi (Olbia, San Teodoro, Pittulongu). L'SH 350 è la scelta giusta se viaggi in due con bagagli, se devi salire al Phi Beach (la salita verso Capo Ferro chiede potenza), se ti sposti su distanze lunghe o vuoi prendere la SS131 (autostrada). Stessa estetica, stesso comfort, +120cc di muscolo per chi serve."
+    },
+    {
+      "q": "Quale patente serve davvero?",
+      "a": "SH 125: Patente A1 (16+) oppure Patente B (per chi ha conseguito la B prima del 1/2/2013, copre fino a 125cc; chi l'ha presa dopo deve fare la prova pratica AM o A1). SH 350: Patente A2 (18+) o A (24+). Se non sei sicuro della tua categoria, mandaci foto della patente su WhatsApp e ti diciamo se puoi guidare quale."
+    },
+    {
+      "q": "I caschi e l'antifurto sono inclusi?",
+      "a": "Sempre. Forniamo 2 caschi jet omologati ECE 22.06 (taglie M/L/XL disponibili, igienizzati prima di ogni noleggio), antifurto a U bloccaruota e copertura assicurativa furto/incendio nel prezzo. Per chi vuole un casco integrale possiamo organizzarlo su richiesta."
+    },
+    {
+      "q": "Quanto consuma l'Honda SH e quanto costa il pieno?",
+      "a": "SH 125: circa 2.5 L/100km, serbatoio 7.7 L = autonomia 280-300 km. Pieno: ~13 €. SH 350: 3.0-3.2 L/100km, serbatoio 9.1 L = autonomia 280 km. Pieno: ~15 €. Per una settimana di vacanza standard in Costa Smeralda si fanno 1-2 pieni totali. Il costo al km è frazione di quello dell'auto."
+    },
+    {
+      "q": "Posso parcheggiarlo gratis ovunque?",
+      "a": "Quasi. Le 2 ruote in Sardegna possono usare le aree moto/scooter dedicate, presenti in tutte le spiagge principali (La Cinta, Brandinchi, Phi Beach) e nei centri ZTL come <a href='/noleggio-auto-a-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a>. Sui parcheggi blu paghi metà tariffa o gratis a seconda del comune. Risparmio reale per una settimana: 50-100 € rispetto all'auto."
+    },
+    {
+      "q": "Vado all'aeroporto con lo scooter? Dove parcheggio?",
+      "a": "Aeroporto di Olbia ha un parcheggio scooter coperto a 50m dal terminal a 3 €/giorno. Comodissimo per chi parcheggia in aeroporto e parte in scooter, ma se preferisci ti consegniamo lo scooter direttamente al ritiro bagagli senza pensarci."
+    }
   ],
   "ctaTitle": "Sali in sella",
   "ctaSubtitle": "Prenota il tuo Honda SH in meno di 2 minuti. 2 caschi e consegna VIP inclusi.",
@@ -99,8 +145,21 @@
   "jsonLdManufacturer": "Honda",
   "jsonLdModel": "SH 125/350",
   "jsonLdExtras": {
-    "vehicleTransmission": "Automatic",
-    "fuelType": "Benzina"
+    "vehicleTransmission": "AutomaticManualTransmission",
+    "fuelType": "Petrol",
+    "seatingCapacity": 2,
+    "vehicleEngine": {
+      "@type": "EngineSpecification",
+      "engineType": "Single-cylinder 4-stroke",
+      "engineDisplacement": {
+        "@type": "QuantitativeValue",
+        "value": 330,
+        "unitCode": "CMQ"
+      }
+    },
+    "vehicleConfiguration": "Honda SH 125i + Honda SH 350i (entrambe disponibili)",
+    "knownVehicleDamages": "https://schema.org/UsedCondition",
+    "itemCondition": "https://schema.org/UsedCondition"
   },
   "i18n": {
     "en": {
@@ -111,7 +170,11 @@
       "heroH1Top": "Honda SH",
       "heroH1Bottom": "125 / 350",
       "heroSubtitle": "Zero parking stress, ridiculous fuel consumption, Italian style. The perfect scooter to live Costa Smeralda in freedom.",
-      "heroBadges": ["Automatic", "2 Helmets Included", "125cc / 350cc"],
+      "heroBadges": [
+        "Automatic",
+        "2 Helmets Included",
+        "125cc / 350cc"
+      ],
       "featureSections": [
         {
           "label": "Two-Wheel Freedom",
@@ -136,12 +199,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Engine", "value": "125cc / 350cc" },
-        { "icon": "fuel", "label": "Fuel", "value": "Petrol" },
-        { "icon": "users", "label": "Seats", "value": "2 (with passenger)" },
-        { "icon": "settings", "label": "Gearbox", "value": "Automatic CVT" },
-        { "icon": "shield", "label": "Licence", "value": "A1 (125) / A2 (350)" },
-        { "icon": "wind", "label": "Equipment", "value": "2 helmets included" }
+        {
+          "icon": "gauge",
+          "label": "Engine",
+          "value": "125cc / 350cc"
+        },
+        {
+          "icon": "fuel",
+          "label": "Fuel",
+          "value": "Petrol"
+        },
+        {
+          "icon": "users",
+          "label": "Seats",
+          "value": "2 (with passenger)"
+        },
+        {
+          "icon": "settings",
+          "label": "Gearbox",
+          "value": "Automatic CVT"
+        },
+        {
+          "icon": "shield",
+          "label": "Licence",
+          "value": "A1 (125) / A2 (350)"
+        },
+        {
+          "icon": "wind",
+          "label": "Equipment",
+          "value": "2 helmets included"
+        }
       ],
       "scenarios": [
         {
@@ -183,12 +270,30 @@
         "outro": "Need to carry a family? See the <a href='/en/fleet/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Looking for a vehicle for dirt tracks? Consider the <a href='/en/fleet/yamaha-raptor' class='text-blue-600 hover:underline'>Yamaha Raptor 700</a>."
       },
       "faq": [
-        { "q": "Honda SH 125 or SH 350: which to choose?", "a": "The SH 125 is fine for short rides and city use (Olbia, San Teodoro, Pittulongu). The SH 350 is the right choice if you ride two-up with luggage, if you have to climb to Phi Beach (the Capo Ferro climb needs power), if you're covering long distances or want to take the SS131 (dual carriageway). Same look, same comfort, +120cc of muscle for whoever needs it." },
-        { "q": "Which licence do I really need?", "a": "SH 125: A1 licence (16+) or B licence (for those who got the B before 1/2/2013, valid up to 125cc; those who got it after must take the AM or A1 practical test). SH 350: A2 licence (18+) or A (24+). If you're not sure of your category, send us a photo of your licence on WhatsApp and we'll tell you what you can ride." },
-        { "q": "Are helmets and anti-theft included?", "a": "Always. We supply 2 ECE 22.06 approved jet helmets (M/L/XL sizes available, sanitised before each rental), a U-lock wheel anti-theft and theft/fire insurance cover in the price. For those wanting a full-face helmet we can arrange one on request." },
-        { "q": "How much does the Honda SH consume and how much is a tank?", "a": "SH 125: about 2.5 L/100km, 7.7 L tank = 280-300 km range. Full tank: ~13 €. SH 350: 3.0-3.2 L/100km, 9.1 L tank = 280 km range. Full tank: ~15 €. For a standard week's holiday in Costa Smeralda you do 1-2 fills total. Cost per kilometre is a fraction of a car's." },
-        { "q": "Can I park it free anywhere?", "a": "Almost. Two-wheelers in Sardinia can use dedicated bike/scooter areas, present at all the main beaches (La Cinta, Brandinchi, Phi Beach) and in ZTL centres such as <a href='/en/car-rental-in-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a>. On blue-line bays you pay half tariff or free depending on the council. Real saving for a week: 50-100 € compared to a car." },
-        { "q": "Can I go to the airport with the scooter? Where do I park?", "a": "Olbia Airport has a covered scooter park 50 m from the terminal at 3 €/day. Very handy if you park at the airport and ride off, but if you prefer we can deliver the scooter directly to baggage reclaim without you having to think about it." }
+        {
+          "q": "Honda SH 125 or SH 350: which to choose?",
+          "a": "The SH 125 is fine for short rides and city use (Olbia, San Teodoro, Pittulongu). The SH 350 is the right choice if you ride two-up with luggage, if you have to climb to Phi Beach (the Capo Ferro climb needs power), if you're covering long distances or want to take the SS131 (dual carriageway). Same look, same comfort, +120cc of muscle for whoever needs it."
+        },
+        {
+          "q": "Which licence do I really need?",
+          "a": "SH 125: A1 licence (16+) or B licence (for those who got the B before 1/2/2013, valid up to 125cc; those who got it after must take the AM or A1 practical test). SH 350: A2 licence (18+) or A (24+). If you're not sure of your category, send us a photo of your licence on WhatsApp and we'll tell you what you can ride."
+        },
+        {
+          "q": "Are helmets and anti-theft included?",
+          "a": "Always. We supply 2 ECE 22.06 approved jet helmets (M/L/XL sizes available, sanitised before each rental), a U-lock wheel anti-theft and theft/fire insurance cover in the price. For those wanting a full-face helmet we can arrange one on request."
+        },
+        {
+          "q": "How much does the Honda SH consume and how much is a tank?",
+          "a": "SH 125: about 2.5 L/100km, 7.7 L tank = 280-300 km range. Full tank: ~13 €. SH 350: 3.0-3.2 L/100km, 9.1 L tank = 280 km range. Full tank: ~15 €. For a standard week's holiday in Costa Smeralda you do 1-2 fills total. Cost per kilometre is a fraction of a car's."
+        },
+        {
+          "q": "Can I park it free anywhere?",
+          "a": "Almost. Two-wheelers in Sardinia can use dedicated bike/scooter areas, present at all the main beaches (La Cinta, Brandinchi, Phi Beach) and in ZTL centres such as <a href='/en/car-rental-in-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a>. On blue-line bays you pay half tariff or free depending on the council. Real saving for a week: 50-100 € compared to a car."
+        },
+        {
+          "q": "Can I go to the airport with the scooter? Where do I park?",
+          "a": "Olbia Airport has a covered scooter park 50 m from the terminal at 3 €/day. Very handy if you park at the airport and ride off, but if you prefer we can deliver the scooter directly to baggage reclaim without you having to think about it."
+        }
       ],
       "ctaTitle": "Saddle up",
       "ctaSubtitle": "Book your Honda SH in less than 2 minutes. 2 helmets and VIP delivery included.",
@@ -202,7 +307,11 @@
       "heroH1Top": "Honda SH",
       "heroH1Bottom": "125 / 350",
       "heroSubtitle": "Aucun stress de stationnement, consommation minime, style italien. Le scooter parfait pour vivre la Costa Smeralda en toute liberté.",
-      "heroBadges": ["Automatique", "2 casques inclus", "125cc / 350cc"],
+      "heroBadges": [
+        "Automatique",
+        "2 casques inclus",
+        "125cc / 350cc"
+      ],
       "featureSections": [
         {
           "label": "La liberté à deux roues",
@@ -227,12 +336,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Cylindrée", "value": "125cc / 350cc" },
-        { "icon": "fuel", "label": "Carburant", "value": "Essence" },
-        { "icon": "users", "label": "Places", "value": "2 (avec passager)" },
-        { "icon": "settings", "label": "Boîte", "value": "Automatique CVT" },
-        { "icon": "shield", "label": "Permis", "value": "A1 (125) / A2 (350)" },
-        { "icon": "wind", "label": "Équipement", "value": "2 casques inclus" }
+        {
+          "icon": "gauge",
+          "label": "Cylindrée",
+          "value": "125cc / 350cc"
+        },
+        {
+          "icon": "fuel",
+          "label": "Carburant",
+          "value": "Essence"
+        },
+        {
+          "icon": "users",
+          "label": "Places",
+          "value": "2 (avec passager)"
+        },
+        {
+          "icon": "settings",
+          "label": "Boîte",
+          "value": "Automatique CVT"
+        },
+        {
+          "icon": "shield",
+          "label": "Permis",
+          "value": "A1 (125) / A2 (350)"
+        },
+        {
+          "icon": "wind",
+          "label": "Équipement",
+          "value": "2 casques inclus"
+        }
       ],
       "scenarios": [
         {
@@ -274,12 +407,30 @@
         "outro": "Vous devez transporter une famille ? Voir la <a href='/fr/flotte/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Vous cherchez un véhicule pour les pistes ? Pensez au <a href='/fr/flotte/yamaha-raptor' class='text-blue-600 hover:underline'>Yamaha Raptor 700</a>."
       },
       "faq": [
-        { "q": "Honda SH 125 ou SH 350 : lequel choisir ?", "a": "Le SH 125 convient pour ceux qui restent en ville et font des trajets courts (Olbia, San Teodoro, Pittulongu). Le SH 350 est le bon choix si vous voyagez à deux avec des bagages, si vous devez monter au Phi Beach (la montée vers Capo Ferro demande de la puissance), si vous vous déplacez sur de longues distances ou voulez prendre la SS131 (voie rapide). Même esthétique, même confort, +120cc de muscle pour qui en a besoin." },
-        { "q": "Quel permis faut-il vraiment ?", "a": "SH 125 : permis A1 (16 ans et plus) ou permis B (pour ceux qui ont obtenu le B avant le 1/2/2013, couvre jusqu'à 125cc ; ceux qui l'ont obtenu après doivent passer l'épreuve pratique AM ou A1). SH 350 : permis A2 (18 ans et plus) ou A (24 ans et plus). Si vous n'êtes pas sûr de votre catégorie, envoyez-nous une photo de votre permis sur WhatsApp et nous vous dirons ce que vous pouvez conduire." },
-        { "q": "Les casques et l'antivol sont-ils inclus ?", "a": "Toujours. Nous fournissons 2 casques jet homologués ECE 22.06 (tailles M/L/XL disponibles, désinfectés avant chaque location), antivol en U bloque-roue et couverture assurance vol/incendie incluse dans le prix. Pour ceux qui souhaitent un casque intégral, nous pouvons l'organiser sur demande." },
-        { "q": "Combien consomme le Honda SH et combien coûte le plein ?", "a": "SH 125 : environ 2,5 L/100 km, réservoir de 7,7 L = autonomie 280-300 km. Plein : ~13 €. SH 350 : 3,0-3,2 L/100 km, réservoir de 9,1 L = autonomie 280 km. Plein : ~15 €. Pour une semaine de vacances standard en Costa Smeralda, on fait 1 à 2 pleins au total. Le coût au kilomètre est une fraction de celui de la voiture." },
-        { "q": "Puis-je le stationner gratuitement partout ?", "a": "Presque. Les deux-roues en Sardaigne peuvent utiliser les zones moto/scooter dédiées, présentes sur toutes les principales plages (La Cinta, Brandinchi, Phi Beach) et dans les centres ZTL comme <a href='/fr/location-voiture-a-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a>. Sur les places bleues, vous payez moitié tarif ou gratuit selon la commune. Économie réelle pour une semaine : 50 à 100 € par rapport à la voiture." },
-        { "q": "Je vais à l'aéroport en scooter ? Où me garer ?", "a": "L'aéroport d'Olbia a un parking scooter couvert à 50 m du terminal à 3 €/jour. Très pratique pour qui se gare à l'aéroport et part en scooter, mais si vous préférez nous vous livrons le scooter directement au retrait des bagages sans y penser." }
+        {
+          "q": "Honda SH 125 ou SH 350 : lequel choisir ?",
+          "a": "Le SH 125 convient pour ceux qui restent en ville et font des trajets courts (Olbia, San Teodoro, Pittulongu). Le SH 350 est le bon choix si vous voyagez à deux avec des bagages, si vous devez monter au Phi Beach (la montée vers Capo Ferro demande de la puissance), si vous vous déplacez sur de longues distances ou voulez prendre la SS131 (voie rapide). Même esthétique, même confort, +120cc de muscle pour qui en a besoin."
+        },
+        {
+          "q": "Quel permis faut-il vraiment ?",
+          "a": "SH 125 : permis A1 (16 ans et plus) ou permis B (pour ceux qui ont obtenu le B avant le 1/2/2013, couvre jusqu'à 125cc ; ceux qui l'ont obtenu après doivent passer l'épreuve pratique AM ou A1). SH 350 : permis A2 (18 ans et plus) ou A (24 ans et plus). Si vous n'êtes pas sûr de votre catégorie, envoyez-nous une photo de votre permis sur WhatsApp et nous vous dirons ce que vous pouvez conduire."
+        },
+        {
+          "q": "Les casques et l'antivol sont-ils inclus ?",
+          "a": "Toujours. Nous fournissons 2 casques jet homologués ECE 22.06 (tailles M/L/XL disponibles, désinfectés avant chaque location), antivol en U bloque-roue et couverture assurance vol/incendie incluse dans le prix. Pour ceux qui souhaitent un casque intégral, nous pouvons l'organiser sur demande."
+        },
+        {
+          "q": "Combien consomme le Honda SH et combien coûte le plein ?",
+          "a": "SH 125 : environ 2,5 L/100 km, réservoir de 7,7 L = autonomie 280-300 km. Plein : ~13 €. SH 350 : 3,0-3,2 L/100 km, réservoir de 9,1 L = autonomie 280 km. Plein : ~15 €. Pour une semaine de vacances standard en Costa Smeralda, on fait 1 à 2 pleins au total. Le coût au kilomètre est une fraction de celui de la voiture."
+        },
+        {
+          "q": "Puis-je le stationner gratuitement partout ?",
+          "a": "Presque. Les deux-roues en Sardaigne peuvent utiliser les zones moto/scooter dédiées, présentes sur toutes les principales plages (La Cinta, Brandinchi, Phi Beach) et dans les centres ZTL comme <a href='/fr/location-voiture-a-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a>. Sur les places bleues, vous payez moitié tarif ou gratuit selon la commune. Économie réelle pour une semaine : 50 à 100 € par rapport à la voiture."
+        },
+        {
+          "q": "Je vais à l'aéroport en scooter ? Où me garer ?",
+          "a": "L'aéroport d'Olbia a un parking scooter couvert à 50 m du terminal à 3 €/jour. Très pratique pour qui se gare à l'aéroport et part en scooter, mais si vous préférez nous vous livrons le scooter directement au retrait des bagages sans y penser."
+        }
       ],
       "ctaTitle": "En selle",
       "ctaSubtitle": "Réservez votre Honda SH en moins de 2 minutes. 2 casques et livraison VIP inclus.",
@@ -293,7 +444,11 @@
       "heroH1Top": "Honda SH",
       "heroH1Bottom": "125 / 350",
       "heroSubtitle": "Null Parkstress, lächerlich niedriger Verbrauch, italienischer Stil. Der perfekte Roller, um die Costa Smeralda in Freiheit zu erleben.",
-      "heroBadges": ["Automatik", "2 Helme inklusive", "125 ccm / 350 ccm"],
+      "heroBadges": [
+        "Automatik",
+        "2 Helme inklusive",
+        "125 ccm / 350 ccm"
+      ],
       "featureSections": [
         {
           "label": "Freiheit auf zwei Rädern",
@@ -318,12 +473,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Hubraum", "value": "125 ccm / 350 ccm" },
-        { "icon": "fuel", "label": "Kraftstoff", "value": "Benzin" },
-        { "icon": "users", "label": "Sitzplätze", "value": "2 (mit Beifahrer)" },
-        { "icon": "settings", "label": "Getriebe", "value": "Automatik CVT" },
-        { "icon": "shield", "label": "Führerschein", "value": "A1 (125) / A2 (350)" },
-        { "icon": "wind", "label": "Ausstattung", "value": "2 Helme inklusive" }
+        {
+          "icon": "gauge",
+          "label": "Hubraum",
+          "value": "125 ccm / 350 ccm"
+        },
+        {
+          "icon": "fuel",
+          "label": "Kraftstoff",
+          "value": "Benzin"
+        },
+        {
+          "icon": "users",
+          "label": "Sitzplätze",
+          "value": "2 (mit Beifahrer)"
+        },
+        {
+          "icon": "settings",
+          "label": "Getriebe",
+          "value": "Automatik CVT"
+        },
+        {
+          "icon": "shield",
+          "label": "Führerschein",
+          "value": "A1 (125) / A2 (350)"
+        },
+        {
+          "icon": "wind",
+          "label": "Ausstattung",
+          "value": "2 Helme inklusive"
+        }
       ],
       "scenarios": [
         {
@@ -365,12 +544,30 @@
         "outro": "Müssen Sie eine Familie transportieren? Sehen Sie sich den <a href='/de/flotte/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a> an. Suchen Sie ein Fahrzeug für Schotterpisten? Erwägen Sie den <a href='/de/flotte/yamaha-raptor' class='text-blue-600 hover:underline'>Yamaha Raptor 700</a>."
       },
       "faq": [
-        { "q": "Honda SH 125 oder SH 350: Welcher ist die richtige Wahl?", "a": "Der SH 125 ist gut für alle, die in der Stadt bleiben und kurze Fahrten unternehmen (Olbia, San Teodoro, Pittulongu). Der SH 350 ist die richtige Wahl, wenn Sie zu zweit mit Gepäck fahren, wenn Sie zum Phi Beach hinaufmüssen (die Auffahrt nach Capo Ferro verlangt Leistung), wenn Sie längere Strecken zurücklegen oder die SS131 (Schnellstraße) nehmen wollen. Gleiche Optik, gleicher Komfort, +120 ccm Muskelkraft für alle, die sie brauchen." },
-        { "q": "Welcher Führerschein ist wirklich erforderlich?", "a": "SH 125: Führerschein A1 (ab 16 Jahren) oder Führerschein B (für alle, die den B vor dem 1.2.2013 erworben haben — gilt bis 125 ccm; wer ihn danach gemacht hat, muss die praktische Prüfung AM oder A1 ablegen). SH 350: Führerschein A2 (ab 18 Jahren) oder A (ab 24 Jahren). Wenn Sie sich Ihrer Kategorie nicht sicher sind, schicken Sie uns ein Foto Ihres Führerscheins per WhatsApp und wir sagen Ihnen, was Sie fahren dürfen." },
-        { "q": "Sind Helme und Diebstahlschutz inbegriffen?", "a": "Immer. Wir liefern 2 ECE-22.06-zugelassene Jet-Helme (Größen M/L/XL verfügbar, vor jeder Vermietung desinfiziert), ein U-Bügelschloss zur Radblockierung und Diebstahl-/Brandversicherung im Preis enthalten. Für alle, die einen Integralhelm wünschen, können wir das auf Anfrage organisieren." },
-        { "q": "Wie viel verbraucht der Honda SH und wie viel kostet eine Tankfüllung?", "a": "SH 125: ca. 2,5 L/100 km, 7,7-L-Tank = Reichweite 280-300 km. Tankfüllung: ~13 €. SH 350: 3,0-3,2 L/100 km, 9,1-L-Tank = Reichweite 280 km. Tankfüllung: ~15 €. Für eine Standardurlaubswoche an der Costa Smeralda kommen Sie mit insgesamt 1-2 Tankfüllungen aus. Die Kosten pro Kilometer sind ein Bruchteil derer eines Autos." },
-        { "q": "Kann ich überall kostenlos parken?", "a": "Fast. Zweiräder dürfen auf Sardinien die dafür vorgesehenen Motorrad-/Roller-Bereiche nutzen, die an allen Hauptstränden (La Cinta, Brandinchi, Phi Beach) und in den ZTL-Zentren wie <a href='/de/autovermietung-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a> vorhanden sind. Auf den blauen Parkplätzen zahlen Sie je nach Gemeinde halben Tarif oder gar nichts. Reale Ersparnis für eine Woche: 50-100 € im Vergleich zum Auto." },
-        { "q": "Fahre ich mit dem Roller zum Flughafen? Wo parke ich?", "a": "Der Flughafen Olbia hat einen überdachten Rollerparkplatz 50 m vom Terminal entfernt für 3 €/Tag. Sehr praktisch für alle, die am Flughafen parken und mit dem Roller losfahren. Wenn Sie es vorziehen, übergeben wir Ihnen den Roller jedoch direkt an der Gepäckausgabe, ohne dass Sie sich darum kümmern müssen." }
+        {
+          "q": "Honda SH 125 oder SH 350: Welcher ist die richtige Wahl?",
+          "a": "Der SH 125 ist gut für alle, die in der Stadt bleiben und kurze Fahrten unternehmen (Olbia, San Teodoro, Pittulongu). Der SH 350 ist die richtige Wahl, wenn Sie zu zweit mit Gepäck fahren, wenn Sie zum Phi Beach hinaufmüssen (die Auffahrt nach Capo Ferro verlangt Leistung), wenn Sie längere Strecken zurücklegen oder die SS131 (Schnellstraße) nehmen wollen. Gleiche Optik, gleicher Komfort, +120 ccm Muskelkraft für alle, die sie brauchen."
+        },
+        {
+          "q": "Welcher Führerschein ist wirklich erforderlich?",
+          "a": "SH 125: Führerschein A1 (ab 16 Jahren) oder Führerschein B (für alle, die den B vor dem 1.2.2013 erworben haben — gilt bis 125 ccm; wer ihn danach gemacht hat, muss die praktische Prüfung AM oder A1 ablegen). SH 350: Führerschein A2 (ab 18 Jahren) oder A (ab 24 Jahren). Wenn Sie sich Ihrer Kategorie nicht sicher sind, schicken Sie uns ein Foto Ihres Führerscheins per WhatsApp und wir sagen Ihnen, was Sie fahren dürfen."
+        },
+        {
+          "q": "Sind Helme und Diebstahlschutz inbegriffen?",
+          "a": "Immer. Wir liefern 2 ECE-22.06-zugelassene Jet-Helme (Größen M/L/XL verfügbar, vor jeder Vermietung desinfiziert), ein U-Bügelschloss zur Radblockierung und Diebstahl-/Brandversicherung im Preis enthalten. Für alle, die einen Integralhelm wünschen, können wir das auf Anfrage organisieren."
+        },
+        {
+          "q": "Wie viel verbraucht der Honda SH und wie viel kostet eine Tankfüllung?",
+          "a": "SH 125: ca. 2,5 L/100 km, 7,7-L-Tank = Reichweite 280-300 km. Tankfüllung: ~13 €. SH 350: 3,0-3,2 L/100 km, 9,1-L-Tank = Reichweite 280 km. Tankfüllung: ~15 €. Für eine Standardurlaubswoche an der Costa Smeralda kommen Sie mit insgesamt 1-2 Tankfüllungen aus. Die Kosten pro Kilometer sind ein Bruchteil derer eines Autos."
+        },
+        {
+          "q": "Kann ich überall kostenlos parken?",
+          "a": "Fast. Zweiräder dürfen auf Sardinien die dafür vorgesehenen Motorrad-/Roller-Bereiche nutzen, die an allen Hauptstränden (La Cinta, Brandinchi, Phi Beach) und in den ZTL-Zentren wie <a href='/de/autovermietung-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a> vorhanden sind. Auf den blauen Parkplätzen zahlen Sie je nach Gemeinde halben Tarif oder gar nichts. Reale Ersparnis für eine Woche: 50-100 € im Vergleich zum Auto."
+        },
+        {
+          "q": "Fahre ich mit dem Roller zum Flughafen? Wo parke ich?",
+          "a": "Der Flughafen Olbia hat einen überdachten Rollerparkplatz 50 m vom Terminal entfernt für 3 €/Tag. Sehr praktisch für alle, die am Flughafen parken und mit dem Roller losfahren. Wenn Sie es vorziehen, übergeben wir Ihnen den Roller jedoch direkt an der Gepäckausgabe, ohne dass Sie sich darum kümmern müssen."
+        }
       ],
       "ctaTitle": "Aufsteigen",
       "ctaSubtitle": "Buchen Sie Ihren Honda SH in weniger als 2 Minuten. 2 Helme und VIP-Übergabe inklusive.",

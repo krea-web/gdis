@@ -10,7 +10,11 @@
   "heroH1Top": "Fiat Panda",
   "heroH1Bottom": "Hybrid",
   "heroSubtitle": "Agilità senza compromessi in Costa Smeralda. Climatizzatore, 5 posti, consumi ridotti — l'auto perfetta per la tua vacanza sarda.",
-  "heroBadges": ["5 Posti", "Aria Condizionata", "Hybrid"],
+  "heroBadges": [
+    "5 Posti",
+    "Aria Condizionata",
+    "Hybrid"
+  ],
   "featureSections": [
     {
       "label": "Comfort & Praticità",
@@ -35,12 +39,36 @@
     }
   ],
   "specs": [
-    { "icon": "gauge", "label": "Motore", "value": "1.0 Hybrid 70cv" },
-    { "icon": "fuel", "label": "Alimentazione", "value": "Benzina / Hybrid" },
-    { "icon": "users", "label": "Posti", "value": "5" },
-    { "icon": "settings", "label": "Cambio", "value": "Manuale" },
-    { "icon": "wind", "label": "Clima", "value": "Aria Condizionata" },
-    { "icon": "luggage", "label": "Bagagliaio", "value": "225 litri" }
+    {
+      "icon": "gauge",
+      "label": "Motore",
+      "value": "1.0 Hybrid 70cv"
+    },
+    {
+      "icon": "fuel",
+      "label": "Alimentazione",
+      "value": "Benzina / Hybrid"
+    },
+    {
+      "icon": "users",
+      "label": "Posti",
+      "value": "5"
+    },
+    {
+      "icon": "settings",
+      "label": "Cambio",
+      "value": "Manuale"
+    },
+    {
+      "icon": "wind",
+      "label": "Clima",
+      "value": "Aria Condizionata"
+    },
+    {
+      "icon": "luggage",
+      "label": "Bagagliaio",
+      "value": "225 litri"
+    }
   ],
   "scenarios": [
     {
@@ -82,28 +110,67 @@
     "outro": "Cerchi un'alternativa più premium? Vedi la <a href='/flotta/mercedes-classe-a180d' class='text-blue-600 hover:underline'>Mercedes Classe A 180d</a>. Hai bisogno di muoverti in ZTL? Considera lo <a href='/flotta/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
   },
   "faq": [
-    { "q": "Posso guidare la Fiat Panda Hybrid da neopatentato?", "a": "Sì. La Panda Hybrid 1.0 70cv ha un rapporto peso/potenza ben sotto i limiti del Codice della Strada per neopatentati (kW/t < 65). È anzi una delle scelte più consigliate per chi ha preso la patente da meno di un anno: leggera, prevedibile, sicura." },
-    { "q": "Quanti bagagli entrano con 5 persone a bordo?", "a": "Il bagagliaio della Panda è 225 litri standard. Con 5 persone a bordo entrano comodamente 2 trolley medi (50-55 cm) + 1-2 borse da spiaggia. Per famiglie più numerose con valigie grandi consigliamo invece la Mercedes Classe A 180d (370 litri)." },
-    { "q": "Quanto consuma davvero la versione Hybrid?", "a": "Nella nostra esperienza con la flotta in Sardegna, la Panda Hybrid 70cv consuma 4.5-5.0 L/100km in uso misto urbano-extraurbano (Olbia → San Teodoro → Costa Smeralda). Un pieno da circa 35 litri ti dura facilmente 600-700 km. Costa benzina per una settimana di vacanza media: 40-60 €." },
-    { "q": "Posso andare fuoristrada con la Panda?", "a": "No. La Panda Hybrid è progettata per asfalto. Per gli sterrati di Punta Volpe, Capo Ferro o Monte Nieddu serve un mezzo dedicato come il nostro <a href='/flotta/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Le coperture assicurative escludono i danni su strade non asfaltate." },
-    { "q": "Posso ritirarla all'Aeroporto di Olbia?", "a": "Sì, è la consegna più richiesta per la Panda. Operatore al terminal arrivi del Costa Smeralda, veicolo climatizzato e con il pieno fatto. <a href='/noleggio-auto-aeroporto-olbia' class='text-primary-foreground font-medium underline'>Vedi i dettagli del servizio aeroporto</a>." },
-    { "q": "Il carburante è incluso?", "a": "Il veicolo viene consegnato con il pieno e va restituito con il pieno. In alternativa è possibile acquistare l'opzione 'pieno anticipato' al ritiro: paghi il pieno alla partenza e riconsegni con il serbatoio anche vuoto, senza dover cercare un benzinaio prima del rientro." }
+    {
+      "q": "Posso guidare la Fiat Panda Hybrid da neopatentato?",
+      "a": "Sì. La Panda Hybrid 1.0 70cv ha un rapporto peso/potenza ben sotto i limiti del Codice della Strada per neopatentati (kW/t < 65). È anzi una delle scelte più consigliate per chi ha preso la patente da meno di un anno: leggera, prevedibile, sicura."
+    },
+    {
+      "q": "Quanti bagagli entrano con 5 persone a bordo?",
+      "a": "Il bagagliaio della Panda è 225 litri standard. Con 5 persone a bordo entrano comodamente 2 trolley medi (50-55 cm) + 1-2 borse da spiaggia. Per famiglie più numerose con valigie grandi consigliamo invece la Mercedes Classe A 180d (370 litri)."
+    },
+    {
+      "q": "Quanto consuma davvero la versione Hybrid?",
+      "a": "Nella nostra esperienza con la flotta in Sardegna, la Panda Hybrid 70cv consuma 4.5-5.0 L/100km in uso misto urbano-extraurbano (Olbia → San Teodoro → Costa Smeralda). Un pieno da circa 35 litri ti dura facilmente 600-700 km. Costa benzina per una settimana di vacanza media: 40-60 €."
+    },
+    {
+      "q": "Posso andare fuoristrada con la Panda?",
+      "a": "No. La Panda Hybrid è progettata per asfalto. Per gli sterrati di Punta Volpe, Capo Ferro o Monte Nieddu serve un mezzo dedicato come il nostro <a href='/flotta/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Le coperture assicurative escludono i danni su strade non asfaltate."
+    },
+    {
+      "q": "Posso ritirarla all'Aeroporto di Olbia?",
+      "a": "Sì, è la consegna più richiesta per la Panda. Operatore al terminal arrivi del Costa Smeralda, veicolo climatizzato e con il pieno fatto. <a href='/noleggio-auto-aeroporto-olbia' class='text-primary-foreground font-medium underline'>Vedi i dettagli del servizio aeroporto</a>."
+    },
+    {
+      "q": "Il carburante è incluso?",
+      "a": "Il veicolo viene consegnato con il pieno e va restituito con il pieno. In alternativa è possibile acquistare l'opzione 'pieno anticipato' al ritiro: paghi il pieno alla partenza e riconsegni con il serbatoio anche vuoto, senza dover cercare un benzinaio prima del rientro."
+    }
   ],
   "ctaTitle": "Pronto a guidare la tua Panda?",
   "ctaSubtitle": "Prenota in meno di 2 minuti. Consegna VIP in aeroporto, porto o hotel — in tutta la Costa Smeralda.",
   "ctaButtonLabel": "Prenota la tua Panda →",
-  "pricePerDay": 50,
+  "pricePerDay": 65,
   "priceValidUntil": "2026-12-31",
   "jsonLdType": "Car",
   "jsonLdBrand": "Fiat",
   "jsonLdManufacturer": "Fiat",
   "jsonLdModel": "Panda Hybrid",
   "jsonLdExtras": {
-    "vehicleTransmission": "Manual",
-    "fuelType": "Hybrid Benzina",
+    "vehicleTransmission": "ManualTransmission",
+    "fuelType": "Hybrid",
     "numberOfDoors": 5,
     "seatingCapacity": 5,
-    "vehicleEngine": { "@type": "EngineSpecification", "engineType": "1.0 Hybrid 70cv" }
+    "bodyType": "Hatchback",
+    "vehicleEngine": {
+      "@type": "EngineSpecification",
+      "engineType": "1.0 3-cylinder mild-hybrid",
+      "enginePower": {
+        "@type": "QuantitativeValue",
+        "value": 70,
+        "unitCode": "BHP"
+      }
+    },
+    "cargoVolume": {
+      "@type": "QuantitativeValue",
+      "value": 225,
+      "unitCode": "LTR"
+    },
+    "fuelEfficiency": {
+      "@type": "QuantitativeValue",
+      "value": 4.75,
+      "unitCode": "L/HKM",
+      "valueReference": "Mixed (real-world)"
+    },
+    "itemCondition": "https://schema.org/UsedCondition"
   },
   "i18n": {
     "en": {
@@ -114,7 +181,11 @@
       "heroH1Top": "Fiat Panda",
       "heroH1Bottom": "Hybrid",
       "heroSubtitle": "Effortless agility across Costa Smeralda. Air conditioning, 5 seats, low fuel consumption — the perfect car for your Sardinian holiday.",
-      "heroBadges": ["5 Seats", "Air Conditioning", "Hybrid"],
+      "heroBadges": [
+        "5 Seats",
+        "Air Conditioning",
+        "Hybrid"
+      ],
       "featureSections": [
         {
           "label": "Comfort & Practicality",
@@ -139,12 +210,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Engine", "value": "1.0 Hybrid 70hp" },
-        { "icon": "fuel", "label": "Fuel", "value": "Petrol / Hybrid" },
-        { "icon": "users", "label": "Seats", "value": "5" },
-        { "icon": "settings", "label": "Gearbox", "value": "Manual" },
-        { "icon": "wind", "label": "Climate", "value": "Air Conditioning" },
-        { "icon": "luggage", "label": "Boot", "value": "225 litres" }
+        {
+          "icon": "gauge",
+          "label": "Engine",
+          "value": "1.0 Hybrid 70hp"
+        },
+        {
+          "icon": "fuel",
+          "label": "Fuel",
+          "value": "Petrol / Hybrid"
+        },
+        {
+          "icon": "users",
+          "label": "Seats",
+          "value": "5"
+        },
+        {
+          "icon": "settings",
+          "label": "Gearbox",
+          "value": "Manual"
+        },
+        {
+          "icon": "wind",
+          "label": "Climate",
+          "value": "Air Conditioning"
+        },
+        {
+          "icon": "luggage",
+          "label": "Boot",
+          "value": "225 litres"
+        }
       ],
       "scenarios": [
         {
@@ -186,12 +281,30 @@
         "outro": "Looking for a more premium alternative? See the <a href='/en/fleet/mercedes-classe-a180d' class='text-blue-600 hover:underline'>Mercedes A-Class 180d</a>. Need to move around ZTL areas? Consider the <a href='/en/fleet/honda-sh' class='text-blue-600 hover:underline'>Honda SH scooter</a>."
       },
       "faq": [
-        { "q": "Can I drive the Fiat Panda Hybrid as a newly licensed driver?", "a": "Yes. The Panda Hybrid 1.0 70hp has a power-to-weight ratio well below the Italian Highway Code limits for new drivers (kW/t < 65). It is in fact one of the most recommended choices for those who got their licence less than a year ago: light, predictable, safe." },
-        { "q": "How much luggage fits with 5 people on board?", "a": "The Panda's boot is 225 litres standard. With 5 people on board you can comfortably fit 2 medium trolleys (50-55 cm) plus 1-2 beach bags. For larger families with big suitcases we recommend the Mercedes A-Class 180d (370 litres) instead." },
-        { "q": "How much does the Hybrid version really consume?", "a": "From our fleet experience in Sardinia, the Panda Hybrid 70hp uses 4.5-5.0 L/100km in mixed urban-suburban use (Olbia → San Teodoro → Costa Smeralda). A full 35-litre tank easily lasts 600-700 km. Fuel cost for an average week's holiday: 40-60 €." },
-        { "q": "Can I go off-road with the Panda?", "a": "No. The Panda Hybrid is designed for tarmac. For the dirt tracks of Punta Volpe, Capo Ferro or Monte Nieddu you need a dedicated vehicle such as our <a href='/en/fleet/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Insurance cover excludes damage on unpaved roads." },
-        { "q": "Can I pick it up at Olbia Airport?", "a": "Yes, this is the most requested delivery for the Panda. An operator at the Costa Smeralda arrivals terminal, vehicle air-conditioned and with a full tank. <a href='/en/car-rental-olbia-airport' class='text-primary-foreground font-medium underline'>See airport service details</a>." },
-        { "q": "Is fuel included?", "a": "The vehicle is delivered with a full tank and must be returned with a full tank. Alternatively you can buy the 'pre-paid fuel' option at pickup: you pay for the tank at the start and return it even empty, without having to look for a petrol station before drop-off." }
+        {
+          "q": "Can I drive the Fiat Panda Hybrid as a newly licensed driver?",
+          "a": "Yes. The Panda Hybrid 1.0 70hp has a power-to-weight ratio well below the Italian Highway Code limits for new drivers (kW/t < 65). It is in fact one of the most recommended choices for those who got their licence less than a year ago: light, predictable, safe."
+        },
+        {
+          "q": "How much luggage fits with 5 people on board?",
+          "a": "The Panda's boot is 225 litres standard. With 5 people on board you can comfortably fit 2 medium trolleys (50-55 cm) plus 1-2 beach bags. For larger families with big suitcases we recommend the Mercedes A-Class 180d (370 litres) instead."
+        },
+        {
+          "q": "How much does the Hybrid version really consume?",
+          "a": "From our fleet experience in Sardinia, the Panda Hybrid 70hp uses 4.5-5.0 L/100km in mixed urban-suburban use (Olbia → San Teodoro → Costa Smeralda). A full 35-litre tank easily lasts 600-700 km. Fuel cost for an average week's holiday: 40-60 €."
+        },
+        {
+          "q": "Can I go off-road with the Panda?",
+          "a": "No. The Panda Hybrid is designed for tarmac. For the dirt tracks of Punta Volpe, Capo Ferro or Monte Nieddu you need a dedicated vehicle such as our <a href='/en/fleet/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Insurance cover excludes damage on unpaved roads."
+        },
+        {
+          "q": "Can I pick it up at Olbia Airport?",
+          "a": "Yes, this is the most requested delivery for the Panda. An operator at the Costa Smeralda arrivals terminal, vehicle air-conditioned and with a full tank. <a href='/en/car-rental-olbia-airport' class='text-primary-foreground font-medium underline'>See airport service details</a>."
+        },
+        {
+          "q": "Is fuel included?",
+          "a": "The vehicle is delivered with a full tank and must be returned with a full tank. Alternatively you can buy the 'pre-paid fuel' option at pickup: you pay for the tank at the start and return it even empty, without having to look for a petrol station before drop-off."
+        }
       ],
       "ctaTitle": "Ready to drive your Panda?",
       "ctaSubtitle": "Book in less than 2 minutes. VIP delivery to airport, port or hotel — across all Costa Smeralda.",
@@ -205,7 +318,11 @@
       "heroH1Top": "Fiat Panda",
       "heroH1Bottom": "Hybrid",
       "heroSubtitle": "Agilité sans compromis en Costa Smeralda. Climatisation, 5 places, faible consommation — la voiture parfaite pour vos vacances en Sardaigne.",
-      "heroBadges": ["5 places", "Climatisation", "Hybride"],
+      "heroBadges": [
+        "5 places",
+        "Climatisation",
+        "Hybride"
+      ],
       "featureSections": [
         {
           "label": "Confort et praticité",
@@ -230,12 +347,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Moteur", "value": "1.0 Hybrid 70 ch" },
-        { "icon": "fuel", "label": "Carburant", "value": "Essence / Hybride" },
-        { "icon": "users", "label": "Places", "value": "5" },
-        { "icon": "settings", "label": "Boîte", "value": "Manuelle" },
-        { "icon": "wind", "label": "Climatisation", "value": "Air conditionné" },
-        { "icon": "luggage", "label": "Coffre", "value": "225 litres" }
+        {
+          "icon": "gauge",
+          "label": "Moteur",
+          "value": "1.0 Hybrid 70 ch"
+        },
+        {
+          "icon": "fuel",
+          "label": "Carburant",
+          "value": "Essence / Hybride"
+        },
+        {
+          "icon": "users",
+          "label": "Places",
+          "value": "5"
+        },
+        {
+          "icon": "settings",
+          "label": "Boîte",
+          "value": "Manuelle"
+        },
+        {
+          "icon": "wind",
+          "label": "Climatisation",
+          "value": "Air conditionné"
+        },
+        {
+          "icon": "luggage",
+          "label": "Coffre",
+          "value": "225 litres"
+        }
       ],
       "scenarios": [
         {
@@ -277,12 +418,30 @@
         "outro": "Vous cherchez une alternative plus premium ? Voir la <a href='/fr/flotte/mercedes-classe-a180d' class='text-blue-600 hover:underline'>Mercedes Classe A 180d</a>. Vous devez circuler en ZTL ? Pensez au <a href='/fr/flotte/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
       },
       "faq": [
-        { "q": "Puis-je conduire la Fiat Panda Hybrid en tant que jeune conducteur ?", "a": "Oui. La Panda Hybrid 1.0 70 ch a un rapport poids/puissance bien en dessous des limites du Code de la route italien pour les jeunes conducteurs (kW/t < 65). C'est même l'un des choix les plus recommandés pour ceux qui ont obtenu leur permis depuis moins d'un an : légère, prévisible, sûre." },
-        { "q": "Combien de bagages tiennent avec 5 personnes à bord ?", "a": "Le coffre de la Panda fait 225 litres en standard. Avec 5 personnes à bord, il y a confortablement la place pour 2 valises moyennes (50-55 cm) + 1-2 sacs de plage. Pour les familles plus nombreuses avec de grandes valises, nous recommandons plutôt la Mercedes Classe A 180d (370 litres)." },
-        { "q": "Quelle est la consommation réelle de la version Hybrid ?", "a": "D'après notre expérience avec la flotte en Sardaigne, la Panda Hybrid 70 ch consomme 4,5 à 5,0 L/100 km en usage mixte urbain-extra-urbain (Olbia → San Teodoro → Costa Smeralda). Un plein d'environ 35 litres vous dure facilement 600 à 700 km. Coût en essence pour une semaine de vacances moyenne : 40 à 60 €." },
-        { "q": "Puis-je faire du tout-terrain avec la Panda ?", "a": "Non. La Panda Hybrid est conçue pour l'asphalte. Pour les pistes de Punta Volpe, Capo Ferro ou Monte Nieddu il faut un engin dédié comme notre <a href='/fr/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Les couvertures d'assurance excluent les dommages sur routes non goudronnées." },
-        { "q": "Puis-je la récupérer à l'aéroport d'Olbia ?", "a": "Oui, c'est la livraison la plus demandée pour la Panda. Notre opérateur au terminal arrivées de Costa Smeralda, véhicule climatisé et plein effectué. <a href='/fr/location-voiture-aeroport-olbia' class='text-primary-foreground font-medium underline'>Voir les détails du service aéroport</a>." },
-        { "q": "Le carburant est-il inclus ?", "a": "Le véhicule est livré avec le plein et doit être restitué avec le plein. Il est également possible d'acheter l'option « plein anticipé » au retrait : vous payez le plein au départ et restituez avec le réservoir même vide, sans avoir à chercher une station-service avant le retour." }
+        {
+          "q": "Puis-je conduire la Fiat Panda Hybrid en tant que jeune conducteur ?",
+          "a": "Oui. La Panda Hybrid 1.0 70 ch a un rapport poids/puissance bien en dessous des limites du Code de la route italien pour les jeunes conducteurs (kW/t < 65). C'est même l'un des choix les plus recommandés pour ceux qui ont obtenu leur permis depuis moins d'un an : légère, prévisible, sûre."
+        },
+        {
+          "q": "Combien de bagages tiennent avec 5 personnes à bord ?",
+          "a": "Le coffre de la Panda fait 225 litres en standard. Avec 5 personnes à bord, il y a confortablement la place pour 2 valises moyennes (50-55 cm) + 1-2 sacs de plage. Pour les familles plus nombreuses avec de grandes valises, nous recommandons plutôt la Mercedes Classe A 180d (370 litres)."
+        },
+        {
+          "q": "Quelle est la consommation réelle de la version Hybrid ?",
+          "a": "D'après notre expérience avec la flotte en Sardaigne, la Panda Hybrid 70 ch consomme 4,5 à 5,0 L/100 km en usage mixte urbain-extra-urbain (Olbia → San Teodoro → Costa Smeralda). Un plein d'environ 35 litres vous dure facilement 600 à 700 km. Coût en essence pour une semaine de vacances moyenne : 40 à 60 €."
+        },
+        {
+          "q": "Puis-je faire du tout-terrain avec la Panda ?",
+          "a": "Non. La Panda Hybrid est conçue pour l'asphalte. Pour les pistes de Punta Volpe, Capo Ferro ou Monte Nieddu il faut un engin dédié comme notre <a href='/fr/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Les couvertures d'assurance excluent les dommages sur routes non goudronnées."
+        },
+        {
+          "q": "Puis-je la récupérer à l'aéroport d'Olbia ?",
+          "a": "Oui, c'est la livraison la plus demandée pour la Panda. Notre opérateur au terminal arrivées de Costa Smeralda, véhicule climatisé et plein effectué. <a href='/fr/location-voiture-aeroport-olbia' class='text-primary-foreground font-medium underline'>Voir les détails du service aéroport</a>."
+        },
+        {
+          "q": "Le carburant est-il inclus ?",
+          "a": "Le véhicule est livré avec le plein et doit être restitué avec le plein. Il est également possible d'acheter l'option « plein anticipé » au retrait : vous payez le plein au départ et restituez avec le réservoir même vide, sans avoir à chercher une station-service avant le retour."
+        }
       ],
       "ctaTitle": "Prêt à conduire votre Panda ?",
       "ctaSubtitle": "Réservez en moins de 2 minutes. Livraison VIP à l'aéroport, au port ou à l'hôtel — dans toute la Costa Smeralda.",
@@ -296,7 +455,11 @@
       "heroH1Top": "Fiat Panda",
       "heroH1Bottom": "Hybrid",
       "heroSubtitle": "Wendigkeit ohne Kompromisse an der Costa Smeralda. Klimaanlage, 5 Sitze, niedriger Verbrauch — das perfekte Auto für Ihren Sardinien-Urlaub.",
-      "heroBadges": ["5 Sitze", "Klimaanlage", "Hybrid"],
+      "heroBadges": [
+        "5 Sitze",
+        "Klimaanlage",
+        "Hybrid"
+      ],
       "featureSections": [
         {
           "label": "Komfort & Praktikabilität",
@@ -321,12 +484,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Motor", "value": "1.0 Hybrid 70 PS" },
-        { "icon": "fuel", "label": "Kraftstoff", "value": "Benzin / Hybrid" },
-        { "icon": "users", "label": "Sitze", "value": "5" },
-        { "icon": "settings", "label": "Getriebe", "value": "Schaltgetriebe" },
-        { "icon": "wind", "label": "Klima", "value": "Klimaanlage" },
-        { "icon": "luggage", "label": "Kofferraum", "value": "225 Liter" }
+        {
+          "icon": "gauge",
+          "label": "Motor",
+          "value": "1.0 Hybrid 70 PS"
+        },
+        {
+          "icon": "fuel",
+          "label": "Kraftstoff",
+          "value": "Benzin / Hybrid"
+        },
+        {
+          "icon": "users",
+          "label": "Sitze",
+          "value": "5"
+        },
+        {
+          "icon": "settings",
+          "label": "Getriebe",
+          "value": "Schaltgetriebe"
+        },
+        {
+          "icon": "wind",
+          "label": "Klima",
+          "value": "Klimaanlage"
+        },
+        {
+          "icon": "luggage",
+          "label": "Kofferraum",
+          "value": "225 Liter"
+        }
       ],
       "scenarios": [
         {
@@ -368,12 +555,30 @@
         "outro": "Suchen Sie eine premiumere Alternative? Sehen Sie sich die <a href='/de/flotte/mercedes-classe-a180d' class='text-blue-600 hover:underline'>Mercedes A-Klasse 180d</a> an. Möchten Sie sich in der ZTL bewegen? Erwägen Sie den <a href='/de/flotte/honda-sh' class='text-blue-600 hover:underline'>Honda SH Roller</a>."
       },
       "faq": [
-        { "q": "Darf ich den Fiat Panda Hybrid als Fahranfänger fahren?", "a": "Ja. Der Panda Hybrid 1.0 70 PS hat ein Leistungs-/Gewichtsverhältnis weit unterhalb der italienischen Grenzwerte für Fahranfänger (kW/t < 65). Er ist sogar eine der empfohlensten Optionen für alle, die seit weniger als einem Jahr ihren Führerschein haben: leicht, berechenbar, sicher." },
-        { "q": "Wie viel Gepäck passt mit 5 Personen an Bord?", "a": "Der Kofferraum des Panda fasst standardmäßig 225 Liter. Mit 5 Personen an Bord passen bequem 2 mittelgroße Trolleys (50-55 cm) + 1-2 Strandtaschen. Für größere Familien mit großem Gepäck empfehlen wir stattdessen die Mercedes A-Klasse 180d (370 Liter)." },
-        { "q": "Wie viel verbraucht die Hybrid-Version wirklich?", "a": "Nach unserer Erfahrung mit der Flotte auf Sardinien verbraucht der Panda Hybrid 70 PS 4,5-5,0 L/100 km im gemischten Stadt-/Überlandbetrieb (Olbia → San Teodoro → Costa Smeralda). Eine Tankfüllung mit etwa 35 Litern reicht problemlos 600-700 km. Spritkosten für eine durchschnittliche Urlaubswoche: 40-60 €." },
-        { "q": "Kann ich mit dem Panda ins Gelände fahren?", "a": "Nein. Der Panda Hybrid ist für Asphalt ausgelegt. Für die Schotterpisten von Punta Volpe, Capo Ferro oder Monte Nieddu benötigen Sie ein speziell dafür geeignetes Fahrzeug wie unseren <a href='/de/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Die Versicherungsdeckung schließt Schäden auf nicht asphaltierten Straßen aus." },
-        { "q": "Kann ich ihn am Flughafen Olbia abholen?", "a": "Ja, das ist die meistgefragte Übergabeart für den Panda. Mitarbeiter im Ankunftsterminal des Flughafens Costa Smeralda, Fahrzeug klimatisiert und vollgetankt. <a href='/de/autovermietung-flughafen-olbia' class='text-primary-foreground font-medium underline'>Details zum Flughafen-Service ansehen</a>." },
-        { "q": "Ist der Kraftstoff inbegriffen?", "a": "Das Fahrzeug wird vollgetankt übergeben und muss vollgetankt zurückgegeben werden. Alternativ kann bei der Abholung die Option 'Tankfüllung im Voraus' erworben werden: Sie zahlen die Tankfüllung bei Abfahrt und geben das Fahrzeug auch leer zurück, ohne vor der Rückgabe eine Tankstelle suchen zu müssen." }
+        {
+          "q": "Darf ich den Fiat Panda Hybrid als Fahranfänger fahren?",
+          "a": "Ja. Der Panda Hybrid 1.0 70 PS hat ein Leistungs-/Gewichtsverhältnis weit unterhalb der italienischen Grenzwerte für Fahranfänger (kW/t < 65). Er ist sogar eine der empfohlensten Optionen für alle, die seit weniger als einem Jahr ihren Führerschein haben: leicht, berechenbar, sicher."
+        },
+        {
+          "q": "Wie viel Gepäck passt mit 5 Personen an Bord?",
+          "a": "Der Kofferraum des Panda fasst standardmäßig 225 Liter. Mit 5 Personen an Bord passen bequem 2 mittelgroße Trolleys (50-55 cm) + 1-2 Strandtaschen. Für größere Familien mit großem Gepäck empfehlen wir stattdessen die Mercedes A-Klasse 180d (370 Liter)."
+        },
+        {
+          "q": "Wie viel verbraucht die Hybrid-Version wirklich?",
+          "a": "Nach unserer Erfahrung mit der Flotte auf Sardinien verbraucht der Panda Hybrid 70 PS 4,5-5,0 L/100 km im gemischten Stadt-/Überlandbetrieb (Olbia → San Teodoro → Costa Smeralda). Eine Tankfüllung mit etwa 35 Litern reicht problemlos 600-700 km. Spritkosten für eine durchschnittliche Urlaubswoche: 40-60 €."
+        },
+        {
+          "q": "Kann ich mit dem Panda ins Gelände fahren?",
+          "a": "Nein. Der Panda Hybrid ist für Asphalt ausgelegt. Für die Schotterpisten von Punta Volpe, Capo Ferro oder Monte Nieddu benötigen Sie ein speziell dafür geeignetes Fahrzeug wie unseren <a href='/de/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>. Die Versicherungsdeckung schließt Schäden auf nicht asphaltierten Straßen aus."
+        },
+        {
+          "q": "Kann ich ihn am Flughafen Olbia abholen?",
+          "a": "Ja, das ist die meistgefragte Übergabeart für den Panda. Mitarbeiter im Ankunftsterminal des Flughafens Costa Smeralda, Fahrzeug klimatisiert und vollgetankt. <a href='/de/autovermietung-flughafen-olbia' class='text-primary-foreground font-medium underline'>Details zum Flughafen-Service ansehen</a>."
+        },
+        {
+          "q": "Ist der Kraftstoff inbegriffen?",
+          "a": "Das Fahrzeug wird vollgetankt übergeben und muss vollgetankt zurückgegeben werden. Alternativ kann bei der Abholung die Option 'Tankfüllung im Voraus' erworben werden: Sie zahlen die Tankfüllung bei Abfahrt und geben das Fahrzeug auch leer zurück, ohne vor der Rückgabe eine Tankstelle suchen zu müssen."
+        }
       ],
       "ctaTitle": "Bereit, Ihren Panda zu fahren?",
       "ctaSubtitle": "Buchen Sie in weniger als 2 Minuten. VIP-Übergabe am Flughafen, Hafen oder Hotel — in der gesamten Costa Smeralda.",

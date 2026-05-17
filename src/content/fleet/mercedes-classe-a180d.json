@@ -10,7 +10,11 @@
   "heroH1Top": "Mercedes-Benz",
   "heroH1Bottom": "Classe A 180d",
   "heroSubtitle": "Eleganza, tecnologia e comfort senza compromessi. Goditi la Costa Smeralda a bordo di un'icona di stile, dotata di cambio automatico e interni di lusso.",
-  "heroBadges": ["Cambio Automatico", "Diesel", "Premium Interior"],
+  "heroBadges": [
+    "Cambio Automatico",
+    "Diesel",
+    "Premium Interior"
+  ],
   "featureSections": [
     {
       "label": "Lusso & Tecnologia",
@@ -35,12 +39,36 @@
     }
   ],
   "specs": [
-    { "icon": "gauge", "label": "Motore", "value": "2.0 Diesel 116cv" },
-    { "icon": "fuel", "label": "Alimentazione", "value": "Diesel" },
-    { "icon": "users", "label": "Posti", "value": "5" },
-    { "icon": "settings", "label": "Cambio", "value": "Automatico" },
-    { "icon": "wind", "label": "Clima", "value": "Climatizzatore Auto" },
-    { "icon": "luggage", "label": "Bagagliaio", "value": "355 litri" }
+    {
+      "icon": "gauge",
+      "label": "Motore",
+      "value": "2.0 Diesel 116cv"
+    },
+    {
+      "icon": "fuel",
+      "label": "Alimentazione",
+      "value": "Diesel"
+    },
+    {
+      "icon": "users",
+      "label": "Posti",
+      "value": "5"
+    },
+    {
+      "icon": "settings",
+      "label": "Cambio",
+      "value": "Automatico"
+    },
+    {
+      "icon": "wind",
+      "label": "Clima",
+      "value": "Climatizzatore Auto"
+    },
+    {
+      "icon": "luggage",
+      "label": "Bagagliaio",
+      "value": "355 litri"
+    }
   ],
   "scenarios": [
     {
@@ -82,12 +110,30 @@
     "outro": "Cerchi qualcosa di più economico? Vedi la <a href='/flotta/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Vuoi muoverti dove l'auto non passa? Considera lo <a href='/flotta/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
   },
   "faq": [
-    { "q": "Quale cambio automatico ha la Classe A 180d?", "a": "Cambio 8G-DCT a doppia frizione, sviluppato da Mercedes per la gamma compatta. Cambia in 80-150 millisecondi senza interruzione di coppia: in autostrada SS131 da Olbia a Cagliari non senti la differenza con un cambio manuale, in città azzera la fatica nel traffico estivo della Costa Smeralda." },
-    { "q": "Quanti anni di patente servono?", "a": "Età minima 25 anni e almeno 3 anni di patente B. Per i conducenti tra 21-24 anni è applicato un supplemento giovane. Per i neopatentati con meno di 12 mesi di patente la Mercedes 180d non è disponibile (115cv superano la soglia kW/t per neopatentati): consigliamo la Fiat Panda Hybrid in alternativa." },
-    { "q": "Quanto consuma il diesel 1.5 da 115cv?", "a": "Nella nostra esperienza di flotta: 5.0-5.5 L/100km in autostrada SS131, 5.5-6.0 in misto Costa Smeralda. Un pieno da 43 litri ti dura facilmente 800-900 km. Per una vacanza di 7 giorni con escursioni quotidiane (Olbia ↔ Porto Cervo, San Teodoro, Baja) spendi 60-80 € di gasolio." },
-    { "q": "C'è MBUX e Apple CarPlay / Android Auto?", "a": "Sì. Sistema MBUX di Mercedes con doppio schermo 10.25\", Apple CarPlay e Android Auto wireless inclusi. Comando vocale 'Hey Mercedes' attivo. Navigatore con mappe Sardegna aggiornate. Bluetooth standard, presa USB-C anteriore e posteriore." },
-    { "q": "Posso averla consegnata alla villa di Porto Cervo?", "a": "Sì, è la consegna più frequente per la Mercedes 180d. Operatore al cancello/concierge della villa, all'Hotel Cala di Volpe, al Pitrizza o a qualsiasi altro hotel 5 stelle. Consegna anche al pontile yacht in Marina di Porto Cervo o Porto Rotondo. <a href='/noleggio-auto-a-porto-cervo' class='text-primary-foreground font-medium underline'>Vedi i dettagli</a>." },
-    { "q": "Va bene per gli sterrati di Capo Ferro o Punta Volpe?", "a": "Assolutamente no. La Classe A è un'auto premium su asfalto, sospensioni studiate per il comfort. Su sterrato rischi danni al sottoscocca e alle gomme low profile. Per le cale off-road usa il <a href='/flotta/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>." }
+    {
+      "q": "Quale cambio automatico ha la Classe A 180d?",
+      "a": "Cambio 8G-DCT a doppia frizione, sviluppato da Mercedes per la gamma compatta. Cambia in 80-150 millisecondi senza interruzione di coppia: in autostrada SS131 da Olbia a Cagliari non senti la differenza con un cambio manuale, in città azzera la fatica nel traffico estivo della Costa Smeralda."
+    },
+    {
+      "q": "Quanti anni di patente servono?",
+      "a": "Età minima 25 anni e almeno 3 anni di patente B. Per i conducenti tra 21-24 anni è applicato un supplemento giovane. Per i neopatentati con meno di 12 mesi di patente la Mercedes 180d non è disponibile (115cv superano la soglia kW/t per neopatentati): consigliamo la Fiat Panda Hybrid in alternativa."
+    },
+    {
+      "q": "Quanto consuma il diesel 1.5 da 115cv?",
+      "a": "Nella nostra esperienza di flotta: 5.0-5.5 L/100km in autostrada SS131, 5.5-6.0 in misto Costa Smeralda. Un pieno da 43 litri ti dura facilmente 800-900 km. Per una vacanza di 7 giorni con escursioni quotidiane (Olbia ↔ Porto Cervo, San Teodoro, Baja) spendi 60-80 € di gasolio."
+    },
+    {
+      "q": "C'è MBUX e Apple CarPlay / Android Auto?",
+      "a": "Sì. Sistema MBUX di Mercedes con doppio schermo 10.25\", Apple CarPlay e Android Auto wireless inclusi. Comando vocale 'Hey Mercedes' attivo. Navigatore con mappe Sardegna aggiornate. Bluetooth standard, presa USB-C anteriore e posteriore."
+    },
+    {
+      "q": "Posso averla consegnata alla villa di Porto Cervo?",
+      "a": "Sì, è la consegna più frequente per la Mercedes 180d. Operatore al cancello/concierge della villa, all'Hotel Cala di Volpe, al Pitrizza o a qualsiasi altro hotel 5 stelle. Consegna anche al pontile yacht in Marina di Porto Cervo o Porto Rotondo. <a href='/noleggio-auto-a-porto-cervo' class='text-primary-foreground font-medium underline'>Vedi i dettagli</a>."
+    },
+    {
+      "q": "Va bene per gli sterrati di Capo Ferro o Punta Volpe?",
+      "a": "Assolutamente no. La Classe A è un'auto premium su asfalto, sospensioni studiate per il comfort. Su sterrato rischi danni al sottoscocca e alle gomme low profile. Per le cale off-road usa il <a href='/flotta/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>."
+    }
   ],
   "ctaTitle": "Goditi il vero comfort.",
   "ctaSubtitle": "Prenota la tua Mercedes Classe A in meno di 2 minuti. Consegna VIP in aeroporto, porto o hotel — in tutta la Costa Smeralda.",
@@ -99,10 +145,26 @@
   "jsonLdManufacturer": "Mercedes-Benz",
   "jsonLdModel": "Classe A 180d",
   "jsonLdExtras": {
-    "vehicleTransmission": "Automatic",
+    "vehicleTransmission": "AutomaticTransmission",
     "fuelType": "Diesel",
     "numberOfDoors": 5,
-    "seatingCapacity": 5
+    "seatingCapacity": 5,
+    "bodyType": "Hatchback",
+    "vehicleEngine": {
+      "@type": "EngineSpecification",
+      "engineType": "2.0 Diesel 4-cylinder turbo",
+      "enginePower": {
+        "@type": "QuantitativeValue",
+        "value": 116,
+        "unitCode": "BHP"
+      }
+    },
+    "cargoVolume": {
+      "@type": "QuantitativeValue",
+      "value": 355,
+      "unitCode": "LTR"
+    },
+    "itemCondition": "https://schema.org/UsedCondition"
   },
   "i18n": {
     "en": {
@@ -113,7 +175,11 @@
       "heroH1Top": "Mercedes-Benz",
       "heroH1Bottom": "A-Class 180d",
       "heroSubtitle": "Elegance, technology and uncompromising comfort. Enjoy Costa Smeralda aboard a style icon, with automatic gearbox and luxury interiors.",
-      "heroBadges": ["Automatic Gearbox", "Diesel", "Premium Interior"],
+      "heroBadges": [
+        "Automatic Gearbox",
+        "Diesel",
+        "Premium Interior"
+      ],
       "featureSections": [
         {
           "label": "Luxury & Technology",
@@ -138,12 +204,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Engine", "value": "2.0 Diesel 116hp" },
-        { "icon": "fuel", "label": "Fuel", "value": "Diesel" },
-        { "icon": "users", "label": "Seats", "value": "5" },
-        { "icon": "settings", "label": "Gearbox", "value": "Automatic" },
-        { "icon": "wind", "label": "Climate", "value": "Auto Climate Control" },
-        { "icon": "luggage", "label": "Boot", "value": "355 litres" }
+        {
+          "icon": "gauge",
+          "label": "Engine",
+          "value": "2.0 Diesel 116hp"
+        },
+        {
+          "icon": "fuel",
+          "label": "Fuel",
+          "value": "Diesel"
+        },
+        {
+          "icon": "users",
+          "label": "Seats",
+          "value": "5"
+        },
+        {
+          "icon": "settings",
+          "label": "Gearbox",
+          "value": "Automatic"
+        },
+        {
+          "icon": "wind",
+          "label": "Climate",
+          "value": "Auto Climate Control"
+        },
+        {
+          "icon": "luggage",
+          "label": "Boot",
+          "value": "355 litres"
+        }
       ],
       "scenarios": [
         {
@@ -185,12 +275,30 @@
         "outro": "Looking for something more affordable? See the <a href='/en/fleet/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Want to go where cars can't? Consider the <a href='/en/fleet/honda-sh' class='text-blue-600 hover:underline'>Honda SH scooter</a>."
       },
       "faq": [
-        { "q": "Which automatic gearbox does the A-Class 180d have?", "a": "The 8G-DCT dual-clutch gearbox, developed by Mercedes for the compact range. It shifts in 80-150 milliseconds without torque interruption: on the SS131 dual carriageway from Olbia to Cagliari you don't feel the difference from a manual; in town it eliminates the fatigue of summer Costa Smeralda traffic." },
-        { "q": "How many years of licence are needed?", "a": "Minimum age 25 and at least 3 years on a B licence. For drivers aged 21-24 a young driver supplement applies. For new drivers with less than 12 months on a licence the Mercedes 180d is not available (115hp exceeds the kW/t threshold for new drivers): we recommend the Fiat Panda Hybrid as an alternative." },
-        { "q": "How much does the 1.5 diesel 115hp consume?", "a": "From our fleet experience: 5.0-5.5 L/100km on the SS131 dual carriageway, 5.5-6.0 in mixed Costa Smeralda use. A 43-litre tank easily lasts 800-900 km. For a 7-day holiday with daily excursions (Olbia ↔ Porto Cervo, San Teodoro, Baja) you spend 60-80 € on diesel." },
-        { "q": "Is there MBUX and Apple CarPlay / Android Auto?", "a": "Yes. The Mercedes MBUX system with twin 10.25\" screens, wireless Apple CarPlay and Android Auto included. 'Hey Mercedes' voice control active. Sat-nav with updated Sardinia maps. Standard Bluetooth, USB-C socket front and rear." },
-        { "q": "Can I have it delivered to the villa in Porto Cervo?", "a": "Yes, this is the most frequent delivery for the Mercedes 180d. An operator at the villa gate/concierge, at Hotel Cala di Volpe, at Pitrizza or any other 5-star hotel. Delivery also at the yacht berth in Marina di Porto Cervo or Porto Rotondo. <a href='/en/car-rental-in-porto-cervo' class='text-primary-foreground font-medium underline'>See details</a>." },
-        { "q": "Is it suitable for the dirt tracks of Capo Ferro or Punta Volpe?", "a": "Absolutely not. The A-Class is a premium car designed for tarmac, with comfort-tuned suspension. On dirt tracks you risk damage to the underbody and to the low-profile tyres. For off-road coves use the <a href='/en/fleet/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>." }
+        {
+          "q": "Which automatic gearbox does the A-Class 180d have?",
+          "a": "The 8G-DCT dual-clutch gearbox, developed by Mercedes for the compact range. It shifts in 80-150 milliseconds without torque interruption: on the SS131 dual carriageway from Olbia to Cagliari you don't feel the difference from a manual; in town it eliminates the fatigue of summer Costa Smeralda traffic."
+        },
+        {
+          "q": "How many years of licence are needed?",
+          "a": "Minimum age 25 and at least 3 years on a B licence. For drivers aged 21-24 a young driver supplement applies. For new drivers with less than 12 months on a licence the Mercedes 180d is not available (115hp exceeds the kW/t threshold for new drivers): we recommend the Fiat Panda Hybrid as an alternative."
+        },
+        {
+          "q": "How much does the 1.5 diesel 115hp consume?",
+          "a": "From our fleet experience: 5.0-5.5 L/100km on the SS131 dual carriageway, 5.5-6.0 in mixed Costa Smeralda use. A 43-litre tank easily lasts 800-900 km. For a 7-day holiday with daily excursions (Olbia ↔ Porto Cervo, San Teodoro, Baja) you spend 60-80 € on diesel."
+        },
+        {
+          "q": "Is there MBUX and Apple CarPlay / Android Auto?",
+          "a": "Yes. The Mercedes MBUX system with twin 10.25\" screens, wireless Apple CarPlay and Android Auto included. 'Hey Mercedes' voice control active. Sat-nav with updated Sardinia maps. Standard Bluetooth, USB-C socket front and rear."
+        },
+        {
+          "q": "Can I have it delivered to the villa in Porto Cervo?",
+          "a": "Yes, this is the most frequent delivery for the Mercedes 180d. An operator at the villa gate/concierge, at Hotel Cala di Volpe, at Pitrizza or any other 5-star hotel. Delivery also at the yacht berth in Marina di Porto Cervo or Porto Rotondo. <a href='/en/car-rental-in-porto-cervo' class='text-primary-foreground font-medium underline'>See details</a>."
+        },
+        {
+          "q": "Is it suitable for the dirt tracks of Capo Ferro or Punta Volpe?",
+          "a": "Absolutely not. The A-Class is a premium car designed for tarmac, with comfort-tuned suspension. On dirt tracks you risk damage to the underbody and to the low-profile tyres. For off-road coves use the <a href='/en/fleet/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>."
+        }
       ],
       "ctaTitle": "Enjoy real comfort.",
       "ctaSubtitle": "Book your Mercedes A-Class in less than 2 minutes. VIP delivery to airport, port or hotel — across all Costa Smeralda.",
@@ -204,7 +312,11 @@
       "heroH1Top": "Mercedes-Benz",
       "heroH1Bottom": "Classe A 180d",
       "heroSubtitle": "Élégance, technologie et confort sans compromis. Profitez de la Costa Smeralda à bord d'une icône de style, dotée d'une boîte automatique et d'intérieurs de luxe.",
-      "heroBadges": ["Boîte automatique", "Diesel", "Intérieur premium"],
+      "heroBadges": [
+        "Boîte automatique",
+        "Diesel",
+        "Intérieur premium"
+      ],
       "featureSections": [
         {
           "label": "Luxe et technologie",
@@ -229,12 +341,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Moteur", "value": "2.0 Diesel 116 ch" },
-        { "icon": "fuel", "label": "Carburant", "value": "Diesel" },
-        { "icon": "users", "label": "Places", "value": "5" },
-        { "icon": "settings", "label": "Boîte", "value": "Automatique" },
-        { "icon": "wind", "label": "Climatisation", "value": "Climatisation auto" },
-        { "icon": "luggage", "label": "Coffre", "value": "355 litres" }
+        {
+          "icon": "gauge",
+          "label": "Moteur",
+          "value": "2.0 Diesel 116 ch"
+        },
+        {
+          "icon": "fuel",
+          "label": "Carburant",
+          "value": "Diesel"
+        },
+        {
+          "icon": "users",
+          "label": "Places",
+          "value": "5"
+        },
+        {
+          "icon": "settings",
+          "label": "Boîte",
+          "value": "Automatique"
+        },
+        {
+          "icon": "wind",
+          "label": "Climatisation",
+          "value": "Climatisation auto"
+        },
+        {
+          "icon": "luggage",
+          "label": "Coffre",
+          "value": "355 litres"
+        }
       ],
       "scenarios": [
         {
@@ -276,12 +412,30 @@
         "outro": "Vous cherchez quelque chose de plus économique ? Voir la <a href='/fr/flotte/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Vous voulez circuler là où la voiture ne passe pas ? Pensez au <a href='/fr/flotte/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
       },
       "faq": [
-        { "q": "Quelle boîte automatique a la Classe A 180d ?", "a": "Boîte 8G-DCT à double embrayage, développée par Mercedes pour la gamme compacte. Elle change en 80-150 millisecondes sans interruption de couple : sur la SS131 d'Olbia à Cagliari vous ne sentez pas la différence avec une boîte manuelle, en ville elle annule la fatigue dans le trafic estival de la Costa Smeralda." },
-        { "q": "Combien d'années de permis faut-il ?", "a": "Âge minimum 25 ans et au moins 3 ans de permis B. Pour les conducteurs entre 21 et 24 ans un supplément jeune conducteur est appliqué. Pour les jeunes conducteurs avec moins de 12 mois de permis, la Mercedes 180d n'est pas disponible (115 ch dépassent le seuil kW/t pour les jeunes conducteurs) : nous recommandons la Fiat Panda Hybrid en alternative." },
-        { "q": "Combien consomme le diesel 1.5 de 115 ch ?", "a": "D'après notre expérience de flotte : 5,0-5,5 L/100 km sur la SS131, 5,5-6,0 en mixte Costa Smeralda. Un plein de 43 litres dure facilement 800 à 900 km. Pour des vacances de 7 jours avec excursions quotidiennes (Olbia ↔ Porto Cervo, San Teodoro, Baja) vous dépensez 60 à 80 € de gasoil." },
-        { "q": "Y a-t-il MBUX et Apple CarPlay / Android Auto ?", "a": "Oui. Système MBUX de Mercedes avec double écran 10,25\", Apple CarPlay et Android Auto sans fil inclus. Commande vocale « Hey Mercedes » active. Navigateur avec cartes Sardaigne à jour. Bluetooth standard, prise USB-C avant et arrière." },
-        { "q": "Puis-je la faire livrer à la villa de Porto Cervo ?", "a": "Oui, c'est la livraison la plus fréquente pour la Mercedes 180d. Opérateur au portail/concierge de la villa, à l'Hôtel Cala di Volpe, au Pitrizza ou à tout autre hôtel 5 étoiles. Livraison également au ponton du yacht à la Marina de Porto Cervo ou Porto Rotondo. <a href='/fr/location-voiture-a-porto-cervo' class='text-primary-foreground font-medium underline'>Voir les détails</a>." },
-        { "q": "Convient-elle pour les pistes de Capo Ferro ou Punta Volpe ?", "a": "Absolument pas. La Classe A est une voiture premium conçue pour l'asphalte, suspensions étudiées pour le confort. Sur piste, vous risquez d'endommager le soubassement et les pneus profil bas. Pour les criques tout-terrain, utilisez le <a href='/fr/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>." }
+        {
+          "q": "Quelle boîte automatique a la Classe A 180d ?",
+          "a": "Boîte 8G-DCT à double embrayage, développée par Mercedes pour la gamme compacte. Elle change en 80-150 millisecondes sans interruption de couple : sur la SS131 d'Olbia à Cagliari vous ne sentez pas la différence avec une boîte manuelle, en ville elle annule la fatigue dans le trafic estival de la Costa Smeralda."
+        },
+        {
+          "q": "Combien d'années de permis faut-il ?",
+          "a": "Âge minimum 25 ans et au moins 3 ans de permis B. Pour les conducteurs entre 21 et 24 ans un supplément jeune conducteur est appliqué. Pour les jeunes conducteurs avec moins de 12 mois de permis, la Mercedes 180d n'est pas disponible (115 ch dépassent le seuil kW/t pour les jeunes conducteurs) : nous recommandons la Fiat Panda Hybrid en alternative."
+        },
+        {
+          "q": "Combien consomme le diesel 1.5 de 115 ch ?",
+          "a": "D'après notre expérience de flotte : 5,0-5,5 L/100 km sur la SS131, 5,5-6,0 en mixte Costa Smeralda. Un plein de 43 litres dure facilement 800 à 900 km. Pour des vacances de 7 jours avec excursions quotidiennes (Olbia ↔ Porto Cervo, San Teodoro, Baja) vous dépensez 60 à 80 € de gasoil."
+        },
+        {
+          "q": "Y a-t-il MBUX et Apple CarPlay / Android Auto ?",
+          "a": "Oui. Système MBUX de Mercedes avec double écran 10,25\", Apple CarPlay et Android Auto sans fil inclus. Commande vocale « Hey Mercedes » active. Navigateur avec cartes Sardaigne à jour. Bluetooth standard, prise USB-C avant et arrière."
+        },
+        {
+          "q": "Puis-je la faire livrer à la villa de Porto Cervo ?",
+          "a": "Oui, c'est la livraison la plus fréquente pour la Mercedes 180d. Opérateur au portail/concierge de la villa, à l'Hôtel Cala di Volpe, au Pitrizza ou à tout autre hôtel 5 étoiles. Livraison également au ponton du yacht à la Marina de Porto Cervo ou Porto Rotondo. <a href='/fr/location-voiture-a-porto-cervo' class='text-primary-foreground font-medium underline'>Voir les détails</a>."
+        },
+        {
+          "q": "Convient-elle pour les pistes de Capo Ferro ou Punta Volpe ?",
+          "a": "Absolument pas. La Classe A est une voiture premium conçue pour l'asphalte, suspensions étudiées pour le confort. Sur piste, vous risquez d'endommager le soubassement et les pneus profil bas. Pour les criques tout-terrain, utilisez le <a href='/fr/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>."
+        }
       ],
       "ctaTitle": "Profitez du vrai confort.",
       "ctaSubtitle": "Réservez votre Mercedes Classe A en moins de 2 minutes. Livraison VIP à l'aéroport, au port ou à l'hôtel — dans toute la Costa Smeralda.",
@@ -295,7 +449,11 @@
       "heroH1Top": "Mercedes-Benz",
       "heroH1Bottom": "A-Klasse 180d",
       "heroSubtitle": "Eleganz, Technologie und Komfort ohne Kompromisse. Genießen Sie die Costa Smeralda an Bord einer Stilikone — mit Automatikgetriebe und luxuriöser Ausstattung.",
-      "heroBadges": ["Automatikgetriebe", "Diesel", "Premium-Interieur"],
+      "heroBadges": [
+        "Automatikgetriebe",
+        "Diesel",
+        "Premium-Interieur"
+      ],
       "featureSections": [
         {
           "label": "Luxus & Technologie",
@@ -320,12 +478,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Motor", "value": "2.0 Diesel 116 PS" },
-        { "icon": "fuel", "label": "Kraftstoff", "value": "Diesel" },
-        { "icon": "users", "label": "Sitze", "value": "5" },
-        { "icon": "settings", "label": "Getriebe", "value": "Automatikgetriebe" },
-        { "icon": "wind", "label": "Klima", "value": "Klimaautomatik" },
-        { "icon": "luggage", "label": "Kofferraum", "value": "355 Liter" }
+        {
+          "icon": "gauge",
+          "label": "Motor",
+          "value": "2.0 Diesel 116 PS"
+        },
+        {
+          "icon": "fuel",
+          "label": "Kraftstoff",
+          "value": "Diesel"
+        },
+        {
+          "icon": "users",
+          "label": "Sitze",
+          "value": "5"
+        },
+        {
+          "icon": "settings",
+          "label": "Getriebe",
+          "value": "Automatikgetriebe"
+        },
+        {
+          "icon": "wind",
+          "label": "Klima",
+          "value": "Klimaautomatik"
+        },
+        {
+          "icon": "luggage",
+          "label": "Kofferraum",
+          "value": "355 Liter"
+        }
       ],
       "scenarios": [
         {
@@ -367,12 +549,30 @@
         "outro": "Suchen Sie etwas Günstigeres? Sehen Sie sich den <a href='/de/flotte/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a> an. Möchten Sie sich dort bewegen, wo das Auto nicht hinkommt? Erwägen Sie den <a href='/de/flotte/honda-sh' class='text-blue-600 hover:underline'>Honda SH Roller</a>."
       },
       "faq": [
-        { "q": "Welches Automatikgetriebe hat die A-Klasse 180d?", "a": "8G-DCT-Doppelkupplungsgetriebe, von Mercedes für die Kompaktklasse entwickelt. Schaltet in 80-150 Millisekunden ohne Zugkraftunterbrechung: Auf der SS131 von Olbia nach Cagliari spüren Sie keinen Unterschied zu einem Schaltgetriebe, in der Stadt nimmt es Ihnen die Mühe im Sommerverkehr der Costa Smeralda komplett ab." },
-        { "q": "Wie viele Jahre Führerscheinbesitz sind erforderlich?", "a": "Mindestalter 25 Jahre und mindestens 3 Jahre Führerschein B. Für Fahrer zwischen 21 und 24 Jahren wird ein Jungfahrer-Aufschlag berechnet. Für Fahranfänger mit weniger als 12 Monaten Führerscheinbesitz ist die Mercedes 180d nicht verfügbar (115 PS überschreiten die kW/t-Schwelle für Fahranfänger): Wir empfehlen alternativ den Fiat Panda Hybrid." },
-        { "q": "Wie viel verbraucht der 1.5 Diesel mit 115 PS?", "a": "Aus unserer Flottenerfahrung: 5,0-5,5 L/100 km auf der Autobahn SS131, 5,5-6,0 im gemischten Costa-Smeralda-Betrieb. Eine Tankfüllung mit 43 Litern reicht problemlos 800-900 km. Für einen 7-tägigen Urlaub mit täglichen Ausflügen (Olbia ↔ Porto Cervo, San Teodoro, Baja) geben Sie 60-80 € für Diesel aus." },
-        { "q": "Sind MBUX und Apple CarPlay / Android Auto vorhanden?", "a": "Ja. MBUX-System von Mercedes mit Doppelbildschirm 10,25\", Apple CarPlay und Android Auto kabellos inklusive. Sprachsteuerung 'Hey Mercedes' aktiv. Navigation mit aktualisierten Sardinien-Karten. Bluetooth standard, USB-C-Anschlüsse vorne und hinten." },
-        { "q": "Kann ich sie an der Villa in Porto Cervo geliefert bekommen?", "a": "Ja, das ist die häufigste Übergabe für die Mercedes 180d. Mitarbeiter am Tor/Concierge der Villa, im Hotel Cala di Volpe, im Pitrizza oder in jedem anderen 5-Sterne-Hotel. Übergabe auch am Yachtsteg in der Marina von Porto Cervo oder Porto Rotondo. <a href='/de/autovermietung-porto-cervo' class='text-primary-foreground font-medium underline'>Details ansehen</a>." },
-        { "q": "Ist sie für die Schotterpisten von Capo Ferro oder Punta Volpe geeignet?", "a": "Absolut nicht. Die A-Klasse ist ein Premium-Auto für Asphalt, mit Federung auf Komfort ausgelegt. Auf Schotter riskieren Sie Schäden am Unterboden und an den Niederquerschnittsreifen. Für die Off-Road-Buchten verwenden Sie den <a href='/de/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>." }
+        {
+          "q": "Welches Automatikgetriebe hat die A-Klasse 180d?",
+          "a": "8G-DCT-Doppelkupplungsgetriebe, von Mercedes für die Kompaktklasse entwickelt. Schaltet in 80-150 Millisekunden ohne Zugkraftunterbrechung: Auf der SS131 von Olbia nach Cagliari spüren Sie keinen Unterschied zu einem Schaltgetriebe, in der Stadt nimmt es Ihnen die Mühe im Sommerverkehr der Costa Smeralda komplett ab."
+        },
+        {
+          "q": "Wie viele Jahre Führerscheinbesitz sind erforderlich?",
+          "a": "Mindestalter 25 Jahre und mindestens 3 Jahre Führerschein B. Für Fahrer zwischen 21 und 24 Jahren wird ein Jungfahrer-Aufschlag berechnet. Für Fahranfänger mit weniger als 12 Monaten Führerscheinbesitz ist die Mercedes 180d nicht verfügbar (115 PS überschreiten die kW/t-Schwelle für Fahranfänger): Wir empfehlen alternativ den Fiat Panda Hybrid."
+        },
+        {
+          "q": "Wie viel verbraucht der 1.5 Diesel mit 115 PS?",
+          "a": "Aus unserer Flottenerfahrung: 5,0-5,5 L/100 km auf der Autobahn SS131, 5,5-6,0 im gemischten Costa-Smeralda-Betrieb. Eine Tankfüllung mit 43 Litern reicht problemlos 800-900 km. Für einen 7-tägigen Urlaub mit täglichen Ausflügen (Olbia ↔ Porto Cervo, San Teodoro, Baja) geben Sie 60-80 € für Diesel aus."
+        },
+        {
+          "q": "Sind MBUX und Apple CarPlay / Android Auto vorhanden?",
+          "a": "Ja. MBUX-System von Mercedes mit Doppelbildschirm 10,25\", Apple CarPlay und Android Auto kabellos inklusive. Sprachsteuerung 'Hey Mercedes' aktiv. Navigation mit aktualisierten Sardinien-Karten. Bluetooth standard, USB-C-Anschlüsse vorne und hinten."
+        },
+        {
+          "q": "Kann ich sie an der Villa in Porto Cervo geliefert bekommen?",
+          "a": "Ja, das ist die häufigste Übergabe für die Mercedes 180d. Mitarbeiter am Tor/Concierge der Villa, im Hotel Cala di Volpe, im Pitrizza oder in jedem anderen 5-Sterne-Hotel. Übergabe auch am Yachtsteg in der Marina von Porto Cervo oder Porto Rotondo. <a href='/de/autovermietung-porto-cervo' class='text-primary-foreground font-medium underline'>Details ansehen</a>."
+        },
+        {
+          "q": "Ist sie für die Schotterpisten von Capo Ferro oder Punta Volpe geeignet?",
+          "a": "Absolut nicht. Die A-Klasse ist ein Premium-Auto für Asphalt, mit Federung auf Komfort ausgelegt. Auf Schotter riskieren Sie Schäden am Unterboden und an den Niederquerschnittsreifen. Für die Off-Road-Buchten verwenden Sie den <a href='/de/flotte/yamaha-raptor' class='text-primary-foreground font-medium underline'>Yamaha Raptor 700</a>."
+        }
       ],
       "ctaTitle": "Genießen Sie echten Komfort.",
       "ctaSubtitle": "Buchen Sie Ihre Mercedes A-Klasse in weniger als 2 Minuten. VIP-Übergabe am Flughafen, Hafen oder Hotel — in der gesamten Costa Smeralda.",

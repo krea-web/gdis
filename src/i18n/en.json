@@ -260,7 +260,9 @@
     "questionsCta": "Questions?",
     "contactUs": "Contact us",
     "backHome": "Back to home",
-    "schemaSuffix": "Rental in Olbia and Costa Smeralda"
+    "schemaSuffix": "Rental in Olbia and Costa Smeralda",
+    "priceFromPrefix": "From",
+    "priceFromSuffix": "/day"
   },
   "location": {
     "breadcrumb": "Destinations",

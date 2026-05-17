@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "generate:brand": "node scripts/generate-brand-assets.mjs"
+    "generate:brand": "node scripts/generate-brand-assets.mjs",
+    "check:prices": "node scripts/check-vehicle-prices.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

@@ -286,8 +286,8 @@ const fleet = defineCollection({
     ctaButtonLabel: z.string(),
     pricePerDay: z.number(),
     priceValidUntil: z.string(),
-    /** Schema.org type: Car, Motorcycle, or Product. */
-    jsonLdType: z.enum(["Car", "Motorcycle", "Product"]),
+    /** Schema.org type: Car, Motorcycle, Vehicle (parent — used for Quad/ATV) or Product. */
+    jsonLdType: z.enum(["Car", "Motorcycle", "Vehicle", "Product"]),
     jsonLdBrand: z.string(),
     jsonLdManufacturer: z.string(),
     jsonLdModel: z.string(),

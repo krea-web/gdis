@@ -10,7 +10,11 @@
   "heroH1Top": "Yamaha Raptor",
   "heroH1Bottom": "700",
   "heroSubtitle": "Adrenalina pura sugli sterrati della Gallura. 686cc di potenza, sospensioni off-road, esplorazione senza limiti.",
-  "heroBadges": ["686cc", "Patente B", "Off-Road Ready"],
+  "heroBadges": [
+    "686cc",
+    "Patente B",
+    "Off-Road Ready"
+  ],
   "featureSections": [
     {
       "label": "Potenza & Avventura",
@@ -35,12 +39,36 @@
     }
   ],
   "specs": [
-    { "icon": "gauge", "label": "Cilindrata", "value": "686cc monocilindro" },
-    { "icon": "fuel", "label": "Alimentazione", "value": "Benzina" },
-    { "icon": "users", "label": "Posti", "value": "1 (singolo)" },
-    { "icon": "wrench", "label": "Cambio", "value": "Manuale 5 marce" },
-    { "icon": "shield", "label": "Patente", "value": "Patente B" },
-    { "icon": "mountain", "label": "Terreno", "value": "On/Off-Road" }
+    {
+      "icon": "gauge",
+      "label": "Cilindrata",
+      "value": "686cc monocilindro"
+    },
+    {
+      "icon": "fuel",
+      "label": "Alimentazione",
+      "value": "Benzina"
+    },
+    {
+      "icon": "users",
+      "label": "Posti",
+      "value": "1 (singolo)"
+    },
+    {
+      "icon": "wrench",
+      "label": "Cambio",
+      "value": "Manuale 5 marce"
+    },
+    {
+      "icon": "shield",
+      "label": "Patente",
+      "value": "Patente B"
+    },
+    {
+      "icon": "mountain",
+      "label": "Terreno",
+      "value": "On/Off-Road"
+    }
   ],
   "scenarios": [
     {
@@ -82,24 +110,72 @@
     "outro": "Cerchi qualcosa per la famiglia? Vedi la <a href='/flotta/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Vuoi un mezzo più semplice da guidare? Considera lo <a href='/flotta/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
   },
   "faq": [
-    { "q": "Mi basta davvero la patente B per guidare il Raptor 700?", "a": "Sì, in Italia il Raptor 700 è omologato come quadriciclo a motore L7e e si guida con patente B (la stessa dell'auto). Non serve patente moto. Età minima 18 anni, almeno 2 anni di patente B nel nostro caso. Per i conducenti con meno di 25 anni applichiamo un supplemento giovane." },
-    { "q": "È pericoloso? Sono mai stato su un quad.", "a": "Il Raptor 700 con i suoi 686cc e 50cv è un mezzo serio, non un giocattolo da spiaggia. Se è la tua prima volta in quad, ti facciamo un briefing pratico di 20 minuti al ritiro: posizione di guida, gestione dell'acceleratore in curva, freno motore, cosa fare in fuoristrada. Va guidato con rispetto, non con paura: a 30-40 km/h sui sentieri sterrati di Capo Ferro è perfettamente sicuro." },
-    { "q": "Cosa è incluso oltre al quad?", "a": "Casco integrale omologato ECE 22.06 incluso (taglie M/L/XL), assicurazione RCA + furto/incendio, briefing tecnico al ritiro, mappa con i 5 migliori percorsi off-road della Gallura. Su richiesta forniamo anche giacca antivento, occhialini da sterrato e guanti — utili specie a giugno e settembre." },
-    { "q": "Quanta autonomia ha e dove faccio benzina?", "a": "Serbatoio 11 litri, consumo 6-8 L/100km in uso misto strada/sterrato = autonomia 150-180 km reali. Per una giornata di esplorazione delle cale di Punta Volpe o degli sterrati di Capo Ferro è più che sufficiente. Stazione di servizio più comoda: la Q8 di Olbiamare sulla SS125, o il distributore IP di Arzachena se sei in zona Costa Smeralda." },
-    { "q": "Posso entrare in spiaggia con il quad?", "a": "No, in Sardegna è severamente vietato circolare con qualsiasi mezzo a motore sulle spiagge (multa 500-2000 € + sequestro). Il Raptor è omologato per strade pubbliche e sentieri sterrati ma non per la sabbia. Quello che puoi fare: parcheggiarlo nelle aree sterrate adiacenti (es. Cala Petra Ruja, Punta Volpe) e fare gli ultimi 50-100 metri a piedi." },
-    { "q": "Si può fare il pieno o lavarlo prima di restituirlo?", "a": "Pieno: lo riconsegni con il pieno fatto come al ritiro, oppure paghi il saldo carburante a un costo trasparente comunicato in anticipo. Lavaggio: non obbligatorio (sappiamo che usi il quad anche off-road, è normale che sia sporco). Se è coperto di fango spesso ti chiediamo solo di togliere il grosso con una scopa per non rallentare la consegna successiva." }
+    {
+      "q": "Mi basta davvero la patente B per guidare il Raptor 700?",
+      "a": "Sì, in Italia il Raptor 700 è omologato come quadriciclo a motore L7e e si guida con patente B (la stessa dell'auto). Non serve patente moto. Età minima 18 anni, almeno 2 anni di patente B nel nostro caso. Per i conducenti con meno di 25 anni applichiamo un supplemento giovane."
+    },
+    {
+      "q": "È pericoloso? Sono mai stato su un quad.",
+      "a": "Il Raptor 700 con i suoi 686cc e 50cv è un mezzo serio, non un giocattolo da spiaggia. Se è la tua prima volta in quad, ti facciamo un briefing pratico di 20 minuti al ritiro: posizione di guida, gestione dell'acceleratore in curva, freno motore, cosa fare in fuoristrada. Va guidato con rispetto, non con paura: a 30-40 km/h sui sentieri sterrati di Capo Ferro è perfettamente sicuro."
+    },
+    {
+      "q": "Cosa è incluso oltre al quad?",
+      "a": "Casco integrale omologato ECE 22.06 incluso (taglie M/L/XL), assicurazione RCA + furto/incendio, briefing tecnico al ritiro, mappa con i 5 migliori percorsi off-road della Gallura. Su richiesta forniamo anche giacca antivento, occhialini da sterrato e guanti — utili specie a giugno e settembre."
+    },
+    {
+      "q": "Quanta autonomia ha e dove faccio benzina?",
+      "a": "Serbatoio 11 litri, consumo 6-8 L/100km in uso misto strada/sterrato = autonomia 150-180 km reali. Per una giornata di esplorazione delle cale di Punta Volpe o degli sterrati di Capo Ferro è più che sufficiente. Stazione di servizio più comoda: la Q8 di Olbiamare sulla SS125, o il distributore IP di Arzachena se sei in zona Costa Smeralda."
+    },
+    {
+      "q": "Posso entrare in spiaggia con il quad?",
+      "a": "No, in Sardegna è severamente vietato circolare con qualsiasi mezzo a motore sulle spiagge (multa 500-2000 € + sequestro). Il Raptor è omologato per strade pubbliche e sentieri sterrati ma non per la sabbia. Quello che puoi fare: parcheggiarlo nelle aree sterrate adiacenti (es. Cala Petra Ruja, Punta Volpe) e fare gli ultimi 50-100 metri a piedi."
+    },
+    {
+      "q": "Si può fare il pieno o lavarlo prima di restituirlo?",
+      "a": "Pieno: lo riconsegni con il pieno fatto come al ritiro, oppure paghi il saldo carburante a un costo trasparente comunicato in anticipo. Lavaggio: non obbligatorio (sappiamo che usi il quad anche off-road, è normale che sia sporco). Se è coperto di fango spesso ti chiediamo solo di togliere il grosso con una scopa per non rallentare la consegna successiva."
+    }
   ],
   "ctaTitle": "Scatena l'avventura",
   "ctaSubtitle": "Prenota il tuo Yamaha Raptor 700 in meno di 2 minuti. Casco integrale e briefing inclusi.",
   "ctaButtonLabel": "Prenota il tuo Quad →",
   "pricePerDay": 250,
   "priceValidUntil": "2026-12-31",
-  "jsonLdType": "Product",
+  "jsonLdType": "Vehicle",
   "jsonLdBrand": "Yamaha",
   "jsonLdManufacturer": "Yamaha",
   "jsonLdModel": "Raptor 700",
   "jsonLdExtras": {
-    "category": "Quad"
+    "vehicleTransmission": "ManualTransmission",
+    "fuelType": "Petrol",
+    "seatingCapacity": 1,
+    "vehicleEngine": {
+      "@type": "EngineSpecification",
+      "engineType": "Single-cylinder 4-stroke liquid-cooled",
+      "engineDisplacement": {
+        "@type": "QuantitativeValue",
+        "value": 686,
+        "unitCode": "CMQ"
+      }
+    },
+    "vehicleConfiguration": "Quad ATV sport",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Tipo veicolo",
+        "value": "Quad ATV omologato strada"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Patente richiesta",
+        "value": "B"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Terreno",
+        "value": "On-road + Off-road"
+      }
+    ],
+    "itemCondition": "https://schema.org/UsedCondition"
   },
   "i18n": {
     "en": {
@@ -110,7 +186,11 @@
       "heroH1Top": "Yamaha Raptor",
       "heroH1Bottom": "700",
       "heroSubtitle": "Pure adrenaline on the dirt tracks of Gallura. 686cc of power, off-road suspension, exploration without limits.",
-      "heroBadges": ["686cc", "B Licence", "Off-Road Ready"],
+      "heroBadges": [
+        "686cc",
+        "B Licence",
+        "Off-Road Ready"
+      ],
       "featureSections": [
         {
           "label": "Power & Adventure",
@@ -135,12 +215,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Engine", "value": "686cc single-cylinder" },
-        { "icon": "fuel", "label": "Fuel", "value": "Petrol" },
-        { "icon": "users", "label": "Seats", "value": "1 (single)" },
-        { "icon": "wrench", "label": "Gearbox", "value": "Manual 5-speed" },
-        { "icon": "shield", "label": "Licence", "value": "B Licence" },
-        { "icon": "mountain", "label": "Terrain", "value": "On/Off-Road" }
+        {
+          "icon": "gauge",
+          "label": "Engine",
+          "value": "686cc single-cylinder"
+        },
+        {
+          "icon": "fuel",
+          "label": "Fuel",
+          "value": "Petrol"
+        },
+        {
+          "icon": "users",
+          "label": "Seats",
+          "value": "1 (single)"
+        },
+        {
+          "icon": "wrench",
+          "label": "Gearbox",
+          "value": "Manual 5-speed"
+        },
+        {
+          "icon": "shield",
+          "label": "Licence",
+          "value": "B Licence"
+        },
+        {
+          "icon": "mountain",
+          "label": "Terrain",
+          "value": "On/Off-Road"
+        }
       ],
       "scenarios": [
         {
@@ -182,12 +286,30 @@
         "outro": "Looking for something for the family? See the <a href='/en/fleet/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Want a vehicle that's easier to ride? Consider the <a href='/en/fleet/honda-sh' class='text-blue-600 hover:underline'>Honda SH scooter</a>."
       },
       "faq": [
-        { "q": "Is a B licence really enough to ride the Raptor 700?", "a": "Yes, in Italy the Raptor 700 is approved as an L7e motor quadricycle and is ridden with a B licence (the same as for a car). No motorbike licence is needed. Minimum age 18, at least 2 years on a B licence in our case. For riders under 25 we apply a young driver supplement." },
-        { "q": "Is it dangerous? I've never ridden a quad.", "a": "The Raptor 700 with its 686cc and 50hp is a serious machine, not a beach toy. If it's your first time on a quad, we give a 20-minute practical briefing at pickup: riding position, throttle control in turns, engine braking, what to do off-road. It must be ridden with respect, not fear: at 30-40 km/h on the Capo Ferro dirt tracks it's perfectly safe." },
-        { "q": "What's included besides the quad?", "a": "ECE 22.06 approved full-face helmet included (M/L/XL sizes), third-party + theft/fire insurance, technical briefing at pickup, map with the 5 best off-road routes in Gallura. On request we also supply a windproof jacket, dirt-track goggles and gloves — useful especially in June and September." },
-        { "q": "How much range does it have and where do I refuel?", "a": "11-litre tank, 6-8 L/100km in mixed road/off-road use = 150-180 km real range. For a day exploring the Punta Volpe coves or the Capo Ferro tracks it's more than enough. Most convenient station: the Q8 at Olbiamare on the SS125, or the IP station in Arzachena if you're in the Costa Smeralda area." },
-        { "q": "Can I ride onto the beach with the quad?", "a": "No, in Sardinia it is strictly forbidden to drive any motor vehicle on the beaches (fine 500-2000 € + impounding). The Raptor is approved for public roads and dirt tracks but not for sand. What you can do: park it on the adjacent dirt areas (e.g. Cala Petra Ruja, Punta Volpe) and walk the last 50-100 metres." },
-        { "q": "Can I refuel or wash it before returning?", "a": "Fuel: you return it with a full tank as at pickup, or pay for the remaining fuel at a transparent rate communicated in advance. Washing: not mandatory (we know you also use the quad off-road, it's normal it's dirty). If it's covered in thick mud we just ask you to brush off the worst so we don't slow down the next handover." }
+        {
+          "q": "Is a B licence really enough to ride the Raptor 700?",
+          "a": "Yes, in Italy the Raptor 700 is approved as an L7e motor quadricycle and is ridden with a B licence (the same as for a car). No motorbike licence is needed. Minimum age 18, at least 2 years on a B licence in our case. For riders under 25 we apply a young driver supplement."
+        },
+        {
+          "q": "Is it dangerous? I've never ridden a quad.",
+          "a": "The Raptor 700 with its 686cc and 50hp is a serious machine, not a beach toy. If it's your first time on a quad, we give a 20-minute practical briefing at pickup: riding position, throttle control in turns, engine braking, what to do off-road. It must be ridden with respect, not fear: at 30-40 km/h on the Capo Ferro dirt tracks it's perfectly safe."
+        },
+        {
+          "q": "What's included besides the quad?",
+          "a": "ECE 22.06 approved full-face helmet included (M/L/XL sizes), third-party + theft/fire insurance, technical briefing at pickup, map with the 5 best off-road routes in Gallura. On request we also supply a windproof jacket, dirt-track goggles and gloves — useful especially in June and September."
+        },
+        {
+          "q": "How much range does it have and where do I refuel?",
+          "a": "11-litre tank, 6-8 L/100km in mixed road/off-road use = 150-180 km real range. For a day exploring the Punta Volpe coves or the Capo Ferro tracks it's more than enough. Most convenient station: the Q8 at Olbiamare on the SS125, or the IP station in Arzachena if you're in the Costa Smeralda area."
+        },
+        {
+          "q": "Can I ride onto the beach with the quad?",
+          "a": "No, in Sardinia it is strictly forbidden to drive any motor vehicle on the beaches (fine 500-2000 € + impounding). The Raptor is approved for public roads and dirt tracks but not for sand. What you can do: park it on the adjacent dirt areas (e.g. Cala Petra Ruja, Punta Volpe) and walk the last 50-100 metres."
+        },
+        {
+          "q": "Can I refuel or wash it before returning?",
+          "a": "Fuel: you return it with a full tank as at pickup, or pay for the remaining fuel at a transparent rate communicated in advance. Washing: not mandatory (we know you also use the quad off-road, it's normal it's dirty). If it's covered in thick mud we just ask you to brush off the worst so we don't slow down the next handover."
+        }
       ],
       "ctaTitle": "Unleash the adventure",
       "ctaSubtitle": "Book your Yamaha Raptor 700 in less than 2 minutes. Full-face helmet and briefing included.",
@@ -201,7 +323,11 @@
       "heroH1Top": "Yamaha Raptor",
       "heroH1Bottom": "700",
       "heroSubtitle": "Adrénaline pure sur les pistes de la Gallura. 686cc de puissance, suspensions tout-terrain, exploration sans limites.",
-      "heroBadges": ["686cc", "Permis B", "Tout-terrain"],
+      "heroBadges": [
+        "686cc",
+        "Permis B",
+        "Tout-terrain"
+      ],
       "featureSections": [
         {
           "label": "Puissance et aventure",
@@ -226,12 +352,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Cylindrée", "value": "686cc monocylindre" },
-        { "icon": "fuel", "label": "Carburant", "value": "Essence" },
-        { "icon": "users", "label": "Places", "value": "1 (monoplace)" },
-        { "icon": "wrench", "label": "Boîte", "value": "Manuelle 5 vitesses" },
-        { "icon": "shield", "label": "Permis", "value": "Permis B" },
-        { "icon": "mountain", "label": "Terrain", "value": "Route et tout-terrain" }
+        {
+          "icon": "gauge",
+          "label": "Cylindrée",
+          "value": "686cc monocylindre"
+        },
+        {
+          "icon": "fuel",
+          "label": "Carburant",
+          "value": "Essence"
+        },
+        {
+          "icon": "users",
+          "label": "Places",
+          "value": "1 (monoplace)"
+        },
+        {
+          "icon": "wrench",
+          "label": "Boîte",
+          "value": "Manuelle 5 vitesses"
+        },
+        {
+          "icon": "shield",
+          "label": "Permis",
+          "value": "Permis B"
+        },
+        {
+          "icon": "mountain",
+          "label": "Terrain",
+          "value": "Route et tout-terrain"
+        }
       ],
       "scenarios": [
         {
@@ -273,12 +423,30 @@
         "outro": "Vous cherchez quelque chose pour la famille ? Voir la <a href='/fr/flotte/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a>. Vous voulez un véhicule plus simple à conduire ? Pensez au <a href='/fr/flotte/honda-sh' class='text-blue-600 hover:underline'>scooter Honda SH</a>."
       },
       "faq": [
-        { "q": "Le permis B suffit-il vraiment pour conduire le Raptor 700 ?", "a": "Oui, en Italie le Raptor 700 est homologué comme quadricycle à moteur L7e et se conduit avec le permis B (le même que pour la voiture). Pas besoin de permis moto. Âge minimum 18 ans, au moins 2 ans de permis B chez nous. Pour les conducteurs de moins de 25 ans nous appliquons un supplément jeune conducteur." },
-        { "q": "Est-ce dangereux ? Je n'ai jamais conduit de quad.", "a": "Le Raptor 700 avec ses 686cc et 50 ch est une machine sérieuse, pas un jouet de plage. Si c'est votre première fois en quad, nous vous faisons un briefing pratique de 20 minutes au retrait : position de conduite, gestion de l'accélérateur en virage, frein moteur, comportement en tout-terrain. Il se conduit avec respect, pas avec peur : à 30-40 km/h sur les pistes de Capo Ferro, c'est parfaitement sûr." },
-        { "q": "Qu'est-ce qui est inclus en plus du quad ?", "a": "Casque intégral homologué ECE 22.06 inclus (tailles M/L/XL), assurance RC + vol/incendie, briefing technique au retrait, carte avec les 5 meilleurs parcours tout-terrain de la Gallura. Sur demande nous fournissons aussi veste coupe-vent, lunettes de pistes et gants — utiles surtout en juin et septembre." },
-        { "q": "Quelle autonomie a-t-il et où faire le plein ?", "a": "Réservoir de 11 litres, consommation 6-8 L/100 km en usage mixte route/piste = autonomie réelle de 150-180 km. Pour une journée d'exploration des criques de Punta Volpe ou des pistes de Capo Ferro, c'est largement suffisant. Station-service la plus pratique : la Q8 d'Olbiamare sur la SS125, ou le distributeur IP d'Arzachena si vous êtes en zone Costa Smeralda." },
-        { "q": "Puis-je entrer sur la plage avec le quad ?", "a": "Non, en Sardaigne il est strictement interdit de circuler avec n'importe quel véhicule à moteur sur les plages (amende 500-2000 € + saisie). Le Raptor est homologué pour les routes publiques et les sentiers, mais pas pour le sable. Ce que vous pouvez faire : le stationner dans les zones non goudronnées adjacentes (ex. Cala Petra Ruja, Punta Volpe) et faire les derniers 50-100 mètres à pied." },
-        { "q": "Peut-on faire le plein ou le laver avant de le rendre ?", "a": "Plein : vous le rendez avec le plein effectué comme au retrait, ou vous payez le solde du carburant à un coût transparent communiqué à l'avance. Lavage : non obligatoire (nous savons que vous l'utilisez aussi en tout-terrain, c'est normal qu'il soit sale). S'il est couvert de boue épaisse, nous vous demandons seulement d'enlever le plus gros avec un balai pour ne pas ralentir la livraison suivante." }
+        {
+          "q": "Le permis B suffit-il vraiment pour conduire le Raptor 700 ?",
+          "a": "Oui, en Italie le Raptor 700 est homologué comme quadricycle à moteur L7e et se conduit avec le permis B (le même que pour la voiture). Pas besoin de permis moto. Âge minimum 18 ans, au moins 2 ans de permis B chez nous. Pour les conducteurs de moins de 25 ans nous appliquons un supplément jeune conducteur."
+        },
+        {
+          "q": "Est-ce dangereux ? Je n'ai jamais conduit de quad.",
+          "a": "Le Raptor 700 avec ses 686cc et 50 ch est une machine sérieuse, pas un jouet de plage. Si c'est votre première fois en quad, nous vous faisons un briefing pratique de 20 minutes au retrait : position de conduite, gestion de l'accélérateur en virage, frein moteur, comportement en tout-terrain. Il se conduit avec respect, pas avec peur : à 30-40 km/h sur les pistes de Capo Ferro, c'est parfaitement sûr."
+        },
+        {
+          "q": "Qu'est-ce qui est inclus en plus du quad ?",
+          "a": "Casque intégral homologué ECE 22.06 inclus (tailles M/L/XL), assurance RC + vol/incendie, briefing technique au retrait, carte avec les 5 meilleurs parcours tout-terrain de la Gallura. Sur demande nous fournissons aussi veste coupe-vent, lunettes de pistes et gants — utiles surtout en juin et septembre."
+        },
+        {
+          "q": "Quelle autonomie a-t-il et où faire le plein ?",
+          "a": "Réservoir de 11 litres, consommation 6-8 L/100 km en usage mixte route/piste = autonomie réelle de 150-180 km. Pour une journée d'exploration des criques de Punta Volpe ou des pistes de Capo Ferro, c'est largement suffisant. Station-service la plus pratique : la Q8 d'Olbiamare sur la SS125, ou le distributeur IP d'Arzachena si vous êtes en zone Costa Smeralda."
+        },
+        {
+          "q": "Puis-je entrer sur la plage avec le quad ?",
+          "a": "Non, en Sardaigne il est strictement interdit de circuler avec n'importe quel véhicule à moteur sur les plages (amende 500-2000 € + saisie). Le Raptor est homologué pour les routes publiques et les sentiers, mais pas pour le sable. Ce que vous pouvez faire : le stationner dans les zones non goudronnées adjacentes (ex. Cala Petra Ruja, Punta Volpe) et faire les derniers 50-100 mètres à pied."
+        },
+        {
+          "q": "Peut-on faire le plein ou le laver avant de le rendre ?",
+          "a": "Plein : vous le rendez avec le plein effectué comme au retrait, ou vous payez le solde du carburant à un coût transparent communiqué à l'avance. Lavage : non obligatoire (nous savons que vous l'utilisez aussi en tout-terrain, c'est normal qu'il soit sale). S'il est couvert de boue épaisse, nous vous demandons seulement d'enlever le plus gros avec un balai pour ne pas ralentir la livraison suivante."
+        }
       ],
       "ctaTitle": "Lâchez l'aventure",
       "ctaSubtitle": "Réservez votre Yamaha Raptor 700 en moins de 2 minutes. Casque intégral et briefing inclus.",
@@ -292,7 +460,11 @@
       "heroH1Top": "Yamaha Raptor",
       "heroH1Bottom": "700",
       "heroSubtitle": "Pures Adrenalin auf den Schotterpisten Galluras. 686 ccm Leistung, Off-Road-Federung, grenzenloses Erkunden.",
-      "heroBadges": ["686 ccm", "Führerschein B", "Off-Road Ready"],
+      "heroBadges": [
+        "686 ccm",
+        "Führerschein B",
+        "Off-Road Ready"
+      ],
       "featureSections": [
         {
           "label": "Leistung & Abenteuer",
@@ -317,12 +489,36 @@
         }
       ],
       "specs": [
-        { "icon": "gauge", "label": "Hubraum", "value": "686 ccm Einzylinder" },
-        { "icon": "fuel", "label": "Kraftstoff", "value": "Benzin" },
-        { "icon": "users", "label": "Sitzplätze", "value": "1 (Einzelsitz)" },
-        { "icon": "wrench", "label": "Getriebe", "value": "Schaltgetriebe 5 Gänge" },
-        { "icon": "shield", "label": "Führerschein", "value": "Führerschein B" },
-        { "icon": "mountain", "label": "Gelände", "value": "On/Off-Road" }
+        {
+          "icon": "gauge",
+          "label": "Hubraum",
+          "value": "686 ccm Einzylinder"
+        },
+        {
+          "icon": "fuel",
+          "label": "Kraftstoff",
+          "value": "Benzin"
+        },
+        {
+          "icon": "users",
+          "label": "Sitzplätze",
+          "value": "1 (Einzelsitz)"
+        },
+        {
+          "icon": "wrench",
+          "label": "Getriebe",
+          "value": "Schaltgetriebe 5 Gänge"
+        },
+        {
+          "icon": "shield",
+          "label": "Führerschein",
+          "value": "Führerschein B"
+        },
+        {
+          "icon": "mountain",
+          "label": "Gelände",
+          "value": "On/Off-Road"
+        }
       ],
       "scenarios": [
         {
@@ -364,12 +560,30 @@
         "outro": "Suchen Sie etwas für die Familie? Sehen Sie sich den <a href='/de/flotte/fiat-panda' class='text-blue-600 hover:underline'>Fiat Panda Hybrid</a> an. Möchten Sie ein einfacher zu fahrendes Fahrzeug? Erwägen Sie den <a href='/de/flotte/honda-sh' class='text-blue-600 hover:underline'>Honda SH Roller</a>."
       },
       "faq": [
-        { "q": "Reicht der Führerschein B wirklich, um den Raptor 700 zu fahren?", "a": "Ja, in Italien ist der Raptor 700 als Vierradfahrzeug L7e zugelassen und wird mit dem Führerschein B (dem gleichen wie für das Auto) gefahren. Ein Motorradführerschein ist nicht nötig. Mindestalter 18 Jahre, in unserem Fall mindestens 2 Jahre Führerscheinbesitz. Für Fahrer unter 25 Jahren erheben wir einen Jungfahrer-Aufschlag." },
-        { "q": "Ist es gefährlich? Ich war noch nie auf einem Quad.", "a": "Der Raptor 700 mit seinen 686 ccm und 50 PS ist ein ernstzunehmendes Fahrzeug, kein Strandspielzeug. Wenn es Ihre erste Quad-Erfahrung ist, geben wir Ihnen bei der Übergabe eine 20-minütige praktische Einweisung: Fahrhaltung, Gashandling in Kurven, Motorbremse, Verhalten im Gelände. Es muss mit Respekt, nicht mit Angst gefahren werden: bei 30-40 km/h auf den Schotterpfaden von Capo Ferro ist es vollkommen sicher." },
-        { "q": "Was ist außer dem Quad alles inbegriffen?", "a": "ECE-22.06-zugelassener Integralhelm inklusive (Größen M/L/XL), Haftpflicht- + Diebstahl-/Brandversicherung, technische Einweisung bei der Übergabe, Karte mit den 5 besten Off-Road-Strecken Galluras. Auf Anfrage stellen wir auch Windjacke, Geländebrille und Handschuhe zur Verfügung — vor allem im Juni und September nützlich." },
-        { "q": "Wie hoch ist die Reichweite und wo tanke ich?", "a": "Tank 11 Liter, Verbrauch 6-8 L/100 km im gemischten Straßen-/Geländebetrieb = reale Reichweite 150-180 km. Für einen Tag Erkundung der Buchten von Punta Volpe oder der Schotterpisten von Capo Ferro mehr als ausreichend. Bequemste Tankstelle: die Q8 in Olbiamare an der SS125 oder die IP-Tankstelle in Arzachena, wenn Sie in der Costa Smeralda sind." },
-        { "q": "Darf ich mit dem Quad an den Strand fahren?", "a": "Nein, in Sardinien ist es streng verboten, mit jeglichem motorisierten Fahrzeug auf den Stränden zu fahren (Bußgeld 500-2000 € + Beschlagnahme). Der Raptor ist für öffentliche Straßen und Schotterwege zugelassen, aber nicht für Sand. Was Sie tun können: Parken Sie ihn in den angrenzenden Schotterbereichen (z.B. Cala Petra Ruja, Punta Volpe) und legen Sie die letzten 50-100 Meter zu Fuß zurück." },
-        { "q": "Kann man tanken oder ihn vor der Rückgabe waschen?", "a": "Tankfüllung: Sie geben ihn vollgetankt zurück wie bei der Abholung, oder Sie zahlen die Kraftstoffabrechnung zu einem im Voraus transparent kommunizierten Preis. Waschen: nicht obligatorisch (wir wissen, dass Sie das Quad auch im Gelände nutzen, es ist normal, dass es schmutzig ist). Wenn er mit dickem Schlamm bedeckt ist, bitten wir Sie nur, das Gröbste mit einem Besen zu entfernen, um die nächste Übergabe nicht zu verzögern." }
+        {
+          "q": "Reicht der Führerschein B wirklich, um den Raptor 700 zu fahren?",
+          "a": "Ja, in Italien ist der Raptor 700 als Vierradfahrzeug L7e zugelassen und wird mit dem Führerschein B (dem gleichen wie für das Auto) gefahren. Ein Motorradführerschein ist nicht nötig. Mindestalter 18 Jahre, in unserem Fall mindestens 2 Jahre Führerscheinbesitz. Für Fahrer unter 25 Jahren erheben wir einen Jungfahrer-Aufschlag."
+        },
+        {
+          "q": "Ist es gefährlich? Ich war noch nie auf einem Quad.",
+          "a": "Der Raptor 700 mit seinen 686 ccm und 50 PS ist ein ernstzunehmendes Fahrzeug, kein Strandspielzeug. Wenn es Ihre erste Quad-Erfahrung ist, geben wir Ihnen bei der Übergabe eine 20-minütige praktische Einweisung: Fahrhaltung, Gashandling in Kurven, Motorbremse, Verhalten im Gelände. Es muss mit Respekt, nicht mit Angst gefahren werden: bei 30-40 km/h auf den Schotterpfaden von Capo Ferro ist es vollkommen sicher."
+        },
+        {
+          "q": "Was ist außer dem Quad alles inbegriffen?",
+          "a": "ECE-22.06-zugelassener Integralhelm inklusive (Größen M/L/XL), Haftpflicht- + Diebstahl-/Brandversicherung, technische Einweisung bei der Übergabe, Karte mit den 5 besten Off-Road-Strecken Galluras. Auf Anfrage stellen wir auch Windjacke, Geländebrille und Handschuhe zur Verfügung — vor allem im Juni und September nützlich."
+        },
+        {
+          "q": "Wie hoch ist die Reichweite und wo tanke ich?",
+          "a": "Tank 11 Liter, Verbrauch 6-8 L/100 km im gemischten Straßen-/Geländebetrieb = reale Reichweite 150-180 km. Für einen Tag Erkundung der Buchten von Punta Volpe oder der Schotterpisten von Capo Ferro mehr als ausreichend. Bequemste Tankstelle: die Q8 in Olbiamare an der SS125 oder die IP-Tankstelle in Arzachena, wenn Sie in der Costa Smeralda sind."
+        },
+        {
+          "q": "Darf ich mit dem Quad an den Strand fahren?",
+          "a": "Nein, in Sardinien ist es streng verboten, mit jeglichem motorisierten Fahrzeug auf den Stränden zu fahren (Bußgeld 500-2000 € + Beschlagnahme). Der Raptor ist für öffentliche Straßen und Schotterwege zugelassen, aber nicht für Sand. Was Sie tun können: Parken Sie ihn in den angrenzenden Schotterbereichen (z.B. Cala Petra Ruja, Punta Volpe) und legen Sie die letzten 50-100 Meter zu Fuß zurück."
+        },
+        {
+          "q": "Kann man tanken oder ihn vor der Rückgabe waschen?",
+          "a": "Tankfüllung: Sie geben ihn vollgetankt zurück wie bei der Abholung, oder Sie zahlen die Kraftstoffabrechnung zu einem im Voraus transparent kommunizierten Preis. Waschen: nicht obligatorisch (wir wissen, dass Sie das Quad auch im Gelände nutzen, es ist normal, dass es schmutzig ist). Wenn er mit dickem Schlamm bedeckt ist, bitten wir Sie nur, das Gröbste mit einem Besen zu entfernen, um die nächste Übergabe nicht zu verzögern."
+        }
       ],
       "ctaTitle": "Entfesseln Sie das Abenteuer",
       "ctaSubtitle": "Buchen Sie Ihren Yamaha Raptor 700 in weniger als 2 Minuten. Integralhelm und Einweisung inklusive.",

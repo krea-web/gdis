@@ -260,7 +260,9 @@
     "questionsCta": "Domande?",
     "contactUs": "Contattaci",
     "backHome": "Torna alla home",
-    "schemaSuffix": "Noleggio Olbia e Costa Smeralda"
+    "schemaSuffix": "Noleggio Olbia e Costa Smeralda",
+    "priceFromPrefix": "A partire da",
+    "priceFromSuffix": "/giorno"
   },
   "location": {
     "breadcrumb": "Località",

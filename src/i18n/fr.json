@@ -260,7 +260,9 @@
     "questionsCta": "Des questions ?",
     "contactUs": "Contactez-nous",
     "backHome": "Retour à l'accueil",
-    "schemaSuffix": "Location à Olbia et Costa Smeralda"
+    "schemaSuffix": "Location à Olbia et Costa Smeralda",
+    "priceFromPrefix": "À partir de",
+    "priceFromSuffix": "/jour"
   },
   "location": {
     "breadcrumb": "Destinations",

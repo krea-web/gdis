@@ -260,7 +260,9 @@
     "questionsCta": "Fragen?",
     "contactUs": "Kontaktieren Sie uns",
     "backHome": "Zurück zur Startseite",
-    "schemaSuffix": "Vermietung in Olbia und Costa Smeralda"
+    "schemaSuffix": "Vermietung in Olbia und Costa Smeralda",
+    "priceFromPrefix": "Ab",
+    "priceFromSuffix": "/Tag"
   },
   "location": {
     "breadcrumb": "Reiseziele",
