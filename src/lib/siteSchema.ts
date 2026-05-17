@@ -1,6 +1,6 @@
 export const SITE_URL = "https://gdisrentservice.com";
 export const BUSINESS_LEGAL_NAME = "GDIS SERVICE S.R.L.";
-export const BUSINESS_NAME = "GDIS Rent & Service";
+export const BUSINESS_NAME = "GDIS Rent";
 export const BUSINESS_VAT = "IT03047140904";
 export const BUSINESS_TAX_ID = "03047140904";
 export const BUSINESS_PHONE = "+39-352-045-9150";
@@ -10,6 +10,13 @@ export const BUSINESS_FOUNDING = "2025-10-01";
 export const BUSINESS_LOGO =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 export const BUSINESS_INSTAGRAM = "https://instagram.com/gdis.service";
+export const BUSINESS_GBP = "https://share.google/tf8KP7sbkHZijL5uv";
+export const BUSINESS_REA = "SS-225492";
+export const BUSINESS_FOUNDER = {
+  "@type": "Person" as const,
+  name: "Giuseppe Deiana",
+  jobTitle: "Amministratore Unico",
+};
 
 export const BUSINESS_ADDRESS = {
   "@type": "PostalAddress" as const,
@@ -59,13 +66,15 @@ export const organizationSchema = {
   "@id": `${SITE_URL}/#organization`,
   name: BUSINESS_NAME,
   legalName: BUSINESS_LEGAL_NAME,
-  alternateName: "GDIS Rent",
+  alternateName: "GDIS Service",
   url: SITE_URL,
   logo: BUSINESS_LOGO,
-  sameAs: [BUSINESS_INSTAGRAM],
+  sameAs: [BUSINESS_GBP, BUSINESS_INSTAGRAM],
   foundingDate: BUSINESS_FOUNDING,
+  founder: BUSINESS_FOUNDER,
   vatID: BUSINESS_VAT,
   taxID: BUSINESS_TAX_ID,
+  identifier: { "@type": "PropertyValue", propertyID: "REA", value: BUSINESS_REA },
   address: BUSINESS_ADDRESS,
   contactPoint: {
     "@type": "ContactPoint",
@@ -73,7 +82,7 @@ export const organizationSchema = {
     email: BUSINESS_EMAIL,
     contactType: "customer service",
     areaServed: "IT",
-    availableLanguage: ["Italian", "English"],
+    availableLanguage: ["Italian", "English", "German", "French"],
   },
 };
 
@@ -102,15 +111,16 @@ export function buildLocalBusinessSchema(options: {
     openingHoursSpecification: BUSINESS_HOURS,
     areaServed: options.areaServed ?? DEFAULT_AREA_SERVED,
     hasMap: "https://www.google.com/maps?q=40.929258,9.483627",
-    sameAs: [BUSINESS_INSTAGRAM],
+    sameAs: [BUSINESS_GBP, BUSINESS_INSTAGRAM],
     vatID: BUSINESS_VAT,
+    identifier: { "@type": "PropertyValue", propertyID: "REA", value: BUSINESS_REA },
   };
 }
 
 type SiteLocale = "it" | "en" | "de" | "fr";
 const LOCALE_IETF: Record<SiteLocale, string> = {
   it: "it-IT",
-  en: "en-GB",
+  en: "en",
   de: "de-DE",
   fr: "fr-FR",
 };
@@ -238,7 +248,7 @@ const BOOKING_HOWTO_PATH: Record<BookingLocale, string> = {
 
 const BOOKING_HOWTO_LANG: Record<BookingLocale, string> = {
   it: "it-IT",
-  en: "en-GB",
+  en: "en",
   de: "de-DE",
   fr: "fr-FR",
 };

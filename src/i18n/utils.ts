@@ -24,14 +24,14 @@ export const LOCALE_FLAGS: Record<Locale, string> = {
 
 export const OG_LOCALES: Record<Locale, string> = {
   it: "it_IT",
-  en: "en_GB",
+  en: "en_US",
   de: "de_DE",
   fr: "fr_FR",
 };
 
 export const HREFLANG_TAGS: Record<Locale, string> = {
   it: "it-IT",
-  en: "en-GB",
+  en: "en",
   de: "de-DE",
   fr: "fr-FR",
 };
