@@ -6,6 +6,7 @@ import {
   BUSINESS_TAX_ID,
   BUSINESS_EMAIL,
   BUSINESS_INSTAGRAM,
+  BUSINESS_REA,
 } from "@/lib/siteSchema";
 import { getLangFromUrl, useTranslations, getRoute, getFleetPath, getLocationPath, type Locale } from "@/i18n/utils";
 
@@ -161,38 +162,38 @@ const logoAlt = t("common.logoAlt");
     </div>
 
     <div class="border-t border-primary-foreground/15 pt-8 mb-6">
-      <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground/60 mb-4">
+      <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground/85 mb-4">
         {t("footer.data.title")}
       </h4>
       <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-3 text-sm">
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.ragSoc")}</dt>
+          <dt class="text-primary-foreground/75 text-xs uppercase tracking-wider mb-1">{t("footer.data.ragSoc")}</dt>
           <dd class="text-primary-foreground font-medium">{BUSINESS_LEGAL_NAME}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.sedeLegale")}</dt>
+          <dt class="text-primary-foreground/75 text-xs uppercase tracking-wider mb-1">{t("footer.data.sedeLegale")}</dt>
           <dd class="text-primary-foreground font-medium">{t("common.address")}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.partitaIva")}</dt>
+          <dt class="text-primary-foreground/75 text-xs uppercase tracking-wider mb-1">{t("footer.data.partitaIva")}</dt>
           <dd class="text-primary-foreground font-medium">{BUSINESS_VAT}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.codFiscale")}</dt>
+          <dt class="text-primary-foreground/75 text-xs uppercase tracking-wider mb-1">{t("footer.data.codFiscale")}</dt>
           <dd class="text-primary-foreground font-medium">{BUSINESS_TAX_ID}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.rea")}</dt>
-          <dd class="text-primary-foreground font-medium">SS-225492</dd>
+          <dt class="text-primary-foreground/75 text-xs uppercase tracking-wider mb-1">{t("footer.data.rea")}</dt>
+          <dd class="text-primary-foreground font-medium">{BUSINESS_REA}</dd>
         </div>
         <div>
-          <dt class="text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">{t("footer.data.capitale")}</dt>
+          <dt class="text-primary-foreground/75 text-xs uppercase tracking-wider mb-1">{t("footer.data.capitale")}</dt>
           <dd class="text-primary-foreground font-medium">{t("footer.data.capitaleValue")}</dd>
         </div>
       </dl>
     </div>
 
-    <div class="border-t border-primary-foreground/15 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-primary-foreground/60">
+    <div class="border-t border-primary-foreground/15 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-primary-foreground/85">
       <p>{t("footer.copyright", { year, name: BUSINESS_LEGAL_NAME })}</p>
       <p class="md:text-right flex items-center gap-3 md:justify-end">
         <a
