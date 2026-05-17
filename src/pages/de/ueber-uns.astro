@@ -2,8 +2,30 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import FaqList from "@/components/FaqList.astro";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
-import { buildFaqSchema } from "@/lib/siteSchema";
+import {
+  buildFaqSchema,
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_NAME,
+  BUSINESS_VAT,
+  BUSINESS_TAX_ID,
+  BUSINESS_REA,
+  BUSINESS_FOUNDER,
+} from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
+
+const legalRows = [
+  { label: "Firmenname", value: BUSINESS_LEGAL_NAME },
+  { label: "Handelsmarke", value: BUSINESS_NAME },
+  { label: "Rechtsform", value: "Gesellschaft mit beschränkter Haftung (S.R.L.) — italienisches Recht" },
+  { label: "Geschäftssitz", value: "Via Annibale Caro 52, 07026 Olbia (SS), Italien" },
+  { label: "USt-IdNr. / Steuernr.", value: `IT${BUSINESS_VAT.replace(/^IT/, "")} / ${BUSINESS_TAX_ID}` },
+  { label: "REA-Nummer", value: `Sassari ${BUSINESS_REA}` },
+  { label: "Gründungsdatum", value: "1. Oktober 2025" },
+  { label: "Eingetragen am", value: "7. Oktober 2025 — Ordentlicher Abschnitt" },
+  { label: "Stammkapital", value: "€ 10.000,00 (voll eingezahlt)" },
+  { label: "Alleiniger Geschäftsführer", value: `${BUSINESS_FOUNDER.name} (Amministratore Unico)` },
+  { label: "Zertifizierte E-Mail (PEC)", value: "gdis.servicesrl@pecdotcom.it" },
+];
 
 const heroUrl = supabaseImg(
   "asset/gdisrentservice-noleggio-auto-scooter-quad-olbia.webp",
@@ -27,23 +49,23 @@ const breadcrumbs = [
 const timelineItems = [
   {
     icon: "star",
-    title: "Geboren für den Tourismus",
-    text: "Wir sind keine alteingesessene Autovermietung. Wir sind ein 2025 gegründetes digitales Start-up, von Grund auf konzipiert, um das beste Mobilitätserlebnis für Touristen in der Costa Smeralda zu bieten.",
+    title: "Bei der Handelskammer Sassari eingetragen",
+    text: "GDIS SERVICE S.R.L. ist eine am 1. Oktober 2025 gegründete Gesellschaft mit beschränkter Haftung, eingetragen am 7. Oktober 2025 in das Handelsregister Sassari (REA SS-225492). Ein neues lokales Unternehmen — vom ersten Tag an rechtlich, steuerlich und administrativ vollständig konform.",
   },
   {
     icon: "car",
-    title: "Flotte 2025",
-    text: "Jedes Fahrzeug unserer Flotte ist neu, gewartet und versichert. Stadtautos, Roller, Quads und Luxusfahrzeuge auf Anfrage — nur das Beste für Ihren Urlaub.",
+    title: "Diversifizierte Flotte",
+    text: "Fiat Panda Hybrid, Mercedes A-Klasse 180d, Roller Honda SH 125 und 350, Quad Yamaha Raptor 700R. Jedes Fahrzeug ist haftpflicht-, diebstahl- und brandversichert, regelmäßig gewartet und Teil einer für den Tourismus dedizierten Flotte.",
   },
   {
     icon: "phone",
-    title: "100% digital",
-    text: "Buchen Sie online in 2 Minuten, unterschreiben Sie den Vertrag digital und schon kann es losgehen. Keine Warteschlangen, keine Papierformulare, kein Stress.",
+    title: "WhatsApp rund um die Uhr — kein Callcenter",
+    text: "Sie sprechen direkt mit dem Betriebsleiter. Buchung über Web oder WhatsApp +39 352 045 9150, digitale Vertragsunterzeichnung, Fahrzeugabholung (oder Übergabe). Direkte Kommunikation, auch außerhalb der Öffnungszeiten.",
   },
   {
     icon: "zap",
-    title: "VIP-Lieferung",
-    text: "Das Fahrzeug kommt direkt zu Ihnen: zu Ihrer Yacht, Ihrem Hotel, Ihrer Villa. Von Palau bis San Teodoro decken wir die gesamte Gallura und Costa Smeralda ab.",
+    title: "VIP-Übergabe in der gesamten Gallura",
+    text: "Mitarbeiter am Ankunftsterminal des Flughafens Costa Smeralda oder direkt am Schiff im Hafen von Olbia Isola Bianca. Übergabe auch im Hotel, Residence oder in der Privatvilla in der Costa Smeralda, von Porto Cervo bis San Teodoro.",
   },
 ];
 
@@ -73,8 +95,8 @@ const marqueeTrack = [...marqueeItems, ...marqueeItems];
 ---
 
 <BaseLayout
-  title="Über uns — GDIS Service Srl | Fahrzeugvermietung in der Costa Smeralda"
-  description="GDIS Service Srl: die neue Ära der Mobilität in Sardinien. 100% digitale Vermietung von Stadtautos, Rollern, Quads und VIP-Fahrzeugen in der Costa Smeralda seit 2025."
+  title="Über uns — GDIS Rent | Autovermietung Olbia und Costa Smeralda"
+  description="GDIS Rent (GDIS Service S.R.L., REA Sassari SS-225492, USt-IdNr. IT03047140904): Auto-, Roller- und Quad-Vermietung in Olbia und der Costa Smeralda. Geschäftssitz Via Annibale Caro 52, Olbia. WhatsApp rund um die Uhr."
   canonical="/de/ueber-uns"
   jsonLd={faqSchema}
   breadcrumbs={breadcrumbs}
@@ -94,14 +116,13 @@ const marqueeTrack = [...marqueeItems, ...marqueeItems];
     <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900 z-[1]"></div>
     <div class="relative z-10 text-center px-4 max-w-5xl">
       <p class="text-blue-400 font-display text-sm font-semibold uppercase tracking-[0.3em] mb-4 block animate-fade-in">
-        SEIT 2025 IN SARDINIEN
+        OLBIA · COSTA SMERALDA
       </p>
       <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl animate-fade-in">
         Auto-, Roller- und Quadvermietung
       </h1>
       <p class="text-slate-200 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-        2025 gegründet, um Ihnen Fahrzeuge der neuesten Generation, einen 100% digitalen Prozess und
-        VIP-Lieferungen direkt an Ihre Yacht oder Ihr Hotel anzubieten.
+        GDIS Rent ist der Handelsname von <strong class="text-white font-medium">GDIS SERVICE S.R.L.</strong>, einer bei der Handelskammer Sassari eingetragenen Gesellschaft (REA SS-225492). Kurz- und mittelfristige Vermietung mit VIP-Übergabe am Flughafen, Hafen, Hotel und in der Villa.
       </p>
       <div class="w-32 md:w-48 h-[3px] bg-primary mx-auto mt-10 shadow-[0_0_20px_hsl(var(--primary)/0.6)]"></div>
     </div>
@@ -279,6 +300,37 @@ const marqueeTrack = [...marqueeItems, ...marqueeItems];
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  {/* Rechtliche Transparenz — E-E-A-T-Block, Quellen verifizierbar bei der italienischen Handelskammer */}
+  <section class="py-20 md:py-28 bg-background relative overflow-hidden border-t border-border/40">
+    <div class="container px-4 relative z-10 max-w-4xl mx-auto">
+      <div class="mb-10 md:mb-14" data-reveal>
+        <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-3 block">
+          Rechtliche Transparenz
+        </span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">
+          Überprüfbare <span class="italic font-light text-primary">Unternehmensdaten</span>
+        </h2>
+        <p class="text-muted-foreground text-base md:text-lg font-light leading-relaxed mt-4 max-w-2xl">
+          GDIS Rent arbeitet mit vollständiger steuerlicher und administrativer Transparenz. Alle nachstehenden Daten sind über die Handelskammer Sassari (italienisches Handelsregister) öffentlich überprüfbar.
+        </p>
+      </div>
+
+      <dl class="grid sm:grid-cols-[max-content_1fr] gap-x-8 gap-y-3 text-sm md:text-base border-l-4 border-primary pl-6 md:pl-8" data-reveal data-reveal-delay="100">
+        {legalRows.map((row) => (
+          <>
+            <dt class="font-display font-semibold text-foreground/80 uppercase tracking-wider text-xs md:text-sm pt-1">{row.label}</dt>
+            <dd class="text-foreground font-light mb-2 sm:mb-0">{row.value}</dd>
+          </>
+        ))}
+      </dl>
+
+      <p class="text-xs text-muted-foreground mt-8 italic">
+        Quelle: Ordentliche Visura der Handelskammer Sassari, italienisches Handelsregister —
+        offizielles Dokument T 623229345, ausgestellt am 16/10/2025.
+      </p>
     </div>
   </section>
 
