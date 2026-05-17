@@ -40,3 +40,10 @@ dist-ssr
 # Brand asset generation (locally generated, uploaded to Supabase)
 generated-assets/
 scripts/.cache/
+
+# SEO audit artifacts (locally generated, do not commit)
+.seo-audit-*/
+
+# Documenti legali / visure — NEVER commit
+*.pdf
+Visura*.pdf
