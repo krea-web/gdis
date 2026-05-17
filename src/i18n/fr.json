@@ -262,11 +262,13 @@
     "backHome": "Retour à l'accueil",
     "schemaSuffix": "Location à Olbia et Costa Smeralda",
     "priceFromPrefix": "À partir de",
-    "priceFromSuffix": "/jour"
+    "priceFromSuffix": "/jour",
+    "whatsappContext": "Bonjour ! J'aimerais des infos sur la location de {vehicle}."
   },
   "location": {
     "breadcrumb": "Destinations",
     "h1Prefix": "Location de voiture à",
+    "whatsappContext": "Bonjour ! J'aimerais des infos sur la location de voiture à {name}.",
     "topSpotsEyebrow": "À voir",
     "topSpotsTitle": "Les lieux incontournables",
     "trafficEyebrow": "Mobilité",

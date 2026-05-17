@@ -33,8 +33,12 @@ export interface Props {
 }
 
 const SITE_URL = "https://gdisrentservice.com";
+// OG/Twitter card per pagine senza ogImage esplicito.
+// Foto reale 1200x630, non il logo (che lasciava spazi bianchi nei share).
+// Pagine fleet/location passano già il loro heroImage come ogImage, quindi questa
+// default si applica solo a homepage, /chisiamo, /contatti, /prenotaora, /termini, ecc.
 const DEFAULT_OG_IMAGE =
-  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
+  "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/og-image.jpg";
 
 const {
   title,

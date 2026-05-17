@@ -262,10 +262,12 @@
     "backHome": "Back to home",
     "schemaSuffix": "Rental in Olbia and Costa Smeralda",
     "priceFromPrefix": "From",
-    "priceFromSuffix": "/day"
+    "priceFromSuffix": "/day",
+    "whatsappContext": "Hi! I'd like info about renting the {vehicle}."
   },
   "location": {
     "breadcrumb": "Destinations",
+    "whatsappContext": "Hi! I'd like info about car rental in {name}.",
     "h1Prefix": "Car Rental in",
     "topSpotsEyebrow": "What to see",
     "topSpotsTitle": "Must-see spots",

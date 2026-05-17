@@ -25,7 +25,7 @@ import { Toaster, toast } from "sonner";
 import { type Vehicle } from "@/hooks/useVehicles";
 import { invokeN8nProxy, type CreateBookingResponse } from "@/lib/n8nProxy";
 import { driverSchema, pickupDropoffSchema } from "@/lib/validators";
-import { trackBookingStarted, trackBookingCompleted, trackWhatsAppClick } from "@/lib/analytics";
+import { trackBookingStarted, trackBookingCompleted, trackBookingStep, trackWhatsAppClick } from "@/lib/analytics";
 import { useTranslations } from "@/i18n/utils";
 import type { Locale } from "@/i18n/utils";
 
@@ -95,6 +95,10 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
   useEffect(() => {
     if (typeof window === "undefined") return;
     window.scrollTo({ top: 0, behavior: "smooth" });
+    // Funnel event: ogni transizione di step (la step 0 è coperta da trackBookingStarted)
+    if (step > 0) {
+      trackBookingStep(stepKeys[step], step);
+    }
   }, [step]);
 
   useEffect(() => {

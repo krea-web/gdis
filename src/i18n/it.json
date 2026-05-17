@@ -262,11 +262,13 @@
     "backHome": "Torna alla home",
     "schemaSuffix": "Noleggio Olbia e Costa Smeralda",
     "priceFromPrefix": "A partire da",
-    "priceFromSuffix": "/giorno"
+    "priceFromSuffix": "/giorno",
+    "whatsappContext": "Ciao! Vorrei info sul noleggio {vehicle}."
   },
   "location": {
     "breadcrumb": "Località",
     "h1Prefix": "Noleggio Auto a",
+    "whatsappContext": "Ciao! Vorrei info sul noleggio auto a {name}.",
     "topSpotsEyebrow": "Cosa vedere",
     "topSpotsTitle": "I luoghi imperdibili",
     "trafficEyebrow": "Mobilità",

@@ -25,6 +25,15 @@ export function trackBookingStarted(): void {
   trackEvent("booking_started", {});
 }
 
+/**
+ * Funnel step transition. step_name = "vehicle" | "dates" | "driver" |
+ * "secondDriver" | "pickupDropoff" | "signature". step_index 0..5.
+ * Use GA4 "Explore > Funnel" with these events to find drop-off.
+ */
+export function trackBookingStep(stepName: string, stepIndex: number): void {
+  trackEvent("booking_step", { step_name: stepName, step_index: stepIndex });
+}
+
 type BookingCompletedParams = {
   bookingId: string;
   vehicleId?: string;

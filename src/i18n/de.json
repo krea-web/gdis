@@ -262,11 +262,13 @@
     "backHome": "Zurück zur Startseite",
     "schemaSuffix": "Vermietung in Olbia und Costa Smeralda",
     "priceFromPrefix": "Ab",
-    "priceFromSuffix": "/Tag"
+    "priceFromSuffix": "/Tag",
+    "whatsappContext": "Hallo! Ich hätte gerne Infos zur Miete von {vehicle}."
   },
   "location": {
     "breadcrumb": "Reiseziele",
     "h1Prefix": "Autovermietung in",
+    "whatsappContext": "Hallo! Ich hätte gerne Infos zur Autovermietung in {name}.",
     "topSpotsEyebrow": "Sehenswertes",
     "topSpotsTitle": "Die schönsten Orte",
     "trafficEyebrow": "Mobilität",
