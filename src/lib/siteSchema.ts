@@ -3,14 +3,15 @@ export const BUSINESS_LEGAL_NAME = "GDIS SERVICE S.R.L.";
 export const BUSINESS_NAME = "GDIS Rent";
 export const BUSINESS_VAT = "IT03047140904";
 export const BUSINESS_TAX_ID = "03047140904";
-export const BUSINESS_PHONE = "+39-352-045-9150";
+export const BUSINESS_PHONE = "+393520459150";
 export const BUSINESS_PHONE_WHATSAPP = "+393520459150";
+export const BUSINESS_PHONE_DISPLAY = "+39 352 045 9150";
 export const BUSINESS_EMAIL = "gdis.noleggi@gmail.com";
 export const BUSINESS_FOUNDING = "2025-10-01";
 export const BUSINESS_LOGO =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 export const BUSINESS_INSTAGRAM = "https://instagram.com/gdis.service";
-export const BUSINESS_GBP = "https://share.google/tf8KP7sbkHZijL5uv";
+export const BUSINESS_GBP = "https://maps.app.goo.gl/mmKSjQChHSKX32XU8";
 export const BUSINESS_REA = "SS-225492";
 export const BUSINESS_FOUNDER = {
   "@type": "Person" as const,
@@ -104,12 +105,21 @@ export function buildLocalBusinessSchema(options: {
     telephone: BUSINESS_PHONE,
     email: BUSINESS_EMAIL,
     url: SITE_URL,
-    priceRange: options.priceRange ?? "€€",
+    // Real price corridor: scooter from €50/d up to quad/Mercedes from €120-250/d in high season.
+    priceRange: options.priceRange ?? "€50–€250",
+    currenciesAccepted: "EUR",
+    paymentAccepted: "Cash, Credit Card, Bank Transfer",
+    knowsLanguage: ["it", "en", "de", "fr"],
     ...(options.description ? { description: options.description } : {}),
     address: BUSINESS_ADDRESS,
     geo: BUSINESS_GEO,
     openingHoursSpecification: BUSINESS_HOURS,
     areaServed: options.areaServed ?? DEFAULT_AREA_SERVED,
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: BUSINESS_GEO,
+      geoRadius: "60000",
+    },
     hasMap: "https://www.google.com/maps?q=40.929258,9.483627",
     sameAs: [BUSINESS_GBP, BUSINESS_INSTAGRAM],
     vatID: BUSINESS_VAT,
@@ -214,7 +224,7 @@ export function buildServiceSchema(opts: {
   description: string;
   url: string;
   serviceType?: string;
-  areaServed: Array<{ "@type": string; name: string }> | string;
+  areaServed: Array<{ "@type": string; name: string; [k: string]: string }> | string;
   locale?: SiteLocale;
 }) {
   const locale = opts.locale ?? "it";

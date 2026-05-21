@@ -43,21 +43,21 @@ const whatsappHref = `https://wa.me/393520459150?text=${encodeURIComponent(whats
 
       <div class="flex flex-wrap gap-3" data-reveal data-reveal-delay="300">
         <a
-          href={getRoute("booking", lang)}
-          class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all"
-        >
-          {t("cta.prenotaOra")}
-        </a>
-        <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           data-wa-track={trackId}
           aria-label={t("common.whatsappAria")}
-          class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-all"
+          class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#1ebe57] shadow-lg shadow-[#25D366]/30 transition-all"
         >
           <WhatsAppIcon size={18} />
           {t("localita.hero.vipDelivery")}
+        </a>
+        <a
+          href={getRoute("booking", lang)}
+          class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-all"
+        >
+          {t("cta.prenotaOra")}
         </a>
       </div>
     </div>

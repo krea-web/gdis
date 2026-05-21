@@ -5,6 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
 import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
@@ -43,10 +44,10 @@ const faqs = [
 ];
 
 const localBusinessSchema = buildLocalBusinessSchema({
-  id: "https://gdisrentservice.com/noleggio-auto-aeroporto-olbia#localbusiness",
+  id: "https://gdisrentservice.com/en/car-rental-olbia-airport#localbusiness",
   description: "Car rental at Olbia Costa Smeralda Airport (OLB) with VIP delivery at arrivals. Real-time flight tracking, distances to Costa Smeralda, terminal and parking info.",
   areaServed: [
-    { "@type": "Airport", name: "Olbia Costa Smeralda Airport" },
+    { "@type": "Airport", name: "Olbia Costa Smeralda Airport", iataCode: "OLB" },
     { "@type": "City", name: "Olbia" },
   ],
 });
@@ -60,7 +61,7 @@ const serviceSchema = buildServiceSchema({
   serviceType: "Airport Car Rental Delivery",
   url: "/en/car-rental-olbia-airport",
   areaServed: [
-    { "@type": "Airport", name: "Olbia Costa Smeralda Airport" },
+    { "@type": "Airport", name: "Olbia Costa Smeralda Airport", iataCode: "OLB" },
     { "@type": "City", name: "Olbia" },
     { "@type": "AdministrativeArea", name: "Costa Smeralda" },
   ],
@@ -70,8 +71,8 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
 ---
 
 <BaseLayout
-  title="Car Rental Olbia Airport OLB | Arrivals Delivery | GDIS Rent"
-  description="Car rental Olbia Costa Smeralda Airport OLB. VIP delivery directly at arrivals, flight tracking, real distances and times to Costa Smeralda. Book online 24/7."
+  title="Car Rental at Olbia Airport OLB | Costa Smeralda Car Hire 24/7 | GDIS Rent"
+  description="Car rental at Olbia Costa Smeralda Airport (OLB) ✓ VIP delivery directly at arrivals, no desk queue ✓ Rent a Fiat Panda, Mercedes, Honda scooter or Yamaha quad ✓ Real-time flight tracking, real distances to Porto Cervo, San Teodoro, Baja Sardinia ✓ Olbia airport car hire 24/7 on WhatsApp."
   canonical="/en/car-rental-olbia-airport"
   jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
@@ -204,6 +205,12 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
   </section>
 
   <ConsegnaVipExplainer variant="airport" />
+
+  <VehicleComparisonTable
+    title="Which vehicle to choose after landing at Olbia?"
+    subtitle="From the city car for couples to the off-road quad. A quick comparison so you can decide before you land."
+    recommendation="<strong class='text-foreground'>Pick based on your itinerary.</strong> <strong>Fiat Panda</strong> if you're landing as a couple or family with standard luggage. <strong>Mercedes A 180d</strong> if you're heading straight to Porto Cervo or for a business weekend (automatic gearbox, motorway comfort). <strong>Honda SH</strong> if you're staying only in Olbia city and the ZTL zones. <strong>Yamaha Raptor</strong> for off-road excursions in Gallura on the days after."
+  />
 
   <LocalitaFAQ name="Olbia Airport (OLB)" faqs={faqs} />
 

@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import {
   BUSINESS_LEGAL_NAME,
   BUSINESS_EMAIL,
-  BUSINESS_PHONE,
+  BUSINESS_PHONE_DISPLAY,
   BUSINESS_VAT,
 } from "@/lib/siteSchema";
 
@@ -32,7 +32,7 @@ const breadcrumbs = [
     <p>
       The Data Controller for personal data is <strong>{BUSINESS_LEGAL_NAME}</strong>,
       with registered office at Via Annibale Caro 52, 07026 Olbia (SS), Italy — VAT/Tax Code {BUSINESS_VAT}.<br />
-      Email: <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Phone: {BUSINESS_PHONE}.
+      Email: <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Phone: {BUSINESS_PHONE_DISPLAY}.
     </p>
 
     <h2>2. Categories of Data Processed</h2>

@@ -5,6 +5,7 @@ import {
   buildLocalBusinessSchema,
   BUSINESS_EMAIL,
   BUSINESS_PHONE,
+  BUSINESS_PHONE_DISPLAY,
   BUSINESS_PHONE_WHATSAPP,
 } from "@/lib/siteSchema";
 
@@ -19,8 +20,8 @@ const localBusinessSchema = buildLocalBusinessSchema({
     "Contatti e sede di GDIS Rent & Service: noleggio auto, scooter e quad a Olbia e Costa Smeralda.",
 });
 
-const phoneTel = BUSINESS_PHONE.replace(/[^+\d]/g, "");
-const phoneDisplay = BUSINESS_PHONE.replace(/-/g, " ");
+const phoneTel = BUSINESS_PHONE;
+const phoneDisplay = BUSINESS_PHONE_DISPLAY;
 const waPrefilled = `https://wa.me/${BUSINESS_PHONE_WHATSAPP}?text=${encodeURIComponent(
   "Ciao GDIS Rent, vorrei informazioni su un noleggio",
 )}`;

@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import {
   BUSINESS_LEGAL_NAME,
   BUSINESS_EMAIL,
-  BUSINESS_PHONE,
+  BUSINESS_PHONE_DISPLAY,
   BUSINESS_VAT,
 } from "@/lib/siteSchema";
 
@@ -32,7 +32,7 @@ const breadcrumbs = [
     <p>
       Le Responsable du traitement des données personnelles est <strong>{BUSINESS_LEGAL_NAME}</strong>,
       dont le siège social est situé Via Annibale Caro 52, 07026 Olbia (SS), Italie — n° de TVA/Code fiscal {BUSINESS_VAT}.<br />
-      E-mail : <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Téléphone : {BUSINESS_PHONE}.
+      E-mail : <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Téléphone : {BUSINESS_PHONE_DISPLAY}.
     </p>
 
     <h2>2. Catégories de données traitées</h2>

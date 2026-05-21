@@ -1,6 +1,15 @@
 # GDIS Rent — Noleggio Auto Olbia e Costa Smeralda
 
+> Ultimo aggiornamento: maggio 2026 — Licenza contenuto: CC BY 4.0 (riuso permesso con attribuzione).
+
 > GDIS Rent (entità legale GDIS SERVICE S.R.L.) è un autonoleggio con sede a Olbia, Sardegna. Offre noleggio auto, scooter e quad in tutta la Costa Smeralda con consegna VIP H24 in aeroporto, porto e hotel.
+
+## Versioni multilingua
+
+- IT: https://gdisrentservice.com/llms.txt
+- EN: https://gdisrentservice.com/en/llms.txt
+- DE: https://gdisrentservice.com/de/llms.txt
+- FR: https://gdisrentservice.com/fr/llms.txt
 
 ## Identità
 

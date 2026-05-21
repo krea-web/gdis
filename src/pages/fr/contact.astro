@@ -5,6 +5,7 @@ import {
   buildLocalBusinessSchema,
   BUSINESS_EMAIL,
   BUSINESS_PHONE,
+  BUSINESS_PHONE_DISPLAY,
   BUSINESS_PHONE_WHATSAPP,
 } from "@/lib/siteSchema";
 
@@ -14,13 +15,13 @@ const breadcrumbs = [
 ];
 
 const localBusinessSchema = buildLocalBusinessSchema({
-  id: "https://gdisrentservice.com/contatti#localbusiness",
+  id: "https://gdisrentservice.com/fr/contact#localbusiness",
   description:
     "Contacts et siège de GDIS Rent & Service : location de voitures, scooters et quads à Olbia et en Costa Smeralda.",
 });
 
-const phoneTel = BUSINESS_PHONE.replace(/[^+\d]/g, "");
-const phoneDisplay = BUSINESS_PHONE.replace(/-/g, " ");
+const phoneTel = BUSINESS_PHONE;
+const phoneDisplay = BUSINESS_PHONE_DISPLAY;
 const waPrefilled = `https://wa.me/${BUSINESS_PHONE_WHATSAPP}?text=${encodeURIComponent(
   "Bonjour GDIS Rent, je souhaite des informations sur une location",
 )}`;

@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import {
   BUSINESS_LEGAL_NAME,
   BUSINESS_EMAIL,
-  BUSINESS_PHONE,
+  BUSINESS_PHONE_DISPLAY,
   BUSINESS_VAT,
 } from "@/lib/siteSchema";
 
@@ -36,7 +36,7 @@ const breadcrumbs = [
     <p>
       Il Titolare del trattamento dei dati personali è <strong>{BUSINESS_LEGAL_NAME}</strong>,
       con sede legale in Via Annibale Caro 52, 07026 Olbia (SS), Italia — P.IVA/C.F. {BUSINESS_VAT}.<br />
-      Email: <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Telefono: {BUSINESS_PHONE}.
+      Email: <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Telefono: {BUSINESS_PHONE_DISPLAY}.
     </p>
 
     <h2>2. Tipologie di dati trattati</h2>

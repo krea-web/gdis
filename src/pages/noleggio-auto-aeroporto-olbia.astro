@@ -5,6 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
 import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
@@ -46,7 +47,7 @@ const localBusinessSchema = buildLocalBusinessSchema({
   id: "https://gdisrentservice.com/noleggio-auto-aeroporto-olbia#localbusiness",
   description: "Noleggio auto in Aeroporto Olbia Costa Smeralda (OLB) con consegna VIP agli arrivi. Monitoraggio voli in tempo reale, distanze verso Costa Smeralda, info terminal e parcheggi.",
   areaServed: [
-    { "@type": "Airport", name: "Aeroporto Olbia Costa Smeralda" },
+    { "@type": "Airport", name: "Aeroporto Olbia Costa Smeralda", iataCode: "OLB" },
     { "@type": "City", name: "Olbia" },
   ],
 });
@@ -60,7 +61,7 @@ const serviceSchema = buildServiceSchema({
   serviceType: "Airport Car Rental Delivery",
   url: "/noleggio-auto-aeroporto-olbia",
   areaServed: [
-    { "@type": "Airport", name: "Aeroporto Olbia Costa Smeralda" },
+    { "@type": "Airport", name: "Aeroporto Olbia Costa Smeralda", iataCode: "OLB" },
     { "@type": "City", name: "Olbia" },
     { "@type": "AdministrativeArea", name: "Costa Smeralda" },
   ],
@@ -70,8 +71,8 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
 ---
 
 <BaseLayout
-  title="Noleggio Auto Aeroporto Olbia OLB | Consegna agli Arrivi | GDIS Rent"
-  description="Noleggio auto Aeroporto Olbia Costa Smeralda OLB ✓ Consegna VIP direttamente agli arrivi ✓ Monitoraggio voli ✓ Distanze e tempi reali per Costa Smeralda. Prenota online H24."
+  title="Noleggio Auto Aeroporto Olbia OLB | Autonoleggio Costa Smeralda H24 | GDIS Rent"
+  description="Noleggio auto all'Aeroporto di Olbia Costa Smeralda (OLB) ✓ Consegna VIP agli arrivi senza coda ai desk ✓ Autonoleggio Fiat Panda, Mercedes, scooter Honda e quad Yamaha ✓ Monitoraggio voli in tempo reale, distanze verso Porto Cervo, San Teodoro, Baja Sardinia ✓ Affitto auto h24 su WhatsApp."
   canonical="/noleggio-auto-aeroporto-olbia"
   jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
@@ -208,6 +209,12 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
   </section>
 
   <ConsegnaVipExplainer variant="airport" />
+
+  <VehicleComparisonTable
+    title="Quale veicolo scegliere dopo l'atterraggio a Olbia?"
+    subtitle="Dalla city car per la coppia al quad off-road. Confronto rapido per decidere prima dell'atterraggio."
+    recommendation="<strong class='text-foreground'>Scegli in base al tuo itinerario.</strong> <strong>Fiat Panda</strong> per chi atterra in coppia o famiglia con bagaglio standard. <strong>Mercedes A 180d</strong> se vai diretto a Porto Cervo o per weekend business (cambio automatico, comfort autostrada). <strong>Honda SH</strong> se ti fermi solo a Olbia città e zone ZTL. <strong>Yamaha Raptor</strong> per escursioni off-road in Gallura nei giorni successivi."
+  />
 
   <LocalitaFAQ name="Aeroporto Olbia (OLB)" faqs={faqs} />
 

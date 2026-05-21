@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import {
   BUSINESS_LEGAL_NAME,
   BUSINESS_EMAIL,
-  BUSINESS_PHONE,
+  BUSINESS_PHONE_DISPLAY,
   BUSINESS_VAT,
 } from "@/lib/siteSchema";
 
@@ -32,7 +32,7 @@ const breadcrumbs = [
     <p>
       Verantwortlicher für die Verarbeitung personenbezogener Daten ist <strong>{BUSINESS_LEGAL_NAME}</strong>,
       mit Sitz in Via Annibale Caro 52, 07026 Olbia (SS), Italien — USt-IdNr./Steuernummer {BUSINESS_VAT}.<br />
-      E-Mail: <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Telefon: {BUSINESS_PHONE}.
+      E-Mail: <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Telefon: {BUSINESS_PHONE_DISPLAY}.
     </p>
 
     <h2>2. Kategorien verarbeiteter Daten</h2>
