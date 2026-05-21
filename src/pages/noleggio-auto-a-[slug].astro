@@ -83,6 +83,14 @@ const sectionBg = (i: number) => (i % 2 === 0 ? "bg-background" : "bg-muted/20")
     <Breadcrumbs items={breadcrumbs} />
   </div>
 
+  {data.intro && (
+    <section class="py-10 md:py-14 bg-background">
+      <div class="container px-4 max-w-3xl mx-auto">
+        <p class="text-base md:text-lg text-foreground/85 leading-relaxed" set:html={data.intro} />
+      </div>
+    </section>
+  )}
+
   {data.customSections.map((section, i) => (
     <LocalitaCustomSection {...section} bgClass={sectionBg(i)} />
   ))}

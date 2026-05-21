@@ -68,6 +68,8 @@ const locationI18nFields = z
     heroSubtitle: z.string().optional(),
     heroAccent: z.string().optional(),
     h1Prefix: z.string().optional(),
+    /** Optional SEO-rich intro paragraph (HTML supported). Renders above customSections. */
+    intro: z.string().optional(),
     customSections: z.array(customSection).optional(),
     spotlight: z
       .object({
@@ -115,6 +117,8 @@ const locations = defineCollection({
     heroAccent: z.string().optional(),
     /** "Noleggio Auto a" | "Noleggio Auto in" — defaults to "Noleggio Auto a". */
     h1Prefix: z.string().optional(),
+    /** Optional SEO-rich intro paragraph (HTML supported). Renders above customSections. */
+    intro: z.string().optional(),
     areaServed: z.array(
       z.object({
         type: z.string(),

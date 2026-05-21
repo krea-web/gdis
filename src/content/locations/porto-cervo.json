@@ -1,11 +1,11 @@
 {
   "slug": "porto-cervo",
   "name": "Porto Cervo",
-  "title": "Noleggio Auto VIP Porto Cervo | Consegna Marina e Yacht | GDIS Rent",
-  "description": "Noleggio auto VIP Porto Cervo ✓ Mercedes, supercar su richiesta ✓ Consegna a Marina, pontile yacht, villa o hotel 5 stelle ✓ Scooter per la Promenade. WhatsApp H24.",
+  "title": "Noleggio Auto a Porto Cervo | Autonoleggio VIP Marina e Promenade | GDIS Rent",
+  "description": "Noleggio auto a Porto Cervo con consegna VIP a Marina, pontile yacht, villa o hotel 5 stelle ✓ Autonoleggio Mercedes, scooter Honda SH per la Promenade, supercar su richiesta ✓ Affitto auto Porto Cervo Costa Smeralda ✓ Servizio H24 su WhatsApp.",
   "canonical": "/noleggio-auto-a-porto-cervo",
   "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-noleggio-porto-cervo.webp",
-  "heroSubtitle": "Consegna VIP alla tua Marina, villa o yacht. Il lusso della Costa Smeralda su ruote, su richiesta WhatsApp.",
+  "heroSubtitle": "Noleggio auto a Porto Cervo: consegna VIP alla tua Marina, villa o yacht. L'autonoleggio di lusso della Costa Smeralda, su richiesta H24 via WhatsApp.",
   "areaServed": [
     {
       "type": "City",
@@ -193,9 +193,9 @@
   "i18n": {
     "en": {
       "name": "Porto Cervo",
-      "title": "VIP Car Rental Porto Cervo | Marina and Yacht Delivery | GDIS Rent",
-      "description": "VIP car rental Porto Cervo - Mercedes, supercars on request - Delivery to Marina, yacht berth, villa or 5-star hotel - Scooters for the Promenade. WhatsApp 24/7.",
-      "heroSubtitle": "VIP delivery to your Marina, villa or yacht. The luxury of Costa Smeralda on wheels, on WhatsApp request.",
+      "title": "Car Rental in Porto Cervo | VIP Marina & Promenade Car Hire | GDIS Rent",
+      "description": "Car rental in Porto Cervo with VIP delivery to Marina, yacht pier, villa or 5-star hotel ✓ Rent a Mercedes, Honda SH scooter for the Promenade, supercar on request ✓ Porto Cervo car hire in Costa Smeralda ✓ 24/7 WhatsApp service.",
+      "heroSubtitle": "Car rental in Porto Cervo: VIP delivery to your Marina, villa or yacht. Luxury car hire on the Costa Smeralda, on request 24/7 via WhatsApp.",
       "h1Prefix": "Car Rental in",
       "spotlight": {
         "tag": "VIP Collection",
@@ -364,13 +364,14 @@
           "a": "Rates vary by model (Lamborghini, Ferrari, Porsche on request) and date. Write to us on WhatsApp with date, time and desired model: we'll give you a transparent quote within 30 minutes, no obligation."
         }
       ],
-      "closingParagraph": "Porto Cervo is the heart of Costa Smeralda, but it doesn't end here: in 5 minutes by scooter you're at <a href='/en/car-rental-in-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> for the legendary Phi Beach sunsets and the nights at the Ritual Club, while in 15 minutes you climb to <a href='/en/car-rental-in-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> for the Thursday market and the authenticity of the Gallura village — the combination that lets our customers live the summer like a local, not a tourist. For those arriving by yacht, we organise car delivery to the berth in the Marina at disembarkation time; for those staying in private villas, we collect and return the vehicle at home. All on WhatsApp, 24/7, also in English or French."
+      "closingParagraph": "Porto Cervo is the heart of Costa Smeralda, but it doesn't end here: in 5 minutes by scooter you're at <a href='/en/car-rental-in-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> for the legendary Phi Beach sunsets and the nights at the Ritual Club, while in 15 minutes you climb to <a href='/en/car-rental-in-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> for the Thursday market and the authenticity of the Gallura village — the combination that lets our customers live the summer like a local, not a tourist. For those arriving by yacht, we organise car delivery to the berth in the Marina at disembarkation time; for those staying in private villas, we collect and return the vehicle at home. All on WhatsApp, 24/7, also in English or French.",
+      "intro": "<strong>Car rental in Porto Cervo</strong> needs a partner who knows the Costa Smeralda from the inside: the high-season pedestrian ZTL, Marina and Pevero Golf Club parking, opening hours at Billionaire and Phi Beach. GDIS Rent runs VIP car hire with delivery directly to your villa, Cala di Volpe or Romazzino hotel, yacht pier or Promenade parking — without ever having to drive back to Olbia. The <a href='/en/fleet/mercedes-classe-a180d' class='text-primary font-medium hover:underline'>Mercedes A-Class 180d</a> remains the natural choice if you're staying in the villa belt, while the <a href='/en/fleet/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> scooter is the trump card for the 5 minutes between the Promenade and <a href='/en/car-rental-in-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a>, skipping queues and full car parks. <strong>Porto Cervo car hire</strong> with transparent rates, supercar and luxury vehicles on request — coordinate everything in 30 seconds on WhatsApp."
     },
     "de": {
       "name": "Porto Cervo",
-      "title": "VIP-Autovermietung Porto Cervo | Lieferung an Marina und Yacht | GDIS Rent",
-      "description": "VIP-Autovermietung Porto Cervo - Mercedes, Supercars auf Anfrage - Lieferung an die Marina, den Yachtsteg, Villa oder 5-Sterne-Hotel - Roller für die Promenade. WhatsApp rund um die Uhr.",
-      "heroSubtitle": "VIP-Lieferung an Ihre Marina, Villa oder Yacht. Der Luxus der Costa Smeralda auf Rädern, auf WhatsApp-Anfrage.",
+      "title": "Mietwagen Porto Cervo | VIP-Autovermietung Marina & Promenade | GDIS Rent",
+      "description": "Mietwagen Porto Cervo mit VIP-Übergabe an Marina, Yachtsteg, Villa oder 5-Sterne-Hotel ✓ Autovermietung Mercedes, Honda SH Roller für die Promenade, Supersportwagen auf Anfrage ✓ Auto mieten in Porto Cervo Costa Smeralda ✓ 24/7 per WhatsApp.",
+      "heroSubtitle": "Mietwagen Porto Cervo: VIP-Übergabe an Ihrer Marina, Villa oder Yacht. Luxus-Autovermietung an der Costa Smeralda, rund um die Uhr per WhatsApp.",
       "h1Prefix": "Autovermietung in",
       "spotlight": {
         "tag": "VIP Collection",
@@ -539,13 +540,14 @@
           "a": "Die Tarife variieren je nach Modell (Lamborghini, Ferrari, Porsche auf Anfrage) und Datum. Schreiben Sie uns auf WhatsApp mit Datum, Uhrzeit und gewünschtem Modell: Wir erstellen Ihnen innerhalb von 30 Minuten ein transparentes Angebot, unverbindlich."
         }
       ],
-      "closingParagraph": "Porto Cervo ist das Herz der Costa Smeralda, aber es endet nicht hier: In 5 Minuten mit dem Roller sind Sie in <a href='/de/autovermietung-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> für die legendären Sonnenuntergänge am Phi Beach und die Nächte im Ritual Club, während Sie in 15 Minuten nach <a href='/de/autovermietung-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> hinaufsteigen für den Donnerstagsmarkt und die Authentizität des gallurischen Dorfes - die Kombination, die unseren Kunden erlaubt, den Sommer wie ein Einheimischer zu leben, nicht wie ein Tourist. Für Yacht-Anreisende organisieren wir die Auto-Lieferung an den Steg in der Marina pünktlich zum Anlandezeitpunkt; für Aufenthalte in Privatvillen holen wir das Fahrzeug ab und liefern es zurück. Alles auf WhatsApp, rund um die Uhr, auch auf Englisch oder Französisch."
+      "closingParagraph": "Porto Cervo ist das Herz der Costa Smeralda, aber es endet nicht hier: In 5 Minuten mit dem Roller sind Sie in <a href='/de/autovermietung-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> für die legendären Sonnenuntergänge am Phi Beach und die Nächte im Ritual Club, während Sie in 15 Minuten nach <a href='/de/autovermietung-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> hinaufsteigen für den Donnerstagsmarkt und die Authentizität des gallurischen Dorfes - die Kombination, die unseren Kunden erlaubt, den Sommer wie ein Einheimischer zu leben, nicht wie ein Tourist. Für Yacht-Anreisende organisieren wir die Auto-Lieferung an den Steg in der Marina pünktlich zum Anlandezeitpunkt; für Aufenthalte in Privatvillen holen wir das Fahrzeug ab und liefern es zurück. Alles auf WhatsApp, rund um die Uhr, auch auf Englisch oder Französisch.",
+      "intro": "Ein <strong>Mietwagen in Porto Cervo</strong> braucht einen Partner, der die Costa Smeralda von innen kennt: die Fußgänger-ZTL der Hochsaison, die Parkplätze an der Marina und am Pevero Golf Club, die Öffnungszeiten von Billionaire und Phi Beach. GDIS Rent organisiert die VIP-Autovermietung mit Übergabe direkt an Ihrer Villa, am Hotel Cala di Volpe oder Romazzino, am Yachtsteg oder am Promenade-Parkplatz — ohne dass Sie je nach Olbia zurückfahren müssen. Die <a href='/de/flotte/mercedes-classe-a180d' class='text-primary font-medium hover:underline'>Mercedes A-Klasse 180d</a> bleibt die natürliche Wahl, wenn Sie im Villengürtel wohnen, während der <a href='/de/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> Roller den Joker für die 5 Minuten zwischen Promenade und <a href='/de/autovermietung-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> darstellt und Staus sowie volle Parkplätze umgeht. <strong>Auto mieten in Porto Cervo</strong> mit transparenten Preisen, Supersportwagen und Luxusfahrzeuge auf Anfrage — alles in 30 Sekunden per WhatsApp koordiniert."
     },
     "fr": {
       "name": "Porto Cervo",
-      "title": "Location de voiture VIP Porto Cervo | Livraison Marina et yacht | GDIS Rent",
-      "description": "Location de voiture VIP Porto Cervo ✓ Mercedes, supercars sur demande ✓ Livraison à la Marina, ponton yacht, villa ou hôtel 5 étoiles ✓ Scooter pour la Promenade. WhatsApp 24h/24.",
-      "heroSubtitle": "Livraison VIP à votre Marina, villa ou yacht. Le luxe de la Costa Smeralda sur roues, sur demande WhatsApp.",
+      "title": "Location Voiture à Porto Cervo | Loueur VIP Marina & Promenade | GDIS Rent",
+      "description": "Location voiture à Porto Cervo avec livraison VIP à la Marina, ponton yacht, villa ou hôtel 5 étoiles ✓ Louer une Mercedes, scooter Honda SH pour la Promenade, supercar sur demande ✓ Loueur à Porto Cervo Costa Smeralda ✓ Service 24h/24 sur WhatsApp.",
+      "heroSubtitle": "Location voiture à Porto Cervo : livraison VIP à votre Marina, villa ou yacht. Loueur de luxe en Costa Smeralda, sur demande 24h/24 via WhatsApp.",
       "h1Prefix": "Location de voiture à",
       "spotlight": {
         "tag": "Collection VIP",
@@ -714,7 +716,9 @@
           "a": "Les tarifs varient selon le modèle (Lamborghini, Ferrari, Porsche sur demande) et la date. Écrivez-nous sur WhatsApp avec date, heure et modèle souhaité : nous vous faisons un devis transparent en 30 minutes, sans engagement."
         }
       ],
-      "closingParagraph": "Porto Cervo est le cœur de la Costa Smeralda, mais cela ne s'arrête pas là : en 5 minutes de scooter vous êtes à <a href='/fr/location-voiture-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> pour les couchers de soleil légendaires du Phi Beach et les nuits au Ritual Club, tandis qu'en 15 minutes vous montez à <a href='/fr/location-voiture-a-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> pour le marché du jeudi et l'authenticité du village gallurais — la combinaison qui permet à nos clients de vivre l'été comme un local, non comme un touriste. Pour ceux qui arrivent en yacht, nous organisons la livraison de la voiture au ponton à la Marina selon l'horaire de débarquement ; pour ceux qui séjournent en villa privée, nous récupérons et restituons le véhicule à domicile. Tout sur WhatsApp, 24h/24, également en anglais ou en français."
+      "closingParagraph": "Porto Cervo est le cœur de la Costa Smeralda, mais cela ne s'arrête pas là : en 5 minutes de scooter vous êtes à <a href='/fr/location-voiture-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> pour les couchers de soleil légendaires du Phi Beach et les nuits au Ritual Club, tandis qu'en 15 minutes vous montez à <a href='/fr/location-voiture-a-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> pour le marché du jeudi et l'authenticité du village gallurais — la combinaison qui permet à nos clients de vivre l'été comme un local, non comme un touriste. Pour ceux qui arrivent en yacht, nous organisons la livraison de la voiture au ponton à la Marina selon l'horaire de débarquement ; pour ceux qui séjournent en villa privée, nous récupérons et restituons le véhicule à domicile. Tout sur WhatsApp, 24h/24, également en anglais ou en français.",
+      "intro": "La <strong>location voiture à Porto Cervo</strong> exige un partenaire qui connaît la Costa Smeralda de l'intérieur : la ZTL piétonne de haute saison, les parkings de la Marina et du Pevero Golf Club, les horaires du Billionaire et de Phi Beach. GDIS Rent gère le loueur VIP avec livraison directement à votre villa, à l'hôtel Cala di Volpe ou Romazzino, au ponton yacht ou au parking de la Promenade — sans jamais devoir revenir à Olbia. La <a href='/fr/flotte/mercedes-classe-a180d' class='text-primary font-medium hover:underline'>Mercedes Classe A 180d</a> reste le choix naturel si vous logez dans la ceinture des villas, tandis que le scooter <a href='/fr/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> est l'atout pour les 5 minutes qui séparent la Promenade de <a href='/fr/location-voiture-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> en évitant files et parkings complets. <strong>Loueur à Porto Cervo</strong> avec tarifs transparents, supercar et véhicules de luxe sur demande — tout coordonné en 30 secondes sur WhatsApp."
     }
-  }
+  },
+  "intro": "Il <strong>noleggio auto a Porto Cervo</strong> richiede un partner che conosca la Costa Smeralda dall'interno: la ZTL pedonale dell'alta stagione, i parcheggi della Marina e del Pevero Golf Club, gli orari del Billionaire e di Phi Beach. GDIS Rent gestisce l'autonoleggio VIP con consegna direttamente alla tua villa, all'hotel Cala di Volpe o Romazzino, al pontile yacht o al parcheggio della Promenade — senza che tu debba mai rientrare a Olbia. La <a href='/flotta/mercedes-classe-a180d' class='text-primary font-medium hover:underline'>Mercedes Classe A 180d</a> resta la scelta naturale per chi alloggia nella zona delle ville, mentre lo scooter <a href='/flotta/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> è il jolly per i 5 minuti che separano la Promenade da <a href='/noleggio-auto-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> evitando code e parcheggi pieni. <strong>Affitto auto a Porto Cervo</strong> trasparente, su richiesta anche supercar e ville premium — coordina tutto in 30 secondi su WhatsApp."
 }
