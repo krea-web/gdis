@@ -1,0 +1,31 @@
+---
+import { getLangFromUrl, useTranslations, getRoute } from "@/i18n/utils";
+
+export interface Props {
+  name: string;
+  prenotaQuery?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { name, prenotaQuery } = Astro.props;
+const bookingPath = getRoute("booking", lang);
+const href = prenotaQuery ? `${bookingPath}?${prenotaQuery}` : bookingPath;
+---
+
+<section class="py-10 md:py-14 bg-primary/5 border-y border-primary/10">
+  <div class="container px-4 max-w-3xl mx-auto text-center">
+    <p class="text-sm uppercase tracking-widest text-primary font-semibold mb-3">{t("localita.inlineCta.eyebrow", { name })}</p>
+    <h3 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-5">
+      {t("localita.inlineCta.title", { name })}
+    </h3>
+    <a
+      href={href}
+      class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all"
+    >
+      {t("localita.inlineCta.button", { name })}
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>

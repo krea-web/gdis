@@ -1,0 +1,414 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FaqList from "@/components/FaqList.astro";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
+import {
+  buildFaqSchema,
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_NAME,
+  BUSINESS_VAT,
+  BUSINESS_TAX_ID,
+  BUSINESS_REA,
+  BUSINESS_FOUNDER,
+} from "@/lib/siteSchema";
+import { supabaseImg } from "@/lib/img";
+
+const legalRows = [
+  { label: "Denominazione", value: BUSINESS_LEGAL_NAME },
+  { label: "Marchio commerciale", value: BUSINESS_NAME },
+  { label: "Forma giuridica", value: "Società a Responsabilità Limitata (S.R.L.)" },
+  { label: "Sede legale", value: "Via Annibale Caro 52, 07026 Olbia (SS)" },
+  { label: "P.IVA / C.F.", value: `IT${BUSINESS_VAT.replace(/^IT/, "")} / ${BUSINESS_TAX_ID}` },
+  { label: "Numero REA", value: `Sassari ${BUSINESS_REA}` },
+  { label: "Data costituzione", value: "1° ottobre 2025" },
+  { label: "Iscritta al Registro Imprese", value: "7 ottobre 2025 — Sezione Ordinaria" },
+  { label: "Capitale sociale", value: "€ 10.000,00 i.v." },
+  { label: "Amministratore Unico", value: `${BUSINESS_FOUNDER.name} (${BUSINESS_FOUNDER.jobTitle})` },
+  { label: "PEC", value: "gdis.servicesrl@pecdotcom.it" },
+];
+
+const heroUrl = supabaseImg(
+  "asset/gdisrentservice-noleggio-auto-scooter-quad-olbia.webp",
+  { raw: true },
+);
+const touristUrl = supabaseImg(
+  "vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp",
+  { raw: true },
+);
+const transportUrl = supabaseImg(
+  "asset/gdisrentservice-trasporto-merci-trasporti-eccezionali-trasporto-di-imbarcazioni.webp",
+  { raw: true },
+);
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Chi Siamo", url: "/chisiamo" },
+];
+
+const timelineItems = [
+  {
+    icon: "star",
+    title: "Iscritti alla CCIAA di Sassari",
+    text: "GDIS SERVICE S.R.L. è una società a responsabilità limitata costituita il 1° ottobre 2025 e iscritta al Registro Imprese di Sassari il 7 ottobre 2025 (REA SS-225492). Una nuova realtà locale, ma con base legale, fiscale e amministrativa pienamente in regola dal primo giorno.",
+  },
+  {
+    icon: "car",
+    title: "Flotta Diversificata",
+    text: "Fiat Panda Hybrid, Mercedes Classe A 180d, scooter Honda SH 125 e 350, quad Yamaha Raptor 700R. Ogni veicolo è assicurato RCA + furto e incendio, revisionato e mantenuto in flotta dedicata al turismo.",
+  },
+  {
+    icon: "phone",
+    title: "WhatsApp H24 — Niente Call Center",
+    text: "Parli direttamente con il responsabile operativo. Prenoti via web o WhatsApp al +39 352 045 9150, firmi il contratto digitalmente, ritiri il veicolo (o lo ricevi in consegna). Comunicazione diretta, anche fuori orario.",
+  },
+  {
+    icon: "zap",
+    title: "Consegna VIP in Tutta la Gallura",
+    text: "Operatore al terminale arrivi dell'Aeroporto Costa Smeralda o sotto la nave al Porto di Olbia Isola Bianca. Consegna anche al tuo hotel, residence o villa privata in Costa Smeralda, da Porto Cervo a San Teodoro.",
+  },
+];
+
+const marqueeItems = [
+  "Noleggio Auto",
+  "Consegne VIP",
+  "Scooter & Quad",
+  "Trasporti Speciali",
+  "Assistenza 24/7",
+  "Costa Smeralda",
+];
+
+const faqs = [
+  { q: "Quali documenti servono per noleggiare?", a: "Patente di guida valida, carta d'identità o passaporto, e carta di credito intestata al conducente. Per i cittadini extra-UE serve anche il permesso internazionale di guida." },
+  { q: "È possibile aggiungere un secondo guidatore?", a: "Sì, è possibile aggiungere un secondo guidatore al momento della prenotazione o al ritiro del veicolo. Il secondo guidatore deve presentare gli stessi documenti del conducente principale." },
+  { q: "Qual è la politica di cancellazione?", a: "La cancellazione è gratuita fino a 48 ore prima del ritiro. Per cancellazioni tardive viene applicata una penale pari al 50% del costo totale del noleggio." },
+  { q: "Quali sono i metodi di pagamento accettati?", a: "Accettiamo carte di credito Visa, Mastercard e American Express. Il pagamento avviene al ritiro del veicolo. Per le prenotazioni online è richiesta una pre-autorizzazione sulla carta." },
+  { q: "I veicoli sono coperti da assicurazione?", a: "Tutti i veicoli includono RCA, furto e incendio. È possibile acquistare coperture aggiuntive come la Kasko e la riduzione della franchigia." },
+  { q: "È possibile riconsegnare il veicolo in un luogo diverso?", a: "Sì, offriamo il servizio di riconsegna in location diverse con un piccolo supplemento. Contattaci per conoscere le location disponibili." },
+  { q: "Offrite consegna VIP a yacht e hotel?", a: "Assolutamente sì! Il nostro servizio Consegna VIP porta il veicolo direttamente al tuo yacht, hotel o villa privata in tutta la Costa Smeralda e Gallura." },
+  { q: "Come posso contattarvi per le auto luxury?", a: "Per le auto luxury ti consigliamo di contattarci direttamente via WhatsApp al +39 352 045 9150 per verificare disponibilità e ricevere un preventivo dedicato." },
+];
+
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const marqueeTrack = [...marqueeItems, ...marqueeItems];
+---
+
+<BaseLayout
+  title="Chi Siamo — GDIS Rent | Autonoleggio Locale a Olbia dal 2025"
+  description="GDIS Rent — autonoleggio locale di Olbia (GDIS Service S.R.L., REA Sassari SS-225492, P.IVA IT03047140904) ✓ Noleggio auto, scooter e quad a Olbia e in Costa Smeralda dal 2025 ✓ Conoscenza del territorio gallurese: ZTL, traghetti, parcheggi ✓ Sede Via Annibale Caro 52, Olbia. WhatsApp H24."
+  canonical="/chisiamo"
+  jsonLd={faqSchema}
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ en: "/en/about-us", de: "/de/ueber-uns", fr: "/fr/a-propos" }}
+>
+  {/* Hero */}
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src={heroUrl}
+        alt="GDIS Mobilità Costa Smeralda"
+        class="w-full h-full object-cover"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900 z-[1]"></div>
+    <div class="relative z-10 text-center px-4 max-w-5xl">
+      <p class="text-blue-400 font-display text-sm font-semibold uppercase tracking-[0.3em] mb-4 block animate-fade-in">
+        OLBIA · COSTA SMERALDA
+      </p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl animate-fade-in">
+        Noleggio Auto, Scooter e Quad
+      </h1>
+      <p class="text-slate-200 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+        GDIS Rent è il marchio commerciale di <strong class="text-white font-medium">GDIS SERVICE S.R.L.</strong>, società iscritta alla CCIAA di Sassari (REA SS-225492). Noleggio a corto e medio termine con consegna VIP in aeroporto, porto, hotel e villa.
+      </p>
+      <div class="w-32 md:w-48 h-[3px] bg-primary mx-auto mt-10 shadow-[0_0_20px_hsl(var(--primary)/0.6)]"></div>
+    </div>
+  </section>
+
+  {/* Vertical timeline */}
+  <section class="relative py-24 md:py-36 bg-background overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none"></div>
+    <div class="container px-4 relative z-10 max-w-3xl mx-auto pt-16">
+      <div class="mb-16 md:mb-20" data-reveal>
+        <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+          Il Nostro DNA
+        </span>
+        <h2 class="font-display text-3xl md:text-5xl font-black text-foreground leading-tight">
+          Perché scegliere <span class="italic font-light text-primary">GDIS</span>
+        </h2>
+      </div>
+
+      {timelineItems.map((item, i) => (
+        <div class="relative flex gap-6 md:gap-10" data-reveal data-reveal-delay={String(i * 100)}>
+          <div class="flex flex-col items-center flex-shrink-0">
+            <div class="relative z-10 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary flex items-center justify-center shadow-[0_0_30px_hsl(var(--primary)/0.4)]">
+              {item.icon === "star" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>}
+              {item.icon === "car" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>}
+              {item.icon === "phone" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>}
+              {item.icon === "zap" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
+            </div>
+            {i < timelineItems.length - 1 && (
+              <div class="w-px flex-1 bg-gradient-to-b from-primary/50 to-primary/10 min-h-[60px]"></div>
+            )}
+          </div>
+          <div class="pb-14 md:pb-20">
+            <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.3em]">
+              0{i + 1}
+            </span>
+            <h3 class="font-display text-2xl md:text-3xl font-bold text-foreground mt-1 mb-3">{item.title}</h3>
+            <p class="text-muted-foreground text-base md:text-lg font-light leading-relaxed max-w-lg">{item.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Tourist rental */}
+  <section class="relative py-32 md:py-48 bg-muted overflow-hidden">
+    <div class="container px-4 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
+        <div class="relative order-2 lg:order-1" data-reveal>
+          <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
+            <img src={touristUrl} alt="Noleggio turistico Costa Smeralda" loading="lazy" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-muted via-transparent to-transparent"></div>
+          </div>
+          <div class="absolute -bottom-6 -right-6 md:-right-12 bg-primary rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_hsl(var(--primary)/0.4)] max-w-[240px]">
+            <p class="text-primary-foreground font-display font-bold text-2xl md:text-3xl">VIP</p>
+            <p class="text-primary-foreground/70 font-light text-sm mt-1">Consegna a yacht, hotel e ville private</p>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2" data-reveal data-reveal-delay="100">
+          <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+            Il Nostro Core
+          </span>
+          <h2 class="font-display text-4xl md:text-6xl font-black text-foreground leading-[1.05] mb-8">
+            Esplora la Sardegna <span class="italic font-light text-primary">con stile</span>
+          </h2>
+          <div class="space-y-6 text-muted-foreground text-lg font-light leading-relaxed">
+            <p>
+              <a href="/flotta/fiat-panda" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">City Car</a>,{" "}
+              <a href="/flotta/honda-sh" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Scooter</a> e{" "}
+              <a href="/flotta/yamaha-raptor" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Quad</a> di
+              ultima generazione per vivere ogni angolo della Costa Smeralda in totale libertà. Mandi una mini-richiesta in 2 minuti,
+              ti rispondiamo noi su WhatsApp con disponibilità e coperture, ritiri in sede — oppure te lo portiamo noi.
+            </p>
+            <p>
+              Il nostro <strong class="text-foreground font-medium">Servizio Consegna VIP</strong> è ciò che ci rende unici:
+              il veicolo arriva direttamente al tuo yacht a Palau, alla tua villa a{" "}
+              <a href="/noleggio-auto-a-porto-cervo" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</a> o
+              al tuo hotel a{" "}
+              <a href="/noleggio-auto-a-san-teodoro" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</a>.{" "}
+              <strong class="text-foreground font-medium">Zero stress. Zero code. Solo il mare.</strong>
+            </p>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-border">
+            <h3 class="font-display text-xl font-bold text-foreground mb-3">🏎️ Auto di Lusso & Supercar</h3>
+            <p class="text-muted-foreground font-light mb-6">
+              Disponibili <strong class="text-foreground font-medium">esclusivamente su richiesta</strong>.
+              Contattaci per configurare la tua esperienza VIP su misura.
+            </p>
+            <a
+              href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20info%20su%20noleggio%20VIP%20Car"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-wa-track="chisiamo_vip_car"
+              class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
+            >
+              <WhatsAppIcon size={20} />
+              Richiedi VIP Car su WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Trust marquee divider */}
+  <section class="relative w-full flex items-center justify-center py-3 md:py-4 z-20 pointer-events-none overflow-hidden bg-primary shadow-[0_10px_40px_hsl(var(--primary)/0.3)] border-y border-primary/30">
+    <div class="w-full overflow-hidden pointer-events-auto">
+      <div class="flex w-max items-center animate-marquee">
+        <div class="flex items-center flex-shrink-0">
+          {marqueeTrack.map((item) => (
+            <div class="flex items-center px-6 md:px-10 flex-shrink-0">
+              <span class="text-primary-foreground font-display italic font-black text-xs md:text-base uppercase tracking-[0.18em] whitespace-nowrap">
+                {item}
+              </span>
+              <img src={gdisLogo} alt="GDIS" loading="lazy" class="h-5 md:h-6 w-auto opacity-90 drop-shadow-md ml-6 md:ml-10 flex-shrink-0" />
+            </div>
+          ))}
+        </div>
+        <div class="flex items-center flex-shrink-0" aria-hidden="true">
+          {marqueeTrack.map((item) => (
+            <div class="flex items-center px-6 md:px-10 flex-shrink-0">
+              <span class="text-primary-foreground font-display italic font-black text-xs md:text-base uppercase tracking-[0.18em] whitespace-nowrap">
+                {item}
+              </span>
+              <img src={gdisLogo} alt="GDIS Rent logo" loading="lazy" class="h-5 md:h-6 w-auto opacity-90 drop-shadow-md ml-6 md:ml-10 flex-shrink-0" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Heavy transport */}
+  <section class="relative py-24 md:py-32 bg-muted overflow-hidden">
+    <div class="container px-4 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
+        <div data-reveal>
+          <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+            Servizi B2B
+          </span>
+          <h2 class="font-display text-3xl md:text-5xl font-black text-foreground leading-[1.05] mb-6">
+            Trasporti Speciali <span class="italic font-light text-primary">& Merci</span>
+          </h2>
+          <p class="text-muted-foreground text-lg font-light leading-relaxed mb-8">
+            Oltre alla mobilità turistica, GDIS opera nel settore dei trasporti pesanti. Effettuiamo{" "}
+            <strong class="text-foreground font-medium">trasporto merci, trasporti eccezionali e trasporto di imbarcazioni</strong>.
+            Operiamo esclusivamente con nostro personale qualificato (servizi con conducente), utilizzando la nostra flotta
+            di TIR, Camion, Furgoni, Rimorchi e Semi-rimorchi.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="mailto:info@gdisservice.it"
+              class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-bold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
+            >
+              Richiedi Preventivo Trasporti
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a
+              href="https://wa.me/393520459150?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20trasporto%20merci"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-wa-track="chisiamo_trasporto_merci"
+              class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
+            >
+              <WhatsAppIcon size={16} />
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        <div data-reveal data-reveal-delay="200">
+          <div class="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
+            <img src={transportUrl} alt="Trasporti pesanti GDIS" loading="lazy" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-muted via-transparent to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Trasparenza Aziendale — E-E-A-T legal block, fonti verificabili in CCIAA */}
+  <section class="py-20 md:py-28 bg-background relative overflow-hidden border-t border-border/40">
+    <div class="container px-4 relative z-10 max-w-4xl mx-auto">
+      <div class="mb-10 md:mb-14" data-reveal>
+        <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-3 block">
+          Trasparenza Aziendale
+        </span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">
+          Dati legali <span class="italic font-light text-primary">verificabili</span>
+        </h2>
+        <p class="text-muted-foreground text-base md:text-lg font-light leading-relaxed mt-4 max-w-2xl">
+          GDIS Rent opera con piena trasparenza fiscale e amministrativa. Tutti i dati qui sotto
+          sono pubblicamente verificabili tramite la Camera di Commercio di Sassari (Registro Imprese).
+        </p>
+      </div>
+
+      <dl class="grid sm:grid-cols-[max-content_1fr] gap-x-8 gap-y-3 text-sm md:text-base border-l-4 border-primary pl-6 md:pl-8" data-reveal data-reveal-delay="100">
+        {legalRows.map((row) => (
+          <>
+            <dt class="font-display font-semibold text-foreground/80 uppercase tracking-wider text-xs md:text-sm pt-1">{row.label}</dt>
+            <dd class="text-foreground font-light mb-2 sm:mb-0">{row.value}</dd>
+          </>
+        ))}
+      </dl>
+
+      <p class="text-xs text-muted-foreground mt-8 italic">
+        Fonte: Visura Ordinaria Camera di Commercio Industria Artigianato e Agricoltura di Sassari,
+        Registro Imprese — documento ufficiale T 623229345 estratto il 16/10/2025.
+      </p>
+    </div>
+  </section>
+
+  {/* FAQ */}
+  <section class="py-24 md:py-32 bg-background relative overflow-hidden">
+    <div class="container px-4 relative z-10">
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div class="w-full lg:w-1/3">
+          <div class="sticky top-32" data-reveal>
+            <span class="text-primary font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
+              Supporto
+            </span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Domande <br />
+              <span class="italic font-light text-muted-foreground">Frequenti.</span>
+            </h2>
+            <p class="text-muted-foreground text-lg font-light mb-10 leading-relaxed">
+              Tutto quello che devi sapere prima di metterti alla guida. Trasparenza totale, zero sorprese.
+            </p>
+            <div class="bg-primary/5 p-8 rounded-3xl border border-primary/10">
+              <h4 class="font-display font-semibold text-foreground mb-2">Hai altre domande?</h4>
+              <p class="text-sm text-muted-foreground mb-6 font-light">
+                Il nostro team è a tua disposizione su WhatsApp per chiarire ogni dubbio.
+              </p>
+              <a
+                href="https://wa.me/393520459150"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-wa-track="faq_chisiamo"
+                class="inline-flex items-center justify-center gap-2 w-full h-12 px-6 text-base font-semibold rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white shadow-md hover:shadow-lg transition-all"
+              >
+                <WhatsAppIcon size={20} />
+                Chatta con noi
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-2/3">
+          <FaqList items={faqs} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Final CTA */}
+  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[hsl(var(--brand-dark))]">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,hsl(var(--primary)/0.15),transparent)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,hsl(var(--primary)/0.25),transparent_50%)]"></div>
+    <div class="container px-4 relative z-10 text-center">
+      <div data-reveal>
+        <h2 class="font-display text-4xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] mb-6">
+          Pronto a <span class="italic font-light text-primary">esplorare</span><br />
+          la Sardegna?
+        </h2>
+        <p class="text-primary-foreground/50 text-lg md:text-xl max-w-2xl mx-auto font-light mb-12">
+          Scegli il tuo veicolo, invia una richiesta WhatsApp in 2 minuti e parti. Gestione umana, niente carta di credito anticipata.
+        </p>
+        <a
+          href="/prenotaora"
+          class="inline-flex items-center justify-center gap-2 h-16 px-14 text-lg font-black rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-[0_0_50px_hsl(var(--primary)/0.4),0_20px_60px_rgba(0,0,0,0.3)] hover:shadow-[0_0_70px_hsl(var(--primary)/0.6)] transition-all duration-500"
+        >
+          Prenota Ora
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <div class="mt-8">
+          <a
+            href="https://wa.me/393520459150"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-wa-track="chisiamo_footer_cta"
+            class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-medium rounded-full text-primary-foreground/50 hover:text-primary-foreground hover:bg-primary-foreground/5 transition-all"
+          >
+            <WhatsAppIcon size={16} />
+            Oppure contattaci su WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

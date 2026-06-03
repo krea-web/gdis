@@ -1,0 +1,99 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BUSINESS_LEGAL_NAME, BUSINESS_EMAIL, BUSINESS_VAT } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/de" },
+  { name: "AGB", url: "/de/agb" },
+];
+---
+
+<BaseLayout
+  title="Allgemeine Geschäftsbedingungen — GDIS Rent & Service"
+  description="Allgemeine Bedingungen des Auto-, Roller- und Quad-Vermietungsdienstes von GDIS Service S.R.L. in Olbia und der Costa Smeralda."
+  canonical="/de/agb"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/termini", en: "/en/terms", fr: "/fr/conditions-generales" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Allgemeine Geschäftsbedingungen für die Vermietung</h1>
+    <p class="text-sm text-muted-foreground">Letzte Aktualisierung: 24. April 2026</p>
+
+    <h2>1. Vertragsparteien</h2>
+    <p>
+      Der vorliegende Vertrag wird zwischen <strong>{BUSINESS_LEGAL_NAME}</strong> — USt-IdNr.{" "}
+      {BUSINESS_VAT}, Sitz in Via Annibale Caro 52, 07026 Olbia (SS) — als Vermieter und dem
+      Kunden, der die Buchung vornimmt (der "Fahrer"), geschlossen.
+    </p>
+
+    <h2>2. Anforderungen an den Fahrer</h2>
+    <ul>
+      <li>Mindestalter 21 Jahre (25 Jahre für Premium-Fahrzeuge).</li>
+      <li>Gültiger Führerschein, seit mindestens 2 Jahren im Besitz (passende Klasse für das Fahrzeug).</li>
+      <li>Gültiges Ausweisdokument.</li>
+      <li>Kreditkarte oder geeignetes Zahlungsmittel für die Kaution.</li>
+    </ul>
+
+    <h2>3. Buchung und Zahlung</h2>
+    <p>
+      Die Buchung wird erst nach Unterzeichnung des digitalen Vertrags und, sofern erforderlich,
+      nach Anzahlung bestätigt. Der Restbetrag ist bei der Übernahme des Fahrzeugs zusammen mit
+      der Kaution fällig.
+    </p>
+
+    <h2>4. Übernahme und Rückgabe</h2>
+    <p>
+      Das Fahrzeug wird vollgetankt und in fotografisch dokumentiertem Zustand übergeben. Die
+      Rückgabe muss zur vereinbarten Zeit, vollgetankt und im selben Zustand erfolgen. Bei
+      verspäteter Rückgabe ohne vorherige Vereinbarung wird eine Vertragsstrafe in Höhe eines
+      Miettages berechnet.
+    </p>
+
+    <h2>5. Selbstbeteiligung und Haftung</h2>
+    <p>
+      Der Fahrer haftet für etwaige am Fahrzeug verursachte Schäden im Rahmen der zum Zeitpunkt
+      der Buchung angegebenen Selbstbeteiligung. Schäden aufgrund von Vorsatz oder grober
+      Fahrlässigkeit, Fahren unter Alkohol- oder Drogeneinfluss führen zum Verlust des
+      Versicherungsschutzes und zur vollständigen Belastung der Kosten.
+    </p>
+
+    <h2>6. Verbote</h2>
+    <ul>
+      <li>Die Überlassung des Fahrzeugs an nicht autorisierte Fahrer ist untersagt.</li>
+      <li>Der Transport nicht autorisierter Tiere oder gefährlicher Güter ist untersagt.</li>
+      <li>Das Rauchen im Fahrzeug ist untersagt (Reinigungsstrafe € 150).</li>
+      <li>Die Verbringung des Fahrzeugs außerhalb des italienischen Staatsgebiets ohne schriftliche Genehmigung ist untersagt.</li>
+    </ul>
+
+    <h2>7. Stornierung</h2>
+    <ul>
+      <li>Bis 72h vor der Übernahme: vollständige Erstattung der Anzahlung.</li>
+      <li>Zwischen 72h und 24h: Einbehalt von 50 % der Anzahlung.</li>
+      <li>Weniger als 24h oder Nichterscheinen: vollständiger Einbehalt der Anzahlung.</li>
+    </ul>
+
+    <h2>8. Unfälle und Diebstahl</h2>
+    <p>
+      Im Falle eines Unfalls muss der Fahrer den europäischen Unfallbericht (CAI) ausfüllen und
+      umgehend die Nummer{" "}
+      <a href="tel:+393520459150">+39 352 045 9150</a> verständigen. Im Falle eines Diebstahls sind
+      die Anzeige bei den Behörden und die Übergabe der Originalschlüssel zwingend erforderlich.
+    </p>
+
+    <h2>9. Anwendbares Recht und Gerichtsstand</h2>
+    <p>
+      Auf den vorliegenden Vertrag findet italienisches Recht Anwendung. Für sämtliche
+      Streitigkeiten ist ausschließlich das Gericht von Tempio Pausania zuständig — vorbehaltlich
+      der Anwendung zwingender Verbraucherschutzvorschriften.
+    </p>
+
+    <h2>10. Kontakt</h2>
+    <p>
+      Für vertragliche Auskünfte schreiben Sie an <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>.
+    </p>
+  </article>
+</BaseLayout>

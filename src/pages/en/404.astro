@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
+---
+
+<BaseLayout
+  title="Page not found — GDIS Rent"
+  description="The page you are looking for doesn't exist or has been moved. Go back to the home page or reach us on WhatsApp."
+  canonical="/en/404"
+  robots="noindex,follow"
+  i18nAlternates={{ it: "/404", de: "/de/404", fr: "/fr/404" }}
+>
+  <section class="container py-32 text-center min-h-[60vh] flex flex-col items-center justify-center">
+    <p class="text-sm uppercase tracking-widest text-primary mb-4">Error 404</p>
+    <h1 class="text-5xl md:text-7xl font-display font-bold text-foreground mb-6">
+      Page not found
+    </h1>
+    <p class="text-lg text-muted-foreground max-w-xl mb-10">
+      The address you tried no longer exists or has been moved. You can go back to the home page or
+      reach us on WhatsApp for any rental enquiry.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a
+        href="/en"
+        class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all"
+      >
+        Back to home
+      </a>
+      <a
+        href="https://wa.me/393520459150"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-wa-track="404_page"
+        class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
+      >
+        <WhatsAppIcon size={18} />
+        Message us on WhatsApp
+      </a>
+    </div>
+  </section>
+</BaseLayout>

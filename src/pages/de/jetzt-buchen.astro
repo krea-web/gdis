@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingFlow from "@/components/booking/BookingFlow.tsx";
+import { buildHowToBookingSchema } from "@/lib/siteSchema";
+
+const howToSchema = buildHowToBookingSchema("de");
+---
+
+<BaseLayout
+  title="Mietwagen Olbia & Costa Smeralda online buchen | GDIS Rent"
+  description="Fragen Sie Ihren Mietwagen in Olbia und an der Costa Smeralda an: Fiat Panda, Mercedes, Honda SH Roller, Yamaha Raptor Quad ✓ Mini-Anfrage in 3 Schritten, Versand einer vorausgefüllten WhatsApp-Nachricht, wir antworten persönlich mit Verfügbarkeit und Versicherung ✓ VIP-Übergabe am Flughafen Olbia (OLB), Hafen Isola Bianca oder Hotel ✓ Keine Kreditkarte im Voraus."
+  canonical="/de/jetzt-buchen"
+  jsonLd={howToSchema}
+  hideBackground
+  i18nAlternates={{ it: "/prenotaora", en: "/en/book-now", fr: "/fr/reserver" }}
+>
+  <BookingFlow client:load lang="de" />
+</BaseLayout>

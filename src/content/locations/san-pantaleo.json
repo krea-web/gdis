@@ -1,0 +1,671 @@
+{
+  "slug": "san-pantaleo",
+  "name": "San Pantaleo",
+  "title": "Noleggio Auto a San Pantaleo | Borgo Gallurese e Mercato del Giovedì | GDIS Rent",
+  "description": "Noleggio auto a San Pantaleo ✓ Scooter Honda SH e Fiat Panda perfetti per i vicoli stretti del borgo ✓ Mercato del giovedì, rocce di granito al tramonto ✓ Autonoleggio a 15 minuti da Porto Cervo ✓ Consegna in piazza, WhatsApp H24.",
+  "canonical": "/noleggio-auto-a-san-pantaleo",
+  "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-pantaleo/gdisrent-noleggio-san-pantaleo.webp",
+  "heroSubtitle": "Noleggio auto a San Pantaleo: il borgo bohémien della Gallura. Vicoli in pietra, mercatino artigianale, rocce di granito al tramonto. L'autonoleggio giusto a 15 minuti da Porto Cervo.",
+  "areaServed": [
+    {
+      "type": "City",
+      "name": "San Pantaleo"
+    },
+    {
+      "type": "AdministrativeArea",
+      "name": "Gallura"
+    }
+  ],
+  "customSections": [],
+  "spotlight": {
+    "tag": "Perfetto per il Borgo",
+    "title": "Lo Scooter nelle Strade Strette di San Pantaleo",
+    "description": "Chi sceglie San Pantaleo come base estiva di solito sa cosa cerca: l'autenticità della Gallura senza rinunciare alla vicinanza con la Costa Smeralda. Ma c'è un dettaglio pratico che molti scoprono solo arrivando: il borgo non è pensato per le auto. Le vie sono strette, in pendenza, lastricate in pietra; il parcheggio nella piazzetta è limitato a poche decine di posti, e il giovedì mattina — giorno del leggendario mercato artigianale che attira centinaia di visitatori da tutta la costa — trovare un posto auto entro le 11:00 è un'impresa. L'Honda SH 125 risolve tutto: si infila nei vicoli senza graffiare gli specchietti, parcheggi a 30 metri da Café Nina senza pagare, e quando vuoi scendere a Porto Cervo per cena al Gianni Pedrinelli o al Sottovento, ci arrivi in 15 minuti di strada panoramica tra le rocce di granito che danno il nome a Capo Ferro. Per chi viaggia in coppia o con bambini, la Fiat Panda Hybrid è il compromesso ideale: stretta abbastanza per le strade del borgo, comoda per le escursioni di un'intera giornata verso Cala Liscia Ruja o l'arcipelago di La Maddalena. Per gli avventurosi, il quad Yamaha Raptor 700 apre l'entroterra gallurese: sentieri sterrati, vecchi nuraghi, panorami che le auto non vedono mai. Consegniamo direttamente al tuo agriturismo o alla casa in affitto a San Pantaleo.",
+    "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+    "imageAlt": "Strade di San Pantaleo",
+    "badges": [
+      "Agile nei vicoli",
+      "Parcheggio zero stress",
+      "15 min da Porto Cervo"
+    ]
+  },
+  "topSpots": [
+    {
+      "name": "Mercato del Giovedì",
+      "category": "evento",
+      "description": "Il celebre mercato artigianale che ogni giovedì mattina anima la piazzetta del borgo da metà giugno a metà settembre. Bancarelle di ceramiche galluresi, tessuti tradizionali, gioielli in filigrana, piccolo antiquariato e prodotti gastronomici locali. Il giorno con più affluenza di tutta la Costa Smeralda.",
+      "distance": "Piazzetta centrale",
+      "cost": "Gratis",
+      "bestTime": "Giovedì 9:00-13:00"
+    },
+    {
+      "name": "Rocce di Granito",
+      "category": "panorama",
+      "description": "Le formazioni granitiche che circondano il borgo sono uno dei panorami più caratteristici della Gallura. Imponenti, levigate dal vento e dalla pioggia in milioni di anni. Si raggiungono con sentieri di trekking dolci che partono dal centro. Vista mozzafiato al tramonto, quando il granito diventa rosato.",
+      "distance": "5-15 min a piedi",
+      "cost": "Gratis",
+      "bestTime": "Tramonto"
+    },
+    {
+      "name": "Chiesa di San Pantaleo",
+      "category": "monumento",
+      "description": "Piccola chiesa parrocchiale di origini ottocentesche nel cuore del borgo, dedicata al santo che dà il nome al paese. Cornice delle feste patronali estive (luglio) con processioni in costume gallurese tradizionale. Visita rapida di 15-20 minuti.",
+      "distance": "Centro borgo",
+      "cost": "Gratis",
+      "bestTime": "Mattina o pre-tramonto"
+    },
+    {
+      "name": "Il Borgo di San Pantaleo",
+      "category": "centro",
+      "description": "Bohémien e fuori dal tempo, il borgo è composto da vicoli in pietra, piazzette ombreggiate, piccole gallerie d'arte (eredità dei pittori che vi si stabilirono negli anni '70-'80) e botteghe artigianali. Camminata circolare di 30-40 minuti per assaporarlo tutto. Pedonale.",
+      "distance": "Centro borgo",
+      "cost": "Gratis",
+      "bestTime": "Tardo pomeriggio"
+    }
+  ],
+  "cockpit": {
+    "vehicleName": "Honda SH 125i",
+    "specs": [
+      {
+        "label": "Patente",
+        "value": "B / AM",
+        "icon": "license"
+      },
+      {
+        "label": "Posti",
+        "value": "2",
+        "icon": "seats"
+      },
+      {
+        "label": "Ideale per",
+        "value": "Borghi & Vicoli",
+        "icon": "use"
+      },
+      {
+        "label": "Consegna",
+        "value": "San Pantaleo",
+        "icon": "delivery"
+      }
+    ]
+  },
+  "comparison": {
+    "title": "Quale veicolo per San Pantaleo?",
+    "subtitle": "Scooter per i vicoli del borgo, Panda per le escursioni in coppia.",
+    "show": [
+      "honda",
+      "panda"
+    ],
+    "recommendation": "<strong class='text-foreground'>San Pantaleo non è fatto per le auto grandi.</strong> Lo scooter Honda SH è l'arma giusta: si infila nei vicoli del borgo senza graffi, parcheggia a 30 metri dalla Piazzetta anche il giovedì del mercato, e in 15 minuti ti porta a Porto Cervo per cena. La Fiat Panda è il compromesso per chi viaggia in coppia o famiglia, è soggiornato in agriturismo fuori centro, o vuole flessibilità per le escursioni di una giornata intera (Spiaggia del Principe, La Maddalena)."
+  },
+  "trafficTips": [
+    {
+      "icon": "parking",
+      "title": "Giovedì = Scooter",
+      "text": "Il giorno del mercato è impossibile parcheggiare l'auto. In scooter arrivi, parcheggi e ti godi l'atmosfera."
+    },
+    {
+      "icon": "ztl",
+      "title": "Strade Strette",
+      "text": "Le vie del borgo sono strette e in pendenza. L'Honda SH 125 le naviga senza sforzo."
+    },
+    {
+      "icon": "traffic",
+      "title": "SP13 Panoramica",
+      "text": "La strada verso Arzachena è bella ma con curve. Guida con calma e goditi il panorama."
+    },
+    {
+      "icon": "tip",
+      "title": "Scendi a Porto Cervo",
+      "text": "In 15 minuti di scooter sei sulla Promenade du Port di <a href='/noleggio-auto-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> per una cena vista yacht."
+    }
+  ],
+  "nightlife": [
+    {
+      "name": "Giagoni",
+      "type": "ristorante",
+      "desc": "Cucina gallurese contemporanea con ingredienti a km zero. Zuppa gallurese memorabile."
+    },
+    {
+      "name": "Café Nina",
+      "type": "aperitivo",
+      "desc": "Aperitivi artigianali nella piazzetta. Atmosfera bohémien e musica acustica il venerdì."
+    },
+    {
+      "name": "Wine Bar L'Artigiano",
+      "type": "aperitivo",
+      "desc": "Cannonau e Vermentino locali. Taglieri di formaggi sardi artigianali."
+    },
+    {
+      "name": "Agriturismo Li Paràuli",
+      "type": "ristorante",
+      "desc": "Esperienza rurale autentica a 5 minuti dal centro. Menu fisso con prodotti dell'azienda."
+    }
+  ],
+  "trustMarqueeItems": [
+    "Borgo Gallurese",
+    "Mercato Giovedì",
+    "Granito",
+    "Scooter",
+    "15 min Porto Cervo",
+    "Autenticità"
+  ],
+  "faq": [
+    {
+      "q": "Come arrivo al mercato del giovedì senza problemi di parcheggio?",
+      "a": "In <a href='/flotta/honda-sh' class='text-primary-foreground font-medium underline'>scooter Honda SH</a>! Il giovedì mattina è impossibile trovare posto auto. Lo scooter parcheggia a 2 passi dalla piazza."
+    },
+    {
+      "q": "Posso raggiungere Porto Cervo da San Pantaleo in scooter?",
+      "a": "Certo! <a href='/noleggio-auto-a-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a> è a soli 15 minuti lungo una strada panoramica spettacolare tra le rocce di granito della Gallura."
+    },
+    {
+      "q": "Consegnate lo scooter direttamente a San Pantaleo?",
+      "a": "Sì, consegna VIP al tuo alloggio a San Pantaleo. Contattaci su WhatsApp per organizzare."
+    },
+    {
+      "q": "Il quad è adatto per l'entroterra di San Pantaleo?",
+      "a": "Assolutamente. L'entroterra gallurese è pieno di sentieri sterrati perfetti per il <a href='/flotta/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor 700</a>. Serve la patente B."
+    },
+    {
+      "q": "Conviene una Panda o uno scooter per chi soggiorna in agriturismo fuori dal centro?",
+      "a": "Dipende dalla strada di accesso. Se l'agriturismo è in salita su sterrato o in zona Capannoni-Capo Ferro, la Panda è più pratica: i bagagli, la spesa, le giornate di pioggia (sì, capitano anche d'estate) sono più gestibili. Se sei a 5 minuti dal centro su strada asfaltata, lo scooter ti dà più libertà e zero stress di parcheggio in piazzetta. Per soggiorni oltre la settimana valutiamo combo a tariffa scontata."
+    },
+    {
+      "q": "Si può guidare a San Pantaleo dopo gli aperitivi serali in piazzetta?",
+      "a": "Sconsigliato come ovunque in Italia: limite alcolemico 0.5 g/l, controlli frequenti specie nei weekend estivi. Soluzione pratica: l'agriturismo Li Paràuli è a 5 minuti, molti B&B sono dentro il borgo, e per Porto Cervo conviene il taxi (numero unico Olbia-Costa Smeralda) oppure rientrare presto."
+    }
+  ],
+  "closingParagraph": "San Pantaleo è la base perfetta per chi vuole il meglio di entrambi i mondi: il giorno tra le calette esclusive di <a href='/noleggio-auto-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> (15 minuti di curve panoramiche) e la sera nel borgo, dove il rumore dei locali alla moda non arriva. In 25 minuti scendi anche a Porto Rotondo e in 35 raggiungi i pini di San Teodoro. Il giovedì mattina, però, dedicalo al mercato: prendi lo scooter, parti presto, gira tra i banchi di tessuti, ceramiche e culurgiones, e fermati per pranzo al Giagoni. È l'esperienza che racconterai quando torni a casa.",
+  "i18n": {
+    "en": {
+      "name": "San Pantaleo",
+      "title": "Car Rental in San Pantaleo | Gallura Village & Thursday Market | GDIS Rent",
+      "description": "Car rental in San Pantaleo ✓ Honda SH scooter and Fiat Panda for the narrow village lanes ✓ Thursday craft market, granite rocks at sunset ✓ Car hire 15 minutes from Porto Cervo ✓ Delivery to the square, 24/7 on WhatsApp.",
+      "heroSubtitle": "Car rental in San Pantaleo: the bohemian village of Gallura. Stone alleys, artisan market, granite rocks at sunset. The right car hire just 15 minutes from Porto Cervo.",
+      "h1Prefix": "Car Rental in",
+      "spotlight": {
+        "tag": "Perfect for the Village",
+        "title": "The Scooter on the Narrow Streets of San Pantaleo",
+        "description": "Those who choose San Pantaleo as a summer base usually know what they're after: the authenticity of Gallura without giving up proximity to Costa Smeralda. But there's a practical detail many discover only on arrival: the village isn't designed for cars. The lanes are narrow, sloping, stone-paved; parking on the piazzetta is limited to a few dozen spaces, and on Thursday mornings — the day of the legendary craft market that draws hundreds of visitors from along the coast — finding a car spot by 11:00 is a feat. The Honda SH 125 solves it all: it threads through the alleys without scraping the mirrors, you park 30 metres from Café Nina without paying, and when you want to drop down to Porto Cervo for dinner at Gianni Pedrinelli or Sottovento, you're there in 15 minutes of scenic road through the granite rocks that give Capo Ferro its name. For those travelling as a couple or with children, the Fiat Panda Hybrid is the ideal compromise: narrow enough for the village streets, comfortable for full-day excursions to Cala Liscia Ruja or the La Maddalena archipelago. For the adventurous, the Yamaha Raptor 700 quad opens the Gallura hinterland: dirt tracks, ancient nuraghi, panoramas cars never see. We deliver directly to your agriturismo or rental house in San Pantaleo.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+        "imageAlt": "Streets of San Pantaleo",
+        "badges": [
+          "Agile in the alleys",
+          "Zero-stress parking",
+          "15 min from Porto Cervo"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Thursday Market",
+          "category": "evento",
+          "description": "The famous craft market that brings the village piazzetta to life every Thursday morning from mid-June to mid-September. Stalls of Gallura ceramics, traditional textiles, filigree jewellery, small antiques and local food products. The busiest day on all of Costa Smeralda.",
+          "distance": "Central piazzetta",
+          "cost": "Free",
+          "bestTime": "Thursday 9:00-13:00"
+        },
+        {
+          "name": "Granite Rocks",
+          "category": "panorama",
+          "description": "The granite formations surrounding the village are one of the most characteristic panoramas of Gallura. Imposing, smoothed by wind and rain over millions of years. Reached by gentle trekking paths starting from the centre. Breathtaking view at sunset, when the granite turns pink.",
+          "distance": "5-15 min on foot",
+          "cost": "Free",
+          "bestTime": "Sunset"
+        },
+        {
+          "name": "San Pantaleo Church",
+          "category": "monumento",
+          "description": "Small parish church of nineteenth-century origins in the heart of the village, dedicated to the saint who gives the village its name. Setting for summer patron saint feasts (July) with processions in traditional Gallura costume. Quick 15-20 minute visit.",
+          "distance": "Village centre",
+          "cost": "Free",
+          "bestTime": "Morning or pre-sunset"
+        },
+        {
+          "name": "The Village of San Pantaleo",
+          "category": "centro",
+          "description": "Bohemian and out of time, the village is composed of stone alleys, shaded little squares, small art galleries (legacy of the painters who settled here in the 1970s-80s) and craft shops. A 30-40 minute circular walk to savour it all. Pedestrian.",
+          "distance": "Village centre",
+          "cost": "Free",
+          "bestTime": "Late afternoon"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Honda SH 125i",
+        "specs": [
+          {
+            "label": "Licence",
+            "value": "B / AM",
+            "icon": "license"
+          },
+          {
+            "label": "Seats",
+            "value": "2",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal for",
+            "value": "Villages & Alleys",
+            "icon": "use"
+          },
+          {
+            "label": "Delivery",
+            "value": "San Pantaleo",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Which vehicle for San Pantaleo?",
+        "subtitle": "Scooter for the village alleys, Panda for couple excursions.",
+        "recommendation": "<strong class='text-foreground'>San Pantaleo isn't made for big cars.</strong> The Honda SH scooter is the right tool: it threads through the village alleys without scratches, parks 30 metres from the Piazzetta even on market Thursday, and in 15 minutes takes you to Porto Cervo for dinner. The Fiat Panda is the compromise for those travelling as a couple or family, staying at an agriturismo outside the centre, or wanting flexibility for full-day excursions (Spiaggia del Principe, La Maddalena)."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Thursday = Scooter",
+          "text": "On market day it's impossible to park the car. By scooter you arrive, park and enjoy the atmosphere."
+        },
+        {
+          "icon": "ztl",
+          "title": "Narrow Streets",
+          "text": "The village lanes are narrow and sloped. The Honda SH 125 navigates them effortlessly."
+        },
+        {
+          "icon": "traffic",
+          "title": "SP13 Scenic",
+          "text": "The road towards Arzachena is beautiful but with bends. Drive calmly and enjoy the panorama."
+        },
+        {
+          "icon": "tip",
+          "title": "Drop Down to Porto Cervo",
+          "text": "In 15 minutes by scooter you're on the Promenade du Port of <a href='/en/car-rental-in-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> for a yacht-view dinner."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Giagoni",
+          "type": "ristorante",
+          "desc": "Contemporary Gallura cuisine with zero-kilometre ingredients. Memorable Gallura soup."
+        },
+        {
+          "name": "Café Nina",
+          "type": "aperitivo",
+          "desc": "Artisanal aperitifs in the piazzetta. Bohemian atmosphere and acoustic music on Fridays."
+        },
+        {
+          "name": "Wine Bar L'Artigiano",
+          "type": "aperitivo",
+          "desc": "Local Cannonau and Vermentino. Boards of artisanal Sardinian cheeses."
+        },
+        {
+          "name": "Agriturismo Li Paràuli",
+          "type": "ristorante",
+          "desc": "Authentic rural experience 5 minutes from the centre. Fixed menu with farm produce."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Gallura Village",
+        "Thursday Market",
+        "Granite",
+        "Scooter",
+        "15 min Porto Cervo",
+        "Authenticity"
+      ],
+      "faq": [
+        {
+          "q": "How do I get to the Thursday market without parking issues?",
+          "a": "By <a href='/en/fleet/honda-sh' class='text-primary-foreground font-medium underline'>Honda SH scooter</a>! On Thursday morning it's impossible to find a car spot. The scooter parks just steps from the square."
+        },
+        {
+          "q": "Can I reach Porto Cervo from San Pantaleo by scooter?",
+          "a": "Of course! <a href='/en/car-rental-in-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a> is just 15 minutes along a spectacular scenic road through the Gallura granite rocks."
+        },
+        {
+          "q": "Do you deliver the scooter directly to San Pantaleo?",
+          "a": "Yes, VIP delivery to your accommodation in San Pantaleo. Contact us on WhatsApp to organise."
+        },
+        {
+          "q": "Is the quad suitable for the San Pantaleo hinterland?",
+          "a": "Absolutely. The Gallura hinterland is full of dirt tracks perfect for the <a href='/en/fleet/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor 700</a>. B licence required."
+        },
+        {
+          "q": "Is a Panda or scooter better for those staying at an agriturismo outside the centre?",
+          "a": "It depends on the access road. If the agriturismo is uphill on dirt or in the Capannoni-Capo Ferro area, the Panda is more practical: luggage, shopping, rainy days (yes, they happen even in summer) are easier to handle. If you're 5 minutes from the centre on a paved road, the scooter gives you more freedom and zero parking stress in the piazzetta. For stays over a week we evaluate combo formulas at a discount."
+        },
+        {
+          "q": "Can you drive in San Pantaleo after evening aperitifs in the piazzetta?",
+          "a": "Not advised, as anywhere in Italy: the alcohol limit is 0.5 g/l, with frequent checks especially on summer weekends. Practical solution: Agriturismo Li Paràuli is 5 minutes away, many B&Bs are inside the village, and for Porto Cervo it's better to take a taxi (single Olbia-Costa Smeralda number) or return early."
+        }
+      ],
+      "closingParagraph": "San Pantaleo is the perfect base for those who want the best of both worlds: the day among the exclusive coves of <a href='/en/car-rental-in-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> (15 minutes of scenic curves) and the evening in the village, where the noise of fashionable venues doesn't reach. In 25 minutes you also drop down to Porto Rotondo and in 35 you reach the pines of San Teodoro. On Thursday morning, however, dedicate it to the market: take the scooter, set off early, wander among the stalls of textiles, ceramics and culurgiones, and stop for lunch at Giagoni. It's the experience you'll tell about when you return home.",
+      "intro": "<strong>Car rental in San Pantaleo</strong> is for those seeking the less worldly side of Gallura: the bohemian village among granite rocks, the Thursday craft market, dinners in stone-alley restaurants. GDIS Rent delivers directly to the square or your residence — no waiting, no uphill walks with luggage. The <a href='/en/fleet/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> scooter is perfect for narrow alleys and for the 5 minutes separating you from <a href='/en/car-rental-in-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> coves and the <a href='/en/car-rental-in-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> Promenade. The <a href='/en/fleet/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> remains ideal for family trips back to <a href='/en/car-rental-in-olbia' class='text-primary font-medium hover:underline'>Olbia</a> and Costa Smeralda Airport. <strong>San Pantaleo car hire</strong> with transparent rates and 24/7 pickup on WhatsApp — 15 minutes from the heart of Costa Smeralda without giving up the village silence."
+    },
+    "de": {
+      "name": "San Pantaleo",
+      "title": "Mietwagen San Pantaleo | Gallurisches Bergdorf & Donnerstagsmarkt | GDIS Rent",
+      "description": "Mietwagen San Pantaleo ✓ Honda SH Roller und Fiat Panda perfekt für die engen Dorfgassen ✓ Donnerstagsmarkt, Granitfelsen bei Sonnenuntergang ✓ Autovermietung 15 Minuten von Porto Cervo ✓ Lieferung am Dorfplatz, 24/7 per WhatsApp.",
+      "heroSubtitle": "Mietwagen San Pantaleo: das Böhmen-Dorf Galluras. Steingassen, Handwerkermarkt, Granitfelsen im Sonnenuntergang. Die richtige Autovermietung, 15 Minuten von Porto Cervo.",
+      "h1Prefix": "Autovermietung in",
+      "spotlight": {
+        "tag": "Perfekt für das Dorf",
+        "title": "Der Roller in den engen Gassen von San Pantaleo",
+        "description": "Wer San Pantaleo als Sommerbasis wählt, weiß meist, was er sucht: die Authentizität Galluras, ohne auf die Nähe zur Costa Smeralda zu verzichten. Aber es gibt ein praktisches Detail, das viele erst bei der Ankunft entdecken: Das Dorf ist nicht für Autos gedacht. Die Gassen sind eng, abschüssig, mit Steinen gepflastert; das Parken auf der Piazzetta ist auf wenige Dutzend Plätze begrenzt, und am Donnerstagmorgen - dem Tag des legendären Handwerkermarktes, der Hunderte von Besuchern aus der gesamten Küste anzieht - ist es ein Kunststück, vor 11:00 Uhr einen Autoparkplatz zu finden. Der Honda SH 125 löst alles: Er fährt sich durch die Gassen ohne die Spiegel zu kratzen, Sie parken 30 Meter vom Café Nina entfernt ohne zu zahlen, und wenn Sie zum Abendessen ins Gianni Pedrinelli oder ins Sottovento nach Porto Cervo hinunterfahren möchten, sind Sie in 15 Minuten Panoramastrecke durch die Granitfelsen, die dem Capo Ferro seinen Namen geben, dort. Für Reisende zu zweit oder mit Kindern ist der Fiat Panda Hybrid der ideale Kompromiss: schmal genug für die Dorfstraßen, bequem für ganztägige Ausflüge zur Cala Liscia Ruja oder zum Maddalena-Archipel. Für Abenteuerlustige öffnet der Yamaha Raptor 700 Quad das gallurische Hinterland: Schotterpfade, alte Nuraghen, Panoramen, die Autos nie sehen. Wir liefern direkt zu Ihrem Agriturismo oder Mietshaus in San Pantaleo.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+        "imageAlt": "Straßen von San Pantaleo",
+        "badges": [
+          "Wendig in den Gassen",
+          "Stressfreies Parken",
+          "15 Min. von Porto Cervo"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Donnerstagsmarkt",
+          "category": "evento",
+          "description": "Der berühmte Handwerkermarkt, der jeden Donnerstagmorgen von Mitte Juni bis Mitte September die Piazzetta des Dorfes belebt. Stände mit gallurischer Keramik, traditionellen Textilien, Filigranschmuck, kleinen Antiquitäten und lokalen gastronomischen Produkten. Der Tag mit dem stärksten Andrang an der gesamten Costa Smeralda.",
+          "distance": "Zentrale Piazzetta",
+          "cost": "Kostenlos",
+          "bestTime": "Donnerstag 9:00-13:00"
+        },
+        {
+          "name": "Granitfelsen",
+          "category": "panorama",
+          "description": "Die Granitformationen, die das Dorf umgeben, sind eines der charakteristischsten Panoramen Galluras. Imposant, von Wind und Regen über Millionen Jahren geglättet. Erreichbar über sanfte Wanderwege vom Zentrum aus. Atemberaubender Blick zum Sonnenuntergang, wenn der Granit rosa wird.",
+          "distance": "5-15 Min. zu Fuß",
+          "cost": "Kostenlos",
+          "bestTime": "Sonnenuntergang"
+        },
+        {
+          "name": "Kirche von San Pantaleo",
+          "category": "monumento",
+          "description": "Kleine Pfarrkirche aus dem 19. Jahrhundert im Herzen des Dorfes, dem Heiligen geweiht, der dem Ort den Namen gibt. Schauplatz der sommerlichen Patronatsfeste (Juli) mit Prozessionen in traditioneller gallurischer Tracht. Schneller Besuch von 15-20 Minuten.",
+          "distance": "Dorfzentrum",
+          "cost": "Kostenlos",
+          "bestTime": "Vormittag oder vor Sonnenuntergang"
+        },
+        {
+          "name": "Das Dorf San Pantaleo",
+          "category": "centro",
+          "description": "Bohème und außerhalb der Zeit besteht das Dorf aus Steingassen, schattigen kleinen Plätzen, kleinen Kunstgalerien (Erbe der Maler, die sich hier in den 1970er-80er Jahren niederließen) und Handwerksläden. Rundgang von 30-40 Minuten, um alles zu kosten. Fußgängerzone.",
+          "distance": "Dorfzentrum",
+          "cost": "Kostenlos",
+          "bestTime": "Später Nachmittag"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Honda SH 125i",
+        "specs": [
+          {
+            "label": "Führerschein",
+            "value": "B / AM",
+            "icon": "license"
+          },
+          {
+            "label": "Sitzplätze",
+            "value": "2",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal für",
+            "value": "Dörfer & Gassen",
+            "icon": "use"
+          },
+          {
+            "label": "Lieferung",
+            "value": "San Pantaleo",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Welches Fahrzeug für San Pantaleo?",
+        "subtitle": "Roller für die Dorfgassen, Panda für Paarausflüge.",
+        "recommendation": "<strong class='text-foreground'>San Pantaleo ist nicht für große Autos gemacht.</strong> Der Honda SH Roller ist das richtige Werkzeug: Er fährt durch die Dorfgassen ohne Kratzer, parkt 30 Meter von der Piazzetta auch am Markt-Donnerstag, und bringt Sie in 15 Minuten nach Porto Cervo zum Abendessen. Der Fiat Panda ist der Kompromiss für Paare oder Familien, die in einem Agriturismo außerhalb des Zentrums wohnen oder Flexibilität für ganztägige Ausflüge wünschen (Spiaggia del Principe, La Maddalena)."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Donnerstag = Roller",
+          "text": "Am Markttag ist es unmöglich, das Auto zu parken. Mit dem Roller kommen Sie an, parken und genießen die Atmosphäre."
+        },
+        {
+          "icon": "ztl",
+          "title": "Enge Straßen",
+          "text": "Die Dorfgassen sind eng und abschüssig. Der Honda SH 125 navigiert sie mühelos."
+        },
+        {
+          "icon": "traffic",
+          "title": "SP13 Panoramastraße",
+          "text": "Die Straße nach Arzachena ist schön, aber kurvig. Fahren Sie ruhig und genießen Sie das Panorama."
+        },
+        {
+          "icon": "tip",
+          "title": "Hinunter nach Porto Cervo",
+          "text": "In 15 Minuten mit dem Roller sind Sie auf der Promenade du Port von <a href='/de/autovermietung-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> für ein Abendessen mit Yachtblick."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Giagoni",
+          "type": "ristorante",
+          "desc": "Zeitgenössische gallurische Küche mit Zutaten von Null Kilometer. Unvergessliche gallurische Suppe."
+        },
+        {
+          "name": "Café Nina",
+          "type": "aperitivo",
+          "desc": "Handwerkliche Aperitifs auf der Piazzetta. Bohème-Atmosphäre und akustische Musik freitags."
+        },
+        {
+          "name": "Wine Bar L'Artigiano",
+          "type": "aperitivo",
+          "desc": "Lokaler Cannonau und Vermentino. Bretter mit handwerklichen sardischen Käsesorten."
+        },
+        {
+          "name": "Agriturismo Li Paràuli",
+          "type": "ristorante",
+          "desc": "Authentische ländliche Erfahrung 5 Minuten vom Zentrum. Festes Menü mit Hofprodukten."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Gallurisches Dorf",
+        "Donnerstagsmarkt",
+        "Granit",
+        "Roller",
+        "15 Min. Porto Cervo",
+        "Authentizität"
+      ],
+      "faq": [
+        {
+          "q": "Wie komme ich ohne Parkprobleme zum Donnerstagsmarkt?",
+          "a": "Mit dem <a href='/de/flotte/honda-sh' class='text-primary-foreground font-medium underline'>Honda SH Roller</a>! Am Donnerstagmorgen ist es unmöglich, einen Autoparkplatz zu finden. Der Roller parkt zwei Schritte vom Platz entfernt."
+        },
+        {
+          "q": "Kann ich Porto Cervo von San Pantaleo aus mit dem Roller erreichen?",
+          "a": "Selbstverständlich! <a href='/de/autovermietung-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a> ist nur 15 Minuten entfernt entlang einer spektakulären Panoramastrecke durch die gallurischen Granitfelsen."
+        },
+        {
+          "q": "Liefern Sie den Roller direkt nach San Pantaleo?",
+          "a": "Ja, VIP-Lieferung an Ihre Unterkunft in San Pantaleo. Kontaktieren Sie uns über WhatsApp zur Organisation."
+        },
+        {
+          "q": "Eignet sich das Quad für das Hinterland von San Pantaleo?",
+          "a": "Absolut. Das gallurische Hinterland ist voller Schotterpfade, perfekt für den <a href='/de/flotte/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor 700</a>. B-Führerschein erforderlich."
+        },
+        {
+          "q": "Lohnt sich ein Panda oder Roller für Aufenthalte in einem Agriturismo außerhalb des Zentrums?",
+          "a": "Hängt von der Zufahrtsstraße ab. Liegt der Agriturismo bergauf auf Schotter oder im Bereich Capannoni-Capo Ferro, ist der Panda praktischer: Gepäck, Einkäufe, Regentage (ja, die kommen auch im Sommer vor) sind besser handhabbar. Sind Sie 5 Minuten vom Zentrum auf asphaltierter Straße, gibt Ihnen der Roller mehr Freiheit und null Parkstress auf der Piazzetta. Für Aufenthalte über eine Woche prüfen wir Combo-Formeln zum reduzierten Tarif."
+        },
+        {
+          "q": "Kann man in San Pantaleo nach den abendlichen Aperitifs auf der Piazzetta fahren?",
+          "a": "Nicht zu empfehlen, wie überall in Italien: Promillegrenze 0,5 g/l, häufige Kontrollen besonders an Sommerwochenenden. Praktische Lösung: Der Agriturismo Li Paràuli ist 5 Minuten entfernt, viele B&Bs sind im Dorf, und für Porto Cervo lohnt sich das Taxi (einheitliche Nummer Olbia-Costa Smeralda) oder eine frühe Rückkehr."
+        }
+      ],
+      "closingParagraph": "San Pantaleo ist die perfekte Basis für alle, die das Beste aus beiden Welten möchten: tagsüber zwischen den exklusiven Buchten von <a href='/de/autovermietung-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> (15 Minuten Panoramakurven) und abends im Dorf, wohin der Lärm der Trendlokale nicht dringt. In 25 Minuten fahren Sie auch hinunter nach Porto Rotondo und in 35 erreichen Sie die Pinien von San Teodoro. Den Donnerstagmorgen widmen Sie jedoch dem Markt: Nehmen Sie den Roller, fahren Sie früh los, schlendern Sie zwischen den Ständen mit Textilien, Keramik und Culurgiones und halten Sie zum Mittagessen im Giagoni an. Es ist die Erfahrung, von der Sie zu Hause erzählen werden.",
+      "intro": "Ein <strong>Mietwagen in San Pantaleo</strong> ist für jene, die die weniger mondäne Seite der Gallura suchen: das Böhmen-Dorf zwischen den Granitfelsen, der Handwerkermarkt am Donnerstag, das Abendessen in den Gassen-Restaurants. GDIS Rent liefert direkt am Dorfplatz oder am Residence — kein Warten, kein Bergauflaufen mit dem Gepäck. Der <a href='/de/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> Roller eignet sich perfekt für die engen Gassen und für die 5 Minuten zu den Buchten von <a href='/de/autovermietung-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> und zur Promenade von <a href='/de/autovermietung-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a>. Der <a href='/de/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> bleibt ideal für die Familienfahrt zurück nach <a href='/de/autovermietung-olbia' class='text-primary font-medium hover:underline'>Olbia</a> und zum Flughafen Costa Smeralda. <strong>Autovermietung in San Pantaleo</strong> mit transparenten Preisen und Abholung rund um die Uhr per WhatsApp — 15 Minuten vom Herz der Costa Smeralda entfernt, ohne auf die Dorfstille zu verzichten."
+    },
+    "fr": {
+      "name": "San Pantaleo",
+      "title": "Location Voiture à San Pantaleo | Village Gallurais & Marché du Jeudi | GDIS Rent",
+      "description": "Location voiture à San Pantaleo ✓ Scooter Honda SH et Fiat Panda parfaits pour les ruelles étroites ✓ Marché du jeudi, rochers de granit au coucher du soleil ✓ Loueur à 15 minutes de Porto Cervo ✓ Livraison sur la place, 24h/24 sur WhatsApp.",
+      "heroSubtitle": "Location voiture à San Pantaleo : le village bohème de Gallura. Ruelles en pierre, marché artisanal, rochers de granit au coucher du soleil. Le bon loueur à 15 minutes de Porto Cervo.",
+      "h1Prefix": "Location de voiture à",
+      "spotlight": {
+        "tag": "Parfait pour le village",
+        "title": "Le scooter dans les rues étroites de San Pantaleo",
+        "description": "Qui choisit San Pantaleo comme base estivale sait généralement ce qu'il cherche : l'authenticité de la Gallura sans renoncer à la proximité avec la Costa Smeralda. Mais il y a un détail pratique que beaucoup ne découvrent qu'à l'arrivée : le village n'est pas pensé pour les voitures. Les rues sont étroites, en pente, pavées ; le parking sur la piazzetta est limité à quelques dizaines de places, et le jeudi matin — jour du légendaire marché artisanal qui attire des centaines de visiteurs de toute la côte — trouver une place auto avant 11h00 est une prouesse. Le Honda SH 125 résout tout : il se faufile dans les ruelles sans rayer les rétroviseurs, vous vous garez à 30 mètres du Café Nina sans payer, et quand vous voulez descendre à Porto Cervo pour dîner au Gianni Pedrinelli ou au Sottovento, vous y arrivez en 15 minutes de route panoramique entre les rochers de granit qui donnent leur nom à Capo Ferro. Pour ceux qui voyagent en couple ou avec des enfants, la Fiat Panda Hybrid est le compromis idéal : assez étroite pour les rues du village, confortable pour les excursions d'une journée entière vers Cala Liscia Ruja ou l'archipel de La Maddalena. Pour les aventureux, le quad Yamaha Raptor 700 ouvre l'arrière-pays gallurais : sentiers de terre, anciens nuraghi, panoramas que les voitures ne voient jamais. Nous livrons directement à votre agriturismo ou à votre maison de location à San Pantaleo.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+        "imageAlt": "Rues de San Pantaleo",
+        "badges": [
+          "Agile dans les ruelles",
+          "Stationnement zéro stress",
+          "15 min de Porto Cervo"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Marché du jeudi",
+          "category": "evento",
+          "description": "Le célèbre marché artisanal qui chaque jeudi matin anime la piazzetta du village de mi-juin à mi-septembre. Stands de céramiques galluraises, tissus traditionnels, bijoux en filigrane, petite antiquité et produits gastronomiques locaux. Le jour à plus forte affluence de toute la Costa Smeralda.",
+          "distance": "Piazzetta centrale",
+          "cost": "Gratuit",
+          "bestTime": "Jeudi 9h00-13h00"
+        },
+        {
+          "name": "Rochers de granit",
+          "category": "panorama",
+          "description": "Les formations granitiques qui entourent le village sont l'un des panoramas les plus caractéristiques de la Gallura. Imposants, polis par le vent et la pluie en millions d'années. Accessibles par des sentiers de trekking faciles partant du centre. Vue à couper le souffle au coucher du soleil, quand le granit devient rosé.",
+          "distance": "5-15 min à pied",
+          "cost": "Gratuit",
+          "bestTime": "Coucher du soleil"
+        },
+        {
+          "name": "Église de San Pantaleo",
+          "category": "monumento",
+          "description": "Petite église paroissiale d'origine du XIXe siècle au cœur du village, dédiée au saint qui donne son nom au village. Cadre des fêtes patronales estivales (juillet) avec des processions en costume gallurais traditionnel. Visite rapide de 15-20 minutes.",
+          "distance": "Centre du village",
+          "cost": "Gratuit",
+          "bestTime": "Matin ou avant le coucher du soleil"
+        },
+        {
+          "name": "Le village de San Pantaleo",
+          "category": "centro",
+          "description": "Bohème et hors du temps, le village est composé de ruelles pavées, de petites places ombragées, de petites galeries d'art (héritage des peintres qui s'y sont installés dans les années 1970-80) et de boutiques d'artisans. Promenade circulaire de 30-40 minutes pour le savourer entièrement. Piétonnier.",
+          "distance": "Centre du village",
+          "cost": "Gratuit",
+          "bestTime": "Fin d'après-midi"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Honda SH 125i",
+        "specs": [
+          {
+            "label": "Permis",
+            "value": "B / AM",
+            "icon": "license"
+          },
+          {
+            "label": "Places",
+            "value": "2",
+            "icon": "seats"
+          },
+          {
+            "label": "Idéal pour",
+            "value": "Villages et ruelles",
+            "icon": "use"
+          },
+          {
+            "label": "Livraison",
+            "value": "San Pantaleo",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Quel véhicule pour San Pantaleo ?",
+        "subtitle": "Scooter pour les ruelles du village, Panda pour les excursions en couple.",
+        "recommendation": "<strong class='text-foreground'>San Pantaleo n'est pas fait pour les grosses voitures.</strong> Le scooter Honda SH est l'arme idéale : il se faufile dans les ruelles du village sans rayures, se gare à 30 mètres de la Piazzetta même le jeudi du marché, et en 15 minutes vous emmène à Porto Cervo pour dîner. La Fiat Panda est le compromis pour ceux qui voyagent en couple ou en famille, séjournent en agriturismo hors du centre, ou veulent la flexibilité pour des excursions d'une journée entière (Spiaggia del Principe, La Maddalena)."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Jeudi = scooter",
+          "text": "Le jour du marché il est impossible de garer la voiture. En scooter vous arrivez, vous garez et profitez de l'atmosphère."
+        },
+        {
+          "icon": "ztl",
+          "title": "Rues étroites",
+          "text": "Les ruelles du village sont étroites et en pente. Le Honda SH 125 les navigue sans effort."
+        },
+        {
+          "icon": "traffic",
+          "title": "SP13 panoramique",
+          "text": "La route vers Arzachena est belle mais avec des virages. Conduisez tranquillement et profitez du panorama."
+        },
+        {
+          "icon": "tip",
+          "title": "Descendez à Porto Cervo",
+          "text": "En 15 minutes de scooter vous êtes sur la Promenade du Port de <a href='/fr/location-voiture-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> pour un dîner vue yachts."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Giagoni",
+          "type": "ristorante",
+          "desc": "Cuisine gallurese contemporaine avec ingrédients à zéro kilomètre. Soupe gallurese mémorable."
+        },
+        {
+          "name": "Café Nina",
+          "type": "aperitivo",
+          "desc": "Apéritifs artisanaux sur la piazzetta. Atmosphère bohème et musique acoustique le vendredi."
+        },
+        {
+          "name": "Wine Bar L'Artigiano",
+          "type": "aperitivo",
+          "desc": "Cannonau et Vermentino locaux. Plateaux de fromages sardes artisanaux."
+        },
+        {
+          "name": "Agriturismo Li Paràuli",
+          "type": "ristorante",
+          "desc": "Expérience rurale authentique à 5 minutes du centre. Menu fixe avec produits de la ferme."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Village gallurais",
+        "Marché du jeudi",
+        "Granit",
+        "Scooter",
+        "15 min Porto Cervo",
+        "Authenticité"
+      ],
+      "faq": [
+        {
+          "q": "Comment arriver au marché du jeudi sans problèmes de stationnement ?",
+          "a": "En <a href='/fr/flotte/honda-sh' class='text-primary-foreground font-medium underline'>scooter Honda SH</a> ! Le jeudi matin il est impossible de trouver une place auto. Le scooter se gare à deux pas de la place."
+        },
+        {
+          "q": "Puis-je rejoindre Porto Cervo depuis San Pantaleo en scooter ?",
+          "a": "Bien sûr ! <a href='/fr/location-voiture-a-porto-cervo' class='text-primary-foreground font-medium underline'>Porto Cervo</a> est à seulement 15 minutes le long d'une route panoramique spectaculaire entre les rochers de granit de la Gallura."
+        },
+        {
+          "q": "Livrez-vous le scooter directement à San Pantaleo ?",
+          "a": "Oui, livraison VIP à votre hébergement à San Pantaleo. Contactez-nous sur WhatsApp pour organiser."
+        },
+        {
+          "q": "Le quad est-il adapté à l'arrière-pays de San Pantaleo ?",
+          "a": "Absolument. L'arrière-pays gallurais est plein de sentiers parfaits pour le <a href='/fr/flotte/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor 700</a>. Permis B nécessaire."
+        },
+        {
+          "q": "Vaut-il mieux une Panda ou un scooter pour qui séjourne en agriturismo hors du centre ?",
+          "a": "Cela dépend de la route d'accès. Si l'agriturismo est en montée sur piste ou en zone Capannoni-Capo Ferro, la Panda est plus pratique : bagages, courses, jours de pluie (oui, ils arrivent même en été) sont plus gérables. Si vous êtes à 5 minutes du centre sur route asphaltée, le scooter vous donne plus de liberté et zéro stress de stationnement sur la piazzetta. Pour les séjours de plus d'une semaine, nous évaluons des combos à tarif réduit."
+        },
+        {
+          "q": "Peut-on conduire à San Pantaleo après les apéritifs du soir sur la piazzetta ?",
+          "a": "Déconseillé comme partout en Italie : limite d'alcoolémie 0,5 g/l, contrôles fréquents surtout les week-ends d'été. Solution pratique : l'agriturismo Li Paràuli est à 5 minutes, beaucoup de B&B sont dans le village, et pour Porto Cervo le taxi est préférable (numéro unique Olbia-Costa Smeralda) ou rentrer tôt."
+        }
+      ],
+      "closingParagraph": "San Pantaleo est la base parfaite pour qui veut le meilleur des deux mondes : la journée parmi les criques exclusives de <a href='/fr/location-voiture-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> (15 minutes de virages panoramiques) et le soir dans le village, où le bruit des établissements à la mode n'arrive pas. En 25 minutes vous descendez aussi à Porto Rotondo et en 35 vous rejoignez les pins de San Teodoro. Le jeudi matin, en revanche, dédiez-le au marché : prenez le scooter, partez tôt, déambulez parmi les stands de tissus, céramiques et culurgiones, et arrêtez-vous pour déjeuner au Giagoni. C'est l'expérience que vous raconterez en rentrant chez vous.",
+      "intro": "La <strong>location voiture à San Pantaleo</strong> sert à qui cherche le côté moins mondain de la Gallura : le village bohème entre les rochers de granit, le marché artisanal du jeudi, les dîners dans les ruelles en pierre. GDIS Rent livre directement sur la place ou à la résidence — pas d'attente, pas de montées avec bagages. Le scooter <a href='/fr/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> est parfait pour les ruelles étroites et pour les 5 minutes qui vous séparent des criques de <a href='/fr/location-voiture-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> et de la Promenade de <a href='/fr/location-voiture-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a>. La <a href='/fr/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> reste idéale pour les déplacements familiaux vers <a href='/fr/location-voiture-a-olbia' class='text-primary font-medium hover:underline'>Olbia</a> et l'aéroport Costa Smeralda. <strong>Loueur à San Pantaleo</strong> avec tarifs transparents et retrait 24h/24 sur WhatsApp — à 15 minutes du cœur de la Costa Smeralda sans renoncer au silence du village."
+    }
+  },
+  "intro": "Il <strong>noleggio auto a San Pantaleo</strong> serve a chi cerca il lato meno mondano della Gallura: il borgo bohémien tra le rocce di granito, il mercato artigianale del giovedì, le cene nei ristoranti tra i vicoli in pietra. GDIS Rent consegna direttamente in piazza o nel residence — niente attese, niente percorsi in salita con i bagagli. Lo scooter <a href='/flotta/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> è perfetto per i vicoli stretti e per le 5 minuti che ti separano dalle calette di <a href='/noleggio-auto-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> e dalla Promenade di <a href='/noleggio-auto-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a>. La <a href='/flotta/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> resta ideale per spostamenti famigliari verso <a href='/noleggio-auto-a-olbia' class='text-primary font-medium hover:underline'>Olbia</a> e l'Aeroporto Costa Smeralda. <strong>Autonoleggio a San Pantaleo</strong> con tariffe trasparenti e ritiro h24 su WhatsApp — a 15 minuti dal cuore della Costa Smeralda senza rinunciare al silenzio del borgo."
+}

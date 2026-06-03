@@ -1,0 +1,154 @@
+---
+import "@/index.css";
+import SEO from "@/components/SEO.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+import BackgroundGrid from "@/components/BackgroundGrid.astro";
+import WhatsAppWidget from "@/components/WhatsAppWidget.astro";
+import MobileStickyCTA from "@/components/MobileStickyCTA.astro";
+import Analytics from "@/components/Analytics.astro";
+import CookieBannerIsland from "@/components/CookieBannerIsland.tsx";
+import { organizationSchema, buildWebsiteSchema } from "@/lib/siteSchema";
+import { getLangFromUrl, type Locale } from "@/i18n/utils";
+
+type JsonLd = Record<string, unknown>;
+type BreadcrumbItem = { name: string; url: string };
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  jsonLd?: JsonLd | JsonLd[];
+  ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogType?: "website" | "article" | "product";
+  robots?: string;
+  breadcrumbs?: BreadcrumbItem[];
+  keywords?: string;
+  /** When true, hide global background grid (e.g. fullscreen booking) */
+  hideBackground?: boolean;
+  /** Optional preload hints for LCP image (use full URL with srcset) */
+  lcpImage?: { href: string; imagesrcset?: string; imagesizes?: string; type?: string };
+  /** Map of locale → URL of the equivalent page in that locale (forwarded to SEO). */
+  i18nAlternates?: Partial<Record<Locale, string>>;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  jsonLd,
+  ogImage,
+  ogImageWidth,
+  ogImageHeight,
+  ogType,
+  robots,
+  breadcrumbs,
+  keywords,
+  hideBackground = false,
+  lcpImage,
+  i18nAlternates,
+} = Astro.props;
+
+const currentLang: Locale = getLangFromUrl(Astro.url);
+
+const userJsonLd: JsonLd[] = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+const allJsonLd: JsonLd[] = [organizationSchema, buildWebsiteSchema(currentLang), ...userJsonLd];
+
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
+const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION;
+---
+
+<!doctype html>
+<html lang={currentLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+
+    {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+    {bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
+
+    <link rel="icon" type="image/svg+xml" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/gdis-favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/favicon-16x16.png" />
+    <link rel="shortcut icon" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="preconnect" href="https://zgazhrzjgefvjxknyffy.supabase.co" crossorigin />
+    <link rel="dns-prefetch" href="https://zgazhrzjgefvjxknyffy.supabase.co" />
+    <link rel="dns-prefetch" href="https://n8n.kreareweb.com" />
+    <link rel="dns-prefetch" href="https://challenges.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    {/* Fonts: self-hosted via @fontsource-variable (Inter + Space Grotesk) — see src/index.css */}
+
+    {lcpImage && (
+      <link
+        rel="preload"
+        as="image"
+        href={lcpImage.href}
+        imagesrcset={lcpImage.imagesrcset}
+        imagesizes={lcpImage.imagesizes}
+        type={lcpImage.type ?? "image/webp"}
+        fetchpriority="high"
+      />
+    )}
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      jsonLd={allJsonLd}
+      ogImage={ogImage}
+      ogImageWidth={ogImageWidth}
+      ogImageHeight={ogImageHeight}
+      ogType={ogType}
+      robots={robots}
+      breadcrumbs={breadcrumbs}
+      keywords={keywords}
+      i18nAlternates={i18nAlternates}
+    />
+
+    <Analytics />
+  </head>
+  <body class="bg-background text-foreground antialiased">
+    <div class="min-h-screen flex flex-col overflow-x-hidden">
+      {!hideBackground && <BackgroundGrid />}
+      <Navbar i18nAlternates={i18nAlternates} />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+      <WhatsAppWidget />
+      <MobileStickyCTA />
+      <CookieBannerIsland client:idle />
+    </div>
+
+    <script is:inline>
+      /* IntersectionObserver-driven reveal — replaces framer-motion whileInView for static sections */
+      (function () {
+        var els = document.querySelectorAll("[data-reveal]");
+        if (!els.length) return;
+        if (!("IntersectionObserver" in window)) {
+          els.forEach((el) => el.classList.add("in-view"));
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("in-view");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
+        );
+        els.forEach((el) => io.observe(el));
+      })();
+    </script>
+  </body>
+</html>

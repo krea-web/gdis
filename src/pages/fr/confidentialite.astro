@@ -1,0 +1,96 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import {
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_EMAIL,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_VAT,
+} from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Accueil", url: "/fr" },
+  { name: "Privacy", url: "/fr/confidentialite" },
+];
+---
+
+<BaseLayout
+  title="Politique de confidentialité — GDIS Rent & Service"
+  description="Avis sur le traitement des données personnelles conformément au Règlement UE 2016/679 (RGPD). Responsable du traitement : GDIS Service S.R.L., Olbia."
+  canonical="/fr/confidentialite"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/privacy", en: "/en/privacy-policy", de: "/de/datenschutz" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Politique de confidentialité</h1>
+    <p class="text-sm text-muted-foreground">Dernière mise à jour : 24 avril 2026</p>
+
+    <h2>1. Responsable du traitement</h2>
+    <p>
+      Le Responsable du traitement des données personnelles est <strong>{BUSINESS_LEGAL_NAME}</strong>,
+      dont le siège social est situé Via Annibale Caro 52, 07026 Olbia (SS), Italie — n° de TVA/Code fiscal {BUSINESS_VAT}.<br />
+      E-mail : <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Téléphone : {BUSINESS_PHONE_DISPLAY}.
+    </p>
+
+    <h2>2. Catégories de données traitées</h2>
+    <ul>
+      <li><strong>Données d'identification et de contact</strong> : prénom, nom, e-mail, téléphone, code fiscal (le cas échéant).</li>
+      <li><strong>Documents d'identité</strong> : permis de conduire (recto et verso) et, le cas échéant, document du second conducteur.</li>
+      <li><strong>Données de réservation</strong> : véhicule choisi, dates et lieux de prise en charge/restitution, signature électronique du contrat.</li>
+      <li><strong>Données techniques</strong> : adresse IP, type de navigateur, pages visitées (journaux serveur et cookies techniques).</li>
+    </ul>
+
+    <h2>3. Finalités et bases légales</h2>
+    <ul>
+      <li>Exécution du contrat de location (art. 6.1.b RGPD).</li>
+      <li>Respect des obligations fiscales et légales (art. 6.1.c RGPD).</li>
+      <li>Gestion des demandes via le formulaire de contact (consentement, art. 6.1.a RGPD).</li>
+      <li>Analyse agrégée de la navigation — uniquement après consentement préalable (art. 6.1.a RGPD).</li>
+    </ul>
+
+    <h2>4. Conservation</h2>
+    <p>
+      Les données contractuelles sont conservées pendant 10 ans à des fins fiscales. Les données
+      de navigation et d'analyse sont conservées pour une durée maximale de 14 mois. Les permis de
+      conduire téléchargés sont automatiquement supprimés 12 mois après la fin de la location,
+      sauf obligations légales.
+    </p>
+
+    <h2>5. Destinataires et transferts</h2>
+    <p>
+      Les données sont traitées par le personnel autorisé et par les sous-traitants externes :
+      Supabase (hébergement de la base de données et du stockage — serveurs UE), Cloudflare
+      (protection anti-fraude), prestataire de signature électronique et système de gestion
+      interne. Aucun transfert hors UE n'est effectué sans garanties appropriées au sens des
+      articles 44 et suivants du RGPD.
+    </p>
+
+    <h2>6. Droits de la personne concernée</h2>
+    <p>
+      Vous disposez du droit d'accès, de rectification, d'effacement, de limitation, de
+      portabilité, d'opposition au traitement et de retirer votre consentement (articles 15-22
+      RGPD). Vous pouvez les exercer en écrivant à{" "}
+      <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>. Vous avez en outre le droit
+      d'introduire une réclamation auprès de l'autorité italienne de protection des données
+      (Garante per la Protezione dei Dati Personali —{" "}
+      <a href="https://www.garanteprivacy.it" target="_blank" rel="noreferrer">www.garanteprivacy.it</a>
+      ).
+    </p>
+
+    <h2>7. Sécurité</h2>
+    <p>
+      Nous adoptons des mesures techniques et organisationnelles appropriées : transport chiffré
+      TLS, stockage privé avec URL signées à durée limitée, accès restreint au personnel autorisé,
+      politique de mot de passe et MFA pour les systèmes internes.
+    </p>
+
+    <h2>8. Modifications</h2>
+    <p>
+      La présente politique peut faire l'objet de mises à jour. Les versions actualisées sont
+      publiées sur cette page avec la date de révision.
+    </p>
+  </article>
+</BaseLayout>

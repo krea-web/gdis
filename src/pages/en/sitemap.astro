@@ -1,0 +1,179 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { buildBreadcrumbList } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/en" },
+  { name: "Sitemap", url: "/en/sitemap" },
+];
+
+const breadcrumbSchema = buildBreadcrumbList(breadcrumbs);
+
+const locations = (await getCollection("locations")).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name, "en"),
+);
+const fleet = (await getCollection("fleet")).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name, "en"),
+);
+
+const principali = [
+  { label: "Home", to: "/en", desc: "GDIS Rent main page" },
+  { label: "About Us", to: "/en/about-us", desc: "Our story, values and team" },
+  { label: "Contact", to: "/en/contact", desc: "Office, phone, email and map" },
+  { label: "Book Now", to: "/en/book-now", desc: "Mini-request in 3 steps + pre-filled WhatsApp message" },
+];
+
+const hubTrasporti = [
+  { label: "Costa Smeralda", to: "/en/car-rental-costa-smeralda", desc: "Regional hub: full Costa Smeralda overview" },
+  { label: "Olbia Airport", to: "/en/car-rental-olbia-airport", desc: "VIP delivery at OLB airport" },
+  { label: "Olbia Port", to: "/en/car-rental-olbia-port", desc: "Delivery at Isola Bianca terminal" },
+  { label: "Olbia Station", to: "/en/car-rental-olbia-station", desc: "Delivery at the Trenitalia station" },
+];
+
+const legali = [
+  { label: "Privacy Policy", to: "/en/privacy-policy", desc: "How we process your personal data" },
+  { label: "Cookie Policy", to: "/en/cookie-policy", desc: "How we use cookies" },
+  { label: "Terms & Conditions", to: "/en/terms", desc: "General rental terms" },
+];
+---
+
+<BaseLayout
+  title="Sitemap — GDIS Rent | All Pages"
+  description="GDIS Rent sitemap: every page organised by cluster — main pages, transport hubs (Olbia airport/port/station), Costa Smeralda destinations, fleet and legal pages."
+  canonical="/en/sitemap"
+  jsonLd={breadcrumbSchema}
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/mappa-sito", de: "/de/sitemap", fr: "/fr/plan-du-site" }}
+>
+  <section class="container py-16 md:py-24">
+    <div class="max-w-3xl mb-12">
+      <Breadcrumbs items={breadcrumbs} />
+      <h1 class="font-display text-4xl md:text-5xl font-bold mt-6 mb-4">Sitemap</h1>
+      <p class="text-muted-foreground text-lg leading-relaxed">
+        Every page of <strong>GDIS Rent &amp; Service</strong> organised by cluster.
+        Quickly find what you're looking for across transport hubs, Costa Smeralda destinations
+        and our fleet.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <section>
+        <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">
+          Main pages
+        </h2>
+        <ul class="space-y-3">
+          {principali.map((link) => (
+            <li>
+              <a
+                href={link.to}
+                class="block group rounded-lg p-4 -mx-4 hover:bg-accent/40 transition-colors"
+              >
+                <span class="block text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {link.label}
+                </span>
+                <span class="block text-sm text-muted-foreground mt-0.5">{link.desc}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">
+          Transport hubs
+        </h2>
+        <ul class="space-y-3">
+          {hubTrasporti.map((link) => (
+            <li>
+              <a
+                href={link.to}
+                class="block group rounded-lg p-4 -mx-4 hover:bg-accent/40 transition-colors"
+              >
+                <span class="block text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {link.label}
+                </span>
+                <span class="block text-sm text-muted-foreground mt-0.5">{link.desc}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">
+          Destinations
+        </h2>
+        <ul class="space-y-3">
+          {locations.map((entry) => (
+            <li>
+              <a
+                href={entry.data.canonical}
+                class="block group rounded-lg p-4 -mx-4 hover:bg-accent/40 transition-colors"
+              >
+                <span class="block text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {entry.data.name}
+                </span>
+                <span class="block text-sm text-muted-foreground mt-0.5">
+                  {entry.data.heroSubtitle}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">
+          Fleet
+        </h2>
+        <ul class="space-y-3">
+          {fleet.map((entry) => (
+            <li>
+              <a
+                href={entry.data.canonical}
+                class="block group rounded-lg p-4 -mx-4 hover:bg-accent/40 transition-colors"
+              >
+                <span class="block text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {entry.data.name}
+                </span>
+                <span class="block text-sm text-muted-foreground mt-0.5">
+                  {entry.data.heroLabel}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="lg:col-span-2">
+        <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">
+          Legal
+        </h2>
+        <ul class="grid sm:grid-cols-3 gap-3">
+          {legali.map((link) => (
+            <li>
+              <a
+                href={link.to}
+                class="block group rounded-lg p-4 -mx-4 hover:bg-accent/40 transition-colors"
+              >
+                <span class="block text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {link.label}
+                </span>
+                <span class="block text-sm text-muted-foreground mt-0.5">{link.desc}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-border/50">
+      <p class="text-sm text-muted-foreground">
+        Looking for something specific? <a href="/en/contact" class="text-primary font-medium hover:underline">Contact us</a>
+        or message us on <a href="https://wa.me/393520459150" target="_blank" rel="noopener noreferrer" class="text-primary font-medium hover:underline">WhatsApp</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -3,6 +3,8 @@ import { MapPin, Clock, AlertCircle } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useTranslations } from "@/i18n/utils";
+import type { Locale } from "@/i18n/utils";
 
 export type PickupDropoffData = {
   pickupLocation: "sede" | "custom";
@@ -14,9 +16,8 @@ export type PickupDropoffData = {
 type Props = {
   data: PickupDropoffData;
   onChange: (data: PickupDropoffData) => void;
+  lang?: Locale;
 };
-
-const SEDE_LABEL = "Sede GDIS Rent — Olbia";
 
 const InlineError = ({ message }: { message?: string }) =>
   message ? (
@@ -26,7 +27,9 @@ const InlineError = ({ message }: { message?: string }) =>
     </p>
   ) : null;
 
-const PickupDropoffStep = ({ data, onChange }: Props) => {
+const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
+  const t = useTranslations(lang);
+  const sedeLabel = t("booking.pickup.sedeLabel");
   const [touched, setTouched] = useState({
     address: false,
     pickupTime: false,
@@ -38,20 +41,20 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
 
   const addressError =
     touched.address && data.pickupLocation === "custom" && data.pickupCustomAddress.trim().length === 0
-      ? "Inserisci l'indirizzo di ritiro"
+      ? t("booking.pickup.errors.address")
       : undefined;
   const pickupTimeError =
-    touched.pickupTime && data.pickupTime.length === 0 ? "Seleziona un orario di ritiro" : undefined;
+    touched.pickupTime && data.pickupTime.length === 0 ? t("booking.pickup.errors.pickupTime") : undefined;
   const dropoffTimeError =
-    touched.dropoffTime && data.dropoffTime.length === 0 ? "Seleziona un orario di riconsegna" : undefined;
+    touched.dropoffTime && data.dropoffTime.length === 0 ? t("booking.pickup.errors.dropoffTime") : undefined;
 
   return (
     <div>
       <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-        Ritiro e Consegna
+        {t("booking.pickup.title")}
       </h2>
       <p className="text-muted-foreground mb-8">
-        Scegli dove e quando ritirare e riconsegnare il veicolo.
+        {t("booking.pickup.subtitle")}
       </p>
 
       <div className="bg-card rounded-2xl border border-border p-6 md:p-8 space-y-8">
@@ -59,7 +62,7 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
         <div className="space-y-4">
           <h3 className="font-display text-lg font-semibold text-foreground flex items-center gap-2">
             <MapPin size={18} className="text-primary" />
-            Luogo di Ritiro
+            {t("booking.pickup.pickupHeading")}
           </h3>
 
           <RadioGroup
@@ -72,13 +75,13 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
             <div className="flex items-center space-x-3 p-3 rounded-xl border border-border hover:border-primary/40 transition-colors">
               <RadioGroupItem value="sede" id="pickup-sede" />
               <Label htmlFor="pickup-sede" className="cursor-pointer flex-1">
-                {SEDE_LABEL}
+                {sedeLabel}
               </Label>
             </div>
             <div className="flex items-center space-x-3 p-3 rounded-xl border border-border hover:border-primary/40 transition-colors">
               <RadioGroupItem value="custom" id="pickup-custom" />
               <Label htmlFor="pickup-custom" className="cursor-pointer flex-1">
-                Luogo personalizzato
+                {t("booking.pickup.customLabel")}
               </Label>
             </div>
           </RadioGroup>
@@ -86,7 +89,7 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
           {data.pickupLocation === "custom" && (
             <div>
               <Input
-                placeholder="Inserisci indirizzo di ritiro (es. Aeroporto di Olbia)"
+                placeholder={t("booking.pickup.customPlaceholder")}
                 value={data.pickupCustomAddress}
                 onChange={(e) => update({ pickupCustomAddress: e.target.value })}
                 onBlur={() => setTouched((t) => ({ ...t, address: true }))}
@@ -100,7 +103,7 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
           <div className="space-y-2">
             <Label className="flex items-center gap-2 text-sm text-muted-foreground">
               <Clock size={14} />
-              Ora di Ritiro
+              {t("booking.pickup.pickupTime")}
             </Label>
             <Input
               type="time"
@@ -118,20 +121,20 @@ const PickupDropoffStep = ({ data, onChange }: Props) => {
         <div className="space-y-4 border-t border-border pt-6">
           <h3 className="font-display text-lg font-semibold text-foreground flex items-center gap-2">
             <MapPin size={18} className="text-primary" />
-            Luogo di Consegna
+            {t("booking.pickup.dropoffHeading")}
           </h3>
 
           <div className="p-3 rounded-xl border border-border bg-muted/30">
-            <p className="text-sm font-medium text-foreground">{SEDE_LABEL}</p>
+            <p className="text-sm font-medium text-foreground">{sedeLabel}</p>
             <p className="text-xs text-muted-foreground mt-1">
-              La riconsegna avviene esclusivamente presso la nostra sede.
+              {t("booking.pickup.dropoffNote")}
             </p>
           </div>
 
           <div className="space-y-2">
             <Label className="flex items-center gap-2 text-sm text-muted-foreground">
               <Clock size={14} />
-              Ora di Consegna
+              {t("booking.pickup.dropoffTime")}
             </Label>
             <Input
               type="time"

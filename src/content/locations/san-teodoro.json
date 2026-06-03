@@ -1,0 +1,720 @@
+{
+  "slug": "san-teodoro",
+  "name": "San Teodoro",
+  "title": "Noleggio Auto e Scooter a San Teodoro | La Cinta e Brandinchi | GDIS Rent",
+  "description": "Noleggio auto a San Teodoro ✓ Scooter Honda SH, Fiat Panda e quad Yamaha ✓ La Cinta a 5 km, Cala Brandinchi a 8 km ✓ Autonoleggio per Tavolara, Punta Molara, lo stagno dei fenicotteri ✓ Consegna in hotel, B&B o residence, WhatsApp H24.",
+  "canonical": "/noleggio-auto-a-san-teodoro",
+  "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/san-teodoro/gdisrent-noleggio-san-teodoro.webp",
+  "heroSubtitle": "Noleggio auto e scooter a San Teodoro: 5 km di sabbia bianca alla Cinta, fenicotteri rosa nello stagno, movida ad Ambra Night. L'autonoleggio giusto per goderti tutto senza code.",
+  "areaServed": [
+    {
+      "type": "City",
+      "name": "San Teodoro"
+    }
+  ],
+  "customSections": [],
+  "spotlight": {
+    "tag": "Agilità Urbana",
+    "title": "Lo Scooter Batte il Traffico di San Teodoro",
+    "description": "Da fine giugno alla seconda settimana di settembre, San Teodoro cambia faccia. Le auto si moltiplicano per dieci, il parcheggio della Cinta si esaurisce entro le 9:30, la SS131 verso Olbia diventa un serpente di lamiera nel weekend. Per chi viene qui in vacanza, scegliere lo scooter Honda SH 125 non è una preferenza: è il modo più intelligente per non rovinarsi le giornate. Con l'SH parcheggi gratis nelle aree moto dedicate all'ingresso della Cinta, di Lu Impostu e di Cala Brandinchi (la cosiddetta 'Tahiti sarda'), salti la coda al casello di accesso, e in 10 minuti scendi al mercatino serale del centro per una passeggiata. Per chi viaggia in famiglia o cerca più protezione, la Fiat Panda Hybrid è una valida alternativa: entra nei vicoli del centro storico, beve poco, e nel weekend ti porta in 25 minuti all'aeroporto di Olbia o in 40 minuti a Cala Coda Cavallo per le calette più nascoste. Per gli amanti dell'avventura, il quad Yamaha Raptor 700 è il biglietto d'ingresso ai sentieri sterrati del Monte Nieddu, dove cascate e piscine naturali aspettano chi sa raggiungerle. Tutti i veicoli vengono consegnati direttamente al tuo hotel, B&B o residence — basta indicarci l'indirizzo su WhatsApp.",
+    "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+    "imageAlt": "Spiagge di San Teodoro",
+    "badges": [
+      "Parcheggio gratis alle spiagge",
+      "Consumi ridottissimi",
+      "Patente B o AM"
+    ]
+  },
+  "topSpots": [
+    {
+      "name": "Spiaggia La Cinta",
+      "category": "spiaggia",
+      "description": "Cinque chilometri di sabbia dorata con vista sull'isola di Tavolara, separata dallo stagno omonimo dove vivono colonie di fenicotteri rosa. La spiaggia simbolo di San Teodoro, perfetta per famiglie grazie ai fondali bassi. In bassa stagione totalmente libera, in agosto i parcheggi si esauriscono entro le 9:30.",
+      "distance": "5 min dal centro",
+      "cost": "Gratis · parking €5/g",
+      "bestTime": "Mattina presto o tramonto"
+    },
+    {
+      "name": "Cala Brandinchi",
+      "category": "spiaggia",
+      "description": "Soprannominata la \"Tahiti sarda\" per le acque trasparentissime su fondali bassissimi. Sabbia bianca finissima, pini marittimi che fanno ombra naturale, vista isole. È un'area protetta con accessi contingentati in alta stagione (giugno-settembre): prenotazione consigliata online.",
+      "distance": "12 min in auto",
+      "cost": "Accesso €1-3 + parking",
+      "bestTime": "Pomeriggio (sole pieno)"
+    },
+    {
+      "name": "Spiaggia Lu Impostu",
+      "category": "spiaggia",
+      "description": "Lunga lingua di sabbia finissima divisa in due da una piccola laguna poco profonda — il posto migliore della costa per famiglie con bambini piccoli. A pochi passi da Cala Brandinchi, condividono lo stesso parcheggio. Fondali sicuri, acque calme tutto il giorno.",
+      "distance": "12 min in auto",
+      "cost": "Accesso €1-3 + parking",
+      "bestTime": "Tutto il giorno"
+    },
+    {
+      "name": "Mercatino Serale",
+      "category": "evento",
+      "description": "Da fine giugno a settembre, ogni sera dalle 19:00 il centro si anima con bancarelle di artigianato sardo, ceramiche, tessuti, piccoli gioielli e street food locale (seadas, panadas, salumi). Atmosfera vivace e adatta anche alle famiglie. Pedonale, accessibile a piedi.",
+      "distance": "Centro paese",
+      "cost": "Gratis",
+      "bestTime": "Sera (19:00 - 24:00)"
+    },
+    {
+      "name": "Monte Nieddu",
+      "category": "natura",
+      "description": "Area di entroterra montano con cascate, piscine naturali in granito scolpito dall'acqua, sentieri ombrosi. Perfetta per chi cerca refrigerio dal mare in pieno agosto. La pista d'accesso è in parte sterrata: ideale per quad o auto a trazione integrale; con la Panda meglio fermarsi al primo parcheggio.",
+      "distance": "30 min in auto",
+      "cost": "Gratis",
+      "bestTime": "Mattina (acqua più fresca)"
+    }
+  ],
+  "cockpit": {
+    "vehicleName": "Honda SH 125i",
+    "specs": [
+      {
+        "label": "Patente",
+        "value": "B / AM",
+        "icon": "license"
+      },
+      {
+        "label": "Posti",
+        "value": "2",
+        "icon": "seats"
+      },
+      {
+        "label": "Ideale per",
+        "value": "Spiagge & Centro",
+        "icon": "use"
+      },
+      {
+        "label": "Consegna",
+        "value": "Hotel / B&B",
+        "icon": "delivery"
+      }
+    ]
+  },
+  "comparison": {
+    "title": "Quale veicolo per San Teodoro?",
+    "subtitle": "Scooter per le spiagge, Panda per le famiglie, quad per l'entroterra.",
+    "show": [
+      "honda",
+      "panda",
+      "yamaha"
+    ],
+    "recommendation": "<strong class='text-foreground'>In alta stagione lo scooter vince sempre.</strong> Honda SH ti permette di parcheggiare gratis nelle aree moto della Cinta e di Cala Brandinchi (le auto pagano €5/giorno e si esauriscono entro le 9:30). La Fiat Panda è la scelta giusta per famiglie che cercano la flessibilità delle escursioni più lunghe (Capo Coda Cavallo, Tavolara). Il quad Yamaha è dedicato a chi vuole esplorare le cascate e piscine naturali di Monte Nieddu via sterrato."
+  },
+  "trafficTips": [
+    {
+      "icon": "parking",
+      "title": "La Cinta Parking",
+      "text": "Parcheggio a pagamento (€3-5/giorno). In scooter parcheggi gratis nelle aree moto dedicate all'ingresso."
+    },
+    {
+      "icon": "traffic",
+      "title": "SS131 Weekend",
+      "text": "La statale è trafficata sabato e domenica. Parti presto per le spiagge o usa lo scooter."
+    },
+    {
+      "icon": "ztl",
+      "title": "Centro Pedonale",
+      "text": "Il centro di San Teodoro è pedonale la sera. Perfetto per la passeggiata dopo aver parcheggiato lo scooter."
+    },
+    {
+      "icon": "tip",
+      "title": "Verso Golfo Aranci",
+      "text": "Con lo scooter o la <a href='/flotta/fiat-panda' class='text-primary font-medium hover:underline'>Panda</a> raggiungi <a href='/noleggio-auto-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> in 40 minuti lungo una strada panoramica mozzafiato."
+    }
+  ],
+  "nightlife": [
+    {
+      "name": "Ambra Night",
+      "type": "club",
+      "desc": "Il club di riferimento. Dj set e atmosfera elettrica fino alle prime luci dell'alba."
+    },
+    {
+      "name": "Luna Glam Club",
+      "type": "club",
+      "desc": "Eleganza e musica house. Il punto d'incontro della movida giovane."
+    },
+    {
+      "name": "La Tartaruga",
+      "type": "ristorante",
+      "desc": "Cucina sarda autentica nel cuore del paese. I culurgiones sono leggendari."
+    },
+    {
+      "name": "Bar Centrale",
+      "type": "aperitivo",
+      "desc": "Aperitivo in piazza, osservando il passeggio serale. Spritz perfetti."
+    },
+    {
+      "name": "Da Nino al Porto",
+      "type": "ristorante",
+      "desc": "Pesce fresco e vista sul porticciolo. Atmosfera marinara autentica."
+    }
+  ],
+  "trustMarqueeItems": [
+    "La Cinta",
+    "Cala Brandinchi",
+    "Lu Impostu",
+    "Scooter",
+    "Mercatino Serale",
+    "Movida Estiva"
+  ],
+  "faq": [
+    {
+      "q": "Posso parcheggiare lo scooter gratis alla Cinta?",
+      "a": "Sì! Alla Cinta e Brandinchi ci sono aree moto gratuite. Risparmierai rispetto al parcheggio auto e troverai posto anche in piena estate."
+    },
+    {
+      "q": "Consegnate il veicolo al mio hotel a San Teodoro?",
+      "a": "Assolutamente. Consegna VIP al tuo hotel, B&B o residence. Comunicaci l'indirizzo e pensiamo a tutto noi."
+    },
+    {
+      "q": "Serve la patente per lo scooter Honda SH 125?",
+      "a": "Basta la patente B o AM (per gli SH 125). Per l'SH 350 serve la patente A2 o A. Per il <a href='/flotta/yamaha-raptor' class='text-primary font-medium underline'>quad</a> serve la patente B."
+    },
+    {
+      "q": "Quanto dista l'aeroporto di Olbia da San Teodoro?",
+      "a": "Solo 25 minuti via SS125. Consegniamo all'<a href='/noleggio-auto-a-olbia' class='text-primary font-medium underline'>aeroporto di Olbia</a> Costa Smeralda o direttamente al tuo alloggio a San Teodoro, in base a cosa preferisci."
+    },
+    {
+      "q": "Quale strada conviene prendere per Cala Brandinchi?",
+      "a": "Da San Teodoro centro, prendi la SP24 in direzione nord per circa 6 km, poi la deviazione per Brandinchi è ben segnalata. In auto sono 12 minuti, in scooter 8. In alta stagione il parcheggio si esaurisce entro le 9:00 per le auto, mentre l'area moto/scooter ha posti tutto il giorno. Va benissimo anche partire la sera per il bagno al tramonto, quando la spiaggia si svuota."
+    },
+    {
+      "q": "Posso andare in spiaggia direttamente in costume con lo scooter?",
+      "a": "Per legge no — bisogna indossare casco, scarpe chiuse e maglietta durante la guida. Tieni costume e parei nello scooter (sotto la sella entra un casco e una piccola sacca) o usa un baule. Una volta arrivato in spiaggia, ti cambi tranquillamente lì."
+    }
+  ],
+  "closingParagraph": "San Teodoro è il punto perfetto da cui esplorare la costa nord-orientale. Verso nord, in 40 minuti di panoramica costiera raggiungi <a href='/noleggio-auto-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> e le sue calette nascoste, comode con la <a href='/flotta/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda</a>. Verso ovest, l'entroterra di Monte Nieddu nasconde cascate e piscine naturali raggiungibili solo con il quad. Verso sud, in 25 minuti tocchi Budoni e in un'ora la riserva del Capo Comino. Il consiglio dell'esperto: se la tua vacanza è oltre i 5 giorni, alterna due veicoli (es. scooter per i giri brevi e Panda per le escursioni di un'intera giornata) — costa meno di un'auto sola tenuta tutto il tempo, e ti regala libertà reale.",
+  "i18n": {
+    "en": {
+      "name": "San Teodoro",
+      "title": "Car & Scooter Rental in San Teodoro | La Cinta & Brandinchi | GDIS Rent",
+      "description": "Car rental in San Teodoro ✓ Honda SH scooter, Fiat Panda and Yamaha quad ✓ La Cinta beach 5 km, Cala Brandinchi 8 km ✓ Car hire for Tavolara, Punta Molara, the flamingo lagoon ✓ Delivery to your hotel, B&B or residence, 24/7 on WhatsApp.",
+      "heroSubtitle": "Car and scooter rental in San Teodoro: 5 km of white sand at La Cinta, pink flamingos in the lagoon, nightlife at Ambra Night. The right car hire to enjoy it all without queues.",
+      "h1Prefix": "Car Rental in",
+      "spotlight": {
+        "tag": "Urban Agility",
+        "title": "The Scooter Beats San Teodoro Traffic",
+        "description": "From late June to the second week of September, San Teodoro changes face. The cars multiply tenfold, the La Cinta car park fills by 9:30, the SS131 towards Olbia becomes a metal serpent at weekends. For those holidaying here, choosing the Honda SH 125 scooter isn't a preference: it's the smartest way not to ruin your days. With the SH you park free in the dedicated bike areas at the entrance to La Cinta, Lu Impostu and Cala Brandinchi (the so-called 'Sardinian Tahiti'), skip the queue at the access tollbooth, and in 10 minutes drop down to the evening market in the centre for a stroll. For those travelling as a family or wanting more protection, the Fiat Panda Hybrid is a valid alternative: it enters the historic centre alleys, drinks little, and at weekends takes you in 25 minutes to Olbia airport or in 40 minutes to Cala Coda Cavallo for the most hidden coves. For adventure lovers, the Yamaha Raptor 700 quad is the entry ticket to the dirt tracks of Monte Nieddu, where waterfalls and natural pools await those who know how to reach them. All vehicles are delivered directly to your hotel, B&B or residence — just give us the address on WhatsApp.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+        "imageAlt": "Beaches of San Teodoro",
+        "badges": [
+          "Free parking at beaches",
+          "Very low fuel consumption",
+          "B or AM licence"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "La Cinta Beach",
+          "category": "spiaggia",
+          "description": "Five kilometres of golden sand with views of Tavolara island, separated from the namesake lagoon where colonies of pink flamingos live. The symbol beach of San Teodoro, perfect for families thanks to the shallow seabeds. Totally free in low season, in August the car parks fill by 9:30.",
+          "distance": "5 min from the centre",
+          "cost": "Free · parking €5/day",
+          "bestTime": "Early morning or sunset"
+        },
+        {
+          "name": "Cala Brandinchi",
+          "category": "spiaggia",
+          "description": "Nicknamed 'Sardinian Tahiti' for its very transparent waters over very shallow seabeds. Very fine white sand, maritime pines providing natural shade, island view. It's a protected area with limited access in peak season (June-September): online booking advised.",
+          "distance": "12 min by car",
+          "cost": "Access €1-3 + parking",
+          "bestTime": "Afternoon (full sun)"
+        },
+        {
+          "name": "Lu Impostu Beach",
+          "category": "spiaggia",
+          "description": "A long tongue of very fine sand divided in two by a small shallow lagoon — the best place on the coast for families with small children. A few steps from Cala Brandinchi, sharing the same car park. Safe seabeds, calm waters all day.",
+          "distance": "12 min by car",
+          "cost": "Access €1-3 + parking",
+          "bestTime": "All day"
+        },
+        {
+          "name": "Evening Market",
+          "category": "evento",
+          "description": "From late June to September, every evening from 19:00 the centre comes alive with stalls of Sardinian crafts, ceramics, textiles, small jewellery and local street food (seadas, panadas, cured meats). Lively atmosphere, family-friendly. Pedestrian, accessible on foot.",
+          "distance": "Village centre",
+          "cost": "Free",
+          "bestTime": "Evening (19:00 - 24:00)"
+        },
+        {
+          "name": "Monte Nieddu",
+          "category": "natura",
+          "description": "Mountain hinterland area with waterfalls, natural pools in granite sculpted by water, shaded paths. Perfect for those seeking refreshment from the sea in mid-August. The access track is partly unpaved: ideal for quad or all-wheel-drive vehicles; with the Panda better to stop at the first car park.",
+          "distance": "30 min by car",
+          "cost": "Free",
+          "bestTime": "Morning (cooler water)"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Honda SH 125i",
+        "specs": [
+          {
+            "label": "Licence",
+            "value": "B / AM",
+            "icon": "license"
+          },
+          {
+            "label": "Seats",
+            "value": "2",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal for",
+            "value": "Beaches & Centre",
+            "icon": "use"
+          },
+          {
+            "label": "Delivery",
+            "value": "Hotel / B&B",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Which vehicle for San Teodoro?",
+        "subtitle": "Scooter for the beaches, Panda for families, quad for the hinterland.",
+        "recommendation": "<strong class='text-foreground'>In peak season the scooter always wins.</strong> Honda SH lets you park free in the bike areas of La Cinta and Cala Brandinchi (cars pay €5/day and fill by 9:30). The Fiat Panda is the right choice for families seeking flexibility for longer excursions (Capo Coda Cavallo, Tavolara). The Yamaha quad is dedicated to those wanting to explore the waterfalls and natural pools of Monte Nieddu via dirt track."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "La Cinta Parking",
+          "text": "Paid parking (€3-5/day). By scooter you park free in the dedicated bike areas at the entrance."
+        },
+        {
+          "icon": "traffic",
+          "title": "SS131 Weekend",
+          "text": "The state road is busy on Saturday and Sunday. Set off early for the beaches or use the scooter."
+        },
+        {
+          "icon": "ztl",
+          "title": "Pedestrian Centre",
+          "text": "San Teodoro centre is pedestrian in the evening. Perfect for the stroll after parking the scooter."
+        },
+        {
+          "icon": "tip",
+          "title": "Towards Golfo Aranci",
+          "text": "By scooter or <a href='/en/fleet/fiat-panda' class='text-primary font-medium hover:underline'>Panda</a> you reach <a href='/en/car-rental-in-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> in 40 minutes along a breathtaking scenic road."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Ambra Night",
+          "type": "club",
+          "desc": "The reference club. DJ sets and electric atmosphere until the first lights of dawn."
+        },
+        {
+          "name": "Luna Glam Club",
+          "type": "club",
+          "desc": "Elegance and house music. The meeting point of the young nightlife."
+        },
+        {
+          "name": "La Tartaruga",
+          "type": "ristorante",
+          "desc": "Authentic Sardinian cuisine in the heart of the village. The culurgiones are legendary."
+        },
+        {
+          "name": "Bar Centrale",
+          "type": "aperitivo",
+          "desc": "Aperitif in the square, watching the evening promenade. Perfect spritzes."
+        },
+        {
+          "name": "Da Nino al Porto",
+          "type": "ristorante",
+          "desc": "Fresh fish and view of the small harbour. Authentic seafaring atmosphere."
+        }
+      ],
+      "trustMarqueeItems": [
+        "La Cinta",
+        "Cala Brandinchi",
+        "Lu Impostu",
+        "Scooter",
+        "Evening Market",
+        "Summer Nightlife"
+      ],
+      "faq": [
+        {
+          "q": "Can I park the scooter free at La Cinta?",
+          "a": "Yes! At La Cinta and Brandinchi there are free bike areas. You'll save compared to the car park and find a spot even in peak summer."
+        },
+        {
+          "q": "Do you deliver the vehicle to my hotel in San Teodoro?",
+          "a": "Absolutely. VIP delivery to your hotel, B&B or residence. Give us the address and we handle everything."
+        },
+        {
+          "q": "Do I need a licence for the Honda SH 125 scooter?",
+          "a": "A B or AM licence is enough (for the SH 125). For the SH 350 an A2 or A licence is required. For the <a href='/en/fleet/yamaha-raptor' class='text-primary font-medium underline'>quad</a> a B licence is required."
+        },
+        {
+          "q": "How far is Olbia airport from San Teodoro?",
+          "a": "Just 25 minutes via the SS125. We deliver at <a href='/en/car-rental-in-olbia' class='text-primary font-medium underline'>Olbia airport</a> Costa Smeralda or directly to your accommodation in San Teodoro, depending on what you prefer."
+        },
+        {
+          "q": "Which road should I take to Cala Brandinchi?",
+          "a": "From San Teodoro centre, take the SP24 northbound for about 6 km, then the deviation for Brandinchi is well signposted. By car it's 12 minutes, by scooter 8. In peak season parking fills by 9:00 for cars, while the bike/scooter area has spaces all day. It's also great to set off in the evening for a sunset swim, when the beach empties."
+        },
+        {
+          "q": "Can I go directly to the beach in swimwear on the scooter?",
+          "a": "Legally no — you must wear a helmet, closed shoes and t-shirt while riding. Keep swimwear and sarongs in the scooter (under the seat fits a helmet and a small bag) or use a top case. Once at the beach, you change calmly there."
+        }
+      ],
+      "closingParagraph": "San Teodoro is the perfect point from which to explore the north-east coast. To the north, in 40 minutes of coastal scenic road you reach <a href='/en/car-rental-in-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> and its hidden coves, comfortable with the <a href='/en/fleet/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda</a>. To the west, the Monte Nieddu hinterland hides waterfalls and natural pools reachable only by quad. To the south, in 25 minutes you touch Budoni and in an hour the Capo Comino reserve. Expert tip: if your holiday is over 5 days, alternate two vehicles (e.g. scooter for short trips and Panda for full-day excursions) — it costs less than a single car kept the whole time, and gives you real freedom.",
+      "intro": "<strong>Car rental in San Teodoro</strong> revolves around three practical facts: <strong>La Cinta beach 5 km away</strong>, Cala Brandinchi 8 km, and the Marina car park filling up by 9:30 AM in peak season. GDIS Rent delivers directly to your residence or B&amp;B in the village, sparing you the time loss of going back to Olbia. The <a href='/en/fleet/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> scooter is the most requested vehicle for those staying in San Teodoro: free parking in scooter zones, seafront access even when cars are stuck. The <a href='/en/fleet/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> stays perfect for families and for trips to the pink-flamingo lagoon or to <a href='/en/car-rental-in-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> 40 minutes away. <strong>San Teodoro car hire</strong> with transparent rates and 24/7 pickup on <strong>WhatsApp +39 352 045 9150</strong> — summer works better when the vehicle waits for you on schedule, not the other way around."
+    },
+    "de": {
+      "name": "San Teodoro",
+      "title": "Mietwagen & Roller San Teodoro | La Cinta & Brandinchi | GDIS Rent",
+      "description": "Mietwagen San Teodoro ✓ Honda SH Roller, Fiat Panda und Yamaha Quad ✓ Strand La Cinta in 5 km, Cala Brandinchi in 8 km ✓ Autovermietung für Tavolara, Punta Molara, die Flamingo-Lagune ✓ Lieferung an Hotel, B&B oder Residence, 24/7 per WhatsApp.",
+      "heroSubtitle": "Mietwagen und Roller San Teodoro: 5 km weißer Sandstrand La Cinta, rosa Flamingos in der Lagune, Nachtleben im Ambra Night. Die richtige Autovermietung, um alles ohne Warteschlangen zu genießen.",
+      "h1Prefix": "Autovermietung in",
+      "spotlight": {
+        "tag": "Urbane Wendigkeit",
+        "title": "Der Roller schlägt den Verkehr in San Teodoro",
+        "description": "Von Ende Juni bis zur zweiten Septemberwoche ändert San Teodoro sein Gesicht. Die Autos verzehnfachen sich, der Parkplatz an der Cinta füllt sich vor 9:30 Uhr, die SS131 nach Olbia wird am Wochenende zu einer Blechschlange. Für Urlauber hier ist die Wahl des Honda SH 125 Rollers keine Vorliebe: Es ist die klügste Art, sich die Tage nicht zu verderben. Mit dem SH parken Sie kostenlos in den eigens dafür vorgesehenen Motorradzonen am Eingang von La Cinta, Lu Impostu und Cala Brandinchi (das sogenannte 'sardische Tahiti'), Sie überspringen die Schlange am Mautstand und sind in 10 Minuten am abendlichen Markt im Zentrum für einen Spaziergang. Für Familien oder Reisende, die mehr Schutz suchen, ist der Fiat Panda Hybrid eine valide Alternative: Er fährt in die Gassen der Altstadt, verbraucht wenig und bringt Sie am Wochenende in 25 Minuten zum Flughafen Olbia oder in 40 Minuten zur Cala Coda Cavallo zu den verstecktesten Buchten. Für Abenteuerliebhaber ist der Yamaha Raptor 700 Quad das Eintrittsticket zu den Schotterpfaden des Monte Nieddu, wo Wasserfälle und natürliche Pools auf diejenigen warten, die wissen, wie man sie erreicht. Alle Fahrzeuge werden direkt zu Ihrem Hotel, B&B oder Residence geliefert - geben Sie uns einfach die Adresse über WhatsApp.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+        "imageAlt": "Strände von San Teodoro",
+        "badges": [
+          "Kostenloses Parken an den Stränden",
+          "Sehr niedriger Verbrauch",
+          "B- oder AM-Führerschein"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Strand La Cinta",
+          "category": "spiaggia",
+          "description": "Fünf Kilometer goldener Sand mit Blick auf die Insel Tavolara, getrennt durch den gleichnamigen Stagno, in dem Kolonien rosa Flamingos leben. Der Wahrzeichen-Strand von San Teodoro, perfekt für Familien dank der flachen Wassertiefe. In der Nebensaison völlig frei, im August sind die Parkplätze vor 9:30 Uhr voll.",
+          "distance": "5 Min. vom Zentrum",
+          "cost": "Kostenlos · Parken 5 €/Tag",
+          "bestTime": "Früher Morgen oder Sonnenuntergang"
+        },
+        {
+          "name": "Cala Brandinchi",
+          "category": "spiaggia",
+          "description": "Wegen seines sehr klaren Wassers über sehr flachen Meeresböden 'sardisches Tahiti' genannt. Sehr feiner weißer Sand, Pinienbäume für natürlichen Schatten, Inselblick. Es ist ein Schutzgebiet mit kontingentiertem Zugang in der Hochsaison (Juni-September): Online-Buchung empfohlen.",
+          "distance": "12 Min. mit dem Auto",
+          "cost": "Zugang 1-3 € + Parken",
+          "bestTime": "Nachmittag (volle Sonne)"
+        },
+        {
+          "name": "Strand Lu Impostu",
+          "category": "spiaggia",
+          "description": "Lange Zunge sehr feinen Sandes, durch eine kleine flache Lagune in zwei geteilt - der beste Ort der Küste für Familien mit kleinen Kindern. Ein paar Schritte von Cala Brandinchi entfernt, sie teilen sich denselben Parkplatz. Sichere Meeresböden, ruhige Wasser den ganzen Tag.",
+          "distance": "12 Min. mit dem Auto",
+          "cost": "Zugang 1-3 € + Parken",
+          "bestTime": "Ganztägig"
+        },
+        {
+          "name": "Abendmarkt",
+          "category": "evento",
+          "description": "Von Ende Juni bis September belebt sich das Zentrum jeden Abend ab 19:00 Uhr mit Ständen sardischen Handwerks, Keramik, Textilien, kleinem Schmuck und lokalem Streetfood (Seadas, Panadas, Wurstwaren). Lebendige Atmosphäre, auch für Familien geeignet. Fußgängerzone, zu Fuß erreichbar.",
+          "distance": "Ortszentrum",
+          "cost": "Kostenlos",
+          "bestTime": "Abend (19:00 - 24:00)"
+        },
+        {
+          "name": "Monte Nieddu",
+          "category": "natura",
+          "description": "Bergiges Hinterlandgebiet mit Wasserfällen, natürlichen Pools im vom Wasser geformten Granit, schattigen Pfaden. Perfekt für alle, die im Hochsommer Erfrischung abseits des Meeres suchen. Die Zufahrtspiste ist teilweise unbefestigt: ideal für Quad oder Allradfahrzeug; mit dem Panda besser am ersten Parkplatz halten.",
+          "distance": "30 Min. mit dem Auto",
+          "cost": "Kostenlos",
+          "bestTime": "Vormittag (kühleres Wasser)"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Honda SH 125i",
+        "specs": [
+          {
+            "label": "Führerschein",
+            "value": "B / AM",
+            "icon": "license"
+          },
+          {
+            "label": "Sitzplätze",
+            "value": "2",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal für",
+            "value": "Strände & Zentrum",
+            "icon": "use"
+          },
+          {
+            "label": "Lieferung",
+            "value": "Hotel / B&B",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Welches Fahrzeug für San Teodoro?",
+        "subtitle": "Roller für die Strände, Panda für Familien, Quad für das Hinterland.",
+        "recommendation": "<strong class='text-foreground'>In der Hochsaison gewinnt der Roller immer.</strong> Der Honda SH erlaubt Ihnen, kostenlos in den Motorradzonen von La Cinta und Cala Brandinchi zu parken (Autos zahlen 5 €/Tag und sind vor 9:30 Uhr voll). Der Fiat Panda ist die richtige Wahl für Familien, die Flexibilität für längere Ausflüge suchen (Capo Coda Cavallo, Tavolara). Das Yamaha Quad ist Reisenden gewidmet, die die Wasserfälle und natürlichen Pools des Monte Nieddu via Schotterpiste erkunden möchten."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "La Cinta Parking",
+          "text": "Kostenpflichtiger Parkplatz (3-5 €/Tag). Mit dem Roller parken Sie kostenlos in den eigens dafür vorgesehenen Motorradzonen am Eingang."
+        },
+        {
+          "icon": "traffic",
+          "title": "SS131 am Wochenende",
+          "text": "Die Staatsstraße ist samstags und sonntags stark befahren. Brechen Sie früh zu den Stränden auf oder nutzen Sie den Roller."
+        },
+        {
+          "icon": "ztl",
+          "title": "Fußgängerzentrum",
+          "text": "Das Zentrum von San Teodoro ist abends Fußgängerzone. Perfekt für den Spaziergang nach dem Parken des Rollers."
+        },
+        {
+          "icon": "tip",
+          "title": "Richtung Golfo Aranci",
+          "text": "Mit dem Roller oder dem <a href='/de/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Panda</a> erreichen Sie <a href='/de/autovermietung-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> in 40 Minuten entlang einer atemberaubenden Panoramastrecke."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Ambra Night",
+          "type": "club",
+          "desc": "Der Bezugsclub. DJ-Sets und elektrische Atmosphäre bis in die ersten Lichter der Morgendämmerung."
+        },
+        {
+          "name": "Luna Glam Club",
+          "type": "club",
+          "desc": "Eleganz und House-Musik. Der Treffpunkt des jungen Nachtlebens."
+        },
+        {
+          "name": "La Tartaruga",
+          "type": "ristorante",
+          "desc": "Authentische sardische Küche im Herzen des Ortes. Die Culurgiones sind legendär."
+        },
+        {
+          "name": "Bar Centrale",
+          "type": "aperitivo",
+          "desc": "Aperitif auf dem Platz, beim Beobachten des Abendspaziergangs. Perfekte Spritz."
+        },
+        {
+          "name": "Da Nino al Porto",
+          "type": "ristorante",
+          "desc": "Frischer Fisch und Blick auf den kleinen Hafen. Authentische maritime Atmosphäre."
+        }
+      ],
+      "trustMarqueeItems": [
+        "La Cinta",
+        "Cala Brandinchi",
+        "Lu Impostu",
+        "Roller",
+        "Abendmarkt",
+        "Sommerliches Nachtleben"
+      ],
+      "faq": [
+        {
+          "q": "Kann ich den Roller an der Cinta kostenlos parken?",
+          "a": "Ja! An der Cinta und in Brandinchi gibt es kostenlose Motorradzonen. Sie sparen im Vergleich zum Autoparkplatz und finden auch im Hochsommer einen Platz."
+        },
+        {
+          "q": "Liefern Sie das Fahrzeug zu meinem Hotel in San Teodoro?",
+          "a": "Absolut. VIP-Lieferung zu Ihrem Hotel, B&B oder Residence. Geben Sie uns die Adresse, und wir kümmern uns um alles."
+        },
+        {
+          "q": "Brauche ich einen Führerschein für den Honda SH 125 Roller?",
+          "a": "Der B- oder AM-Führerschein reicht (für den SH 125). Für den SH 350 ist der A2- oder A-Führerschein erforderlich. Für das <a href='/de/flotte/yamaha-raptor' class='text-primary font-medium underline'>Quad</a> ist der B-Führerschein erforderlich."
+        },
+        {
+          "q": "Wie weit ist der Flughafen Olbia von San Teodoro entfernt?",
+          "a": "Nur 25 Minuten über die SS125. Wir liefern am <a href='/de/autovermietung-olbia' class='text-primary font-medium underline'>Flughafen Olbia</a> Costa Smeralda oder direkt zu Ihrer Unterkunft in San Teodoro, je nach Ihrer Präferenz."
+        },
+        {
+          "q": "Welche Straße empfiehlt sich für Cala Brandinchi?",
+          "a": "Vom Zentrum von San Teodoro nehmen Sie die SP24 in Richtung Norden für etwa 6 km, dann ist die Abzweigung nach Brandinchi gut ausgeschildert. Mit dem Auto sind es 12 Minuten, mit dem Roller 8. In der Hochsaison ist der Parkplatz vor 9:00 Uhr für Autos voll, während die Motorrad-/Rollerzone den ganzen Tag Plätze hat. Es ist auch sehr gut, abends zum Bad bei Sonnenuntergang aufzubrechen, wenn der Strand sich leert."
+        },
+        {
+          "q": "Kann ich direkt im Badeanzug mit dem Roller an den Strand fahren?",
+          "a": "Gesetzlich nein - während der Fahrt müssen Sie Helm, geschlossene Schuhe und T-Shirt tragen. Bewahren Sie Badeanzug und Pareo im Roller auf (unter den Sitz passen ein Helm und eine kleine Tasche) oder verwenden Sie einen Topcase. Am Strand angekommen, ziehen Sie sich entspannt vor Ort um."
+        }
+      ],
+      "closingParagraph": "San Teodoro ist der perfekte Ausgangspunkt zur Erkundung der nordöstlichen Küste. Im Norden erreichen Sie in 40 Minuten Küstenpanorama <a href='/de/autovermietung-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> und seine versteckten Buchten, bequem mit dem <a href='/de/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda</a>. Im Westen verbirgt das Hinterland des Monte Nieddu Wasserfälle und natürliche Pools, die nur mit dem Quad erreichbar sind. Im Süden berühren Sie in 25 Minuten Budoni und in einer Stunde das Naturschutzgebiet Capo Comino. Der Expertentipp: Wenn Ihr Urlaub länger als 5 Tage dauert, wechseln Sie zwischen zwei Fahrzeugen (z. B. Roller für kurze Fahrten und Panda für ganztägige Ausflüge) - das kostet weniger als ein einziges Auto die ganze Zeit, und schenkt Ihnen echte Freiheit.",
+      "intro": "Ein <strong>Mietwagen in San Teodoro</strong> dreht sich um drei praktische Fakten: <strong>Strand La Cinta in 5 km</strong>, Cala Brandinchi in 8 km und der Marina-Parkplatz, der in der Hochsaison bis 9:30 voll ist. GDIS Rent liefert direkt an Ihr Residence oder B&amp;B im Dorf, ohne Zeitverlust durch Rückfahrt nach Olbia. Der <a href='/de/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> Roller ist das meistgewählte Fahrzeug für Gäste in San Teodoro: kostenloses Parken in Roller-Zonen, Zugang zur Strandpromenade auch wenn Autos im Stau stehen. Der <a href='/de/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> bleibt ideal für Familien und für die Lagune mit rosa Flamingos oder die 40 Minuten nach <a href='/de/autovermietung-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a>. <strong>Autovermietung in San Teodoro</strong> mit transparenten Preisen und Abholung rund um die Uhr per <strong>WhatsApp +39 352 045 9150</strong> — der Sommer funktioniert besser, wenn das Fahrzeug pünktlich auf Sie wartet."
+    },
+    "fr": {
+      "name": "San Teodoro",
+      "title": "Location Voiture & Scooter à San Teodoro | La Cinta & Brandinchi | GDIS Rent",
+      "description": "Location voiture à San Teodoro ✓ Scooter Honda SH, Fiat Panda et quad Yamaha ✓ Plage La Cinta à 5 km, Cala Brandinchi à 8 km ✓ Loueur pour Tavolara, Punta Molara, l'étang des flamants roses ✓ Livraison à l'hôtel, B&B ou résidence, 24h/24 sur WhatsApp.",
+      "heroSubtitle": "Location voiture et scooter à San Teodoro : 5 km de sable blanc à La Cinta, flamants roses dans l'étang, vie nocturne à Ambra Night. Le bon loueur pour tout profiter sans files d'attente.",
+      "h1Prefix": "Location de voiture à",
+      "spotlight": {
+        "tag": "Agilité urbaine",
+        "title": "Le scooter bat le trafic de San Teodoro",
+        "description": "De fin juin à la deuxième semaine de septembre, San Teodoro change de visage. Les voitures se multiplient par dix, le parking de La Cinta se remplit avant 9h30, la SS131 vers Olbia devient un serpent de tôle le week-end. Pour qui vient ici en vacances, choisir le scooter Honda SH 125 n'est pas une préférence : c'est la façon la plus intelligente de ne pas se gâcher les journées. Avec le SH vous vous garez gratuitement dans les zones moto dédiées à l'entrée de La Cinta, de Lu Impostu et de Cala Brandinchi (la fameuse « Tahiti sarde »), vous évitez la file au péage d'accès, et en 10 minutes vous descendez au marché du soir du centre pour une promenade. Pour ceux qui voyagent en famille ou cherchent plus de protection, la Fiat Panda Hybrid est une alternative valable : elle entre dans les ruelles du centre historique, consomme peu, et le week-end vous emmène en 25 minutes à l'aéroport d'Olbia ou en 40 minutes à Cala Coda Cavallo pour les criques les plus cachées. Pour les amateurs d'aventure, le quad Yamaha Raptor 700 est le ticket d'entrée pour les sentiers du Monte Nieddu, où cascades et piscines naturelles attendent ceux qui savent les rejoindre. Tous les véhicules sont livrés directement à votre hôtel, B&B ou résidence — il suffit de nous indiquer l'adresse sur WhatsApp.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-scooter-hondash350-costasmeralda.webp",
+        "imageAlt": "Plages de San Teodoro",
+        "badges": [
+          "Stationnement gratuit aux plages",
+          "Consommation très faible",
+          "Permis B ou AM"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Plage La Cinta",
+          "category": "spiaggia",
+          "description": "Cinq kilomètres de sable doré avec vue sur l'île de Tavolara, séparée par l'étang du même nom où vivent des colonies de flamants roses. La plage symbole de San Teodoro, parfaite pour les familles grâce aux fonds peu profonds. En basse saison totalement libre, en août les parkings se remplissent avant 9h30.",
+          "distance": "5 min du centre",
+          "cost": "Gratuit · parking 5 €/j",
+          "bestTime": "Tôt le matin ou coucher du soleil"
+        },
+        {
+          "name": "Cala Brandinchi",
+          "category": "spiaggia",
+          "description": "Surnommée la « Tahiti sarde » pour ses eaux très transparentes sur des fonds très peu profonds. Sable blanc très fin, pins maritimes pour l'ombre naturelle, vue sur les îles. C'est une zone protégée avec accès contingenté en haute saison (juin-septembre) : réservation conseillée en ligne.",
+          "distance": "12 min en voiture",
+          "cost": "Accès 1-3 € + parking",
+          "bestTime": "Après-midi (plein soleil)"
+        },
+        {
+          "name": "Plage Lu Impostu",
+          "category": "spiaggia",
+          "description": "Longue langue de sable très fin divisée en deux par une petite lagune peu profonde — l'endroit le plus adapté aux familles avec petits enfants sur la côte. À deux pas de Cala Brandinchi, elles partagent le même parking. Fonds sûrs, eaux calmes toute la journée.",
+          "distance": "12 min en voiture",
+          "cost": "Accès 1-3 € + parking",
+          "bestTime": "Toute la journée"
+        },
+        {
+          "name": "Marché du soir",
+          "category": "evento",
+          "description": "De fin juin à septembre, chaque soir à partir de 19h00 le centre s'anime de stands d'artisanat sarde, céramiques, tissus, petits bijoux et street food locale (seadas, panadas, charcuteries). Atmosphère vivante adaptée aux familles. Piétonnier, accessible à pied.",
+          "distance": "Centre du village",
+          "cost": "Gratuit",
+          "bestTime": "Soir (19h00 - 24h00)"
+        },
+        {
+          "name": "Monte Nieddu",
+          "category": "natura",
+          "description": "Zone d'arrière-pays montagneux avec cascades, piscines naturelles dans le granit sculpté par l'eau, sentiers ombragés. Parfaite pour qui cherche la fraîcheur loin de la mer en plein août. La piste d'accès est en partie non goudronnée : idéale pour quad ou voiture à transmission intégrale ; avec la Panda mieux vaut s'arrêter au premier parking.",
+          "distance": "30 min en voiture",
+          "cost": "Gratuit",
+          "bestTime": "Matin (eau plus fraîche)"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Honda SH 125i",
+        "specs": [
+          {
+            "label": "Permis",
+            "value": "B / AM",
+            "icon": "license"
+          },
+          {
+            "label": "Places",
+            "value": "2",
+            "icon": "seats"
+          },
+          {
+            "label": "Idéal pour",
+            "value": "Plages et centre",
+            "icon": "use"
+          },
+          {
+            "label": "Livraison",
+            "value": "Hôtel / B&B",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Quel véhicule pour San Teodoro ?",
+        "subtitle": "Scooter pour les plages, Panda pour les familles, quad pour l'arrière-pays.",
+        "recommendation": "<strong class='text-foreground'>En haute saison le scooter gagne toujours.</strong> Honda SH vous permet de vous garer gratuitement dans les zones moto de La Cinta et de Cala Brandinchi (les voitures paient 5 €/jour et les places sont prises avant 9h30). La Fiat Panda est le bon choix pour les familles qui cherchent la flexibilité d'excursions plus longues (Capo Coda Cavallo, Tavolara). Le quad Yamaha est dédié à ceux qui veulent explorer les cascades et piscines naturelles du Monte Nieddu via piste."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Parking La Cinta",
+          "text": "Parking payant (3-5 €/jour). En scooter vous vous garez gratuitement dans les zones moto dédiées à l'entrée."
+        },
+        {
+          "icon": "traffic",
+          "title": "SS131 week-end",
+          "text": "La nationale est chargée le samedi et le dimanche. Partez tôt pour les plages ou utilisez le scooter."
+        },
+        {
+          "icon": "ztl",
+          "title": "Centre piétonnier",
+          "text": "Le centre de San Teodoro est piétonnier le soir. Parfait pour la promenade après avoir garé le scooter."
+        },
+        {
+          "icon": "tip",
+          "title": "Vers Golfo Aranci",
+          "text": "Avec le scooter ou la <a href='/fr/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Panda</a> vous rejoignez <a href='/fr/location-voiture-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> en 40 minutes le long d'une route panoramique à couper le souffle."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Ambra Night",
+          "type": "club",
+          "desc": "Le club de référence. DJ sets et atmosphère électrique jusqu'aux premières lueurs de l'aube."
+        },
+        {
+          "name": "Luna Glam Club",
+          "type": "club",
+          "desc": "Élégance et musique house. Le point de rencontre de la nuit jeune."
+        },
+        {
+          "name": "La Tartaruga",
+          "type": "ristorante",
+          "desc": "Cuisine sarde authentique au cœur du village. Les culurgiones sont légendaires."
+        },
+        {
+          "name": "Bar Centrale",
+          "type": "aperitivo",
+          "desc": "Apéritif sur la place, à observer la promenade du soir. Spritz parfaits."
+        },
+        {
+          "name": "Da Nino al Porto",
+          "type": "ristorante",
+          "desc": "Poisson frais et vue sur le petit port. Atmosphère marinière authentique."
+        }
+      ],
+      "trustMarqueeItems": [
+        "La Cinta",
+        "Cala Brandinchi",
+        "Lu Impostu",
+        "Scooter",
+        "Marché du soir",
+        "Vie nocturne estivale"
+      ],
+      "faq": [
+        {
+          "q": "Puis-je garer le scooter gratuitement à La Cinta ?",
+          "a": "Oui ! À La Cinta et Brandinchi il y a des zones moto gratuites. Vous économiserez par rapport au parking auto et trouverez une place même en plein été."
+        },
+        {
+          "q": "Livrez-vous le véhicule à mon hôtel à San Teodoro ?",
+          "a": "Absolument. Livraison VIP à votre hôtel, B&B ou résidence. Communiquez-nous l'adresse et nous nous occupons de tout."
+        },
+        {
+          "q": "Faut-il un permis pour le scooter Honda SH 125 ?",
+          "a": "Le permis B ou AM suffit (pour les SH 125). Pour le SH 350, il faut le permis A2 ou A. Pour le <a href='/fr/flotte/yamaha-raptor' class='text-primary font-medium underline'>quad</a>, il faut le permis B."
+        },
+        {
+          "q": "À quelle distance se trouve l'aéroport d'Olbia de San Teodoro ?",
+          "a": "Seulement 25 minutes via la SS125. Nous livrons à l'<a href='/fr/location-voiture-a-olbia' class='text-primary font-medium underline'>aéroport d'Olbia</a> Costa Smeralda ou directement à votre hébergement à San Teodoro, selon ce que vous préférez."
+        },
+        {
+          "q": "Quelle route prendre pour Cala Brandinchi ?",
+          "a": "Depuis le centre de San Teodoro, prenez la SP24 en direction nord sur environ 6 km, puis la déviation pour Brandinchi est bien indiquée. En voiture, il faut 12 minutes, en scooter 8. En haute saison, le parking se remplit avant 9h00 pour les voitures, tandis que la zone moto/scooter a des places toute la journée. Il est aussi très bien de partir le soir pour la baignade au coucher du soleil, quand la plage se vide."
+        },
+        {
+          "q": "Puis-je aller à la plage directement en maillot avec le scooter ?",
+          "a": "Légalement non — il faut porter casque, chaussures fermées et tee-shirt pendant la conduite. Mettez maillot et paréos dans le scooter (sous la selle entrent un casque et un petit sac) ou utilisez un top-case. Une fois arrivé à la plage, vous vous changez tranquillement sur place."
+        }
+      ],
+      "closingParagraph": "San Teodoro est le point parfait depuis lequel explorer la côte nord-est. Vers le nord, en 40 minutes de panoramique côtière vous atteignez <a href='/fr/location-voiture-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> et ses criques cachées, faciles avec la <a href='/fr/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda</a>. Vers l'ouest, l'arrière-pays du Monte Nieddu cache cascades et piscines naturelles uniquement accessibles en quad. Vers le sud, en 25 minutes vous touchez Budoni et en une heure la réserve du Capo Comino. Le conseil de l'expert : si vos vacances dépassent 5 jours, alternez deux véhicules (par ex. scooter pour les trajets brefs et Panda pour les excursions d'une journée entière) — cela coûte moins qu'une voiture seule pendant tout le séjour, et vous offre une vraie liberté.",
+      "intro": "La <strong>location voiture à San Teodoro</strong> tourne autour de trois données pratiques : <strong>La Cinta à 5 km</strong>, Cala Brandinchi à 8 km, et le parking de la Marina saturé avant 9h30 en haute saison. GDIS Rent livre directement à votre résidence ou B&amp;B au village, sans perte de temps en retour vers Olbia. Le scooter <a href='/fr/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> est le véhicule le plus demandé pour qui reste à San Teodoro : stationnement gratuit en zone scooter, accès au front de mer même quand les voitures sont bloquées. La <a href='/fr/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> reste parfaite pour les familles et pour l'étang aux flamants roses ou pour <a href='/fr/location-voiture-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> à 40 minutes. <strong>Loueur à San Teodoro</strong> avec tarifs transparents et retrait 24h/24 sur <strong>WhatsApp +39 352 045 9150</strong> — l'été fonctionne mieux quand le véhicule vous attend à l'heure, et pas l'inverse."
+    }
+  },
+  "intro": "Il <strong>noleggio auto a San Teodoro</strong> ruota intorno a tre dati pratici: <strong>La Cinta a 5 km</strong>, Cala Brandinchi a 8 km e il parcheggio della Marina che si esaurisce entro le 9:30 in piena stagione. GDIS Rent consegna direttamente al tuo residence o B&amp;B nel borgo, evitando la perdita di tempo nel ritorno a Olbia. Lo scooter <a href='/flotta/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> è il veicolo più richiesto per chi resta a San Teodoro: parcheggio gratis nelle aree moto, accesso al lungomare anche quando l'auto resta bloccata. La <a href='/flotta/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> resta perfetta per famiglie e per gli spostamenti verso lo stagno dei fenicotteri rosa o verso <a href='/noleggio-auto-a-golfo-aranci' class='text-primary font-medium hover:underline'>Golfo Aranci</a> a 40 minuti. <strong>Autonoleggio a San Teodoro</strong> con tariffe trasparenti e ritiro h24 su <strong>WhatsApp +39 352 045 9150</strong> — l'estate funziona meglio quando il veicolo ti aspetta sull'orario, non viceversa."
+}

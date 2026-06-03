@@ -1,0 +1,691 @@
+{
+  "slug": "golfo-aranci",
+  "name": "Golfo Aranci",
+  "title": "Noleggio Auto a Golfo Aranci | Porto Sardinia/Corsica Ferries | GDIS Rent",
+  "description": "Noleggio auto a Golfo Aranci con consegna allo sbarco del traghetto Sardinia/Corsica Ferries ✓ Autonoleggio Fiat Panda, scooter Honda e quad Yamaha ✓ Cala Moresca, Spiaggia Bianca, Capo Figari raggiungibili in 10 minuti ✓ WhatsApp H24.",
+  "canonical": "/noleggio-auto-a-golfo-aranci",
+  "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/golfo-aranci/gdisrent-noleggio-golfo-aranci.webp",
+  "heroSubtitle": "Noleggio auto a Golfo Aranci: l'unico porto della Sardinia/Corsica Ferries che ti fa sbarcare a 5 minuti da Cala Moresca. Sali sull'autonoleggio e in 15 minuti hai i piedi nell'acqua.",
+  "areaServed": [
+    {
+      "type": "City",
+      "name": "Golfo Aranci"
+    },
+    {
+      "type": "Place",
+      "name": "Porto di Golfo Aranci"
+    }
+  ],
+  "customSections": [],
+  "spotlight": {
+    "tag": "Flessibilità Totale",
+    "title": "La Panda Ti Aspetta allo Sbarco del Traghetto",
+    "description": "Golfo Aranci ha un'identità precisa: è il porto sardo della Sardinia/Corsica Ferries — collegamento Livorno e Civitavecchia ad alta frequenza, sbarchi puntuali, terminal compatto e bene organizzato. Per chi arriva via mare, è la scelta più razionale: meno caotico di Olbia Isola Bianca, più vicino alle spiagge nord-orientali, con la Costa Smeralda raggiungibile in 25 minuti. Il nostro servizio più richiesto qui parla a questa esigenza: ti aspettiamo direttamente allo sbarco — anche se il traghetto arriva con un'ora di ritardo (succede regolarmente in alta stagione) — con la tua Fiat Panda Hybrid pronta, climatizzata, pieno fatto, posto bagagli vuoto. Niente desk, niente code, niente firme dopo 8 ore di nave: bastano 5 minuti di formalità all'aperto e parti. La Panda è il veicolo perfetto per la tipologia di turismo di Golfo Aranci: famiglie con bambini, coppie senior che vengono per Capo Figari e i delfini, viaggiatori indipendenti che vogliono esplorare la costa nord-orientale senza spendere una fortuna in carburante. Per chi sta più giorni e vuole muoversi anche per le calette del lungomare (Spiaggia Bianca, Terza Spiaggia), lo scooter Honda SH è l'aggiunta perfetta: parcheggia ovunque sul lungomare e al rientro lo lasci in hotel. E al ritorno, riconsegna direttamente al porto: sali sul traghetto e chiudi così la vacanza, senza altri pensieri.",
+    "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
+    "imageAlt": "Porto di Golfo Aranci",
+    "badges": [
+      "Consegna al traghetto",
+      "Climatizzatore",
+      "Consumi ridotti"
+    ]
+  },
+  "topSpots": [
+    {
+      "name": "Cala Moresca",
+      "category": "spiaggia",
+      "description": "Piccola baia protetta ai piedi di Capo Figari, raggiungibile a piedi (15 min) o in macchina dal centro. Acque cristalline su fondali rocciosi: una delle migliori zone per lo snorkeling della costa nord-orientale. Servizi minimi, atmosfera selvaggia. Parcheggio limitato, arriva entro le 9:30 in alta stagione.",
+      "distance": "10 min in auto",
+      "cost": "Gratis · parking limitato",
+      "bestTime": "Mattina (mare calmo)"
+    },
+    {
+      "name": "Spiaggia Bianca",
+      "category": "spiaggia",
+      "description": "Una delle spiagge più belle della costa nord-orientale: sabbia candida, acque turchesi e fondali bassi adatti alle famiglie. Lunga circa 800 metri, attrezzata con noleggio ombrelloni e bar. Tramonti spettacolari per chi rimane fino a sera. Accesso a piedi dal parcheggio principale.",
+      "distance": "12 min in auto",
+      "cost": "Gratis · parking €5/g",
+      "bestTime": "Tutto il giorno"
+    },
+    {
+      "name": "Capo Figari",
+      "category": "panorama",
+      "description": "Promontorio selvaggio dell'Area Marina Protetta di Tavolara. Sentiero di trekking di 1h30 che porta alla storica stazione radio di Guglielmo Marconi (1932), da cui partirono i primi esperimenti di ponte radio a corte distanze. Vista a 360° sull'arcipelago. Adatto a tutti, ma serve buone scarpe.",
+      "distance": "15 min + 1h30 trek",
+      "cost": "Gratis",
+      "bestTime": "Mattina (caldo gestibile)"
+    },
+    {
+      "name": "Avvistamento Delfini",
+      "category": "escursione",
+      "description": "Il Golfo di Olbia e l'area di Tavolara ospitano una popolazione stabile di tursiopi (delfini comuni). Escursioni in barca dalla Marina di Golfo Aranci durano 2-3 ore con avvistamenti garantiti nella maggior parte dei casi. Includono spesso una sosta bagno in calette accessibili solo via mare.",
+      "distance": "Marina centro",
+      "cost": "€40-60 a persona",
+      "bestTime": "Mattina (8:00-11:00)"
+    }
+  ],
+  "cockpit": {
+    "vehicleName": "Fiat Panda Hybrid",
+    "specs": [
+      {
+        "label": "Patente",
+        "value": "B",
+        "icon": "license"
+      },
+      {
+        "label": "Posti",
+        "value": "4-5",
+        "icon": "seats"
+      },
+      {
+        "label": "Ideale per",
+        "value": "Famiglie & Turismo",
+        "icon": "use"
+      },
+      {
+        "label": "Consegna",
+        "value": "Terminal Traghetti",
+        "icon": "delivery"
+      }
+    ]
+  },
+  "comparison": {
+    "title": "Quale veicolo per Golfo Aranci?",
+    "subtitle": "Panda allo sbarco del traghetto, scooter per le spiagge del lungomare.",
+    "show": [
+      "panda",
+      "honda"
+    ],
+    "recommendation": "<strong class='text-foreground'>Sbarchi e parti senza pensieri.</strong> La Fiat Panda Hybrid è la scelta naturale per chi arriva con la Sardinia/Corsica Ferries: bagagli al seguito, climatizzatore già acceso, pronta sotto la nave. Lo scooter Honda SH è perfetto per chi sta più giorni e vuole muoversi agilmente sul lungomare e tra le calette di Cala Moresca e Spiaggia Bianca, parcheggiando ovunque senza pagare i parcheggi del centro."
+  },
+  "trafficTips": [
+    {
+      "icon": "parking",
+      "title": "Terminal Traghetti",
+      "text": "Il parcheggio vicino al porto si riempie durante gli sbarchi. Ritira la Panda e parti subito."
+    },
+    {
+      "icon": "traffic",
+      "title": "Sbarco Weekend",
+      "text": "Venerdì e domenica il traffico aumenta. Con la Panda prendi le vie laterali ed eviti la coda."
+    },
+    {
+      "icon": "ztl",
+      "title": "Lungomare",
+      "text": "Il lungomare è pedonale la sera in estate. Parcheggia nelle vie parallele — la Panda entra ovunque."
+    },
+    {
+      "icon": "tip",
+      "title": "Verso Porto Rotondo",
+      "text": "In 20 minuti di panoramica raggiungi <a href='/noleggio-auto-a-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> e le sue spiagge esclusive."
+    }
+  ],
+  "nightlife": [
+    {
+      "name": "Terza Spiaggia",
+      "type": "ristorante",
+      "desc": "Pesce con i piedi nella sabbia. Frittura di paranza leggendaria e aragosta alla griglia."
+    },
+    {
+      "name": "Il Vecchio Porto",
+      "type": "ristorante",
+      "desc": "Trattoria marinara autentica. Fregola con arselle da non perdere."
+    },
+    {
+      "name": "Bar del Porto",
+      "type": "aperitivo",
+      "desc": "L'aperitivo dei pescatori. Prosecco e ostriche guardando i traghetti."
+    },
+    {
+      "name": "Lido Blu",
+      "type": "lounge",
+      "desc": "Beach bar con musica al tramonto. Cocktail tropicali e piedi nell'acqua."
+    },
+    {
+      "name": "Capo Figari",
+      "type": "ristorante",
+      "desc": "Cucina di mare raffinata con terrazza panoramica sul golfo."
+    }
+  ],
+  "trustMarqueeItems": [
+    "Porto Traghetti",
+    "Cala Moresca",
+    "Spiaggia Bianca",
+    "Capo Figari",
+    "Delfini",
+    "Sardinia Ferries"
+  ],
+  "faq": [
+    {
+      "q": "Consegnate la Panda direttamente al terminal traghetti?",
+      "a": "Sì! È il nostro servizio più richiesto a Golfo Aranci. Ti aspettiamo allo sbarco con il veicolo pronto. Comunicaci l'orario del traghetto e pensiamo a tutto."
+    },
+    {
+      "q": "Quanto costa il parcheggio vicino al porto?",
+      "a": "Circa €2/ora in estate. Con la Panda trovi facilmente posto nelle vie laterali gratuite. In scooter parcheggi gratis ovunque."
+    },
+    {
+      "q": "Posso esplorare la costa nord con la Fiat Panda?",
+      "a": "Assolutamente! Da Golfo Aranci raggiungi <a href='/noleggio-auto-a-porto-rotondo' class='text-primary font-medium underline'>Porto Rotondo</a> in 20 minuti e <a href='/noleggio-auto-a-san-teodoro' class='text-primary font-medium underline'>San Teodoro</a> in 40. La Panda è perfetta per le strade costiere."
+    },
+    {
+      "q": "Noleggiate anche scooter e quad a Golfo Aranci?",
+      "a": "Certo! <a href='/flotta/honda-sh' class='text-primary font-medium underline'>Honda SH</a> per il centro e le spiagge, <a href='/flotta/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor</a> per l'entroterra. Consegna VIP inclusa."
+    },
+    {
+      "q": "Cosa succede se il mio traghetto arriva in ritardo?",
+      "a": "Niente — è la norma in alta stagione e siamo organizzati per gestirlo. Monitoriamo gli orari ufficiali della tua compagnia (Sardinia Ferries, Corsica Ferries, Moby) e adattiamo l'orario di consegna automaticamente. Non paghi nulla in più per ritardi nave fino a 4 ore. Tu pensa solo a sbarcare con calma."
+    },
+    {
+      "q": "C'è la possibilità di lasciare il veicolo direttamente al porto al ritorno?",
+      "a": "Sì, è il flusso più comodo per chi rientra in continente in traghetto. Fai check-out dall'hotel, guidi fino al porto, parcheggi nell'area indicata e ci consegni le chiavi (anche fuori orario, lasciandole in cassaforte). Ti facciamo trovare il modulo di riconsegna pre-compilato."
+    }
+  ],
+  "closingParagraph": "Golfo Aranci è il punto da cui si parte ma anche dove si torna. A sud, in 20 minuti di Panda, raggiungi la Marina di <a href='/noleggio-auto-a-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> e le cale nascoste di Punta Volpe. A ovest, in 30 minuti, sei nel cuore di <a href='/noleggio-auto-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> per shopping e Marina di lusso. A nord, l'isola di Tavolara è raggiungibile via barca con escursioni giornaliere dal porto di Golfo Aranci stesso, e i delfini avvistabili dal promontorio di Capo Figari sono un'esperienza che pochissimi turisti italiani conoscono. La nostra raccomandazione: dedica almeno una mezza giornata al sentiero di Capo Figari fino alla stazione radio di Marconi — vista mozzafiato sull'arcipelago, con la Panda parcheggiata al punto di partenza del trekking.",
+  "i18n": {
+    "en": {
+      "name": "Golfo Aranci",
+      "title": "Car Rental in Golfo Aranci | Sardinia/Corsica Ferries Port | GDIS Rent",
+      "description": "Car rental in Golfo Aranci with vehicle delivery on Sardinia/Corsica Ferries disembarkation ✓ Fiat Panda, Honda scooter and Yamaha quad ✓ Cala Moresca, Spiaggia Bianca, Capo Figari within 10 minutes ✓ Car hire 24/7 on WhatsApp.",
+      "heroSubtitle": "Car rental in Golfo Aranci: the only Sardinia/Corsica Ferries port that lands you 5 minutes from Cala Moresca. Hop into the car hire and in 15 minutes your feet are in the water.",
+      "h1Prefix": "Car Rental in",
+      "spotlight": {
+        "tag": "Total Flexibility",
+        "title": "The Panda Awaits You at the Ferry Disembarkation",
+        "description": "Golfo Aranci has a precise identity: it's the Sardinian port of Sardinia/Corsica Ferries — high-frequency Livorno and Civitavecchia connections, punctual disembarkations, compact and well-organised terminal. For those arriving by sea, it's the most rational choice: less chaotic than Olbia Isola Bianca, closer to the north-eastern beaches, with Costa Smeralda reachable in 25 minutes. Our most requested service here addresses this need: we wait for you right at the disembarkation — even if the ferry arrives an hour late (it happens regularly in peak season) — with your Fiat Panda Hybrid ready, air-conditioned, full tank, empty boot. No desks, no queues, no signing after 8 hours at sea: just 5 minutes of paperwork in the open air and you're off. The Panda is the perfect vehicle for the Golfo Aranci tourism profile: families with children, senior couples coming for Capo Figari and the dolphins, independent travellers wanting to explore the north-east coast without spending a fortune on fuel. For those staying longer who want to move along the seafront coves (Spiaggia Bianca, Terza Spiaggia), the Honda SH scooter is the perfect addition: park anywhere on the seafront and leave it at the hotel on return. And on the return journey, hand it back directly at the port: board the ferry and close the holiday like that, no further worries.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
+        "imageAlt": "Golfo Aranci port",
+        "badges": [
+          "Ferry delivery",
+          "Air conditioning",
+          "Low fuel consumption"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Cala Moresca",
+          "category": "spiaggia",
+          "description": "Small protected bay at the foot of Capo Figari, reachable on foot (15 min) or by car from the centre. Crystalline waters over rocky seabeds: one of the best snorkelling areas on the north-east coast. Minimal services, wild atmosphere. Limited parking, arrive by 9:30 in peak season.",
+          "distance": "10 min by car",
+          "cost": "Free · limited parking",
+          "bestTime": "Morning (calm sea)"
+        },
+        {
+          "name": "Spiaggia Bianca",
+          "category": "spiaggia",
+          "description": "One of the most beautiful beaches on the north-east coast: pure white sand, turquoise waters and shallow seabeds suitable for families. About 800 metres long, equipped with parasol hire and bar. Spectacular sunsets for those staying until evening. Walking access from the main car park.",
+          "distance": "12 min by car",
+          "cost": "Free · parking €5/day",
+          "bestTime": "All day"
+        },
+        {
+          "name": "Capo Figari",
+          "category": "panorama",
+          "description": "Wild headland of the Tavolara Marine Protected Area. 1h30 trekking path that leads to Guglielmo Marconi's historic radio station (1932), from which the first short-range radio link experiments departed. 360° view over the archipelago. Suitable for everyone, but good shoes are needed.",
+          "distance": "15 min + 1h30 trek",
+          "cost": "Free",
+          "bestTime": "Morning (manageable heat)"
+        },
+        {
+          "name": "Dolphin Watching",
+          "category": "escursione",
+          "description": "The Gulf of Olbia and the Tavolara area host a stable population of bottlenose dolphins. Boat excursions from Golfo Aranci Marina last 2-3 hours with sightings guaranteed in most cases. They often include a swim stop in coves accessible only by sea.",
+          "distance": "Marina centre",
+          "cost": "€40-60 per person",
+          "bestTime": "Morning (8:00-11:00)"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Fiat Panda Hybrid",
+        "specs": [
+          {
+            "label": "Licence",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Seats",
+            "value": "4-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal for",
+            "value": "Families & Tourism",
+            "icon": "use"
+          },
+          {
+            "label": "Delivery",
+            "value": "Ferry Terminal",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Which vehicle for Golfo Aranci?",
+        "subtitle": "Panda at the ferry disembarkation, scooter for the seafront beaches.",
+        "recommendation": "<strong class='text-foreground'>Disembark and go without worries.</strong> The Fiat Panda Hybrid is the natural choice for those arriving with Sardinia/Corsica Ferries: luggage in tow, air conditioning already on, ready under the ship. The Honda SH scooter is perfect for those staying longer who want to move agilely along the seafront and between the coves of Cala Moresca and Spiaggia Bianca, parking anywhere without paying for the central car parks."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Ferry Terminal",
+          "text": "The car park near the port fills up during disembarkations. Pick up the Panda and set off straight away."
+        },
+        {
+          "icon": "traffic",
+          "title": "Weekend Disembarkation",
+          "text": "Friday and Sunday traffic increases. With the Panda take side streets and avoid the queue."
+        },
+        {
+          "icon": "ztl",
+          "title": "Seafront",
+          "text": "The seafront is pedestrian in the evening in summer. Park in the parallel side streets — the Panda fits anywhere."
+        },
+        {
+          "icon": "tip",
+          "title": "Towards Porto Rotondo",
+          "text": "In 20 minutes of scenic road you reach <a href='/en/car-rental-in-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> and its exclusive beaches."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Terza Spiaggia",
+          "type": "ristorante",
+          "desc": "Fish with your feet in the sand. Legendary mixed fried fish and grilled lobster."
+        },
+        {
+          "name": "Il Vecchio Porto",
+          "type": "ristorante",
+          "desc": "Authentic seafood trattoria. Fregola with clams not to be missed."
+        },
+        {
+          "name": "Bar del Porto",
+          "type": "aperitivo",
+          "desc": "The fishermen's aperitif. Prosecco and oysters watching the ferries."
+        },
+        {
+          "name": "Lido Blu",
+          "type": "lounge",
+          "desc": "Beach bar with sunset music. Tropical cocktails and feet in the water."
+        },
+        {
+          "name": "Capo Figari",
+          "type": "ristorante",
+          "desc": "Refined seafood cuisine with panoramic terrace over the gulf."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Ferry Port",
+        "Cala Moresca",
+        "Spiaggia Bianca",
+        "Capo Figari",
+        "Dolphins",
+        "Sardinia Ferries"
+      ],
+      "faq": [
+        {
+          "q": "Do you deliver the Panda directly to the ferry terminal?",
+          "a": "Yes! It's our most requested service in Golfo Aranci. We wait for you at the disembarkation with the vehicle ready. Tell us the ferry time and we handle everything."
+        },
+        {
+          "q": "How much is parking near the port?",
+          "a": "About €2/hour in summer. With the Panda you easily find space in the free side streets. By scooter you park free anywhere."
+        },
+        {
+          "q": "Can I explore the north coast with the Fiat Panda?",
+          "a": "Absolutely! From Golfo Aranci you reach <a href='/en/car-rental-in-porto-rotondo' class='text-primary font-medium underline'>Porto Rotondo</a> in 20 minutes and <a href='/en/car-rental-in-san-teodoro' class='text-primary font-medium underline'>San Teodoro</a> in 40. The Panda is perfect for coastal roads."
+        },
+        {
+          "q": "Do you also rent scooters and quads in Golfo Aranci?",
+          "a": "Of course! <a href='/en/fleet/honda-sh' class='text-primary font-medium underline'>Honda SH</a> for the centre and beaches, <a href='/en/fleet/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor</a> for the inland. VIP delivery included."
+        },
+        {
+          "q": "What happens if my ferry arrives late?",
+          "a": "Nothing — it's the norm in peak season and we're set up to handle it. We monitor the official schedules of your company (Sardinia Ferries, Corsica Ferries, Moby) and adjust the delivery time automatically. You pay nothing extra for ferry delays up to 4 hours. Just disembark calmly."
+        },
+        {
+          "q": "Can I drop the vehicle off directly at the port on return?",
+          "a": "Yes, it's the most convenient flow for those returning to the mainland by ferry. Check out of the hotel, drive to the port, park in the indicated area and hand us the keys (even out of hours, leaving them in the keysafe). We have the return form pre-filled for you."
+        }
+      ],
+      "closingParagraph": "Golfo Aranci is the point you depart from but also where you return. To the south, in 20 minutes by Panda, you reach the Marina of <a href='/en/car-rental-in-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> and the hidden coves of Punta Volpe. To the west, in 30 minutes, you're in the heart of <a href='/en/car-rental-in-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> for shopping and the luxury Marina. To the north, the island of Tavolara is reachable by boat with daily excursions from Golfo Aranci port itself, and the dolphins visible from the Capo Figari headland are an experience few Italian tourists know. Our recommendation: dedicate at least half a day to the Capo Figari trail up to the Marconi radio station — breathtaking view over the archipelago, with the Panda parked at the trek starting point.",
+      "intro": "<strong>Car rental in Golfo Aranci</strong> has a structural advantage: those landing with Sardinia/Corsica Ferries from Livorno or Civitavecchia are 5 minutes from Cala Moresca and 10 minutes from Capo Figari, without having to drive through Olbia. GDIS Rent delivers directly under the ship or at the terminal — your vehicle is there at actual disembarkation time, ferry delays included. The <a href='/en/fleet/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> is the natural option for families with heavy luggage, while the <a href='/en/fleet/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> scooter is perfect for moving between Spiaggia Bianca and Cala Sassari avoiding full car parks in peak season. Distance to <a href='/en/car-rental-in-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a>: 15 minutes; to <a href='/en/car-rental-in-olbia' class='text-primary font-medium hover:underline'>Olbia</a> centre: 20. <strong>Golfo Aranci car hire</strong> with transparent rates, 24/7 on WhatsApp — the port where your holiday starts and ends without dead time."
+    },
+    "de": {
+      "name": "Golfo Aranci",
+      "title": "Mietwagen Golfo Aranci | Hafen Sardinia/Corsica Ferries | GDIS Rent",
+      "description": "Mietwagen Golfo Aranci mit Fahrzeugübergabe direkt am Anleger der Sardinia/Corsica Ferries ✓ Fiat Panda, Honda Roller und Yamaha Quad ✓ Cala Moresca, Spiaggia Bianca, Capo Figari in 10 Minuten erreichbar ✓ Autovermietung 24/7 per WhatsApp.",
+      "heroSubtitle": "Mietwagen Golfo Aranci: der einzige Hafen der Sardinia/Corsica Ferries, der Sie 5 Minuten von Cala Moresca aussteigen lässt. Steigen Sie in den Mietwagen und in 15 Minuten stehen Sie im Wasser.",
+      "h1Prefix": "Autovermietung in",
+      "spotlight": {
+        "tag": "Totale Flexibilität",
+        "title": "Der Panda erwartet Sie bei der Anlandung der Fähre",
+        "description": "Golfo Aranci hat eine klare Identität: Es ist der sardische Hafen der Sardinia/Corsica Ferries - hochfrequente Verbindungen aus Livorno und Civitavecchia, pünktliche Anlandungen, kompaktes und gut organisiertes Terminal. Für Reisende, die auf dem Seeweg ankommen, ist es die rationalste Wahl: weniger chaotisch als Olbia Isola Bianca, näher an den nordöstlichen Stränden, mit der Costa Smeralda in 25 Minuten erreichbar. Unser hier am häufigsten nachgefragter Service entspricht diesem Bedürfnis: Wir warten direkt bei der Anlandung auf Sie - auch wenn die Fähre eine Stunde verspätet ankommt (was in der Hochsaison regelmäßig vorkommt) - mit Ihrem Fiat Panda Hybrid bereit, klimatisiert, vollgetankt, leerem Kofferraum. Keine Schalter, keine Schlangen, keine Unterschriften nach 8 Stunden auf See: Nur 5 Minuten Formalitäten im Freien und Sie fahren los. Der Panda ist das perfekte Fahrzeug für die Tourismusart von Golfo Aranci: Familien mit Kindern, Seniorenpaare, die wegen Capo Figari und der Delfine kommen, unabhängige Reisende, die die nordöstliche Küste erkunden möchten, ohne ein Vermögen für Kraftstoff auszugeben. Für längere Aufenthalte und Bewegung entlang der Küstenbuchten (Spiaggia Bianca, Terza Spiaggia) ist der Honda SH Roller die perfekte Ergänzung: Er parkt überall an der Strandpromenade und kommt bei der Rückkehr ins Hotel. Und auf der Rückfahrt: Rückgabe direkt am Hafen, einsteigen in die Fähre und damit der Urlaub abgeschlossen, ohne weitere Sorgen.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
+        "imageAlt": "Hafen von Golfo Aranci",
+        "badges": [
+          "Lieferung an der Fähre",
+          "Klimaanlage",
+          "Niedriger Verbrauch"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Cala Moresca",
+          "category": "spiaggia",
+          "description": "Kleine geschützte Bucht am Fuße des Capo Figari, zu Fuß (15 Min.) oder mit dem Auto vom Zentrum aus erreichbar. Kristallklares Wasser über felsigen Meeresböden: eines der besten Schnorchelgebiete der Nordostküste. Minimale Dienste, wilde Atmosphäre. Begrenzte Parkplätze, in der Hochsaison vor 9:30 Uhr ankommen.",
+          "distance": "10 Min. mit dem Auto",
+          "cost": "Kostenlos · begrenzte Parkplätze",
+          "bestTime": "Vormittag (ruhiges Meer)"
+        },
+        {
+          "name": "Spiaggia Bianca",
+          "category": "spiaggia",
+          "description": "Einer der schönsten Strände der Nordostküste: weißer Sand, türkisfarbenes Wasser und flache Meeresböden, familienfreundlich. Etwa 800 Meter lang, ausgestattet mit Sonnenschirmverleih und Bar. Spektakuläre Sonnenuntergänge für alle, die bis zum Abend bleiben. Zugang zu Fuß vom Hauptparkplatz.",
+          "distance": "12 Min. mit dem Auto",
+          "cost": "Kostenlos · Parkplatz 5 €/Tag",
+          "bestTime": "Ganztägig"
+        },
+        {
+          "name": "Capo Figari",
+          "category": "panorama",
+          "description": "Wilde Landzunge des Meeresschutzgebiets Tavolara. 1h30 Trekkingweg, der zur historischen Funkstation von Guglielmo Marconi (1932) führt, von der die ersten Kurzstrecken-Funkbrückenexperimente ausgingen. 360°-Blick über den Archipel. Für alle geeignet, aber gute Schuhe sind nötig.",
+          "distance": "15 Min. + 1h30 Trekking",
+          "cost": "Kostenlos",
+          "bestTime": "Vormittag (erträgliche Hitze)"
+        },
+        {
+          "name": "Delfinbeobachtung",
+          "category": "escursione",
+          "description": "Der Golf von Olbia und das Tavolara-Gebiet beherbergen eine stabile Population von Großen Tümmlern. Bootsausflüge von der Marina Golfo Aranci dauern 2-3 Stunden mit garantierten Sichtungen in den meisten Fällen. Sie umfassen oft einen Badestopp in nur vom Meer aus zugänglichen Buchten.",
+          "distance": "Marina-Zentrum",
+          "cost": "40-60 € pro Person",
+          "bestTime": "Vormittag (8:00-11:00)"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Fiat Panda Hybrid",
+        "specs": [
+          {
+            "label": "Führerschein",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Sitzplätze",
+            "value": "4-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal für",
+            "value": "Familien & Tourismus",
+            "icon": "use"
+          },
+          {
+            "label": "Lieferung",
+            "value": "Fährterminal",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Welches Fahrzeug für Golfo Aranci?",
+        "subtitle": "Panda bei der Anlandung der Fähre, Roller für die Strände entlang der Promenade.",
+        "recommendation": "<strong class='text-foreground'>Anlanden und sorgenfrei losfahren.</strong> Der Fiat Panda Hybrid ist die natürliche Wahl für alle, die mit Sardinia/Corsica Ferries ankommen: Gepäck dabei, Klimaanlage bereits an, bereit unter dem Schiff. Der Honda SH Roller ist perfekt für längere Aufenthalte, um sich wendig entlang der Strandpromenade und zwischen den Buchten von Cala Moresca und Spiaggia Bianca zu bewegen, mit Parken überall ohne Gebühren der Innenstadtparkplätze."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Fährterminal",
+          "text": "Der Parkplatz nahe dem Hafen füllt sich bei Anlandungen. Holen Sie den Panda ab und fahren Sie sofort los."
+        },
+        {
+          "icon": "traffic",
+          "title": "Anlandung am Wochenende",
+          "text": "Freitag und Sonntag nimmt der Verkehr zu. Mit dem Panda nehmen Sie Nebenstraßen und vermeiden den Stau."
+        },
+        {
+          "icon": "ztl",
+          "title": "Strandpromenade",
+          "text": "Die Strandpromenade ist abends im Sommer Fußgängerzone. Parken Sie in den Parallelstraßen - der Panda passt überall hinein."
+        },
+        {
+          "icon": "tip",
+          "title": "Richtung Porto Rotondo",
+          "text": "In 20 Minuten Panoramastrecke erreichen Sie <a href='/de/autovermietung-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> und seine exklusiven Strände."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Terza Spiaggia",
+          "type": "ristorante",
+          "desc": "Fisch mit den Füßen im Sand. Legendäre Frittura di Paranza und gegrillter Hummer."
+        },
+        {
+          "name": "Il Vecchio Porto",
+          "type": "ristorante",
+          "desc": "Authentische Fisch-Trattoria. Fregola mit Venusmuscheln nicht zu verpassen."
+        },
+        {
+          "name": "Bar del Porto",
+          "type": "aperitivo",
+          "desc": "Der Aperitif der Fischer. Prosecco und Austern beim Beobachten der Fähren."
+        },
+        {
+          "name": "Lido Blu",
+          "type": "lounge",
+          "desc": "Beachbar mit Sonnenuntergangsmusik. Tropische Cocktails und Füße im Wasser."
+        },
+        {
+          "name": "Capo Figari",
+          "type": "ristorante",
+          "desc": "Raffinierte Fischküche mit Panoramaterrasse über dem Golf."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Fährhafen",
+        "Cala Moresca",
+        "Spiaggia Bianca",
+        "Capo Figari",
+        "Delfine",
+        "Sardinia Ferries"
+      ],
+      "faq": [
+        {
+          "q": "Liefern Sie den Panda direkt zum Fährterminal?",
+          "a": "Ja! Es ist unser meistgefragter Service in Golfo Aranci. Wir warten bei der Anlandung mit dem fahrbereiten Fahrzeug auf Sie. Teilen Sie uns die Fährzeit mit, wir kümmern uns um alles."
+        },
+        {
+          "q": "Wie viel kostet das Parken in Hafennähe?",
+          "a": "Etwa 2 €/Stunde im Sommer. Mit dem Panda finden Sie leicht Platz in den kostenlosen Nebenstraßen. Mit dem Roller parken Sie überall kostenlos."
+        },
+        {
+          "q": "Kann ich die Nordküste mit dem Fiat Panda erkunden?",
+          "a": "Absolut! Von Golfo Aranci erreichen Sie <a href='/de/autovermietung-porto-rotondo' class='text-primary font-medium underline'>Porto Rotondo</a> in 20 Minuten und <a href='/de/autovermietung-san-teodoro' class='text-primary font-medium underline'>San Teodoro</a> in 40. Der Panda ist perfekt für Küstenstraßen."
+        },
+        {
+          "q": "Vermieten Sie auch Roller und Quads in Golfo Aranci?",
+          "a": "Selbstverständlich! <a href='/de/flotte/honda-sh' class='text-primary font-medium underline'>Honda SH</a> für Zentrum und Strände, <a href='/de/flotte/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor</a> für das Hinterland. VIP-Lieferung inklusive."
+        },
+        {
+          "q": "Was passiert, wenn meine Fähre verspätet ankommt?",
+          "a": "Nichts - das ist die Norm in der Hochsaison und wir sind dafür eingerichtet. Wir überwachen die offiziellen Zeiten Ihrer Gesellschaft (Sardinia Ferries, Corsica Ferries, Moby) und passen die Lieferzeit automatisch an. Sie zahlen nichts extra für Fährverspätungen bis zu 4 Stunden. Sie können in Ruhe anlanden."
+        },
+        {
+          "q": "Kann ich das Fahrzeug bei der Rückkehr direkt am Hafen abgeben?",
+          "a": "Ja, es ist der bequemste Ablauf für alle, die mit der Fähre aufs Festland zurückkehren. Checken Sie aus dem Hotel aus, fahren Sie zum Hafen, parken Sie im angegebenen Bereich und übergeben Sie uns die Schlüssel (auch außerhalb der Geschäftszeiten, indem Sie sie im Schlüsseltresor lassen). Wir lassen das Rückgabeformular vorausgefüllt bereitstellen."
+        }
+      ],
+      "closingParagraph": "Golfo Aranci ist der Punkt, von dem man aufbricht, aber auch zurückkehrt. Im Süden, in 20 Minuten mit dem Panda, erreichen Sie die Marina von <a href='/de/autovermietung-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> und die versteckten Buchten von Punta Volpe. Im Westen, in 30 Minuten, sind Sie im Herzen von <a href='/de/autovermietung-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> für Shopping und die Luxusmarina. Im Norden ist die Insel Tavolara per Boot mit täglichen Ausflügen vom Hafen Golfo Aranci aus erreichbar, und die von der Landzunge Capo Figari aus sichtbaren Delfine sind ein Erlebnis, das nur wenige italienische Touristen kennen. Unsere Empfehlung: Widmen Sie mindestens einen halben Tag dem Capo-Figari-Pfad bis zur Marconi-Funkstation - atemberaubender Blick über den Archipel, mit dem Panda am Ausgangspunkt der Wanderung geparkt.",
+      "intro": "Ein <strong>Mietwagen in Golfo Aranci</strong> hat einen strukturellen Vorteil: Wer mit Sardinia/Corsica Ferries aus Livorno oder Civitavecchia anlandet, ist 5 Minuten von Cala Moresca und 10 Minuten von Capo Figari entfernt — ohne Olbia durchfahren zu müssen. GDIS Rent liefert direkt unter dem Schiff oder am Terminal — Ihr Fahrzeug ist zur tatsächlichen Ankunftszeit da, Fährverspätungen inklusive. Der <a href='/de/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> ist die natürliche Option für Familien mit schwerem Gepäck, während der <a href='/de/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> Roller perfekt ist, um zwischen Spiaggia Bianca und Cala Sassari ohne volle Parkplätze in der Hochsaison zu wechseln. Distanz nach <a href='/de/autovermietung-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a>: 15 Minuten; nach <a href='/de/autovermietung-olbia' class='text-primary font-medium hover:underline'>Olbia</a> Zentrum: 20. <strong>Autovermietung in Golfo Aranci</strong> mit transparenten Preisen, 24/7 per WhatsApp — der Hafen, wo Ihr Urlaub ohne Leerzeit beginnt und endet."
+    },
+    "fr": {
+      "name": "Golfo Aranci",
+      "title": "Location Voiture à Golfo Aranci | Port Sardinia/Corsica Ferries | GDIS Rent",
+      "description": "Location voiture à Golfo Aranci avec livraison au débarquement du ferry Sardinia/Corsica Ferries ✓ Fiat Panda, scooter Honda et quad Yamaha ✓ Cala Moresca, Spiaggia Bianca, Capo Figari accessibles en 10 minutes ✓ Loueur 24h/24 sur WhatsApp.",
+      "heroSubtitle": "Location voiture à Golfo Aranci : le seul port des Sardinia/Corsica Ferries qui vous débarque à 5 minutes de Cala Moresca. Montez dans la voiture de location et en 15 minutes vous avez les pieds dans l'eau.",
+      "h1Prefix": "Location de voiture à",
+      "spotlight": {
+        "tag": "Flexibilité totale",
+        "title": "La Panda vous attend au débarquement du ferry",
+        "description": "Golfo Aranci a une identité précise : c'est le port sarde de la Sardinia/Corsica Ferries — liaisons à haute fréquence avec Livourne et Civitavecchia, débarquements ponctuels, terminal compact et bien organisé. Pour qui arrive par la mer, c'est le choix le plus rationnel : moins chaotique qu'Olbia Isola Bianca, plus proche des plages du nord-est, avec la Costa Smeralda accessible en 25 minutes. Notre service le plus demandé ici répond à ce besoin : nous vous attendons directement au débarquement — même si le ferry arrive avec une heure de retard (cela arrive régulièrement en haute saison) — avec votre Fiat Panda Hybrid prête, climatisée, plein effectué, coffre vide. Pas de comptoir, pas de file, pas de signatures après 8 heures de bateau : il suffit de 5 minutes de formalités en plein air et vous partez. La Panda est le véhicule parfait pour le profil touristique de Golfo Aranci : familles avec enfants, couples seniors qui viennent pour Capo Figari et les dauphins, voyageurs indépendants qui veulent explorer la côte nord-est sans dépenser une fortune en carburant. Pour ceux qui restent plus longtemps et veulent aussi se déplacer pour les criques du front de mer (Spiaggia Bianca, Terza Spiaggia), le scooter Honda SH est l'ajout parfait : il se gare partout sur le front de mer et au retour vous le laissez à l'hôtel. Et au retour, restitution directement au port : vous montez sur le ferry et clôturez ainsi les vacances, sans autres soucis.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-fiatpandablu-noleggiocostasmeralda.webp",
+        "imageAlt": "Port de Golfo Aranci",
+        "badges": [
+          "Livraison au ferry",
+          "Climatisation",
+          "Consommation réduite"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Cala Moresca",
+          "category": "spiaggia",
+          "description": "Petite baie protégée au pied de Capo Figari, accessible à pied (15 min) ou en voiture depuis le centre. Eaux cristallines sur fonds rocheux : l'une des meilleures zones de snorkeling de la côte nord-est. Services minimaux, atmosphère sauvage. Stationnement limité, arrivez avant 9h30 en haute saison.",
+          "distance": "10 min en voiture",
+          "cost": "Gratuit · parking limité",
+          "bestTime": "Matin (mer calme)"
+        },
+        {
+          "name": "Spiaggia Bianca",
+          "category": "spiaggia",
+          "description": "L'une des plus belles plages de la côte nord-est : sable blanc, eaux turquoise et fonds peu profonds adaptés aux familles. Environ 800 mètres de long, équipée de location de parasols et bar. Couchers de soleil spectaculaires pour qui reste jusqu'au soir. Accès à pied depuis le parking principal.",
+          "distance": "12 min en voiture",
+          "cost": "Gratuit · parking 5 €/j",
+          "bestTime": "Toute la journée"
+        },
+        {
+          "name": "Capo Figari",
+          "category": "panorama",
+          "description": "Promontoire sauvage de l'Aire Marine Protégée de Tavolara. Sentier de trekking de 1h30 qui mène à la station radio historique de Guglielmo Marconi (1932), d'où sont partis les premiers essais de pont radio à courte distance. Vue à 360° sur l'archipel. Adapté à tous, mais de bonnes chaussures sont nécessaires.",
+          "distance": "15 min + 1h30 trek",
+          "cost": "Gratuit",
+          "bestTime": "Matin (chaleur gérable)"
+        },
+        {
+          "name": "Observation des dauphins",
+          "category": "escursione",
+          "description": "Le Golfe d'Olbia et la zone de Tavolara abritent une population stable de grands dauphins. Les excursions en bateau depuis la Marina de Golfo Aranci durent 2-3 heures avec des observations garanties dans la plupart des cas. Elles incluent souvent un arrêt baignade dans des criques accessibles uniquement par la mer.",
+          "distance": "Centre Marina",
+          "cost": "40-60 € par personne",
+          "bestTime": "Matin (8h00-11h00)"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Fiat Panda Hybrid",
+        "specs": [
+          {
+            "label": "Permis",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Places",
+            "value": "4-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Idéal pour",
+            "value": "Familles et tourisme",
+            "icon": "use"
+          },
+          {
+            "label": "Livraison",
+            "value": "Terminal Ferries",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Quel véhicule pour Golfo Aranci ?",
+        "subtitle": "Panda au débarquement du ferry, scooter pour les plages du front de mer.",
+        "recommendation": "<strong class='text-foreground'>Débarquez et partez sans soucis.</strong> La Fiat Panda Hybrid est le choix naturel pour qui arrive avec Sardinia/Corsica Ferries : bagages avec vous, climatisation déjà allumée, prête sous le navire. Le scooter Honda SH est parfait pour qui reste plus longtemps et veut se déplacer agilement sur le front de mer et entre les criques de Cala Moresca et Spiaggia Bianca, en se garant partout sans payer les parkings du centre."
+      },
+      "trafficTips": [
+        {
+          "icon": "parking",
+          "title": "Terminal Ferries",
+          "text": "Le parking proche du port se remplit pendant les débarquements. Récupérez la Panda et partez immédiatement."
+        },
+        {
+          "icon": "traffic",
+          "title": "Débarquement week-end",
+          "text": "Vendredi et dimanche le trafic augmente. Avec la Panda prenez les voies latérales et évitez la file."
+        },
+        {
+          "icon": "ztl",
+          "title": "Front de mer",
+          "text": "Le front de mer est piétonnier le soir en été. Garez-vous dans les rues parallèles — la Panda entre partout."
+        },
+        {
+          "icon": "tip",
+          "title": "Vers Porto Rotondo",
+          "text": "En 20 minutes de route panoramique vous rejoignez <a href='/fr/location-voiture-a-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> et ses plages exclusives."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Terza Spiaggia",
+          "type": "ristorante",
+          "desc": "Poisson les pieds dans le sable. Friture de petits poissons légendaire et homard grillé."
+        },
+        {
+          "name": "Il Vecchio Porto",
+          "type": "ristorante",
+          "desc": "Trattoria marinière authentique. Fregola aux palourdes à ne pas manquer."
+        },
+        {
+          "name": "Bar del Porto",
+          "type": "aperitivo",
+          "desc": "L'apéritif des pêcheurs. Prosecco et huîtres en regardant les ferries."
+        },
+        {
+          "name": "Lido Blu",
+          "type": "lounge",
+          "desc": "Bar de plage avec musique au coucher du soleil. Cocktails tropicaux et pieds dans l'eau."
+        },
+        {
+          "name": "Capo Figari",
+          "type": "ristorante",
+          "desc": "Cuisine de la mer raffinée avec terrasse panoramique sur le golfe."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Port Ferries",
+        "Cala Moresca",
+        "Spiaggia Bianca",
+        "Capo Figari",
+        "Dauphins",
+        "Sardinia Ferries"
+      ],
+      "faq": [
+        {
+          "q": "Livrez-vous la Panda directement au terminal ferries ?",
+          "a": "Oui ! C'est notre service le plus demandé à Golfo Aranci. Nous vous attendons au débarquement avec le véhicule prêt. Communiquez-nous l'heure du ferry et nous nous occupons de tout."
+        },
+        {
+          "q": "Combien coûte le stationnement près du port ?",
+          "a": "Environ 2 €/heure en été. Avec la Panda vous trouvez facilement une place dans les rues latérales gratuites. En scooter vous vous garez gratuitement partout."
+        },
+        {
+          "q": "Puis-je explorer la côte nord avec la Fiat Panda ?",
+          "a": "Absolument ! Depuis Golfo Aranci vous rejoignez <a href='/fr/location-voiture-a-porto-rotondo' class='text-primary font-medium underline'>Porto Rotondo</a> en 20 minutes et <a href='/fr/location-voiture-a-san-teodoro' class='text-primary font-medium underline'>San Teodoro</a> en 40. La Panda est parfaite pour les routes côtières."
+        },
+        {
+          "q": "Louez-vous aussi des scooters et quads à Golfo Aranci ?",
+          "a": "Bien sûr ! <a href='/fr/flotte/honda-sh' class='text-primary font-medium underline'>Honda SH</a> pour le centre et les plages, <a href='/fr/flotte/yamaha-raptor' class='text-primary font-medium underline'>Yamaha Raptor</a> pour l'arrière-pays. Livraison VIP incluse."
+        },
+        {
+          "q": "Que se passe-t-il si mon ferry arrive en retard ?",
+          "a": "Rien — c'est la norme en haute saison et nous sommes organisés pour gérer cela. Nous surveillons les horaires officiels de votre compagnie (Sardinia Ferries, Corsica Ferries, Moby) et adaptons l'horaire de livraison automatiquement. Vous ne payez rien de plus pour les retards de ferry jusqu'à 4 heures. Pensez seulement à débarquer tranquillement."
+        },
+        {
+          "q": "Est-il possible de laisser le véhicule directement au port au retour ?",
+          "a": "Oui, c'est le flux le plus pratique pour qui rentre sur le continent en ferry. Faites le check-out de l'hôtel, conduisez jusqu'au port, garez-vous dans la zone indiquée et remettez-nous les clés (même en dehors des heures, en les laissant dans le coffre à clés). Nous vous laissons trouver le formulaire de restitution pré-rempli."
+        }
+      ],
+      "closingParagraph": "Golfo Aranci est le point d'où l'on part mais aussi où l'on revient. Au sud, en 20 minutes en Panda, vous atteignez la Marina de <a href='/fr/location-voiture-a-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> et les criques cachées de Punta Volpe. À l'ouest, en 30 minutes, vous êtes au cœur de <a href='/fr/location-voiture-a-porto-cervo' class='text-primary font-medium hover:underline'>Porto Cervo</a> pour le shopping et la Marina de luxe. Au nord, l'île de Tavolara est accessible par bateau avec des excursions journalières depuis le port de Golfo Aranci même, et les dauphins observables depuis le promontoire de Capo Figari sont une expérience que peu de touristes italiens connaissent. Notre recommandation : consacrez au moins une demi-journée au sentier de Capo Figari jusqu'à la station radio Marconi — vue à couper le souffle sur l'archipel, avec la Panda garée au point de départ du trek.",
+      "intro": "La <strong>location voiture à Golfo Aranci</strong> a un avantage structurel : qui débarque avec Sardinia/Corsica Ferries depuis Livourne ou Civitavecchia se trouve à 5 minutes de Cala Moresca et à 10 minutes de Capo Figari, sans devoir passer par Olbia. GDIS Rent livre directement sous le bateau ou au terminal — votre véhicule est là à l'heure effective du débarquement, retards de ferry inclus. La <a href='/fr/flotte/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> est l'option naturelle pour les familles avec bagages lourds, tandis que le scooter <a href='/fr/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> est parfait pour se déplacer entre Spiaggia Bianca et Cala Sassari en évitant les parkings pleins en haute saison. Distance vers <a href='/fr/location-voiture-a-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a> : 15 minutes ; vers <a href='/fr/location-voiture-a-olbia' class='text-primary font-medium hover:underline'>Olbia</a> centre : 20. <strong>Loueur à Golfo Aranci</strong> avec tarifs transparents, 24h/24 sur WhatsApp — le port où vos vacances commencent et finissent sans temps mort."
+    }
+  },
+  "intro": "Il <strong>noleggio auto a Golfo Aranci</strong> ha un vantaggio strutturale: chi sbarca con Sardinia/Corsica Ferries da Livorno o Civitavecchia si trova a 5 minuti da Cala Moresca e a 10 minuti da Capo Figari, senza dover passare da Olbia. GDIS Rent consegna direttamente sotto la nave o al terminal — il tuo veicolo è già lì all'orario effettivo di sbarco, ritardi del traghetto inclusi. La <a href='/flotta/fiat-panda' class='text-primary font-medium hover:underline'>Fiat Panda Hybrid</a> è l'opzione naturale per famiglie con bagagli pesanti, mentre lo scooter <a href='/flotta/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> è perfetto per chi vuole muoversi tra Spiaggia Bianca e Cala Sassari evitando i parcheggi pieni in alta stagione. Distanza verso <a href='/noleggio-auto-a-porto-rotondo' class='text-primary font-medium hover:underline'>Porto Rotondo</a>: 15 minuti; verso <a href='/noleggio-auto-a-olbia' class='text-primary font-medium hover:underline'>Olbia</a> centro: 20. <strong>Autonoleggio a Golfo Aranci</strong> trasparente, h24 su WhatsApp — il porto da cui inizi e finisci la vacanza senza tempi morti."
+}

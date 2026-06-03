@@ -1,0 +1,164 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/de" },
+  { name: "Olbia", url: "/de/autovermietung-olbia" },
+  { name: "Hafen Isola Bianca", url: "/de/autovermietung-hafen-olbia" },
+];
+
+const routes = [
+  { from: "Civitavecchia", duration: "5h - 8h", company: "Tirrenia, GNV, Grimaldi", note: "Tag- und Nachtfahrten, hohe Frequenz" },
+  { from: "Livorno", duration: "8h - 11h", company: "Moby, Grimaldi", note: "Nachtfahrt, ideal mit eigenem Auto" },
+  { from: "Genua", duration: "10h - 13h", company: "Tirrenia, Moby, GNV", note: "Nachtfahrt, Abfahrt am Abend" },
+  { from: "Piombino", duration: "5h - 6h", company: "Moby, Grimaldi", note: "Sommersaison, tagsüber" },
+  { from: "Nizza (FR)", duration: "12h - 14h", company: "Corsica/Sardinia Ferries", note: "Sommerlich, optionaler Stopp Bastia" },
+  { from: "Marseille (FR)", duration: "12h - 18h", company: "La Méridionale", note: "Saisonal, geringere Frequenz" },
+];
+
+const steps = [
+  { t: "T-30 Min — Sichtung", d: "Das Schiff fährt in den Golf von Olbia ein. Wir verfolgen die AIS-Position in Echtzeit und positionieren uns am Vorplatz Isola Bianca, bevor die Ausschiffung beginnt." },
+  { t: "T-0 — Anlegen", d: "Das Schiff legt an. Die Ausschiffung der Fußpassagiere beginnt 10-15 Minuten nach dem Anlegen; die Ausschiffung der Fahrzeuge an Bord kann 30-60 Minuten dauern." },
+  { t: "T+15 Min — Verlassen des Terminals", d: "Verlassen Sie das Passagierterminal (Schilder «Ausgang Passagiere»). Sie finden uns auf dem gegenüberliegenden Vorplatz mit personalisiertem GDIS-Schild." },
+  { t: "T+25 Min — Einweisung und losfahren", d: "Rundum-Fotos des Fahrzeugs, Dokumente werden persönlich von unserem Mitarbeiter geregelt, Schlüssel in der Hand. Sie sind binnen weniger Minuten auf der SS125, in Richtung Olbia Zentrum oder Costa Smeralda." },
+];
+
+const faqs = [
+  { q: "Darf ich den Mietwagen auf eine Fähre nach Korsika mitnehmen?", a: "Ja, jedoch ist eine vor der Abfahrt ausgestellte <strong>schriftliche Genehmigung</strong> des Vermieters (Cross-Border-Permit) erforderlich. Kontaktieren Sie uns mindestens 48 Stunden vorher mit den Fährdaten: Wir stellen das Dokument und eine Kopie des Fahrzeugscheins bereit. Es können Versicherungsaufschläge für die Deckung in französischem Hoheitsgebiet anfallen." },
+  { q: "Hat der Hafen Olbia mehrere Terminals? Wo finde ich Sie genau?", a: "Der Haupthafen ist <strong>Isola Bianca</strong>, an dem Tirrenia, Moby, GNV, Grimaldi und die Schnellfähren anlegen. Es gibt auch den alten Industriehafen, der jedoch nicht für Passagiere genutzt wird. Wir warten auf dem Vorplatz vor dem Terminal Isola Bianca, im Bereich für autorisierte Shuttles und Transfers." },
+  { q: "Was ändert sich, ob ich mit eigenem Auto oder ohne ankomme?", a: "Wenn Sie mit eigenem Auto ankommen, brauchen Sie schlicht nichts zu mieten. Viele Reisende kommen jedoch als Fußpassagier nach Sardinien (günstiger) und mieten vor Ort: In diesem Fall treffen wir uns am Ausgang des Passagierterminals, gleich wie bei Reisenden mit Auto. Sie sparen das Fährticket und schonen den eigenen Wagen." },
+  { q: "Nachtfähren kommen sehr früh an: Sind Sie bei Tagesanbruch im Einsatz?", a: "Ja. Die Ausschiffung aus Livorno und Genua liegt typisch zwischen 06:00 und 07:30 Uhr: das ist eines unserer aktivsten Zeitfenster. Kaffee bieten wir noch nicht an, aber den vollen Tank schon." },
+  { q: "Was, wenn die Fähre wegen schlechten Wetters ausfällt?", a: "Das passiert 2-3 Mal im Jahr, vor allem zu Saisonbeginn oder -ende. Bei einer Annullierung benachrichtigen Sie uns bitte, sobald Sie die Bestätigung der Reederei haben: Wir verschieben die Übergabe ohne Strafgebühren auf das tatsächliche Ankunftsdatum. Liegt Ihr neues Datum nach Ende der gebuchten Mietzeit, erstatten wir anteilig zurück." },
+  { q: "Kann ich mein Gepäck im Fahrzeug lassen, während ich ins Zentrum von Olbia gehe?", a: "Ja, jedoch auf eigenes Risiko: Wir empfehlen, Wertsachen nicht sichtbar liegen zu lassen. Der Hafen ist videoüberwacht und im Allgemeinen sicher, doch derselbe gesunde Menschenverstand wie in jedem Parkhaus gilt. Diebstahlversicherung mit Selbstbehalt ist inbegriffen." },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/de/autovermietung-hafen-olbia#localbusiness",
+  description: "Autovermietung am Hafen Olbia Isola Bianca: Fährrouten, Dauer, Ausschiffungsabläufe und Lieferung direkt am Terminal.",
+  areaServed: [
+    { "@type": "Place", name: "Hafen Olbia Isola Bianca" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Autovermietung Hafen Olbia Isola Bianca",
+  description:
+    "Lieferservice für Mietfahrzeuge direkt am Terminal Isola Bianca des Hafens Olbia. AIS-Verfolgung der Fähren, Wartung an der Passagier-Ausschiffung.",
+  serviceType: "Port Car Rental Delivery",
+  url: "/de/autovermietung-hafen-olbia",
+  areaServed: [
+    { "@type": "Place", name: "Hafen Olbia Isola Bianca" },
+    { "@type": "City", name: "Olbia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
+const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp";
+---
+
+<BaseLayout
+  title="Mietwagen Hafen Olbia Isola Bianca | Autovermietung Fähre | GDIS Rent"
+  description="Mietwagen am Hafen Olbia Isola Bianca mit Übergabe direkt an der Anlegestelle ✓ Anlandung mit Moby, Tirrenia, GNV oder Grimaldi aus Civitavecchia, Livorno, Genua, Piombino, Nizza ✓ Autovermietung Fiat Panda, Mercedes, Honda-Roller, Yamaha-Quad ✓ Bis zu 4 Stunden Wartezeit inklusive, 24/7 per WhatsApp."
+  canonical="/de/autovermietung-hafen-olbia"
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+  ogImage={heroImage}
+  i18nAlternates={{ it: "/noleggio-auto-porto-olbia", en: "/en/car-rental-olbia-port", fr: "/fr/location-voiture-port-olbia" }}
+>
+  <LocalitaHero
+    name="Hafen Isola Bianca"
+    h1Prefix="Autovermietung"
+    h1Accent="Hafen Olbia"
+    subtitle="Anlandung aus Civitavecchia, Livorno, Genua, Piombino oder Nizza? Wir erwarten Sie am Terminal Isola Bianca mit dem fertigen Fahrzeug."
+    bgImage={heroImage}
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Fährrouten nach Olbia</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Woher Sie am Hafen Isola Bianca ankommen
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-8" data-reveal>
+        Im Sommer wickelt der Hafen Olbia rund <strong>3 Millionen Passagiere</strong> ab, mit Spitzenwerten von 70.000 pro Tag zwischen Ende Juli und Ende August. Die operativen Reedereien sind Tirrenia (Grimaldi), Moby Lines, GNV (Grandi Navi Veloci), Grimaldi Lines und — auf der französischen Strecke — Corsica Sardinia Ferries und La Méridionale. Die Überfahrtdauer variiert stark: Wir geben hier die realen Durchschnittszeiten an, nicht die nominalen Werte aus der Broschüre.
+      </p>
+
+      <div class="space-y-3">
+        {routes.map((r) => (
+          <div class="rounded-xl border border-border bg-card p-5 grid sm:grid-cols-[1fr_auto_2fr_3fr] gap-3 sm:gap-6 items-center">
+            <div class="font-semibold">{r.from}</div>
+            <div class="px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-semibold inline-block">{r.duration}</div>
+            <div class="text-sm text-muted-foreground">{r.company}</div>
+            <div class="text-xs text-muted-foreground/80">{r.note}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-muted/20">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4"/><path d="M12 2v3"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Ausschiffung Schritt für Schritt</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-8" data-reveal>
+        Vom Anlegen des Schiffs bis zur Schlüsselübergabe
+      </h2>
+
+      <div class="relative pl-8 border-l-2 border-primary/20 space-y-8">
+        {steps.map((step) => (
+          <div class="relative">
+            <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+            <div class="font-semibold text-foreground mb-1">{step.t}</div>
+            <p class="text-sm text-muted-foreground leading-relaxed">{step.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Anreise ohne eigenes Auto?</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Sparen Sie auf der Fähre und mieten Sie nur die nötigen Tage
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-4">
+        Das eigene Auto auf der Fähre aus Civitavecchia oder Livorno mitzuführen kostet in der Hochsaison im Schnitt <strong>zwischen 130 und 280 €</strong> pro Strecke, zuzüglich Rückfahrt. Bei kurzen Aufenthalten (bis 7-10 Tage) ist die Reise als Fußpassagier mit Anmietung vor Ort fast immer günstiger: keine Kilometer auf dem eigenen Auto, keine Vollkasko von zu Hause und volle Flexibilität bei der Fahrzeugart (Roller für Strandtage, Kleinwagen für Ausflüge).
+      </p>
+      <p class="text-muted-foreground leading-relaxed">
+        Für die Reiseplanung sehen Sie unsere beliebtesten Zielseiten für Fährgäste:{" "}
+        <a href="/de/autovermietung-porto-cervo" class="text-primary font-medium hover:underline">Porto Cervo</a>,{" "}
+        <a href="/de/autovermietung-san-teodoro" class="text-primary font-medium hover:underline">San Teodoro</a>,{" "}
+        <a href="/de/autovermietung-baja-sardinia" class="text-primary font-medium hover:underline">Baja Sardinia</a> und{" "}
+        <a href="/de/autovermietung-golfo-aranci" class="text-primary font-medium hover:underline">Golfo Aranci</a>.
+      </p>
+    </div>
+  </section>
+
+  <ConsegnaVipExplainer variant="port" />
+
+  <LocalitaFAQ name="Hafen Isola Bianca" faqs={faqs} />
+
+  <LocalitaCTA name="Hafen Olbia" />
+</BaseLayout>

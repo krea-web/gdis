@@ -6,6 +6,7 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /api/
+Disallow: /login
 Disallow: /*?*
 
 # AI crawlers — allowed (visibility in AI answers)
@@ -16,6 +17,10 @@ Disallow: /api/
 
 User-agent: ChatGPT-User
 Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin
 
 User-agent: ClaudeBot
 Allow: /
@@ -54,4 +59,4 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-Sitemap: https://gdisrentservice.com/sitemap.xml
+Sitemap: https://gdisrentservice.com/sitemap-index.xml

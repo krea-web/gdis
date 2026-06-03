@@ -1,0 +1,170 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaCustomSection from "@/components/localita/LocalitaCustomSection.astro";
+import VehicleSpotlight from "@/components/localita/VehicleSpotlight.astro";
+import LocalitaInlineCTA from "@/components/localita/LocalitaInlineCTA.astro";
+import LocalitaTopSpots from "@/components/localita/LocalitaTopSpots.astro";
+import CockpitSpecs from "@/components/localita/CockpitSpecs.astro";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
+import LocalitaTrafficTips from "@/components/localita/LocalitaTrafficTips.astro";
+import LocalitaNightlife from "@/components/localita/LocalitaNightlife.astro";
+import TrustMarquee from "@/components/TrustMarquee.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaTrustBlock from "@/components/localita/LocalitaTrustBlock.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+import { getLocationPath, useTranslations } from "@/i18n/utils";
+
+export async function getStaticPaths() {
+  const locations = await getCollection("locations");
+  return locations.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+type DeepRequired<T> = T extends Array<infer U>
+  ? Array<DeepRequired<U>>
+  : T extends object
+    ? { [K in keyof T]-?: DeepRequired<T[K]> }
+    : T;
+
+const LANG = "en" as const;
+const t = useTranslations(LANG);
+
+const { entry } = Astro.props;
+const base = entry.data as DeepRequired<typeof entry.data>;
+const tr = (base.i18n?.[LANG] ?? {}) as Partial<DeepRequired<typeof entry.data>>;
+
+const data = {
+  slug: base.slug,
+  name: tr.name ?? base.name,
+  title: tr.title ?? base.title,
+  description: tr.description ?? base.description,
+  keywords: tr.keywords ?? base.keywords,
+  heroImage: base.heroImage,
+  heroSubtitle: tr.heroSubtitle ?? base.heroSubtitle,
+  heroAccent: tr.heroAccent ?? base.heroAccent,
+  h1Prefix: tr.h1Prefix ?? base.h1Prefix,
+  intro: tr.intro ?? base.intro,
+  areaServed: base.areaServed,
+  customSections: tr.customSections ?? base.customSections,
+  spotlight: tr.spotlight ?? base.spotlight,
+  topSpots: tr.topSpots ?? base.topSpots,
+  cockpit: tr.cockpit ?? base.cockpit,
+  comparison: tr.comparison
+    ? { ...base.comparison, ...tr.comparison }
+    : base.comparison,
+  trafficTips: tr.trafficTips ?? base.trafficTips,
+  nightlife: tr.nightlife ?? base.nightlife,
+  trustMarqueeItems: tr.trustMarqueeItems ?? base.trustMarqueeItems,
+  faq: tr.faq ?? base.faq,
+  closingParagraph: tr.closingParagraph ?? base.closingParagraph,
+};
+
+const canonical = getLocationPath(data.slug, LANG);
+
+const breadcrumbs = [
+  { name: t("nav.home"), url: "/en" },
+  { name: data.name, url: canonical },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: `https://gdisrentservice.com${canonical}#localbusiness`,
+  description: data.description,
+  areaServed: data.areaServed.map((a) => ({ "@type": a.type, name: a.name })),
+});
+
+const faqSchema = buildFaqSchema(data.faq, { speakable: true });
+
+const sectionBg = (i: number) => (i % 2 === 0 ? "bg-background" : "bg-muted/20");
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  canonical={canonical}
+  jsonLd={[localBusinessSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+  keywords={data.keywords}
+  ogImage={data.heroImage}
+  lcpImage={{ href: data.heroImage, type: "image/webp" }}
+  i18nAlternates={{
+    it: getLocationPath(data.slug, "it"),
+    de: getLocationPath(data.slug, "de"),
+    fr: getLocationPath(data.slug, "fr"),
+  }}
+>
+  <LocalitaHero
+    name={data.name}
+    subtitle={data.heroSubtitle}
+    bgImage={data.heroImage}
+    h1Prefix={data.h1Prefix}
+    h1Accent={data.heroAccent}
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  {data.intro && (
+    <section class="py-10 md:py-14 bg-background">
+      <div class="container px-4 max-w-3xl mx-auto">
+        <p class="text-base md:text-lg text-foreground/85 leading-relaxed" set:html={data.intro} />
+      </div>
+    </section>
+  )}
+
+  {data.customSections.map((section, i) => (
+    <LocalitaCustomSection {...section} bgClass={sectionBg(i)} />
+  ))}
+
+  {data.spotlight && (
+    <VehicleSpotlight
+      tag={data.spotlight.tag}
+      title={data.spotlight.title}
+      description={data.spotlight.description}
+      image={data.spotlight.image}
+      imageAlt={data.spotlight.imageAlt}
+      badges={data.spotlight.badges}
+    />
+  )}
+
+  <LocalitaInlineCTA name={data.name} />
+
+  <LocalitaTopSpots name={data.name} spots={data.topSpots} />
+
+  {data.cockpit && (
+    <CockpitSpecs vehicleName={data.cockpit.vehicleName} specs={data.cockpit.specs} />
+  )}
+
+  {data.comparison && (
+    <VehicleComparisonTable
+      title={data.comparison.title}
+      subtitle={data.comparison.subtitle}
+      show={data.comparison.show}
+      recommendation={data.comparison.recommendation}
+    />
+  )}
+
+  <LocalitaTrafficTips name={data.name} tips={data.trafficTips} />
+  <LocalitaNightlife name={data.name} locali={data.nightlife} />
+
+  {data.trustMarqueeItems && <TrustMarquee items={data.trustMarqueeItems} />}
+
+  <LocalitaFAQ name={data.name} faqs={data.faq} />
+
+  {data.closingParagraph && (
+    <section class="py-16 bg-muted/20">
+      <div class="container px-4 max-w-3xl mx-auto">
+        <p class="text-lg text-muted-foreground leading-relaxed" set:html={data.closingParagraph} />
+      </div>
+    </section>
+  )}
+
+  <LocalitaTrustBlock name={data.name} />
+  <LocalitaCTA name={data.name} />
+</BaseLayout>

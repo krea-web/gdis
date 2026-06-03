@@ -1,15 +1,26 @@
+/**
+ * @deprecated DORMANT — kept in repo for rollback only.
+ * Removed from the booking flow in commit 1641e34 (WhatsApp request refactor).
+ * Contracts are now drafted offline via the Telegram + OCR workflow on the
+ * owner's side. The website no longer collects a digital signature.
+ */
 import { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import { Button } from "@/components/ui/button";
 import { Eraser, Loader2, PenTool } from "lucide-react";
+import { toast } from "sonner";
 import { invokeN8nProxy } from "@/lib/n8nProxy";
+import { useTranslations } from "@/i18n/utils";
+import type { Locale } from "@/i18n/utils";
 
 type Props = {
   bookingId: string;
   onComplete: () => void;
+  lang?: Locale;
 };
 
-const SignatureStep = ({ bookingId, onComplete }: Props) => {
+const SignatureStep = ({ bookingId, onComplete, lang = "it" }: Props) => {
+  const t = useTranslations(lang);
   const sigRef = useRef<SignatureCanvas>(null);
   const [submitting, setSubmitting] = useState(false);
   const [hasSigned, setHasSigned] = useState(false);
@@ -29,8 +40,7 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
       await invokeN8nProxy("sign", { booking_id: bookingId, signature: base64 });
       onComplete();
     } catch {
-      const { toast } = await import("sonner");
-      toast.error("Errore nell'invio della firma. Riprova.");
+      toast.error(t("booking.errors.signatureSendFailed"));
     } finally {
       setSubmitting(false);
     }
@@ -39,16 +49,16 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
   return (
     <div>
       <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-        Firma il contratto
+        {t("booking.signature.title")}
       </h2>
       <p className="text-muted-foreground mb-8">
-        Firma digitalmente il contratto di noleggio per completare la prenotazione.
+        {t("booking.signature.subtitle")}
       </p>
 
       <div className="bg-card rounded-2xl border border-border p-6 md:p-8 space-y-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <PenTool size={16} />
-          <span>Disegna la tua firma nel riquadro sottostante</span>
+          <span>{t("booking.signature.instruction")}</span>
         </div>
 
         <div className="border-2 border-dashed border-border rounded-xl overflow-hidden bg-background">
@@ -65,7 +75,7 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
         <div className="flex items-center justify-between">
           <Button variant="ghost" size="sm" onClick={clear} className="gap-2">
             <Eraser size={14} />
-            Cancella
+            {t("booking.signature.clear")}
           </Button>
 
           <Button
@@ -78,10 +88,10 @@ const SignatureStep = ({ bookingId, onComplete }: Props) => {
             {submitting ? (
               <>
                 <Loader2 size={16} className="animate-spin" />
-                Invio firma...
+                {t("booking.signature.submitting")}
               </>
             ) : (
-              "Firma e Invia Contratto"
+              t("booking.signature.submit")
             )}
           </Button>
         </div>

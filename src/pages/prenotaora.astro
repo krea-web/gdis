@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingFlow from "@/components/booking/BookingFlow.tsx";
+import { buildHowToBookingSchema } from "@/lib/siteSchema";
+
+const howToSchema = buildHowToBookingSchema();
+---
+
+<BaseLayout
+  title="Prenota Noleggio Auto a Olbia e Costa Smeralda | Prenota Ora | GDIS Rent"
+  description="Richiedi il tuo noleggio auto a Olbia e in Costa Smeralda: Fiat Panda, Mercedes, scooter Honda SH, quad Yamaha Raptor ✓ Mini-richiesta in 3 step, invio di un messaggio WhatsApp precompilato, ti rispondiamo noi con disponibilità e coperture ✓ Consegna VIP in Aeroporto OLB, Porto Isola Bianca o hotel ✓ Senza carta di credito anticipata."
+  canonical="/prenotaora"
+  jsonLd={howToSchema}
+  hideBackground
+  i18nAlternates={{ en: "/en/book-now", de: "/de/jetzt-buchen", fr: "/fr/reserver" }}
+>
+  <BookingFlow client:load lang="it" />
+</BaseLayout>

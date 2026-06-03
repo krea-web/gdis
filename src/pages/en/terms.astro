@@ -1,0 +1,99 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BUSINESS_LEGAL_NAME, BUSINESS_EMAIL, BUSINESS_VAT } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/en" },
+  { name: "Terms & Conditions", url: "/en/terms" },
+];
+---
+
+<BaseLayout
+  title="Terms and Conditions of Rental — GDIS Rent & Service"
+  description="General terms of the car, scooter and quad rental service offered by GDIS Service S.R.L. in Olbia and Costa Smeralda."
+  canonical="/en/terms"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/termini", de: "/de/agb", fr: "/fr/conditions-generales" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Terms and Conditions of Rental</h1>
+    <p class="text-sm text-muted-foreground">Last updated: 24 April 2026</p>
+
+    <h2>1. Parties</h2>
+    <p>
+      This contract is entered into between <strong>{BUSINESS_LEGAL_NAME}</strong> — VAT{" "}
+      {BUSINESS_VAT}, registered office at Via Annibale Caro 52, 07026 Olbia (SS) — as the Lessor,
+      and the Customer who makes the booking (the "Driver").
+    </p>
+
+    <h2>2. Driver requirements</h2>
+    <ul>
+      <li>Minimum age 21 (25 for Premium vehicles).</li>
+      <li>Valid driving licence held for at least 2 years (category appropriate to the vehicle).</li>
+      <li>Valid identity document.</li>
+      <li>Credit card or payment method suitable for the security deposit.</li>
+    </ul>
+
+    <h2>3. Booking and payment</h2>
+    <p>
+      The booking is confirmed only upon signing the digital contract and, where required, payment
+      of the deposit. The balance is due at the time the vehicle is collected, together with the
+      security deposit.
+    </p>
+
+    <h2>4. Collection and return</h2>
+    <p>
+      The vehicle is delivered with a full tank of fuel and in conditions verified by photographs.
+      It must be returned at the agreed time, with a full tank of fuel and in the same conditions.
+      Where the return is delayed without prior agreement, a penalty equal to one rental day is
+      applied.
+    </p>
+
+    <h2>5. Excess and liability</h2>
+    <p>
+      The Driver is liable for any damage caused to the vehicle, up to the excess indicated at the
+      time of booking. Damage attributable to wilful misconduct or gross negligence, driving under
+      the influence of alcohol or drugs, results in forfeiture of cover and full charging of the
+      costs.
+    </p>
+
+    <h2>6. Prohibitions</h2>
+    <ul>
+      <li>The vehicle may not be handed over to unauthorised drivers.</li>
+      <li>Carrying unauthorised animals or dangerous goods is prohibited.</li>
+      <li>Smoking inside the vehicles is prohibited (cleaning penalty € 150).</li>
+      <li>Taking the vehicle outside the national territory without written authorisation is prohibited.</li>
+    </ul>
+
+    <h2>7. Cancellation</h2>
+    <ul>
+      <li>Up to 72h before collection: full refund of the deposit.</li>
+      <li>Between 72h and 24h: 50% of the deposit is retained.</li>
+      <li>Less than 24h or no-show: full deposit retained.</li>
+    </ul>
+
+    <h2>8. Accidents and theft</h2>
+    <p>
+      In the event of an accident the Driver must complete the European Accident Statement form
+      and immediately notify the number{" "}
+      <a href="tel:+393520459150">+39 352 045 9150</a>. In the event of theft, a report to the
+      Authorities and the return of the original keys are mandatory.
+    </p>
+
+    <h2>9. Governing law and jurisdiction</h2>
+    <p>
+      This contract is governed by Italian law. For any dispute, the Court of Tempio Pausania
+      shall have exclusive jurisdiction — without prejudice to mandatory consumer-protection
+      rules.
+    </p>
+
+    <h2>10. Contact</h2>
+    <p>
+      For contractual information, please write to <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>.
+    </p>
+  </article>
+</BaseLayout>

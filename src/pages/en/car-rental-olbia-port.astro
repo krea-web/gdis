@@ -1,0 +1,164 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/en" },
+  { name: "Olbia", url: "/en/car-rental-in-olbia" },
+  { name: "Isola Bianca port", url: "/en/car-rental-olbia-port" },
+];
+
+const routes = [
+  { from: "Civitavecchia", duration: "5h - 8h", company: "Tirrenia, GNV, Grimaldi", note: "Day and night, high frequency" },
+  { from: "Livorno", duration: "8h - 11h", company: "Moby, Grimaldi", note: "Overnight, ideal with own car on board" },
+  { from: "Genoa", duration: "10h - 13h", company: "Tirrenia, Moby, GNV", note: "Overnight, evening departures" },
+  { from: "Piombino", duration: "5h - 6h", company: "Moby, Grimaldi", note: "Summer seasonal, daytime" },
+  { from: "Nice (FR)", duration: "12h - 14h", company: "Corsica/Sardinia Ferries", note: "Summer, optional Bastia stop" },
+  { from: "Marseille (FR)", duration: "12h - 18h", company: "La Méridionale", note: "Seasonal, reduced frequency" },
+];
+
+const steps = [
+  { t: "T-30 min — Spotting", d: "The ship enters the Gulf of Olbia. We track the AIS position in real time and position ourselves at the Isola Bianca forecourt before disembarkation begins." },
+  { t: "T-0 — Docking", d: "The ship docks. Foot-passenger disembarkation starts 10-15 minutes after docking; vehicles on board may take 30-60 minutes to come off." },
+  { t: "T+15 min — Terminal exit", d: "Leave the foot-passenger terminal (follow the 'Passenger exit' signs). You'll find us at the forecourt opposite, with a personalised GDIS sign." },
+  { t: "T+25 min — Briefing and go", d: "Walk-around photos of the vehicle, documents handled in person by our operator, keys in hand. You're on the SS125 within minutes, heading for Olbia centre or Costa Smeralda." },
+];
+
+const faqs = [
+  { q: "Can I take the rental car onto a ferry to Corsica?", a: "Yes, but you need <strong>written authorisation</strong> from the rental company (cross-border permit) issued before departure. Contact us at least 48 hours in advance with your ferry details: we prepare the document and a copy of the vehicle registration. Insurance surcharges may apply for cover in French territory." },
+  { q: "Does the Port of Olbia have multiple terminals? Where exactly do I find you?", a: "The main port is <strong>Isola Bianca</strong>, where Tirrenia, Moby, GNV, Grimaldi and the fast ferries dock. There is also the old industrial port, but it isn't used for passengers. We meet you at the forecourt in front of the Isola Bianca terminal, in the area for authorised shuttles/transfers." },
+  { q: "What's the difference between arriving with your own car or without?", a: "If you arrive with your own car, you simply don't need to rent anything. Many travellers, however, come to Sardinia as foot passengers (cheaper) and rent on arrival: in that case we meet you at the foot-passenger exit, the same one used by those with cars. You save on the ferry ticket and avoid putting kilometres on your own car." },
+  { q: "Overnight ferries arrive very early — are you operating at dawn?", a: "Yes. Disembarkation from Livorno and Genoa is typically between 06:00 and 07:30: it's one of our busiest windows. We don't serve coffee yet, but we do hand over a fully fuelled car." },
+  { q: "What if the ferry is cancelled because of bad weather?", a: "It happens 2-3 times a year, mostly at the start or end of the season. If your ferry is cancelled, let us know as soon as you have confirmation from the company: we reschedule delivery to your actual arrival date with no penalty. If your new date falls after the end of the booked period, we refund pro rata." },
+  { q: "Can I leave my luggage in the vehicle while I head to Olbia centre?", a: "Yes, but at your own risk: we recommend not leaving valuables in plain sight. The port is CCTV-monitored and generally safe, but the same common sense applies as in any car park. Theft cover is included with an excess." },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/en/car-rental-olbia-port#localbusiness",
+  description: "Car rental at the Port of Olbia Isola Bianca: ferry routes, durations, disembarkation procedures and delivery directly at the terminal.",
+  areaServed: [
+    { "@type": "Place", name: "Port of Olbia Isola Bianca" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Car Rental Port of Olbia Isola Bianca",
+  description:
+    "Rental vehicle delivery service directly at the Isola Bianca terminal of the Port of Olbia. AIS ferry tracking, agent waiting at passenger disembarkation.",
+  serviceType: "Port Car Rental Delivery",
+  url: "/en/car-rental-olbia-port",
+  areaServed: [
+    { "@type": "Place", name: "Port of Olbia Isola Bianca" },
+    { "@type": "City", name: "Olbia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
+const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp";
+---
+
+<BaseLayout
+  title="Car Rental at Olbia Port Isola Bianca | Ferry Car Hire | GDIS Rent"
+  description="Car rental at Olbia Port Isola Bianca with vehicle delivery right at the ferry ramp ✓ Disembarking with Moby, Tirrenia, GNV or Grimaldi from Civitavecchia, Livorno, Genoa, Piombino, Nice ✓ Fiat Panda, Mercedes, Honda scooter, Yamaha quad ✓ Up to 4-hour delay wait included, 24/7 on WhatsApp."
+  canonical="/en/car-rental-olbia-port"
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+  ogImage={heroImage}
+  i18nAlternates={{ it: "/noleggio-auto-porto-olbia", de: "/de/autovermietung-hafen-olbia", fr: "/fr/location-voiture-port-olbia" }}
+>
+  <LocalitaHero
+    name="Isola Bianca port"
+    h1Prefix="Car Rental"
+    h1Accent="Olbia Port"
+    subtitle="Disembarking from Civitavecchia, Livorno, Genoa, Piombino or Nice? We're waiting for you at the Isola Bianca terminal with the vehicle ready."
+    bgImage={heroImage}
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Ferry routes to Olbia</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Where you arrive at the Isola Bianca port from
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-8" data-reveal>
+        In summer the Port of Olbia handles around <strong>3 million passengers</strong>, peaking at 70,000 a day between late July and late August. The operating companies are Tirrenia (Grimaldi), Moby Lines, GNV (Grandi Navi Veloci), Grimaldi Lines and — on the French routes — Corsica Sardinia Ferries and La Méridionale. Crossing times vary considerably: below we list realistic average durations, not the nominal brochure figures.
+      </p>
+
+      <div class="space-y-3">
+        {routes.map((r) => (
+          <div class="rounded-xl border border-border bg-card p-5 grid sm:grid-cols-[1fr_auto_2fr_3fr] gap-3 sm:gap-6 items-center">
+            <div class="font-semibold">{r.from}</div>
+            <div class="px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-semibold inline-block">{r.duration}</div>
+            <div class="text-sm text-muted-foreground">{r.company}</div>
+            <div class="text-xs text-muted-foreground/80">{r.note}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-muted/20">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4"/><path d="M12 2v3"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Disembarkation step by step</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-8" data-reveal>
+        From the moment the ship docks to the moment you get the keys
+      </h2>
+
+      <div class="relative pl-8 border-l-2 border-primary/20 space-y-8">
+        {steps.map((step) => (
+          <div class="relative">
+            <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+            <div class="font-semibold text-foreground mb-1">{step.t}</div>
+            <p class="text-sm text-muted-foreground leading-relaxed">{step.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Travelling without your own car?</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Save on the ferry and rent only for the days you need
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-4">
+        Taking your own car on the ferry from Civitavecchia or Livorno costs on average <strong>between 130 and 280 €</strong> one-way in peak season, plus the return trip. For short stays (up to 7-10 days), travelling as a foot passenger and renting on arrival is almost always more convenient: zero kilometres added to your own car, no comprehensive insurance from home, and full flexibility on the type of vehicle (you can take a scooter for the beach days and a citycar for excursions).
+      </p>
+      <p class="text-muted-foreground leading-relaxed">
+        For trip planning, see our most popular destination pages for travellers arriving by ferry:{" "}
+        <a href="/en/car-rental-in-porto-cervo" class="text-primary font-medium hover:underline">Porto Cervo</a>,{" "}
+        <a href="/en/car-rental-in-san-teodoro" class="text-primary font-medium hover:underline">San Teodoro</a>,{" "}
+        <a href="/en/car-rental-in-baja-sardinia" class="text-primary font-medium hover:underline">Baja Sardinia</a> and{" "}
+        <a href="/en/car-rental-in-golfo-aranci" class="text-primary font-medium hover:underline">Golfo Aranci</a>.
+      </p>
+    </div>
+  </section>
+
+  <ConsegnaVipExplainer variant="port" />
+
+  <LocalitaFAQ name="Isola Bianca port" faqs={faqs} />
+
+  <LocalitaCTA name="Olbia Port" />
+</BaseLayout>

@@ -1,0 +1,164 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import LocalitaHero from "@/components/localita/LocalitaHero.astro";
+import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
+import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
+import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Accueil", url: "/fr" },
+  { name: "Olbia", url: "/fr/location-voiture-a-olbia" },
+  { name: "Port Isola Bianca", url: "/fr/location-voiture-port-olbia" },
+];
+
+const routes = [
+  { from: "Civitavecchia", duration: "5h - 8h", company: "Tirrenia, GNV, Grimaldi", note: "Jour et nuit, fréquence élevée" },
+  { from: "Livourne", duration: "8h - 11h", company: "Moby, Grimaldi", note: "De nuit, idéal avec voiture à bord" },
+  { from: "Gênes", duration: "10h - 13h", company: "Tirrenia, Moby, GNV", note: "De nuit, départs en soirée" },
+  { from: "Piombino", duration: "5h - 6h", company: "Moby, Grimaldi", note: "Saisonnier été, de jour" },
+  { from: "Nice (FR)", duration: "12h - 14h", company: "Corsica/Sardinia Ferries", note: "Estival, escale Bastia en option" },
+  { from: "Marseille (FR)", duration: "12h - 18h", company: "La Méridionale", note: "Saisonnier, fréquence réduite" },
+];
+
+const steps = [
+  { t: "T-30 min — Repérage", d: "Le navire entre dans le golfe d'Olbia. Nous suivons la position AIS en temps réel et nous nous positionnons sur le parvis Isola Bianca avant le débarquement effectif." },
+  { t: "T-0 — Accostage", d: "Le navire accoste. Le débarquement des passagers piétons commence 10-15 minutes après l'accostage ; le débarquement des véhicules à bord peut prendre 30-60 minutes." },
+  { t: "T+15 min — Sortie du terminal", d: "Sortez du terminal piétonnier (suivez les panneaux « Sortie passagers »). Vous nous trouvez sur le parvis en face, avec une pancarte GDIS personnalisée." },
+  { t: "T+25 min — Briefing et départ", d: "Photos périmétrales du véhicule, documents gérés en personne par notre opérateur, clés en main. Vous êtes sur la SS125 en quelques minutes, en direction du centre d'Olbia ou de la Costa Smeralda." },
+];
+
+const faqs = [
+  { q: "Puis-je embarquer la voiture de location pour aller en Corse ?", a: "Oui, mais une <strong>autorisation écrite</strong> du loueur (cross-border permit) émise avant le départ est nécessaire. Contactez-nous au moins 48 heures à l'avance avec les données du ferry : nous préparons le document et une copie de la carte grise. Des suppléments d'assurance peuvent s'appliquer pour la couverture en territoire français." },
+  { q: "Le port d'Olbia a-t-il plusieurs terminaux ? Où vous trouve-t-on exactement ?", a: "Le port principal est <strong>Isola Bianca</strong>, où accostent Tirrenia, Moby, GNV, Grimaldi et les ferries rapides. Il existe également l'ancien port industriel, mais il n'est pas utilisé pour les passagers. Nous nous trouvons sur le parvis devant le terminal Isola Bianca, dans la zone des navettes/transferts autorisés." },
+  { q: "Quelle différence entre arriver avec ou sans sa propre voiture ?", a: "Si vous arrivez avec votre voiture, il vous suffit de ne rien louer. De nombreux voyageurs arrivent toutefois en Sardaigne en passager (plus économique) et louent sur place : nous nous retrouvons alors à la sortie du terminal piétonnier, la même que pour ceux qui arrivent en voiture. Vous économisez sur le billet de ferry et évitez les kilomètres sur votre voiture." },
+  { q: "Les ferries de nuit arrivent très tôt : êtes-vous opérationnels à l'aube ?", a: "Oui. Le débarquement depuis Livourne et Gênes a typiquement lieu entre 06h00 et 07h30 : c'est l'une de nos plages les plus actives. Nous ne servons pas encore le café, mais le plein de la voiture, oui." },
+  { q: "Et si le ferry est annulé pour cause de mauvais temps ?", a: "Cela arrive 2-3 fois par an, surtout en début ou fin de saison. En cas d'annulation, prévenez-nous dès que vous avez la confirmation de la compagnie : nous reprogrammons la livraison à la date d'arrivée effective sans pénalité. Si votre nouvelle date dépasse la fin de la période réservée, nous vous remboursons au prorata." },
+  { q: "Puis-je laisser mes bagages dans le véhicule pendant que je vais au centre d'Olbia ?", a: "Oui, mais à vos risques : nous vous conseillons de ne pas laisser d'objets de valeur en vue. Le port est vidéosurveillé et globalement sûr, mais nous appliquons le bon sens valable dans n'importe quel parking. La couverture vol est incluse avec franchise." },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/fr/location-voiture-port-olbia#localbusiness",
+  description: "Location de voiture au port d'Olbia Isola Bianca : routes des ferries, durées, procédures de débarquement et livraison directement au terminal.",
+  areaServed: [
+    { "@type": "Place", name: "Port d'Olbia Isola Bianca" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Location de voiture port d'Olbia Isola Bianca",
+  description:
+    "Service de livraison de véhicules de location directement au terminal Isola Bianca du port d'Olbia. Suivi AIS des ferries, attente au débarquement passagers.",
+  serviceType: "Port Car Rental Delivery",
+  url: "/fr/location-voiture-port-olbia",
+  areaServed: [
+    { "@type": "Place", name: "Port d'Olbia Isola Bianca" },
+    { "@type": "City", name: "Olbia" },
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+  ],
+});
+
+const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp";
+---
+
+<BaseLayout
+  title="Location Voiture au Port d'Olbia Isola Bianca | Loueur Ferry | GDIS Rent"
+  description="Location voiture au port d'Olbia Isola Bianca avec livraison directement à la rampe du ferry ✓ Débarquement Moby, Tirrenia, GNV ou Grimaldi depuis Civitavecchia, Livourne, Gênes, Piombino, Nice ✓ Fiat Panda, Mercedes, scooter Honda, quad Yamaha ✓ Attente ferry jusqu'à 4h incluse, 24h/24 sur WhatsApp."
+  canonical="/fr/location-voiture-port-olbia"
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+  ogImage={heroImage}
+  i18nAlternates={{ it: "/noleggio-auto-porto-olbia", en: "/en/car-rental-olbia-port", de: "/de/autovermietung-hafen-olbia" }}
+>
+  <LocalitaHero
+    name="Port Isola Bianca"
+    h1Prefix="Location de voiture"
+    h1Accent="Port d'Olbia"
+    subtitle="Débarquement depuis Civitavecchia, Livourne, Gênes, Piombino ou Nice ? Nous vous attendons au terminal Isola Bianca avec le véhicule prêt."
+    bgImage={heroImage}
+  />
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-5xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Routes des ferries vers Olbia</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        D'où arrivez-vous au port Isola Bianca
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-8" data-reveal>
+        En été, le port d'Olbia gère environ <strong>3 millions de passagers</strong>, avec des pics de 70 000 par jour entre fin juillet et fin août. Les compagnies opérantes sont Tirrenia (Grimaldi), Moby Lines, GNV (Grandi Navi Veloci), Grimaldi Lines et — sur la route française — Corsica Sardinia Ferries et La Méridionale. Les durées de traversée varient beaucoup : nous indiquons ci-dessous les temps moyens réels, et non ceux affichés dans les brochures.
+      </p>
+
+      <div class="space-y-3">
+        {routes.map((r) => (
+          <div class="rounded-xl border border-border bg-card p-5 grid sm:grid-cols-[1fr_auto_2fr_3fr] gap-3 sm:gap-6 items-center">
+            <div class="font-semibold">{r.from}</div>
+            <div class="px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-semibold inline-block">{r.duration}</div>
+            <div class="text-sm text-muted-foreground">{r.company}</div>
+            <div class="text-xs text-muted-foreground/80">{r.note}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-muted/20">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4"/><path d="M12 2v3"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Le débarquement étape par étape</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-8" data-reveal>
+        De l'accostage du navire à la remise des clés
+      </h2>
+
+      <div class="relative pl-8 border-l-2 border-primary/20 space-y-8">
+        {steps.map((step) => (
+          <div class="relative">
+            <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+            <div class="font-semibold text-foreground mb-1">{step.t}</div>
+            <p class="text-sm text-muted-foreground leading-relaxed">{step.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container max-w-4xl">
+      <div class="flex items-center gap-3 mb-4" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold">Vous arrivez sans votre voiture ?</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6" data-reveal>
+        Économisez sur le ferry et louez seulement les jours utiles
+      </h2>
+      <p class="text-muted-foreground leading-relaxed mb-4">
+        Embarquer sa voiture depuis Civitavecchia ou Livourne coûte en moyenne <strong>entre 130 et 280 €</strong> aller simple en haute saison, plus le retour. Pour de courts séjours (jusqu'à 7-10 jours), voyager en passager et louer sur place est presque toujours plus avantageux : zéro kilomètre ajouté à votre voiture, pas d'assurance tous risques depuis chez vous, et flexibilité totale sur le type de véhicule (un scooter pour les jours de plage, une citadine pour les excursions).
+      </p>
+      <p class="text-muted-foreground leading-relaxed">
+        Pour préparer votre séjour, voir aussi nos pages dédiées aux destinations les plus fréquentées par ceux qui débarquent au port :{" "}
+        <a href="/fr/location-voiture-a-porto-cervo" class="text-primary font-medium hover:underline">Porto Cervo</a>,{" "}
+        <a href="/fr/location-voiture-a-san-teodoro" class="text-primary font-medium hover:underline">San Teodoro</a>,{" "}
+        <a href="/fr/location-voiture-a-baja-sardinia" class="text-primary font-medium hover:underline">Baja Sardinia</a> et{" "}
+        <a href="/fr/location-voiture-a-golfo-aranci" class="text-primary font-medium hover:underline">Golfo Aranci</a>.
+      </p>
+    </div>
+  </section>
+
+  <ConsegnaVipExplainer variant="port" />
+
+  <LocalitaFAQ name="Port Isola Bianca" faqs={faqs} />
+
+  <LocalitaCTA name="Port d'Olbia" />
+</BaseLayout>

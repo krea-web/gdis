@@ -1,14 +1,14 @@
 /**
- * Fonte di verità per i prezzi "da" mostrati al pubblico.
- * Usata da FleetShowcase (fallback), VehicleComparisonTable e dai JSON-LD nelle pagine flotta.
+ * Prezzi "da €/giorno" mostrati al pubblico (off-peak minimum).
+ * Source of truth statica per SSG: usata da homepage, FleetShowcase, VehicleComparisonTable e JSON-LD fleet.
  *
- * Se cambi un prezzo qui, viene aggiornato automaticamente ovunque.
+ * Sincronizzati al campo `vehicles.daily_rate` di Supabase (verifica via `npm run check:prices`).
  */
 export const VEHICLE_PRICE_FROM = {
-  city_car: 50, // Fiat Panda
-  premium: 120, // Mercedes A 180d
-  scooter: 50, // Honda SH
-  quad: 250, // Yamaha Raptor
+  city_car: 65, // Fiat Panda Hybrid — daily_rate base
+  premium: 120, // Mercedes Classe A 180d — daily_rate base
+  scooter: 50, // Honda SH 125i — daily_rate base (SH 350i: 70)
+  quad: 250, // Yamaha Raptor 700R — daily_rate base
 } as const;
 
 export type VehicleCategory = keyof typeof VEHICLE_PRICE_FROM;

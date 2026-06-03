@@ -1,3 +1,10 @@
+/**
+ * @deprecated DORMANT — kept in repo for rollback only.
+ * Removed from BookingFlow in commit 1641e34 (WhatsApp request refactor).
+ * The CSP entries for challenges.cloudflare.com were also removed (commit
+ * f92516b). If Turnstile is re-enabled on any future form, you MUST also
+ * re-add the CSP entries to vercel.json — env var alone is not enough.
+ */
 import { useEffect, useRef } from "react";
 
 declare global {
@@ -32,7 +39,8 @@ type Props = {
 const TurnstileWidget = ({ onToken, onExpired, onError }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
-  const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
+  const siteKey = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
+    import.meta.env.VITE_TURNSTILE_SITE_KEY) as string | undefined;
 
   useEffect(() => {
     if (!siteKey || !containerRef.current) return;

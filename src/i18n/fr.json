@@ -1,0 +1,360 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "chisiamo": "À propos",
+    "contatti": "Contact",
+    "flotta": "Flotte",
+    "hubTrasporti": "Pôles de transport",
+    "localita": "Destinations",
+    "contattaci": "Contactez-nous",
+    "fleet": {
+      "cityCar": "Citadine",
+      "premium": "Premium",
+      "scooter": "Scooter",
+      "quad": "Quad"
+    },
+    "hub": {
+      "regionale": "Pôle régional",
+      "olbCS": "OLB · Costa Smeralda",
+      "isolaBianca": "Isola Bianca · Ferries",
+      "centroTreni": "Centre · Trains"
+    },
+    "places": {
+      "olbia": "Familles & Couples",
+      "portoCervo": "Luxe & Marina",
+      "sanTeodoro": "Plages & Vie nocturne",
+      "sanPantaleo": "Village bohème",
+      "portoRotondo": "Élégance discrète",
+      "golfoAranci": "Terminal des ferries",
+      "bajaSardinia": "Phi Beach & Fête"
+    },
+    "switcher": {
+      "label": "Langue",
+      "comingSoon": "Bientôt disponible"
+    }
+  },
+  "footer": {
+    "tagline": "Location de voitures, scooters et quads en Costa Smeralda. Livraison VIP 24/7 à l'aéroport d'Olbia, au port d'Isola Bianca et dans toute la Sardaigne du nord-est.",
+    "col": {
+      "esplora": "Explorer",
+      "flotta": "Notre flotte",
+      "hub": "Pôles de transport",
+      "localita": "Destinations",
+      "legale": "Mentions légales"
+    },
+    "links": {
+      "mappaSito": "Plan du site",
+      "privacy": "Politique de confidentialité",
+      "cookie": "Politique des cookies",
+      "termini": "Conditions générales"
+    },
+    "data": {
+      "title": "Informations sur la société",
+      "ragSoc": "Raison sociale",
+      "sedeLegale": "Siège social",
+      "partitaIva": "N° de TVA",
+      "codFiscale": "Code fiscal",
+      "rea": "REA",
+      "capitale": "Capital social",
+      "capitaleValue": "10 000 € versés"
+    },
+    "copyright": "© {year} {name} — Tous droits réservés.",
+    "admin": "Admin",
+    "realizzatoDa": "Site réalisé par",
+    "ariaFooter": "Pied de page GDIS Rent",
+    "ariaTornaHome": "Retour à l'accueil GDIS Rent",
+    "ariaFooterNav": "Navigation du pied de page"
+  },
+  "cta": {
+    "prenotaOra": "Réserver",
+    "callAria": "Appelez-nous au +39 352 045 9150"
+  },
+  "common": {
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "whatsappAria": "Contactez-nous sur WhatsApp",
+    "instagramAria": "Suivez-nous sur Instagram",
+    "address": "Via Annibale Caro 52, 07026 Olbia (SS), Italie",
+    "logoAlt": "GDIS Rent and Service"
+  },
+  "trust": {
+    "items": [
+      "Fiabilité",
+      "Flotte premium",
+      "Assistance 24/7",
+      "Tarifs transparents",
+      "Sardaigne",
+      "Location facile"
+    ]
+  },
+  "vipDelivery": {
+    "eyebrow": "Comment ça marche",
+    "title": "Livraison VIP en 4 étapes",
+    "subtitle": {
+      "airport": "Pas de file d'attente aux comptoirs du terminal, pas de transfert, pas d'attente. Nous vous livrons le véhicule dès votre arrivée à l'aéroport d'Olbia Costa Smeralda.",
+      "port": "Pas de file au port, pas de transfert après 8 heures de ferry. Vous débarquez et trouvez votre véhicule sur le quai de votre compagnie.",
+      "station": "Vous descendez du train et trouvez le véhicule prêt. Pas de taxi, pas d'attente, pas de file au comptoir de location en centre-ville.",
+      "generic": "Pas de file aux comptoirs, pas de transfert, pas d'attente. Nous vous livrons le véhicule où et quand vous en avez besoin — aéroport, port, hôtel ou villa."
+    },
+    "step1": {
+      "title": "1. Écrivez-nous sur WhatsApp",
+      "text": "Indiquez la date, l'heure d'arrivée et le véhicule souhaité. Nous confirmons sous 30 minutes — aussi en anglais ou en français."
+    },
+    "step2": {
+      "title": {
+        "airport": "2. Vous atterrissez au Costa Smeralda",
+        "port": "2. Vous débarquez à Isola Bianca",
+        "station": "2. Vous arrivez à la gare d'Olbia",
+        "generic": "2. Vous atterrissez ou débarquez"
+      },
+      "text": {
+        "airport": "Nous suivons votre vol en temps réel via FlightAware : en cas de retard, nous adaptons la livraison sans frais supplémentaires jusqu'à 4 heures.",
+        "port": "Nous suivons l'horaire réel de débarquement de Moby, Tirrenia, GNV et Grimaldi : si le navire arrive en retard, nous vous attendons.",
+        "station": "Communiquez-nous votre numéro de train Trenitalia : nous suivons l'arrivée au quai et nous coordonnons sur l'horaire réel.",
+        "generic": "Nous suivons votre vol ou ferry : en cas de retard, nous adaptons la livraison sans frais supplémentaires."
+      }
+    },
+    "step3": {
+      "title": {
+        "airport": "3. Nous vous attendons aux arrivées",
+        "port": "3. Nous vous attendons sur le quai",
+        "station": "3. Nous vous attendons à la sortie des quais",
+        "generic": "3. Vous récupérez le véhicule"
+      },
+      "text": {
+        "airport": "Notre opérateur est au terminal des arrivées du Costa Smeralda avec une pancarte à votre nom. Véhicule climatisé et plein d'essence fait.",
+        "port": "Notre opérateur est sur le quai de votre compagnie (même pour les ferries de nuit à 6h00). Véhicule prêt près du navire, climatisé et plein fait.",
+        "station": "Notre opérateur est à la sortie des quais de la gare d'Olbia. Véhicule garé tout près, déjà climatisé et plein fait.",
+        "generic": "Nous vous attendons à la sortie des arrivées ou au port avec le véhicule climatisé et plein fait."
+      }
+    },
+    "step4": {
+      "title": "4. Vous partez tout de suite",
+      "text": "Signature rapide sur tablette, photo du permis, clés en main. En 5 minutes vous êtes en route : pas de file, pas de comptoir, pas de transfert supplémentaire."
+    }
+  },
+  "booking": {
+    "steps": {
+      "vehicle": "Véhicule",
+      "dates": "Dates",
+      "pickupDropoff": "Prise/Restitution"
+    },
+    "cta": {
+      "back": "Retour",
+      "next": "Suivant"
+    },
+    "errors": {
+      "vehicleUnavailable": "Ce véhicule est déjà réservé pour ces dates. Veuillez choisir une autre période.",
+      "availabilityCheckFailed": "Impossible de vérifier la disponibilité. Veuillez réessayer.",
+      "invalidServerResponse": "Réponse du serveur invalide",
+      "bookingFailed": "Une erreur est survenue lors de la réservation. Veuillez réessayer.",
+      "signatureSendFailed": "Échec de l'envoi de la signature. Veuillez réessayer."
+    },
+    "vehicle": {
+      "title": "Choisissez votre véhicule",
+      "subtitle": "Sélectionnez le véhicule qui convient le mieux à votre voyage.",
+      "pricePrefix": "À partir de €{price}",
+      "perDaySuffix": "/jour",
+      "selected": "Sélectionné"
+    },
+    "date": {
+      "title": "Sélectionnez vos dates",
+      "subtitle": "Choisissez la période de location.",
+      "daysSuffix": "jours",
+      "locale": "fr-FR"
+    },
+    "driver": {
+      "title": "Coordonnées du conducteur",
+      "secondTitle": "Coordonnées du second conducteur",
+      "subtitle": "Saisissez vos coordonnées de contact.",
+      "email": "E-mail",
+      "emailPlaceholder": "nom@email.com",
+      "phone": "Téléphone",
+      "phonePlaceholder": "+39 333 1234567",
+      "taxCode": "Code fiscal italien",
+      "taxCodeOptional": "(facultatif)",
+      "taxCodePlaceholder": "RSSMRA85M01F979X",
+      "licenseFront": "Permis de conduire — recto",
+      "licenseBack": "Permis de conduire — verso",
+      "uploadHint": "Glissez-déposez ou cliquez pour téléverser"
+    },
+    "secondDriver": {
+      "title": "Second conducteur",
+      "subtitle": "Facultatif : ajoutez un second conducteur.",
+      "toggle": "Ajouter un second conducteur"
+    },
+    "pickup": {
+      "title": "Retrait et restitution",
+      "subtitle": "Choisissez où et quand retirer et restituer le véhicule.",
+      "pickupHeading": "Lieu de retrait",
+      "dropoffHeading": "Lieu de restitution",
+      "sedeLabel": "Bureau GDIS Rent — Olbia",
+      "customLabel": "Lieu personnalisé",
+      "customPlaceholder": "Saisissez l'adresse de retrait (ex. Aéroport d'Olbia)",
+      "pickupTime": "Heure de retrait",
+      "dropoffTime": "Heure de restitution",
+      "dropoffNote": "La restitution se fait exclusivement à notre bureau.",
+      "errors": {
+        "address": "Veuillez saisir l'adresse de retrait",
+        "pickupTime": "Veuillez sélectionner une heure de retrait",
+        "dropoffTime": "Veuillez sélectionner une heure de restitution"
+      }
+    },
+    "signature": {
+      "title": "Signez le contrat",
+      "subtitle": "Signez numériquement le contrat de location pour finaliser votre réservation.",
+      "instruction": "Tracez votre signature dans le cadre ci-dessous",
+      "clear": "Effacer",
+      "submit": "Signer et envoyer le contrat",
+      "submitting": "Envoi de la signature..."
+    },
+    "summary": {
+      "title": "Votre devis",
+      "duration": "Durée",
+      "daysSuffix": "jours",
+      "daySingular": "jour",
+      "dayPlural": "jours",
+      "perDayShort": "/j",
+      "totalEstimate": "Total estimé",
+      "insuranceIncluded": "assurance incluse",
+      "selectDates": "Choisissez vos dates pour voir le devis",
+      "selectVehicle": "Sélectionnez un véhicule",
+      "stepLabels": {
+        "vehicle": "Véhicule",
+        "dates": "Dates",
+        "pickupDropoff": "Prise/Restitution"
+      }
+    },
+    "exitIntent": {
+      "title": "Pas encore prêt à réserver en ligne ?",
+      "description": "Écrivez-nous sur WhatsApp avec vos dates et le véhicule choisi : nous vous envoyons un devis personnalisé en 2 minutes, sans engagement.",
+      "whatsappCta": "Discuter sur WhatsApp",
+      "whatsappMessage": "Bonjour, je souhaiterais un devis rapide",
+      "continue": "Continuer la réservation"
+    },
+    "success": {
+      "title": "Réservation confirmée !",
+      "description": "Votre réservation a été enregistrée avec succès. Vous recevrez un e-mail de confirmation avec tous les détails.",
+      "reviewCta": "Laisser un avis sur Google",
+      "homeCta": "Retour à l'accueil",
+      "supportLine": "Des questions sur votre réservation ? Nous sommes disponibles 24h/24 :",
+      "whatsappMessage": "Bonjour, je viens de réserver et je souhaiterais des informations"
+    },
+    "request": {
+      "whatsappCta": "Envoyer la demande sur WhatsApp",
+      "whatsappCtaShort": "Demander",
+      "summaryTitle": "Récapitulatif de la demande",
+      "estimateNote": "Vous enverrez un message pré-rempli : nous confirmons directement la disponibilité, la franchise/kasko et les frais de livraison éventuels.",
+      "summary": {
+        "vehicle": "Véhicule",
+        "period": "Période",
+        "estimate": "Estimation",
+        "pickup": "Prise",
+        "indicative": "indicative, à confirmer"
+      },
+      "pickup": {
+        "sedeSummary": "Prise au siège (Via Annibale Caro 52, Olbia)",
+        "deliverySummary": "Livraison à : {address}",
+        "toAgree": "Prise/restitution à convenir"
+      }
+    }
+  },
+  "fleet": {
+    "breadcrumb": "Flotte",
+    "specsEyebrow": "Spécifications",
+    "specsTitle": "Fiche technique",
+    "scenariosEyebrow": "Où il vous emmène",
+    "scenariosTitle": "Parfait pour…",
+    "faqTitle": "Questions fréquentes",
+    "questionsCta": "Des questions ?",
+    "contactUs": "Contactez-nous",
+    "backHome": "Retour à l'accueil",
+    "schemaSuffix": "Location à Olbia et Costa Smeralda",
+    "priceFromPrefix": "À partir de",
+    "priceFromSuffix": "/jour",
+    "whatsappContext": "Bonjour ! J'aimerais des infos sur la location de {vehicle}."
+  },
+  "location": {
+    "breadcrumb": "Destinations",
+    "h1Prefix": "Location de voiture à",
+    "whatsappContext": "Bonjour ! J'aimerais des infos sur la location de voiture à {name}.",
+    "topSpotsEyebrow": "À voir",
+    "topSpotsTitle": "Les lieux incontournables",
+    "trafficEyebrow": "Mobilité",
+    "trafficTitle": "Conseils pratiques",
+    "nightlifeEyebrow": "Nightlife & gastronomie",
+    "nightlifeTitle": "Où sortir",
+    "comparisonEyebrow": "Quel véhicule ?",
+    "faqTitle": "Questions fréquentes",
+    "spotCategory": {
+      "spiaggia": "Plage",
+      "panorama": "Panorama",
+      "monumento": "Monument",
+      "natura": "Nature",
+      "porto": "Port",
+      "centro": "Centre-ville",
+      "evento": "Événement",
+      "escursione": "Excursion"
+    },
+    "spotMeta": {
+      "distance": "Distance",
+      "cost": "Coût",
+      "bestTime": "Meilleur moment"
+    },
+    "nightlifeType": {
+      "ristorante": "Restaurant",
+      "aperitivo": "Apéritif",
+      "club": "Club",
+      "lounge": "Lounge"
+    }
+  },
+  "common2": {
+    "questions": "Des questions ? Écrivez-nous",
+    "ctaWhatsapp": "Écrivez-nous sur WhatsApp"
+  },
+  "localita": {
+    "hero": {
+      "vipDelivery": "Livraison VIP"
+    },
+    "inlineCta": {
+      "eyebrow": "Prêt pour {name} ?",
+      "title": "Réservez dès maintenant votre expérience à {name}",
+      "button": "Réserver un véhicule à {name}"
+    },
+    "topSpots": {
+      "subtitle": "Une sélection soignée de plages, de panoramas, de monuments et d'expériences incontournables — avec les temps de trajet et des conseils pratiques."
+    },
+    "comparison": {
+      "title": "Quel véhicule choisir ?",
+      "subtitle": "Comparatif rapide pour décider en 30 secondes.",
+      "feature": "Caractéristique",
+      "license": "Permis",
+      "seats": "Places",
+      "ztl": "ZTL / parking gratuit",
+      "family": "Famille + bagages",
+      "offRoad": "Tout-terrain / pistes",
+      "priceFrom": "À partir de",
+      "perDay": "/j",
+      "note": "Tarifs indicatifs de basse saison. Le prix final est calculé sur les dates sélectionnées au moment de la réservation.",
+      "yes": "oui",
+      "no": "non"
+    },
+    "trust": {
+      "ratingAria": "Note {value} sur 5",
+      "ratingLabel": "Client vérifié Google",
+      "outOf": "/5",
+      "body": "Les clients qui ont loué une voiture, un scooter ou un quad à {name} racontent leur expérience directement sur Google. Transparence totale, sans filtres.",
+      "cta": "Voir GDIS Service SRL sur Google"
+    },
+    "finalCta": {
+      "eyebrow": "Prêt à explorer {name} ?",
+      "title": "Votre véhicule vous attend",
+      "subtitle": "Livraison VIP directement à votre hôtel, villa ou port à {name}. Réservation en 2 minutes.",
+      "questions": "Vous avez des doutes ?",
+      "contactLink": "Écrivez-nous",
+      "or": "ou retournez à l'",
+      "homeLink": "accueil",
+      "toExploreFleet": "pour explorer la flotte."
+    }
+  }
+}

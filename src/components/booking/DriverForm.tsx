@@ -1,9 +1,22 @@
+/**
+ * @deprecated DORMANT — kept in repo for rollback only.
+ * The self-service booking wizard was refactored to a WhatsApp request funnel
+ * in commit 1641e34 (June 3, 2026). The new flow lives in BookingFlow.tsx
+ * (3-step: vehicle/dates/pickup) + whatsappRequest.ts (pre-filled message).
+ * License upload, second driver, digital signature, and n8n /create-booking
+ * submission have been removed from the user-facing flow.
+ *
+ * Do NOT re-wire this component. If you need to re-enable license collection,
+ * coordinate with the contract workflow (Telegram + OCR) per CLAUDE.md.
+ */
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Upload, X, AlertCircle } from "lucide-react";
 import { useCallback, useRef, useState } from "react";
 import { toast } from "sonner";
 import { emailSchema, phoneSchema, codiceFiscaleSchema, validateFile } from "@/lib/validators";
+import { useTranslations } from "@/i18n/utils";
+import type { Locale } from "@/i18n/utils";
 
 type DriverData = {
   email: string; telefono: string;
@@ -14,6 +27,7 @@ type Props = {
   data: DriverData;
   onChange: (data: DriverData) => void;
   title?: string;
+  lang?: Locale;
 };
 
 const FileDropZone = ({
@@ -21,11 +35,13 @@ const FileDropZone = ({
   file,
   onFile,
   onClear,
+  uploadHint,
 }: {
   label: string;
   file: File | null;
   onFile: (f: File) => void;
   onClear: () => void;
+  uploadHint: string;
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -84,7 +100,7 @@ const FileDropZone = ({
         ) : (
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
             <Upload size={24} />
-            <span className="text-sm">Trascina o clicca per caricare</span>
+            <span className="text-sm">{uploadHint}</span>
           </div>
         )}
       </div>
@@ -106,7 +122,9 @@ const InlineError = ({ message }: { message?: string }) =>
     </p>
   ) : null;
 
-const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) => {
+const DriverForm = ({ data, onChange, title, lang = "it" }: Props) => {
+  const t = useTranslations(lang);
+  const headingTitle = title ?? t("booking.driver.title");
   const [touched, setTouched] = useState<Record<keyof FieldErrors, boolean>>({
     email: false,
     telefono: false,
@@ -136,19 +154,19 @@ const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) =>
 
   return (
     <div>
-      <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">{title}</h2>
-      <p className="text-muted-foreground mb-8">Inserisci i dati di contatto.</p>
+      <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">{headingTitle}</h2>
+      <p className="text-muted-foreground mb-8">{t("booking.driver.subtitle")}</p>
 
       <div className="bg-card rounded-2xl border border-border p-6 md:p-8 space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="space-y-2">
             <Label htmlFor="email" className="text-sm font-medium text-foreground">
-              E-mail <span className="text-destructive">*</span>
+              {t("booking.driver.email")} <span className="text-destructive">*</span>
             </Label>
             <Input
               id="email"
               type="email"
-              placeholder="mario@email.com"
+              placeholder={t("booking.driver.emailPlaceholder")}
               value={data.email}
               onChange={(e) => update("email", e.target.value)}
               onBlur={() => setTouched((t) => ({ ...t, email: true }))}
@@ -160,12 +178,12 @@ const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) =>
           </div>
           <div className="space-y-2">
             <Label htmlFor="telefono" className="text-sm font-medium text-foreground">
-              Telefono <span className="text-destructive">*</span>
+              {t("booking.driver.phone")} <span className="text-destructive">*</span>
             </Label>
             <Input
               id="telefono"
               type="tel"
-              placeholder="+39 333 1234567"
+              placeholder={t("booking.driver.phonePlaceholder")}
               value={data.telefono}
               onChange={(e) => update("telefono", e.target.value)}
               onBlur={() => setTouched((t) => ({ ...t, telefono: true }))}
@@ -177,12 +195,12 @@ const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) =>
           </div>
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="codiceFiscale" className="text-sm font-medium text-foreground">
-              Codice Fiscale <span className="text-muted-foreground text-xs">(opzionale)</span>
+              {t("booking.driver.taxCode")} <span className="text-muted-foreground text-xs">{t("booking.driver.taxCodeOptional")}</span>
             </Label>
             <Input
               id="codiceFiscale"
               type="text"
-              placeholder="RSSMRA85M01F979X"
+              placeholder={t("booking.driver.taxCodePlaceholder")}
               value={data.codiceFiscale}
               onChange={(e) => update("codiceFiscale", e.target.value)}
               onBlur={() => setTouched((t) => ({ ...t, codiceFiscale: true }))}
@@ -196,16 +214,18 @@ const DriverForm = ({ data, onChange, title = "Dati del conducente" }: Props) =>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4 border-t border-border">
           <FileDropZone
-            label="Foto Patente Fronte"
+            label={t("booking.driver.licenseFront")}
             file={data.patenteFronte}
             onFile={(f) => update("patenteFronte", f)}
             onClear={() => update("patenteFronte", null)}
+            uploadHint={t("booking.driver.uploadHint")}
           />
           <FileDropZone
-            label="Foto Patente Retro"
+            label={t("booking.driver.licenseBack")}
             file={data.patenteRetro}
             onFile={(f) => update("patenteRetro", f)}
             onClear={() => update("patenteRetro", null)}
+            uploadHint={t("booking.driver.uploadHint")}
           />
         </div>
       </div>

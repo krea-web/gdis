@@ -1,5 +1,4 @@
-
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { Check } from "lucide-react";
 import { useVehicles, type Vehicle } from "@/hooks/useVehicles";
 import VehicleCardSkeleton from "@/components/VehicleCardSkeleton";
@@ -10,12 +9,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useTranslations } from "@/i18n/utils";
+import type { Locale } from "@/i18n/utils";
 
 type SelectedVehicle = { id: string; name: string; image: string; pricePerDay: number; vehicleData?: Vehicle };
 
 type Props = {
   selected: SelectedVehicle | null;
   onSelect: (v: SelectedVehicle) => void;
+  lang?: Locale;
+  /** Fleet-page slug to pre-select on mount (e.g. "fiat-panda"). */
+  initialSlug?: string | null;
 };
 
 const sanitizeImageUrl = (url?: string | null) => url?.replace(/^"|"$/g, "") || "/placeholder.svg";
@@ -30,15 +34,49 @@ function toSelected(v: Vehicle): SelectedVehicle {
   };
 }
 
-const VehicleSelection = ({ selected, onSelect }: Props) => {
+/**
+ * Map fleet-page URL slug → predicate that identifies the matching DB vehicle.
+ * Keeps slug-based pre-selection robust against minor make/model formatting
+ * variations (e.g. "Mercedes-Benz" vs "Mercedes", "SH 125i" vs "SH").
+ */
+const SLUG_VEHICLE_MATCHERS: Record<string, (v: Vehicle) => boolean> = {
+  "fiat-panda": (v) =>
+    v.make.toLowerCase().includes("fiat") && v.model.toLowerCase().includes("panda"),
+  "honda-sh": (v) =>
+    v.make.toLowerCase().includes("honda") && /sh/i.test(v.model),
+  "mercedes-classe-a180d": (v) =>
+    v.make.toLowerCase().includes("mercedes") && /a.?180/i.test(v.model),
+  "yamaha-raptor": (v) =>
+    v.make.toLowerCase().includes("yamaha") && /raptor/i.test(v.model),
+};
+
+const VehicleSelection = ({ selected, onSelect, lang = "it", initialSlug = null }: Props) => {
   const { data: vehicles, isLoading } = useVehicles();
+  const t = useTranslations(lang);
+  const preselectedRef = useRef(false);
+
+  // Auto-select a vehicle when arriving via ?vehicle=<slug>.
+  // Runs at most once, after vehicles arrive, only if nothing else is selected.
+  useEffect(() => {
+    if (preselectedRef.current) return;
+    if (!initialSlug) return;
+    if (selected) return;
+    if (!vehicles || vehicles.length === 0) return;
+    const matcher = SLUG_VEHICLE_MATCHERS[initialSlug];
+    if (!matcher) return;
+    const match = vehicles.find(matcher);
+    if (match) {
+      preselectedRef.current = true;
+      onSelect(toSelected(match));
+    }
+  }, [initialSlug, selected, vehicles, onSelect]);
 
   return (
     <div>
       <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-        Scegli il veicolo
+        {t("booking.vehicle.title")}
       </h2>
-      <p className="text-muted-foreground mb-8">Seleziona il mezzo che preferisci per il tuo viaggio.</p>
+      <p className="text-muted-foreground mb-8">{t("booking.vehicle.subtitle")}</p>
 
       {isLoading ? (
         <VehicleCardSkeleton count={4} />
@@ -48,7 +86,7 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
           className="w-full px-12 sm:px-14"
         >
           <CarouselContent className="-ml-0">
-            {vehicles?.map((v, i) => {
+            {vehicles?.map((v) => {
               const sel = toSelected(v);
               const imageUrl = sanitizeImageUrl(v.image_url);
 
@@ -80,13 +118,13 @@ const VehicleSelection = ({ selected, onSelect }: Props) => {
                     </span>
                     <h3 className="font-display text-2xl font-bold text-foreground mt-1">{v.make} {v.model}</h3>
                     <p className="mt-2 text-lg font-bold text-primary">
-                      A partire da €{v.daily_rate ?? 0}
-                      <span className="text-sm font-normal text-muted-foreground">/giorno</span>
+                      {t("booking.vehicle.pricePrefix", { price: v.daily_rate ?? 0 })}
+                      <span className="text-sm font-normal text-muted-foreground">{t("booking.vehicle.perDaySuffix")}</span>
                     </p>
 
                     {selected?.id === v.id && (
                       <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
-                        <Check size={14} /> Selezionato
+                        <Check size={14} /> {t("booking.vehicle.selected")}
                       </span>
                     )}
                   </button>

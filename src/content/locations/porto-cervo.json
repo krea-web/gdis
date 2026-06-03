@@ -1,0 +1,724 @@
+{
+  "slug": "porto-cervo",
+  "name": "Porto Cervo",
+  "title": "Noleggio Auto a Porto Cervo | Autonoleggio VIP Marina e Promenade | GDIS Rent",
+  "description": "Noleggio auto a Porto Cervo con consegna VIP a Marina, pontile yacht, villa o hotel 5 stelle ✓ Autonoleggio Mercedes, scooter Honda SH per la Promenade, supercar su richiesta ✓ Affitto auto Porto Cervo Costa Smeralda ✓ Servizio H24 su WhatsApp.",
+  "canonical": "/noleggio-auto-a-porto-cervo",
+  "heroImage": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/porto-cervo/gdisrent-noleggio-porto-cervo.webp",
+  "heroSubtitle": "Noleggio auto a Porto Cervo: consegna VIP alla tua Marina, villa o yacht. L'autonoleggio di lusso della Costa Smeralda, su richiesta H24 via WhatsApp.",
+  "areaServed": [
+    {
+      "type": "City",
+      "name": "Porto Cervo"
+    },
+    {
+      "type": "AdministrativeArea",
+      "name": "Costa Smeralda"
+    }
+  ],
+  "customSections": [],
+  "spotlight": {
+    "tag": "VIP Collection",
+    "title": "Il Tuo Veicolo di Lusso, Consegnato Ovunque",
+    "description": "Porto Cervo non è una destinazione: è un palcoscenico. Arrivare in Marina con un'auto qualunque vuol dire non capire il posto. Per questo, su richiesta via WhatsApp, organizziamo il noleggio di Mercedes Classe A 180d con cambio automatico (perfetta per i tornanti che salgono al Pevero Golf Club) e di auto VIP e supercar per eventi privati, serate al Billionaire, matrimoni in Costa Smeralda o semplicemente per vivere la Promenade du Port come un protagonista. La consegna avviene esattamente dove sei: al pontile del tuo yacht in Marina, al check-in dell'Hotel Cala di Volpe, alla tua villa privata sulle alture di Romazzino, oppure direttamente all'arrivo dell'Aeroporto Costa Smeralda. Per chi resta più giorni e vuole muoversi anche dentro il borgo — che in alta stagione diventa pedonale e ZTL — l'Honda SH 350 è l'arma segreta: parcheggi nelle aree moto a 10 metri dalla Promenade, eviti la coda eterna del parcheggio Marina, e in 15 minuti scendi a San Pantaleo per il mercato del giovedì o sali a Baja Sardinia per il sunset al Phi Beach. Tutti i nostri veicoli arrivano puliti, profumati e con il pieno fatto: l'unica cosa che devi pensare è dove andare.",
+    "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp",
+    "imageAlt": "Servizio VIP Porto Cervo",
+    "badges": [
+      "Supercar su richiesta",
+      "Consegna alla Marina",
+      "Servizio 24/7"
+    ]
+  },
+  "topSpots": [
+    {
+      "name": "Marina di Porto Cervo",
+      "category": "porto",
+      "description": "Una delle marine più esclusive del Mediterraneo, capolavoro di architettura mediterranea progettato negli anni '60 da Luigi Vietti su impulso dell'Aga Khan. Yacht da sogno ormeggiati, gallerie d'arte, boutique e ristoranti vista mare. Ingresso libero, parcheggio satellite.",
+      "distance": "Centro Porto Cervo",
+      "cost": "Gratis · parking €5-15/g",
+      "bestTime": "Tardo pomeriggio (rientro yacht)"
+    },
+    {
+      "name": "Chiesa Stella Maris",
+      "category": "monumento",
+      "description": "Iconica chiesa bianca progettata da Michele Busiri Vici nel 1968, riconoscibile per le forme organiche e il campanile asimmetrico. Custodisce un dipinto del Mater Dolorosa attribuito alla scuola di El Greco. Visitabile gratuitamente fuori dagli orari di celebrazione.",
+      "distance": "Centro Porto Cervo",
+      "cost": "Gratis",
+      "bestTime": "Mattina (luce naturale)"
+    },
+    {
+      "name": "Baia di Cala di Volpe",
+      "category": "spiaggia",
+      "description": "Una delle baie più iconiche della Costa Smeralda: sabbia chiara, acque turchesi e quel verde della macchia mediterranea che la rende inconfondibile. Accesso pubblico alla spiaggia anche se l'ambiente attorno è esclusivo. Da non perdere il colpo d'occhio dal promontorio.",
+      "distance": "15 min in auto",
+      "cost": "Gratis · parking limitato",
+      "bestTime": "Mattina (mare calmo)"
+    },
+    {
+      "name": "Spiaggia del Principe",
+      "category": "spiaggia",
+      "description": "Considerata una delle spiagge più belle del Mediterraneo: sabbia bianchissima a granuli fini, acque turchesi e una baia chiusa da scogli granitici. Si arriva con un breve sentiero pedonale dal parcheggio. In agosto arriva entro le 9:00 per trovare posto.",
+      "distance": "10 min + 5 min a piedi",
+      "cost": "Gratis · parking €10/g",
+      "bestTime": "Mattina presto"
+    },
+    {
+      "name": "Spiaggia del Pevero",
+      "category": "spiaggia",
+      "description": "Ampia spiaggia di sabbia chiara incorniciata dalla macchia mediterranea, fondali bassi adatti alle famiglie. Diversa dalla vicina spiaggia del Principe, è più estesa e attrezzata, con bar e noleggio ombrelloni. Perfetta per una giornata intera.",
+      "distance": "8 min in auto",
+      "cost": "Gratis · parking €10/g",
+      "bestTime": "Tutto il giorno"
+    }
+  ],
+  "cockpit": {
+    "vehicleName": "Auto VIP su Richiesta",
+    "specs": [
+      {
+        "label": "Patente",
+        "value": "B",
+        "icon": "license"
+      },
+      {
+        "label": "Posti",
+        "value": "2-5",
+        "icon": "seats"
+      },
+      {
+        "label": "Ideale per",
+        "value": "Eventi & Lusso",
+        "icon": "use"
+      },
+      {
+        "label": "Consegna",
+        "value": "Marina / Villa",
+        "icon": "delivery"
+      }
+    ]
+  },
+  "comparison": {
+    "title": "Quale veicolo per Porto Cervo?",
+    "subtitle": "Auto VIP per le serate, scooter per la Promenade. Ecco come scegliere.",
+    "show": [
+      "mercedes",
+      "honda",
+      "panda"
+    ],
+    "recommendation": "<strong class='text-foreground'>Tre veicoli per tre momenti diversi.</strong> La Mercedes A 180d con cambio automatico è la scelta naturale per le serate al Sottovento o le cene a Cala di Volpe. Lo scooter Honda SH è la chiave per la Promenade in alta stagione (ZTL pedonale, parcheggio Marina sempre pieno). La Fiat Panda funziona da jolly per chi gestisce bagagli o famiglia. Su richiesta WhatsApp, organizziamo supercar VIP per eventi privati."
+  },
+  "trafficTips": [
+    {
+      "icon": "ztl",
+      "title": "ZTL Centro",
+      "text": "Il centro di Porto Cervo è ZTL e pedonale in estate. Parcheggia prima e prosegui a piedi o fatti consegnare lo scooter."
+    },
+    {
+      "icon": "parking",
+      "title": "Parcheggio Marina",
+      "text": "A pagamento e limitato. In alta stagione si riempie entro le 10. In scooter parcheggi gratis nelle aree moto."
+    },
+    {
+      "icon": "traffic",
+      "title": "SS Arzachena",
+      "text": "La statale verso Porto Cervo è congestionata luglio-agosto. Lo scooter dimezza i tempi."
+    },
+    {
+      "icon": "tip",
+      "title": "Bypass Baja Sardinia",
+      "text": "Per evitare il traffico serale verso <a href='/noleggio-auto-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a>, prendi lo scooter: 5 minuti senza code."
+    }
+  ],
+  "nightlife": [
+    {
+      "name": "Billionaire",
+      "type": "club",
+      "desc": "Il club più esclusivo della Sardegna. Cene-spettacolo e dj set internazionali fino all'alba."
+    },
+    {
+      "name": "Pepero",
+      "type": "aperitivo",
+      "desc": "Cocktail bar sulla Promenade con vista sulla Marina. L'aperitivo perfetto al tramonto."
+    },
+    {
+      "name": "Gianni Pedrinelli",
+      "type": "ristorante",
+      "desc": "Cucina gallurese raffinata con terrazza panoramica. Prenotazione obbligatoria in alta stagione."
+    },
+    {
+      "name": "Sottovento",
+      "type": "club",
+      "desc": "Atmosfera glamour e musica live, il punto di riferimento della movida di Porto Cervo."
+    },
+    {
+      "name": "Il Pescatore",
+      "type": "ristorante",
+      "desc": "Pesce freschissimo direttamente dalla barca. Ambiente intimo e romantico."
+    }
+  ],
+  "trustMarqueeItems": [
+    "Marina Porto Cervo",
+    "Auto VIP",
+    "Promenade",
+    "Pevero",
+    "Cala di Volpe",
+    "Concierge H24"
+  ],
+  "faq": [
+    {
+      "q": "Consegnate auto VIP direttamente alla Marina di Porto Cervo?",
+      "a": "Sì, organizziamo consegna VIP alla Marina, al pontile del tuo yacht, al tuo hotel o alla villa privata. Contattaci su WhatsApp per coordinare."
+    },
+    {
+      "q": "Posso noleggiare una supercar per una serata al Billionaire?",
+      "a": "Assolutamente. Su richiesta via WhatsApp organizziamo il noleggio di auto VIP e supercar per eventi, matrimoni e serate speciali a Porto Cervo."
+    },
+    {
+      "q": "C'è la ZTL a Porto Cervo?",
+      "a": "Sì, il centro è pedonale/ZTL in estate. Con lo <a href='/flotta/honda-sh' class='text-primary font-medium underline'>scooter Honda SH</a> parcheggi nelle aree moto dedicate vicino alla Promenade, evitando completamente il problema."
+    },
+    {
+      "q": "Quanto dista Porto Cervo dall'aeroporto di Olbia?",
+      "a": "Circa 30 minuti via SS125. Consegniamo il veicolo direttamente all'<a href='/noleggio-auto-a-olbia' class='text-primary font-medium underline'>aeroporto di Olbia</a> Costa Smeralda così non dipendi da taxi o transfer."
+    },
+    {
+      "q": "Posso parcheggiare in Marina a Ferragosto?",
+      "a": "Onestamente no, non senza nervi. Nel picco stagionale (29 luglio – 22 agosto) il parcheggio Marina si esaurisce entro le 10 del mattino e le tariffe lievitano. La soluzione che consigliamo a tutti i clienti VIP: scooter Honda SH per i giri brevi, auto VIP solo per il tragitto serale verso il ristorante con consegna direttamente al locale."
+    },
+    {
+      "q": "Quanto costa noleggiare una supercar per una sola serata?",
+      "a": "Le tariffe variano in base al modello (Lamborghini, Ferrari, Porsche su richiesta) e alla data. Scrivici su WhatsApp con data, ora e modello desiderato: ti facciamo un preventivo trasparente entro 30 minuti, senza obbligo."
+    }
+  ],
+  "closingParagraph": "Porto Cervo è il cuore della Costa Smeralda, ma non finisce qui: in 5 minuti di scooter sei a <a href='/noleggio-auto-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> per i tramonti leggendari del Phi Beach e le notti al Ritual Club, mentre in 15 minuti sali a <a href='/noleggio-auto-a-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> per il mercato del giovedì e l'autenticità del borgo gallurese — la combinazione che permette ai nostri clienti di vivere l'estate come un local, non come un turista. Per chi arriva in yacht, organizziamo la consegna dell'auto al pontile in Marina sull'orario di sbarco; per chi soggiorna in villa privata, ritiriamo e riconsegniamo il veicolo a domicilio. Tutto su WhatsApp, h24, anche in lingua inglese o francese.",
+  "i18n": {
+    "en": {
+      "name": "Porto Cervo",
+      "title": "Car Rental in Porto Cervo | VIP Marina & Promenade Car Hire | GDIS Rent",
+      "description": "Car rental in Porto Cervo with VIP delivery to Marina, yacht pier, villa or 5-star hotel ✓ Rent a Mercedes, Honda SH scooter for the Promenade, supercar on request ✓ Porto Cervo car hire in Costa Smeralda ✓ 24/7 WhatsApp service.",
+      "heroSubtitle": "Car rental in Porto Cervo: VIP delivery to your Marina, villa or yacht. Luxury car hire on the Costa Smeralda, on request 24/7 via WhatsApp.",
+      "h1Prefix": "Car Rental in",
+      "spotlight": {
+        "tag": "VIP Collection",
+        "title": "Your Luxury Vehicle, Delivered Anywhere",
+        "description": "Porto Cervo isn't a destination: it's a stage. Arriving at the Marina with just any car means missing the point. That's why, on WhatsApp request, we organise the rental of Mercedes A-Class 180d with automatic gearbox (perfect for the bends climbing to the Pevero Golf Club) and VIP cars and supercars for private events, evenings at the Billionaire, weddings on the Costa Smeralda or simply to live the Promenade du Port like a star. Delivery happens exactly where you are: at the berth of your yacht in the Marina, at check-in at the Hotel Cala di Volpe, at your private villa on the Romazzino heights, or directly at the arrival of Costa Smeralda Airport. For those staying longer who want to move within the village too — pedestrian and ZTL in peak season — the Honda SH 350 is the secret weapon: park in the bike areas 10 metres from the Promenade, avoid the eternal Marina parking queue, and in 15 minutes drop down to San Pantaleo for the Thursday market or up to Baja Sardinia for sunset at Phi Beach. All our vehicles arrive clean, fragrant and with a full tank: the only thing you need to think about is where to go.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp",
+        "imageAlt": "Porto Cervo VIP service",
+        "badges": [
+          "Supercars on request",
+          "Marina delivery",
+          "24/7 service"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Marina di Porto Cervo",
+          "category": "porto",
+          "description": "One of the most exclusive marinas in the Mediterranean, a Mediterranean architecture masterpiece designed in the 1960s by Luigi Vietti at the impulse of the Aga Khan. Dream yachts moored, art galleries, boutiques and seaview restaurants. Free entry, satellite parking.",
+          "distance": "Porto Cervo centre",
+          "cost": "Free · parking €5-15/day",
+          "bestTime": "Late afternoon (yacht return)"
+        },
+        {
+          "name": "Stella Maris Church",
+          "category": "monumento",
+          "description": "Iconic white church designed by Michele Busiri Vici in 1968, recognisable for its organic shapes and asymmetric bell tower. Houses a painting of Mater Dolorosa attributed to the El Greco school. Visitable for free outside service hours.",
+          "distance": "Porto Cervo centre",
+          "cost": "Free",
+          "bestTime": "Morning (natural light)"
+        },
+        {
+          "name": "Cala di Volpe Bay",
+          "category": "spiaggia",
+          "description": "One of the most iconic bays of Costa Smeralda: light sand, turquoise waters and the unmistakable green Mediterranean scrub. Public access to the beach even though the surrounding setting is exclusive. Don't miss the view from the headland.",
+          "distance": "15 min by car",
+          "cost": "Free · limited parking",
+          "bestTime": "Morning (calm sea)"
+        },
+        {
+          "name": "Spiaggia del Principe",
+          "category": "spiaggia",
+          "description": "Considered one of the most beautiful beaches in the Mediterranean: very white fine-grain sand, turquoise waters and a bay enclosed by granite rocks. You arrive via a short pedestrian path from the car park. In August arrive by 9:00 to find a spot.",
+          "distance": "10 min + 5 min walk",
+          "cost": "Free · parking €10/day",
+          "bestTime": "Early morning"
+        },
+        {
+          "name": "Pevero Beach",
+          "category": "spiaggia",
+          "description": "Wide pale-sand beach framed by Mediterranean scrub, with shallow waters suitable for families. Different from the nearby Spiaggia del Principe, it is larger and equipped, with bar and parasol hire. Perfect for a full day.",
+          "distance": "8 min by car",
+          "cost": "Free · parking €10/day",
+          "bestTime": "All day"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "VIP Cars on Request",
+        "specs": [
+          {
+            "label": "Licence",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Seats",
+            "value": "2-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal for",
+            "value": "Events & Luxury",
+            "icon": "use"
+          },
+          {
+            "label": "Delivery",
+            "value": "Marina / Villa",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Which vehicle for Porto Cervo?",
+        "subtitle": "VIP cars for evenings, scooters for the Promenade. Here's how to choose.",
+        "recommendation": "<strong class='text-foreground'>Three vehicles for three different moments.</strong> The Mercedes A 180d with automatic gearbox is the natural choice for evenings at Sottovento or dinners at Cala di Volpe. The Honda SH scooter is the key to the Promenade in peak season (pedestrian ZTL, Marina parking always full). The Fiat Panda works as a joker for those handling luggage or family. On WhatsApp request, we organise VIP supercars for private events."
+      },
+      "trafficTips": [
+        {
+          "icon": "ztl",
+          "title": "Centre ZTL",
+          "text": "Porto Cervo centre is ZTL and pedestrian in summer. Park first and continue on foot or have the scooter delivered to you."
+        },
+        {
+          "icon": "parking",
+          "title": "Marina Parking",
+          "text": "Paid and limited. In peak season it fills by 10. By scooter you park free in bike areas."
+        },
+        {
+          "icon": "traffic",
+          "title": "Arzachena Road",
+          "text": "The road to Porto Cervo is congested in July-August. The scooter halves journey times."
+        },
+        {
+          "icon": "tip",
+          "title": "Baja Sardinia Bypass",
+          "text": "To avoid evening traffic to <a href='/en/car-rental-in-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a>, take the scooter: 5 minutes without queues."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Billionaire",
+          "type": "club",
+          "desc": "The most exclusive club in Sardinia. Dinner-shows and international DJ sets until dawn."
+        },
+        {
+          "name": "Pepero",
+          "type": "aperitivo",
+          "desc": "Cocktail bar on the Promenade with views of the Marina. The perfect aperitif at sunset."
+        },
+        {
+          "name": "Gianni Pedrinelli",
+          "type": "ristorante",
+          "desc": "Refined Gallura cuisine with panoramic terrace. Booking essential in peak season."
+        },
+        {
+          "name": "Sottovento",
+          "type": "club",
+          "desc": "Glamorous atmosphere and live music, the reference point for Porto Cervo nightlife."
+        },
+        {
+          "name": "Il Pescatore",
+          "type": "ristorante",
+          "desc": "Very fresh fish straight off the boat. Intimate and romantic setting."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Marina Porto Cervo",
+        "VIP Cars",
+        "Promenade",
+        "Pevero",
+        "Cala di Volpe",
+        "24/7 Concierge"
+      ],
+      "faq": [
+        {
+          "q": "Do you deliver VIP cars directly to Marina di Porto Cervo?",
+          "a": "Yes, we organise VIP delivery at the Marina, at your yacht berth, your hotel or private villa. Contact us on WhatsApp to coordinate."
+        },
+        {
+          "q": "Can I rent a supercar for an evening at the Billionaire?",
+          "a": "Absolutely. On WhatsApp request we organise rental of VIP cars and supercars for events, weddings and special evenings in Porto Cervo."
+        },
+        {
+          "q": "Is there a ZTL in Porto Cervo?",
+          "a": "Yes, the centre is pedestrian/ZTL in summer. With the <a href='/en/fleet/honda-sh' class='text-primary font-medium underline'>Honda SH scooter</a> you park in dedicated bike areas next to the Promenade, avoiding the issue completely."
+        },
+        {
+          "q": "How far is Porto Cervo from Olbia airport?",
+          "a": "About 30 minutes via the SS125. We deliver the vehicle directly at <a href='/en/car-rental-in-olbia' class='text-primary font-medium underline'>Olbia airport</a> Costa Smeralda so you don't depend on taxis or transfers."
+        },
+        {
+          "q": "Can I park at the Marina in mid-August?",
+          "a": "Honestly no, not without nerves. In peak season (29 July – 22 August) the Marina car park fills by 10 in the morning and tariffs soar. Our recommendation to all VIP customers: Honda SH scooter for short trips, VIP car only for the evening journey to the restaurant with delivery directly to the venue."
+        },
+        {
+          "q": "How much does it cost to rent a supercar for a single evening?",
+          "a": "Rates vary by model (Lamborghini, Ferrari, Porsche on request) and date. Write to us on WhatsApp with date, time and desired model: we'll give you a transparent quote within 30 minutes, no obligation."
+        }
+      ],
+      "closingParagraph": "Porto Cervo is the heart of Costa Smeralda, but it doesn't end here: in 5 minutes by scooter you're at <a href='/en/car-rental-in-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> for the legendary Phi Beach sunsets and the nights at the Ritual Club, while in 15 minutes you climb to <a href='/en/car-rental-in-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> for the Thursday market and the authenticity of the Gallura village — the combination that lets our customers live the summer like a local, not a tourist. For those arriving by yacht, we organise car delivery to the berth in the Marina at disembarkation time; for those staying in private villas, we collect and return the vehicle at home. All on WhatsApp, 24/7, also in English or French.",
+      "intro": "<strong>Car rental in Porto Cervo</strong> needs a partner who knows the Costa Smeralda from the inside: the high-season pedestrian ZTL, Marina and Pevero Golf Club parking, opening hours at Billionaire and Phi Beach. GDIS Rent runs VIP car hire with delivery directly to your villa, Cala di Volpe or Romazzino hotel, yacht pier or Promenade parking — without ever having to drive back to Olbia. The <a href='/en/fleet/mercedes-classe-a180d' class='text-primary font-medium hover:underline'>Mercedes A-Class 180d</a> remains the natural choice if you're staying in the villa belt, while the <a href='/en/fleet/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> scooter is the trump card for the 5 minutes between the Promenade and <a href='/en/car-rental-in-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a>, skipping queues and full car parks. <strong>Porto Cervo car hire</strong> with transparent rates, supercar and luxury vehicles on request — coordinate everything in 30 seconds on WhatsApp."
+    },
+    "de": {
+      "name": "Porto Cervo",
+      "title": "Mietwagen Porto Cervo | VIP-Autovermietung Marina & Promenade | GDIS Rent",
+      "description": "Mietwagen Porto Cervo mit VIP-Übergabe an Marina, Yachtsteg, Villa oder 5-Sterne-Hotel ✓ Autovermietung Mercedes, Honda SH Roller für die Promenade, Supersportwagen auf Anfrage ✓ Auto mieten in Porto Cervo Costa Smeralda ✓ 24/7 per WhatsApp.",
+      "heroSubtitle": "Mietwagen Porto Cervo: VIP-Übergabe an Ihrer Marina, Villa oder Yacht. Luxus-Autovermietung an der Costa Smeralda, rund um die Uhr per WhatsApp.",
+      "h1Prefix": "Autovermietung in",
+      "spotlight": {
+        "tag": "VIP Collection",
+        "title": "Ihr Luxusfahrzeug, überall geliefert",
+        "description": "Porto Cervo ist kein Reiseziel: Es ist eine Bühne. Mit irgendeinem Auto an der Marina anzukommen heißt, den Ort nicht zu verstehen. Deshalb organisieren wir auf WhatsApp-Anfrage die Vermietung von Mercedes A-Klasse 180d mit Automatikgetriebe (perfekt für die Kurven hinauf zum Pevero Golf Club) sowie VIP-Autos und Supercars für private Veranstaltungen, Abende im Billionaire, Hochzeiten an der Costa Smeralda oder einfach um die Promenade du Port wie ein Hauptdarsteller zu erleben. Die Lieferung erfolgt genau dort, wo Sie sind: am Steg Ihrer Yacht in der Marina, beim Check-in im Hotel Cala di Volpe, in Ihrer Privatvilla auf den Höhen von Romazzino oder direkt bei der Ankunft am Flughafen Costa Smeralda. Für längere Aufenthalte und Bewegung im Ort selbst - der in der Hochsaison Fußgängerzone und ZTL wird - ist der Honda SH 350 die Geheimwaffe: Parken in der Motorradzone 10 Meter von der Promenade, vermeiden Sie die ewige Marina-Parkplatzschlange, und in 15 Minuten fahren Sie hinunter nach San Pantaleo zum Donnerstagsmarkt oder hinauf nach Baja Sardinia zum Sonnenuntergang am Phi Beach. Alle unsere Fahrzeuge kommen sauber, parfümiert und vollgetankt an: Das Einzige, woran Sie denken müssen, ist, wohin Sie wollen.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp",
+        "imageAlt": "VIP-Service Porto Cervo",
+        "badges": [
+          "Supercars auf Anfrage",
+          "Lieferung an die Marina",
+          "Service rund um die Uhr"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Marina di Porto Cervo",
+          "category": "porto",
+          "description": "Eine der exklusivsten Marinas im Mittelmeer, ein Meisterwerk mediterraner Architektur, in den 1960er Jahren von Luigi Vietti auf Anregung des Aga Khan entworfen. Traumyachten am Liegeplatz, Kunstgalerien, Boutiquen und Restaurants mit Meerblick. Freier Eintritt, Satellitenparkplatz.",
+          "distance": "Zentrum Porto Cervo",
+          "cost": "Kostenlos · Parken 5-15 €/Tag",
+          "bestTime": "Später Nachmittag (Yacht-Rückkehr)"
+        },
+        {
+          "name": "Kirche Stella Maris",
+          "category": "monumento",
+          "description": "Ikonische weiße Kirche, 1968 von Michele Busiri Vici entworfen, erkennbar an organischen Formen und asymmetrischem Glockenturm. Beherbergt ein Gemälde der Mater Dolorosa, das der Schule von El Greco zugeschrieben wird. Außerhalb der Gottesdienstzeiten kostenlos zu besichtigen.",
+          "distance": "Zentrum Porto Cervo",
+          "cost": "Kostenlos",
+          "bestTime": "Vormittag (natürliches Licht)"
+        },
+        {
+          "name": "Bucht von Cala di Volpe",
+          "category": "spiaggia",
+          "description": "Eine der ikonischsten Buchten der Costa Smeralda: heller Sand, türkisfarbenes Wasser und das unverwechselbare Grün der Macchia. Öffentlicher Strandzugang, auch wenn die umliegende Umgebung exklusiv ist. Den Blick vom Vorgebirge nicht verpassen.",
+          "distance": "15 Min. mit dem Auto",
+          "cost": "Kostenlos · begrenzte Parkplätze",
+          "bestTime": "Vormittag (ruhiges Meer)"
+        },
+        {
+          "name": "Spiaggia del Principe",
+          "category": "spiaggia",
+          "description": "Gilt als einer der schönsten Strände im Mittelmeer: sehr weißer feinkörniger Sand, türkisfarbenes Wasser und eine von Granitfelsen umschlossene Bucht. Über einen kurzen Fußweg vom Parkplatz erreichbar. Im August vor 9:00 Uhr ankommen, um einen Platz zu finden.",
+          "distance": "10 Min. + 5 Min. zu Fuß",
+          "cost": "Kostenlos · Parken 10 €/Tag",
+          "bestTime": "Früher Morgen"
+        },
+        {
+          "name": "Spiaggia del Pevero",
+          "category": "spiaggia",
+          "description": "Weitläufiger heller Sandstrand, eingerahmt von der Macchia, flache Wassertiefe geeignet für Familien. Anders als die nahe Spiaggia del Principe ist er größer und ausgestattet, mit Bar und Sonnenschirmverleih. Perfekt für einen ganzen Tag.",
+          "distance": "8 Min. mit dem Auto",
+          "cost": "Kostenlos · Parken 10 €/Tag",
+          "bestTime": "Ganztägig"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "VIP-Autos auf Anfrage",
+        "specs": [
+          {
+            "label": "Führerschein",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Sitzplätze",
+            "value": "2-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Ideal für",
+            "value": "Events & Luxus",
+            "icon": "use"
+          },
+          {
+            "label": "Lieferung",
+            "value": "Marina / Villa",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Welches Fahrzeug für Porto Cervo?",
+        "subtitle": "VIP-Autos für die Abende, Roller für die Promenade. So wählen Sie.",
+        "recommendation": "<strong class='text-foreground'>Drei Fahrzeuge für drei verschiedene Momente.</strong> Der Mercedes A 180d mit Automatikgetriebe ist die natürliche Wahl für die Abende im Sottovento oder die Diners in Cala di Volpe. Der Honda SH Roller ist der Schlüssel zur Promenade in der Hochsaison (Fußgängerzone, ZTL, Marina-Parkplatz immer voll). Der Fiat Panda dient als Joker für alle, die Gepäck oder Familie haben. Auf WhatsApp-Anfrage organisieren wir VIP-Supercars für private Veranstaltungen."
+      },
+      "trafficTips": [
+        {
+          "icon": "ztl",
+          "title": "ZTL Zentrum",
+          "text": "Das Zentrum von Porto Cervo ist im Sommer ZTL und Fußgängerzone. Parken Sie zuvor und gehen Sie zu Fuß weiter oder lassen Sie sich den Roller liefern."
+        },
+        {
+          "icon": "parking",
+          "title": "Marina-Parkplatz",
+          "text": "Kostenpflichtig und begrenzt. In der Hochsaison vor 10 Uhr voll. Mit dem Roller parken Sie kostenlos in den Motorradzonen."
+        },
+        {
+          "icon": "traffic",
+          "title": "SS Arzachena",
+          "text": "Die Staatsstraße nach Porto Cervo ist im Juli und August überlastet. Der Roller halbiert die Fahrzeiten."
+        },
+        {
+          "icon": "tip",
+          "title": "Bypass Baja Sardinia",
+          "text": "Um den Abendverkehr nach <a href='/de/autovermietung-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> zu vermeiden, nehmen Sie den Roller: 5 Minuten ohne Stau."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Billionaire",
+          "type": "club",
+          "desc": "Der exklusivste Club Sardiniens. Dinner-Shows und internationale DJ-Sets bis zur Morgendämmerung."
+        },
+        {
+          "name": "Pepero",
+          "type": "aperitivo",
+          "desc": "Cocktailbar an der Promenade mit Blick auf die Marina. Der perfekte Aperitif zum Sonnenuntergang."
+        },
+        {
+          "name": "Gianni Pedrinelli",
+          "type": "ristorante",
+          "desc": "Raffinierte gallurische Küche mit Panoramaterrasse. Reservierung in der Hochsaison Pflicht."
+        },
+        {
+          "name": "Sottovento",
+          "type": "club",
+          "desc": "Glamouröse Atmosphäre und Live-Musik, der Bezugspunkt des Nachtlebens von Porto Cervo."
+        },
+        {
+          "name": "Il Pescatore",
+          "type": "ristorante",
+          "desc": "Frischester Fisch direkt vom Boot. Intimes und romantisches Ambiente."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Marina Porto Cervo",
+        "VIP-Autos",
+        "Promenade",
+        "Pevero",
+        "Cala di Volpe",
+        "Concierge rund um die Uhr"
+      ],
+      "faq": [
+        {
+          "q": "Liefern Sie VIP-Autos direkt an die Marina di Porto Cervo?",
+          "a": "Ja, wir organisieren VIP-Lieferung an die Marina, an den Steg Ihrer Yacht, an Ihr Hotel oder Ihre Privatvilla. Kontaktieren Sie uns über WhatsApp zur Koordination."
+        },
+        {
+          "q": "Kann ich einen Supercar für einen Abend im Billionaire mieten?",
+          "a": "Absolut. Auf WhatsApp-Anfrage organisieren wir die Vermietung von VIP-Autos und Supercars für Veranstaltungen, Hochzeiten und besondere Abende in Porto Cervo."
+        },
+        {
+          "q": "Gibt es eine ZTL in Porto Cervo?",
+          "a": "Ja, das Zentrum ist im Sommer Fußgängerzone/ZTL. Mit dem <a href='/de/flotte/honda-sh' class='text-primary font-medium underline'>Honda SH Roller</a> parken Sie in den eigens dafür vorgesehenen Motorradzonen nahe der Promenade und vermeiden das Problem komplett."
+        },
+        {
+          "q": "Wie weit ist Porto Cervo vom Flughafen Olbia entfernt?",
+          "a": "Etwa 30 Minuten über die SS125. Wir liefern das Fahrzeug direkt am <a href='/de/autovermietung-olbia' class='text-primary font-medium underline'>Flughafen Olbia</a> Costa Smeralda, sodass Sie nicht von Taxis oder Transfers abhängig sind."
+        },
+        {
+          "q": "Kann ich an Mariä Himmelfahrt an der Marina parken?",
+          "a": "Ehrlich gesagt nein, nicht ohne Nerven. Im Saisonhöhepunkt (29. Juli – 22. August) ist der Marina-Parkplatz bis 10 Uhr morgens voll und die Tarife schießen in die Höhe. Unsere Empfehlung an alle VIP-Kunden: Honda SH Roller für kurze Fahrten, VIP-Auto nur für die Abendfahrt zum Restaurant mit Lieferung direkt vor Ort."
+        },
+        {
+          "q": "Wie viel kostet die Miete eines Supercars für einen einzigen Abend?",
+          "a": "Die Tarife variieren je nach Modell (Lamborghini, Ferrari, Porsche auf Anfrage) und Datum. Schreiben Sie uns auf WhatsApp mit Datum, Uhrzeit und gewünschtem Modell: Wir erstellen Ihnen innerhalb von 30 Minuten ein transparentes Angebot, unverbindlich."
+        }
+      ],
+      "closingParagraph": "Porto Cervo ist das Herz der Costa Smeralda, aber es endet nicht hier: In 5 Minuten mit dem Roller sind Sie in <a href='/de/autovermietung-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> für die legendären Sonnenuntergänge am Phi Beach und die Nächte im Ritual Club, während Sie in 15 Minuten nach <a href='/de/autovermietung-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> hinaufsteigen für den Donnerstagsmarkt und die Authentizität des gallurischen Dorfes - die Kombination, die unseren Kunden erlaubt, den Sommer wie ein Einheimischer zu leben, nicht wie ein Tourist. Für Yacht-Anreisende organisieren wir die Auto-Lieferung an den Steg in der Marina pünktlich zum Anlandezeitpunkt; für Aufenthalte in Privatvillen holen wir das Fahrzeug ab und liefern es zurück. Alles auf WhatsApp, rund um die Uhr, auch auf Englisch oder Französisch.",
+      "intro": "Ein <strong>Mietwagen in Porto Cervo</strong> braucht einen Partner, der die Costa Smeralda von innen kennt: die Fußgänger-ZTL der Hochsaison, die Parkplätze an der Marina und am Pevero Golf Club, die Öffnungszeiten von Billionaire und Phi Beach. GDIS Rent organisiert die VIP-Autovermietung mit Übergabe direkt an Ihrer Villa, am Hotel Cala di Volpe oder Romazzino, am Yachtsteg oder am Promenade-Parkplatz — ohne dass Sie je nach Olbia zurückfahren müssen. Die <a href='/de/flotte/mercedes-classe-a180d' class='text-primary font-medium hover:underline'>Mercedes A-Klasse 180d</a> bleibt die natürliche Wahl, wenn Sie im Villengürtel wohnen, während der <a href='/de/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> Roller den Joker für die 5 Minuten zwischen Promenade und <a href='/de/autovermietung-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> darstellt und Staus sowie volle Parkplätze umgeht. <strong>Auto mieten in Porto Cervo</strong> mit transparenten Preisen, Supersportwagen und Luxusfahrzeuge auf Anfrage — alles in 30 Sekunden per WhatsApp koordiniert."
+    },
+    "fr": {
+      "name": "Porto Cervo",
+      "title": "Location Voiture à Porto Cervo | Loueur VIP Marina & Promenade | GDIS Rent",
+      "description": "Location voiture à Porto Cervo avec livraison VIP à la Marina, ponton yacht, villa ou hôtel 5 étoiles ✓ Louer une Mercedes, scooter Honda SH pour la Promenade, supercar sur demande ✓ Loueur à Porto Cervo Costa Smeralda ✓ Service 24h/24 sur WhatsApp.",
+      "heroSubtitle": "Location voiture à Porto Cervo : livraison VIP à votre Marina, villa ou yacht. Loueur de luxe en Costa Smeralda, sur demande 24h/24 via WhatsApp.",
+      "h1Prefix": "Location de voiture à",
+      "spotlight": {
+        "tag": "Collection VIP",
+        "title": "Votre véhicule de luxe, livré partout",
+        "description": "Porto Cervo n'est pas une destination : c'est une scène. Arriver à la Marina avec n'importe quelle voiture, c'est ne pas comprendre l'endroit. C'est pourquoi, sur demande via WhatsApp, nous organisons la location de Mercedes Classe A 180d à boîte automatique (parfaite pour les lacets qui montent au Pevero Golf Club) et de voitures VIP et supercars pour des événements privés, soirées au Billionaire, mariages en Costa Smeralda ou simplement pour vivre la Promenade du Port en protagoniste. La livraison s'effectue exactement là où vous êtes : au ponton de votre yacht à la Marina, au check-in de l'Hôtel Cala di Volpe, à votre villa privée sur les hauteurs de Romazzino, ou directement à l'arrivée de l'aéroport Costa Smeralda. Pour ceux qui restent plus longtemps et veulent aussi se déplacer dans le village — qui devient piétonnier et ZTL en haute saison — l'Honda SH 350 est l'arme secrète : vous vous garez dans les zones moto à 10 mètres de la Promenade, vous évitez la file éternelle du parking Marina, et en 15 minutes vous descendez à San Pantaleo pour le marché du jeudi ou montez à Baja Sardinia pour le coucher de soleil au Phi Beach. Tous nos véhicules arrivent propres, parfumés et avec le plein effectué : la seule chose à laquelle vous devez penser est où aller.",
+        "image": "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp",
+        "imageAlt": "Service VIP Porto Cervo",
+        "badges": [
+          "Supercars sur demande",
+          "Livraison à la Marina",
+          "Service 24/7"
+        ]
+      },
+      "topSpots": [
+        {
+          "name": "Marina di Porto Cervo",
+          "category": "porto",
+          "description": "L'une des marinas les plus exclusives de la Méditerranée, chef-d'œuvre d'architecture méditerranéenne conçu dans les années 1960 par Luigi Vietti à l'impulsion de l'Aga Khan. Yachts de rêve à quai, galeries d'art, boutiques et restaurants vue mer. Entrée libre, parking satellite.",
+          "distance": "Centre Porto Cervo",
+          "cost": "Gratuit · parking 5-15 €/j",
+          "bestTime": "Fin d'après-midi (retour des yachts)"
+        },
+        {
+          "name": "Église Stella Maris",
+          "category": "monumento",
+          "description": "Iconique église blanche conçue par Michele Busiri Vici en 1968, reconnaissable à ses formes organiques et à son clocher asymétrique. Elle abrite un tableau de la Mater Dolorosa attribué à l'école du Greco. Visite gratuite hors offices.",
+          "distance": "Centre Porto Cervo",
+          "cost": "Gratuit",
+          "bestTime": "Matin (lumière naturelle)"
+        },
+        {
+          "name": "Baie de Cala di Volpe",
+          "category": "spiaggia",
+          "description": "L'une des baies les plus iconiques de la Costa Smeralda : sable clair, eaux turquoise et ce vert du maquis méditerranéen qui la rend inimitable. Accès public à la plage même si l'environnement est exclusif. À ne pas manquer le coup d'œil depuis le promontoire.",
+          "distance": "15 min en voiture",
+          "cost": "Gratuit · parking limité",
+          "bestTime": "Matin (mer calme)"
+        },
+        {
+          "name": "Spiaggia del Principe",
+          "category": "spiaggia",
+          "description": "Considérée comme l'une des plus belles plages de la Méditerranée : sable très blanc à grains fins, eaux turquoise et baie fermée par des rochers de granit. On y arrive par un court sentier piéton depuis le parking. En août, arrivez avant 9h00 pour trouver une place.",
+          "distance": "10 min + 5 min à pied",
+          "cost": "Gratuit · parking 10 €/j",
+          "bestTime": "Tôt le matin"
+        },
+        {
+          "name": "Plage du Pevero",
+          "category": "spiaggia",
+          "description": "Vaste plage de sable clair encadrée par le maquis méditerranéen, fonds peu profonds adaptés aux familles. Différente de la voisine Spiaggia del Principe, elle est plus étendue et équipée, avec bar et location de parasols. Parfaite pour une journée entière.",
+          "distance": "8 min en voiture",
+          "cost": "Gratuit · parking 10 €/j",
+          "bestTime": "Toute la journée"
+        }
+      ],
+      "cockpit": {
+        "vehicleName": "Voitures VIP sur demande",
+        "specs": [
+          {
+            "label": "Permis",
+            "value": "B",
+            "icon": "license"
+          },
+          {
+            "label": "Places",
+            "value": "2-5",
+            "icon": "seats"
+          },
+          {
+            "label": "Idéal pour",
+            "value": "Événements et luxe",
+            "icon": "use"
+          },
+          {
+            "label": "Livraison",
+            "value": "Marina / Villa",
+            "icon": "delivery"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Quel véhicule pour Porto Cervo ?",
+        "subtitle": "Voitures VIP pour les soirées, scooters pour la Promenade. Voici comment choisir.",
+        "recommendation": "<strong class='text-foreground'>Trois véhicules pour trois moments différents.</strong> La Mercedes A 180d à boîte automatique est le choix naturel pour les soirées au Sottovento ou les dîners à Cala di Volpe. Le scooter Honda SH est la clé de la Promenade en haute saison (ZTL piétonne, parking Marina toujours plein). La Fiat Panda fait office de joker pour ceux qui gèrent bagages ou famille. Sur demande WhatsApp, nous organisons des supercars VIP pour des événements privés."
+      },
+      "trafficTips": [
+        {
+          "icon": "ztl",
+          "title": "ZTL Centre",
+          "text": "Le centre de Porto Cervo est ZTL et piétonnier en été. Stationnez avant et continuez à pied ou faites-vous livrer le scooter."
+        },
+        {
+          "icon": "parking",
+          "title": "Parking Marina",
+          "text": "Payant et limité. En haute saison il est plein avant 10h. En scooter vous vous garez gratuitement dans les zones moto."
+        },
+        {
+          "icon": "traffic",
+          "title": "SS Arzachena",
+          "text": "La nationale vers Porto Cervo est congestionnée en juillet-août. Le scooter divise par deux les temps."
+        },
+        {
+          "icon": "tip",
+          "title": "Bypass Baja Sardinia",
+          "text": "Pour éviter le trafic du soir vers <a href='/fr/location-voiture-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a>, prenez le scooter : 5 minutes sans file."
+        }
+      ],
+      "nightlife": [
+        {
+          "name": "Billionaire",
+          "type": "club",
+          "desc": "Le club le plus exclusif de Sardaigne. Dîners-spectacles et DJ sets internationaux jusqu'à l'aube."
+        },
+        {
+          "name": "Pepero",
+          "type": "aperitivo",
+          "desc": "Cocktail bar sur la Promenade avec vue sur la Marina. L'apéritif parfait au coucher du soleil."
+        },
+        {
+          "name": "Gianni Pedrinelli",
+          "type": "ristorante",
+          "desc": "Cuisine gallurese raffinée avec terrasse panoramique. Réservation obligatoire en haute saison."
+        },
+        {
+          "name": "Sottovento",
+          "type": "club",
+          "desc": "Atmosphère glamour et musique live, le point de référence de la nuit de Porto Cervo."
+        },
+        {
+          "name": "Il Pescatore",
+          "type": "ristorante",
+          "desc": "Poisson très frais directement du bateau. Cadre intime et romantique."
+        }
+      ],
+      "trustMarqueeItems": [
+        "Marina Porto Cervo",
+        "Voitures VIP",
+        "Promenade",
+        "Pevero",
+        "Cala di Volpe",
+        "Conciergerie 24h/24"
+      ],
+      "faq": [
+        {
+          "q": "Livrez-vous des voitures VIP directement à la Marina de Porto Cervo ?",
+          "a": "Oui, nous organisons la livraison VIP à la Marina, au ponton de votre yacht, à votre hôtel ou à votre villa privée. Contactez-nous sur WhatsApp pour coordonner."
+        },
+        {
+          "q": "Puis-je louer une supercar pour une soirée au Billionaire ?",
+          "a": "Absolument. Sur demande via WhatsApp, nous organisons la location de voitures VIP et supercars pour événements, mariages et soirées spéciales à Porto Cervo."
+        },
+        {
+          "q": "Y a-t-il une ZTL à Porto Cervo ?",
+          "a": "Oui, le centre est piétonnier/ZTL en été. Avec le <a href='/fr/flotte/honda-sh' class='text-primary font-medium underline'>scooter Honda SH</a> vous vous garez dans les zones moto dédiées près de la Promenade, en évitant complètement le problème."
+        },
+        {
+          "q": "À quelle distance se trouve Porto Cervo de l'aéroport d'Olbia ?",
+          "a": "Environ 30 minutes via la SS125. Nous livrons le véhicule directement à l'<a href='/fr/location-voiture-a-olbia' class='text-primary font-medium underline'>aéroport d'Olbia</a> Costa Smeralda pour ne pas dépendre des taxis ou transferts."
+        },
+        {
+          "q": "Puis-je me garer à la Marina au 15 août ?",
+          "a": "Honnêtement non, pas sans nerfs. Au pic de la saison (29 juillet – 22 août) le parking Marina se remplit avant 10h du matin et les tarifs s'envolent. La solution que nous recommandons à tous les clients VIP : scooter Honda SH pour les trajets brefs, voiture VIP uniquement pour le trajet du soir vers le restaurant avec livraison directement sur place."
+        },
+        {
+          "q": "Combien coûte la location d'une supercar pour une seule soirée ?",
+          "a": "Les tarifs varient selon le modèle (Lamborghini, Ferrari, Porsche sur demande) et la date. Écrivez-nous sur WhatsApp avec date, heure et modèle souhaité : nous vous faisons un devis transparent en 30 minutes, sans engagement."
+        }
+      ],
+      "closingParagraph": "Porto Cervo est le cœur de la Costa Smeralda, mais cela ne s'arrête pas là : en 5 minutes de scooter vous êtes à <a href='/fr/location-voiture-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> pour les couchers de soleil légendaires du Phi Beach et les nuits au Ritual Club, tandis qu'en 15 minutes vous montez à <a href='/fr/location-voiture-a-san-pantaleo' class='text-primary font-medium hover:underline'>San Pantaleo</a> pour le marché du jeudi et l'authenticité du village gallurais — la combinaison qui permet à nos clients de vivre l'été comme un local, non comme un touriste. Pour ceux qui arrivent en yacht, nous organisons la livraison de la voiture au ponton à la Marina selon l'horaire de débarquement ; pour ceux qui séjournent en villa privée, nous récupérons et restituons le véhicule à domicile. Tout sur WhatsApp, 24h/24, également en anglais ou en français.",
+      "intro": "La <strong>location voiture à Porto Cervo</strong> exige un partenaire qui connaît la Costa Smeralda de l'intérieur : la ZTL piétonne de haute saison, les parkings de la Marina et du Pevero Golf Club, les horaires du Billionaire et de Phi Beach. GDIS Rent gère le loueur VIP avec livraison directement à votre villa, à l'hôtel Cala di Volpe ou Romazzino, au ponton yacht ou au parking de la Promenade — sans jamais devoir revenir à Olbia. La <a href='/fr/flotte/mercedes-classe-a180d' class='text-primary font-medium hover:underline'>Mercedes Classe A 180d</a> reste le choix naturel si vous logez dans la ceinture des villas, tandis que le scooter <a href='/fr/flotte/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> est l'atout pour les 5 minutes qui séparent la Promenade de <a href='/fr/location-voiture-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> en évitant files et parkings complets. <strong>Loueur à Porto Cervo</strong> avec tarifs transparents, supercar et véhicules de luxe sur demande — tout coordonné en 30 secondes sur WhatsApp."
+    }
+  },
+  "intro": "Il <strong>noleggio auto a Porto Cervo</strong> richiede un partner che conosca la Costa Smeralda dall'interno: la ZTL pedonale dell'alta stagione, i parcheggi della Marina e del Pevero Golf Club, gli orari del Billionaire e di Phi Beach. GDIS Rent gestisce l'autonoleggio VIP con consegna direttamente alla tua villa, all'hotel Cala di Volpe o Romazzino, al pontile yacht o al parcheggio della Promenade — senza che tu debba mai rientrare a Olbia. La <a href='/flotta/mercedes-classe-a180d' class='text-primary font-medium hover:underline'>Mercedes Classe A 180d</a> resta la scelta naturale per chi alloggia nella zona delle ville, mentre lo scooter <a href='/flotta/honda-sh' class='text-primary font-medium hover:underline'>Honda SH</a> è il jolly per i 5 minuti che separano la Promenade da <a href='/noleggio-auto-a-baja-sardinia' class='text-primary font-medium hover:underline'>Baja Sardinia</a> evitando code e parcheggi pieni. <strong>Affitto auto a Porto Cervo</strong> trasparente, su richiesta anche supercar e ville premium — coordina tutto in 30 secondi su WhatsApp."
+}

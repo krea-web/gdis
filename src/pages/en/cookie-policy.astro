@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BUSINESS_EMAIL } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/en" },
+  { name: "Cookie Policy", url: "/en/cookie-policy" },
+];
+---
+
+<BaseLayout
+  title="Cookie Policy — GDIS Rent & Service"
+  description="List of cookies used on gdisrentservice.com, purposes, duration and ways to manage or revoke consent."
+  canonical="/en/cookie-policy"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/cookie", de: "/de/cookie-richtlinie", fr: "/fr/cookies" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Cookie Policy</h1>
+    <p class="text-sm text-muted-foreground">Last updated: 24 April 2026</p>
+
+    <h2>What cookies are</h2>
+    <p>
+      Cookies are small text files that the websites you visit send to your device. They are used
+      to make the site work properly, improve its performance and provide anonymous information
+      to the owner.
+    </p>
+
+    <h2>Cookies used</h2>
+    <h3>Technical cookies (always active)</h3>
+    <ul>
+      <li><strong>Supabase session</strong> — authentication of registered users (booking and admin areas only). Duration: session.</li>
+      <li><strong>gdis-cookie-consent</strong> — stores your choice on the cookie banner. Duration: 12 months.</li>
+      <li><strong>Cloudflare Turnstile</strong> — anti-bot verification on the booking form. Duration: session.</li>
+    </ul>
+
+    <h3>Analytics cookies (enabled only with consent)</h3>
+    <ul>
+      <li><strong>Google Analytics 4</strong> — aggregated browsing statistics with masked IP. Maximum duration: 14 months. Purpose: understanding how users use the site in order to improve it.</li>
+    </ul>
+
+    <h2>Managing consent</h2>
+    <p>
+      On your first visit a banner appears allowing you to accept or refuse non-essential cookies.
+      You can change your mind at any time by clearing your browser cookies: the banner will
+      reappear on your next visit.
+    </p>
+
+    <h2>How to disable cookies in your browser</h2>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noreferrer">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie" target="_blank" rel="noreferrer">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noreferrer">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/it-it/microsoft-edge" target="_blank" rel="noreferrer">Microsoft Edge</a></li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>
+      For queries, please write to <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>.
+    </p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,310 @@
+import { defineCollection, z } from "astro:content";
+
+const faqItem = z.object({
+  q: z.string(),
+  a: z.string(),
+});
+
+const spotCategory = z.enum([
+  "spiaggia",
+  "panorama",
+  "monumento",
+  "natura",
+  "porto",
+  "centro",
+  "evento",
+  "escursione",
+]);
+
+const spot = z.object({
+  name: z.string(),
+  category: spotCategory,
+  description: z.string(),
+  distance: z.string(),
+  cost: z.string(),
+  bestTime: z.string(),
+});
+
+const trafficTip = z.object({
+  icon: z.enum(["ztl", "parking", "traffic", "tip"]),
+  title: z.string(),
+  text: z.string(),
+});
+
+const nightlifeItem = z.object({
+  name: z.string(),
+  type: z.enum(["ristorante", "aperitivo", "club", "lounge"]),
+  desc: z.string(),
+});
+
+const customSection = z.object({
+  variant: z.enum(["airport", "port", "left-image", "right-image"]).optional(),
+  badge: z.string().optional(),
+  title: z.string(),
+  body: z.string(),
+  bullets: z.array(z.string()).optional(),
+  callout: z
+    .object({
+      title: z.string(),
+      text: z.string(),
+    })
+    .optional(),
+  image: z.string().url(),
+  imageAlt: z.string(),
+});
+
+const cockpitSpec = z.object({
+  label: z.string(),
+  value: z.string(),
+  icon: z.enum(["license", "seats", "use", "delivery"]),
+});
+
+const locationI18nFields = z
+  .object({
+    name: z.string().optional(),
+    title: z.string().optional(),
+    description: z.string().optional(),
+    keywords: z.string().optional(),
+    heroSubtitle: z.string().optional(),
+    heroAccent: z.string().optional(),
+    h1Prefix: z.string().optional(),
+    /** Optional SEO-rich intro paragraph (HTML supported). Renders above customSections. */
+    intro: z.string().optional(),
+    customSections: z.array(customSection).optional(),
+    spotlight: z
+      .object({
+        tag: z.string(),
+        title: z.string(),
+        description: z.string(),
+        image: z.string().url(),
+        imageAlt: z.string().optional(),
+        badges: z.array(z.string()).optional(),
+      })
+      .optional(),
+    topSpots: z.array(spot).optional(),
+    cockpit: z
+      .object({
+        vehicleName: z.string(),
+        specs: z.array(cockpitSpec),
+      })
+      .optional(),
+    comparison: z
+      .object({
+        title: z.string().optional(),
+        subtitle: z.string().optional(),
+        recommendation: z.string().optional(),
+      })
+      .optional(),
+    trafficTips: z.array(trafficTip).optional(),
+    nightlife: z.array(nightlifeItem).optional(),
+    trustMarqueeItems: z.array(z.string()).optional(),
+    faq: z.array(faqItem).optional(),
+    closingParagraph: z.string().optional(),
+  })
+  .partial();
+
+const locations = defineCollection({
+  type: "data",
+  schema: z.object({
+    slug: z.string(),
+    name: z.string(),
+    title: z.string(),
+    description: z.string(),
+    keywords: z.string().optional(),
+    canonical: z.string(),
+    heroImage: z.string().url(),
+    heroSubtitle: z.string(),
+    heroAccent: z.string().optional(),
+    /** "Noleggio Auto a" | "Noleggio Auto in" — defaults to "Noleggio Auto a". */
+    h1Prefix: z.string().optional(),
+    /** Optional SEO-rich intro paragraph (HTML supported). Renders above customSections. */
+    intro: z.string().optional(),
+    areaServed: z.array(
+      z.object({
+        type: z.string(),
+        name: z.string(),
+      }),
+    ),
+    customSections: z.array(customSection),
+    spotlight: z
+      .object({
+        tag: z.string(),
+        title: z.string(),
+        description: z.string(),
+        image: z.string().url(),
+        imageAlt: z.string().optional(),
+        badges: z.array(z.string()).optional(),
+      })
+      .optional(),
+    topSpots: z.array(spot),
+    cockpit: z
+      .object({
+        vehicleName: z.string(),
+        specs: z.array(cockpitSpec),
+      })
+      .optional(),
+    comparison: z
+      .object({
+        title: z.string().optional(),
+        subtitle: z.string().optional(),
+        show: z.array(z.enum(["panda", "mercedes", "honda", "yamaha"])),
+        recommendation: z.string().optional(),
+      })
+      .optional(),
+    trafficTips: z.array(trafficTip),
+    nightlife: z.array(nightlifeItem),
+    trustMarqueeItems: z.array(z.string()).optional(),
+    faq: z.array(faqItem),
+    closingParagraph: z.string().optional(),
+    /** Localized variants. Per-locale fields override IT defaults; missing fields fall back to IT. */
+    i18n: z
+      .object({
+        en: locationI18nFields.optional(),
+        de: locationI18nFields.optional(),
+        fr: locationI18nFields.optional(),
+      })
+      .optional(),
+    /** Localized URL slug fragment for the path /<lang>/<routePrefix>-<slug>. If absent, slug is used. */
+    localizedSlug: z
+      .object({
+        en: z.string().optional(),
+        de: z.string().optional(),
+        fr: z.string().optional(),
+      })
+      .optional(),
+  }),
+});
+
+const specIcon = z.enum(["gauge", "fuel", "users", "settings", "wind", "luggage", "shield", "mountain", "wrench"]);
+const scenarioIcon = z.enum(["map-pin", "shopping-bag", "users", "parking", "bike", "zap", "mountain", "flame", "camera", "star"]);
+
+const featureSection = z.object({
+  label: z.string(),
+  title: z.string(),
+  body: z.array(z.string()),
+  image: z.string().url(),
+  imageAlt: z.string(),
+  /** When true, image goes left and text goes right (default: image on right) */
+  reverse: z.boolean().optional(),
+});
+
+const fleetI18nFields = z
+  .object({
+    name: z.string().optional(),
+    title: z.string().optional(),
+    description: z.string().optional(),
+    heroLabel: z.string().optional(),
+    heroH1Top: z.string().optional(),
+    heroH1Bottom: z.string().optional(),
+    heroSubtitle: z.string().optional(),
+    heroBadges: z.array(z.string()).optional(),
+    featureSections: z.array(featureSection).optional(),
+    specs: z
+      .array(
+        z.object({
+          icon: specIcon,
+          label: z.string(),
+          value: z.string(),
+        }),
+      )
+      .optional(),
+    scenarios: z
+      .array(
+        z.object({
+          icon: scenarioIcon,
+          title: z.string(),
+          description: z.string(),
+          highlight: z.boolean().optional(),
+        }),
+      )
+      .optional(),
+    whySection: z
+      .object({
+        label: z.string(),
+        title: z.string(),
+        paragraphs: z.array(z.string()),
+      })
+      .optional(),
+    localitaSection: z
+      .object({
+        label: z.string(),
+        title: z.string(),
+        intro: z.string(),
+        items: z.array(z.string()),
+        outro: z.string(),
+      })
+      .optional(),
+    faq: z.array(faqItem).optional(),
+    ctaTitle: z.string().optional(),
+    ctaSubtitle: z.string().optional(),
+    ctaButtonLabel: z.string().optional(),
+  })
+  .partial();
+
+const fleet = defineCollection({
+  type: "data",
+  schema: z.object({
+    slug: z.string(),
+    name: z.string(),
+    category: z.enum(["auto", "scooter", "quad"]),
+    title: z.string(),
+    description: z.string(),
+    canonical: z.string(),
+    heroImage: z.string().url(),
+    heroLabel: z.string(),
+    heroH1Top: z.string(),
+    heroH1Bottom: z.string(),
+    heroSubtitle: z.string(),
+    heroBadges: z.array(z.string()),
+    featureSections: z.array(featureSection),
+    specs: z.array(
+      z.object({
+        icon: specIcon,
+        label: z.string(),
+        value: z.string(),
+      }),
+    ),
+    scenarios: z.array(
+      z.object({
+        icon: scenarioIcon,
+        title: z.string(),
+        description: z.string(),
+        highlight: z.boolean().optional(),
+      }),
+    ),
+    whySection: z.object({
+      label: z.string(),
+      title: z.string(),
+      paragraphs: z.array(z.string()),
+    }),
+    localitaSection: z.object({
+      label: z.string(),
+      title: z.string(),
+      intro: z.string(),
+      items: z.array(z.string()),
+      outro: z.string(),
+    }),
+    faq: z.array(faqItem),
+    ctaTitle: z.string(),
+    ctaSubtitle: z.string(),
+    ctaButtonLabel: z.string(),
+    pricePerDay: z.number(),
+    priceValidUntil: z.string(),
+    /** Schema.org type: Car, Motorcycle, Vehicle (parent — used for Quad/ATV) or Product. */
+    jsonLdType: z.enum(["Car", "Motorcycle", "Vehicle", "Product"]),
+    jsonLdBrand: z.string(),
+    jsonLdManufacturer: z.string(),
+    jsonLdModel: z.string(),
+    jsonLdExtras: z.record(z.any()).optional(),
+    /** Localized variants. Per-locale fields override IT defaults; missing fields fall back to IT. */
+    i18n: z
+      .object({
+        en: fleetI18nFields.optional(),
+        de: fleetI18nFields.optional(),
+        fr: fleetI18nFields.optional(),
+      })
+      .optional(),
+  }),
+});
+
+export const collections = { locations, fleet };

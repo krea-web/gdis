@@ -1,0 +1,360 @@
+{
+  "nav": {
+    "home": "Home",
+    "chisiamo": "Chi Siamo",
+    "contatti": "Contatti",
+    "flotta": "Flotta",
+    "hubTrasporti": "Hub Trasporti",
+    "localita": "Località",
+    "contattaci": "Contattaci",
+    "fleet": {
+      "cityCar": "City Car",
+      "premium": "Premium",
+      "scooter": "Scooter",
+      "quad": "Quad"
+    },
+    "hub": {
+      "regionale": "Hub Regionale",
+      "olbCS": "OLB · Costa Smeralda",
+      "isolaBianca": "Isola Bianca · Traghetti",
+      "centroTreni": "Centro · Treni"
+    },
+    "places": {
+      "olbia": "Famiglie & Coppie",
+      "portoCervo": "Lusso & Marina",
+      "sanTeodoro": "Spiagge & Movida",
+      "sanPantaleo": "Borgo Bohémien",
+      "portoRotondo": "Eleganza Discreta",
+      "golfoAranci": "Terminal Traghetti",
+      "bajaSardinia": "Phi Beach & Party"
+    },
+    "switcher": {
+      "label": "Lingua",
+      "comingSoon": "In arrivo"
+    }
+  },
+  "footer": {
+    "tagline": "Noleggio auto, scooter e quad in Costa Smeralda. Consegna VIP h24 in Aeroporto Olbia, Porto Isola Bianca e in tutta la Sardegna nord-orientale.",
+    "col": {
+      "esplora": "Esplora",
+      "flotta": "La Flotta",
+      "hub": "Hub Trasporti",
+      "localita": "Località",
+      "legale": "Legale"
+    },
+    "links": {
+      "mappaSito": "Mappa del Sito",
+      "privacy": "Privacy Policy",
+      "cookie": "Cookie Policy",
+      "termini": "Termini e Condizioni"
+    },
+    "data": {
+      "title": "Dati Societari",
+      "ragSoc": "Ragione Sociale",
+      "sedeLegale": "Sede Legale",
+      "partitaIva": "Partita IVA",
+      "codFiscale": "Codice Fiscale",
+      "rea": "REA",
+      "capitale": "Capitale Sociale",
+      "capitaleValue": "€ 10.000 i.v."
+    },
+    "copyright": "© {year} {name} — Tutti i diritti riservati.",
+    "admin": "Admin",
+    "realizzatoDa": "Sito realizzato da",
+    "ariaFooter": "Footer GDIS Rent",
+    "ariaTornaHome": "Torna alla home GDIS Rent",
+    "ariaFooterNav": "Footer navigation"
+  },
+  "cta": {
+    "prenotaOra": "Prenota Ora",
+    "callAria": "Chiama il numero +39 352 045 9150"
+  },
+  "common": {
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu",
+    "whatsappAria": "Contattaci su WhatsApp",
+    "instagramAria": "Seguici su Instagram",
+    "address": "Via Annibale Caro 52, 07026 Olbia (SS)",
+    "logoAlt": "GDIS Rent e Service"
+  },
+  "trust": {
+    "items": [
+      "Affidabilità",
+      "Flotta Premium",
+      "Assistenza 24/7",
+      "Prezzi Trasparenti",
+      "Sardegna",
+      "Noleggio Facile"
+    ]
+  },
+  "vipDelivery": {
+    "eyebrow": "Come funziona",
+    "title": "La Consegna VIP in 4 passi",
+    "subtitle": {
+      "airport": "Niente file ai desk del terminal, niente transfer, niente attese. Ti consegniamo il veicolo direttamente all'arrivo all'Aeroporto di Olbia Costa Smeralda.",
+      "port": "Niente coda al porto, niente transfer dopo 8 ore di traghetto. Sbarchi e trovi il veicolo che ti aspetta sul pontile della tua compagnia.",
+      "station": "Scendi dal treno e trovi il veicolo già pronto. Niente taxi, niente attese, niente coda al desk autonoleggio del centro città.",
+      "generic": "Niente file ai desk, niente transfer, niente attese. Ti consegniamo il veicolo dove e quando ti serve — aeroporto, porto, hotel o villa."
+    },
+    "step1": {
+      "title": "1. Scrivi su WhatsApp",
+      "text": "Indica data, orario di arrivo e veicolo desiderato. Confermiamo entro 30 minuti, anche in inglese o francese."
+    },
+    "step2": {
+      "title": {
+        "airport": "2. Atterri al Costa Smeralda",
+        "port": "2. Sbarchi a Isola Bianca",
+        "station": "2. Arrivi alla stazione di Olbia",
+        "generic": "2. Atterri o sbarchi"
+      },
+      "text": {
+        "airport": "Monitoriamo il tuo volo in tempo reale via FlightAware: se sei in ritardo, adattiamo la consegna senza costi extra fino a 4 ore.",
+        "port": "Tracciamo l'orario reale dello sbarco di Moby, Tirrenia, GNV e Grimaldi: se la nave arriva con ritardo, ti aspettiamo comunque.",
+        "station": "Ci comunichi il numero del treno Trenitalia: monitoriamo l'orario di arrivo al binario e ci coordiniamo sull'orario reale.",
+        "generic": "Monitoriamo volo o traghetto: se sei in ritardo, adattiamo la consegna senza costi extra."
+      }
+    },
+    "step3": {
+      "title": {
+        "airport": "3. Ti aspettiamo agli arrivi",
+        "port": "3. Ti aspettiamo al pontile",
+        "station": "3. Ti aspettiamo all'uscita binari",
+        "generic": "3. Ritiri il veicolo"
+      },
+      "text": {
+        "airport": "Operatore presente al terminal arrivi del Costa Smeralda con cartello con il tuo nome. Veicolo climatizzato e pieno di benzina già fatto.",
+        "port": "Operatore al pontile della tua compagnia (anche per traghetti notturni alle 6:00). Veicolo pronto sotto la nave, climatizzato e con il pieno.",
+        "station": "Operatore presente all'uscita dei binari della stazione di Olbia. Veicolo parcheggiato vicinissimo, già climatizzato e con il pieno.",
+        "generic": "Ti aspettiamo all'uscita arrivi o al porto con il veicolo climatizzato e con il pieno fatto."
+      }
+    },
+    "step4": {
+      "title": "4. Parti subito",
+      "text": "Firma rapida con tablet, foto patente, chiavi in mano. In 5 minuti sei in viaggio: niente code, niente desk, niente transfer extra."
+    }
+  },
+  "booking": {
+    "steps": {
+      "vehicle": "Veicolo",
+      "dates": "Date",
+      "pickupDropoff": "Ritiro/Consegna"
+    },
+    "cta": {
+      "back": "Indietro",
+      "next": "Avanti"
+    },
+    "errors": {
+      "vehicleUnavailable": "Il veicolo è già stato prenotato per queste date. Scegli un altro periodo.",
+      "availabilityCheckFailed": "Impossibile verificare la disponibilità. Riprova.",
+      "invalidServerResponse": "Risposta del server non valida",
+      "bookingFailed": "Errore durante la prenotazione. Riprova.",
+      "signatureSendFailed": "Errore nell'invio della firma. Riprova."
+    },
+    "vehicle": {
+      "title": "Scegli il veicolo",
+      "subtitle": "Seleziona il mezzo che preferisci per il tuo viaggio.",
+      "pricePrefix": "A partire da €{price}",
+      "perDaySuffix": "/giorno",
+      "selected": "Selezionato"
+    },
+    "date": {
+      "title": "Seleziona le date",
+      "subtitle": "Scegli il periodo del noleggio.",
+      "daysSuffix": "giorni",
+      "locale": "it-IT"
+    },
+    "driver": {
+      "title": "Dati del conducente",
+      "secondTitle": "Dati secondo guidatore",
+      "subtitle": "Inserisci i dati di contatto.",
+      "email": "E-mail",
+      "emailPlaceholder": "mario@email.com",
+      "phone": "Telefono",
+      "phonePlaceholder": "+39 333 1234567",
+      "taxCode": "Codice Fiscale",
+      "taxCodeOptional": "(opzionale)",
+      "taxCodePlaceholder": "RSSMRA85M01F979X",
+      "licenseFront": "Foto Patente Fronte",
+      "licenseBack": "Foto Patente Retro",
+      "uploadHint": "Trascina o clicca per caricare"
+    },
+    "secondDriver": {
+      "title": "Secondo Guidatore",
+      "subtitle": "Opzionale: aggiungi un secondo conducente.",
+      "toggle": "Aggiungi Secondo Guidatore"
+    },
+    "pickup": {
+      "title": "Ritiro e Consegna",
+      "subtitle": "Scegli dove e quando ritirare e riconsegnare il veicolo.",
+      "pickupHeading": "Luogo di Ritiro",
+      "dropoffHeading": "Luogo di Consegna",
+      "sedeLabel": "Sede GDIS Rent — Olbia",
+      "customLabel": "Luogo personalizzato",
+      "customPlaceholder": "Inserisci indirizzo di ritiro (es. Aeroporto di Olbia)",
+      "pickupTime": "Ora di Ritiro",
+      "dropoffTime": "Ora di Consegna",
+      "dropoffNote": "La riconsegna avviene esclusivamente presso la nostra sede.",
+      "errors": {
+        "address": "Inserisci l'indirizzo di ritiro",
+        "pickupTime": "Seleziona un orario di ritiro",
+        "dropoffTime": "Seleziona un orario di riconsegna"
+      }
+    },
+    "signature": {
+      "title": "Firma il contratto",
+      "subtitle": "Firma digitalmente il contratto di noleggio per completare la prenotazione.",
+      "instruction": "Disegna la tua firma nel riquadro sottostante",
+      "clear": "Cancella",
+      "submit": "Firma e Invia Contratto",
+      "submitting": "Invio firma..."
+    },
+    "summary": {
+      "title": "Il tuo preventivo",
+      "duration": "Durata",
+      "daysSuffix": "giorni",
+      "daySingular": "giorno",
+      "dayPlural": "giorni",
+      "perDayShort": "/g",
+      "totalEstimate": "Totale stimato",
+      "insuranceIncluded": "assicurazione inclusa",
+      "selectDates": "Scegli le date per vedere il preventivo",
+      "selectVehicle": "Seleziona un veicolo",
+      "stepLabels": {
+        "vehicle": "Veicolo",
+        "dates": "Date",
+        "pickupDropoff": "Ritiro/Consegna"
+      }
+    },
+    "exitIntent": {
+      "title": "Non sei pronto a prenotare online?",
+      "description": "Scrivici su WhatsApp con date e veicolo: ti facciamo un preventivo personalizzato in 2 minuti, senza impegno.",
+      "whatsappCta": "Chatta su WhatsApp",
+      "whatsappMessage": "Ciao, vorrei un preventivo rapido",
+      "continue": "Continua la prenotazione"
+    },
+    "success": {
+      "title": "Prenotazione Confermata!",
+      "description": "La tua prenotazione è stata completata con successo. Riceverai una email di conferma con tutti i dettagli.",
+      "reviewCta": "Lascia una recensione su Google",
+      "homeCta": "Torna alla Home",
+      "supportLine": "Domande sulla prenotazione? Siamo disponibili H24:",
+      "whatsappMessage": "Ciao, ho appena prenotato e vorrei info"
+    },
+    "request": {
+      "whatsappCta": "Invia richiesta su WhatsApp",
+      "whatsappCtaShort": "Richiedi",
+      "summaryTitle": "Riepilogo richiesta",
+      "estimateNote": "Invierai un messaggio precompilato: ti confermiamo noi disponibilità, kasko/franchigia ed eventuali costi di consegna.",
+      "summary": {
+        "vehicle": "Veicolo",
+        "period": "Periodo",
+        "estimate": "Stima",
+        "pickup": "Ritiro",
+        "indicative": "indicativa, da confermare"
+      },
+      "pickup": {
+        "sedeSummary": "Ritiro in sede (Via Annibale Caro 52, Olbia)",
+        "deliverySummary": "Consegna a: {address}",
+        "toAgree": "Ritiro/consegna da concordare"
+      }
+    }
+  },
+  "fleet": {
+    "breadcrumb": "Flotta",
+    "specsEyebrow": "Specifiche",
+    "specsTitle": "Scheda Tecnica",
+    "scenariosEyebrow": "Dove ti porta",
+    "scenariosTitle": "Perfetto per...",
+    "faqTitle": "Domande Frequenti",
+    "questionsCta": "Domande?",
+    "contactUs": "Contattaci",
+    "backHome": "Torna alla home",
+    "schemaSuffix": "Noleggio Olbia e Costa Smeralda",
+    "priceFromPrefix": "A partire da",
+    "priceFromSuffix": "/giorno",
+    "whatsappContext": "Ciao! Vorrei info sul noleggio {vehicle}."
+  },
+  "location": {
+    "breadcrumb": "Località",
+    "h1Prefix": "Noleggio Auto a",
+    "whatsappContext": "Ciao! Vorrei info sul noleggio auto a {name}.",
+    "topSpotsEyebrow": "Cosa vedere",
+    "topSpotsTitle": "I luoghi imperdibili",
+    "trafficEyebrow": "Mobilità",
+    "trafficTitle": "Consigli pratici",
+    "nightlifeEyebrow": "Nightlife & Food",
+    "nightlifeTitle": "Dove andare",
+    "comparisonEyebrow": "Quale veicolo?",
+    "faqTitle": "Domande Frequenti",
+    "spotCategory": {
+      "spiaggia": "Spiaggia",
+      "panorama": "Panorama",
+      "monumento": "Monumento",
+      "natura": "Natura",
+      "porto": "Porto",
+      "centro": "Centro",
+      "evento": "Evento",
+      "escursione": "Escursione"
+    },
+    "spotMeta": {
+      "distance": "Distanza",
+      "cost": "Costo",
+      "bestTime": "Quando andare"
+    },
+    "nightlifeType": {
+      "ristorante": "Ristorante",
+      "aperitivo": "Aperitivo",
+      "club": "Club",
+      "lounge": "Lounge"
+    }
+  },
+  "common2": {
+    "questions": "Hai dubbi? Scrivici",
+    "ctaWhatsapp": "Scrivici su WhatsApp"
+  },
+  "localita": {
+    "hero": {
+      "vipDelivery": "Consegna VIP"
+    },
+    "inlineCta": {
+      "eyebrow": "Pronto per {name}?",
+      "title": "Prenota ora la tua esperienza a {name}",
+      "button": "Prenota Auto a {name}"
+    },
+    "topSpots": {
+      "subtitle": "Selezione curata di spiagge, panorami, monumenti ed esperienze imperdibili — con tempi di percorrenza e consigli pratici."
+    },
+    "comparison": {
+      "title": "Quale veicolo scegliere?",
+      "subtitle": "Confronto rapido per decidere in 30 secondi.",
+      "feature": "Caratteristica",
+      "license": "Patente",
+      "seats": "Posti",
+      "ztl": "ZTL / parcheggi gratis",
+      "family": "Famiglia + bagagli",
+      "offRoad": "Off-road / sterrati",
+      "priceFrom": "Prezzo da",
+      "perDay": "/g",
+      "note": "Tariffe indicative dalla bassa stagione. Prezzo finale calcolato sulle date selezionate al momento della prenotazione.",
+      "yes": "sì",
+      "no": "no"
+    },
+    "trust": {
+      "ratingAria": "Valutazione {value} su 5",
+      "ratingLabel": "Cliente verificato Google",
+      "outOf": "/5",
+      "body": "I clienti che hanno noleggiato auto, scooter o quad a {name} raccontano la loro esperienza direttamente su Google. Trasparenza totale, niente filtri.",
+      "cta": "Vedi GDIS Service SRL su Google"
+    },
+    "finalCta": {
+      "eyebrow": "Pronto a esplorare {name}?",
+      "title": "Il Tuo Veicolo Ti Aspetta",
+      "subtitle": "Consegna VIP direttamente al tuo hotel, villa o porto a {name}. Prenota in 2 minuti.",
+      "questions": "Hai dubbi?",
+      "contactLink": "Scrivici",
+      "or": "o torna alla",
+      "homeLink": "home",
+      "toExploreFleet": "per esplorare la flotta."
+    }
+  }
+}

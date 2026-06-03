@@ -1,0 +1,94 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import {
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_EMAIL,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_VAT,
+} from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Home", url: "/de" },
+  { name: "Privacy", url: "/de/datenschutz" },
+];
+---
+
+<BaseLayout
+  title="Datenschutzerklärung — GDIS Rent & Service"
+  description="Datenschutzhinweis zur Verarbeitung personenbezogener Daten gemäß EU-Verordnung 2016/679 (DSGVO). Verantwortlicher: GDIS Service S.R.L., Olbia."
+  canonical="/de/datenschutz"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/privacy", en: "/en/privacy-policy", fr: "/fr/confidentialite" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Datenschutzerklärung</h1>
+    <p class="text-sm text-muted-foreground">Letzte Aktualisierung: 24. April 2026</p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Verantwortlicher für die Verarbeitung personenbezogener Daten ist <strong>{BUSINESS_LEGAL_NAME}</strong>,
+      mit Sitz in Via Annibale Caro 52, 07026 Olbia (SS), Italien — USt-IdNr./Steuernummer {BUSINESS_VAT}.<br />
+      E-Mail: <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> — Telefon: {BUSINESS_PHONE_DISPLAY}.
+    </p>
+
+    <h2>2. Kategorien verarbeiteter Daten</h2>
+    <ul>
+      <li><strong>Identifikations- und Kontaktdaten</strong>: Vorname, Nachname, E-Mail, Telefon, Steuernummer (sofern angegeben).</li>
+      <li><strong>Ausweisdokumente</strong>: Führerschein (Vorder- und Rückseite) und gegebenenfalls Dokument des zweiten Fahrers.</li>
+      <li><strong>Buchungsdaten</strong>: gewähltes Fahrzeug, Daten und Orte der Abholung/Rückgabe, elektronische Vertragsunterschrift.</li>
+      <li><strong>Technische Daten</strong>: IP-Adresse, Browsertyp, besuchte Seiten (Server-Logs und technische Cookies).</li>
+    </ul>
+
+    <h2>3. Zwecke und Rechtsgrundlagen</h2>
+    <ul>
+      <li>Erfüllung des Mietvertrags (Art. 6 Abs. 1 lit. b DSGVO).</li>
+      <li>Erfüllung steuerlicher und gesetzlicher Pflichten (Art. 6 Abs. 1 lit. c DSGVO).</li>
+      <li>Bearbeitung von Anfragen über das Kontaktformular (Einwilligung, Art. 6 Abs. 1 lit. a DSGVO).</li>
+      <li>Aggregierte Nutzungsanalyse — nur nach vorheriger Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).</li>
+    </ul>
+
+    <h2>4. Speicherdauer</h2>
+    <p>
+      Vertragsdaten werden zu steuerlichen Zwecken 10 Jahre lang gespeichert. Navigations- und
+      Analysedaten werden für maximal 14 Monate aufbewahrt. Hochgeladene Führerscheine werden
+      automatisch 12 Monate nach Mietende gelöscht, vorbehaltlich gesetzlicher Pflichten.
+    </p>
+
+    <h2>5. Empfänger und Übermittlungen</h2>
+    <p>
+      Die Daten werden vom autorisierten Personal sowie von externen Auftragsverarbeitern
+      verarbeitet: Supabase (Datenbank- und Storage-Hosting — EU-Server), Cloudflare
+      (Betrugsschutz), Anbieter elektronischer Signaturen und internes Verwaltungssystem. Es
+      erfolgt keine Übermittlung in Drittländer ohne angemessene Garantien gemäß Art. 44 ff. DSGVO.
+    </p>
+
+    <h2>6. Rechte der betroffenen Person</h2>
+    <p>
+      Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit,
+      Widerspruch gegen die Verarbeitung sowie auf Widerruf Ihrer Einwilligung (Art. 15-22 DSGVO).
+      Sie können diese Rechte ausüben, indem Sie eine E-Mail an{" "}
+      <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a> senden. Sie haben außerdem das Recht,
+      Beschwerde bei der italienischen Datenschutzbehörde (Garante per la Protezione dei Dati
+      Personali —{" "}
+      <a href="https://www.garanteprivacy.it" target="_blank" rel="noreferrer">www.garanteprivacy.it</a>
+      ) einzulegen.
+    </p>
+
+    <h2>7. Sicherheit</h2>
+    <p>
+      Wir treffen angemessene technische und organisatorische Maßnahmen: TLS-verschlüsselte
+      Übertragung, privater Speicher mit zeitlich begrenzten signierten URLs, auf autorisiertes
+      Personal beschränkter Zugriff, Passwort-Richtlinie und MFA für interne Systeme.
+    </p>
+
+    <h2>8. Änderungen</h2>
+    <p>
+      Diese Erklärung kann aktualisiert werden. Aktualisierte Fassungen werden auf dieser Seite mit
+      Datum der Überarbeitung veröffentlicht.
+    </p>
+  </article>
+</BaseLayout>

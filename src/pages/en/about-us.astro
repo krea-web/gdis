@@ -1,0 +1,414 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FaqList from "@/components/FaqList.astro";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
+import {
+  buildFaqSchema,
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_NAME,
+  BUSINESS_VAT,
+  BUSINESS_TAX_ID,
+  BUSINESS_REA,
+  BUSINESS_FOUNDER,
+} from "@/lib/siteSchema";
+import { supabaseImg } from "@/lib/img";
+
+const legalRows = [
+  { label: "Legal name", value: BUSINESS_LEGAL_NAME },
+  { label: "Trade name", value: BUSINESS_NAME },
+  { label: "Legal form", value: "Limited Liability Company (S.R.L.) — Italian law" },
+  { label: "Registered office", value: "Via Annibale Caro 52, 07026 Olbia (SS), Italy" },
+  { label: "VAT / Tax ID", value: `IT${BUSINESS_VAT.replace(/^IT/, "")} / ${BUSINESS_TAX_ID}` },
+  { label: "REA number", value: `Sassari ${BUSINESS_REA}` },
+  { label: "Incorporation date", value: "1 October 2025" },
+  { label: "Registered on", value: "7 October 2025 — Ordinary section" },
+  { label: "Share capital", value: "€ 10,000.00 (fully paid)" },
+  { label: "Sole Director", value: `${BUSINESS_FOUNDER.name} (${BUSINESS_FOUNDER.jobTitle})` },
+  { label: "Certified email (PEC)", value: "gdis.servicesrl@pecdotcom.it" },
+];
+
+const heroUrl = supabaseImg(
+  "asset/gdisrentservice-noleggio-auto-scooter-quad-olbia.webp",
+  { raw: true },
+);
+const touristUrl = supabaseImg(
+  "vehicles/gdisrent-consegna-auto-scooter-quad-a-domicilio.webp",
+  { raw: true },
+);
+const transportUrl = supabaseImg(
+  "asset/gdisrentservice-trasporto-merci-trasporti-eccezionali-trasporto-di-imbarcazioni.webp",
+  { raw: true },
+);
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
+
+const breadcrumbs = [
+  { name: "Home", url: "/en" },
+  { name: "About Us", url: "/en/about-us" },
+];
+
+const timelineItems = [
+  {
+    icon: "star",
+    title: "Registered with Sassari Chamber of Commerce",
+    text: "GDIS SERVICE S.R.L. is a limited liability company incorporated on 1 October 2025 and registered with the Sassari Companies Register on 7 October 2025 (REA SS-225492). A new local business with full legal, fiscal and administrative compliance from day one.",
+  },
+  {
+    icon: "car",
+    title: "Diversified Fleet",
+    text: "Fiat Panda Hybrid, Mercedes A-Class 180d, Honda SH 125 and 350 scooters, Yamaha Raptor 700R quad. Every vehicle includes third-party + theft and fire insurance, regularly serviced, kept in a fleet dedicated to tourism.",
+  },
+  {
+    icon: "phone",
+    title: "WhatsApp 24/7 — no call centre",
+    text: "You speak directly with the operations manager. Book via web or WhatsApp at +39 352 045 9150, sign the contract digitally, collect the vehicle (or have it delivered). Direct communication, also outside business hours.",
+  },
+  {
+    icon: "zap",
+    title: "VIP Delivery across Gallura",
+    text: "An operator at the arrivals terminal of Costa Smeralda Airport or right by the ship at the Port of Olbia Isola Bianca. Delivery also to your hotel, residence or private villa in Costa Smeralda, from Porto Cervo to San Teodoro.",
+  },
+];
+
+const marqueeItems = [
+  "Car Rental",
+  "VIP Delivery",
+  "Scooters & Quads",
+  "Special Transport",
+  "24/7 Support",
+  "Costa Smeralda",
+];
+
+const faqs = [
+  { q: "Which documents do I need to rent a vehicle?", a: "A valid driving licence, ID card or passport, and a credit card in the main driver's name. Customers from outside the EU also need an international driving permit." },
+  { q: "Can I add a second driver?", a: "Yes, you can add a second driver at the time of booking or at vehicle pick-up. The second driver must provide the same documents as the main driver." },
+  { q: "What is the cancellation policy?", a: "Cancellation is free up to 48 hours before pick-up. For late cancellations a fee equal to 50% of the total rental cost applies." },
+  { q: "Which payment methods do you accept?", a: "We accept Visa, Mastercard and American Express credit cards. Payment is taken at vehicle pick-up. For online bookings a pre-authorisation on the card is required." },
+  { q: "Are the vehicles covered by insurance?", a: "All vehicles include third-party liability, theft and fire cover. You can purchase additional protection such as Kasko (full cover) and excess reduction." },
+  { q: "Can I drop the vehicle off at a different location?", a: "Yes, we offer one-way drop-off at different locations for a small surcharge. Contact us to find out which locations are available." },
+  { q: "Do you offer VIP delivery to yachts and hotels?", a: "Absolutely! Our VIP Delivery service brings the vehicle straight to your yacht, hotel or private villa anywhere in Costa Smeralda and Gallura." },
+  { q: "How can I get in touch about luxury cars?", a: "For luxury cars we recommend contacting us directly via WhatsApp at +39 352 045 9150 to check availability and receive a tailored quote." },
+];
+
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const marqueeTrack = [...marqueeItems, ...marqueeItems];
+---
+
+<BaseLayout
+  title="About Us — GDIS Rent | Local Car Hire in Olbia since 2025"
+  description="GDIS Rent — local car hire in Olbia (GDIS Service S.R.L., REA Sassari SS-225492, VAT IT03047140904) ✓ Car rental, scooter and quad hire in Olbia and Costa Smeralda since 2025 ✓ Gallura local knowledge: ZTL, ferries, parking ✓ Registered office Via Annibale Caro 52, Olbia. WhatsApp 24/7."
+  canonical="/en/about-us"
+  jsonLd={faqSchema}
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/chisiamo", de: "/de/ueber-uns", fr: "/fr/a-propos" }}
+>
+  {/* Hero */}
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src={heroUrl}
+        alt="GDIS Mobility Costa Smeralda"
+        class="w-full h-full object-cover"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900 z-[1]"></div>
+    <div class="relative z-10 text-center px-4 max-w-5xl">
+      <p class="text-blue-400 font-display text-sm font-semibold uppercase tracking-[0.3em] mb-4 block animate-fade-in">
+        OLBIA · COSTA SMERALDA
+      </p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl animate-fade-in">
+        Car, Scooter and Quad Rental
+      </h1>
+      <p class="text-slate-200 text-lg md:text-2xl font-light mt-8 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+        GDIS Rent is the trade name of <strong class="text-white font-medium">GDIS SERVICE S.R.L.</strong>, a company registered with the Sassari Chamber of Commerce (REA SS-225492). Short- and medium-term rental with VIP delivery to airport, port, hotel and villa.
+      </p>
+      <div class="w-32 md:w-48 h-[3px] bg-primary mx-auto mt-10 shadow-[0_0_20px_hsl(var(--primary)/0.6)]"></div>
+    </div>
+  </section>
+
+  {/* Vertical timeline */}
+  <section class="relative py-24 md:py-36 bg-background overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none"></div>
+    <div class="container px-4 relative z-10 max-w-3xl mx-auto pt-16">
+      <div class="mb-16 md:mb-20" data-reveal>
+        <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+          Our DNA
+        </span>
+        <h2 class="font-display text-3xl md:text-5xl font-black text-foreground leading-tight">
+          Why choose <span class="italic font-light text-primary">GDIS</span>
+        </h2>
+      </div>
+
+      {timelineItems.map((item, i) => (
+        <div class="relative flex gap-6 md:gap-10" data-reveal data-reveal-delay={String(i * 100)}>
+          <div class="flex flex-col items-center flex-shrink-0">
+            <div class="relative z-10 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary flex items-center justify-center shadow-[0_0_30px_hsl(var(--primary)/0.4)]">
+              {item.icon === "star" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>}
+              {item.icon === "car" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>}
+              {item.icon === "phone" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>}
+              {item.icon === "zap" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-foreground"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
+            </div>
+            {i < timelineItems.length - 1 && (
+              <div class="w-px flex-1 bg-gradient-to-b from-primary/50 to-primary/10 min-h-[60px]"></div>
+            )}
+          </div>
+          <div class="pb-14 md:pb-20">
+            <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.3em]">
+              0{i + 1}
+            </span>
+            <h3 class="font-display text-2xl md:text-3xl font-bold text-foreground mt-1 mb-3">{item.title}</h3>
+            <p class="text-muted-foreground text-base md:text-lg font-light leading-relaxed max-w-lg">{item.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Tourist rental */}
+  <section class="relative py-32 md:py-48 bg-muted overflow-hidden">
+    <div class="container px-4 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
+        <div class="relative order-2 lg:order-1" data-reveal>
+          <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
+            <img src={touristUrl} alt="Tourist rental Costa Smeralda" loading="lazy" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-muted via-transparent to-transparent"></div>
+          </div>
+          <div class="absolute -bottom-6 -right-6 md:-right-12 bg-primary rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_hsl(var(--primary)/0.4)] max-w-[240px]">
+            <p class="text-primary-foreground font-display font-bold text-2xl md:text-3xl">VIP</p>
+            <p class="text-primary-foreground/70 font-light text-sm mt-1">Delivery to yachts, hotels and private villas</p>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2" data-reveal data-reveal-delay="100">
+          <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+            Our Core
+          </span>
+          <h2 class="font-display text-4xl md:text-6xl font-black text-foreground leading-[1.05] mb-8">
+            Explore Sardinia <span class="italic font-light text-primary">in style</span>
+          </h2>
+          <div class="space-y-6 text-muted-foreground text-lg font-light leading-relaxed">
+            <p>
+              <a href="/en/fleet/fiat-panda" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">City Cars</a>,{" "}
+              <a href="/en/fleet/honda-sh" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Scooters</a> and{" "}
+              <a href="/en/fleet/yamaha-raptor" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Quads</a> —
+              latest-generation vehicles to enjoy every corner of Costa Smeralda in total freedom. You send a mini-request in 2 minutes,
+              we reply on WhatsApp with availability and coverage, you pick up at our office — or we bring it to you.
+            </p>
+            <p>
+              Our <strong class="text-foreground font-medium">VIP Delivery Service</strong> is what sets us apart:
+              the vehicle is brought straight to your yacht in Palau, your villa in{" "}
+              <a href="/en/car-rental-in-porto-cervo" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">Porto Cervo</a> or
+              your hotel in{" "}
+              <a href="/en/car-rental-in-san-teodoro" class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">San Teodoro</a>.{" "}
+              <strong class="text-foreground font-medium">No stress. No queues. Just the sea.</strong>
+            </p>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-border">
+            <h3 class="font-display text-xl font-bold text-foreground mb-3">🏎️ Luxury Cars & Supercars</h3>
+            <p class="text-muted-foreground font-light mb-6">
+              Available <strong class="text-foreground font-medium">on request only</strong>.
+              Get in touch to design your bespoke VIP experience.
+            </p>
+            <a
+              href="https://wa.me/393520459150?text=Hi%2C%20I%27d%20like%20info%20about%20a%20VIP%20Car%20rental"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-wa-track="chisiamo_vip_car"
+              class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
+            >
+              <WhatsAppIcon size={20} />
+              Request a VIP Car on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Trust marquee divider */}
+  <section class="relative w-full flex items-center justify-center py-3 md:py-4 z-20 pointer-events-none overflow-hidden bg-primary shadow-[0_10px_40px_hsl(var(--primary)/0.3)] border-y border-primary/30">
+    <div class="w-full overflow-hidden pointer-events-auto">
+      <div class="flex w-max items-center animate-marquee">
+        <div class="flex items-center flex-shrink-0">
+          {marqueeTrack.map((item) => (
+            <div class="flex items-center px-6 md:px-10 flex-shrink-0">
+              <span class="text-primary-foreground font-display italic font-black text-xs md:text-base uppercase tracking-[0.18em] whitespace-nowrap">
+                {item}
+              </span>
+              <img src={gdisLogo} alt="GDIS" loading="lazy" class="h-5 md:h-6 w-auto opacity-90 drop-shadow-md ml-6 md:ml-10 flex-shrink-0" />
+            </div>
+          ))}
+        </div>
+        <div class="flex items-center flex-shrink-0" aria-hidden="true">
+          {marqueeTrack.map((item) => (
+            <div class="flex items-center px-6 md:px-10 flex-shrink-0">
+              <span class="text-primary-foreground font-display italic font-black text-xs md:text-base uppercase tracking-[0.18em] whitespace-nowrap">
+                {item}
+              </span>
+              <img src={gdisLogo} alt="GDIS Rent logo" loading="lazy" class="h-5 md:h-6 w-auto opacity-90 drop-shadow-md ml-6 md:ml-10 flex-shrink-0" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Heavy transport */}
+  <section class="relative py-24 md:py-32 bg-muted overflow-hidden">
+    <div class="container px-4 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
+        <div data-reveal>
+          <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+            B2B Services
+          </span>
+          <h2 class="font-display text-3xl md:text-5xl font-black text-foreground leading-[1.05] mb-6">
+            Special Transport <span class="italic font-light text-primary">& Freight</span>
+          </h2>
+          <p class="text-muted-foreground text-lg font-light leading-relaxed mb-8">
+            Beyond tourist mobility, GDIS also operates in heavy transport. We handle{" "}
+            <strong class="text-foreground font-medium">freight transport, abnormal-load transport and boat transport</strong>.
+            We work exclusively with our own qualified personnel (chauffeured services), using our fleet of
+            HGVs, lorries, vans, trailers and semi-trailers.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="mailto:info@gdisservice.it"
+              class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-bold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
+            >
+              Request a Transport Quote
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a
+              href="https://wa.me/393520459150?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20freight%20transport"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-wa-track="chisiamo_trasporto_merci"
+              class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
+            >
+              <WhatsAppIcon size={16} />
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        <div data-reveal data-reveal-delay="200">
+          <div class="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
+            <img src={transportUrl} alt="GDIS heavy transport" loading="lazy" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-muted via-transparent to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Legal transparency — E-E-A-T block, sources verifiable at the Italian Chamber of Commerce */}
+  <section class="py-20 md:py-28 bg-background relative overflow-hidden border-t border-border/40">
+    <div class="container px-4 relative z-10 max-w-4xl mx-auto">
+      <div class="mb-10 md:mb-14" data-reveal>
+        <span class="text-primary font-display text-xs font-bold uppercase tracking-[0.4em] mb-3 block">
+          Legal Transparency
+        </span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">
+          Verifiable <span class="italic font-light text-primary">company data</span>
+        </h2>
+        <p class="text-muted-foreground text-base md:text-lg font-light leading-relaxed mt-4 max-w-2xl">
+          GDIS Rent operates with full fiscal and administrative transparency. All the data below
+          is publicly verifiable through the Sassari Chamber of Commerce (Italian Companies Register).
+        </p>
+      </div>
+
+      <dl class="grid sm:grid-cols-[max-content_1fr] gap-x-8 gap-y-3 text-sm md:text-base border-l-4 border-primary pl-6 md:pl-8" data-reveal data-reveal-delay="100">
+        {legalRows.map((row) => (
+          <>
+            <dt class="font-display font-semibold text-foreground/80 uppercase tracking-wider text-xs md:text-sm pt-1">{row.label}</dt>
+            <dd class="text-foreground font-light mb-2 sm:mb-0">{row.value}</dd>
+          </>
+        ))}
+      </dl>
+
+      <p class="text-xs text-muted-foreground mt-8 italic">
+        Source: Ordinary visura issued by the Sassari Chamber of Commerce Industry Crafts and Agriculture,
+        Companies Register — official document T 623229345 issued on 16/10/2025.
+      </p>
+    </div>
+  </section>
+
+  {/* FAQ */}
+  <section class="py-24 md:py-32 bg-background relative overflow-hidden">
+    <div class="container px-4 relative z-10">
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div class="w-full lg:w-1/3">
+          <div class="sticky top-32" data-reveal>
+            <span class="text-primary font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
+              Support
+            </span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Frequently <br />
+              <span class="italic font-light text-muted-foreground">Asked Questions.</span>
+            </h2>
+            <p class="text-muted-foreground text-lg font-light mb-10 leading-relaxed">
+              Everything you need to know before getting behind the wheel. Total transparency, zero surprises.
+            </p>
+            <div class="bg-primary/5 p-8 rounded-3xl border border-primary/10">
+              <h4 class="font-display font-semibold text-foreground mb-2">Got more questions?</h4>
+              <p class="text-sm text-muted-foreground mb-6 font-light">
+                Our team is on WhatsApp ready to clear up any doubts.
+              </p>
+              <a
+                href="https://wa.me/393520459150"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-wa-track="faq_chisiamo"
+                class="inline-flex items-center justify-center gap-2 w-full h-12 px-6 text-base font-semibold rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white shadow-md hover:shadow-lg transition-all"
+              >
+                <WhatsAppIcon size={20} />
+                Chat with us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-2/3">
+          <FaqList items={faqs} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Final CTA */}
+  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[hsl(var(--brand-dark))]">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,hsl(var(--primary)/0.15),transparent)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,hsl(var(--primary)/0.25),transparent_50%)]"></div>
+    <div class="container px-4 relative z-10 text-center">
+      <div data-reveal>
+        <h2 class="font-display text-4xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] mb-6">
+          Ready to <span class="italic font-light text-primary">explore</span><br />
+          Sardinia?
+        </h2>
+        <p class="text-primary-foreground/50 text-lg md:text-xl max-w-2xl mx-auto font-light mb-12">
+          Pick your vehicle, send a WhatsApp request in 2 minutes and go. Human handling, no upfront credit card.
+        </p>
+        <a
+          href="/en/book-now"
+          class="inline-flex items-center justify-center gap-2 h-16 px-14 text-lg font-black rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-[0_0_50px_hsl(var(--primary)/0.4),0_20px_60px_rgba(0,0,0,0.3)] hover:shadow-[0_0_70px_hsl(var(--primary)/0.6)] transition-all duration-500"
+        >
+          Book Now
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <div class="mt-8">
+          <a
+            href="https://wa.me/393520459150"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-wa-track="chisiamo_footer_cta"
+            class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-medium rounded-full text-primary-foreground/50 hover:text-primary-foreground hover:bg-primary-foreground/5 transition-all"
+          >
+            <WhatsAppIcon size={16} />
+            Or message us on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BUSINESS_EMAIL } from "@/lib/siteSchema";
+
+const breadcrumbs = [
+  { name: "Accueil", url: "/fr" },
+  { name: "Cookies", url: "/fr/cookies" },
+];
+---
+
+<BaseLayout
+  title="Politique des cookies — GDIS Rent & Service"
+  description="Liste des cookies utilisés sur gdisrentservice.com, finalités, durée et moyens de gérer ou révoquer le consentement."
+  canonical="/fr/cookies"
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/cookie", en: "/en/cookie-policy", de: "/de/cookie-richtlinie" }}
+>
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+  <article class="container py-8 md:py-12 max-w-3xl prose prose-slate">
+    <h1 class="font-display text-3xl md:text-5xl font-bold mb-6">Politique des cookies</h1>
+    <p class="text-sm text-muted-foreground">Dernière mise à jour : 24 avril 2026</p>
+
+    <h2>Qu'est-ce qu'un cookie</h2>
+    <p>
+      Les cookies sont de petits fichiers texte que les sites visités envoient à votre appareil.
+      Ils sont utilisés pour faire fonctionner correctement le site, améliorer ses performances et
+      fournir des informations anonymes au propriétaire.
+    </p>
+
+    <h2>Cookies utilisés</h2>
+    <h3>Cookies techniques (toujours actifs)</h3>
+    <ul>
+      <li><strong>Session Supabase</strong> — authentification des utilisateurs enregistrés (espace réservations et admin uniquement). Durée : session.</li>
+      <li><strong>gdis-cookie-consent</strong> — mémorise votre choix sur le bandeau cookies. Durée : 12 mois.</li>
+      <li><strong>Cloudflare Turnstile</strong> — vérification anti-bot du formulaire de réservation. Durée : session.</li>
+    </ul>
+
+    <h3>Cookies analytiques (activés uniquement avec consentement)</h3>
+    <ul>
+      <li><strong>Google Analytics 4</strong> — statistiques de navigation agrégées avec adresse IP masquée. Durée maximale : 14 mois. Finalité : comprendre comment les utilisateurs utilisent le site afin de l'améliorer.</li>
+    </ul>
+
+    <h2>Gestion du consentement</h2>
+    <p>
+      Lors de la première visite, un bandeau apparaît permettant d'accepter ou de refuser les
+      cookies non essentiels. Vous pouvez changer d'avis à tout moment en supprimant les cookies
+      de votre navigateur : le bandeau réapparaîtra lors de la prochaine visite.
+    </p>
+
+    <h2>Comment désactiver les cookies depuis votre navigateur</h2>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noreferrer">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie" target="_blank" rel="noreferrer">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noreferrer">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/it-it/microsoft-edge" target="_blank" rel="noreferrer">Microsoft Edge</a></li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>
+      Pour toute question, écrivez à <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>.
+    </p>
+  </article>
+</BaseLayout>

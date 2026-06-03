@@ -1,0 +1,271 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import TrustMarquee from "@/components/TrustMarquee.astro";
+import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
+import FaqList from "@/components/FaqList.astro";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+import { supabaseImg } from "@/lib/img";
+
+const breadcrumbs = [
+  { name: "Home", url: "/de" },
+  { name: "Costa Smeralda", url: "/de/autovermietung-costa-smeralda" },
+];
+
+const localBusinessSchema = buildLocalBusinessSchema({
+  id: "https://gdisrentservice.com/de/autovermietung-costa-smeralda#localbusiness",
+  description: "Auto-, Roller- und Quadvermietung an der Costa Smeralda mit VIP-Lieferung in Porto Cervo, Porto Rotondo, San Teodoro, Baja Sardinia und Olbia.",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+    { "@type": "City", name: "Porto Cervo" },
+    { "@type": "City", name: "Porto Rotondo" },
+    { "@type": "City", name: "Baja Sardinia" },
+    { "@type": "City", name: "San Pantaleo" },
+    { "@type": "City", name: "San Teodoro" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const faqs = [
+  { q: "Kann ich das Fahrzeug direkt im Hotel oder in der Villa erhalten?", a: "Selbstverständlich! Mit unserem VIP-Lieferservice bringen wir das Fahrzeug genau dorthin, wo Sie sich befinden: Hotel, Villa, Yacht oder Flughafen. Der Service deckt die gesamte Costa Smeralda von Palau bis San Teodoro ab." },
+  { q: "Wie funktioniert das Parken in Porto Cervo und in den ZTL-Zonen?", a: "In Porto Cervo gibt es im Sommer aktive ZTL-Zonen (verkehrsberuhigte Bereiche). Wir stellen Ihnen eine aktuelle Karte der ZTL-Zonen und der verfügbaren Parkplätze zur Verfügung. Roller und Kleinwagen sind die ideale Wahl, um sich flexibel zu bewegen." },
+  { q: "Welche Fahrzeuge empfehlen Sie für die Costa Smeralda?", a: "Für die Küste empfehlen wir Roller für kurze Strecken und versteckte Buchten, Kleinwagen für Komfort und einfaches Parken sowie Quads für Off-Road-Abenteuer im Hinterland der Gallura." },
+  { q: "Kann ich ein Fahrzeug am Flughafen Olbia mieten?", a: "Ja, wir bieten Lieferung und Abholung am <a href='/de/autovermietung-olbia' class='text-primary font-medium hover:underline'>Flughafen Olbia</a> Costa Smeralda. Buchen Sie online und Ihr Fahrzeug erwartet Sie bei der Ankunft." },
+  { q: "Welche Dokumente werden zum Mieten benötigt?", a: "Gültiger Führerschein, Personalausweis oder Reisepass und eine Kreditkarte auf den Namen des Fahrers. Für Bürger aus Nicht-EU-Ländern ist zusätzlich der internationale Führerschein erforderlich." },
+];
+
+const faqSchema = buildFaqSchema(faqs, { speakable: true });
+
+const serviceSchema = buildServiceSchema({
+  name: "Autovermietung Costa Smeralda",
+  description:
+    "Auto-, Roller- und Quadvermietung an der Costa Smeralda mit VIP-Lieferung an Hotels, Villen, Yachten und Marinas von Olbia über Palau bis Porto Cervo und San Teodoro.",
+  serviceType: "Regional Car Rental",
+  url: "/de/autovermietung-costa-smeralda",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Costa Smeralda" },
+    { "@type": "City", name: "Porto Cervo" },
+    { "@type": "City", name: "Porto Rotondo" },
+    { "@type": "City", name: "Baja Sardinia" },
+    { "@type": "City", name: "San Teodoro" },
+    { "@type": "City", name: "San Pantaleo" },
+    { "@type": "City", name: "Olbia" },
+  ],
+});
+
+const deliveryLocations = [
+  { name: "Porto Cervo", desc: "Hotels, Marina und Luxusboutiquen", to: "/de/autovermietung-porto-cervo" },
+  { name: "Porto Rotondo", desc: "Elegante Marina und versteckte Buchten", to: "/de/autovermietung-porto-rotondo" },
+  { name: "San Teodoro", desc: "Kristallklare Strände und Nachtleben", to: "/de/autovermietung-san-teodoro" },
+  { name: "Olbia", desc: "Flughafen, Hafen und Stadtzentrum", to: "/de/autovermietung-olbia" },
+];
+
+const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
+---
+
+<BaseLayout
+  title="Mietwagen Costa Smeralda | VIP-Autovermietung Porto Cervo & Olbia | GDIS Rent"
+  description="Mietwagen Costa Smeralda mit VIP-Übergabe in Porto Cervo, Porto Rotondo, Baja Sardinia, San Pantaleo, San Teodoro, Golfo Aranci und Olbia ✓ Autovermietung Fiat Panda, Mercedes Classe A, Honda SH Roller und Yamaha Raptor Quad ✓ Auto mieten für die Strände der Gallura ✓ Direkte Anfrage rund um die Uhr per WhatsApp."
+  canonical="/de/autovermietung-costa-smeralda"
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  breadcrumbs={breadcrumbs}
+  i18nAlternates={{ it: "/noleggio-auto-in-costa-smeralda", en: "/en/car-rental-costa-smeralda", fr: "/fr/location-voiture-costa-smeralda" }}
+>
+  {/* Hero */}
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-dark via-brand-blue-deep to-brand-dark">
+    <div aria-hidden="true" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/20 blur-[150px] z-0 pointer-events-none"></div>
+
+    <div class="relative z-10 container px-4 text-center py-32">
+      <img
+        src={gdisLogo}
+        alt="GDIS Rent e Service"
+        class="w-32 md:w-40 h-auto mx-auto mb-8 drop-shadow-2xl"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 drop-shadow-lg">
+        Auto- und Rollervermietung<br />
+        <span class="text-primary italic font-light">an der Costa Smeralda</span>
+      </h1>
+      <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+        Erleben Sie die Freiheit Sardiniens mit unserer Premium-Flotte. Kleinwagen, Roller, Quads und Luxusfahrzeuge, geliefert direkt an Ihr Hotel, Ihre Villa oder Yacht.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/de/jetzt-buchen"
+          class="inline-flex items-center justify-center gap-3 h-14 px-10 text-lg font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all"
+        >
+          Jetzt buchen
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href="https://wa.me/393520459150"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-wa-track="costasmeralda_hero"
+          class="inline-flex items-center justify-center gap-3 h-14 px-10 text-lg font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
+        >
+          <WhatsAppIcon size={20} />
+          Kontakt über WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container pt-6">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <TrustMarquee items={["Costa Smeralda", "VIP-Lieferung", "Marinas & Villen", "Yachten & Hotels", "5-Sterne-Service", "WhatsApp 24/7"]} />
+
+  {/* Delivery section */}
+  <section class="py-20 md:py-28 bg-transparent relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="container px-4 relative z-10">
+      <div class="text-center mb-16" data-reveal>
+        <span class="text-primary font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
+          Exklusiver Service
+        </span>
+        <h2 class="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
+          VIP-Lieferung <span class="text-primary italic font-light">wo immer Sie sind</span>
+        </h2>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto font-light">
+          Wir bringen Ihr Fahrzeug direkt an Ihre Villa, Ihr Hotel oder Ihre Yacht — auf der gesamten Costa Smeralda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {deliveryLocations.map((loc, i) => (
+          <a
+            href={loc.to}
+            class="group relative rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-8 text-center hover:-translate-y-2 hover:shadow-[0_15px_40px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300"
+            data-reveal
+            data-reveal-delay={String(i * 100)}
+          >
+            <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-foreground mb-2">{loc.name}</h3>
+            <p class="text-muted-foreground text-sm font-light">{loc.desc}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="/de/jetzt-buchen"
+          class="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all"
+        >
+          Mit VIP-Lieferung buchen
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <VehicleComparisonTable
+    title="Welches Fahrzeug für die Costa Smeralda?"
+    subtitle="Vom Familien-Kleinwagen bis zum Off-Road-Quad. Schneller Vergleich, um je nach Aufenthalt zu wählen."
+    recommendation="<strong class='text-foreground'>Wählen Sie nach Ihrem Aufenthaltsort.</strong> Mercedes A 180d, wenn Ihre Basis Porto Cervo oder Porto Rotondo ist (Automatik, Komfort auf der Autobahn). Honda SH, wenn Sie in Baja Sardinia (Phi Beach in 5 Min ohne Schlange) oder San Pantaleo (enge Gassen) sind. Yamaha Raptor nur, wenn Sie die Schotterpisten von Capo Ferro oder Punta Volpe erkunden wollen. Fiat Panda ist der Allrounder für Familien, die häufig zwischen verschiedenen Orten wechseln."
+  />
+
+  {/* 7 location list */}
+  <section class="py-16 md:py-20 bg-muted/20">
+    <div class="container px-4 max-w-3xl mx-auto">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-6 text-center" data-reveal>
+        Costa Smeralda: 7 abgedeckte Orte
+      </h2>
+      <p class="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+        Unsere VIP-Lieferung erreicht alle wichtigen Orte der Costa Smeralda und der nordöstlichen Küstenregion Galluras. Jeder Ort hat seinen eigenen Charakter, seine empfohlene Flotte sowie praktische Hinweise zu Anfahrt und Parken:
+      </p>
+      <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-base text-foreground/85">
+        <li><a href="/de/autovermietung-porto-cervo" class="text-primary font-medium hover:underline">Porto Cervo</a> — Marina, Luxus, Pevero</li>
+        <li><a href="/de/autovermietung-baja-sardinia" class="text-primary font-medium hover:underline">Baja Sardinia</a> — Capo Ferro, Sonnenuntergänge</li>
+        <li><a href="/de/autovermietung-porto-rotondo" class="text-primary font-medium hover:underline">Porto Rotondo</a> — Piazzetta, Punta Volpe</li>
+        <li><a href="/de/autovermietung-san-pantaleo" class="text-primary font-medium hover:underline">San Pantaleo</a> — Bergdorf der Gallura</li>
+        <li><a href="/de/autovermietung-san-teodoro" class="text-primary font-medium hover:underline">San Teodoro</a> — La Cinta, Ausgehleben</li>
+        <li><a href="/de/autovermietung-golfo-aranci" class="text-primary font-medium hover:underline">Golfo Aranci</a> — Fährhafen</li>
+        <li class="sm:col-span-2"><a href="/de/autovermietung-olbia" class="text-primary font-medium hover:underline">Olbia</a> — Hub Flughafen OLB und Hafen Isola Bianca</li>
+      </ul>
+    </div>
+  </section>
+
+  {/* FAQ */}
+  <section class="py-20 md:py-28 bg-muted/30 relative">
+    <div class="container px-4">
+      <div class="flex flex-col lg:flex-row gap-16">
+        <div class="w-full lg:w-1/3">
+          <div class="sticky top-32" data-reveal>
+            <span class="text-primary font-display text-sm font-bold uppercase tracking-[0.3em] mb-4 block">FAQ Costa Smeralda</span>
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Alles, was Sie <br /><span class="italic font-light text-primary">wissen müssen.</span>
+            </h2>
+            <p class="text-muted-foreground text-lg font-light mb-10">
+              Antworten auf die häufigsten Fragen zur Vermietung an der Costa Smeralda.
+            </p>
+            <a
+              href="https://wa.me/393520459150"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-wa-track="costasmeralda_faq"
+              class="inline-flex items-center justify-center gap-2 w-full h-12 px-6 text-base font-semibold rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white shadow-md hover:shadow-lg transition-all"
+            >
+              <WhatsAppIcon size={20} />
+              Mit uns chatten
+            </a>
+          </div>
+        </div>
+        <div class="w-full lg:w-2/3">
+          <FaqList items={faqs} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Final CTA */}
+  <section class="py-20 md:py-28 bg-transparent relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none"></div>
+    <div class="container px-4 relative z-10 text-center">
+      <div data-reveal>
+        <div class="flex justify-center gap-4 mb-8">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </div>
+        <h2 class="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
+          Bereit, die <span class="text-primary italic">Costa Smeralda</span> zu erkunden?
+        </h2>
+        <p class="text-muted-foreground text-lg max-w-xl mx-auto mb-10 font-light">
+          Mini-Anfrage in 2 Minuten. Wir antworten per WhatsApp. VIP-Lieferung inklusive.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/de/jetzt-buchen"
+            class="inline-flex items-center justify-center gap-3 h-14 px-10 text-lg font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all"
+          >
+            Jetzt buchen
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a
+            href="https://wa.me/393520459150"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-wa-track="costasmeralda_final_cta"
+            class="inline-flex items-center justify-center gap-3 h-14 px-10 text-lg font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg transition-all"
+          >
+            <WhatsAppIcon size={20} />
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
