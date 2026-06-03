@@ -27,15 +27,26 @@
 - Review velocity activation (QR cards + WhatsApp follow-up per commit `6459ceb` playbook)
 - Tier 1 citation submissions (10 directories — PagineGialle/Bing Places/Apple Maps/Trustpilot etc.)
 
+### Supabase MCP access (configured June 3, 2026)
+- A Personal Access Token (account-scope, sees all orgs Giuseppe's account has access to) is configured in `.claude.json` under both `C:/Users/daian/gdis` and `c:/Users/daian/gdis` project entries as `supabase-gdis` MCP server, locked to project ref `zgazhrzjgefvjxknyffy`. Will be active in the next Claude Code session after a client restart.
+- For the current session (where the MCP wasn't yet loaded), all Supabase operations are routed via direct calls to `https://api.supabase.com/v1/...` and `https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/...` using the PAT and a derived service_role key. Same auth, same effect.
+- PAT cached at `~/.config/claude/supabase-pat` (chmod 600, outside repo, gitignored by default since not under git tree).
+- **NEVER paste PATs in chat again** — they are logged. If a rotation is needed, generate from https://supabase.com/dashboard/account/tokens.
+
 ---
 
 ## What's missing for security 🔒
 
-### 🔴 HIGH — schedule before Q3 deploy
+### ✅ Done June 3, 2026 (security hardening session)
+- **Bucket `licenses` decommissioned**: 40 orphan test files (~13 MB, 20×2 duplicate test license pairs) deleted via Storage API DELETE. Bucket structure kept for rollback; access now read-only via `licenses_admin_read` policy. Audit log committed at `docs/security/2026-06-03-licenses-bucket-decommission-audit.json`.
+- **Dropped permissive storage policies**: `Anyone can upload to licenses` (anonymous INSERT, public bucket exposure) + `licenses_anon_upload` (anon+authenticated INSERT) — both removed. No path remains for non-admin uploads to the `licenses` bucket.
+- **n8n-proxy edge function hardened**: was `verify_jwt: false` (publicly callable, orphan after WhatsApp refactor since no client invokes it anymore). Set to `verify_jwt: true` — anonymous calls now rejected with 401. Function source still deployed for rollback; if a future flow needs n8n it can be re-enabled.
+- **RLS audit passed**: all 6 `public.*` tables have RLS enabled. Supabase security + performance advisors return 0 lints for the GDIS project.
+
+### 🔴 HIGH — still pending, schedule before Q3 deploy
 - **CSP `'unsafe-inline'` in `script-src`** ([vercel.json:29](vercel.json#L29)) — required today by Astro `<script is:inline>` blocks (IntersectionObserver reveal in [BaseLayout.astro:139-161](src/layouts/BaseLayout.astro#L139), GTM consent stub in `Analytics.astro`). **Migration path**: Vercel middleware injecting per-request nonce; replace inline scripts with `nonce={Astro.locals.cspNonce}`. Estimate: 4-6h work.
-- **Decommission Supabase storage bucket `licenses`** — refactor disabled all `uploadLicense()` call sites but bucket still holds historical license PNG/JPGs from previous bookings. Action: (a) audit existing files via Supabase Studio, (b) export anything still needed for active bookings, (c) delete bucket (or empty it + set RLS to deny all). The `src/components/booking/BookingFlow.tsx` `uploadLicense` helper is **no longer imported anywhere** but the function definition + bucket policy still allow uploads.
-- **Disable n8n `/create-booking` webhook** — endpoint still accessible at `n8n.kreareweb.com` but no callers. Either (a) delete the workflow, (b) gate behind authentication, or (c) point it to a dead-letter for paranoia. Remove `n8n.kreareweb.com` from CSP `connect-src` once disabled.
-- **Cloudflare Turnstile decommission** — `TurnstileWidget.tsx` is dormant. If no other form uses Turnstile, remove `challenges.cloudflare.com` from CSP `script-src` and `frame-src` + delete `PUBLIC_TURNSTILE_SITE_KEY` from Vercel env vars + remove from `.env.example`.
+- **Disable n8n `/create-booking` workflow on n8n.kreareweb.com side** — even though the Supabase edge function `n8n-proxy` now rejects anonymous calls, the upstream n8n webhook itself is still listening at `n8n.kreareweb.com/webhook/create-booking`. To fully close the surface: (a) disable the workflow in n8n editor, or (b) delete it. Then remove `n8n.kreareweb.com` from CSP `connect-src`.
+- **Cloudflare Turnstile decommission** — `TurnstileWidget.tsx` is dormant. If no other form uses Turnstile, remove `challenges.cloudflare.com` from CSP `script-src` and `frame-src`. **Per user explicit instruction**: keep `PUBLIC_TURNSTILE_SITE_KEY` in local `.env` (gitignored, not pushed) for potential reuse in future forms — do NOT remove from `.env.example` either.
 
 ### 🟡 MEDIUM
 - **Missing `Cross-Origin-Opener-Policy: same-origin`** header (audit M5) → add to `vercel.json` headers block.
