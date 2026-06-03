@@ -137,17 +137,11 @@
     "steps": {
       "vehicle": "Véhicule",
       "dates": "Dates",
-      "driver": "Conducteur",
-      "secondDriver": "2e conducteur",
-      "pickupDropoff": "Retrait/Restitution",
-      "signature": "Signature"
+      "pickupDropoff": "Prise/Restitution"
     },
     "cta": {
       "back": "Retour",
-      "next": "Continuer",
-      "checkingAvailability": "Vérification de la disponibilité...",
-      "confirmBooking": "Confirmer la réservation",
-      "generatingContract": "Génération du contrat en cours..."
+      "next": "Suivant"
     },
     "errors": {
       "vehicleUnavailable": "Ce véhicule est déjà réservé pour ces dates. Veuillez choisir une autre période.",
@@ -228,10 +222,7 @@
       "stepLabels": {
         "vehicle": "Véhicule",
         "dates": "Dates",
-        "driver": "Conducteur",
-        "secondDriver": "2e conducteur",
-        "pickupDropoff": "Retrait/Restitution",
-        "signature": "Signature"
+        "pickupDropoff": "Prise/Restitution"
       }
     },
     "exitIntent": {
@@ -248,6 +239,24 @@
       "homeCta": "Retour à l'accueil",
       "supportLine": "Des questions sur votre réservation ? Nous sommes disponibles 24h/24 :",
       "whatsappMessage": "Bonjour, je viens de réserver et je souhaiterais des informations"
+    },
+    "request": {
+      "whatsappCta": "Envoyer la demande sur WhatsApp",
+      "whatsappCtaShort": "Demander",
+      "summaryTitle": "Récapitulatif de la demande",
+      "estimateNote": "Vous enverrez un message pré-rempli : nous confirmons directement la disponibilité, la franchise/kasko et les frais de livraison éventuels.",
+      "summary": {
+        "vehicle": "Véhicule",
+        "period": "Période",
+        "estimate": "Estimation",
+        "pickup": "Prise",
+        "indicative": "indicative, à confirmer"
+      },
+      "pickup": {
+        "sedeSummary": "Prise au siège (Via Annibale Caro 52, Olbia)",
+        "deliverySummary": "Livraison à : {address}",
+        "toAgree": "Prise/restitution à convenir"
+      }
     }
   },
   "fleet": {

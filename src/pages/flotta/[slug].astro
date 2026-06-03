@@ -116,7 +116,7 @@ const faqSchema = buildFaqSchema(v.faq, { speakable: true });
           </div>
           <div class="flex flex-wrap items-center gap-5">
             <a
-              href="/prenotaora"
+              href={`/prenotaora?vehicle=${v.slug}`}
               class="inline-flex items-center justify-center gap-2 h-14 px-10 text-lg font-semibold rounded-full bg-primary text-primary-foreground hover:bg-brand-blue-deep shadow-lg shadow-primary/30 transition-all"
             >
               Prenota Ora
@@ -304,7 +304,7 @@ const faqSchema = buildFaqSchema(v.faq, { speakable: true });
         <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground mb-6">{v.ctaTitle}</h2>
         <p class="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-12">{v.ctaSubtitle}</p>
         <a
-          href="/prenotaora"
+          href={`/prenotaora?vehicle=${v.slug}`}
           class="inline-flex items-center justify-center gap-2 h-16 px-12 text-lg font-bold rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-[0_10px_40px_hsl(0_0%_0%/0.3)] hover:shadow-[0_15px_50px_hsl(0_0%_0%/0.4)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
         >
           {v.ctaButtonLabel}

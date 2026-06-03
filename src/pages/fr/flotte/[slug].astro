@@ -56,7 +56,7 @@ const v = {
 };
 
 const canonical = getFleetPath(v.slug, LANG);
-const bookingHref = getRoute("booking", LANG);
+const bookingHref = `${getRoute("booking", LANG)}?vehicle=${v.slug}`;
 const contactHref = getRoute("contact", LANG);
 const homeHref = getRoute("home", LANG);
 

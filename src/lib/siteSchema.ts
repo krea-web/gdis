@@ -269,62 +269,50 @@ const BOOKING_HOWTO_COPY: Record<BookingLocale, {
   steps: Array<{ name: string; text: string }>;
 }> = {
   it: {
-    name: "Come prenotare un'auto a Olbia con GDIS Rent",
+    name: "Come richiedere un veicolo a Olbia con GDIS Rent",
     description:
-      "Procedura online in 6 step per prenotare auto, scooter o quad a Olbia e in Costa Smeralda con consegna VIP.",
+      "Procedura in 3 step per richiedere auto, scooter o quad a Olbia e in Costa Smeralda: scegli, compili una mini-richiesta e invii un messaggio WhatsApp precompilato. Ti rispondiamo noi di persona con disponibilità, kasko/franchigia ed eventuale costo di consegna.",
     steps: [
       { name: "Scegli il veicolo", text: "Seleziona auto, scooter o quad dalla nostra flotta in base al tipo di viaggio (city car, premium, off-road)." },
-      { name: "Imposta date e luogo di consegna", text: "Inserisci data e ora di ritiro/riconsegna e scegli dove vuoi ricevere il veicolo: aeroporto Olbia, porto, stazione, hotel o villa." },
-      { name: "Aggiungi extra opzionali", text: "Seggiolino bambino, secondo guidatore, copertura kasko, GPS o altri extra inclusi nella prenotazione." },
-      { name: "Inserisci i tuoi dati", text: "Compila nome, cognome, contatti e numero della patente. I dati sono protetti e usati solo per il contratto." },
-      { name: "Conferma e pagamento", text: "Verifica il riepilogo, accetta termini e condizioni, completa il pagamento sicuro o lascia la cauzione concordata." },
-      { name: "Ricevi conferma e ritira il veicolo", text: "Riceverai email e messaggio WhatsApp con dettagli del ritiro. Al momento concordato il veicolo è consegnato dove preferisci." },
+      { name: "Indica date e luogo di ritiro", text: "Inserisci date di noleggio e scegli se preferisci il ritiro in sede a Olbia oppure la consegna in aeroporto, porto, stazione, hotel o villa." },
+      { name: "Invia la richiesta su WhatsApp", text: "Con un tocco apri WhatsApp con un messaggio già pronto: vediamo la richiesta, confermiamo disponibilità, coperture (kasko/franchigia) ed eventuale costo di consegna direttamente in chat. Nessun pagamento anticipato, nessuna carta di credito richiesta sul sito." },
     ],
   },
   en: {
-    name: "How to book a car in Olbia with GDIS Rent",
+    name: "How to request a vehicle in Olbia with GDIS Rent",
     description:
-      "6-step online procedure to book a car, scooter or quad in Olbia and Costa Smeralda with VIP delivery.",
+      "3-step procedure to request a car, scooter or quad in Olbia and Costa Smeralda: pick, fill in a mini-request and send a pre-filled WhatsApp message. We reply in person with availability, kasko/excess and any delivery cost.",
     steps: [
       { name: "Choose your vehicle", text: "Pick a car, scooter or quad from our fleet based on your trip type (city car, premium, off-road)." },
-      { name: "Set dates and delivery location", text: "Enter pick-up/drop-off date and time and choose where you want the vehicle delivered: Olbia airport, port, station, hotel or villa." },
-      { name: "Add optional extras", text: "Child seat, second driver, full insurance cover, GPS or other extras included in your booking." },
-      { name: "Enter your details", text: "Fill in name, surname, contact info and driving licence number. Data is protected and used only for the rental contract." },
-      { name: "Confirm and pay", text: "Review the summary, accept the terms and conditions, complete the secure payment or leave the agreed deposit." },
-      { name: "Get confirmation and pick up your vehicle", text: "You'll receive an email and WhatsApp message with collection details. At the agreed time we deliver the vehicle wherever you prefer." },
+      { name: "Set dates and pickup location", text: "Enter rental dates and choose whether you want to collect the vehicle at our Olbia office or have it delivered to the airport, port, station, hotel or villa." },
+      { name: "Send your request on WhatsApp", text: "One tap opens WhatsApp with a pre-filled message: we receive the request, confirm availability, coverage (kasko/excess) and any delivery cost directly in chat. No upfront payment, no credit card required on the website." },
     ],
   },
   de: {
-    name: "So buchen Sie ein Auto in Olbia bei GDIS Rent",
+    name: "So fragen Sie ein Fahrzeug in Olbia bei GDIS Rent an",
     description:
-      "6-stufiger Online-Buchungsablauf für Auto-, Roller- oder Quad-Vermietung in Olbia und der Costa Smeralda mit VIP-Lieferung.",
+      "3-stufiger Ablauf, um in Olbia und an der Costa Smeralda ein Auto, einen Roller oder ein Quad anzufragen: auswählen, kurze Anfrage ausfüllen und eine vorausgefüllte WhatsApp-Nachricht senden. Wir antworten persönlich mit Verfügbarkeit, Vollkasko/Selbstbeteiligung und eventuellen Lieferkosten.",
     steps: [
       { name: "Fahrzeug auswählen", text: "Wählen Sie aus unserer Flotte Auto, Roller oder Quad — passend zu Ihrer Reise (Stadtauto, Premium, Offroad)." },
-      { name: "Datum und Lieferort festlegen", text: "Geben Sie Abhol- und Rückgabedatum ein und wählen Sie den Lieferort: Flughafen Olbia, Hafen, Bahnhof, Hotel oder Villa." },
-      { name: "Optionale Extras hinzufügen", text: "Kindersitz, Zweitfahrer, Vollkaskoschutz, GPS oder weitere Extras in Ihre Buchung aufnehmen." },
-      { name: "Ihre Daten eingeben", text: "Tragen Sie Vorname, Nachname, Kontakt und Führerscheinnummer ein. Die Daten sind geschützt und werden nur für den Mietvertrag verwendet." },
-      { name: "Bestätigen und bezahlen", text: "Übersicht prüfen, AGB akzeptieren, sichere Zahlung abschließen oder die vereinbarte Kaution hinterlegen." },
-      { name: "Bestätigung erhalten und Fahrzeug abholen", text: "Sie erhalten E-Mail und WhatsApp-Nachricht mit den Abholdetails. Zur vereinbarten Zeit liefern wir das Fahrzeug wohin Sie möchten." },
+      { name: "Daten und Abholort festlegen", text: "Geben Sie Mietzeitraum an und wählen Sie zwischen Abholung am Sitz in Olbia oder Lieferung an Flughafen, Hafen, Bahnhof, Hotel oder Villa." },
+      { name: "Anfrage per WhatsApp senden", text: "Ein Tippen öffnet WhatsApp mit einer vorausgefüllten Nachricht: Wir prüfen die Anfrage und bestätigen Verfügbarkeit, Versicherung (Vollkasko/Selbstbeteiligung) und eventuelle Lieferkosten direkt im Chat. Keine Vorauszahlung, keine Kreditkarte auf der Website nötig." },
     ],
   },
   fr: {
-    name: "Comment réserver une voiture à Olbia avec GDIS Rent",
+    name: "Comment demander un véhicule à Olbia avec GDIS Rent",
     description:
-      "Procédure en ligne en 6 étapes pour réserver voiture, scooter ou quad à Olbia et en Costa Smeralda avec livraison VIP.",
+      "Procédure en 3 étapes pour demander voiture, scooter ou quad à Olbia et en Costa Smeralda : choisir, remplir une mini-demande et envoyer un message WhatsApp pré-rempli. Nous répondons en personne avec disponibilité, kasko/franchise et frais de livraison éventuels.",
     steps: [
       { name: "Choisissez votre véhicule", text: "Sélectionnez voiture, scooter ou quad dans notre flotte selon le type de voyage (citadine, premium, tout-terrain)." },
-      { name: "Définissez les dates et le lieu de livraison", text: "Saisissez date et heure de prise en charge/restitution et choisissez le lieu de livraison : aéroport d'Olbia, port, gare, hôtel ou villa." },
-      { name: "Ajoutez des extras optionnels", text: "Siège enfant, deuxième conducteur, assurance tous risques, GPS ou autres extras inclus dans votre réservation." },
-      { name: "Renseignez vos coordonnées", text: "Remplissez nom, prénom, contacts et numéro de permis. Les données sont protégées et servent uniquement au contrat de location." },
-      { name: "Confirmez et payez", text: "Vérifiez le récapitulatif, acceptez les conditions générales, complétez le paiement sécurisé ou laissez la caution convenue." },
-      { name: "Recevez la confirmation et récupérez le véhicule", text: "Vous recevrez un e-mail et un message WhatsApp avec les détails de la prise en charge. À l'heure convenue nous livrons le véhicule où vous le souhaitez." },
+      { name: "Indiquez dates et lieu de prise en charge", text: "Saisissez les dates de location et choisissez entre prise en charge à notre siège d'Olbia ou livraison à l'aéroport, au port, à la gare, à l'hôtel ou à la villa." },
+      { name: "Envoyez la demande sur WhatsApp", text: "Un appui ouvre WhatsApp avec un message pré-rempli : nous recevons la demande et confirmons disponibilité, couverture (kasko/franchise) et frais de livraison éventuels directement dans la conversation. Pas de paiement à l'avance, pas de carte de crédit requise sur le site." },
     ],
   },
 };
 
-const BOOKING_HOWTO_STEP_ANCHOR = ["#step-veicolo", "#step-date", "#step-extra", "#step-dati", "#step-pagamento", "#step-conferma"];
+const BOOKING_HOWTO_STEP_ANCHOR = ["#step-veicolo", "#step-date", "#step-ritiro"];
 
-/** Build a HowTo schema describing the GDIS booking flow (6 steps). */
+/** Build a HowTo schema describing the GDIS booking request flow (3 steps). */
 export function buildHowToBookingSchema(locale: BookingLocale = "it") {
   const path = BOOKING_HOWTO_PATH[locale];
   const copy = BOOKING_HOWTO_COPY[locale];
@@ -334,7 +322,7 @@ export function buildHowToBookingSchema(locale: BookingLocale = "it") {
     "@id": `${SITE_URL}${path}#howto`,
     name: copy.name,
     description: copy.description,
-    totalTime: "PT3M",
+    totalTime: "PT2M",
     inLanguage: BOOKING_HOWTO_LANG[locale],
     image: BUSINESS_LOGO,
     step: copy.steps.map((s, i) => ({

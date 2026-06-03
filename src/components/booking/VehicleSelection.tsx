@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Check } from "lucide-react";
 import { useVehicles, type Vehicle } from "@/hooks/useVehicles";
 import VehicleCardSkeleton from "@/components/VehicleCardSkeleton";
@@ -17,6 +18,8 @@ type Props = {
   selected: SelectedVehicle | null;
   onSelect: (v: SelectedVehicle) => void;
   lang?: Locale;
+  /** Fleet-page slug to pre-select on mount (e.g. "fiat-panda"). */
+  initialSlug?: string | null;
 };
 
 const sanitizeImageUrl = (url?: string | null) => url?.replace(/^"|"$/g, "") || "/placeholder.svg";
@@ -31,9 +34,42 @@ function toSelected(v: Vehicle): SelectedVehicle {
   };
 }
 
-const VehicleSelection = ({ selected, onSelect, lang = "it" }: Props) => {
+/**
+ * Map fleet-page URL slug → predicate that identifies the matching DB vehicle.
+ * Keeps slug-based pre-selection robust against minor make/model formatting
+ * variations (e.g. "Mercedes-Benz" vs "Mercedes", "SH 125i" vs "SH").
+ */
+const SLUG_VEHICLE_MATCHERS: Record<string, (v: Vehicle) => boolean> = {
+  "fiat-panda": (v) =>
+    v.make.toLowerCase().includes("fiat") && v.model.toLowerCase().includes("panda"),
+  "honda-sh": (v) =>
+    v.make.toLowerCase().includes("honda") && /sh/i.test(v.model),
+  "mercedes-classe-a180d": (v) =>
+    v.make.toLowerCase().includes("mercedes") && /a.?180/i.test(v.model),
+  "yamaha-raptor": (v) =>
+    v.make.toLowerCase().includes("yamaha") && /raptor/i.test(v.model),
+};
+
+const VehicleSelection = ({ selected, onSelect, lang = "it", initialSlug = null }: Props) => {
   const { data: vehicles, isLoading } = useVehicles();
   const t = useTranslations(lang);
+  const preselectedRef = useRef(false);
+
+  // Auto-select a vehicle when arriving via ?vehicle=<slug>.
+  // Runs at most once, after vehicles arrive, only if nothing else is selected.
+  useEffect(() => {
+    if (preselectedRef.current) return;
+    if (!initialSlug) return;
+    if (selected) return;
+    if (!vehicles || vehicles.length === 0) return;
+    const matcher = SLUG_VEHICLE_MATCHERS[initialSlug];
+    if (!matcher) return;
+    const match = vehicles.find(matcher);
+    if (match) {
+      preselectedRef.current = true;
+      onSelect(toSelected(match));
+    }
+  }, [initialSlug, selected, vehicles, onSelect]);
 
   return (
     <div>

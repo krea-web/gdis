@@ -1,53 +1,28 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { format } from "date-fns";
+import { it as itLocale, enUS, de as deLocale, fr as frLocale } from "date-fns/locale";
 import VehicleSelection from "@/components/booking/VehicleSelection";
 import DateSelection from "@/components/booking/DateSelection";
-import DriverForm from "@/components/booking/DriverForm";
-import SecondDriverStep from "@/components/booking/SecondDriverStep";
 import PickupDropoffStep from "@/components/booking/PickupDropoffStep";
 import type { PickupDropoffData } from "@/components/booking/PickupDropoffStep";
-import SignatureStep from "@/components/booking/SignatureStep";
 import StickyQuote from "@/components/booking/StickyQuote";
-import TurnstileWidget from "@/components/booking/TurnstileWidget";
 import ExitIntentDialog from "@/components/booking/ExitIntentDialog";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
-import { ArrowLeft, ArrowRight, Check, CheckCircle2, Loader2, Phone, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, Car, Calendar, MapPin } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
-import { supabase } from "@/integrations/supabase/client";
-import { Toaster, toast } from "sonner";
-import { type Vehicle } from "@/hooks/useVehicles";
-import { invokeN8nProxy, type CreateBookingResponse } from "@/lib/n8nProxy";
-import { driverSchema, pickupDropoffSchema } from "@/lib/validators";
-import { trackBookingStarted, trackBookingCompleted, trackBookingStep, trackWhatsAppClick } from "@/lib/analytics";
+import { Toaster } from "sonner";
+import { type Vehicle, getMonthlyRate } from "@/hooks/useVehicles";
+import { trackBookingStarted, trackBookingStep, trackWhatsAppClick } from "@/lib/analytics";
+import { buildWhatsAppRequest } from "@/lib/whatsappRequest";
 import { useTranslations } from "@/i18n/utils";
 import type { Locale } from "@/i18n/utils";
-
-export type DriverData = {
-  email: string; telefono: string;
-  codiceFiscale: string; patenteFronte: File | null; patenteRetro: File | null;
-};
-
-export type SecondDriverData = DriverData & { enabled: boolean };
 
 export type BookingState = {
   vehicle: { id: string; name: string; image: string; pricePerDay: number; vehicleData?: Vehicle } | null;
   startDate: Date | null;
   endDate: Date | null;
-  driver: DriverData;
-  secondDriver: SecondDriverData;
   pickupDropoff: PickupDropoffData;
-};
-
-const initialDriver: DriverData = {
-  email: "", telefono: "",
-  codiceFiscale: "", patenteFronte: null, patenteRetro: null,
 };
 
 const initialPickupDropoff: PickupDropoffData = {
@@ -57,13 +32,12 @@ const initialPickupDropoff: PickupDropoffData = {
   dropoffTime: "",
 };
 
-async function uploadLicense(file: File, prefix: string): Promise<string | null> {
-  const ext = file.name.split(".").pop();
-  const path = `${prefix}/${Date.now()}.${ext}`;
-  const { error } = await supabase.storage.from("licenses").upload(path, file);
-  if (error) return null;
-  return path;
-}
+const DATE_LOCALES: Record<Locale, typeof itLocale> = {
+  it: itLocale,
+  en: enUS,
+  de: deLocale,
+  fr: frLocale,
+};
 
 type BookingFlowProps = {
   lang?: Locale;
@@ -71,31 +45,28 @@ type BookingFlowProps = {
 
 const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
   const t = useTranslations(lang);
-  const stepKeys = ["vehicle", "dates", "driver", "secondDriver", "pickupDropoff", "signature"] as const;
+  const stepKeys = ["vehicle", "dates", "pickupDropoff"] as const;
   const steps = stepKeys.map((k) => t(`booking.steps.${k}`));
 
   const [step, setStep] = useState(0);
-  const [submitting, setSubmitting] = useState(false);
-  const [checkingAvailability, setCheckingAvailability] = useState(false);
-  const [bookingId, setBookingId] = useState<string | null>(null);
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const turnstileRequired = !!(
-    import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || import.meta.env.VITE_TURNSTILE_SITE_KEY
-  );
+  const [initialVehicleSlug, setInitialVehicleSlug] = useState<string | null>(null);
   const [booking, setBooking] = useState<BookingState>({
     vehicle: null,
     startDate: null,
     endDate: null,
-    driver: { ...initialDriver },
-    secondDriver: { enabled: false, ...initialDriver },
     pickupDropoff: { ...initialPickupDropoff },
   });
+
+  // Read ?vehicle=<slug> on mount to allow pre-selection from fleet cards.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const slug = new URL(window.location.href).searchParams.get("vehicle");
+    if (slug) setInitialVehicleSlug(slug);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     window.scrollTo({ top: 0, behavior: "smooth" });
-    // Funnel event: ogni transizione di step (la step 0 è coperta da trackBookingStarted)
     if (step > 0) {
       trackBookingStep(stepKeys[step], step);
     }
@@ -118,144 +89,73 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
     switch (step) {
       case 0: return !!booking.vehicle;
       case 1: return !!booking.startDate && !!booking.endDate && booking.endDate > booking.startDate;
-      case 2: return driverSchema.safeParse(booking.driver).success;
-      case 3: {
-        if (!booking.secondDriver.enabled) return true;
-        return driverSchema.safeParse(booking.secondDriver).success;
+      case 2: {
+        const p = booking.pickupDropoff;
+        if (p.pickupLocation === "custom" && p.pickupCustomAddress.trim().length === 0) return false;
+        return true;
       }
-      case 4: return pickupDropoffSchema.safeParse(booking.pickupDropoff).success;
       default: return false;
     }
   };
 
-  const handleNextFromDates = async () => {
-    if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
-    setCheckingAvailability(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("n8n-proxy", {
-        body: {
-          endpoint: "check-availability",
-          data: {
-            vehicle_id: booking.vehicle.id,
-            start_date: booking.startDate.toISOString().split("T")[0],
-            end_date: booking.endDate.toISOString().split("T")[0],
-          },
-        },
-      });
+  const days =
+    booking.startDate && booking.endDate
+      ? Math.ceil((booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24))
+      : 0;
 
-      if (error || data?.success === false || data?.available === false) {
-        const msg = data?.error || t("booking.errors.vehicleUnavailable");
-        toast.error(msg);
-        return;
-      }
+  const ratePerDay =
+    booking.vehicle?.vehicleData && booking.startDate
+      ? getMonthlyRate(booking.vehicle.vehicleData, booking.startDate.getMonth())
+      : booking.vehicle?.pricePerDay ?? 0;
 
-      setStep(2);
-    } catch {
-      toast.error(t("booking.errors.availabilityCheckFailed"));
-    } finally {
-      setCheckingAvailability(false);
+  const priceEstimate = days > 0 ? ratePerDay * days : undefined;
+
+  const pickupSummaryLabel = (): string | undefined => {
+    if (!booking.vehicle) return undefined;
+    const p = booking.pickupDropoff;
+    if (p.pickupLocation === "sede") {
+      return t("booking.request.pickup.sedeSummary");
     }
+    if (p.pickupLocation === "custom" && p.pickupCustomAddress.trim().length > 0) {
+      return t("booking.request.pickup.deliverySummary", { address: p.pickupCustomAddress.trim() });
+    }
+    return t("booking.request.pickup.toAgree");
   };
 
-  const handleSubmit = async () => {
-    if (!booking.vehicle || !booking.startDate || !booking.endDate) return;
-    setSubmitting(true);
+  const handleSendWhatsApp = () => {
+    if (!booking.vehicle) return;
+    const dateLocale = DATE_LOCALES[lang] ?? itLocale;
+    const dateFmt = lang === "en" ? "MMM d, yyyy" : "d MMM yyyy";
+    const startLabel = booking.startDate
+      ? format(booking.startDate, dateFmt, { locale: dateLocale })
+      : undefined;
+    const endLabel = booking.endDate
+      ? format(booking.endDate, dateFmt, { locale: dateLocale })
+      : undefined;
 
-    try {
-      let frontPath: string | null = null;
-      let backPath: string | null = null;
-      let secondFrontPath: string | null = null;
-      let secondBackPath: string | null = null;
+    const url = buildWhatsAppRequest(lang, {
+      vehicleName: booking.vehicle.name,
+      startLabel,
+      endLabel,
+      days: days > 0 ? days : undefined,
+      priceEstimate,
+      pickupLabel: pickupSummaryLabel(),
+    });
 
-      if (booking.driver.patenteFronte)
-        frontPath = await uploadLicense(booking.driver.patenteFronte, "license-front");
-      if (booking.driver.patenteRetro)
-        backPath = await uploadLicense(booking.driver.patenteRetro, "license-back");
-      if (booking.secondDriver.enabled && booking.secondDriver.patenteFronte)
-        secondFrontPath = await uploadLicense(booking.secondDriver.patenteFronte, "second-license-front");
-      if (booking.secondDriver.enabled && booking.secondDriver.patenteRetro)
-        secondBackPath = await uploadLicense(booking.secondDriver.patenteRetro, "second-license-back");
+    trackWhatsAppClick("booking_request");
 
-      const pickupLoc = booking.pickupDropoff.pickupLocation === "sede"
-        ? "Sede GDIS Rent — Olbia"
-        : booking.pickupDropoff.pickupCustomAddress;
-
-      const bookingPayload = {
-        vehicle_id: booking.vehicle.id,
-        start_date: booking.startDate.toISOString().split("T")[0],
-        end_date: booking.endDate.toISOString().split("T")[0],
-        email: booking.driver.email,
-        phone: booking.driver.telefono,
-        tax_code: booking.driver.codiceFiscale || null,
-        license_front_path: frontPath,
-        license_back_path: backPath,
-        has_second_driver: booking.secondDriver.enabled,
-        pickup_location: pickupLoc,
-        pickup_time: booking.pickupDropoff.pickupTime,
-        dropoff_location: "Sede GDIS Rent — Olbia",
-        dropoff_time: booking.pickupDropoff.dropoffTime,
-        lang,
-        ...(booking.secondDriver.enabled ? {
-          second_driver_email: booking.secondDriver.email,
-          second_driver_phone: booking.secondDriver.telefono,
-          second_driver_cf: booking.secondDriver.codiceFiscale || null,
-          second_driver_license_front_path: secondFrontPath,
-          second_driver_license_back_path: secondBackPath,
-        } : {}),
-      };
-
-      const response = await invokeN8nProxy<CreateBookingResponse>(
-        "create-booking",
-        bookingPayload,
-        { turnstileToken: turnstileToken ?? undefined },
-      );
-
-      if (!response?.id) {
-        throw new Error(t("booking.errors.invalidServerResponse"));
-      }
-
-      setBookingId(response.id);
-      setStep(5);
-    } catch {
-      toast.error(t("booking.errors.bookingFailed"));
-    } finally {
-      setSubmitting(false);
+    if (typeof window !== "undefined") {
+      window.open(url, "_blank", "noopener,noreferrer");
     }
-  };
-
-  const handleSignatureComplete = () => {
-    if (bookingId && booking.vehicle && booking.startDate && booking.endDate) {
-      const days = Math.ceil(
-        (booking.endDate.getTime() - booking.startDate.getTime()) / (1000 * 60 * 60 * 24),
-      );
-      trackBookingCompleted({
-        bookingId,
-        vehicleId: booking.vehicle.id,
-        vehicleName: booking.vehicle.name,
-        days,
-        totalEur: booking.vehicle.pricePerDay * days,
-      });
-    }
-    setShowSuccess(true);
   };
 
   const handleNext = () => {
-    if (step === 1) {
-      handleNextFromDates();
-    } else if (step === 4) {
-      handleSubmit();
-    } else {
+    if (step < stepKeys.length - 1) {
       setStep(step + 1);
+    } else {
+      handleSendWhatsApp();
     }
   };
-
-  const goHome = () => {
-    if (typeof window !== "undefined") {
-      window.location.href = "/";
-    }
-  };
-
-  const successWhatsappHref = `https://wa.me/393520459150?text=${encodeURIComponent(t("booking.success.whatsappMessage"))}`;
 
   return (
     <div className="min-h-screen bg-transparent pt-20">
@@ -271,7 +171,7 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
                   "bg-muted text-muted-foreground"
                 }`}
               >
-                {i < step ? <Check size={14} /> : i + 1}
+                {i + 1}
               </div>
               {i < steps.length - 1 && (
                 <div className={`w-4 md:w-12 h-0.5 ${i < step ? "bg-primary" : "bg-border"}`} />
@@ -296,7 +196,12 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
                 transition={{ duration: 0.3 }}
               >
                 {step === 0 && (
-                  <VehicleSelection selected={booking.vehicle} onSelect={handleVehicleSelect} lang={lang} />
+                  <VehicleSelection
+                    selected={booking.vehicle}
+                    onSelect={handleVehicleSelect}
+                    lang={lang}
+                    initialSlug={initialVehicleSlug}
+                  />
                 )}
                 {step === 1 && (
                   <DateSelection
@@ -307,163 +212,118 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
                   />
                 )}
                 {step === 2 && (
-                  <DriverForm
-                    data={booking.driver}
-                    onChange={(driver) => updateBooking({ driver })}
-                    lang={lang}
-                  />
-                )}
-                {step === 3 && (
-                  <SecondDriverStep
-                    data={booking.secondDriver}
-                    onChange={(secondDriver) => updateBooking({ secondDriver })}
-                    lang={lang}
-                  />
-                )}
-                {step === 4 && (
                   <>
                     <PickupDropoffStep
                       data={booking.pickupDropoff}
                       onChange={(pickupDropoff) => updateBooking({ pickupDropoff })}
                       lang={lang}
                     />
-                    {turnstileRequired && (
-                      <div className="mt-6">
-                        <TurnstileWidget
-                          onToken={setTurnstileToken}
-                          onExpired={() => setTurnstileToken(null)}
-                          onError={() => setTurnstileToken(null)}
-                        />
+
+                    {/* Request summary card */}
+                    <div className="mt-8 bg-card rounded-2xl border border-border p-6 md:p-8">
+                      <h3 className="font-display text-lg font-bold text-foreground mb-4">
+                        {t("booking.request.summaryTitle")}
+                      </h3>
+                      <div className="space-y-3 text-sm">
+                        {booking.vehicle && (
+                          <div className="flex items-start gap-3">
+                            <Car size={18} className="text-primary shrink-0 mt-0.5" />
+                            <div className="flex-1">
+                              <span className="text-muted-foreground">{t("booking.request.summary.vehicle")}: </span>
+                              <span className="font-medium text-foreground">{booking.vehicle.name}</span>
+                            </div>
+                          </div>
+                        )}
+                        {booking.startDate && booking.endDate && (
+                          <div className="flex items-start gap-3">
+                            <Calendar size={18} className="text-primary shrink-0 mt-0.5" />
+                            <div className="flex-1">
+                              <span className="text-muted-foreground">{t("booking.request.summary.period")}: </span>
+                              <span className="font-medium text-foreground">
+                                {format(booking.startDate, "d MMM yyyy", { locale: DATE_LOCALES[lang] ?? itLocale })}
+                                {" → "}
+                                {format(booking.endDate, "d MMM yyyy", { locale: DATE_LOCALES[lang] ?? itLocale })}
+                                {days > 0 && ` (${days} ${days === 1 ? t("booking.summary.daySingular") : t("booking.summary.dayPlural")})`}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                        {priceEstimate !== undefined && (
+                          <div className="flex items-start gap-3">
+                            <span className="text-primary shrink-0 mt-0.5 text-base">💰</span>
+                            <div className="flex-1">
+                              <span className="text-muted-foreground">{t("booking.request.summary.estimate")}: </span>
+                              <span className="font-medium text-foreground">~€{priceEstimate}</span>
+                              <span className="ml-1 text-xs text-muted-foreground">
+                                ({t("booking.request.summary.indicative")})
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                        <div className="flex items-start gap-3">
+                          <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
+                          <div className="flex-1">
+                            <span className="text-muted-foreground">{t("booking.request.summary.pickup")}: </span>
+                            <span className="font-medium text-foreground">
+                              {pickupSummaryLabel() ?? t("booking.request.pickup.toAgree")}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                    )}
+
+                      <p className="mt-5 text-xs text-muted-foreground leading-relaxed">
+                        {t("booking.request.estimateNote")}
+                      </p>
+                    </div>
                   </>
-                )}
-                {step === 5 && bookingId && (
-                  <SignatureStep
-                    bookingId={bookingId}
-                    onComplete={handleSignatureComplete}
-                    lang={lang}
-                  />
                 )}
               </motion.div>
             </AnimatePresence>
 
-            {step < 5 && (
-              <div className="flex items-center justify-between mt-10">
+            <div className="flex items-center justify-between mt-10">
+              <Button
+                variant="ghost"
+                size="lg"
+                onClick={() => setStep(Math.max(0, step - 1))}
+                disabled={step === 0}
+                className="gap-2"
+              >
+                <ArrowLeft size={16} />
+                {t("booking.cta.back")}
+              </Button>
+
+              {step < stepKeys.length - 1 ? (
                 <Button
-                  variant="ghost"
+                  variant="hero"
                   size="lg"
-                  onClick={() => setStep(Math.max(0, step - 1))}
-                  disabled={step === 0}
+                  onClick={handleNext}
+                  disabled={!canNext()}
                   className="gap-2"
                 >
-                  <ArrowLeft size={16} />
-                  {t("booking.cta.back")}
+                  {t("booking.cta.next")}
+                  <ArrowRight size={16} />
                 </Button>
-
-                {step < 4 ? (
-                  <Button
-                    variant="hero"
-                    size="lg"
-                    onClick={handleNext}
-                    disabled={!canNext() || checkingAvailability}
-                    className="gap-2"
-                  >
-                    {checkingAvailability ? (
-                      <>
-                        <Loader2 size={16} className="animate-spin" />
-                        {t("booking.cta.checkingAvailability")}
-                      </>
-                    ) : (
-                      <>
-                        {t("booking.cta.next")}
-                        <ArrowRight size={16} />
-                      </>
-                    )}
-                  </Button>
-                ) : (
-                  <Button
-                    variant="hero"
-                    size="lg"
-                    onClick={handleSubmit}
-                    disabled={!canNext() || submitting || (turnstileRequired && !turnstileToken)}
-                    className="gap-2"
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 size={16} className="animate-spin" />
-                        {t("booking.cta.generatingContract")}
-                      </>
-                    ) : (
-                      <>
-                        {t("booking.cta.confirmBooking")}
-                        <Check size={16} />
-                      </>
-                    )}
-                  </Button>
-                )}
-              </div>
-            )}
+              ) : (
+                <Button
+                  size="lg"
+                  onClick={handleSendWhatsApp}
+                  disabled={!canNext()}
+                  className="gap-2 bg-[#25D366] hover:bg-[#22c160] text-white shadow-lg shadow-[#25D366]/30"
+                >
+                  <WhatsAppIcon size={18} />
+                  {t("booking.request.whatsappCta")}
+                </Button>
+              )}
+            </div>
           </div>
 
           <div className="lg:col-span-4">
-            <StickyQuote booking={booking} currentStep={step} lang={lang} />
+            <StickyQuote booking={booking} currentStep={step} lang={lang} onSendWhatsApp={handleSendWhatsApp} canSend={canNext() && step === stepKeys.length - 1} />
           </div>
         </div>
       </div>
 
-      <ExitIntentDialog disabled={showSuccess || step >= 5} lang={lang} />
-
-      <Dialog open={showSuccess} onOpenChange={setShowSuccess}>
-        <DialogContent className="sm:max-w-md text-center">
-          <DialogHeader className="items-center">
-            <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <CheckCircle2 size={32} className="text-primary" />
-            </div>
-            <DialogTitle className="font-display text-2xl">
-              {t("booking.success.title")}
-            </DialogTitle>
-            <DialogDescription className="text-base">
-              {t("booking.success.description")}
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex flex-col gap-3 mt-4">
-            <Button variant="outline" className="gap-2">
-              <Star size={16} className="text-yellow-500" />
-              {t("booking.success.reviewCta")}
-            </Button>
-            <Button variant="hero" onClick={goHome}>
-              {t("booking.success.homeCta")}
-            </Button>
-          </div>
-
-          <div className="mt-6 pt-5 border-t border-border">
-            <p className="text-xs text-muted-foreground mb-3">
-              {t("booking.success.supportLine")}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-2 justify-center">
-              <a
-                href="tel:+393520459150"
-                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-primary hover:underline"
-              >
-                <Phone size={14} />
-                +39 352 045 9150
-              </a>
-              <span className="hidden sm:inline text-muted-foreground">·</span>
-              <a
-                href={successWhatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackWhatsAppClick("booking_success_dialog")}
-                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-[#25D366] hover:underline"
-              >
-                <WhatsAppIcon size={14} />
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <ExitIntentDialog disabled={false} lang={lang} />
     </div>
   );
 };

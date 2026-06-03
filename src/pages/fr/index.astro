@@ -68,8 +68,8 @@ const fleetCards = [
     description: "Design compact et élégance pour vous déplacer en ville et découvrir la côte avec un maximum de confort. L'option parfaite pour la Costa Smeralda.",
     image: "/vehicles/gdis-fiatpandacitycar.webp",
     price: VEHICLE_PRICE_FROM.city_car,
-    link: "/fr/flotte/fiat-panda",
-    cta: "En savoir plus",
+    link: "/fr/reserver?vehicle=fiat-panda",
+    cta: "Demander ce véhicule",
   },
   {
     cat: "premium",
@@ -78,8 +78,8 @@ const fleetCards = [
     description: "Élégance allemande et technologie MBUX pour vivre la Costa Smeralda avec le plus grand confort. Boîte automatique, diesel efficient, 5 places.",
     image: "/vehicles/gdis-mercedessupercarclassea180d.webp",
     price: VEHICLE_PRICE_FROM.premium,
-    link: "/fr/flotte/mercedes-classe-a180d",
-    cta: "En savoir plus",
+    link: "/fr/reserver?vehicle=mercedes-classe-a180d",
+    cta: "Demander ce véhicule",
   },
   {
     cat: "quad",
@@ -88,8 +88,8 @@ const fleetCards = [
     description: "Puissance et adrénaline pure. Explorez les sentiers non goudronnés et les plages cachées que les voitures ne peuvent pas atteindre.",
     image: "/vehicles/gdis-yamahaquadraptor.webp",
     price: VEHICLE_PRICE_FROM.quad,
-    link: "/fr/flotte/yamaha-raptor",
-    cta: "En savoir plus",
+    link: "/fr/reserver?vehicle=yamaha-raptor",
+    cta: "Demander ce véhicule",
   },
   {
     cat: "scooter",
@@ -98,8 +98,8 @@ const fleetCards = [
     description: "Évitez les embouteillages et profitez d'une liberté absolue. Sentez la brise méditerranéenne sur votre peau à chaque déplacement.",
     image: "/vehicles/gdis-hondascooter350.webp",
     price: VEHICLE_PRICE_FROM.scooter,
-    link: "/fr/flotte/honda-sh",
-    cta: "En savoir plus",
+    link: "/fr/reserver?vehicle=honda-sh",
+    cta: "Demander ce véhicule",
   },
 ];
 
@@ -326,8 +326,8 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
               <span class="absolute -top-2 -left-2 text-xs font-display font-bold text-primary bg-primary/10 rounded-full w-7 h-7 flex items-center justify-center">02</span>
             </div>
             <div>
-              <h3 class="text-xl font-display font-semibold text-foreground mb-2">Signature numérique rapide</h3>
-              <p class="text-muted-foreground leading-relaxed">Finalisez la réservation avec une signature numérique sécurisée, directement depuis votre smartphone.</p>
+              <h3 class="text-xl font-display font-semibold text-foreground mb-2">Envoyez votre demande WhatsApp</h3>
+              <p class="text-muted-foreground leading-relaxed">Choisissez dates et lieu de prise en charge, puis envoyez une demande WhatsApp pré-remplie : nous vous répondons en personne avec disponibilité, assurance et frais de livraison.</p>
             </div>
           </div>
           <div class="flex gap-6 group" data-reveal data-reveal-delay="240">
@@ -524,12 +524,12 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
           </div>
           <h3 class="text-4xl md:text-6xl font-display font-bold mb-6 leading-tight text-white drop-shadow-lg">
             Sans file d'attente. <br />
-            <span class="italic font-light text-white/70">100 % numérique.</span>
+            <span class="italic font-light text-white/70">Direct sur WhatsApp.</span>
           </h3>
           <p class="text-white/60 text-lg md:text-xl font-light leading-relaxed mb-8">
             <a href="/fr/flotte/fiat-panda" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">Citadines</a>,{" "}
             <a href="/fr/flotte/honda-sh" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">scooters</a> et{" "}
-            <a href="/fr/flotte/yamaha-raptor" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">quads</a> prêts en moins de 2 minutes. Choisissez le véhicule, signez en ligne et récupérez les clés. Votre temps est précieux.
+            <a href="/fr/flotte/yamaha-raptor" class="text-blue-400 font-medium hover:underline hover:text-blue-300 transition-all">quads</a>. Choisissez véhicule, dates et lieu de prise en charge, puis envoyez une demande WhatsApp pré-remplie : nous vous répondons en personne avec disponibilité et assurance. Sans carte de crédit à l'avance.
           </p>
           <ul class="flex items-center gap-4 text-sm text-white/50 font-medium list-none">
             <li class="flex items-center gap-2">
@@ -539,7 +539,7 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
             <li aria-hidden="true"><span class="w-1 h-1 bg-white/20 rounded-full block"></span></li>
             <li class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              Confirmation immédiate
+              Réponse directe sur WhatsApp
             </li>
           </ul>
         </div>
