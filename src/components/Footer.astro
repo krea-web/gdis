@@ -13,7 +13,6 @@ import { getLangFromUrl, useTranslations, getRoute, getFleetPath, getLocationPat
 const currentLang: Locale = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 const homeHref = getRoute("home", currentLang);
-const adminHref = currentLang === "it" ? "/login" : `/login`;
 
 const navColumns = [
   {

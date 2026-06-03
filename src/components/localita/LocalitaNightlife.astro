@@ -11,7 +11,8 @@ export interface Props {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { name, locali } = Astro.props;
+// `name` is declared in Props for API backward compat but not used in the markup.
+const { locali } = Astro.props;
 
 const typeMeta: Record<Locale["type"], { iconKey: string }> = {
   ristorante: { iconKey: "utensils" },

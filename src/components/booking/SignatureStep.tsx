@@ -1,3 +1,9 @@
+/**
+ * @deprecated DORMANT — kept in repo for rollback only.
+ * Removed from the booking flow in commit 1641e34 (WhatsApp request refactor).
+ * Contracts are now drafted offline via the Telegram + OCR workflow on the
+ * owner's side. The website no longer collects a digital signature.
+ */
 import { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import { Button } from "@/components/ui/button";

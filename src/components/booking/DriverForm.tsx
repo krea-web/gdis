@@ -1,3 +1,14 @@
+/**
+ * @deprecated DORMANT — kept in repo for rollback only.
+ * The self-service booking wizard was refactored to a WhatsApp request funnel
+ * in commit 1641e34 (June 3, 2026). The new flow lives in BookingFlow.tsx
+ * (3-step: vehicle/dates/pickup) + whatsappRequest.ts (pre-filled message).
+ * License upload, second driver, digital signature, and n8n /create-booking
+ * submission have been removed from the user-facing flow.
+ *
+ * Do NOT re-wire this component. If you need to re-enable license collection,
+ * coordinate with the contract workflow (Telegram + OCR) per CLAUDE.md.
+ */
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Upload, X, AlertCircle } from "lucide-react";

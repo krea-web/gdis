@@ -11,7 +11,8 @@ export interface Props {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { name, tips } = Astro.props;
+// `name` is declared in Props for API backward compat but not used in the markup.
+const { tips } = Astro.props;
 ---
 
 <section class="py-24 md:py-32 bg-muted/30 relative">

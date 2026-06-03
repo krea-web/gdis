@@ -1,3 +1,9 @@
+/**
+ * @deprecated DORMANT — kept in repo for rollback only.
+ * Removed from the booking flow in commit 1641e34 (WhatsApp request refactor).
+ * The new BookingFlow.tsx no longer collects a second driver: that data is
+ * gathered manually by the owner during the WhatsApp conversation.
+ */
 import { motion, AnimatePresence } from "framer-motion";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
