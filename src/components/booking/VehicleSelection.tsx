@@ -44,6 +44,8 @@ const SLUG_VEHICLE_MATCHERS: Record<string, (v: Vehicle) => boolean> = {
     v.make.toLowerCase().includes("fiat") && v.model.toLowerCase().includes("panda"),
   "honda-sh": (v) =>
     v.make.toLowerCase().includes("honda") && /sh/i.test(v.model),
+  "kymco-agility": (v) =>
+    v.make.toLowerCase().includes("kymco") && /agility/i.test(v.model),
   "mercedes-classe-a180d": (v) =>
     v.make.toLowerCase().includes("mercedes") && /a.?180/i.test(v.model),
   "yamaha-raptor": (v) =>
