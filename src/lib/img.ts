@@ -1,5 +1,19 @@
 const SUPABASE_BASE = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1";
 
+/**
+ * Supabase Image Transformations (`render/image/public/...?width=...`) is a
+ * paid feature not enabled on this project. Calls return 403 FeatureNotEnabled.
+ * Until the plan is upgraded, every image is served as the raw stored object
+ * (`object/public/...`). The width/height/quality/resize options accepted by
+ * supabaseImg / supabaseSrcset are silently ignored — the helpers keep their
+ * shape so callers don't need to change, and srcset uses the same source URL
+ * for every width entry (browser picks one, sizes hint is preserved).
+ *
+ * When the Pro plan is enabled, flip RENDER_TRANSFORMATIONS_ENABLED to true
+ * and the original transformation behaviour returns automatically.
+ */
+const RENDER_TRANSFORMATIONS_ENABLED = false;
+
 const stripBase = (url: string): string => {
   return url
     .replace(`${SUPABASE_BASE}/object/public/`, "")
@@ -11,7 +25,7 @@ export const supabaseImg = (
   opts: { width?: number; height?: number; quality?: number; resize?: "cover" | "contain" | "fill"; raw?: boolean } = {},
 ): string => {
   const path = pathOrUrl.startsWith("http") ? stripBase(pathOrUrl) : pathOrUrl.replace(/^\//, "");
-  if (opts.raw) return `${SUPABASE_BASE}/object/public/${path}`;
+  if (opts.raw || !RENDER_TRANSFORMATIONS_ENABLED) return `${SUPABASE_BASE}/object/public/${path}`;
   const params = new URLSearchParams();
   if (opts.width) params.set("width", String(opts.width));
   if (opts.height) params.set("height", String(opts.height));
