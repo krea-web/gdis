@@ -1,0 +1,14 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import LoginForm from "@/components/admin/LoginForm.tsx";
+---
+
+<BaseLayout
+  title="Accesso amministratore — GDIS Rent"
+  description="Login pannello amministrativo GDIS Rent."
+  canonical="/login"
+  robots="noindex,nofollow"
+  hideBackground
+>
+  <LoginForm client:only="react" />
+</BaseLayout>

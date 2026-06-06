@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import TrustMarquee from "@/components/TrustMarquee.astro";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
-import { buildLocalBusinessSchema, buildReviewSchema, SITE_URL } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildAllReviewSchemas, SITE_URL } from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
 import { VEHICLE_PRICE_FROM } from "@/lib/vehiclePricing";
 
@@ -234,13 +234,7 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
   jsonLd={[
     homeLocalBusinessSchema,
     ...serviceSchemas,
-    ...reviews.map((r) =>
-      buildReviewSchema({
-        authorName: r.name,
-        datePublished: r.date,
-        reviewBody: r.text,
-      }),
-    ),
+    ...buildAllReviewSchemas(),
   ]}
   hideBackground
   lcpImage={{ href: gdisLogo, type: "image/webp" }}

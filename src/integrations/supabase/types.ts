@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_actions: {
+        Row: {
+          action: string
+          created_at: string
+          id: string
+          payload: Json | null
+          target_id: string | null
+          target_table: string | null
+          user_id: string | null
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          id?: string
+          payload?: Json | null
+          target_id?: string | null
+          target_table?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          id?: string
+          payload?: Json | null
+          target_id?: string | null
+          target_table?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       bookings: {
         Row: {
           birth_date: string | null
@@ -23,6 +53,8 @@ export type Database = {
           created_at: string
           customer_name: string | null
           customer_surname: string | null
+          damages: Json | null
+          deleted_at: string | null
           dropoff_location: string | null
           dropoff_time: string | null
           email: string | null
@@ -63,6 +95,8 @@ export type Database = {
           created_at?: string
           customer_name?: string | null
           customer_surname?: string | null
+          damages?: Json | null
+          deleted_at?: string | null
           dropoff_location?: string | null
           dropoff_time?: string | null
           email?: string | null
@@ -103,6 +137,8 @@ export type Database = {
           created_at?: string
           customer_name?: string | null
           customer_surname?: string | null
+          damages?: Json | null
+          deleted_at?: string | null
           dropoff_location?: string | null
           dropoff_time?: string | null
           email?: string | null
@@ -200,6 +236,7 @@ export type Database = {
           email: string | null
           id: string
           is_admin: boolean | null
+          is_blacklisted: boolean | null
           verification_status: string | null
         }
         Insert: {
@@ -207,6 +244,7 @@ export type Database = {
           email?: string | null
           id: string
           is_admin?: boolean | null
+          is_blacklisted?: boolean | null
           verification_status?: string | null
         }
         Update: {
@@ -214,6 +252,7 @@ export type Database = {
           email?: string | null
           id?: string
           is_admin?: boolean | null
+          is_blacklisted?: boolean | null
           verification_status?: string | null
         }
         Relationships: []
@@ -232,11 +271,13 @@ export type Database = {
           id: string
           image_url: string | null
           km_current: number | null
+          last_revision_date: string | null
           license_plate: string
           logo_url: string | null
           make: string
           model: string
           next_revision_date: string | null
+          notes: string | null
           rate_april: number | null
           rate_august: number | null
           rate_july: number | null
@@ -259,11 +300,13 @@ export type Database = {
           id?: string
           image_url?: string | null
           km_current?: number | null
+          last_revision_date?: string | null
           license_plate: string
           logo_url?: string | null
           make: string
           model: string
           next_revision_date?: string | null
+          notes?: string | null
           rate_april?: number | null
           rate_august?: number | null
           rate_july?: number | null
@@ -286,11 +329,13 @@ export type Database = {
           id?: string
           image_url?: string | null
           km_current?: number | null
+          last_revision_date?: string | null
           license_plate?: string
           logo_url?: string | null
           make?: string
           model?: string
           next_revision_date?: string | null
+          notes?: string | null
           rate_april?: number | null
           rate_august?: number | null
           rate_july?: number | null

@@ -5,7 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
-import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Accueil", url: "/fr" },
@@ -45,6 +45,7 @@ const localBusinessSchema = buildLocalBusinessSchema({
     { "@type": "Place", name: "Port d'Olbia Isola Bianca" },
     { "@type": "City", name: "Olbia" },
   ],
+  includeAggregateRating: true,
 });
 
 const faqSchema = buildFaqSchema(faqs, { speakable: true });
@@ -61,6 +62,7 @@ const serviceSchema = buildServiceSchema({
     { "@type": "AdministrativeArea", name: "Costa Smeralda" },
   ],
 });
+const reviewSchemas = buildAllReviewSchemas();
 
 const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp";
 ---
@@ -69,7 +71,7 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
   title="Location Voiture au Port d'Olbia Isola Bianca | Loueur Ferry | GDIS Rent"
   description="Location voiture au port d'Olbia Isola Bianca avec livraison directement à la rampe du ferry ✓ Débarquement Moby, Tirrenia, GNV ou Grimaldi depuis Civitavecchia, Livourne, Gênes, Piombino, Nice ✓ Fiat Panda, Mercedes, scooter Honda, quad Yamaha ✓ Attente ferry jusqu'à 4h incluse, 24h/24 sur WhatsApp."
   canonical="/fr/location-voiture-port-olbia"
-  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema, ...reviewSchemas]}
   breadcrumbs={breadcrumbs}
   ogImage={heroImage}
   i18nAlternates={{ it: "/noleggio-auto-porto-olbia", en: "/en/car-rental-olbia-port", de: "/de/autovermietung-hafen-olbia" }}

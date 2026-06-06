@@ -5,7 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
-import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Home", url: "/en" },
@@ -42,9 +42,11 @@ const localBusinessSchema = buildLocalBusinessSchema({
     { "@type": "TrainStation", name: "Olbia Station" },
     { "@type": "City", name: "Olbia" },
   ],
+  includeAggregateRating: true,
 });
 
 const faqSchema = buildFaqSchema(faqs, { speakable: true });
+const reviewSchemas = buildAllReviewSchemas();
 
 const serviceSchema = buildServiceSchema({
   name: "Car Rental Olbia Station",
@@ -66,7 +68,7 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
   title="Car Rental at Olbia Station | Train + Car Hire Combo | GDIS Rent"
   description="Car rental at Olbia Station ✓ Trenitalia connections from Sassari, Cagliari and Olbia Airport ✓ Train + car hire combo for Costa Smeralda, Porto Cervo, San Teodoro ✓ Fiat Panda, Honda scooter, Yamaha quad ✓ Delivery at the platform exit, 24/7 on WhatsApp."
   canonical="/en/car-rental-olbia-station"
-  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema, ...reviewSchemas]}
   breadcrumbs={breadcrumbs}
   ogImage={heroImage}
   i18nAlternates={{ it: "/noleggio-auto-stazione-olbia", de: "/de/autovermietung-bahnhof-olbia", fr: "/fr/location-voiture-gare-olbia" }}

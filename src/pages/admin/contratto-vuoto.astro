@@ -1,0 +1,342 @@
+---
+import {
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_NAME,
+  BUSINESS_VAT,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_EMAIL,
+  BUSINESS_ADDRESS,
+} from "@/lib/siteSchema";
+
+const today = new Date().toLocaleDateString("it-IT", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Contratto noleggio (vuoto) — GDIS Rent</title>
+    <style>
+      :root {
+        --line: #1f2937;
+        --muted: #6b7280;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #f4f4f5;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+        color: var(--line);
+      }
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        gap: 12px;
+        padding: 12px 16px;
+        background: #fff;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .toolbar button, .toolbar a {
+        font-family: inherit;
+        font-size: 14px;
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: 1px solid #d4d4d8;
+        background: #fff;
+        color: var(--line);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .toolbar button.primary {
+        background: hsl(240 100% 50%);
+        color: #fff;
+        border-color: hsl(240 100% 50%);
+      }
+      .sheet {
+        max-width: 794px;
+        margin: 24px auto;
+        padding: 36px 40px;
+        background: #fff;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+      header.doc-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 16px;
+        margin-bottom: 18px;
+      }
+      header.doc-header h1 {
+        font-size: 20px;
+        margin: 0 0 4px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      header.doc-header p {
+        margin: 2px 0;
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .meta {
+        text-align: right;
+        font-size: 11px;
+      }
+      h2.section-title {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 20px 0 8px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #d4d4d8;
+      }
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+      .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px 16px; }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin-bottom: 4px;
+      }
+      .field label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+      .field .line {
+        height: 22px;
+        border-bottom: 1px solid var(--line);
+      }
+      .field.large .line { height: 44px; }
+      table.grid {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 6px;
+      }
+      table.grid th, table.grid td {
+        border: 1px solid var(--line);
+        padding: 6px 8px;
+        font-size: 11px;
+        text-align: left;
+        vertical-align: top;
+      }
+      table.grid th {
+        background: #f4f4f5;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: 10px;
+      }
+      table.grid td .blank { display: block; min-height: 18px; }
+      .terms {
+        font-size: 10px;
+        color: #374151;
+        line-height: 1.5;
+        margin-top: 8px;
+      }
+      .terms ol { margin: 6px 0 0 18px; padding: 0; }
+      .signatures {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .sign-box .sign-line {
+        height: 60px;
+        border-bottom: 1px solid var(--line);
+      }
+      .sign-box .sign-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      footer.doc-footer {
+        margin-top: 26px;
+        padding-top: 12px;
+        border-top: 1px solid #d4d4d8;
+        font-size: 9px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media print {
+        .toolbar { display: none; }
+        body { background: #fff; }
+        .sheet {
+          margin: 0;
+          padding: 18mm 16mm;
+          box-shadow: none;
+          max-width: none;
+        }
+        @page { size: A4; margin: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button type="button" class="primary" onclick="window.print()">🖨 Stampa contratto</button>
+      <a href="/admin">← Torna al pannello</a>
+    </div>
+
+    <article class="sheet">
+      <header class="doc-header">
+        <div>
+          <h1>Contratto di noleggio</h1>
+          <p><strong>{BUSINESS_NAME}</strong> — {BUSINESS_LEGAL_NAME}</p>
+          <p>{BUSINESS_ADDRESS.streetAddress}, {BUSINESS_ADDRESS.postalCode} {BUSINESS_ADDRESS.addressLocality} ({BUSINESS_ADDRESS.addressRegion})</p>
+          <p>P.IVA {BUSINESS_VAT} · Tel {BUSINESS_PHONE_DISPLAY} · {BUSINESS_EMAIL}</p>
+        </div>
+        <div class="meta">
+          <p><strong>Contratto N°</strong> ____________</p>
+          <p>Data: {today}</p>
+          <p>Sede: ____________________</p>
+        </div>
+      </header>
+
+      <h2 class="section-title">Dati conducente principale</h2>
+      <div class="grid-2">
+        <div class="field"><label>Cognome</label><div class="line"></div></div>
+        <div class="field"><label>Nome</label><div class="line"></div></div>
+        <div class="field"><label>Data di nascita</label><div class="line"></div></div>
+        <div class="field"><label>Luogo di nascita</label><div class="line"></div></div>
+        <div class="field"><label>Codice fiscale</label><div class="line"></div></div>
+        <div class="field"><label>Documento (tipo / N°)</label><div class="line"></div></div>
+        <div class="field"><label>Patente N°</label><div class="line"></div></div>
+        <div class="field"><label>Scadenza patente</label><div class="line"></div></div>
+        <div class="field large"><label>Residenza completa</label><div class="line"></div></div>
+        <div class="field"><label>Telefono</label><div class="line"></div></div>
+        <div class="field"><label>Email</label><div class="line"></div></div>
+      </div>
+
+      <h2 class="section-title">Secondo conducente (opzionale)</h2>
+      <div class="grid-2">
+        <div class="field"><label>Cognome e nome</label><div class="line"></div></div>
+        <div class="field"><label>Codice fiscale</label><div class="line"></div></div>
+        <div class="field"><label>Patente N°</label><div class="line"></div></div>
+        <div class="field"><label>Telefono</label><div class="line"></div></div>
+      </div>
+
+      <h2 class="section-title">Veicolo</h2>
+      <table class="grid">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Marca / Modello</th>
+            <th>Targa</th>
+            <th>Colore</th>
+            <th>Carburante</th>
+            <th>Km consegna</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title">Periodo, luoghi, importi</h2>
+      <table class="grid">
+        <thead>
+          <tr>
+            <th>Ritiro — data</th>
+            <th>Ritiro — ora</th>
+            <th>Luogo ritiro</th>
+            <th>Riconsegna — data</th>
+            <th>Riconsegna — ora</th>
+            <th>Luogo riconsegna</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="grid" style="margin-top:8px">
+        <thead>
+          <tr>
+            <th>Tariffa giornaliera</th>
+            <th>Giorni</th>
+            <th>Imponibile</th>
+            <th>IVA</th>
+            <th>Cauzione</th>
+            <th>Totale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+            <td><span class="blank"></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title">Stato veicolo alla consegna</h2>
+      <div class="grid-3">
+        <div class="field"><label>Livello carburante</label><div class="line"></div></div>
+        <div class="field"><label>Pneumatici (stato)</label><div class="line"></div></div>
+        <div class="field"><label>Accessori consegnati</label><div class="line"></div></div>
+      </div>
+      <div class="field large" style="margin-top:8px"><label>Note danni / graffi presenti</label><div class="line"></div></div>
+
+      <h2 class="section-title">Condizioni di noleggio</h2>
+      <div class="terms">
+        <ol>
+          <li>Il conducente dichiara di essere in possesso di patente di guida valida, di aver compiuto i 21 anni e di non aver subito sospensioni o ritiri.</li>
+          <li>Il veicolo è consegnato in perfetto stato d'uso. Eventuali difformità rispetto alle "Note danni" sopra indicate sono a carico del conducente.</li>
+          <li>Il conducente si impegna a riconsegnare il veicolo nello stesso stato e con il medesimo livello di carburante della consegna.</li>
+          <li>È fatto divieto di trasporto di merci pericolose, partecipazione a competizioni, traino di altri veicoli e cessione del mezzo a terzi non autorizzati per iscritto.</li>
+          <li>In caso di sinistro è obbligatoria la compilazione del modulo CAI e la comunicazione immediata al noleggiatore al numero {BUSINESS_PHONE_DISPLAY}.</li>
+          <li>Le sanzioni amministrative e i relativi oneri di gestione sono a totale carico del conducente.</li>
+          <li>Il foro competente per ogni controversia è quello di Tempio Pausania.</li>
+        </ol>
+      </div>
+
+      <p style="font-size:10px;margin-top:10px;">Ai sensi degli artt. 1341 e 1342 c.c. il conducente dichiara di approvare specificamente le clausole 2, 3, 4, 5, 6 e 7.</p>
+
+      <div class="signatures">
+        <div class="sign-box">
+          <div class="sign-line"></div>
+          <div class="sign-label">Firma del conducente principale</div>
+        </div>
+        <div class="sign-box">
+          <div class="sign-line"></div>
+          <div class="sign-label">Firma del noleggiatore (GDIS Rent)</div>
+        </div>
+      </div>
+
+      <footer class="doc-footer">
+        Documento generato dal pannello GDIS Rent · {today} · da compilare e firmare in originale.
+      </footer>
+    </article>
+  </body>
+</html>
