@@ -344,7 +344,8 @@
       "ratingLabel": "Cliente verificato Google",
       "outOf": "/5",
       "body": "I clienti che hanno noleggiato auto, scooter o quad a {name} raccontano la loro esperienza direttamente su Google. Trasparenza totale, niente filtri.",
-      "cta": "Vedi GDIS Service SRL su Google"
+      "cta": "Vedi GDIS Service SRL su Google",
+      "reviewCount": "{count} recensioni verificate"
     },
     "finalCta": {
       "eyebrow": "Pronto a esplorare {name}?",

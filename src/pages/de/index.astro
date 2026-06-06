@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import TrustMarquee from "@/components/TrustMarquee.astro";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
-import { buildLocalBusinessSchema, SITE_URL } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildReviewSchema, SITE_URL } from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
 import { VEHICLE_PRICE_FROM } from "@/lib/vehiclePricing";
 
@@ -10,6 +10,7 @@ const homeLocalBusinessSchema = buildLocalBusinessSchema({
   id: `${SITE_URL}/#localbusiness`,
   description:
     "GDIS Rent & Service — Autovermietung, Rollerverleih und Quadverleih in Olbia und Costa Smeralda. VIP-Lieferung am Flughafen, Hafen, Hotel oder Villa.",
+  includeAggregateRating: true,
 });
 
 const serviceSchemas = [
@@ -192,27 +193,32 @@ const destinations = [
   },
 ];
 
+// Real verified Google Business Profile reviews (June 2026) — original Italian text
+// kept for authenticity (DO NOT translate — loses trust signal).
 const reviews = [
   {
-    name: "Marco R.",
-    location: "Mailand",
-    text: "Tadelloser Service! Der Panda erwartete uns direkt am Hafen von Olbia. Alles perfekt, wir kommen sicher wieder.",
-    linkWord: "Panda",
-    linkTo: "/de/flotte/fiat-panda",
+    name: "Antonio S.",
+    location: "Verifizierter Kunde",
+    date: "2026-06-04",
+    text: "Ho usufruito della macchina Mercedes Classe A per 3 giorni, confortevole, ve lo consiglio.",
+    linkWord: "Mercedes Classe A",
+    linkTo: "/de/flotte/mercedes-classe-a180d",
   },
   {
-    name: "Sophie L.",
-    location: "Paris",
-    text: "Die Honda-SH-Roller sind in perfektem Zustand. Wir haben die Costa Smeralda in völliger Freiheit erkundet. Fantastische VIP-Lieferung!",
-    linkWord: "Honda SH",
-    linkTo: "/de/flotte/honda-sh",
+    name: "Mihail F.",
+    location: "Verifizierter Kunde",
+    date: "2026-06-04",
+    text: "Servizio eccellente, personale sempre super disponibile, auto pulite e moderne. Nessun ritardo e prezzi buonissimi.",
+    linkWord: null,
+    linkTo: null,
   },
   {
-    name: "Alessandro D.",
-    location: "Rom",
-    text: "Das Yamaha-Raptor-Quad ist eine Bestie! Versteckte Strände, die nur off-road erreichbar sind. Einzigartiges Erlebnis, extrem freundliches Team.",
-    linkWord: "Yamaha Raptor",
-    linkTo: "/de/flotte/yamaha-raptor",
+    name: "Dario D.",
+    location: "Verifizierter Kunde",
+    date: "2026-06-03",
+    text: "Ottimo noleggio in Costa Smeralda, mi sono trovato benissimo nel noleggiare i veicoli con loro soprattutto per il servizio di noleggio direttamente a domicilio e a costo zero a Olbia, super consigliato!",
+    linkWord: "Costa Smeralda",
+    linkTo: "/de/autovermietung-costa-smeralda",
   },
 ];
 
@@ -225,7 +231,17 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
   description="Mietwagen in Olbia und an der Costa Smeralda mit VIP-Übergabe am Flughafen Olbia (OLB) und am Hafen Isola Bianca ✓ Autovermietung Fiat Panda, Mercedes Classe A, Honda SH Roller und Yamaha Raptor Quad ✓ Auto mieten für Porto Cervo, San Teodoro, Baja Sardinia ✓ Ohne Schlange, 24/7 per WhatsApp."
   canonical="/de"
   keywords="mietwagen olbia, autovermietung olbia, auto mieten olbia, mietwagen costa smeralda, mietwagen flughafen olbia, autovermietung flughafen costa smeralda, mietwagen porto cervo, roller mieten olbia, quad mieten sardinien"
-  jsonLd={[homeLocalBusinessSchema, ...serviceSchemas]}
+  jsonLd={[
+    homeLocalBusinessSchema,
+    ...serviceSchemas,
+    ...reviews.map((r) =>
+      buildReviewSchema({
+        authorName: r.name,
+        datePublished: r.date,
+        reviewBody: r.text,
+      }),
+    ),
+  ]}
   hideBackground
   lcpImage={{ href: gdisLogo, type: "image/webp" }}
   i18nAlternates={{ it: "/", en: "/en", fr: "/fr" }}
@@ -659,9 +675,10 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
       </div>
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
         {reviews.map((review, i) => {
-          const idx = review.text.indexOf(review.linkWord);
+          const hasLink = !!review.linkWord && !!review.linkTo;
+          const idx = hasLink ? review.text.indexOf(review.linkWord!) : -1;
           const before = idx === -1 ? review.text : review.text.slice(0, idx);
-          const after = idx === -1 ? "" : review.text.slice(idx + review.linkWord.length);
+          const after = idx === -1 ? "" : review.text.slice(idx + (review.linkWord?.length ?? 0));
           return (
             <div
               class="relative group rounded-2xl p-8 bg-background/60 backdrop-blur-xl border border-border/50 hover:border-primary/30 hover:shadow-[0_10px_40px_hsl(var(--primary)/0.1)] transition-all duration-300"

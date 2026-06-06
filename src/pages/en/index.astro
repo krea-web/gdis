@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import TrustMarquee from "@/components/TrustMarquee.astro";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
-import { buildLocalBusinessSchema, SITE_URL } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildReviewSchema, SITE_URL } from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
 import { VEHICLE_PRICE_FROM } from "@/lib/vehiclePricing";
 
@@ -10,6 +10,7 @@ const homeLocalBusinessSchema = buildLocalBusinessSchema({
   id: `${SITE_URL}/#localbusiness`,
   description:
     "GDIS Rent & Service — Car, scooter and quad rental in Olbia and Costa Smeralda. VIP delivery to airport, port, hotel or villa.",
+  includeAggregateRating: true,
 });
 
 const serviceSchemas = [
@@ -192,27 +193,34 @@ const destinations = [
   },
 ];
 
+// Real verified Google Business Profile reviews — DO NOT replace with placeholders.
+// Average rating 5.0 / 5 reviews (June 2026). Source: GBP listing "Gdis Service SRL".
+// Review text is kept in Italian (original language) for authenticity — translating
+// loses the trust signal.
 const reviews = [
   {
-    name: "Marco R.",
-    location: "Milan",
-    text: "Flawless service! The Panda was waiting for us right at Olbia port. Everything went perfectly, we'll definitely be back.",
-    linkWord: "Panda",
-    linkTo: "/en/fleet/fiat-panda",
+    name: "Antonio S.",
+    location: "Verified customer",
+    date: "2026-06-04",
+    text: "Ho usufruito della macchina Mercedes Classe A per 3 giorni, confortevole, ve lo consiglio.",
+    linkWord: "Mercedes Classe A",
+    linkTo: "/en/fleet/mercedes-classe-a180d",
   },
   {
-    name: "Sophie L.",
-    location: "Paris",
-    text: "The Honda SH scooters are in perfect condition. We explored Costa Smeralda in total freedom. Fantastic VIP delivery!",
-    linkWord: "Honda SH",
-    linkTo: "/en/fleet/honda-sh",
+    name: "Mihail F.",
+    location: "Verified customer",
+    date: "2026-06-04",
+    text: "Servizio eccellente, personale sempre super disponibile, auto pulite e moderne. Nessun ritardo e prezzi buonissimi.",
+    linkWord: null,
+    linkTo: null,
   },
   {
-    name: "Alessandro D.",
-    location: "Rome",
-    text: "The Yamaha Raptor quad is a beast! Hidden beaches you can only reach off-road. A unique experience and a lovely team.",
-    linkWord: "Yamaha Raptor",
-    linkTo: "/en/fleet/yamaha-raptor",
+    name: "Dario D.",
+    location: "Verified customer",
+    date: "2026-06-03",
+    text: "Ottimo noleggio in Costa Smeralda, mi sono trovato benissimo nel noleggiare i veicoli con loro soprattutto per il servizio di noleggio direttamente a domicilio e a costo zero a Olbia, super consigliato!",
+    linkWord: "Costa Smeralda",
+    linkTo: "/en/car-rental-costa-smeralda",
   },
 ];
 
@@ -225,7 +233,17 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
   description="Car rental in Olbia and Costa Smeralda with VIP delivery at Olbia Airport (OLB) and Isola Bianca Port ✓ Rent a Fiat Panda, Mercedes Classe A, Honda SH scooter or Yamaha Raptor quad ✓ Olbia and Sardinia car hire for Porto Cervo, San Teodoro, Baja Sardinia ✓ Skip the queue, 24/7 WhatsApp."
   canonical="/en"
   keywords="car rental in olbia, car rental olbia, olbia car hire, rent a car olbia, costa smeralda car rental, car rental olbia airport, olbia airport car hire, car rental porto cervo, scooter rental olbia, quad rental sardinia"
-  jsonLd={[homeLocalBusinessSchema, ...serviceSchemas]}
+  jsonLd={[
+    homeLocalBusinessSchema,
+    ...serviceSchemas,
+    ...reviews.map((r) =>
+      buildReviewSchema({
+        authorName: r.name,
+        datePublished: r.date,
+        reviewBody: r.text,
+      }),
+    ),
+  ]}
   hideBackground
   lcpImage={{ href: gdisLogo, type: "image/webp" }}
   i18nAlternates={{ it: "/", de: "/de", fr: "/fr" }}
@@ -659,9 +677,10 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
       </div>
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
         {reviews.map((review, i) => {
-          const idx = review.text.indexOf(review.linkWord);
+          const hasLink = !!review.linkWord && !!review.linkTo;
+          const idx = hasLink ? review.text.indexOf(review.linkWord!) : -1;
           const before = idx === -1 ? review.text : review.text.slice(0, idx);
-          const after = idx === -1 ? "" : review.text.slice(idx + review.linkWord.length);
+          const after = idx === -1 ? "" : review.text.slice(idx + (review.linkWord?.length ?? 0));
           return (
             <div
               class="relative group rounded-2xl p-8 bg-background/60 backdrop-blur-xl border border-border/50 hover:border-primary/30 hover:shadow-[0_10px_40px_hsl(var(--primary)/0.1)] transition-all duration-300"
@@ -678,7 +697,11 @@ const luxuryCarMobile = supabaseImg("vehicles/gdisrent-exclusive-car-for-rent.we
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" class="h-5 w-5 fill-amber-400 text-amber-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
                 <p class="text-foreground/80 leading-relaxed mb-6 italic text-base">
-                  "{before}<a href={review.linkTo} class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">{review.linkWord}</a>{after}"
+                  {hasLink && idx !== -1 ? (
+                    <>"{before}<a href={review.linkTo} class="text-blue-600 font-medium hover:underline hover:text-blue-700 transition-all">{review.linkWord}</a>{after}"</>
+                  ) : (
+                    <>"{review.text}"</>
+                  )}
                 </p>
                 <div class="border-t border-border/50 pt-4">
                   <p class="font-semibold text-foreground">{review.name}</p>

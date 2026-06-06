@@ -1,7 +1,9 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { GBP_RATING_VALUE, GBP_REVIEW_COUNT } from "@/lib/siteSchema";
 
-const RATING_VALUE = "5.0";
+const RATING_VALUE = GBP_RATING_VALUE.toFixed(1);
+const REVIEW_COUNT = GBP_REVIEW_COUNT;
 const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/mmKSjQChHSKX32XU8";
 
 export interface Props {
@@ -30,7 +32,8 @@ const bodyHtml = t("localita.trust.body", {
       <p class="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
         {RATING_VALUE}<span class="text-muted-foreground text-2xl font-medium">{t("localita.trust.outOf")}</span>
       </p>
-      <p class="text-sm uppercase tracking-widest text-muted-foreground mb-6">{t("localita.trust.ratingLabel")}</p>
+      <p class="text-sm uppercase tracking-widest text-muted-foreground mb-1">{t("localita.trust.ratingLabel")}</p>
+      <p class="text-xs text-muted-foreground/80 mb-6">{t("localita.trust.reviewCount", { count: REVIEW_COUNT })}</p>
 
       <p class="text-base md:text-lg text-foreground/80 max-w-2xl mx-auto mb-8 leading-relaxed" set:html={bodyHtml} />
 

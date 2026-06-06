@@ -87,6 +87,44 @@ export const organizationSchema = {
   },
 };
 
+/**
+ * Build a Review schema block for a single verified Google review.
+ * Used on the homepage to mark up the 3 testimonials shown on-page.
+ * `itemReviewed` points to the global LocalBusiness `@id` so Google links
+ * the review to the entity rather than to a generic Product.
+ */
+export function buildReviewSchema(input: {
+  authorName: string;
+  datePublished: string;
+  reviewBody: string;
+  ratingValue?: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    author: { "@type": "Person", name: input.authorName },
+    datePublished: input.datePublished,
+    reviewBody: input.reviewBody,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(input.ratingValue ?? 5),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    itemReviewed: { "@id": `${SITE_URL}/#localbusiness` },
+    publisher: { "@type": "Organization", name: "Google Business Profile" },
+  };
+}
+
+/**
+ * Real GBP review counters (June 2026). Source: maps.app.goo.gl/mmKSjQChHSKX32XU8
+ * All 5 reviews are 5-star — average is exactly 5.0. UPDATE THESE NUMBERS WHEN
+ * THE GBP REVIEW COUNT CHANGES — otherwise the schema misrepresents reality and
+ * may trigger a manual action from Google.
+ */
+export const GBP_RATING_VALUE = 5.0;
+export const GBP_REVIEW_COUNT = 5;
+
 /** Build a full LocalBusiness / AutoRental block. Accepts optional overrides. */
 export function buildLocalBusinessSchema(options: {
   id?: string;
@@ -94,6 +132,7 @@ export function buildLocalBusinessSchema(options: {
   image?: string;
   description?: string;
   priceRange?: string;
+  includeAggregateRating?: boolean;
 } = {}) {
   return {
     "@context": "https://schema.org",
@@ -111,6 +150,15 @@ export function buildLocalBusinessSchema(options: {
     paymentAccepted: "Cash, Credit Card, Bank Transfer",
     knowsLanguage: ["it", "en", "de", "fr"],
     ...(options.description ? { description: options.description } : {}),
+    ...(options.includeAggregateRating ? {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: String(GBP_RATING_VALUE),
+        reviewCount: String(GBP_REVIEW_COUNT),
+        bestRating: "5",
+        worstRating: "1",
+      },
+    } : {}),
     address: BUSINESS_ADDRESS,
     geo: BUSINESS_GEO,
     openingHoursSpecification: BUSINESS_HOURS,

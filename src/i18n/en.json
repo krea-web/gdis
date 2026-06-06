@@ -344,7 +344,8 @@
       "ratingLabel": "Verified Google customer",
       "outOf": "/5",
       "body": "Customers who rented a car, scooter or quad in {name} share their experience directly on Google. Full transparency, no filters.",
-      "cta": "See GDIS Service SRL on Google"
+      "cta": "See GDIS Service SRL on Google",
+      "reviewCount": "{count} verified reviews"
     },
     "finalCta": {
       "eyebrow": "Ready to explore {name}?",
