@@ -5,7 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
-import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -46,7 +46,6 @@ const localBusinessSchema = buildLocalBusinessSchema({
 });
 
 const faqSchema = buildFaqSchema(faqs, { speakable: true });
-const reviewSchemas = buildAllReviewSchemas();
 
 const serviceSchema = buildServiceSchema({
   name: "Noleggio Auto Stazione Olbia",
@@ -68,7 +67,7 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
   title="Noleggio Auto alla Stazione di Olbia | Combo Treno + Autonoleggio | GDIS Rent"
   description="Noleggio auto alla Stazione di Olbia ✓ Coincidenze Trenitalia da Sassari, Cagliari e Olbia Aeroporto ✓ Combo treno + autonoleggio per Costa Smeralda, Porto Cervo, San Teodoro ✓ Fiat Panda, scooter Honda, quad Yamaha ✓ Consegna all'uscita binari, WhatsApp H24."
   canonical="/noleggio-auto-stazione-olbia"
-  jsonLd={[localBusinessSchema, serviceSchema, faqSchema, ...reviewSchemas]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
   ogImage={heroImage}
   i18nAlternates={{

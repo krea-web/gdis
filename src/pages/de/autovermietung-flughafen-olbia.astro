@@ -6,7 +6,7 @@ import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
 import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
-import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Home", url: "/de" },
@@ -54,7 +54,6 @@ const localBusinessSchema = buildLocalBusinessSchema({
 });
 
 const faqSchema = buildFaqSchema(faqs, { speakable: true });
-const reviewSchemas = buildAllReviewSchemas();
 
 const serviceSchema = buildServiceSchema({
   name: "Autovermietung Flughafen Olbia Costa Smeralda",
@@ -76,7 +75,7 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
   title="Mietwagen Flughafen Olbia OLB | Autovermietung Costa Smeralda 24/7 | GDIS Rent"
   description="Mietwagen am Flughafen Olbia Costa Smeralda (OLB) ✓ VIP-Übergabe direkt am Ankunftsterminal, ohne Schlange am Schalter ✓ Autovermietung Fiat Panda, Mercedes, Honda-Roller und Yamaha-Quad ✓ Echtzeit-Flugüberwachung, reale Distanzen zu Porto Cervo, San Teodoro, Baja Sardinia ✓ Auto mieten 24/7 per WhatsApp."
   canonical="/de/autovermietung-flughafen-olbia"
-  jsonLd={[localBusinessSchema, serviceSchema, faqSchema, ...reviewSchemas]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
   ogImage={heroImage}
   i18nAlternates={{ it: "/noleggio-auto-aeroporto-olbia", en: "/en/car-rental-olbia-airport", fr: "/fr/location-voiture-aeroport-olbia" }}

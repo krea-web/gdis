@@ -5,7 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
-import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Home", url: "/en" },
@@ -62,7 +62,6 @@ const serviceSchema = buildServiceSchema({
     { "@type": "AdministrativeArea", name: "Costa Smeralda" },
   ],
 });
-const reviewSchemas = buildAllReviewSchemas();
 
 const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/locations/olbia/gdisrent-noleggio-auto-porto-olbia.webp";
 ---
@@ -71,7 +70,7 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
   title="Car Rental at Olbia Port Isola Bianca | Ferry Car Hire | GDIS Rent"
   description="Car rental at Olbia Port Isola Bianca with vehicle delivery right at the ferry ramp ✓ Disembarking with Moby, Tirrenia, GNV or Grimaldi from Civitavecchia, Livorno, Genoa, Piombino, Nice ✓ Fiat Panda, Mercedes, Honda scooter, Yamaha quad ✓ Up to 4-hour delay wait included, 24/7 on WhatsApp."
   canonical="/en/car-rental-olbia-port"
-  jsonLd={[localBusinessSchema, serviceSchema, faqSchema, ...reviewSchemas]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
   ogImage={heroImage}
   i18nAlternates={{ it: "/noleggio-auto-porto-olbia", de: "/de/autovermietung-hafen-olbia", fr: "/fr/location-voiture-port-olbia" }}
