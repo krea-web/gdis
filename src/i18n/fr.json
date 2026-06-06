@@ -344,7 +344,8 @@
       "ratingLabel": "Client vérifié Google",
       "outOf": "/5",
       "body": "Les clients qui ont loué une voiture, un scooter ou un quad à {name} racontent leur expérience directement sur Google. Transparence totale, sans filtres.",
-      "cta": "Voir GDIS Service SRL sur Google"
+      "cta": "Voir GDIS Service SRL sur Google",
+      "reviewCount": "{count} avis vérifiés"
     },
     "finalCta": {
       "eyebrow": "Prêt à explorer {name} ?",

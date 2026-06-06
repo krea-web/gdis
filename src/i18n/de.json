@@ -344,7 +344,8 @@
       "ratingLabel": "Verifizierter Google-Kunde",
       "outOf": "/5",
       "body": "Kunden, die in {name} ein Auto, einen Roller oder ein Quad gemietet haben, teilen ihre Erfahrung direkt auf Google. Volle Transparenz, keine Filter.",
-      "cta": "GDIS Service SRL auf Google ansehen"
+      "cta": "GDIS Service SRL auf Google ansehen",
+      "reviewCount": "{count} verifizierte Bewertungen"
     },
     "finalCta": {
       "eyebrow": "Bereit, {name} zu entdecken?",
