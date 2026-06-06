@@ -5,7 +5,7 @@ import TrustMarquee from "@/components/TrustMarquee.astro";
 import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
 import FaqList from "@/components/FaqList.astro";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
-import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
 
 const breadcrumbs = [
@@ -54,7 +54,6 @@ const serviceSchema = buildServiceSchema({
     { "@type": "City", name: "Olbia" },
   ],
 });
-const reviewSchemas = buildAllReviewSchemas();
 
 const deliveryLocations = [
   { name: "Porto Cervo", desc: "Hotels, Marina und Luxusboutiquen", to: "/de/autovermietung-porto-cervo" },
@@ -70,7 +69,7 @@ const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
   title="Mietwagen Costa Smeralda | VIP-Autovermietung Porto Cervo & Olbia | GDIS Rent"
   description="Mietwagen Costa Smeralda mit VIP-Übergabe in Porto Cervo, Porto Rotondo, Baja Sardinia, San Pantaleo, San Teodoro, Golfo Aranci und Olbia ✓ Autovermietung Fiat Panda, Mercedes Classe A, Honda SH Roller und Yamaha Raptor Quad ✓ Auto mieten für die Strände der Gallura ✓ Direkte Anfrage rund um die Uhr per WhatsApp."
   canonical="/de/autovermietung-costa-smeralda"
-  jsonLd={[localBusinessSchema, serviceSchema, faqSchema, ...reviewSchemas]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
   i18nAlternates={{ it: "/noleggio-auto-in-costa-smeralda", en: "/en/car-rental-costa-smeralda", fr: "/fr/location-voiture-costa-smeralda" }}
 >

@@ -5,7 +5,7 @@ import LocalitaHero from "@/components/localita/LocalitaHero.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
 import ConsegnaVipExplainer from "@/components/ConsegnaVipExplainer.astro";
-import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
 
 const breadcrumbs = [
   { name: "Accueil", url: "/fr" },
@@ -46,7 +46,6 @@ const localBusinessSchema = buildLocalBusinessSchema({
 });
 
 const faqSchema = buildFaqSchema(faqs, { speakable: true });
-const reviewSchemas = buildAllReviewSchemas();
 
 const serviceSchema = buildServiceSchema({
   name: "Location de voiture gare d'Olbia",
@@ -68,7 +67,7 @@ const heroImage = "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/pu
   title="Location Voiture à la Gare d'Olbia | Combo Train + Location | GDIS Rent"
   description="Location voiture à la gare d'Olbia ✓ Correspondances Trenitalia depuis Sassari, Cagliari et l'aéroport d'Olbia ✓ Combo train + location voiture pour Costa Smeralda, Porto Cervo, San Teodoro ✓ Fiat Panda, scooter Honda, quad Yamaha ✓ Livraison à la sortie des quais, 24h/24 sur WhatsApp."
   canonical="/fr/location-voiture-gare-olbia"
-  jsonLd={[localBusinessSchema, serviceSchema, faqSchema, ...reviewSchemas]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
   breadcrumbs={breadcrumbs}
   ogImage={heroImage}
   i18nAlternates={{ it: "/noleggio-auto-stazione-olbia", en: "/en/car-rental-olbia-station", de: "/de/autovermietung-bahnhof-olbia" }}
