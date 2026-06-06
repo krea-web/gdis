@@ -12,6 +12,34 @@ export const BUSINESS_LOGO =
   "https://zgazhrzjgefvjxknyffy.supabase.co/storage/v1/object/public/asset/GDISlogo.webp";
 export const BUSINESS_INSTAGRAM = "https://instagram.com/gdis.service";
 export const BUSINESS_GBP = "https://maps.app.goo.gl/mmKSjQChHSKX32XU8";
+
+/**
+ * Verified third-party citations / directory listings — emitted in `sameAs` on
+ * both the Organization and LocalBusiness schemas. Google reads `sameAs` as a
+ * signal that consolidates the entity in its Knowledge Graph: every URL here
+ * has to point to a profile that names GDIS Service S.R.L. + same address +
+ * same phone (NAP consistency = mandatory). Add a new URL ONLY after the
+ * directory has actually verified the listing — pending submissions don't
+ * belong here.
+ *
+ * Tracker / status: docs/seo-playbook/03-citations-tracker.md
+ */
+export const VERIFIED_CITATIONS = [
+  BUSINESS_GBP,
+  BUSINESS_INSTAGRAM,
+  // T1 high-trust verified (June 2026)
+  "https://atoka.io/public/it/azienda/gdis-service-srl/75a7c7c7ce33",
+  "https://www.ufficiocamerale.it/7118/gdis-service-srl",
+  // T2 mid-trust verified
+  "https://www.provenexpert.com/it-it/gdis-rent-service/",
+  "https://www.hotfrog.it/company/6f961e21ce1b0d14a037fe7d68ffce94/gdis-rent-service/olbia/car-rental-companies",
+  "https://www.cylex-italia.it/olbia/gdis-rent---service-16336115.html",
+  // T3 filler citations
+  "https://www.empresite.it/GDIS-SERVICE-SRL.html",
+  "https://firmania.it/olbia/gdis-rent-service-5237712",
+  "https://aziendeeasy.it/aziendaselezionata15903618-GDIS%20SERVICE%20S.R.L.",
+  "https://trova-aperto.it/olbia/gdis-rent-service-2970421",
+];
 export const BUSINESS_REA = "SS-225492";
 export const BUSINESS_FOUNDER = {
   "@type": "Person" as const,
@@ -70,7 +98,7 @@ export const organizationSchema = {
   alternateName: "GDIS Service",
   url: SITE_URL,
   logo: BUSINESS_LOGO,
-  sameAs: [BUSINESS_GBP, BUSINESS_INSTAGRAM],
+  sameAs: VERIFIED_CITATIONS,
   foundingDate: BUSINESS_FOUNDING,
   founder: BUSINESS_FOUNDER,
   vatID: BUSINESS_VAT,
@@ -207,7 +235,7 @@ export function buildLocalBusinessSchema(options: {
       geoRadius: "60000",
     },
     hasMap: "https://www.google.com/maps?q=40.929258,9.483627",
-    sameAs: [BUSINESS_GBP, BUSINESS_INSTAGRAM],
+    sameAs: VERIFIED_CITATIONS,
     vatID: BUSINESS_VAT,
     identifier: { "@type": "PropertyValue", propertyID: "REA", value: BUSINESS_REA },
   };

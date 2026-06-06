@@ -69,28 +69,37 @@ Stato: 🟢 Live / 🟡 Sottomesso (attesa verifica) / 🔴 TODO / ✅ Verificat
 
 | # | Piattaforma | Tier | DA stimato | Tempo | Stato | URL profilo (dopo verifica) |
 |---:|---|:---:|:---:|:---:|:---:|---|
-| 1 | Google Business Profile | T0 | n/a | 30 min | ✅ verificato | — |
+| 1 | Google Business Profile | T0 | n/a | 30 min | ✅ verificato | https://maps.app.goo.gl/mmKSjQChHSKX32XU8 |
 | 2 | Tripadvisor | T1 | 92 | 20 min | 🔴 TODO | — |
-| 3 | PagineGialle | T1 | 70 | 15 min | 🔴 TODO | — |
+| 3 | **PagineGialle** | T1 | 70 | 15 min | 🟡 sottomesso | (in attesa di verifica) |
 | 4 | PagineBianche | T1 | 65 | 10 min | 🔴 TODO | — |
 | 5 | Virgilio Aziende | T1 | 68 | 15 min | 🔴 TODO | — |
-| 6 | Infobel Italia | T1 | 55 | 10 min | 🔴 TODO | — |
+| 6 | **Infobel Italia** | T1 | 55 | 10 min | 🟡 sottomesso | (in attesa di verifica) |
 | 7 | OpenStreetMap | T1 | 91 | 30 min | 🔴 TODO | — |
-| 8 | Cylex Italia | T2 | 50 | 10 min | 🔴 TODO | — |
-| 9 | Hotfrog | T2 | 50 | 10 min | 🔴 TODO | — |
-| 10 | ProvenExpert | T2 | 60 | 20 min | 🔴 TODO | — |
-| 11 | MisterImprese | T2 | 45 | 10 min | 🔴 TODO | — |
-| 12 | Firmania | T3 | 40 | 5 min | 🔴 TODO | — |
-| 13 | Empresite | T3 | 38 | 5 min | 🔴 TODO | — |
-| 14 | AziendeEasy | T3 | 30 | 5 min | 🔴 TODO | — |
+| 8 | **Cylex Italia** | T2 | 50 | 10 min | ✅ verificato | https://www.cylex-italia.it/olbia/gdis-rent---service-16336115.html |
+| 9 | **Hotfrog** | T2 | 50 | 10 min | ✅ verificato | https://www.hotfrog.it/company/6f961e21ce1b0d14a037fe7d68ffce94/gdis-rent-service/olbia/car-rental-companies |
+| 10 | **ProvenExpert** | T2 | 60 | 20 min | ✅ verificato | https://www.provenexpert.com/it-it/gdis-rent-service/ |
+| 11 | **MisterImprese** | T2 | 45 | 10 min | 🟡 sottomesso | (in attesa di verifica) |
+| 12 | **Firmania** | T3 | 40 | 5 min | ✅ verificato | https://firmania.it/olbia/gdis-rent-service-5237712 |
+| 13 | **Empresite** | T3 | 38 | 5 min | ✅ verificato | https://www.empresite.it/GDIS-SERVICE-SRL.html |
+| 14 | **AziendeEasy** | T3 | 30 | 5 min | ✅ verificato | https://aziendeeasy.it/aziendaselezionata15903618-GDIS%20SERVICE%20S.R.L. |
 | 15 | Carmappa | T3 | 30 | 5 min | 🔴 TODO | — |
-| 16 | Trova-Aperto | T3 | 30 | 5 min | 🔴 TODO | — |
+| 16 | **Trova-Aperto** | T3 | 30 | 5 min | ✅ verificato | https://trova-aperto.it/olbia/gdis-rent-service-2970421 |
 | 17 | Brownbook | T3 | 40 | 5 min | 🔴 TODO | — |
 | 18 | Blinx | T3 | 25 | 5 min | 🔴 TODO | — |
-| 19 | Opendi | T3 | 32 | 5 min | 🔴 TODO | — |
+| 19 | **Opendi** | T3 | 32 | 5 min | 🟡 sottomesso | (in attesa di verifica) |
 | 20 | reportaziende.it | T3 | 35 | (auto) | 🔴 TODO | — |
 | 21 | wogha.com | T3 | 28 | (auto) | 🔴 TODO | — |
-| 22 | ufficiocamerale.it | T3 | 40 | (auto) | 🔴 TODO | — |
+| 22 | **ufficiocamerale.it** | T3 | 40 | (auto) | ✅ verificato | https://www.ufficiocamerale.it/7118/gdis-service-srl |
+| 23 | **Atoka.io** (bonus, da Cerved/Bizapp) | T1 | 55 | (auto) | ✅ verificato | https://atoka.io/public/it/azienda/gdis-service-srl/75a7c7c7ce33 |
+
+### 📊 Recap quantitativo (7 giugno 2026)
+
+- ✅ **9 verificate**: GBP, Cylex, Hotfrog, ProvenExpert, Firmania, Empresite, AziendeEasy, Trova-Aperto, ufficiocamerale.it, Atoka.io
+- 🟡 **4 sottomesse**: PagineGialle, Infobel, MisterImprese, Opendi (attesa verifica 3-14 giorni)
+- 🔴 **10 ancora TODO**: Tripadvisor ⭐, PagineBianche, Virgilio, OpenStreetMap, Carmappa, Brownbook, Blinx, reportaziende.it, wogha.com
+
+**Soglia critica raggiunta**: ≥ 10 citation totali sblocca `Organization.sameAs` update in `siteSchema.ts` → consolidamento entity in Google Knowledge Graph.
 
 ---
 
