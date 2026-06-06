@@ -5,7 +5,7 @@ import TrustMarquee from "@/components/TrustMarquee.astro";
 import VehicleComparisonTable from "@/components/localita/VehicleComparisonTable.astro";
 import FaqList from "@/components/FaqList.astro";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
-import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildServiceSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
 import { supabaseImg } from "@/lib/img";
 
 const breadcrumbs = [
@@ -25,6 +25,7 @@ const localBusinessSchema = buildLocalBusinessSchema({
     { "@type": "City", name: "San Teodoro" },
     { "@type": "City", name: "Olbia" },
   ],
+  includeAggregateRating: true,
 });
 
 const faqs = [
@@ -53,6 +54,7 @@ const serviceSchema = buildServiceSchema({
     { "@type": "City", name: "Olbia" },
   ],
 });
+const reviewSchemas = buildAllReviewSchemas();
 
 const deliveryLocations = [
   { name: "Porto Cervo", desc: "Hôtels, marina et boutiques de luxe", to: "/fr/location-voiture-a-porto-cervo" },
@@ -68,7 +70,7 @@ const gdisLogo = supabaseImg("asset/GDISlogo.webp", { raw: true });
   title="Location Voiture en Costa Smeralda | Loueur VIP Porto Cervo & Olbia | GDIS Rent"
   description="Location voiture en Costa Smeralda avec livraison VIP à Porto Cervo, Porto Rotondo, Baja Sardinia, San Pantaleo, San Teodoro, Golfo Aranci et Olbia ✓ Louer une Fiat Panda, Mercedes Classe A, scooter Honda SH ou quad Yamaha Raptor ✓ Loueur pour les plages de Gallura ✓ Demande directe 24h/24 sur WhatsApp."
   canonical="/fr/location-voiture-costa-smeralda"
-  jsonLd={[localBusinessSchema, serviceSchema, faqSchema]}
+  jsonLd={[localBusinessSchema, serviceSchema, faqSchema, ...reviewSchemas]}
   breadcrumbs={breadcrumbs}
   i18nAlternates={{ it: "/noleggio-auto-in-costa-smeralda", en: "/en/car-rental-costa-smeralda", de: "/de/autovermietung-costa-smeralda" }}
 >

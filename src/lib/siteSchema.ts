@@ -125,6 +125,44 @@ export function buildReviewSchema(input: {
 export const GBP_RATING_VALUE = 5.0;
 export const GBP_REVIEW_COUNT = 5;
 
+/**
+ * Top 3 GBP reviews selected for on-page rendering AND Review schema emission.
+ * Text is kept in Italian (original language) across all locales — translating
+ * GBP reviews destroys the trust signal. Only display labels (location) are
+ * localized in the caller.
+ *
+ * UPDATE THIS ARRAY when better reviews come in (more detailed, more recent,
+ * better mention of vehicles/locations for internal link targeting).
+ */
+export const GBP_TOP_REVIEWS = [
+  {
+    authorName: "Antonio S.",
+    date: "2026-06-04",
+    text: "Ho usufruito della macchina Mercedes Classe A per 3 giorni, confortevole, ve lo consiglio.",
+  },
+  {
+    authorName: "Mihail F.",
+    date: "2026-06-04",
+    text: "Servizio eccellente, personale sempre super disponibile, auto pulite e moderne. Nessun ritardo e prezzi buonissimi.",
+  },
+  {
+    authorName: "Dario D.",
+    date: "2026-06-03",
+    text: "Ottimo noleggio in Costa Smeralda, mi sono trovato benissimo nel noleggiare i veicoli con loro soprattutto per il servizio di noleggio direttamente a domicilio e a costo zero a Olbia, super consigliato!",
+  },
+] as const;
+
+/** Build all 3 Review JSON-LD schemas in one call (used on every page that wants the boost). */
+export function buildAllReviewSchemas() {
+  return GBP_TOP_REVIEWS.map((r) =>
+    buildReviewSchema({
+      authorName: r.authorName,
+      datePublished: r.date,
+      reviewBody: r.text,
+    }),
+  );
+}
+
 /** Build a full LocalBusiness / AutoRental block. Accepts optional overrides. */
 export function buildLocalBusinessSchema(options: {
   id?: string;

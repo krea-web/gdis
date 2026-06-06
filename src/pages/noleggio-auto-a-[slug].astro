@@ -15,7 +15,7 @@ import TrustMarquee from "@/components/TrustMarquee.astro";
 import LocalitaFAQ from "@/components/localita/LocalitaFAQ.astro";
 import LocalitaTrustBlock from "@/components/localita/LocalitaTrustBlock.astro";
 import LocalitaCTA from "@/components/localita/LocalitaCTA.astro";
-import { buildLocalBusinessSchema, buildFaqSchema } from "@/lib/siteSchema";
+import { buildLocalBusinessSchema, buildFaqSchema, buildAllReviewSchemas } from "@/lib/siteSchema";
 import { getLocationPath } from "@/i18n/utils";
 
 export async function getStaticPaths() {
@@ -49,9 +49,11 @@ const localBusinessSchema = buildLocalBusinessSchema({
   id: `https://gdisrentservice.com${data.canonical}#localbusiness`,
   description: data.description,
   areaServed: data.areaServed.map((a) => ({ "@type": a.type, name: a.name })),
+  includeAggregateRating: true,
 });
 
 const faqSchema = buildFaqSchema(data.faq, { speakable: true });
+const reviewSchemas = buildAllReviewSchemas();
 
 const sectionBg = (i: number) => (i % 2 === 0 ? "bg-background" : "bg-muted/20");
 ---
@@ -60,7 +62,7 @@ const sectionBg = (i: number) => (i % 2 === 0 ? "bg-background" : "bg-muted/20")
   title={data.title}
   description={data.description}
   canonical={data.canonical}
-  jsonLd={[localBusinessSchema, faqSchema]}
+  jsonLd={[localBusinessSchema, faqSchema, ...reviewSchemas]}
   breadcrumbs={breadcrumbs}
   keywords={data.keywords}
   ogImage={data.heroImage}
