@@ -171,6 +171,12 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+/* Shimmer sweep for booking progress bar — subtle moving sheen so users feel forward motion */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
 /* Reveal-on-scroll (replaces framer-motion whileInView for static sections) */
 [data-reveal] {
   opacity: 0;

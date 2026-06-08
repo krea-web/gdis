@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { MapPin, Clock, AlertCircle, Info } from "lucide-react";
+import { MapPin, Clock, AlertCircle, Info, Building2, Plane, Anchor, Train, Sparkles } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useTranslations } from "@/i18n/utils";
 import type { Locale } from "@/i18n/utils";
 
@@ -33,6 +32,29 @@ const InlineError = ({ message }: { message?: string }) =>
     </p>
   ) : null;
 
+// Pickup quick-select presets. Each preset auto-fills the pickupCustomAddress.
+// Same labels are used in the WhatsApp message so the owner knows immediately
+// where to meet the customer.
+const PRESETS = [
+  { key: "sede" as const, icon: Building2, labelKey: "booking.pickup.presets.sede" },
+  { key: "aeroporto" as const, icon: Plane, labelKey: "booking.pickup.presets.airport", addr: "Aeroporto Costa Smeralda (OLB)" },
+  { key: "porto" as const, icon: Anchor, labelKey: "booking.pickup.presets.port", addr: "Porto Olbia — Isola Bianca" },
+  { key: "stazione" as const, icon: Train, labelKey: "booking.pickup.presets.station", addr: "Stazione FS Olbia" },
+];
+
+type PresetKey = "sede" | "aeroporto" | "porto" | "stazione" | "custom";
+
+/** Best-effort detection of which preset is active from current data. */
+function detectPreset(d: PickupDropoffData): PresetKey {
+  if (d.pickupLocation === "sede") return "sede";
+  const addr = d.pickupCustomAddress.trim();
+  if (!addr) return "custom";
+  for (const p of PRESETS) {
+    if (p.addr && p.addr === addr) return p.key;
+  }
+  return "custom";
+}
+
 const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
   const t = useTranslations(lang);
   const sedeLabel = t("booking.pickup.sedeLabel");
@@ -46,6 +68,23 @@ const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
 
   // Pickup time is now the single source of truth: dropoffTime mirrors it.
   const updatePickupTime = (value: string) => update({ pickupTime: value, dropoffTime: value });
+
+  const activePreset = detectPreset(data);
+
+  const selectPreset = (key: PresetKey) => {
+    if (key === "sede") {
+      update({ pickupLocation: "sede", pickupCustomAddress: "" });
+      return;
+    }
+    if (key === "custom") {
+      update({ pickupLocation: "custom", pickupCustomAddress: "" });
+      return;
+    }
+    const preset = PRESETS.find((p) => p.key === key);
+    if (preset && preset.addr) {
+      update({ pickupLocation: "custom", pickupCustomAddress: preset.addr });
+    }
+  };
 
   const addressError =
     touched.address && data.pickupLocation === "custom" && data.pickupCustomAddress.trim().length === 0
@@ -71,26 +110,45 @@ const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
             {t("booking.pickup.pickupHeading")}
           </h3>
 
-          <RadioGroup
-            value={data.pickupLocation}
-            onValueChange={(v) =>
-              update({ pickupLocation: v as "sede" | "custom", pickupCustomAddress: "" })
-            }
-            className="space-y-3"
+          {/* Quick-select preset chips: 4 most common + custom */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {PRESETS.map((preset) => {
+              const isActive = activePreset === preset.key;
+              const Icon = preset.icon;
+              return (
+                <button
+                  key={preset.key}
+                  type="button"
+                  onClick={() => selectPreset(preset.key)}
+                  aria-pressed={isActive}
+                  className={`flex flex-col items-center justify-center gap-2 p-3 rounded-xl border text-xs font-medium transition-all duration-200 active:scale-[0.97] ${
+                    isActive
+                      ? "border-primary bg-primary/10 text-foreground shadow-sm shadow-primary/20"
+                      : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground hover:bg-muted/40"
+                  }`}
+                >
+                  <Icon size={20} className={isActive ? "text-primary" : "text-muted-foreground/70"} />
+                  <span className="text-center leading-tight">
+                    {preset.key === "sede" ? sedeLabel.replace(" — Olbia", "") : t(preset.labelKey)}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          {/* "Altro" toggle row, full-width, shows when none of the 4 are active or when user already chose custom */}
+          <button
+            type="button"
+            onClick={() => selectPreset("custom")}
+            aria-pressed={activePreset === "custom"}
+            className={`w-full flex items-center justify-center gap-2 p-3 rounded-xl border text-sm font-medium transition-all duration-200 active:scale-[0.99] ${
+              activePreset === "custom"
+                ? "border-primary bg-primary/10 text-foreground"
+                : "border-border border-dashed text-muted-foreground hover:border-primary/40 hover:text-foreground"
+            }`}
           >
-            <div className="flex items-center space-x-3 p-3 rounded-xl border border-border hover:border-primary/40 transition-colors">
-              <RadioGroupItem value="sede" id="pickup-sede" />
-              <Label htmlFor="pickup-sede" className="cursor-pointer flex-1">
-                {sedeLabel}
-              </Label>
-            </div>
-            <div className="flex items-center space-x-3 p-3 rounded-xl border border-border hover:border-primary/40 transition-colors">
-              <RadioGroupItem value="custom" id="pickup-custom" />
-              <Label htmlFor="pickup-custom" className="cursor-pointer flex-1">
-                {t("booking.pickup.customLabel")}
-              </Label>
-            </div>
-          </RadioGroup>
+            <Sparkles size={16} />
+            {t("booking.pickup.customLabel")}
+          </button>
 
           {data.pickupLocation === "custom" && (
             <div>

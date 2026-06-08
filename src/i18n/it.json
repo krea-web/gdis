@@ -161,7 +161,14 @@
       "title": "Seleziona le date",
       "subtitle": "Scegli il periodo del noleggio.",
       "daysSuffix": "giorni",
-      "locale": "it-IT"
+      "locale": "it-IT",
+      "quickPick": "Scelta rapida",
+      "presets": {
+        "threeDays": "3 giorni",
+        "fiveDays": "5 giorni",
+        "oneWeek": "1 settimana",
+        "twoWeeks": "2 settimane"
+      }
     },
     "driver": {
       "title": "Dati del conducente",
@@ -200,7 +207,13 @@
         "dropoffTime": "Seleziona un orario di riconsegna"
       },
       "dropoffSameAsPickupTitle": "Riconsegna allo stesso orario",
-      "dropoffSameAsPickupNote": "Il veicolo va riconsegnato in sede entro la stessa ora del ritiro: per estensioni concorda direttamente su WhatsApp."
+      "dropoffSameAsPickupNote": "Il veicolo va riconsegnato in sede entro la stessa ora del ritiro: per estensioni concorda direttamente su WhatsApp.",
+      "presets": {
+        "sede": "Sede GDIS",
+        "airport": "Aeroporto OLB",
+        "port": "Porto",
+        "station": "Stazione FS"
+      }
     },
     "signature": {
       "title": "Firma il contratto",

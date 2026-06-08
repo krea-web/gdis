@@ -9,7 +9,7 @@ import type { PickupDropoffData } from "@/components/booking/PickupDropoffStep";
 import StickyQuote from "@/components/booking/StickyQuote";
 import ExitIntentDialog from "@/components/booking/ExitIntentDialog";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Car, Calendar, MapPin } from "lucide-react";
+import { ArrowLeft, ArrowRight, Car, Calendar, MapPin, Check } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { Toaster } from "sonner";
 import { type Vehicle, getMonthlyRate } from "@/hooks/useVehicles";
@@ -157,31 +157,53 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
     }
   };
 
+  // Progress: each completed step worth 1 / (n-1) chunk; final step at 100% only when all valid.
+  const progress = Math.round((step / (stepKeys.length - 1)) * 100);
+
   return (
     <div className="min-h-screen bg-transparent pt-20">
       <Toaster richColors position="top-center" />
-      <div className="container py-8">
-        <div className="flex items-center justify-center gap-1 md:gap-2 mb-4">
-          {steps.map((s, i) => (
-            <div key={s} className="flex items-center gap-1 md:gap-2">
-              <div
-                className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs md:text-sm font-semibold transition-all ${
-                  i < step ? "bg-primary text-primary-foreground" :
-                  i === step ? "bg-primary text-primary-foreground blue-glow-sm" :
-                  "bg-muted text-muted-foreground"
-                }`}
-              >
-                {i + 1}
+      <div className="container py-6 md:py-8">
+        {/* Progress line */}
+        <div className="max-w-2xl mx-auto">
+          <div className="flex items-center justify-between mb-3 px-1">
+            {steps.map((s, i) => (
+              <div key={s} className="flex-1 flex flex-col items-center min-w-0">
+                <div
+                  className={`w-6 h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold transition-all duration-500 ${
+                    i < step ? "bg-primary text-primary-foreground" :
+                    i === step ? "bg-primary text-primary-foreground ring-4 ring-primary/20" :
+                    "bg-muted text-muted-foreground"
+                  }`}
+                >
+                  {i < step ? <Check size={12} strokeWidth={3} /> : i + 1}
+                </div>
+                <span
+                  className={`mt-1.5 text-[10px] md:text-[11px] font-medium uppercase tracking-wider truncate w-full text-center transition-colors ${
+                    i <= step ? "text-foreground" : "text-muted-foreground/60"
+                  }`}
+                >
+                  {s}
+                </span>
               </div>
-              {i < steps.length - 1 && (
-                <div className={`w-4 md:w-12 h-0.5 ${i < step ? "bg-primary" : "bg-border"}`} />
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Animated progress bar */}
+          <div className="relative h-1 bg-border rounded-full overflow-hidden mx-3">
+            <div
+              className="absolute inset-y-0 left-0 bg-primary rounded-full transition-all duration-700 ease-out"
+              style={{ width: `${progress}%` }}
+              aria-valuenow={progress}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              role="progressbar"
+            />
+            <div
+              className="absolute inset-y-0 left-0 bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-full transition-all duration-700 ease-out"
+              style={{ width: `${progress}%`, animation: progress > 0 && progress < 100 ? "shimmer 2.4s ease-in-out infinite" : "none" }}
+            />
+          </div>
         </div>
-        <p className="text-center font-display text-sm text-muted-foreground uppercase tracking-widest">
-          {steps[step]}
-        </p>
       </div>
 
       <div className="container pb-20">
@@ -280,13 +302,14 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
               </motion.div>
             </AnimatePresence>
 
-            <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 mt-10 pb-24 lg:pb-0">
+            {/* Desktop / tablet action row — mobile uses the sticky bottom bar instead */}
+            <div className="hidden sm:flex sm:items-center sm:justify-between gap-3 mt-10 pb-28 lg:pb-0">
               <Button
                 variant="ghost"
                 size="lg"
                 onClick={() => setStep(Math.max(0, step - 1))}
                 disabled={step === 0}
-                className="gap-2 w-full sm:w-auto"
+                className="gap-2"
               >
                 <ArrowLeft size={16} />
                 {t("booking.cta.back")}
@@ -298,7 +321,7 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
                   size="lg"
                   onClick={handleNext}
                   disabled={!canNext()}
-                  className="gap-2 w-full sm:w-auto"
+                  className="gap-2"
                 >
                   {t("booking.cta.next")}
                   <ArrowRight size={16} />
@@ -308,18 +331,38 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
                   size="lg"
                   onClick={handleSendWhatsApp}
                   disabled={!canNext()}
-                  className="gap-2 w-full sm:w-auto whitespace-normal sm:whitespace-nowrap min-h-12 h-auto py-3 sm:py-2 px-6 bg-[#25D366] hover:bg-[#22c160] text-white shadow-lg shadow-[#25D366]/30 text-center"
+                  className="gap-2 bg-[#25D366] hover:bg-[#22c160] text-white shadow-lg shadow-[#25D366]/30"
                 >
                   <WhatsAppIcon size={18} />
-                  <span className="hidden sm:inline">{t("booking.request.whatsappCta")}</span>
-                  <span className="sm:hidden">{t("booking.request.whatsappCtaShort")}</span>
+                  {t("booking.request.whatsappCta")}
                 </Button>
               )}
             </div>
+            {/* Mobile back link only — primary action lives in the sticky bottom bar */}
+            {step > 0 && (
+              <div className="sm:hidden mt-6 pb-28">
+                <button
+                  type="button"
+                  onClick={() => setStep(Math.max(0, step - 1))}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <ArrowLeft size={14} />
+                  {t("booking.cta.back")}
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="lg:col-span-4">
-            <StickyQuote booking={booking} currentStep={step} lang={lang} onSendWhatsApp={handleSendWhatsApp} canSend={canNext() && step === stepKeys.length - 1} />
+            <StickyQuote
+              booking={booking}
+              currentStep={step}
+              totalSteps={stepKeys.length}
+              lang={lang}
+              onAction={handleNext}
+              canAdvance={canNext()}
+              isLastStep={step === stepKeys.length - 1}
+            />
           </div>
         </div>
       </div>
