@@ -198,7 +198,9 @@
         "address": "Veuillez saisir l'adresse de retrait",
         "pickupTime": "Veuillez sélectionner une heure de retrait",
         "dropoffTime": "Veuillez sélectionner une heure de restitution"
-      }
+      },
+      "dropoffSameAsPickupTitle": "Restitution à la même heure",
+      "dropoffSameAsPickupNote": "Le véhicule doit être restitué au bureau avant la même heure que le retrait : pour toute extension, convenez-en directement sur WhatsApp."
     },
     "signature": {
       "title": "Signez le contrat",
