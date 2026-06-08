@@ -145,13 +145,13 @@ export function buildReviewSchema(input: {
 }
 
 /**
- * Real GBP review counters (June 2026). Source: maps.app.goo.gl/mmKSjQChHSKX32XU8
- * All 5 reviews are 5-star — average is exactly 5.0. UPDATE THESE NUMBERS WHEN
+ * Real GBP review counters (8 June 2026). Source: maps.app.goo.gl/mmKSjQChHSKX32XU8
+ * All reviews are 5-star — average is exactly 5.0. UPDATE THESE NUMBERS WHEN
  * THE GBP REVIEW COUNT CHANGES — otherwise the schema misrepresents reality and
  * may trigger a manual action from Google.
  */
 export const GBP_RATING_VALUE = 5.0;
-export const GBP_REVIEW_COUNT = 5;
+export const GBP_REVIEW_COUNT = 8;
 
 /**
  * Top 3 GBP reviews selected for on-page rendering AND Review schema emission.
