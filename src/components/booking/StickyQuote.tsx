@@ -1,4 +1,4 @@
-import { Car, Calendar, MapPin, Check } from "lucide-react";
+import { Car, Calendar, MapPin, Check, ArrowRight } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import type { BookingState } from "@/components/booking/BookingFlow";
 import { getMonthlyRate } from "@/hooks/useVehicles";
@@ -8,14 +8,25 @@ import type { Locale } from "@/i18n/utils";
 type Props = {
   booking: BookingState;
   currentStep: number;
+  totalSteps: number;
   lang?: Locale;
-  /** Triggered when the user taps "Send WhatsApp request" from the mobile bar. */
-  onSendWhatsApp?: () => void;
-  /** True only when we're on the last step AND the form is complete. */
-  canSend?: boolean;
+  /** Triggered when the user taps the action button on the mobile sticky bar. */
+  onAction?: () => void;
+  /** True when the current step is valid and the user can advance / send. */
+  canAdvance?: boolean;
+  /** True only when we're on the last step. */
+  isLastStep?: boolean;
 };
 
-const StickyQuote = ({ booking, currentStep, lang = "it", onSendWhatsApp, canSend = false }: Props) => {
+const StickyQuote = ({
+  booking,
+  currentStep,
+  totalSteps,
+  lang = "it",
+  onAction,
+  canAdvance = false,
+  isLastStep = false,
+}: Props) => {
   const t = useTranslations(lang);
   const days =
     booking.startDate && booking.endDate
@@ -55,7 +66,7 @@ const StickyQuote = ({ booking, currentStep, lang = "it", onSendWhatsApp, canSen
                   i <= currentStep ? "text-foreground" : "text-muted-foreground/50"
                 }`}
               >
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${
                   s.done ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"
                 }`}>
                   {s.done ? <Check size={14} /> : <s.icon size={14} />}
@@ -94,51 +105,77 @@ const StickyQuote = ({ booking, currentStep, lang = "it", onSendWhatsApp, canSen
         </div>
       </div>
 
-      {/* Mobile bottom bar */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 glass border-t border-border px-4 py-3">
-        <div className="flex items-center justify-between gap-3">
-          <div className="min-w-0 flex-1">
+      {/* Mobile bottom bar — always present action button (Avanti / Invia richiesta WhatsApp) */}
+      <div
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background/95 backdrop-blur-xl px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.15)]"
+      >
+        <div className="flex items-stretch gap-3">
+          <div className="min-w-0 flex-1 flex flex-col justify-center">
             {booking.vehicle ? (
               <>
-                <p className="text-sm font-medium text-foreground truncate">{booking.vehicle.name}</p>
+                <p className="text-[13px] font-semibold text-foreground truncate leading-tight">{booking.vehicle.name}</p>
                 {totalPrice > 0 ? (
                   <>
-                    <p className="font-display text-xl font-bold text-primary leading-tight">~€{totalPrice}</p>
-                    <p className="text-[11px] text-muted-foreground leading-snug">
-                      €{ratePerDay}{t("booking.summary.perDayShort")} × {days} {days === 1 ? t("booking.summary.daySingular") : t("booking.summary.dayPlural")} · {t("booking.request.summary.indicative")}
+                    <p className="font-display text-lg font-bold text-primary leading-tight mt-0.5">
+                      ~€{totalPrice}
+                    </p>
+                    <p className="text-[10px] text-muted-foreground leading-snug">
+                      €{ratePerDay}{t("booking.summary.perDayShort")} · {days} {days === 1 ? t("booking.summary.daySingular") : t("booking.summary.dayPlural")} · {t("booking.request.summary.indicative")}
                     </p>
                   </>
                 ) : (
-                  <p className="text-xs text-muted-foreground">{t("booking.summary.selectDates")}</p>
+                  <p className="text-[11px] text-muted-foreground leading-tight mt-0.5">
+                    {currentStep === 0 ? t("booking.summary.selectVehicle") : t("booking.summary.selectDates")}
+                  </p>
                 )}
               </>
             ) : (
-              <p className="text-sm text-muted-foreground">{t("booking.summary.selectVehicle")}</p>
+              <>
+                <p className="text-[13px] font-semibold text-foreground">{t("booking.summary.title")}</p>
+                <p className="text-[11px] text-muted-foreground mt-0.5">
+                  {t("booking.summary.selectVehicle")}
+                </p>
+              </>
             )}
-          </div>
-          {canSend ? (
-            <button
-              type="button"
-              onClick={onSendWhatsApp}
-              className="shrink-0 inline-flex items-center justify-center gap-2 h-11 px-4 rounded-full bg-[#25D366] hover:bg-[#22c160] text-white text-sm font-semibold shadow-lg shadow-[#25D366]/30 transition-colors"
-              aria-label={t("booking.request.whatsappCta")}
-            >
-              <WhatsAppIcon size={16} />
-              <span className="hidden sm:inline">{t("booking.request.whatsappCta")}</span>
-              <span className="sm:hidden">{t("booking.request.whatsappCtaShort")}</span>
-            </button>
-          ) : (
-            <div className="flex gap-1 shrink-0">
-              {stepsInfo.map((s, i) => (
+            {/* Compact step dots */}
+            <div className="flex items-center gap-1 mt-1.5" aria-label={`Step ${currentStep + 1} of ${totalSteps}`}>
+              {stepsInfo.map((_s, i) => (
                 <div
                   key={i}
-                  className={`w-2 h-2 rounded-full ${
-                    i <= currentStep ? (s.done ? "bg-primary" : "bg-primary/40") : "bg-muted"
+                  className={`h-1 flex-1 max-w-[28px] rounded-full transition-colors duration-300 ${
+                    i < currentStep ? "bg-primary" :
+                    i === currentStep ? "bg-primary/60" :
+                    "bg-border"
                   }`}
                 />
               ))}
             </div>
-          )}
+          </div>
+
+          {/* Action button — Avanti on steps 0-1, WhatsApp green on final step */}
+          <button
+            type="button"
+            onClick={onAction}
+            disabled={!canAdvance}
+            aria-label={isLastStep ? t("booking.request.whatsappCta") : t("booking.cta.next")}
+            className={`shrink-0 inline-flex items-center justify-center gap-1.5 h-auto min-h-[52px] px-4 rounded-2xl text-sm font-semibold transition-all duration-200 active:scale-[0.97] disabled:opacity-40 disabled:cursor-not-allowed ${
+              isLastStep
+                ? "bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 hover:bg-[#22c160]"
+                : "bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
+            }`}
+          >
+            {isLastStep ? (
+              <>
+                <WhatsAppIcon size={18} />
+                <span className="whitespace-nowrap">{t("booking.request.whatsappCtaShort")}</span>
+              </>
+            ) : (
+              <>
+                <span className="whitespace-nowrap">{t("booking.cta.next")}</span>
+                <ArrowRight size={16} />
+              </>
+            )}
+          </button>
         </div>
       </div>
     </div>

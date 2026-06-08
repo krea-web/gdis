@@ -161,7 +161,14 @@
       "title": "Select your dates",
       "subtitle": "Choose your rental period.",
       "daysSuffix": "days",
-      "locale": "en-GB"
+      "locale": "en-GB",
+      "quickPick": "Quick pick",
+      "presets": {
+        "threeDays": "3 days",
+        "fiveDays": "5 days",
+        "oneWeek": "1 week",
+        "twoWeeks": "2 weeks"
+      }
     },
     "driver": {
       "title": "Driver details",
@@ -200,7 +207,13 @@
         "dropoffTime": "Please select a drop-off time"
       },
       "dropoffSameAsPickupTitle": "Return at the same time",
-      "dropoffSameAsPickupNote": "The vehicle must be returned to our office by the same time as the pickup: for extensions, agree directly via WhatsApp."
+      "dropoffSameAsPickupNote": "The vehicle must be returned to our office by the same time as the pickup: for extensions, agree directly via WhatsApp.",
+      "presets": {
+        "sede": "GDIS office",
+        "airport": "Olbia OLB Airport",
+        "port": "Port",
+        "station": "Train station"
+      }
     },
     "signature": {
       "title": "Sign the contract",
