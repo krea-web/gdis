@@ -198,7 +198,9 @@
         "address": "Bitte geben Sie die Abholadresse an",
         "pickupTime": "Bitte wählen Sie eine Abholzeit",
         "dropoffTime": "Bitte wählen Sie eine Rückgabezeit"
-      }
+      },
+      "dropoffSameAsPickupTitle": "Rückgabe zur gleichen Uhrzeit",
+      "dropoffSameAsPickupNote": "Das Fahrzeug muss bis zur gleichen Uhrzeit wie die Abholung zurückgegeben werden: für Verlängerungen stimmen Sie sich direkt per WhatsApp ab."
     },
     "signature": {
       "title": "Vertrag unterschreiben",

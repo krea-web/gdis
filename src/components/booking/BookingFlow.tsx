@@ -280,13 +280,13 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
               </motion.div>
             </AnimatePresence>
 
-            <div className="flex items-center justify-between mt-10">
+            <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 mt-10 pb-24 lg:pb-0">
               <Button
                 variant="ghost"
                 size="lg"
                 onClick={() => setStep(Math.max(0, step - 1))}
                 disabled={step === 0}
-                className="gap-2"
+                className="gap-2 w-full sm:w-auto"
               >
                 <ArrowLeft size={16} />
                 {t("booking.cta.back")}
@@ -298,7 +298,7 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
                   size="lg"
                   onClick={handleNext}
                   disabled={!canNext()}
-                  className="gap-2"
+                  className="gap-2 w-full sm:w-auto"
                 >
                   {t("booking.cta.next")}
                   <ArrowRight size={16} />
@@ -308,10 +308,11 @@ const BookingFlow = ({ lang = "it" }: BookingFlowProps) => {
                   size="lg"
                   onClick={handleSendWhatsApp}
                   disabled={!canNext()}
-                  className="gap-2 bg-[#25D366] hover:bg-[#22c160] text-white shadow-lg shadow-[#25D366]/30"
+                  className="gap-2 w-full sm:w-auto whitespace-normal sm:whitespace-nowrap min-h-12 h-auto py-3 sm:py-2 px-6 bg-[#25D366] hover:bg-[#22c160] text-white shadow-lg shadow-[#25D366]/30 text-center"
                 >
                   <WhatsAppIcon size={18} />
-                  {t("booking.request.whatsappCta")}
+                  <span className="hidden sm:inline">{t("booking.request.whatsappCta")}</span>
+                  <span className="sm:hidden">{t("booking.request.whatsappCtaShort")}</span>
                 </Button>
               )}
             </div>

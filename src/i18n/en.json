@@ -198,7 +198,9 @@
         "address": "Please enter the pickup address",
         "pickupTime": "Please select a pickup time",
         "dropoffTime": "Please select a drop-off time"
-      }
+      },
+      "dropoffSameAsPickupTitle": "Return at the same time",
+      "dropoffSameAsPickupNote": "The vehicle must be returned to our office by the same time as the pickup: for extensions, agree directly via WhatsApp."
     },
     "signature": {
       "title": "Sign the contract",

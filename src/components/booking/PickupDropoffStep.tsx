@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Clock, AlertCircle } from "lucide-react";
+import { MapPin, Clock, AlertCircle, Info } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -10,6 +10,12 @@ export type PickupDropoffData = {
   pickupLocation: "sede" | "custom";
   pickupCustomAddress: string;
   pickupTime: string;
+  /**
+   * Always kept in sync with pickupTime — the owner handles the booking via
+   * WhatsApp and wants the dropoff to default to the same time so they don't
+   * have to do arithmetic during chat. Existing field shape preserved for
+   * downstream consumers (whatsappRequest helper, summary card).
+   */
   dropoffTime: string;
 };
 
@@ -33,11 +39,13 @@ const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
   const [touched, setTouched] = useState({
     address: false,
     pickupTime: false,
-    dropoffTime: false,
   });
 
   const update = (partial: Partial<PickupDropoffData>) =>
     onChange({ ...data, ...partial });
+
+  // Pickup time is now the single source of truth: dropoffTime mirrors it.
+  const updatePickupTime = (value: string) => update({ pickupTime: value, dropoffTime: value });
 
   const addressError =
     touched.address && data.pickupLocation === "custom" && data.pickupCustomAddress.trim().length === 0
@@ -45,8 +53,6 @@ const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
       : undefined;
   const pickupTimeError =
     touched.pickupTime && data.pickupTime.length === 0 ? t("booking.pickup.errors.pickupTime") : undefined;
-  const dropoffTimeError =
-    touched.dropoffTime && data.dropoffTime.length === 0 ? t("booking.pickup.errors.dropoffTime") : undefined;
 
   return (
     <div>
@@ -108,7 +114,7 @@ const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
             <Input
               type="time"
               value={data.pickupTime}
-              onChange={(e) => update({ pickupTime: e.target.value })}
+              onChange={(e) => updatePickupTime(e.target.value)}
               onBlur={() => setTouched((t) => ({ ...t, pickupTime: true }))}
               aria-invalid={!!pickupTimeError}
               className={pickupTimeError ? "border-destructive focus-visible:ring-destructive" : ""}
@@ -117,7 +123,7 @@ const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
           </div>
         </div>
 
-        {/* Dropoff */}
+        {/* Dropoff — same time as pickup (auto-synced) */}
         <div className="space-y-4 border-t border-border pt-6">
           <h3 className="font-display text-lg font-semibold text-foreground flex items-center gap-2">
             <MapPin size={18} className="text-primary" />
@@ -131,20 +137,22 @@ const PickupDropoffStep = ({ data, onChange, lang = "it" }: Props) => {
             </p>
           </div>
 
-          <div className="space-y-2">
-            <Label className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Clock size={14} />
-              {t("booking.pickup.dropoffTime")}
-            </Label>
-            <Input
-              type="time"
-              value={data.dropoffTime}
-              onChange={(e) => update({ dropoffTime: e.target.value })}
-              onBlur={() => setTouched((t) => ({ ...t, dropoffTime: true }))}
-              aria-invalid={!!dropoffTimeError}
-              className={dropoffTimeError ? "border-destructive focus-visible:ring-destructive" : ""}
-            />
-            <InlineError message={dropoffTimeError} />
+          <div className="flex items-start gap-2 p-3 rounded-xl bg-primary/5 border border-primary/20">
+            <Info size={16} className="text-primary shrink-0 mt-0.5" />
+            <div className="text-sm">
+              <p className="font-medium text-foreground">
+                {t("booking.pickup.dropoffSameAsPickupTitle")}
+                {data.pickupTime ? (
+                  <span className="ml-2 inline-flex items-center gap-1 text-primary">
+                    <Clock size={12} />
+                    {data.pickupTime}
+                  </span>
+                ) : null}
+              </p>
+              <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                {t("booking.pickup.dropoffSameAsPickupNote")}
+              </p>
+            </div>
           </div>
         </div>
       </div>

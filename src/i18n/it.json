@@ -198,7 +198,9 @@
         "address": "Inserisci l'indirizzo di ritiro",
         "pickupTime": "Seleziona un orario di ritiro",
         "dropoffTime": "Seleziona un orario di riconsegna"
-      }
+      },
+      "dropoffSameAsPickupTitle": "Riconsegna allo stesso orario",
+      "dropoffSameAsPickupNote": "Il veicolo va riconsegnato in sede entro la stessa ora del ritiro: per estensioni concorda direttamente su WhatsApp."
     },
     "signature": {
       "title": "Firma il contratto",
