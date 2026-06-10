@@ -151,7 +151,7 @@ export function buildReviewSchema(input: {
  * may trigger a manual action from Google.
  */
 export const GBP_RATING_VALUE = 5.0;
-export const GBP_REVIEW_COUNT = 8;
+export const GBP_REVIEW_COUNT = 10;
 
 /**
  * Top 3 GBP reviews selected for on-page rendering AND Review schema emission.
