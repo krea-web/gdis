@@ -52,7 +52,7 @@
     {
       "icon": "users",
       "label": "Posti",
-      "value": "1 (singolo)"
+      "value": "2 (biposto)"
     },
     {
       "icon": "wrench",
@@ -94,7 +94,7 @@
     "paragraphs": [
       "Tanti turisti cercano un SUV per \"fare un po' di sterrato in Sardegna\". È quasi sempre la scelta sbagliata per due motivi: i SUV a noleggio standard hanno polizze che <strong class='text-foreground'>escludono i danni in fuoristrada</strong> (un graffio sotto la coppa olio = €2000 di risarcimento a tuo carico), e le piste vere della Gallura — quelle che portano alle calette nascoste di Punta Volpe o agli sterrati di Capo Ferro — non sono fatte per auto, sono fatte per quad.",
       "<strong class='text-foreground'>Il Yamaha Raptor 700 risolve esattamente questo</strong>: 686cc, 50cv, sospensioni progettate per il fuoristrada, omologato strada in Italia con patente B. La nostra assicurazione include la copertura su sterrato (è il suo uso naturale, non un'eccezione). Il prezzo è premium perché il mezzo lo è — ma è l'unico modo legale e sicuro di accedere a luoghi che il 99% dei turisti vede solo in cartolina.",
-      "<strong class='text-foreground'>Quando NON noleggiare il quad</strong>: se viaggi in più di 1 persona (è monoposto), se hai bisogno di trasportare bagagli, se sei a tuo agio solo su asfalto, se piove forte (la guida diventa scivolosa). In quei casi consigliamo Fiat Panda + quad solo per una giornata dedicata all'esplorazione off-road."
+      "<strong class='text-foreground'>Quando NON noleggiare il quad</strong>: se viaggi in più di 2 persone (è omologato per 2), se hai bisogno di trasportare bagagli, se sei a tuo agio solo su asfalto, se piove forte (la guida diventa scivolosa). In quei casi consigliamo Fiat Panda + quad solo per una giornata dedicata all'esplorazione off-road."
     ]
   },
   "localitaSection": {
@@ -147,7 +147,7 @@
   "jsonLdExtras": {
     "vehicleTransmission": "ManualTransmission",
     "fuelType": "Petrol",
-    "seatingCapacity": 1,
+    "seatingCapacity": 2,
     "vehicleEngine": {
       "@type": "EngineSpecification",
       "engineType": "Single-cylinder 4-stroke liquid-cooled",
@@ -228,7 +228,7 @@
         {
           "icon": "users",
           "label": "Seats",
-          "value": "1 (single)"
+          "value": "2 (two-seater)"
         },
         {
           "icon": "wrench",
@@ -270,7 +270,7 @@
         "paragraphs": [
           "Many tourists look for an SUV to \"do a bit of off-road in Sardinia\". It is almost always the wrong choice for two reasons: standard rental SUVs have policies that <strong class='text-foreground'>exclude off-road damage</strong> (a scratch under the sump = €2000 of charges to you), and the real tracks of Gallura — those that lead to the hidden coves of Punta Volpe or the Capo Ferro dirt routes — aren't made for cars, they're made for quads.",
           "<strong class='text-foreground'>The Yamaha Raptor 700 solves exactly this</strong>: 686cc, 50hp, off-road suspension, road-legal in Italy with a B licence. Our insurance includes off-road cover (it's its natural use, not an exception). The price is premium because the vehicle is — but it's the only legal and safe way to access places that 99% of tourists only see on postcards.",
-          "<strong class='text-foreground'>When NOT to hire the quad</strong>: if you're travelling with more than 1 person (it's single-seat), if you need to carry luggage, if you're only comfortable on tarmac, if it rains hard (riding becomes slippery). In those cases we recommend a Fiat Panda + quad just for one day dedicated to off-road exploration."
+          "<strong class='text-foreground'>When NOT to hire the quad</strong>: if you're travelling with more than 2 people (it's homologated for 2), if you need to carry luggage, if you're only comfortable on tarmac, if it rains hard (riding becomes slippery). In those cases we recommend a Fiat Panda + quad just for one day dedicated to off-road exploration."
         ]
       },
       "localitaSection": {
@@ -365,7 +365,7 @@
         {
           "icon": "users",
           "label": "Places",
-          "value": "1 (monoplace)"
+          "value": "2 (biplace)"
         },
         {
           "icon": "wrench",
@@ -407,7 +407,7 @@
         "paragraphs": [
           "Beaucoup de touristes cherchent un SUV pour « faire un peu de tout-terrain en Sardaigne ». C'est presque toujours le mauvais choix pour deux raisons : les SUV de location standard ont des polices qui <strong class='text-foreground'>excluent les dommages en tout-terrain</strong> (une éraflure sous le carter d'huile = 2000 € à votre charge), et les vraies pistes de la Gallura — celles qui mènent aux criques cachées de Punta Volpe ou aux pistes de Capo Ferro — ne sont pas faites pour les voitures, elles sont faites pour les quads.",
           "<strong class='text-foreground'>Le Yamaha Raptor 700 résout exactement cela</strong> : 686cc, 50 ch, suspensions conçues pour le tout-terrain, homologué route en Italie avec permis B. Notre assurance inclut la couverture sur piste (c'est son usage naturel, pas une exception). Le prix est premium parce que le véhicule l'est — mais c'est le seul moyen légal et sûr d'accéder à des lieux que 99 % des touristes ne voient qu'en carte postale.",
-          "<strong class='text-foreground'>Quand NE PAS louer le quad</strong> : si vous voyagez à plus d'1 personne (c'est un monoplace), si vous devez transporter des bagages, si vous n'êtes à l'aise que sur asphalte, s'il pleut fort (la conduite devient glissante). Dans ces cas nous recommandons Fiat Panda + quad uniquement pour une journée dédiée à l'exploration tout-terrain."
+          "<strong class='text-foreground'>Quand NE PAS louer le quad</strong> : si vous voyagez à plus de 2 personnes (il est homologué pour 2), si vous devez transporter des bagages, si vous n'êtes à l'aise que sur asphalte, s'il pleut fort (la conduite devient glissante). Dans ces cas nous recommandons Fiat Panda + quad uniquement pour une journée dédiée à l'exploration tout-terrain."
         ]
       },
       "localitaSection": {
@@ -502,7 +502,7 @@
         {
           "icon": "users",
           "label": "Sitzplätze",
-          "value": "1 (Einzelsitz)"
+          "value": "2 (Zweisitzer)"
         },
         {
           "icon": "wrench",
@@ -544,7 +544,7 @@
         "paragraphs": [
           "Viele Touristen suchen einen SUV, um \"ein bisschen Off-Road in Sardinien zu machen\". Das ist fast immer die falsche Wahl, aus zwei Gründen: Standard-Mietwagen-SUVs haben Versicherungspolicen, die <strong class='text-foreground'>Schäden im Gelände ausschließen</strong> (ein Kratzer unter der Ölwanne = 2.000 € Schaden zu Ihren Lasten), und die echten Pisten Galluras — jene, die zu den versteckten Buchten von Punta Volpe oder zu den Schotterpisten von Capo Ferro führen — sind nicht für Autos gemacht, sondern für Quads.",
           "<strong class='text-foreground'>Der Yamaha Raptor 700 löst genau dieses Problem</strong>: 686 ccm, 50 PS, für Geländefahrten konzipierte Federung, in Italien mit Führerschein B straßenzugelassen. Unsere Versicherung deckt die Nutzung auf Schotter (es ist sein natürlicher Einsatz, keine Ausnahme). Der Preis ist Premium, weil das Fahrzeug es ist — aber es ist die einzige legale und sichere Möglichkeit, an Orte zu gelangen, die 99 % der Touristen nur auf Postkarten sehen.",
-          "<strong class='text-foreground'>Wann das Quad NICHT mieten</strong>: Wenn Sie zu mehr als 1 Person reisen (es ist ein Einsitzer), wenn Sie Gepäck transportieren müssen, wenn Sie sich nur auf Asphalt wohlfühlen, wenn es stark regnet (das Fahren wird rutschig). In diesen Fällen empfehlen wir Fiat Panda + Quad nur für einen einzigen Tag, der dem Off-Road-Erkunden gewidmet ist."
+          "<strong class='text-foreground'>Wann das Quad NICHT mieten</strong>: Wenn Sie zu mehr als 2 Personen reisen (es ist für 2 zugelassen), wenn Sie Gepäck transportieren müssen, wenn Sie sich nur auf Asphalt wohlfühlen, wenn es stark regnet (das Fahren wird rutschig). In diesen Fällen empfehlen wir Fiat Panda + Quad nur für einen einzigen Tag, der dem Off-Road-Erkunden gewidmet ist."
         ]
       },
       "localitaSection": {

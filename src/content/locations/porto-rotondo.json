@@ -73,7 +73,7 @@
       },
       {
         "label": "Posti",
-        "value": "1",
+        "value": "2",
         "icon": "seats"
       },
       {
@@ -236,7 +236,7 @@
           },
           {
             "label": "Seats",
-            "value": "1",
+            "value": "2",
             "icon": "seats"
           },
           {
@@ -395,7 +395,7 @@
           },
           {
             "label": "Sitzplätze",
-            "value": "1",
+            "value": "2",
             "icon": "seats"
           },
           {
@@ -554,7 +554,7 @@
           },
           {
             "label": "Places",
-            "value": "1",
+            "value": "2",
             "icon": "seats"
           },
           {
