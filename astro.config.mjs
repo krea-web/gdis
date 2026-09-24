@@ -4,7 +4,6 @@ import { execSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
@@ -118,12 +117,10 @@ export default defineConfig({
     locales: ['it', 'en', 'de', 'fr'],
     routing: {
       prefixDefaultLocale: false,
-      redirectToDefaultLocale: false,
     },
   },
   integrations: [
     react(),
-    tailwind({ applyBaseStyles: false }),
     mdx(),
     sitemap({
       i18n: {
