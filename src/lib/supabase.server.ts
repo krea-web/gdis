@@ -2,7 +2,10 @@ import { createClient } from '@supabase/supabase-js';
 import type { Database } from '@/integrations/supabase/types';
 
 const url = import.meta.env.PUBLIC_SUPABASE_URL;
-const serviceKey = import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
+// Server-only secret: read from process.env. Since Astro 6, import.meta.env
+// values are always inlined, so the key would be written into any bundle
+// that imports this file.
+const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const anonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 const key = serviceKey || anonKey;
