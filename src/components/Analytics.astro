@@ -1,16 +1,16 @@
 ---
+import { sentryLoaderUrl } from "@/lib/sentryLoader";
+
 const GA_ID = import.meta.env.PUBLIC_GA_ID || "G-0SH3YF3Y65";
 const isProd = import.meta.env.PROD;
 // PostHog EU (round 10 Kreare): parte OPT-OUT e in memoria; si accende solo
 // col consenso del banner (stesso flusso di gdisGrantConsent). Niente recording.
 const POSTHOG_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
-// Sentry (round 10): loader ufficiale, solo con la env. Errori = sicurezza.
-const SENTRY_DSN = import.meta.env.PUBLIC_SENTRY_DSN;
-const SENTRY_LOADER = SENTRY_DSN ? `https://js.sentry-cdn.com/${SENTRY_DSN.split("//")[1].split("@")[0]}.min.js` : null;
+// Sentry (round 10): loader ufficiale, solo con la env. Il CDN e' derivato
+// dalla regione del DSN (EU -> js-de.sentry-cdn.com); DSN malformato -> null.
+const SENTRY_LOADER = sentryLoaderUrl(import.meta.env.PUBLIC_SENTRY_DSN);
 ---
-
-{SENTRY_LOADER && <script is:inline crossorigin="anonymous" src={SENTRY_LOADER}></script>}
 
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
@@ -31,6 +31,8 @@ const SENTRY_LOADER = SENTRY_DSN ? `https://js.sentry-cdn.com/${SENTRY_DSN.split
       ad_personalization: v,
       analytics_storage: v,
     });
+    // Sentry parte solo col consenso (vedi blocco sotto); una volta caricato resta
+    if (granted && window.gdisLoadSentry) window.gdisLoadSentry();
     // PostHog segue lo STESSO consenso di GA (round 10 Kreare)
     if (window.posthog) {
       try {
@@ -44,6 +46,27 @@ const SENTRY_LOADER = SENTRY_DSN ? `https://js.sentry-cdn.com/${SENTRY_DSN.split
     }
   };
 </script>
+
+{SENTRY_LOADER && (
+  <script is:inline define:vars={{ SENTRY_LOADER }}>
+    // Come PostHog: niente script Sentry prima del consenso analytics. Con
+    // consenso gia' salvato parte subito (cattura anche gli errori iniziali),
+    // altrimenti lo accende gdisGrantConsent(true) dal banner.
+    var sentryInjected = false;
+    window.gdisLoadSentry = function () {
+      if (sentryInjected) return;
+      sentryInjected = true;
+      var s = document.createElement("script");
+      s.src = SENTRY_LOADER;
+      s.crossOrigin = "anonymous";
+      s.async = true;
+      document.head.appendChild(s);
+    };
+    try {
+      if (localStorage.getItem("gdis-cookie-consent") === "accepted") window.gdisLoadSentry();
+    } catch (e) {}
+  </script>
+)}
 
 {POSTHOG_KEY && POSTHOG_HOST && (
   <script is:inline define:vars={{ POSTHOG_KEY, POSTHOG_HOST }}>
