@@ -66,9 +66,8 @@
 **Do NOT delete these unless we abandon the rollback option:**
 - `src/components/booking/DriverForm.tsx` (8 KB)
 - `src/components/booking/SecondDriverStep.tsx` (2.3 KB)
-- `src/components/booking/SignatureStep.tsx` (3 KB)
 - `src/components/booking/TurnstileWidget.tsx` (2.4 KB)
-- `src/lib/n8nProxy.ts` (0.7 KB)
+- ~~`SignatureStep.tsx`, `src/lib/n8nProxy.ts`~~ — **deleted Sep 24, 2026**: the n8n workflows were switched off on purpose (commit `f92516b`) and no file imported them. The n8n rollback path is gone; restore from git history if ever needed.
 - `booking.driver`, `booking.secondDriver`, `booking.signature`, `booking.success` keys in `src/i18n/{it,en,de,fr}.json`
 - `booking.cta.checkingAvailability`, `booking.cta.confirmBooking`, `booking.cta.generatingContract` were **removed** from i18n in this refactor (cta only has back+next now)
 - `booking.errors.*` kept for `Toaster` infra reuse
