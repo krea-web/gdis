@@ -1,4 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const faqItem = z.object({
   q: z.string(),
@@ -49,7 +51,7 @@ const customSection = z.object({
       text: z.string(),
     })
     .optional(),
-  image: z.string().url(),
+  image: z.url(),
   imageAlt: z.string(),
 });
 
@@ -76,7 +78,7 @@ const locationI18nFields = z
         tag: z.string(),
         title: z.string(),
         description: z.string(),
-        image: z.string().url(),
+        image: z.url(),
         imageAlt: z.string().optional(),
         badges: z.array(z.string()).optional(),
       })
@@ -104,7 +106,7 @@ const locationI18nFields = z
   .partial();
 
 const locations = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "*.json", base: "./src/content/locations" }),
   schema: z.object({
     slug: z.string(),
     name: z.string(),
@@ -112,7 +114,7 @@ const locations = defineCollection({
     description: z.string(),
     keywords: z.string().optional(),
     canonical: z.string(),
-    heroImage: z.string().url(),
+    heroImage: z.url(),
     heroSubtitle: z.string(),
     heroAccent: z.string().optional(),
     /** "Noleggio Auto a" | "Noleggio Auto in" — defaults to "Noleggio Auto a". */
@@ -131,7 +133,7 @@ const locations = defineCollection({
         tag: z.string(),
         title: z.string(),
         description: z.string(),
-        image: z.string().url(),
+        image: z.url(),
         imageAlt: z.string().optional(),
         badges: z.array(z.string()).optional(),
       })
@@ -182,7 +184,7 @@ const featureSection = z.object({
   label: z.string(),
   title: z.string(),
   body: z.array(z.string()),
-  image: z.string().url(),
+  image: z.url(),
   imageAlt: z.string(),
   /** When true, image goes left and text goes right (default: image on right) */
   reverse: z.boolean().optional(),
@@ -242,7 +244,7 @@ const fleetI18nFields = z
   .partial();
 
 const fleet = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "*.json", base: "./src/content/fleet" }),
   schema: z.object({
     slug: z.string(),
     name: z.string(),
@@ -250,7 +252,7 @@ const fleet = defineCollection({
     title: z.string(),
     description: z.string(),
     canonical: z.string(),
-    heroImage: z.string().url(),
+    heroImage: z.url(),
     heroLabel: z.string(),
     heroH1Top: z.string(),
     heroH1Bottom: z.string(),
@@ -295,7 +297,7 @@ const fleet = defineCollection({
     jsonLdBrand: z.string(),
     jsonLdManufacturer: z.string(),
     jsonLdModel: z.string(),
-    jsonLdExtras: z.record(z.any()).optional(),
+    jsonLdExtras: z.record(z.string(), z.any()).optional(),
     /** Localized variants. Per-locale fields override IT defaults; missing fields fall back to IT. */
     i18n: z
       .object({

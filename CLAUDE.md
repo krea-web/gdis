@@ -226,6 +226,7 @@ contract drafted offline via Telegram + OCR workflow (separate task)
 
 ## Important gotchas / footguns
 
+- **Production deploys ONLY from `main` via git push** (Vercel production branch = `main`). **NEVER `vercel --prod` / `vercel deploy --prod` from a local machine** on this project, and every push to `main` needs Giuseppe's explicit CONFERMO. Why: the Sep 2, 2026 CLI deploy of `astro-migration@e35325a` left production detached from git, so the Yamaha "2 seats" fix (`3da2b13`, Sep 9) never shipped until the Sep 25 merge (`7f730ab`). Work on a branch → Vercel preview → merge into `main`.
 - **NEVER `git push --force` on `astro-migration`** — PR #1 is the long-running merge target for the whole Astro migration. Force-push loses the migration work plus all SEO+WhatsApp commits
 - **NEVER commit `.env`** (gitignored, but worth re-checking before any squash/cherry-pick)
 - **When editing `src/content/{locations,fleet}/*.json`, validate Zod schema** — Astro build will fail loudly if any required field is missing. The `DeepRequired<T>` cast in dynamic templates hides this from TS check

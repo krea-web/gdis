@@ -4,7 +4,6 @@ import { execSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
@@ -111,6 +110,9 @@ export default defineConfig({
   site: 'https://gdisrentservice.com',
   output: 'static',
   trailingSlash: 'never',
+  // Astro 7 defaults to 'jsx', which drops whitespace between inline elements
+  // (footer links, prices, language switcher). Keep the Astro 5/6 behaviour.
+  compressHTML: true,
   adapter: vercel({ imageService: true }),
   prefetch: { defaultStrategy: 'viewport' },
   i18n: {
@@ -118,12 +120,10 @@ export default defineConfig({
     locales: ['it', 'en', 'de', 'fr'],
     routing: {
       prefixDefaultLocale: false,
-      redirectToDefaultLocale: false,
     },
   },
   integrations: [
     react(),
-    tailwind({ applyBaseStyles: false }),
     mdx(),
     sitemap({
       i18n: {
@@ -247,6 +247,13 @@ export default defineConfig({
     domains: ['zgazhrzjgefvjxknyffy.supabase.co'],
   },
   vite: {
+    build: {
+      // Astro 7 builds with target "esnext", so Lightning CSS (Vite 8's CSS
+      // minifier) gets no browser targets and strips the -webkit-backdrop-filter
+      // that autoprefixer adds: no blur on Safari/iOS < 18. Vite 8's own
+      // baseline-widely-available targets keep it.
+      cssTarget: ['chrome111', 'edge111', 'firefox114', 'safari16.4', 'ios16.4'],
+    },
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
