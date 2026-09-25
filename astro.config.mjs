@@ -5,7 +5,6 @@ import { existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -124,7 +123,6 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    mdx(),
     sitemap({
       i18n: {
         defaultLocale: 'it',
